@@ -1,0 +1,35 @@
+
+// features
+@import "modules/main/main";
+@import "modules/photos/photos";
+@import "modules/user/preferences/preferences";
+@import "modules/user/usermanager/usermanager";
+
+
+html, body {
+    background: #f5f5f5;
+    color: #3b3b41;
+    border: 0;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+    font-size:62.5%;
+}
+
+.section
+{
+    height:100%;
+}
+
+.med-btn {
+    width: 50px;
+    height: 50px;
+}
+
+.small-btn {
+    width: 30px;
+    height: 30px;
+}
+button[disabled] {
+    color: #cccccc !important;
+}
+

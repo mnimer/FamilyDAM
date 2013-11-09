@@ -1,0 +1,29 @@
+/**
+ * Initial definition of the Angular Application. This class imports (requires) all of the modules for the application.
+ */
+require('dashboard-templates');
+
+// Define the required modules
+var App = angular.module('dashboard', [
+    'ngCookies',
+    'ngResource',
+	'ngDragDrop',
+	'ui.router',
+	'ui.bootstrap',
+	'ui.bootstrap.tpls',
+    'dashboard.templates',
+    require('./modules/main').name,
+    require('./modules/photos').name,
+    require('./modules/user/preferences').name,
+    require('./modules/user/usermanager').name])
+
+
+
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
+    {
+        // For any unmatched url, redirect to /state1
+        $urlRouterProvider.otherwise("/photos");
+    }]);
+
+App.$inject = ['ui.router'];
+

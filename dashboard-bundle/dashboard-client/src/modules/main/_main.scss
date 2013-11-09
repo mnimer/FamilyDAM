@@ -1,0 +1,152 @@
+
+.navbar
+{
+    background-color: #3b3b41;
+}
+
+
+.shell
+{
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+
+.container {
+    height:90%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 14px; font-size: 1.4rem;
+
+
+    @media (min-width: 768px)
+    {
+        min-width: 98% !important;
+    }
+
+    > .row
+    {
+        height:95%;
+        margin-top: 20px;
+    }
+}
+
+
+
+.container:before, .container:after {
+    display: table;
+    content: " ";
+}
+
+
+.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#sidebar-left
+{
+    min-width:70px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px -35px 0px 20px;
+}
+
+.sidebar-nav>ul {
+    margin: 0;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: none;
+    border-right: none;
+    padding-bottom: 1px;
+    text-align: center !important;
+    font-size: 10px; font-size: 1rem;
+
+}
+
+
+.nav-stacked > li {
+    float: none;
+    min-height:6rem;
+
+    +.active
+    {
+        color: #555;
+        cursor: default;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+
+        a{
+            border:0px;
+        }
+    }
+}
+
+
+
+.nav-stacked>li+li {
+    margin-top: 2px;
+    margin-left: 0;
+}
+
+
+.primaryView
+{
+    margin-top:-20px;
+    height:100%;
+    > div
+    {
+        height: 100%;
+    }
+}
+
+.content {
+    height:100%;
+    background: #fff;
+    filter: none;
+    min-height: 100%;
+    padding: 20px 20px;
+    -webkit-border-radius: 0 5px 5px 5px;
+    -moz-border-radius: 0 5px 5px 5px;
+    border-radius: 0 5px 5px 5px;
+    border: 2px solid #eee;
+    position: relative;
+}
+
+
+aside
+{
+    background: transparent;
+    padding-top: 0;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+
+footer
+{
+    background-color: #eeeeee;
+    position: absolute;
+    bottom: 0px;
+    right:0px;
+    left: 0px;
+    border-top:1px solid;
+    vertical-align: text-bottom;
+
+    #systemStatus
+    {
+        width:60%;
+    }
+
+    #toolbar
+    {
+        width:300px
+    }
+}
