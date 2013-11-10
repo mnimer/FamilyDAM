@@ -8,7 +8,10 @@
  * @param $dialog
  * @constructor
  */
-var MainController = function ($scope, $window, $route, $location) {
+var MainController = function ($scope, $window, $route, $location, $state, $stateParams) {
+
+    $scope.$state = $state;
+    $scope.$stateParams = $stateParams;
 
     $scope.ModeFullScreen = false;
     $scope.activePath = "/";
@@ -34,5 +37,5 @@ var MainController = function ($scope, $window, $route, $location) {
     init();
 };
 
-MainController.$inject = ['$scope', '$window', '$route', '$location'];
+MainController.$inject = ['$scope', '$window', '$route', '$location', '$state', '$stateParams'];
 module.exports = MainController;

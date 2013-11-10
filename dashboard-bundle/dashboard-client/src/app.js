@@ -22,8 +22,13 @@ var App = angular.module('dashboard', [
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
         // For any unmatched url, redirect to /state1
+        $urlRouterProvider.when('', '/photos');
+
         $urlRouterProvider.otherwise("/photos");
     }]);
 
 App.$inject = ['ui.router'];
+
+
+
 

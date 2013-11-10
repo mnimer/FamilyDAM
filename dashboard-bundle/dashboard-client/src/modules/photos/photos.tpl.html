@@ -1,16 +1,31 @@
-<div class="photos section col-sm-12">
+<div class="photos section" ng-class="{'col-xs-12':!ModeFullScreen, 'col-sm-8':!ModeFullScreen, 'col-xs-12': ModeFullScreen}">
     <div id="toolbar">
         <span>/Photos</span>
 
         <span class="pull-right">
-            <a class="glyphicon glyphicon-list btn btn-default btn-sm" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
+            <a ui-sref="photos.list"
+               class="glyphicon glyphicon-list btn btn-default btn-sm"
+                ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
             &nbsp;
-            <a class="glyphicon glyphicon-th btn btn-default btn-sm" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+            <a ui-sref="photos.grid"
+               class="glyphicon glyphicon-th btn btn-default btn-sm"
+               ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
         </span>
     </div>
 
     <div class="content">
-        Photos Go HERE
+        <div ui-view>Photos Go HERE</div>
     </div>
+
 </div>
+
+
+<!-- start: Widgets Area -->
+<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-hide="ModeFullScreen"  >
+    <div class="sidebar-nav">
+        Photo Info
+    </div>
+</aside>
+<!-- end: Widgets Area -->
+
 
