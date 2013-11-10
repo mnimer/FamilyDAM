@@ -3,10 +3,21 @@
         <span>/Photos</span>
 
         <span class="pull-right">
+            <form action="/content/dam/upload-queue" method="POST" enctype="multipart/form-data">
+                <input type="file" name="./*" multiple="true"/>
+                <button
+                        ng-click="uploadFile()"
+                   class=".glyphicon .glyphicon-cloud-upload btn btn-default btn-sm"/>
+                <input type="hidden" name="./*@TypeHint" value="my:file" />
+            </form>
+
+
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+
             <a ui-sref="photos.list"
                class="glyphicon glyphicon-list btn btn-default btn-sm"
                 ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
-            &nbsp;
+
             <a ui-sref="photos.grid"
                class="glyphicon glyphicon-th btn btn-default btn-sm"
                ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
@@ -23,7 +34,12 @@
 <!-- start: Widgets Area -->
 <aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-hide="ModeFullScreen"  >
     <div class="sidebar-nav">
-        Photo Info
+        <div style="text-align: center; vertical-align: center; border: 3px dashed; border-radius: 5px; width: 20rem; height: 20rem;">
+            <form action="http://localhost:8080/content/dam/upload-queue" method="POST" enctype="multipart/form-data">
+                <input type="file" name="./*" />
+                <input type="submit"/>
+            </form>
+        </div>
     </div>
 </aside>
 <!-- end: Widgets Area -->

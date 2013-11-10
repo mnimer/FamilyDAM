@@ -141,7 +141,7 @@ module.exports = function (grunt) {
                         'angular-resource': './bower_components/angular-resource/angular-resource.js',
                         'jQuery': './bower_components/jquery/jquery.js',
                         'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',
-                        'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+                        'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
                     }
 
 				}

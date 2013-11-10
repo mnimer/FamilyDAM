@@ -9,6 +9,8 @@
 var PhotosController = function($scope, $location) {
 
     $scope.layout = "grid";
+
+
     /**
      * Invoked on startup, like a constructor.
      */

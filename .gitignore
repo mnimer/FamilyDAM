@@ -2,6 +2,7 @@
 *.ipr
 *.iml
 .idea
+.temp
 target
 out
 node_modules
