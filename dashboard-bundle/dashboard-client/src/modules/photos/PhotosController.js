@@ -6,10 +6,15 @@
  * @param productModel
  * @constructor
  */
-var PhotosController = function($scope, $location) {
+var PhotosController = function($scope, $location, photoService) {
 
     $scope.layout = "grid";
+    $scope.assets = [];
 
+    $scope.selectFolder = function(path)
+    {
+        $scope.photos = photoService.list(path, listCallback);
+    };
 
     /**
      * Invoked on startup, like a constructor.
@@ -20,35 +25,43 @@ var PhotosController = function($scope, $location) {
 
     $scope.$on('$stateChangeStart',
         function(evt, toState, toParams, fromState, fromParams){
-            // We can prevent this state from completing
-            console.log("toState=" +toState);
-            if( toState == "photos"){
-                    evt.preventDefault();
+
+        }
+    );
+
+    var listCallback = function(data, status, headers, config)
+    {
+        var contents = [];
+        var pos = config.url.indexOf(".1.json");
+        var basePath = config.url.substring(0, pos);
+
+        for(var key in data)
+        {
+            var item = data[key];
+            if( item instanceof Object )
+            {
+                item.name = key;
+                item.path = basePath +"/" +key;
+
+                if( item['jcr.primaryType'] == "nt:folder")
+                {
+                    item.children = [];
+                }
+
+                contents.push(item);
             }
-    });
+        }
 
-    $scope.$on('$stateNotFound',
-        function(event, unfoundState, fromState, fromParams){
-            console.log(unfoundState.to); // "lazy.state"
-            console.log(unfoundState.toParams); // {a:1, b:2}
-            console.log(unfoundState.options); // {inherit:false} + default options
-        });
+        $scope.assets = contents;
+    };
 
-    $scope.$on('$stateChangeError',
-        function(event, toState, toParams, fromState, fromParams, error){
-            console.log(toState);
-            console.log(toParams);
-            console.log(fromState);
-            console.log(fromParams);
-            console.log(error);
-        });
 
 
     var init = function(){
-
+        $scope.photos = photoService.list('/content/dam/photos', listCallback);
     };
     init();
 };
 
-PhotosController.$inject = ['$scope',  '$location'];
+PhotosController.$inject = ['$scope', '$location', 'photoService'];
 module.exports = PhotosController;

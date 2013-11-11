@@ -1,5 +1,6 @@
 module.exports = angular.module('dashboard.photos', [])
 	.controller('PhotosController', require('./PhotosController'))
+    .service('photoService', require('./services/PhotoService'))
 	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
         {
             $stateProvider.state('photos', {

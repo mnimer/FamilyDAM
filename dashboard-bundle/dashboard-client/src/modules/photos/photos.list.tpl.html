@@ -1,3 +1,9 @@
 <div class="content">
     Photo LIST
+    <br/>
+    <ul>
+        <li ng-repeat="item in assets">
+            <a ng-click="selectFolder(item.path)">{{item['jcr:primaryType']}} - {{item.name}}</a>
+        </li>
+    </ul>
 </div>
