@@ -8,7 +8,9 @@
         <name>dashboard-bundle</name>
         <description>com.mikenimer.familycloud - dashboard-bundle</description>
 
-        <build>
+
+
+    <build>
 
             <plugins>
                 <plugin>

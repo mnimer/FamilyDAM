@@ -1,9 +1,18 @@
-<div class="content">
-    Photo GRID
-    <br/>
+<div class="content gridView">
     <ul>
         <li ng-repeat="item in assets">
-            <a ng-click="selectFolder(item.path)">{{item['jcr:primaryType']}} - {{item.name}}</a>
+            <div class="folderRenderer"
+                 ng-if="item['jcr:primaryType'] == 'nt:folder'" ng-show="item['jcr:primaryType'] == 'nt:folder'">
+                <a class="glyphicon glyphicon-folder-close" ng-click="selectFolder(item.path)"> {{item.name}}</a>
+            </div>
+            <div class="fileRenderer"
+                 ng-if="item['jcr:primaryType'] == 'nt:file'" ng-show="item['jcr:primaryType'] == 'nt:file'">
+
+                <div>
+                    <img src="{{item.path}}" class="list-thumbnail-sm"/><br/>
+                    <a class="glyphicon glyphicon-camera" ng-click="selectFolder(item.path)"> {{item.name}}</a>
+                </div>
+            </div>
         </li>
     </ul>
 </div>

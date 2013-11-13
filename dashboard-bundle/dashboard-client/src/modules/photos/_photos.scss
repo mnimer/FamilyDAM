@@ -1,4 +1,66 @@
+
 .photos
 {
+    font-size: 16px; font-size: 1.6rem;
+    padding: 0px;
 
+    #toolbar
+    {
+        display: inline-block;
+        width: 100%;
+        height: 30px;
+        text-transform: capitalize;
+
+        button
+        {
+            width: 30px;
+            background-color: inherit;
+            background-image: none;
+        }
+    }
+
+    ul
+    {
+        list-style: none;
+        padding:0px;
+    }
+
+    .content
+    {
+        border: 0px;
+    }
+
+    .folderRenderer
+    {
+
+    }
+
+    .listView
+    {
+        .fileRenderer
+        {
+            height: 100px;
+            border-bottom:1px solid #eeeeee;
+
+            .list-thumbnail-sm
+            {
+                height:100px;
+            }
+        }
+    }
+
+    .gridView
+    {
+        .fileRenderer
+        {
+            height: 100px;
+            padding: 20px;
+
+            .list-thumbnail-sm
+            {
+                height:100px;
+            }
+        }
+    }
 }
+

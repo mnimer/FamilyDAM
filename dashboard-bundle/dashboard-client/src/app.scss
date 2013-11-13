@@ -33,3 +33,14 @@ button[disabled] {
     color: #cccccc !important;
 }
 
+/*override*/
+.modal
+{
+    display:block !important;
+    width:400px;
+    height:200px;
+    background-color: white;
+    left:400px;
+    top:200px;
+    bottom:400px;
+}

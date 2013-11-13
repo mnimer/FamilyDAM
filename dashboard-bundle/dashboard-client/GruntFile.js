@@ -15,13 +15,14 @@ module.exports = function (grunt) {
 	 */
 
 	// default task
-	grunt.registerTask('default', ['clean','copy', 'build','build-shared-libs']);
+	grunt.registerTask('default', ['clean','copy', 'build','build-shared-libs', 'deploy']);
 
 	// build tasks
-	grunt.registerTask('build', ['build-css','build-js']);
+	grunt.registerTask('build', ['build-css', 'build-js']);
 	grunt.registerTask('build-css', ['compass:develop']);
 	grunt.registerTask('build-js', ['jshint','html2js','browserify2:dashboard']);
 	grunt.registerTask('build-shared-libs', ['browserify2:shared-libs']);
+	grunt.registerTask('deploy', ['slingPost']);
 
 	// server task
 	grunt.registerTask('server', ['clean','copy','build', 'build-shared-libs', 'server-start', 'open', 'watch']);
@@ -141,7 +142,7 @@ module.exports = function (grunt) {
                         'angular-resource': './bower_components/angular-resource/angular-resource.js',
                         'jQuery': './bower_components/jquery/jquery.js',
                         'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',
-                        'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+                        'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
                     }
 
 				}
@@ -196,19 +197,19 @@ module.exports = function (grunt) {
 			},
 			assets: {
 				files: 'src/assets/**',
-				tasks: ['copy:assets']
+				tasks: ['copy:assets', 'deploy']
 			},
 			css: {
 				files: ['src/**/*.scss'],
-				tasks: ['compass:develop']
+				tasks: ['compass:develop', 'deploy']
 			},
 			js: {
 				files: 'src/**/*.js',
-				tasks: ['build']
+				tasks: ['build', 'deploy']
 			},
 			html: {
 				files: ['src/**/*.tpl.html', 'src/**/index.html'],
-				tasks: ['copy:statichtml', 'build-js']
+				tasks: ['copy:statichtml', 'build-js', 'deploy']
 			}
 		},
 
@@ -237,7 +238,25 @@ module.exports = function (grunt) {
 				configFile: 'test/config/unit.js',
 				autoWatch: true
 			}
-		}
+		},
+
+        slingPost: {
+            options: {
+                host:"localhost",
+                port:8080,
+                user:"admin",
+                pass:"admin",
+                exclude: ["*.git"]
+            },
+            dist: {
+                src: "dist",
+                dest: "/content/dashboard"
+            }
+
+        }
+
+
+
 	});
 
 };

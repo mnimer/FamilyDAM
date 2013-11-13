@@ -1,9 +1,27 @@
-<div class="content">
-    Photo LIST
-    <br/>
-    <ul>
+<div class="content listView">
+    <ul style="list-style: none;">
         <li ng-repeat="item in assets">
-            <a ng-click="selectFolder(item.path)">{{item['jcr:primaryType']}} - {{item.name}}</a>
+            <div class="folderRenderer" ng-if="item['jcr:primaryType'] == 'nt:folder'" >
+                <a class="glyphicon glyphicon-folder-close" ng-click="selectFolder(item.path)"> {{item.name}}</a>
+            </div>
+
+            <div class="fileRenderer" ng-if="item['jcr:primaryType'] == 'nt:file'">
+                <div style="float: left">
+                    <span>
+                        <input type="checkbox"> &nbsp;
+                        <a class="glyphicon glyphicon-camera" ng-click="selectFolder(item.path)"> {{item.name}}</a><br/>
+                    </span>
+
+                    <span class="date">{{item['jcr:content']['jcr:lastModified']}}</span><span> --  by: {{item['jcr:content']['jcr:lastModifiedBy']}}</span><br/>
+                    <span>File Size:{{item['jcr:content'][':jcr:data']}} </span>
+
+                </div>
+                <div class="pull-right" style="float: right;">
+                    <img src="{{item.path}}" class="list-thumbnail-sm"/>
+                </div>
+            </div>
         </li>
     </ul>
 </div>
+
+

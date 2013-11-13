@@ -29,7 +29,8 @@
     "karma": "~0.10.1",
     "connect-livereload": "~0.2.0",
     "grunt-open": "~0.2.2",
-    "grunt-bower-install": "~0.6.1"
+    "grunt-bower-install": "~0.6.1",
+    "grunt-sling-content": "~0.1.1"
   },
   "dependencies": {
     "express": "~3.3.5"

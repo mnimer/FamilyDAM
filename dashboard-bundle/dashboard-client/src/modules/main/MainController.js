@@ -8,7 +8,7 @@
  * @param $dialog
  * @constructor
  */
-var MainController = function ($scope, $window, $route, $location, $state, $stateParams) {
+var MainController = function ($scope, $window, $location, $state, $stateParams) {
 
     $scope.$state = $state;
     $scope.$stateParams = $stateParams;
@@ -22,11 +22,6 @@ var MainController = function ($scope, $window, $route, $location, $state, $stat
     };
 
 
-    $scope.$on('$routeChangeSuccess', function(){
-        $scope.activePath = $location.path();
-        console.log( $location.path() );
-    });
-
     /**
      * Invoked on startup, like a constructor.
      */
@@ -37,5 +32,5 @@ var MainController = function ($scope, $window, $route, $location, $state, $stat
     init();
 };
 
-MainController.$inject = ['$scope', '$window', '$route', '$location', '$state', '$stateParams'];
+MainController.$inject = ['$scope', '$window', '$location', '$state', '$stateParams'];
 module.exports = MainController;

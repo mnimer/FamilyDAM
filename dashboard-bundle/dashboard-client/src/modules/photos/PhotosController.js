@@ -6,34 +6,103 @@
  * @param productModel
  * @constructor
  */
-var PhotosController = function($scope, $location, photoService) {
+var PhotosController = function($scope, $location, $modal, photoService) {
 
     $scope.layout = "grid";
     $scope.assets = [];
+    // part of the path we hide in the breadrum
+    $scope.basePath = "/content/dam";
+    // path to show in breadcrumb
+    $scope.currentPath = "/";
+    $scope.breadcrumb = [{name:"photos", path:$scope.basePath +"/photos"}];
+
 
     $scope.selectFolder = function(path)
     {
+        // this is called from child view, so we'll update the parent scope to get the breadcrumb binding
+        $scope.breadcrumb = convertPathToBreadcrumb(path);
+        $scope.currentPath = path;
+        // update list of photos
+        $scope.assets = [];
         $scope.photos = photoService.list(path, listCallback);
     };
 
-    /**
-     * Invoked on startup, like a constructor.
-     */
-    $scope.$on('$viewContentLoaded', function() {
-        console.log("Photo controller loaded");
-    });
 
-    $scope.$on('$stateChangeStart',
-        function(evt, toState, toParams, fromState, fromParams){
-
+    $scope.refresh = function()
+    {
+        if( $scope.currentPath == "/" )
+        {
+            $scope.selectFolder("/photos");
+        }else{
+            $scope.selectFolder($scope.currentPath);
         }
-    );
+    };
 
+
+    $scope.createFolder = function()
+    {
+        var modalInstance = $modal.open({
+            templateUrl: 'FolderNameModal',
+            controller: 'FolderNameModalCntrl',
+            resolve:{
+                photoService: function(){
+                    return photoService;
+                },
+                currentPath: function(){
+                    if( $scope.currentPath == "/" )
+                    {
+                        return "/photos";
+                    }else{
+                        return $scope.currentPath;
+                    }
+                }
+            }
+        });
+    };
+
+
+    /*************
+     * Event Listeners
+     **************/
+
+    $scope.$on('refresh', $scope.refresh);
+
+
+
+    /**
+     * Parse a path into it's tokens for a valid breadcrumb array
+     */
+    var convertPathToBreadcrumb = function(path)
+    {
+        var breadcrumb = [];
+        var nodes = path.split("/");
+        var lastPath = "";
+        for (var indx in nodes)
+        {
+            var obj = nodes[indx];
+            if( obj.length > 1 )
+            {
+                lastPath = lastPath +"/" +obj;
+                breadcrumb.push({name:obj, path:lastPath});
+            }
+        }
+        return breadcrumb;
+    };
+
+
+    /**
+     * Callback for file list from JCR Service
+     * @param data
+     * @param status
+     * @param headers
+     * @param config
+     */
     var listCallback = function(data, status, headers, config)
     {
         var contents = [];
-        var pos = config.url.indexOf(".1.json");
-        var basePath = config.url.substring(0, pos);
+        var pos = config.url.indexOf(".2.json");
+        var pos2 = $scope.basePath.length;
+        var basePath = config.url.substring(pos2, pos);
 
         for(var key in data)
         {
@@ -42,11 +111,6 @@ var PhotosController = function($scope, $location, photoService) {
             {
                 item.name = key;
                 item.path = basePath +"/" +key;
-
-                if( item['jcr.primaryType'] == "nt:folder")
-                {
-                    item.children = [];
-                }
 
                 contents.push(item);
             }
@@ -58,10 +122,10 @@ var PhotosController = function($scope, $location, photoService) {
 
 
     var init = function(){
-        $scope.photos = photoService.list('/content/dam/photos', listCallback);
+        $scope.photos = photoService.list('/photos', listCallback);
     };
     init();
 };
 
-PhotosController.$inject = ['$scope', '$location', 'photoService'];
+PhotosController.$inject = ['$scope', '$location', '$modal', 'photoService'];
 module.exports = PhotosController;
