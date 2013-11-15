@@ -26,6 +26,14 @@
     <name>filehandlers-bundle</name>
     <description>com.mikenimer.familycloud - filehandlers-bundle</description>
 
+    <!-- dummy urls for the maven-build-number plugin to work, this can be replaced with real values -->
+    <scm>
+        <connection>scm:svn:http://none</connection>
+        <developerConnection>scm:svn:https://none</developerConnection>
+        <url>scm:svn:https://none</url>
+    </scm>
+
+
     <dependencies>
 
         <dependency>
@@ -47,12 +55,19 @@
         -->
 
 
-        <dependency>
+        <!--dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
             <scope>provided</scope>
+        </dependency-->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.http.jetty</artifactId>
+            <version>2.0.4</version>
+            <scope>provided</scope>
         </dependency>
+
 
         <dependency>
             <groupId>javax.jcr</groupId>
@@ -82,12 +97,19 @@
         </dependency>
 
 
-        <dependency>
+        <!--dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.scr.annotations</artifactId>
             <version>1.9.6</version>
             <scope>provided</scope>
+        </dependency-->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.scr.annotations</artifactId>
+            <version>1.6.0</version>
+            <scope>provided</scope>
         </dependency>
+
 
         <!-- ***********************
           ** OSGI
@@ -126,12 +148,16 @@
         </dependency>
     </dependencies>
 
+
+
     <repositories>
         <repository>
             <id>renci</id>
             <url>http://ci-dev.renci.org/nexus/content/repositories/public/</url>
         </repository>
     </repositories>
+
+
 
     <build>
         <plugins>
@@ -152,13 +178,32 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
-                <version>2.0.1</version>
+                <version>2.3.7</version>
                 <configuration>
                     <instructions>
                         <!-- embed any dependencies with artifactId junit and scope runtime -->
                         <Embed-Dependency>metadata-extractor-osgi,xmpcore;scope=compile|runtime</Embed-Dependency>
-
+                        <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
                     </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <format>{0}</format>
+                    <items>
+                        <item>buildNumber0</item>
+                    </items>
                 </configuration>
             </plugin>
         </plugins>
@@ -166,7 +211,7 @@
 
     <profiles>
         <profile>
-            <id>autoInstallBundle</id>
+            <id>deploy-bundles</id>
             <build>
                 <plugins>
                     <plugin>

@@ -42,11 +42,11 @@ import org.slf4j.LoggerFactory;
  */
 @Component
 @Service(Servlet.class)
-@Properties({ @Property(name="service.description", value="Hello World Type Servlet"),
-    @Property(name="service.vendor", value="The Apache Software Foundation"),
-    @Property(name = "sling.servlet.resourceTypes", value = "sling/servlet/default"),
-    @Property(name = "sling.servlet.selectors", value = "hello"),
-    @Property(name = "sling.servlet.extensions", value = "html")
+@Properties({ @Property(name="service.description", value="Add Hateoas Links to a resource"),
+    @Property(name="service.vendor", value="The FamilyCloud Project"),
+    @Property(name = "sling.servlet.resourceTypes", value = "nt:file"),
+    @Property(name = "sling.servlet.selectors", value = "links"),
+    @Property(name = "sling.servlet.extensions", value = "json")
 })
 public class ByResourceTypeServlet extends SlingSafeMethodsServlet {
     
@@ -56,23 +56,14 @@ public class ByResourceTypeServlet extends SlingSafeMethodsServlet {
     protected void doGet(SlingHttpServletRequest request,
             SlingHttpServletResponse response) throws ServletException,
             IOException {
+
         Resource resource = request.getResource();
 
-        Writer w = response.getWriter();
-        w.write("<!DOCTYPE html PUBLIC \"-//IETF//DTD HTML 2.0//EN\">");
-        w.write("<html>");
-        w.write("<head>");
-        w.write("<title>Hello World Servlet</title>");
-        w.write("</head>");
-        w.write("<body>");
-        w.write("<h1>Hello ");
-        w.write(resource.getPath());
-        w.write("</h1>");
-        w.write("</body>");
-        w.write("</html>");
-        
-        log.info("Hello World Servlet");
-        
+        //todo
+
+        // forward along
+        //request.getRequestDispatcher(resource).forward(request, response);
+        return;
     }
 
 }

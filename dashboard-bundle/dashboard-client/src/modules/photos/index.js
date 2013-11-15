@@ -1,6 +1,6 @@
 module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
-    .controller('FolderNameModalCntrl', require('./FolderNameModalCntrl'))
-    .controller('PhotosController', require('./PhotosController'))
+    .controller('FolderNameModalCntrl', require('./controllers/FolderNameModalCntrl'))
+    .controller('PhotosController', require('./controllers/PhotosController'))
 	.service('photoService', require('./services/PhotoService'))
 	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
         {

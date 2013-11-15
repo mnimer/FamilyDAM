@@ -141,8 +141,10 @@ module.exports = function (grunt) {
                         'angular-cookies': './bower_components/angular-cookies/angular-cookies.js',
                         'angular-resource': './bower_components/angular-resource/angular-resource.js',
                         'jQuery': './bower_components/jquery/jquery.js',
+                        'jquery-ui': './bower_components/jquery-ui/ui/jquery-ui.js',
                         'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',
-                        'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+                        'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+                        'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js'
                     }
 
 				}
@@ -205,11 +207,15 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: 'src/**/*.js',
-				tasks: ['build', 'deploy']
+				tasks: ['build-js', 'deploy']
 			},
 			html: {
 				files: ['src/**/*.tpl.html', 'src/**/index.html'],
 				tasks: ['copy:statichtml', 'build-js', 'deploy']
+			},
+			grunt: {
+				files: ['GruntFile.js'],
+				tasks: ['default']
 			}
 		},
 

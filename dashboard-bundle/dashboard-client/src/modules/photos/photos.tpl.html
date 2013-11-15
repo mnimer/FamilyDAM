@@ -46,12 +46,7 @@
 <!-- start: Widgets Area -->
 <aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-hide="ModeFullScreen"  >
     <div class="sidebar-nav">
-        <div style="text-align: center; vertical-align: center; border: 3px dashed; border-radius: 5px; width: 20rem; height: 20rem;">
-            <form action="http://localhost:8080/content/dam/upload/queue" method="POST" enctype="multipart/form-data">
-                <input type="file" name="./*" />
-                <input type="submit"/>
-            </form>
-        </div>
+        <div x-file-upload-form title="Test, can you see me?"/>
     </div>
 </aside>
 <!-- end: Widgets Area -->

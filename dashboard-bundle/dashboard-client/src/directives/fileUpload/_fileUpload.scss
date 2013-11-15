@@ -1,0 +1,40 @@
+.fileUploadForm
+{
+    width: 100%;
+    min-width: 405px;
+    padding: 10px;
+
+    height: 100%;
+    overflow: scroll;
+}
+
+
+.file-drop-zone { border: dotted 3px lightgray; }
+
+.upload-queue-list
+{
+    height: 100%;
+    overflow: scroll;
+}
+
+.fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+
+.fileupload-buttonbar .btn, .fileupload-buttonbar .toggle {
+    margin-bottom: 5px;
+}
+
+.fileinput-button {
+    position: relative;
+    overflow: hidden;
+}

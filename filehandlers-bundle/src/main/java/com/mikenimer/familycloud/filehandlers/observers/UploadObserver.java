@@ -42,7 +42,7 @@ public class UploadObserver implements EventListener
     @Reference
     private SlingRepository repository;
 
-    @Property(value = "/content/dam/upload-queue")
+    @Property(value = "/content/dam/upload/queue")
     private static final String CONTENT_PATH_PROPERTY = "content.path";
 
     @Property(value = "/content/dam/photos")
@@ -105,15 +105,14 @@ public class UploadObserver implements EventListener
                         Map md = metadataExtractor.getMetadata();
 
                         Calendar dtCal = Calendar.getInstance();
-                        dtCal.setTime((Date) md.get("DATETIME"));
-                        if( md != null && dtCal != null )
+                        Date datetime =  (Date)md.get("DATETIME");
+                        if( md != null && datetime != null )
                         {
+                            dtCal.setTime(datetime);
                             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                             String folderPath = sdf.format(dtCal.getTime());
-
                             md.remove("DATETIME");// remove the extra property we passed back
-                            //todo add mixin
-                            //node.setProperty("metadata", md);
+
 
                             //todo Change these 3 calls to a single with a StringTokenizer.. See JCRUtils for an example.
                             String path = CONTENT_PHOTOS_PATH_PROPERTY;
@@ -133,6 +132,7 @@ public class UploadObserver implements EventListener
                             }
                             catch(ItemExistsException iee)
                             {
+                                iee.printStackTrace();
                                 //todo, make a version of the file, then update the jcr:Data & Metadata nodes
                             }
                         }
@@ -161,6 +161,7 @@ public class UploadObserver implements EventListener
                             }
                             catch(ItemExistsException iee)
                             {
+                                iee.printStackTrace();
                                 //todo, make a version of the file, then update the jcr:Data & Metadata nodes
                             }
                         }
