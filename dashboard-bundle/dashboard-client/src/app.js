@@ -13,6 +13,7 @@ var App = angular.module('dashboard', [
 	'ui.bootstrap.tpls',
     'dashboard.templates',
     require('./modules/main').name,
+    require('./modules/login').name,
     require('./modules/photos').name,
     require('./directives/fileUpload').name,
     require('./modules/user/preferences').name,
@@ -22,10 +23,11 @@ var App = angular.module('dashboard', [
 
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
-        // For any unmatched url, redirect to /state1
-        $urlRouterProvider.when('', '/photos');
 
-        $urlRouterProvider.otherwise("/photos");
+        // For any unmatched url, redirect to /state1
+        $urlRouterProvider.when('', '/login');
+
+        $urlRouterProvider.otherwise("/login");
     }]);
 
 App.$inject = ['ui.router'];

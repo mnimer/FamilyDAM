@@ -8,19 +8,29 @@
  * @param $dialog
  * @constructor
  */
-var MainController = function ($scope, $window, $location, $state, $stateParams) {
+var MainController = function ($scope, $rootScope, $window, $location, $state, $stateParams) {
+
+    // logged in user
+    $rootScope.user = null;
+    $rootScope.defaultView = "photos.list";
+    $rootScope.ModeFullScreen = false;
 
     $scope.$state = $state;
     $scope.$stateParams = $stateParams;
-
-    $scope.ModeFullScreen = false;
     $scope.activePath = "/";
+    $scope.ModeFullScreen = $rootScope.ModeFullScreen;
 
     $scope.toggleFullScreenMode = function()
     {
-        $scope.ModeFullScreen = !$scope.ModeFullScreen;
+        $rootScope.ModeFullScreen = !$rootScope.ModeFullScreen;
+        $scope.ModeFullScreen = $rootScope.ModeFullScreen;
     };
 
+
+    $scope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error)
+    {
+        $state.go("login");
+    });
 
     /**
      * Invoked on startup, like a constructor.
@@ -32,5 +42,5 @@ var MainController = function ($scope, $window, $location, $state, $stateParams)
     init();
 };
 
-MainController.$inject = ['$scope', '$window', '$location', '$state', '$stateParams'];
+MainController.$inject = ['$scope', '$rootScope', '$window', '$location', '$state', '$stateParams'];
 module.exports = MainController;

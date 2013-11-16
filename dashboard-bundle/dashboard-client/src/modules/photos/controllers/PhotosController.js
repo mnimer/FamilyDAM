@@ -6,7 +6,7 @@
  * @param productModel
  * @constructor
  */
-var PhotosController = function($scope, $location, $modal, photoService) {
+var PhotosController = function($scope, $rootScope, $location, $modal, $state, photoService) {
 
     $scope.layout = "grid";
     $scope.assets = [];
@@ -68,6 +68,16 @@ var PhotosController = function($scope, $location, $modal, photoService) {
     $scope.$on('refresh', $scope.refresh);
 
 
+    $scope.$on('$viewContentLoaded', function(event, toState, toParams, fromState, fromParams)
+    {
+        if( $rootScope.user == null )
+        {
+            event.preventDefault();
+            // transitionTo() promise will be rejected with
+            // a 'transition prevented' error
+        }
+    });
+
 
     /**
      * Parse a path into it's tokens for a valid breadcrumb array
@@ -122,10 +132,17 @@ var PhotosController = function($scope, $location, $modal, photoService) {
 
 
     var init = function(){
+        if( $rootScope.user == null )
+        {
+            $state.go("login");
+            return;
+            // transitionTo() promise will be rejected with
+            // a 'transition prevented' error
+        }
         $scope.photos = photoService.list('/photos', listCallback);
     };
     init();
 };
 
-PhotosController.$inject = ['$scope', '$location', '$modal', 'photoService'];
+PhotosController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', 'photoService'];
 module.exports = PhotosController;

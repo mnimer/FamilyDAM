@@ -1,10 +1,16 @@
 
 // features
 @import "modules/main/main";
+@import "modules/login/login";
 @import "modules/photos/photos";
 @import "modules/user/preferences/preferences";
 @import "modules/user/usermanager/usermanager";
 @import "directives/fileUpload/fileUpload";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 
 
 html, body {
