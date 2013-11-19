@@ -1,9 +1,14 @@
 package com.mikenimer.familycloud.filehandlers.observers;
 
+import com.mikenimer.familycloud.Constants;
+import com.mikenimer.familycloud.ImageMimeTypes;
 import com.mikenimer.familycloud.filehandlers.metadata.MetadataExtractor;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
+import org.apache.sling.event.jobs.Job;
+import org.apache.sling.event.jobs.JobBuilder;
+import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -25,8 +30,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 /**
+ * Watch files put in the generic upload folder. If it's an Image files (based on supported images) we
+ * will move it to the right location.
+ * <p/>
+ * If we can find the data taken in the metadata, we'll put it in a year -> date sub folder. If not we'll
+ * use the date uploaded to pick a path.
+ * <p/>
+ * <p/>
  * User: mikenimer
  * Date: 11/9/13
  */
@@ -40,26 +53,19 @@ public class UploadObserver implements EventListener
     private ObservationManager observationManager;
 
     @Reference
+    private JobManager jobManager;
+
+    @Reference
     private SlingRepository repository;
 
     @Property(value = "/content/dam/upload/queue")
-    private static final String CONTENT_PATH_PROPERTY = "content.path";
+    private static final String UPLOAD_QUEUE_PATH = "/content/dam/upload/queue";
 
-    @Property(value = "/content/dam/photos")
-    private static final String CONTENT_PHOTOS_PATH_PROPERTY = "/content/dam/photos";//"content.photos.path";
-
-    private Map<String, String> supportedMimeTypes = new HashMap<String, String>();
 
 
     protected void activate(ComponentContext context) throws Exception
     {
-        supportedMimeTypes.put("image/jpeg", "jpg");
-        supportedMimeTypes.put("image/jpeg", "jpeg");
-        supportedMimeTypes.put("image/png", "png");
-        supportedMimeTypes.put("image/gif", "gif");
-        supportedMimeTypes.put("image/nef", "nef");
-
-        String contentPath = (String) context.getProperties().get(CONTENT_PATH_PROPERTY);
+        String contentPath = (String) context.getProperties().get(UPLOAD_QUEUE_PATH);
 
         session = repository.loginAdministrative(null);
         if (repository.getDescriptor(Repository.OPTION_OBSERVATION_SUPPORTED).equals("true"))
@@ -90,127 +96,39 @@ public class UploadObserver implements EventListener
     {
         log.debug(events.toString());
 
-        while (events.hasNext()) {
+        while (events.hasNext())
+        {
             Event event = events.nextEvent();
-            try {
-                if (event.getType() == Event.NODE_ADDED )
+            try
+            {
+                if (event.getType() == Event.NODE_ADDED)
                 {
                     log.info("new upload: {}", event.getPath());
-                    Node node = session.getRootNode().getNode(event.getPath().substring(1));
-
-                    if( isSupportedMimeType(node) )
+                    Node node = session.getNode(event.getPath()).getParent();
+                    if( !node.getName().startsWith(".") )
                     {
-                        InputStream fileStream = node.getProperty("jcr:data").getBinary().getStream();
-                        MetadataExtractor metadataExtractor = new MetadataExtractor(fileStream);
-                        Map md = metadataExtractor.getMetadata();
+                        // parse sizing information
+                        Map moveJob = new HashMap();
+                        moveJob.put(Constants.PATH, node.getPath());
 
-                        Calendar dtCal = Calendar.getInstance();
-                        Date datetime =  (Date)md.get("DATETIME");
-                        if( md != null && datetime != null )
-                        {
-                            dtCal.setTime(datetime);
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                            String folderPath = sdf.format(dtCal.getTime());
-                            md.remove("DATETIME");// remove the extra property we passed back
-
-
-                            //todo Change these 3 calls to a single with a StringTokenizer.. See JCRUtils for an example.
-                            String path = CONTENT_PHOTOS_PATH_PROPERTY;
-                            verifyPathExists(node, path);
-
-                            path = path +"/" +dtCal.get(Calendar.YEAR);
-                            verifyPathExists(node, path);
-
-                            path = path +"/" +folderPath;
-                            verifyPathExists(node, path);
-
-                            try
-                            {
-                                path = path +"/" +node.getParent().getName();
-                                node.getSession().move(node.getParent().getPath(), path);
-                                node.getSession().save();
-                            }
-                            catch(ItemExistsException iee)
-                            {
-                                iee.printStackTrace();
-                                //todo, make a version of the file, then update the jcr:Data & Metadata nodes
-                            }
-                        }
-                        else
-                        {
-                            dtCal = node.getProperty(javax.jcr.Property.JCR_LAST_MODIFIED).getDate();
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                            String folderPath = sdf.format(dtCal.getTime());
-
-                            //todo Change these 3 calls to a single with a StringTokenizer.. See JCRUtils for an example.
-                            String path = CONTENT_PHOTOS_PATH_PROPERTY;
-                            verifyPathExists(node, path);
-
-                            path = path +"/" +dtCal.get(Calendar.YEAR);
-                            verifyPathExists(node, path);
-
-                            path = path +"/" +folderPath;
-                            verifyPathExists(node, path);
-
-
-                            try
-                            {
-                                path = path +"/" +node.getParent().getName();
-                                node.getSession().move(node.getParent().getPath(), path);
-                                node.getSession().save();
-                            }
-                            catch(ItemExistsException iee)
-                            {
-                                iee.printStackTrace();
-                                //todo, make a version of the file, then update the jcr:Data & Metadata nodes
-                            }
-                        }
-
+                        JobBuilder jobBuilder = jobManager.createJob(Constants.JOB_MOVE);
+                        jobBuilder.properties(moveJob);
+                        Job job = jobBuilder.add();
+                        //Job job = jobManager.addJob(Constants.JOB_MOVE, moveJob);
+                        log.debug("Create Job {} / {}", job.getTopic(), job.getId());
                     }
-                    log.info("finished processing of {}", event.getPath());
+                    else{
+                        log.debug("skipping hidden file {}", node.getPath());
+                    }
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
                 log.error(e.getMessage(), e);
             }
         }
     }
-       
-    private void verifyPathExists(Node node, String path) throws RepositoryException
-    {
-        try
-        {
-            Node n = node.getSession().getNode(path);
-        }catch (PathNotFoundException pe){
-            node.getSession().getRootNode().addNode(path.substring(1), "nt:folder");
-        }
-    }
 
-
-    private boolean isSupportedMimeType(Node n) throws RepositoryException
-    {
-        boolean result = false;
-        final String mimeType = n.getProperty("jcr:mimeType").getString();
-
-        for(String key : supportedMimeTypes.keySet()) {
-            if(mimeType!=null && mimeType.startsWith(key)) {
-                //result = key;
-                return true;
-            }
-        }
-
-        if(!result)
-        {
-            String extension = n.getParent().getName().substring(n.getParent().getName().indexOf('.')+1).toLowerCase();
-            if( supportedMimeTypes.containsValue( extension ))
-            {
-                return true;
-            }
-
-            log.info("Node {} rejected, unsupported mime-type {}", n.getPath(), mimeType);
-        }
-
-
-        return result;
-    }
 
 }

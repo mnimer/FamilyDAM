@@ -42,6 +42,9 @@
 //[fc:document] > nt:base mixin
 //+ metadata (nt:unstructured)
 
+[fc:thumbnail] > nt:base mixin
+- * renditions (nt:folder)
+
 [fc:taggable] > nt:base mixin
 - tags (STRING) MULTIPLE
 - collections (STRING) MULTIPLE
