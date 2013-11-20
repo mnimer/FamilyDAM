@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-        <modelVersion>4.0.0</modelVersion>
-        <groupId>com.mikenimer.familycloud</groupId>
-        <artifactId>dashboard-bundle</artifactId>
-        <packaging>bundle</packaging>
-        <version>1.0.0-SNAPSHOT</version>
-        <name>dashboard-bundle</name>
-        <description>com.mikenimer.familycloud - dashboard-bundle</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mikenimer.familycloud</groupId>
+    <artifactId>dashboard-bundle</artifactId>
+    <packaging>bundle</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>dashboard-bundle</name>
+    <description>com.mikenimer.familycloud - dashboard-bundle</description>
 
     <!-- dummy urls for the maven-build-number plugin to work, this can be replaced with real values -->
     <scm>
@@ -15,144 +16,283 @@
         <url>scm:svn:https://none</url>
     </scm>
 
+    <dependencies>
+
+        <!--
+        **  System Resources
+        -->
+
+        <!--dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency-->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.http.jetty</artifactId>
+            <version>2.0.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.api</artifactId>
+            <version>2.2.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.jcr.api</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.event</artifactId>
+            <version>3.3.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.jackrabbit</groupId>
+            <artifactId>jackrabbit-jcr-commons</artifactId>
+            <version>2.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.jcr.resource</artifactId>
+            <version>2.2.9-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.commons.json</artifactId>
+            <version>2.0.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+
+        <!--dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.scr.annotations</artifactId>
+            <version>1.9.6</version>
+            <scope>provided</scope>
+        </dependency-->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.scr.annotations</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+
+
+        <!-- ***********************
+          ** OSGI
+           *********************** -->
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+            <version>4.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
 
     <build>
 
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-bundle-plugin</artifactId>
-                    <extensions>true</extensions>
-                    <version>2.0.1</version>
-                    <executions>
-                        <execution>
-                            <id>bundle-manifest</id>
-                            <phase>process-classes</phase>
-                            <goals>
-                                <goal>manifest</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <instructions>
-                            <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
-                            <Include-Resoource>
-                                {maven-resources}
-                            </Include-Resoource>
-                            <Sling-Initial-Content>
-                                SLING-INF/content/dashboard;overwrite:=true;uninstall:=false;path:=/content/dashboard
-                            </Sling-Initial-Content>
-                        </instructions>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>buildnumber-maven-plugin</artifactId>
-                    <version>1.2</version>
-                    <executions>
-                        <execution>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>create</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <format>{0}</format>
-                        <items>
-                            <item>buildNumber0</item>
-                        </items>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
+        <resources>
+            <resource>
+                <directory>dashboard-client/dist</directory>
+                <targetPath>SLING-INF/content/dashboard</targetPath>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+                <version>1.11.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-scr-descriptor</id>
+                        <goals>
+                            <goal>scr</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>2.3.7</version>
+                <executions>
+                    <execution>
+                        <id>bundle-manifest</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <instructions>
+
+                        <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
+                        <Include-Resoource>
+                            {maven-resources}
+                        </Include-Resoource>
+                        <Sling-Initial-Content>
+                            SLING-INF/content/dashboard;overwrite:=true;uninstall:=false;path:=/content/dashboard
+                        </Sling-Initial-Content>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <format>{0}</format>
+                    <items>
+                        <item>buildNumber0</item>
+                    </items>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
-        <profiles>
-            <profile>
-                <id>deploy-bundles</id>
-                <build>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.sling</groupId>
-                            <artifactId>maven-sling-plugin</artifactId>
-                            <version>2.0.4-incubator</version>
-                            <executions>
-                                <execution>
-                                    <id>install-bundle</id>
-                                    <goals>
-                                        <goal>install</goal>
-                                    </goals>
-                                    <configuration>
-                                        <slingUrl>http://localhost:8080/system/console</slingUrl>
-                                        <user>admin</user>
-                                        <password>admin</password>
-                                    </configuration>
-                                </execution>
-                            </executions>
-                        </plugin>
-                    </plugins>
-                </build>
-            </profile>
+    <profiles>
+        <profile>
+            <id>deploy-bundles</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>maven-sling-plugin</artifactId>
+                        <version>2.0.4-incubator</version>
+                        <executions>
+                            <execution>
+                                <id>install-bundle</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                                <configuration>
+                                    <slingUrl>http://localhost:8080/system/console</slingUrl>
+                                    <user>admin</user>
+                                    <password>admin</password>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
 
+        <profile>
+            <id>build-dashboard-client</id>
+            <build>
 
-            <profile>
-                <id>build-dashboard-client</id>
-                <build>
-                    <resources>
-                        <resource>
-                            <directory>dashboard-client/dist</directory>
-                            <targetPath>SLING-INF/content/dashboard</targetPath>
-                            <filtering>false</filtering>
-                        </resource>
-                    </resources>
-
-
-                    <plugins>
-                        <plugin>
-                            <groupId>com.github.trecloux</groupId>
-                            <artifactId>yeoman-maven-plugin</artifactId>
-                            <version>0.1</version>
-                            <configuration>
-                                <yeomanProjectDirectory>dashboard-client/</yeomanProjectDirectory>
-                            </configuration>
-                            <executions>
-                                <execution>
-                                    <phase>compile</phase>
-                                    <goals>
-                                        <goal>build</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                        </plugin>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.trecloux</groupId>
+                        <artifactId>yeoman-maven-plugin</artifactId>
+                        <version>0.1</version>
+                        <configuration>
+                            <yeomanProjectDirectory>dashboard-client/</yeomanProjectDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
 
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <version>2.5</version>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>src/main/resources/SLING-INF/content/dashboard</directory>
+                                </fileset>
+                                <fileset>
+                                    <directory>dashboard-client/.tmp</directory>
+                                </fileset>
+                                <fileset>
+                                    <directory>dashboard-client/.sass-cache</directory>
+                                </fileset>
+                                <fileset>
+                                    <directory>dashboard-client/dist</directory>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </plugin>
 
-
-                        <plugin>
-                            <artifactId>maven-clean-plugin</artifactId>
-                            <version>2.5</version>
-                            <configuration>
-                                <filesets>
-                                    <fileset>
-                                        <directory>src/main/resources/SLING-INF/content/dashboard</directory>
-                                    </fileset>
-                                    <fileset>
-                                        <directory>dashboard-client/.tmp</directory>
-                                    </fileset>
-                                    <fileset>
-                                        <directory>dashboard-client/.sass-cache</directory>
-                                    </fileset>
-                                    <fileset>
-                                        <directory>dashboard-client/dist</directory>
-                                    </fileset>
-                                </filesets>
-                            </configuration>
-                        </plugin>
-
-                    </plugins>
-                </build>
-            </profile>
-        </profiles>
-    </project>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

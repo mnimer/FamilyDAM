@@ -1,7 +1,7 @@
 <div class="content listView">
     <ul style="list-style: none;">
         <li ng-repeat="item in assets">
-            <div class="folderRenderer" ng-if="item['jcr:primaryType'] == 'nt:folder'" >
+            <div class="folderRenderer" ng-if="item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder'" >
                 <a class="glyphicon glyphicon-folder-close" ng-click="selectFolder(item.path)"> {{item.name}}</a>
             </div>
 

@@ -8,7 +8,7 @@ var PhotoService = function($http) {
             path = "/" +path;
         }
 
-        var get =  $http.get(basePath +path +'.2.json',{ cache: false });
+        var get =  $http.get(basePath +path +'.1.json',{ cache: false });
 
         if( successCallback !== undefined ){
             get.success(function(data, status, headers, config){
@@ -23,6 +23,17 @@ var PhotoService = function($http) {
 
         return get;
     };
+
+
+    this.search = function( successCallback, errorCallback )
+    {
+        var searchPath = "/content.query.json?queryType=sql&statement=";
+        var query = "select name,jcr:path,jcr:created,jcr:score,jcr:primaryType from nt:file where jcr:path like '/content/dam/photos/%' order by jcr:created desc";
+
+        var get =  $http.get(searchPath +query);
+        return get;
+    };
+
 
 
     this.createFolder = function(path, title, successCallback, errorCallback) {
