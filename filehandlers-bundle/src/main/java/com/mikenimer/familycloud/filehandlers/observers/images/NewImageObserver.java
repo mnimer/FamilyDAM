@@ -130,10 +130,6 @@ public class NewImageObserver  implements EventListener
                         sizeJob.put("path", node.getPath());
                         Job job2 = jobManager.addJob(Constants.JOB_IMAGE_SIZE, sizeJob);
 
-                        // create thumbnails of images
-                        Map thumbnailJob = new HashMap();
-                        thumbnailJob.put("path", node.getPath());
-                        Job job3 = jobManager.addJob(Constants.JOB_IMAGE_THUMBNAILS, thumbnailJob);
 
                     }
 

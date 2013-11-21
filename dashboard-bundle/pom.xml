@@ -35,7 +35,6 @@
             <scope>provided</scope>
         </dependency>
 
-
         <dependency>
             <groupId>javax.jcr</groupId>
             <artifactId>jcr</artifactId>
@@ -133,7 +132,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -184,7 +182,7 @@
                 </executions>
                 <configuration>
                     <instructions>
-
+                        <!--Embed-Dependency>guava;scope=compile|runtime</Embed-Dependency-->
                         <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
                         <Include-Resoource>
                             {maven-resources}

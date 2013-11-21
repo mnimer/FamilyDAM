@@ -26,8 +26,13 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
      */
     var searchCallback = function(data, status, headers, config)
     {
-        $scope.assets = contents;
+        $scope.assets = data.data.data;
+        // hateoas links
+        $scope.self = data.data.links.self;
+        $scope.next = data.data.links.next;
+        $scope.prev = data.data.links.prev;
     };
+
 
 
     var init = function(){
@@ -38,7 +43,8 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
             // transitionTo() promise will be rejected with
             // a 'transition prevented' error
         }
-        $scope.photos = photoService.search(searchCallback);
+        var request = photoService.search(20, 1);
+        request.then( searchCallback );
     };
     init();
 
