@@ -1,3 +1,20 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 var PhotosController = function($scope, $rootScope, $location, $modal, $state, photoService) {
 
     /*************
@@ -7,7 +24,7 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     $scope.$on('refresh', $scope.refresh);
 
 
-    $scope.refresh = function()
+    $scope.$rootScope.refresh = function()
     {
         if( $scope.currentPath == "/" )
         {

@@ -1,13 +1,28 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 var PhotosController = function($scope, $rootScope, $location, $modal, $state, photoService) {
 
     /*************
      * Event Listeners
      **************/
 
-    $scope.$on('refresh', $scope.refresh);
 
-
-    $scope.refresh = function()
+    var refreshGrid = function()
     {
         if( $scope.currentPath == "/" )
         {
@@ -36,6 +51,9 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
 
 
     var init = function(){
+
+        $scope.$on('refreshData', refreshGrid);
+
         if( $rootScope.user == null )
         {
             $state.go("login");
@@ -43,8 +61,9 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
             // transitionTo() promise will be rejected with
             // a 'transition prevented' error
         }
-        var request = photoService.search(20, 1);
+        var request = photoService.search(25, 1);
         request.then( searchCallback );
+
     };
     init();
 

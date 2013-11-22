@@ -1,6 +1,23 @@
+<!--
+  ~ This file is part of FamilyCloud Project.
+  ~
+  ~     The FamilyCloud Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyCloud Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <div class="content gridView">
     <ul>
-        <li ng-repeat="item in assets">
+        <li ng-repeat="item in assets" style="float:left; overflow:hidden; display: inline-block;">
             <div class="folderRenderer"
                  ng-if="item['jcr:primaryType'] == 'nt:folder'" ng-show="item['jcr:primaryType'] == 'nt:folder'">
                 <a class="glyphicon glyphicon-folder-close" ng-click="selectFolder(item.path)"> {{item.name}}</a>
@@ -8,10 +25,11 @@
             <div class="fileRenderer"
                  ng-if="item['jcr:primaryType'] == 'nt:file'" ng-show="item['jcr:primaryType'] == 'nt:file'">
 
-                <div>
-                    <img src="{{item.path}}" class="list-thumbnail-sm"/><br/>
-                    <a class="glyphicon glyphicon-camera" ng-click="selectFolder(item.path)"> {{item.name}}</a>
-                </div>
+                    <div>
+                        <img src="{{item.links.image}}.scale.h:300.png" class="list-thumbnail-sm"/><br/>
+                        <a class="glyphicon glyphicon-camera" ng-click="selectFolder(item.path)"> {{item.name}}</a>
+                    </div>
+
             </div>
         </li>
     </ul>

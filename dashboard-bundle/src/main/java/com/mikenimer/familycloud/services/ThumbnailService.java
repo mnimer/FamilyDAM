@@ -1,3 +1,20 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.services;
 
 import org.apache.felix.scr.annotations.Activate;
@@ -86,18 +103,21 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
         try
         {
             ResourceMetadata meta = resource.getResourceMetadata();
-            Long modIfTime = (Long)timeGeneratedCache.get(request.getPathInfo());
-            if( modIfTime != null )
+            String hash = new Integer(request.getPathInfo().hashCode()).toString();
+            String eTag = request.getHeader(HttpConstants.HEADER_ETAG);
+            if( hash.equals(eTag) )
             {
-                if (unmodified(request, modIfTime)) {
-                    response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
-                    return;
-                }
+                response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
+                return;
+            }
+            else
+            {
+                response.setHeader(HttpConstants.HEADER_ETAG, hash);
+                response.setHeader("Cache-Control", "600");
             }
 
-
             // check for a size selector
-            int width = 200;
+            int width = -1;
             int height = -1; //-1 means ignore and only set the width to resize
             final String[] selectors = request.getRequestPathInfo().getSelectors();
             if (selectors != null && selectors.length > 0)
@@ -119,9 +139,10 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
             if( cachedImage != null)
             {
                 response.setContentType("image/png");
-                response.setContentLength( new Long(resource.getResourceMetadata().getContentLength()).intValue() );
+                //response.setContentLength( new Long(resource.getResourceMetadata().getContentLength()).intValue() );
                 //write bytes
                 ImageIO.write(cachedImage, "png", response.getOutputStream());
+                response.getOutputStream().flush();
                 return;
             }
 
@@ -137,14 +158,19 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
                 BufferedImage scaledImage = getScaledImage(bi, width, height);
 
                 // cache the image
+                long modTime = System.currentTimeMillis();
                 imageCache.put(request.getPathInfo(), scaledImage);
-                timeGeneratedCache.put(request.getPathInfo(), System.currentTimeMillis());
+                timeGeneratedCache.put(request.getPathInfo(), modTime);
 
 
                 response.setContentType("image/png");
-                response.setContentLength( new Long(resource.getResourceMetadata().getContentLength()).intValue() );
+                response.setHeader(HttpConstants.HEADER_LAST_MODIFIED, new Long(modTime).toString());
+                //response.setContentLength( new Long(resource.getResourceMetadata().getContentLength()).intValue() );
                 //write bytes
                 ImageIO.write(scaledImage, "png", response.getOutputStream());
+
+                stream.close();
+                response.getOutputStream().flush();
             }
         }catch( Exception ex ){
 
@@ -178,6 +204,10 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
     private BufferedImage getScaledImage(BufferedImage src, int w, int h){
         int finalw = w;
         int finalh = h;
+
+        if( h == -1 ) finalh = w;
+        if( w == -1 ) finalw = h;
+
         double factor = 1.0d;
         if(src.getWidth() > src.getHeight()){
             factor = ((double)src.getHeight()/(double)src.getWidth());

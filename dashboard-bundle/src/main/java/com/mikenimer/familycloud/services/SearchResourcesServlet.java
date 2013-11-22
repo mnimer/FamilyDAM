@@ -1,3 +1,20 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.services;
 
 import org.apache.felix.scr.annotations.Activate;
@@ -10,6 +27,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.SlingServletException;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.io.JSONWriter;
@@ -93,7 +111,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
             offset = new Integer(request.getRequestParameter("offset").getString());
         }
 
-        boolean prettyJson = false;
+        boolean prettyJson = true;
         if( request.getRequestParameter("prettyJson") != null )
         {
             prettyJson = new Boolean(request.getRequestParameter("prettyJson").getString());
@@ -101,7 +119,10 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
         try
         {
-            String stmt = "select * from [nt:file] where isdescendantnode('" +path +"')"; //order by jcr:created desc
+            String stmt = "SELECT * FROM [nt:file] AS file INNER JOIN [nt:resource] as resource on ISCHILDNODE(resource, file)" +
+                    " WHERE resource.[jcr:mimeType] like 'image/%'" +
+                    " AND ISDESCENDANTNODE(file, '" +path +"')" +
+                    " ORDER BY file.[jcr:created] DESC";
 
             Session session = request.getResourceResolver().adaptTo(Session.class);
             Query query = session.getWorkspace().getQueryManager().createQuery(stmt, Query.JCR_SQL2);
@@ -111,34 +132,17 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
 
             // build links
-            String self = request.getPathInfo() +"?keyword=" +keyword +"&limit=" +limit +"&offset=" +offset;
-            String next = request.getPathInfo() +"?keyword=" +keyword +"&limit=" +limit +"&offset=" +(offset + 1);
+            String self = request.getPathInfo() +"?limit=" +limit +"&offset=" +offset;
+            String next = request.getPathInfo() +"?limit=" +limit +"&offset=" +(offset + 1);
             String prev = null;
             if( offset > 1)
             {
                 prev = request.getPathInfo() +"?keyword=" +keyword +"&limit=" +limit +"&offset=" +(offset - 1);
             }
+            // set location header
+            //response.setHeader("location", self);
 
 
-            /********
-            int maxRecursionLevels = 0;
-            final String[] selectors = request.getRequestPathInfo().getSelectors();
-            if (selectors != null && selectors.length > 0) {
-                final String level = selectors[selectors.length - 1];
-                if (level.equalsIgnoreCase("infinity")) {
-                    maxRecursionLevels = -1;
-                }
-                else if( StringUtils.isNumeric(level) )
-                {
-                    maxRecursionLevels = Integer.parseInt(level);
-                }
-                else{
-                    response.sendError(HttpServletResponse.SC_BAD_REQUEST,
-                            "Invalid recursion selector value '" + level + "'");
-                    return;
-                }
-            }
-             **********/
 
             response.setContentType(request.getResponseContentType());
             response.setCharacterEncoding("UTF-8");
@@ -168,13 +172,13 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
                         //todo standardize this for all services that return an Image
                         w.object();
                         w.key("name").value(n.getName());
-                        w.key("path").value(resource.getResourceMetadata().getResolutionPath());
-                        w.key("uuid").value(n.getIdentifier());
-                        w.key("primaryType").value(n.getPrimaryNodeType().getName());
-                        w.key("contentType").value(resource.getResourceMetadata().getContentType());
-                        w.key("contentLength").value(resource.getResourceMetadata().getContentLength());
-                        w.key("created").value( CALENDAR_FORMAT.format(n.getProperty("jcr:created").getDate().getTime()) );
-                        w.key("createdBy").value(n.getProperty("jcr:createdBy").getString());
+                        w.key("jcr:path").value(resource.getResourceMetadata().getResolutionPath());
+                        w.key("jcr:uuid").value(n.getIdentifier());
+                        w.key("jcr:primaryType").value(n.getPrimaryNodeType().getName());
+                        w.key("jcr:contentType").value(resource.getResourceMetadata().getContentType());
+                        w.key("jcr:contentLength").value(resource.getResourceMetadata().getContentLength());
+                        w.key("jcr:created").value( CALENDAR_FORMAT.format(n.getProperty("jcr:created").getDate().getTime()) );
+                        w.key("jcr:createdBy").value(n.getProperty("jcr:createdBy").getString());
                         w.key("links");
                             w.object();
                             w.key("self").value(n.getPath() + ".1.json");
@@ -194,6 +198,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
 
         }catch(RepositoryException re){
+            re.printStackTrace();
             throw new SlingServletException(new javax.servlet.ServletException(re));
         }
 
