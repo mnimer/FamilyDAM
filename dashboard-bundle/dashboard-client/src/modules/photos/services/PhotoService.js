@@ -1,3 +1,20 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 var PhotoService = function($http) {
     var basePath = "/content/dam";
 
@@ -17,17 +34,6 @@ var PhotoService = function($http) {
         }
 
         var get =  $http.get(basePath +path +'.1.json',{ cache: false });
-
-        if( successCallback !== undefined ){
-            get.success(function(data, status, headers, config){
-                successCallback(data, status, headers, config);
-            });
-        }
-        if( errorCallback !== undefined ){
-            get.error(function(data, status, headers, config){
-                errorCallback(data, status, headers, config);
-            });
-        }
 
         return get;
     };
@@ -49,17 +55,6 @@ var PhotoService = function($http) {
 
         var get =  $http.get(basePath +path +'.1.json',{ cache: false });
 
-        if( successCallback !== undefined ){
-            get.success(function(data, status, headers, config){
-                successCallback(data, status, headers, config);
-            });
-        }
-        if( errorCallback !== undefined ){
-            get.error(function(data, status, headers, config){
-                errorCallback(data, status, headers, config);
-            });
-        }
-
         return get;
     };
 
@@ -76,17 +71,6 @@ var PhotoService = function($http) {
         var searchPath = "/dashboard-api/photos/search?limit=" +limit +"&offset=" +offset;
 
         var get =  $http.get(searchPath);
-
-        if( successCallback !== undefined ){
-            get.success(function(data, status, headers, config){
-                successCallback(data, status, headers, config);
-            });
-        }
-        if( errorCallback !== undefined ){
-            get.error(function(data, status, headers, config){
-                errorCallback(data, status, headers, config);
-            });
-        }
 
         return get;
     };
@@ -114,17 +98,6 @@ var PhotoService = function($http) {
             _config.headers['Content-Type'] = "application/x-www-form-urlencoded";
 
         var post =  $http.post(_url, _data, _config);
-
-        if( successCallback !== undefined ){
-            post.success(function(data, status, headers, config){
-                successCallback(data, status, headers, config);
-            });
-        }
-        if( errorCallback !== undefined ){
-            post.error(function(data, status, headers, config){
-                errorCallback(data, status, headers, config);
-            });
-        }
 
         return post;
     };
