@@ -1,3 +1,20 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.filehandlers.jobs.images;
 
 import org.apache.felix.scr.annotations.Activate;
@@ -6,8 +23,6 @@ import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.event.jobs.Job;
-import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -26,9 +41,9 @@ import java.io.InputStream;
  * Date: 11/17/13
  */
 @Component(enabled = true, immediate = true, metatype = true)
-@Service(value = JobConsumer.class)
-@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familycloud/photos/thumbnails")
-public class ThumbnailJob implements JobConsumer
+//@Service(value = JobConsumer.class)
+//@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familycloud/photos/thumbnails")
+public class ThumbnailJob //implements JobConsumer
 {
     private final Logger log = LoggerFactory.getLogger(ThumbnailJob.class);
 
@@ -50,9 +65,9 @@ public class ThumbnailJob implements JobConsumer
     }
 
 
-    public JobResult process(final Job job)
+    public Boolean process(String path)
     {
-        String path = (String) job.getProperty("path");
+        //String path = (String) job.getProperty("path");
 
         try
         {
@@ -72,12 +87,12 @@ public class ThumbnailJob implements JobConsumer
             Node rNode = node.addNode("renditions");
 
 
-            return JobResult.OK;
+            return true;//JobResult.OK;
         }
         catch (Exception ex)
         {
             ex.printStackTrace();
-            return JobResult.FAILED;
+            return true;//JobResult.FAILED;
         }
     }
 

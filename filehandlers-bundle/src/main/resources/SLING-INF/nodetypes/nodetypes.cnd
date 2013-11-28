@@ -1,0 +1,80 @@
+//
+//  Licensed to the Apache Software Foundation (ASF) under one
+//  or more contributor license agreements.  See the NOTICE file
+//  distributed with this work for additional information
+//  regarding copyright ownership.  The ASF licenses this file
+//  to you under the Apache License, Version 2.0 (the
+//  "License"); you may not use this file except in compliance
+//  with the License.  You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing,
+//  software distributed under the License is distributed on an
+//  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+//  KIND, either express or implied.  See the License for the
+//  specific language governing permissions and limitations
+//  under the License.
+//
+
+//
+//  You can find out more documentation on this topic
+//	by following these links:
+//
+//    -  http://sling.apache.org/site/content-loading.html
+//	  -	 http://jackrabbit.apache.org/node-type-notation.html
+//
+
+<fc = 'http://familycloud.mikenimer.com/1.0'>
+<nt = 'http://www.jcp.org/jcr/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0 '>
+
+
+[fc:image] > nt:base, mix:versionable, mix:title, mix:etag, mix:created, mix:lastModified, mix:mimeType, mix:referenceable mixin
+- * (undefined) multiple COPY
+- fc:created (DATE)
++ fc:metadata (nt:unstructured) multiple
+//+ fc:metadata (nt:base) multiple COPY
+//+ * (nt:unstructured) multiple COPY
+
+
+
+//[fc:music] > nt:base mixin
+//+ metadata (nt:unstructured)
+
+//[fc:movie] > nt:base mixin
+//+ metadata (nt:unstructured)
+
+//[fc:document] > nt:base mixin
+//+ metadata (nt:unstructured)
+
+//[fc:thumbnail] > nt:base mixin
+//- * renditions (nt:folder)
+
+//[fc:taggable] > nt:base mixin
+//- tags (STRING) MULTIPLE
+//- collections (STRING) MULTIPLE
+//- event (STRING)
+
+//[fc:geo] > nt:base mixin
+//- latitude (DOUBLE)
+//- longitude (DOUBLE)
+
+
+//<dc = 'http://purl.org/dc/elements/1.1/'>
+//[dc:metadata] mixin
+//- dc:contributor (STRING)
+//- dc:coverage (STRING)
+//- dc:creator (STRING)
+//- dc:date (DATE)
+//- dc:description (STRING)
+//- dc:format (STRING)
+//- dc:identifier (STRING)
+//- dc:language (STRING)
+//- dc:publisher (STRING)
+//- dc:relation (STRING)
+//- dc:right (STRING)
+//- dc:source (STRING)
+//- dc:subject (STRING)
+//- dc:title (STRING)
+//- dc:type (STRING)

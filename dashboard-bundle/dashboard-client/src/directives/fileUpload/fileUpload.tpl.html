@@ -1,4 +1,21 @@
-<div class="row" >
+<!--
+  ~ This file is part of FamilyCloud Project.
+  ~
+  ~     The FamilyCloud Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyCloud Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<div class="row" style="height:100%;overflow: scroll;">
 
     <div class="fileUploadForm" ng-controller="FileUploadController" ng-file-drop>
         <div class="col-xs-12">
@@ -43,7 +60,7 @@
                 </p>
             </div>
 
-
+            <div>
             <table class="table upload-queue-list">
                 <thead>
                 <tr>
@@ -67,17 +84,13 @@
                         <i class="glyphicon glyphicon-ok" ng-show="item.isUploaded"></i>
                     </td>
                     <td nowrap>
-                        <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isUploaded">
-                            <span class="glyphicon glyphicon-upload"></span> Upload
-                        </button>
-                        <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
-                            <span class="glyphicon glyphicon-trash"></span> Remove
-                        </button>
+                        <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isUploaded"><span class="glyphicon glyphicon-upload"></span></button>
+                        <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()"><span class="glyphicon glyphicon-trash"></span></button>
                     </td>
                 </tr>
                 </tbody>
             </table>
-
+            </div>
         </div>
     </div>
 </div>

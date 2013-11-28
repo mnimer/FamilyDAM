@@ -1,3 +1,20 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.filehandlers.metadata;
 
 import com.drew.imaging.ImageMetadataReader;
@@ -5,6 +22,9 @@ import com.drew.imaging.ImageProcessingException;
 import com.drew.metadata.Directory;
 import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
+import com.drew.metadata.exif.ExifIFD0Directory;
+import com.drew.metadata.exif.ExifSubIFDDirectory;
+import com.mikenimer.familycloud.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,9 +36,6 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -28,21 +45,21 @@ import java.util.Map;
  * User: mikenimer
  * Date: 11/9/13
  */
-public class MetadataExtractor
+public class DrewMetadataExtractor
 {
-    private final Logger log = LoggerFactory.getLogger(MetadataExtractor.class);
+    private final Logger log = LoggerFactory.getLogger(DrewMetadataExtractor.class);
 
     File file = null;
     InputStream fileStream = null;
 
 
-    public MetadataExtractor(File file)
+    public DrewMetadataExtractor(File file)
     {
         this.file = file;
     }
 
 
-    public MetadataExtractor(InputStream file)
+    public DrewMetadataExtractor(InputStream file)
     {
         fileStream = new BufferedInputStream(file);
     }
@@ -94,26 +111,33 @@ public class MetadataExtractor
 
 
             Map result = new HashMap();
+            result.put(Constants.ORIENTATION, 1);
             for (Directory directory : md.getDirectories())
             {
+                if( directory instanceof ExifIFD0Directory)
+                {
+                    Integer orientation = directory.getInteger(ExifIFD0Directory.TAG_ORIENTATION);
+                    result.put(Constants.ORIENTATION, orientation);
+                }
+
+                if(directory instanceof ExifSubIFDDirectory)
+                {
+                    Date dt = directory.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL);
+                    result.put(Constants.DATETIME, dt);
+                }
+
+
                 Map tags = new HashMap();
                 result.put(directory.getName(), tags);
                 for (Tag tag : directory.getTags())
                 {
-                    tags.put(tag.getTagName(), tag.getDescription());
-                    if (tag.getTagName().contains("Date/Time Original"))
-                    {
-                        try
-                        {
-                            SimpleDateFormat df = new SimpleDateFormat("yyyy:MM:ddd HH:mm:ss");
-                            Date dt = df.parse(tag.getDescription());
-                            result.put("DATETIME", dt);
-                        }
-                        catch (ParseException parseException)
-                        {
-                            //swallow
-                        }
-                    }
+                    Map<String, Object> tagMap = new HashMap();
+                    tagMap.put(Constants.NAME, tag.getTagName());
+                    tagMap.put(Constants.TYPE, tag.getTagType());
+                    tagMap.put(Constants.VALUE, directory.getObject(tag.getTagType()));
+                    tagMap.put(Constants.DESCRIPTION, tag.getDescription());
+
+                    tags.put(tag.getTagName(), tagMap);
                 }
             }
 

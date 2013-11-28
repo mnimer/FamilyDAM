@@ -15,6 +15,23 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.services;
 
 import org.apache.felix.scr.annotations.Activate;
@@ -119,10 +136,10 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
         try
         {
-            String stmt = "SELECT * FROM [nt:file] AS file INNER JOIN [nt:resource] as resource on ISCHILDNODE(resource, file)" +
+            String stmt = "SELECT * FROM [fc:image] AS file INNER JOIN [nt:resource] as resource on ISCHILDNODE(resource, file)" +
                     " WHERE resource.[jcr:mimeType] like 'image/%'" +
                     " AND ISDESCENDANTNODE(file, '" +path +"')" +
-                    " ORDER BY file.[jcr:created] DESC";
+                    " ORDER BY file.[fc:created] DESC";
 
             Session session = request.getResourceResolver().adaptTo(Session.class);
             Query query = session.getWorkspace().getQueryManager().createQuery(stmt, Query.JCR_SQL2);
@@ -172,6 +189,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
                         //todo standardize this for all services that return an Image
                         w.object();
                         w.key("name").value(n.getName());
+                        w.key("fc:created").value(n.getProperty("fc:created").getDate().getTime());
                         w.key("jcr:path").value(resource.getResourceMetadata().getResolutionPath());
                         w.key("jcr:uuid").value(n.getIdentifier());
                         w.key("jcr:primaryType").value(n.getPrimaryNodeType().getName());

@@ -1,18 +1,32 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.filehandlers.jobs;
 
-import com.drew.imaging.ImageProcessingException;
 import com.mikenimer.familycloud.Constants;
 import com.mikenimer.familycloud.ImageMimeTypes;
-import com.mikenimer.familycloud.filehandlers.metadata.MetadataExtractor;
+import com.mikenimer.familycloud.filehandlers.jobs.images.MetadataJob;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
-import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.event.jobs.Job;
-import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.apache.sling.jcr.api.SlingRepository;
+import org.apache.sling.jcr.resource.JcrModifiablePropertyMap;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,13 +34,10 @@ import org.slf4j.LoggerFactory;
 import javax.jcr.ItemExistsException;
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
-import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.observation.Event;
 import javax.jcr.observation.ObservationManager;
-import java.io.IOException;
-import java.io.InputStream;
+import javax.jcr.version.VersionManager;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -38,9 +49,9 @@ import java.util.StringTokenizer;
  * Date: 11/17/13
  */
 @Component(enabled = true, immediate = true, metatype = true)
-@Service(value=JobConsumer.class)
-@Property(name=JobConsumer.PROPERTY_TOPICS, value=Constants.JOB_MOVE)
-public class MoveAssetJob implements JobConsumer
+//Service(value=JobConsumer.class)
+//Property(name=JobConsumer.PROPERTY_TOPICS, value=Constants.JOB_MOVE)
+public class MoveAssetJob //implements JobConsumer
 {
     private final Logger log = LoggerFactory.getLogger(MoveAssetJob.class);
 
@@ -50,6 +61,9 @@ public class MoveAssetJob implements JobConsumer
     @Reference
     private SlingRepository repository;
 
+    //Reference
+    private VersionManager versionManager;
+
     @Property(value = "/content/dam/upload/queue")
     private static final String UPLOAD_QUEUE_PATH = "/content/dam/upload/queue";
 
@@ -58,12 +72,6 @@ public class MoveAssetJob implements JobConsumer
 
     @Property(value = "/content/dam/photos")
     private static final String CONTENT_PHOTOS_PATH_PATH = "/content/dam/photos";//"content.photos.path";
-
-
-    public MoveAssetJob()
-    {
-        super();
-    }
 
 
     @Activate
@@ -85,11 +93,12 @@ public class MoveAssetJob implements JobConsumer
     }
 
 
-    @Override
-    public JobResult process(Job job)
+    public Boolean process(String path, Session session, VersionManager versionManager)
     {
         try{
-            Node node = session.getNode((String)job.getProperty(Constants.PATH));
+            this.versionManager = versionManager;
+            this.session = session;
+            Node node = session.getNode(path);
 
             if (isSupportedMimeType(node))
             {
@@ -98,14 +107,17 @@ public class MoveAssetJob implements JobConsumer
         }
         catch(RepositoryException re)
         {
-            return JobResult.FAILED;
+            return false;//JobResult.FAILED;
         }
 
-        return JobResult.FAILED;
+        return false;//JobResult.FAILED;
     }
 
 
-    private JobResult moveImageAsset(Node node)
+
+
+
+    private Boolean moveImageAsset(Node node)
     {
         try
         {
@@ -114,56 +126,75 @@ public class MoveAssetJob implements JobConsumer
             String path = CONTENT_PHOTOS_PATH_PATH;
             String folderPath = "";
 
-            try
+            //Check jcr created & versionable nodes
+            if( !node.isNodeType("fc:image") )
             {
-                InputStream fileStream = node.getProperty("jcr:data").getBinary().getStream();
-                MetadataExtractor metadataExtractor = new MetadataExtractor(fileStream);
-                Map md = metadataExtractor.getMetadata();
+                node.addMixin("fc:image");
+                session.save();
+                //node = session.getNode(node.getPath());
+            }
 
+            // extract but don't save the metadata for this node. the newImageObserver will take care of that.
+            Map md = new MetadataJob().process(node, false);
 
-                // move to folder based on exif metadata
-                if (md != null && md.get("DATETIME") != null)
+            // move to folder based on exif metadata
+            String originalPath = node.getPath();
+            String destinationNode = null;
+            Date datetime = null;
+            if (md != null )
+            {
+                datetime = (Date) md.get(Constants.DATETIME);
+                if( datetime != null )
                 {
-                    Date datetime = (Date) md.get("DATETIME");
+                    bMetadataExists = true;
+
+                    // set to original date when photo was taken.
                     dtCal.setTime(datetime);
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
                     folderPath = sdf.format(dtCal.getTime());
                     path = path + "/" + dtCal.get(Calendar.YEAR) + "/" + folderPath;
-                    verifyPathExists(path);
+                    verifyDestFolderExists(path);
 
-                    md.remove("DATETIME");// remove the extra property we passed back
-
-                    session.move(node.getParent().getPath(), path);
-                    session.save();
-
-                    bMetadataExists = true;
-                    return JobResult.OK;
+                    destinationNode = path +"/" +node.getName();
                 }
-            }
-            catch (ImageProcessingException ipe){
-                bMetadataExists = false;
-            }
-            catch (IOException ipe){
-                bMetadataExists = false;
+
             }
 
 
             if( !bMetadataExists )
             {
-                // No date in the metadata so we'll use the uploaded date
-                // comment out for now, instead we'll keep images with no metadata in the root folder of the year.
+                // No date in the metadata so we'll use the current date and save it at the "year" level
+                // comment out for now, instead we'll keep images with no metadata in the root folder of the current year.
                 //dtCal = node.getProperty(javax.jcr.Property.JCR_LAST_MODIFIED).getDate();
                 //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 //folderPath = sdf.format(dtCal.getTime());
 
                 // no metadata for date created, so we'll put the image in root path
                 path = path + "/" + dtCal.get(Calendar.YEAR); // +"/" +folderPath
-                verifyPathExists(path);
-                session.move(node.getParent().getPath(), path);
-                session.save();
-                return JobResult.OK;
+                verifyDestFolderExists(path);
+                destinationNode = path;
             }
+
+
+
+
+            /// If it already exists, override.
+            if( session.itemExists(destinationNode) )
+            {
+                // todo. we might want save the old as a version or give the user the option to skip or override (with or without a version).
+                session.removeItem(destinationNode +"/" +node.getName());
+                session.save();
+                //node.checkout();
+            }
+
+
+            // Move
+            session.move(originalPath, destinationNode);
+            session.save();
+
+
+            return true;//JobResult.OK;
         }
         catch (ItemExistsException iee)
         {
@@ -172,11 +203,12 @@ public class MoveAssetJob implements JobConsumer
         }
         catch (RepositoryException iee)
         {
-            return JobResult.FAILED;
+            return false;//JobResult.FAILED;
         }
 
-        return JobResult.FAILED;
+        return false;//JobResult.FAILED;
     }
+
 
 
     /**
@@ -185,7 +217,7 @@ public class MoveAssetJob implements JobConsumer
      * @param path
      * @throws javax.jcr.RepositoryException
      */
-    private void verifyPathExists(String path) throws RepositoryException
+    private void verifyDestFolderExists(String path) throws RepositoryException
     {
         StringTokenizer st = new StringTokenizer(path, "/");
         Node lastNode = null;
@@ -201,7 +233,7 @@ public class MoveAssetJob implements JobConsumer
             }
             catch (PathNotFoundException pe)
             {
-                lastNode = lastNode.addNode(pathElement, "nt:folder");
+                lastNode = lastNode.addNode(pathElement, "sling:Folder");
                 //session.save();
             }
         }
@@ -220,7 +252,8 @@ public class MoveAssetJob implements JobConsumer
     {
         try
         {
-            final String mimeType = n.getProperty("jcr:mimeType").getString();
+            //final String mimeType = n.getProperty("jcr:mimeType").getString();
+            final String mimeType = n.getProperty("jcr:content/jcr:mimeType").getString();
 
             boolean b = ImageMimeTypes.isSupportedMimeType(mimeType);
 
