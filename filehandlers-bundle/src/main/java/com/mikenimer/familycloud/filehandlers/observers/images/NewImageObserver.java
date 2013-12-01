@@ -15,6 +15,23 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.filehandlers.observers.images;
 
 import com.mikenimer.familycloud.filehandlers.jobs.images.MetadataJob;
@@ -44,9 +61,10 @@ import java.util.Map;
 /**
  * User: mikenimer
  * Date: 11/13/13
+ * todo: why didn't this trap any events, need to research and use this instead of making the UploadObserver do both.
  */
-@Component(enabled = true, immediate = true, metatype = true)
-@Property(name = "service.description", value = "Process new files, under /content/dam/photos")
+//Component(enabled = true, immediate = true, metatype = false)
+//Property(name = "service.description", value = "Process new files, under /content/dam/photos")
 public class NewImageObserver implements EventListener
 {
     private final Logger log = LoggerFactory.getLogger(NewImageObserver.class);
@@ -54,8 +72,6 @@ public class NewImageObserver implements EventListener
     private Session session;
     private ObservationManager observationManager;
 
-    @Reference
-    private JobManager jobManager;
 
     @Reference
     private SlingRepository repository;
@@ -66,7 +82,6 @@ public class NewImageObserver implements EventListener
     private static final String UPLOAD_PATH = "/content/dam/photos";
 
 
-    @Activate
     protected void activate(ComponentContext context) throws Exception
     {
 
@@ -77,13 +92,12 @@ public class NewImageObserver implements EventListener
         {
             observationManager = session.getWorkspace().getObservationManager();
             String[] types = {"nt:file"};
-            observationManager.addEventListener(this, Event.NODE_ADDED, contentPath, true, null, types, false);
-            observationManager.addEventListener(this, Event.NODE_MOVED, contentPath, true, null, types, false);
+            observationManager.addEventListener(this, Event.NODE_ADDED |  Event.NODE_MOVED, contentPath, true, null, types, true);
+
         }
     }
 
 
-    @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
         if (observationManager != null)
@@ -111,7 +125,7 @@ public class NewImageObserver implements EventListener
                 if (event.getType() == Event.NODE_ADDED)
                 {
                     log.info("new upload: {}", event.getPath());
-                    Node node = session.getRootNode().getNode(event.getPath().substring(1));
+                    Node node = session.getNode(event.getPath()).getParent();
 
 
                     // check for inner nodes, like metadata that we are adding to this node.
@@ -120,23 +134,24 @@ public class NewImageObserver implements EventListener
                         return;
                     }
 
+                    if( !node.getName().startsWith(".") )
+                    {
+                        // extract and save the metadata for this node.
+                        new MetadataJob().process(node, true);
+                        new SizeJob().process(node);
+                        session.save();
 
-                    // extract and save the metadata for this node.
-                    new MetadataJob().process(node, true);
-                    new SizeJob().process(node);
-                    session.save();
+                        // Parse Metadata job
+                        //Map metadataJob = new HashMap();
+                        //metadataJob.put("path", node.getPath());
+                        //Job job1 = jobManager.addJob(Constants.JOB_IMAGE_METADATA, metadataJob);
 
-                    // Parse Metadata job
-                    //Map metadataJob = new HashMap();
-                    //metadataJob.put("path", node.getPath());
-                    //Job job1 = jobManager.addJob(Constants.JOB_IMAGE_METADATA, metadataJob);
+                        // parse sizing information
+                        //Map sizeJob = new HashMap();
+                        //sizeJob.put("path", node.getPath());
+                        //Job job2 = jobManager.addJob(Constants.JOB_IMAGE_SIZE, sizeJob);
 
-                    // parse sizing information
-                    //Map sizeJob = new HashMap();
-                    //sizeJob.put("path", node.getPath());
-                    //Job job2 = jobManager.addJob(Constants.JOB_IMAGE_SIZE, sizeJob);
-
-
+                    }
                     log.info("finished processing of {}", event.getPath());
                 }
             }

@@ -15,6 +15,23 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.filehandlers.jobs.images;
 
 import com.drew.imaging.ImageProcessingException;
@@ -91,39 +108,27 @@ public class MetadataJob //implements JobConsumer
         {
             Map<String, Object> metadata = extractMetadata(node);
 
-
-            // Pull out the date/time of the original photo from the EXIF data and update system date for the file.
-            Date datetime = (Date) metadata.get(Constants.DATETIME);
-            // if an original date  doesn't exist we'll set fc:Created to now.
-            if( datetime != null )
+            if( metadata != null )
             {
-                dtCal.setTime(datetime);
-            }
-            node.setProperty("fc:created", dtCal);
+                // Pull out the date/time of the original photo from the EXIF data and update system date for the file.
+                Date datetime = (Date) metadata.get(Constants.DATETIME);
+                // if an original date  doesn't exist we'll set fc:Created to now.
+                if( datetime != null )
+                {
+                    dtCal.setTime(datetime);
+                }
+                node.setProperty("fc:created", dtCal);
 
-            if( persist )
-            {
-                saveObjectToNode(node, "fc:metadata", metadata);
-                node.getSession().save();
+                if( persist )
+                {
+                    saveObjectToNode(node, "fc:metadata", metadata);
+                    node.getSession().save();
+                }
             }
-
             // after saving the metadata with the node, return the result
             return metadata;
 
-            /***
-             *  try
-             {
-             md.remove("__DATETIME");// remove the extra property we passed back
-             md.remove("__ORIENTATION");// remove the extra property we passed back
 
-             saveObjectToNode(node, "fc:metadata", md);
-             }catch(Exception ex){
-             // swallow
-             ex.printStackTrace();
-             }
-             session.save();
-
-             */
         }
         catch(Exception ex)
         {
@@ -135,16 +140,15 @@ public class MetadataJob //implements JobConsumer
 
 
 
-    private Map<String, Object> extractMetadata(Node node) throws RepositoryException, IOException, ImageProcessingException
+    private Map<String, Object> extractMetadata(Node node) throws RepositoryException, IOException, ImageProcessingException, InterruptedException
     {
-        InputStream fileStream = node.getSession().getNode(node.getPrimaryItem().getPath()).getProperty("jcr:data").getBinary().getStream();
+        InputStream stream = node.getSession().getNode(node.getPrimaryItem().getPath()).getProperty("jcr:data").getBinary().getStream();
         Map<String, Object> md = new HashMap<String, Object>();
-
 
         try
         {
             // first try with the drew metadata library
-            DrewMetadataExtractor drewMetadataExtractor = new DrewMetadataExtractor(fileStream);
+            DrewMetadataExtractor drewMetadataExtractor = new DrewMetadataExtractor(stream);
             md = drewMetadataExtractor.getMetadata();
 
             // todo add Apache Commons Image library, as a backup
@@ -152,7 +156,7 @@ public class MetadataJob //implements JobConsumer
         catch (ImageProcessingException ipe)
         {
             //alternative approach
-            ImageInputStream iis = ImageIO.createImageInputStream(fileStream);
+            ImageInputStream iis = ImageIO.createImageInputStream(stream);
             Iterator<ImageReader> readers = ImageIO.getImageReaders(iis);
             if (readers.hasNext())
             {
@@ -176,6 +180,7 @@ public class MetadataJob //implements JobConsumer
 
         return md;
     }
+
 
 
 
