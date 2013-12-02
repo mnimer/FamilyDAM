@@ -32,6 +32,23 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.filehandlers.jobs;
 
 import com.mikenimer.familycloud.Constants;
@@ -110,7 +127,7 @@ public class MoveAssetJob //implements JobConsumer
     }
 
 
-    public Boolean process(String path, Session session, VersionManager versionManager)
+    public String process(String path, Session session, VersionManager versionManager)
     {
         try{
             this.versionManager = versionManager;
@@ -124,17 +141,17 @@ public class MoveAssetJob //implements JobConsumer
         }
         catch(RepositoryException re)
         {
-            return false;//JobResult.FAILED;
+            return null;//JobResult.FAILED;
         }
 
-        return false;//JobResult.FAILED;
+        return null;//JobResult.FAILED;
     }
 
 
 
 
 
-    private Boolean moveImageAsset(Node node)
+    private String moveImageAsset(Node node)
     {
         try
         {
@@ -214,7 +231,7 @@ public class MoveAssetJob //implements JobConsumer
             session.save();
 
 
-            return true;//JobResult.OK;
+            return destinationNode;//JobResult.OK;
         }
         catch (ItemExistsException iee)
         {
@@ -223,10 +240,10 @@ public class MoveAssetJob //implements JobConsumer
         }
         catch (RepositoryException iee)
         {
-            return false;//JobResult.FAILED;
+            return null;//JobResult.FAILED;
         }
 
-        return false;//JobResult.FAILED;
+        return null;//JobResult.FAILED;
     }
 
 

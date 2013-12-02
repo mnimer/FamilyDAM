@@ -33,9 +33,9 @@
 [fc:image] > nt:base, mix:versionable, mix:title, mix:etag, mix:created, mix:lastModified, mix:mimeType, mix:referenceable mixin
 - * (undefined) COPY
 - * (undefined) multiple COPY
-- fc:width (DOUBLE) COPY
-- fc:height (DOUBLE) COPY
-- fc:length (DOUBLE) COPY
+- fc:width (DOUBLE)
+- fc:height (DOUBLE)
+- fc:length (DOUBLE)
 - fc:created (DATE)
 + fc:metadata (nt:unstructured) multiple COPY
 

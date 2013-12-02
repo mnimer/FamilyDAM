@@ -32,6 +32,23 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.filehandlers.observers;
 
 import com.mikenimer.familycloud.Constants;
@@ -51,6 +68,7 @@ import org.osgi.service.event.EventAdmin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.InvalidItemStateException;
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.Repository;
@@ -97,6 +115,9 @@ public class UploadObserver implements EventListener
 
     @Property(value = "/content/dam/upload/queue")
     private static final String UPLOAD_QUEUE_PATH = "/content/dam/upload/queue";
+
+    @Property(value = "/content/dam/upload/errors")
+    private static final String UPLOAD_ERROR_PATH = "/content/dam/upload/errors";
 
 
     @Activate
@@ -185,8 +206,20 @@ public class UploadObserver implements EventListener
 
                 //until the next version of sling is ready and we can register a proper job to do this
                 // we'll invoke this directly.. Todo: remove after sling upgrade to 3.
-                new MoveAssetJob().process(node.getPath(), session,  null);
+                String newPath = new MoveAssetJob().process(node.getPath(), session, null);
                 //log.debug(node.getPath());
+
+                if( newPath != null )
+                {
+                    Node newNode = session.getNode(newPath);
+                    new MetadataJob().process(newNode, true);
+                    new SizeJob().process(newNode);
+                    session.save();
+                }
+                else
+                {
+                    session.move(node.getParent().getPath(), UPLOAD_ERROR_PATH);
+                }
 
                 // new Sling3.0 jobs
                 //JobBuilder jobBuilder = jobManager.createJob(Constants.JOB_MOVE);
@@ -225,13 +258,18 @@ public class UploadObserver implements EventListener
             {
                 waitForFileUploadToComplete(node);
 
-
-                //node = session.getNode(event.getPath()).getParent();
+                //reload the node reference
+                node = session.getNode(event.getPath()).getParent();
                 //Check jcr created & versionable nodes
                 if( !node.isNodeType("fc:image") )
                 {
-                    node.addMixin("fc:image");
-                    session.save();
+                    try
+                    {
+                        node.addMixin("fc:image");
+                        session.save();
+                    }catch (InvalidItemStateException e){
+                        e.printStackTrace();
+                    }
                     //node = session.getNode(node.getPath());
                 }
 

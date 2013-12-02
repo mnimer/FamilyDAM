@@ -15,6 +15,23 @@
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FamilyCloud Project.
+  ~
+  ~     The FamilyCloud Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyCloud Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <div class="row" style="height:100%;overflow: scroll;">
 
     <div class="fileUploadForm" ng-controller="FileUploadController" ng-file-drop>
@@ -28,7 +45,7 @@
                     <span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}">
                         <i class="glyphicon glyphicon-plus"></i>
                         <span>Add</span>
-                        <input type="file" name="./*" multiple="" webkitdirectory="" ng-file-select ng-disabled="disabled">
+                        <input type="file" name="./*" multiple="" ng-file-select ng-disabled="disabled">
                     </span>
 
                     <button type="button" class="btn btn-success btn-s " ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
