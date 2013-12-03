@@ -40,7 +40,7 @@ import java.io.InputStream;
  * User: mikenimer
  * Date: 11/17/13
  */
-@Component(enabled = true, immediate = true, metatype = true)
+//@Component(enabled = true, immediate = true, metatype = true)
 //@Service(value = JobConsumer.class)
 //@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familycloud/photos/thumbnails")
 public class ThumbnailJob //implements JobConsumer
