@@ -32,6 +32,24 @@
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FamilyCloud Project.
+  ~
+  ~     The FamilyCloud Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyCloud Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+
 <div class="photos section" ng-class="{'col-xs-11':!showSidebar, 'col-sm-11':!showSidebar, 'col-sm-8': showSidebar}">
     <div id="toolbar">
         <ol class="breadcrumb" style="display: inline;">
@@ -60,7 +78,7 @@
 
             <button
                class="glyphicon glyphicon-upload btn btn-default btn-md"
-                ng-click="" ng-disabled="true"></button>
+                ng-click="toggleUpload()"></button>
 
             <button
                class="glyphicon glyphicon-trash btn btn-default btn-md"
@@ -71,16 +89,16 @@
     </div>
 
     <div class="content">
-        <div ui-view style="height: 100%;padding: 0px;border: 0px;">Photos Go HERE</div>
+        <div ui-view style="height: 100%;padding: 0px;border: 0px;"></div>
     </div>
 
 </div>
 
 
 <!-- start: Widgets Area -->
-<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-hide="showSidebar"  >
-    <div class="sidebar-nav">
-        <div x-file-upload-form title="Test, can you see me?"/>
+<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-hide="showSidebar && showUploadSidebar"  >
+    <div id="sidebar-upload2" class="sidebar-nav">
+        <div x-file-upload-form title=""/>
     </div>
 </aside>
 <!-- end: Widgets Area -->
