@@ -37,8 +37,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
+import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 import javax.servlet.Servlet;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
@@ -95,27 +99,17 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
             throw new ResourceNotFoundException("No data to render.");
         }
 
-            //Session session = request.getResourceResolver().adaptTo(Session.class);
-            //Node parentNode = session.getNode(request.getResource().getPath());
-            //Node node = session.getNode(parentNode.getPrimaryItem().getPath());
 
-        Resource resource = request.getResource();
 
         try
         {
-            ResourceMetadata meta = resource.getResourceMetadata();
-            String hash = new Integer(request.getPathInfo().hashCode()).toString();
-            String eTag = request.getHeader(HttpConstants.HEADER_ETAG);
-            if( hash.equals(eTag) )
-            {
-                response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
-                return;
-            }
-            else
-            {
-                response.setHeader(HttpConstants.HEADER_ETAG, hash);
-                response.setHeader("Cache-Control", "600");
-            }
+            Session session = request.getResourceResolver().adaptTo(Session.class);
+            Node parentNode = session.getNode(request.getResource().getPath());
+            Resource resource = request.getResource();
+
+            // first see if the etag header exists and we can skip processing.
+            if (checkAndSetCacheHeaders(request, response, resource)) return;
+
 
             // check for a size selector
             int width = -1;
@@ -136,27 +130,18 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
 
 
             // check cache first
-            BufferedImage cachedImage = (BufferedImage)imageCache.get(request.getPathInfo());
-            if( cachedImage != null)
-            {
-                response.setContentType("image/png");
-                //response.setContentLength( new Long(resource.getResourceMetadata().getContentLength()).intValue() );
-                //write bytes
-                ImageIO.write(cachedImage, "png", response.getOutputStream());
-                response.getOutputStream().flush();
-                return;
-            }
+            //if (checkForCachedImage(request, response)) return;
+
 
 
             //resize image
             //InputStream stream = node.getProperty("jcr:data").getBinary().getStream();
             InputStream stream = resource.adaptTo(InputStream.class);
+            int orientation = 6; //todo get from image metadata from parentNode
             if (stream != null)
             {
                 BufferedImage bi = ImageIO.read(stream);
-                //BufferedImage bi = ImageIO.read( new URL("http://localhost:8080/content/dam/photos/2013/2013-10-13/IMG_4830.JPG") );
-                //BufferedImage bi = ImageIO.read(resource.adaptTo(URL.class));
-                BufferedImage scaledImage = getScaledImage(bi, width, height);
+                BufferedImage scaledImage = getScaledImage(bi, orientation, width, height);
 
                 // cache the image
                 long modTime = System.currentTimeMillis();
@@ -164,10 +149,10 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
                 timeGeneratedCache.put(request.getPathInfo(), modTime);
 
 
+                //return the image
                 response.setContentType("image/png");
                 response.setHeader(HttpConstants.HEADER_LAST_MODIFIED, new Long(modTime).toString());
-                //response.setContentLength( new Long(resource.getResourceMetadata().getContentLength()).intValue() );
-                //write bytes
+                //write bytes and png thumbnail
                 ImageIO.write(scaledImage, "png", response.getOutputStream());
 
                 stream.close();
@@ -176,9 +161,11 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
         }catch( Exception ex ){
 
             // return original file.
+            Resource resource = request.getResource();
             InputStream stream = resource.adaptTo(InputStream.class);
             response.setContentType(resource.getResourceMetadata().getContentType());
             response.setContentLength( new Long(resource.getResourceMetadata().getContentLength()).intValue() );
+
             //write bytes
             OutputStream out = response.getOutputStream();
             byte[] buffer = new byte[1024];
@@ -196,36 +183,86 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
 
 
     /**
+     * First check for the etag and see if we can return a 302 not modified response. If not, set the etag for next time.
+     * @param request
+     * @param response
+     * @param resource
+     * @return
+     */
+    private boolean checkAndSetCacheHeaders(SlingHttpServletRequest request, SlingHttpServletResponse response, Resource resource) {
+        ResourceMetadata meta = resource.getResourceMetadata();
+        String hash = new Integer(request.getPathInfo().hashCode()).toString();
+        String eTag = request.getHeader(HttpConstants.HEADER_ETAG);
+        if( hash.equals(eTag) )
+        {
+            response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
+            return true;
+        }
+        else
+        {
+            response.setHeader(HttpConstants.HEADER_ETAG, hash);
+            response.setHeader("Cache-Control", "600");
+        }
+        return false;
+    }
+
+
+    /**
+     * Check our memory cache and see if we can return the thumbnail from there
+     * @param request
+     * @param response
+     * @return
+     * @throws IOException
+     */
+    private boolean checkForCachedImage(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
+        BufferedImage cachedImage = (BufferedImage)imageCache.get(request.getPathInfo());
+        if( cachedImage != null)
+        {
+            response.setContentType("image/png");
+            //response.setContentLength( new Long(resource.getResourceMetadata().getContentLength()).intValue() );
+            //write bytes
+            ImageIO.write(cachedImage, "png", response.getOutputStream());
+            response.getOutputStream().flush();
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
      * Resizes an image using a Graphics2D object backed by a BufferedImage.
      * @param src - source image to scale
      * @param w - desired width
      * @param h - desired height
      * @return - the new resized image
      */
-    private BufferedImage getScaledImage(BufferedImage src, int w, int h){
-        int finalw = w;
-        int finalh = h;
+    private BufferedImage getScaledImage(BufferedImage src, int orientation, int w, int h) throws Exception
+    {
+        int finalW = w;
+        int finalH = h;
 
-        if( h == -1 ) finalh = w;
-        if( w == -1 ) finalw = h;
+        if( h == -1 ) finalH = w;
+        if( w == -1 ) finalW = h;
 
         double factor = 1.0d;
         if(src.getWidth() > src.getHeight()){
             factor = ((double)src.getHeight()/(double)src.getWidth());
-            finalh = (int)(finalw * factor);
+            finalH = (int)(finalW * factor);
         }else{
             factor = ((double)src.getWidth()/(double)src.getHeight());
-            finalw = (int)(finalh * factor);
+            finalW = (int)(finalH * factor);
         }
 
-        BufferedImage scaledImage = new BufferedImage(finalw, finalh, src.getType());
+        BufferedImage scaledImage = new BufferedImage(finalW, finalH, src.getType());
         Graphics2D g = scaledImage.createGraphics();
 
         try
         {
-            AffineTransform at = AffineTransform.getScaleInstance((double) finalw / src.getWidth(), (double) finalh/ src.getHeight());
-            g.drawRenderedImage(src, at);
-            return scaledImage;
+            //AffineTransform at = AffineTransform.getScaleInstance((double) finalw / src.getWidth(), (double) finalh/ src.getHeight());
+            AffineTransform at = getExifTransformation(orientation, (double)finalW , (double)finalH, (double) finalW / src.getWidth(), (double) finalH/ src.getHeight() );
+            return transformImage(src, at);
+            //g.drawRenderedImage(src, at);
+            //return scaledImage;
         }
         finally
         {
@@ -246,61 +283,46 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
 
 
     /**
-     * copied from: org.apache.sling.servlets.get.impl.helpers.StreamRendererServlet
+     * get the right transformation based on the orientation setting in the exif metadata. In case the physical image is actually
+     * stored in a rotated state.
      *
-     * Returns <code>true</code> if the request has a
-     * <code>If-Modified-Since</code> header whose date value is later than the
-     * last modification time given as <code>modifTime</code>.
-     *
-     * @param request The <code>ComponentRequest</code> checked for the
-     *            <code>If-Modified-Since</code> header.
-     * @param modifTime The last modification time to compare the header to.
-     * @return <code>true</code> if the <code>modifTime</code> is less than or
-     *         equal to the time of the <code>If-Modified-Since</code> header.
+     * @param orientation
+     * @param width
+     * @param height
+     * @return
      */
-    private boolean unmodified(HttpServletRequest request, Long modIfTime) {
-        if (modIfTime > 0) {
-            long modTime = modIfTime / 1000; // seconds
-            long ims = request.getDateHeader(HttpConstants.HEADER_IF_MODIFIED_SINCE) / 1000;
-            return modTime <= ims;
-        }
-
-        // we have no modification time value, assume modified
-        return false;
-    }
-
-
-
-    // Look at http://chunter.tistory.com/143 for information
-    public static AffineTransform getExifTransformation(int orientation, int width, int height) {
+    public static AffineTransform getExifTransformation(int orientation, double width, double height, double scaleW, double scaleH) {
 
         AffineTransform t = new AffineTransform();
 
         switch (orientation) {
             case 1:
+                t.scale(scaleW, scaleH);
                 break;
-            case 2: // Flip X
-                t.scale(-1.0, 1.0);
+            case 2: // Flip X //todo: test & fix
+                t.scale(-scaleW, scaleH);
                 t.translate(-width, 0);
                 break;
             case 3: // PI rotation
                 t.translate(width, height);
                 t.rotate(Math.PI);
+                t.scale(scaleW, scaleH);
                 break;
-            case 4: // Flip Y
-                t.scale(1.0, -1.0);
+            case 4: // Flip Y //todo: test & fix
+                t.scale(scaleW, -scaleH);
                 t.translate(0, -height);
                 break;
             case 5: // - PI/2 and Flip X
                 t.rotate(-Math.PI / 2);
-                t.scale(-1.0, 1.0);
+                t.scale(-scaleW, scaleH);
                 break;
             case 6: // -PI/2 and -width
                 t.translate(height, 0);
                 t.rotate(Math.PI / 2);
+                t.scale(scaleW, scaleH);
                 break;
-            case 7: // PI/2 and Flip
-                t.scale(-1.0, 1.0);
+            case 7: // PI/2 and Flip //todo:test & fix
+                t.scale(-scaleW, scaleH);
                 t.translate(-height, 0);
                 t.translate(0, width);
                 t.rotate(  3 * Math.PI / 2);
@@ -308,6 +330,7 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
             case 8: // PI / 2
                 t.translate(0, width);
                 t.rotate(  3 * Math.PI / 2);
+                t.scale(scaleW, scaleH);
                 break;
         }
 
@@ -315,6 +338,13 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
     }
 
 
+    /**
+     * using the metadata orientation transformation information rotate the image.
+     * @param image
+     * @param transform
+     * @return
+     * @throws Exception
+     */
     public static BufferedImage transformImage(BufferedImage image, AffineTransform transform) throws Exception {
 
         AffineTransformOp op = new AffineTransformOp(transform, AffineTransformOp.TYPE_BICUBIC);
@@ -323,7 +353,7 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
         Graphics2D g = destinationImage.createGraphics();
         g.setBackground(Color.WHITE);
         g.clearRect(0, 0, destinationImage.getWidth(), destinationImage.getHeight());
-        destinationImage = op.filter(image, destinationImage);;
+        destinationImage = op.filter(image, destinationImage);
         return destinationImage;
     }
 
