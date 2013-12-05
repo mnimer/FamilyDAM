@@ -32,6 +32,23 @@
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FamilyCloud Project.
+  ~
+  ~     The FamilyCloud Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyCloud Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <div class="content gridView">
     <div ng-repeat="item in assets">
         <div>{{item.title}}</div>
@@ -39,7 +56,7 @@
             <li class="fileRenderer" ng-repeat="data in item.data" style="float:left; overflow:hidden; display: inline-block;">
                 <div >
                     <div>
-                        <img src="{{data.links.image}}.scale.h:150.png" /><br/>
+                        <img ng-src="{{data.links.image}}.scale.h:150.png" /><br/>
                         <a class="glyphicon glyphicon-camera" ng-click="selectFolder(data.path)"> {{data.name}}</a>
                     </div>
                 </div>

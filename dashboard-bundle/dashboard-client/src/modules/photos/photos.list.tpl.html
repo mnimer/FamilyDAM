@@ -1,3 +1,20 @@
+<!--
+  ~ This file is part of FamilyCloud Project.
+  ~
+  ~     The FamilyCloud Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyCloud Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <div class="content listView">
     <ul style="list-style: none;">
         <li ng-repeat="item in assets">
@@ -8,20 +25,21 @@
             <div class="fileRenderer" ng-if="item['jcr:primaryType'] == 'nt:file'">
                 <div style="float: left">
                     <span>
-                        <input type="checkbox"> &nbsp;
-                        <a class="glyphicon glyphicon-camera" ng-click="selectFolder(item.path)"> {{item.name}}</a><br/>
+                        <!--input type="checkbox"--> &nbsp;
+                        <a ng-click="selectFolder(item.path)"> {{item.name}}</a><br/>
                     </span>
 
                     <span class="date">{{item['jcr:content']['jcr:lastModified']}}</span><span> --  by: {{item['jcr:content']['jcr:lastModifiedBy']}}</span><br/>
                     <span>File Size:{{item['jcr:content'][':jcr:data']}} </span>
-
                 </div>
+
                 <div class="pull-right" style="float: right;">
-                    <img src="/content/dam{{item.path}}.scale.h:125.png" class="list-thumbnail-sm"/>
+                    <img ng-src="/content/dam{{item.path}}.scale.h:150.png" class="list-thumbnail-sm"/>
                 </div>
             </div>
         </li>
     </ul>
 </div>
+
 
 

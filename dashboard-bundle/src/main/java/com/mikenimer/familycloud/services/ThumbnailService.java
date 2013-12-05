@@ -15,8 +15,26 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.mikenimer.familycloud.services;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
@@ -32,6 +50,7 @@ import org.apache.sling.api.resource.ResourceNotFoundException;
 import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.jcr.resource.internal.helper.jcr.JcrNodeResource;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -130,16 +149,32 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
 
 
             // check cache first
-            //if (checkForCachedImage(request, response)) return;
+            if (checkForCachedImage(request, response)) return;
 
 
 
             //resize image
             //InputStream stream = node.getProperty("jcr:data").getBinary().getStream();
             InputStream stream = resource.adaptTo(InputStream.class);
-            int orientation = 6; //todo get from image metadata from parentNode
+            int orientation = 1;
             if (stream != null)
             {
+                try
+                {
+                    Node n = parentNode.getNode("fc:metadata");
+                    if( n != null )
+                    {
+                        String _orientation = n.getProperty("__ORIENTATION").getString();
+                        if(StringUtils.isNumeric(_orientation))
+                        {
+                            orientation = new Integer(_orientation);
+                        }
+                    }
+                }catch(Exception ex){
+
+                }
+
+
                 BufferedImage bi = ImageIO.read(stream);
                 BufferedImage scaledImage = getScaledImage(bi, orientation, width, height);
 
