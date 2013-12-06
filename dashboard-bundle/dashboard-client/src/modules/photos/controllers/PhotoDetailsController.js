@@ -1,0 +1,46 @@
+/*
+ * This file is part of FamilyCloud Project.
+ *
+ *     The FamilyCloud Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyCloud Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+var PhotoDetailsController = function($scope, $rootScope, $window, $stateParams, photoService) {
+
+    $scope.self = "";
+    $scope.scaledImage = undefined;
+    $scope.node = {};
+
+    var init = function()
+    {
+        $scope.$emit("MODE_CHANGE", "DETAILS");
+
+        var id = $stateParams.id;
+        photoService.getById(id).then(function(data, status, headers, config){
+
+            $scope.node = data.data;
+            $scope.self = data.headers.apply()['location'];
+
+            var width  = $("body").width();
+            $scope.scaledImage = $scope.self +".scale.w:" +width +".png";
+
+            $scope.$emit("IMAGE_SELECTED", $scope.node);
+
+        });
+    };
+    init();
+
+};
+
+PhotoDetailsController.$inject = ['$scope', '$rootScope', '$window', '$stateParams', 'photoService'];
+module.exports = PhotoDetailsController;

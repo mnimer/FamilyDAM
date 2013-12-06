@@ -15,40 +15,6 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * This file is part of FamilyCloud Project.
- *
- *     The FamilyCloud Project is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     The FamilyCloud Project is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/*
- * This file is part of FamilyCloud Project.
- *
- *     The FamilyCloud Project is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     The FamilyCloud Project is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 var PhotosController = function($scope, $rootScope, $location, $modal, $state, photoService) {
 
     $scope.layout = "grid";
@@ -60,6 +26,7 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     $scope.breadcrumb = [];
     $scope.showSidebar = false;
     $scope.showUploadSidebar = false;
+    $scope.showImageDetailsSidebar = false;
 
 
     $scope.refresh = function()
@@ -77,10 +44,6 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
         $scope.showUploadSidebar = b;
     };
 
-    $scope.isUploadVisible = function()
-    {
-        return $scope.showUploadSidebar;
-    };
 
     $scope.openCreateFolder = function()
     {
@@ -132,10 +95,30 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     };
 
 
+    $scope.$on("MODE_CHANGE", function(event, mode){
+
+        if( $scope.mode != mode )
+        {
+            $scope.mode = mode;
+            if( mode == "COLLECTION")
+            {
+                $scope.showSidebar = false;
+                $scope.showUploadSidebar = false;
+                $scope.showImageDetailsSidebar = false;
+            }
+        }
+    });
 
     $scope.$on("FullScreenToggle", function(event, boolean)
     {
         $scope.showSidebar = boolean;
+        $scope.showUploadSidebar = false;
+    });
+
+
+    $scope.$on("IMAGE_SELECTED", function(event, data){
+        $scope.showSidebar = true;
+        $scope.showImageDetailsSidebar = true;
     });
 
 

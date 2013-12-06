@@ -15,18 +15,13 @@
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<div class="content gridView">
-    <div ng-repeat="item in assets">
-        <div>{{item.title}}</div>
-        <ul>
-            <li class="fileRenderer" ng-repeat="data in item.data" style="float:left; overflow:hidden; display: inline-block;">
-                <div >
-                    <div>
-                        <a href="#/photos/{{data['jcr:uuid']}}/details"><img ng-src="{{data.links.image}}.scale.h:150.png" /></a><br/>
-                        <a class="glyphicon" href="#/photos/{{data['jcr:uuid']}}/details"> {{data.name}}</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+<div id="photoDetails" class="content ">
+
+   <img ng-src="{{scaledImage}}" style="width: 100%;"/><br/>
+   {{node['jcr:uuid']}}<br/>
+   {{node['fc:width']}}x{{node['fc:height']}}<br/>
+
 </div>
+
+
+

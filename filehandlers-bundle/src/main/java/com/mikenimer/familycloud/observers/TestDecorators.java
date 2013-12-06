@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletRequest;
  * User: mikenimer
  * Date: 11/13/13
  */
-@Service
-@Component(immediate = true)
+//@Service
+//@Component(immediate = true)
 public class TestDecorators implements ResourceDecorator
 {
     private final Logger log = LoggerFactory.getLogger(TestDecorators.class);

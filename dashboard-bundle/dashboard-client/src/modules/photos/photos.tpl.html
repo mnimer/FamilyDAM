@@ -74,15 +74,25 @@
 
             <button
                class="glyphicon glyphicon-folder-close btn btn-default btn-md"
-                ng-click="openCreateFolder()"></button>
+                ng-click="openCreateFolder()"
+                ng-show="mode=='COLLECTION'"></button>
 
             <button
                class="glyphicon glyphicon-upload btn btn-default btn-md"
-                ng-click="toggleUpload()"></button>
+                ng-click="toggleUpload()"
+                ng-show="mode=='COLLECTION'"></button>
+
+
+
+            <button
+               class="glyphicon glyphicon-edit btn btn-default btn-md"
+                ng-click="" ng-disabled="true"
+                ng-show="mode=='DETAILS'"></button>
 
             <button
                class="glyphicon glyphicon-trash btn btn-default btn-md"
-                ng-click="" ng-disabled="true"></button>
+                ng-click="" ng-disabled="true"
+                ng-show="mode=='DETAILS'"></button>
 
 
         </span>
@@ -96,9 +106,14 @@
 
 
 <!-- start: Widgets Area -->
-<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-hide="showSidebar && showUploadSidebar"  >
-    <div id="sidebar-upload2" class="sidebar-nav">
+<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-show="showSidebar"  >
+    <div id="sidebar-upload" class="sidebar-nav" ng-show="showUploadSidebar">
         <div x-file-upload-form title=""/>
+    </div>
+
+
+    <div id="sidebar-details" class="sidebar-nav" ng-show="showImageDetailsSidebar">
+        <div x-photo-metadata />
     </div>
 </aside>
 <!-- end: Widgets Area -->

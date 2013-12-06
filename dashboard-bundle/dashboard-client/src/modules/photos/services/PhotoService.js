@@ -40,6 +40,21 @@ var PhotoService = function($http) {
 
 
     /**
+     * Using the jcr:uuid get a json packet for the node
+     * @param path
+     * @param successCallback
+     * @param errorCallback
+     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
+     */
+    this.getById = function(uuid, successCallback, errorCallback) {
+
+        // make sure the path starts with /
+        var get =  $http.get("/dashboard-api/photo?uuid=" +uuid,{ cache: false });
+        return get;
+    };
+
+
+    /**
      * Load one layer at a time, used by the list view to show the contents of a folder.
      * @param path
      * @param successCallback

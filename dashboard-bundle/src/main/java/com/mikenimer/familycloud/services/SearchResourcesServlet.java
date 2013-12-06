@@ -160,7 +160,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
             //response.setHeader("location", self);
 
 
-
+            response.setHeader("location", self);
             response.setContentType(request.getResponseContentType());
             response.setCharacterEncoding("UTF-8");
             try {
