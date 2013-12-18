@@ -1,13 +1,50 @@
 <div class="userManager section col-sm-12">
-    <div id="toolbar">
-        <span>/user/manager</span>
 
-        <span class="pull-right">
-            <!-- icons -->
-        </span>
+    <div class="content row">
+        <div class="col-xs-3">
+            <select id="userList" class="userList form-control"
+                    ng-model="selectedUser" ng-options="u as u.firstName +' ' +u.lastName for u in users" ng-change="selectUser()" size="20">
+            </select>
+            <div class="userListButtons">
+                <button class="btn btn-default btn-sm" ng-click="createUser()">+</button>
+                <button class="btn btn-default btn-sm" ng-click="removeUser()">-</button>
+            </div>
+        </div>
+
+        <div class="col-xs-9">
+            <div ng-show="currentUser !== undefined">
+                <form role="form">
+                    <div class="form-inline"  style="padding-bottom: 70px;">
+                        <div class="form-group col-xs-6">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" ng-model="currentUser.firstName">
+                        </div>
+                        <div class="form-group col-xs-6">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" ng-model="currentUser.lastName">
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <div class="form-group col-xs-12">
+                        <label for="username">Login Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="" ng-model="currentUser.username">
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label for="password1">Password</label>
+                        <input type="password" class="form-control" id="password1" placeholder=""  ng-model="currentUser.password">
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label for="password2">Confirm Password</label>
+                        <input type="password" class="form-control" id="password2" placeholder=""  ng-model="currentUser.confirmPassword">
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-default btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <div class="content">
-        User Manager
-    </div>
 </div>
