@@ -46,10 +46,10 @@
 <!-- start: Header -->
 
 <div class="container">
-    <div class="row">
+    <div>
 
         <!-- start: Main Menu -->
-        <nav id="sidebar-left" class="col-sm-1 hidden-xs" ng-hide="showNavigation" >
+        <nav id="sidebar-left" class="hidden-xs" ng-hide="showNavigation" style="width:75px;display: inline-block;">
             <div class="nav-collapse sidebar-nav collapse navbar-collapse bs-navbar-collapse">
                 <ul class="nav nav-tabs nav-stacked main-menu">
                     <li ng-class="{ active: $state.includes('photos') }">
@@ -81,8 +81,10 @@
         <!-- end: Main Menu -->
 
         <!-- start: Content -->
-        <div class="primaryView " ng-class="{'col-xs-12':!showNavigation, 'col-xs-12':showNavigation}" >
-            <div ui-view ng-animate="'view'"></div>
+        <div class="row primaryView">
+            <div ng-class="{'col-xs-12':!showNavigation, 'col-xs-12':showNavigation}" >
+                <div ui-view ng-animate="'view'"></div>
+            </div>
         </div>
         <!-- end: Content -->
 
@@ -94,7 +96,7 @@
 </div>
 
 
-
+<!--
 <div class="clearfix"></div>
     <footer>
     <div class="container">
@@ -105,3 +107,4 @@
         </span>
     </div>
 </footer>
+-->

@@ -37,6 +37,7 @@ package com.mikenimer.familycloud.filehandlers.jobs.images;
 import com.drew.imaging.ImageProcessingException;
 import com.mikenimer.familycloud.Constants;
 import com.mikenimer.familycloud.filehandlers.metadata.DrewMetadataExtractor;
+import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
@@ -221,6 +222,11 @@ public class MetadataJob //implements JobConsumer
         else if( value instanceof String)
         {
             node.setProperty(key, ((String) value) );
+        }
+        else if( value instanceof String[])
+        {
+            String list = StringUtils.join(((String[]) value), ",");
+            node.setProperty(key, list.toLowerCase() );
         }
         else if( value != null )
         {

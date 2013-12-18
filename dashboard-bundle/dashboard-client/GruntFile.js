@@ -81,6 +81,12 @@ module.exports = function (grunt) {
                         src: '**',
                         dest: './dist/assets/fonts/',
                         expand: true
+                    },
+                    {
+                        cwd: './bower_components/ng-tags-input',
+                        src: '*.css',
+                        dest: './dist/assets/css/',
+                        expand: true
                     }
 				]
             },
@@ -102,7 +108,7 @@ module.exports = function (grunt) {
 
 		// js hint
 		jshint: {
-			files: ['gruntFile.js', '<%= src.js %>', '!src/components/**/*.js'],
+			files: ['gruntFile.js', '<%= src.js %>', '!src/components/**/*.js', '!src/assets/js/**/*.js'],
 			options: {
 				curly:false,
 				eqeqeq:false,
@@ -144,7 +150,9 @@ module.exports = function (grunt) {
                         'jquery-ui': './bower_components/jquery-ui/ui/jquery-ui.js',
                         'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',
                         'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-                        'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js'
+                        'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js',
+                        'ng-tags-input': './bower_components/ng-tags-input/ng-tags-input.js',
+                        'infinite-scroller': './bower_components/ng-tags-input/ng-tags-input.js'
                     }
 
 				}

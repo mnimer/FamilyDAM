@@ -17,12 +17,12 @@
 
 <div class="content listView">
     <ul style="list-style: none;">
-        <li ng-repeat="item in assets">
+        <li ng-repeat="item in assets | orderBy:sortPrimaryType">
             <div class="folderRenderer" ng-if="item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder'" >
                 <a class="glyphicon glyphicon-folder-close" ng-click="selectFolder(item.path)"> {{item.name}}</a>
             </div>
 
-            <div class="fileRenderer" ng-if="item['jcr:primaryType'] == 'nt:file'">
+            <div class="fileRenderer well" ng-if="item['jcr:primaryType'] == 'nt:file'">
 
                 <div class="display:inline-block" style="float: left;">
                     <a href="#/photos/{{item['jcr:uuid']}}/details"><img ng-src="/content/dam{{item.path}}.scale.h:150.png" class="list-thumbnail-sm"/></a>

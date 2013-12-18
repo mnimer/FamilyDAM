@@ -16,7 +16,8 @@
   -->
 
 <div class="content gridView">
-    <div ng-repeat="item in assets">
+    <div ng-repeat="item in assets | orderBy:sortPrimaryType"
+         infinite-scroll-distance="3" infinite-scroll="pageGrid()" >
         <div>{{item.title}}</div>
         <ul>
             <li class="fileRenderer" ng-repeat="data in item.data" style="float:left; overflow:hidden; display: inline-block;">

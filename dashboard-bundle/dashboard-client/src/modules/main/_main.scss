@@ -18,6 +18,7 @@
 
 .navbar
 {
+    height:40px;
     background-color: #3b3b41;
 }
 
@@ -68,10 +69,10 @@
 
 #sidebar-left
 {
-    min-width:70px;
+    min-width: 90px;
     padding-left: 0px;
     padding-right: 0px;
-    margin: 28px -35px 0px 20px;
+    margin: 30px -5px 0px 0px;
 }
 
 .sidebar-nav>ul {
@@ -115,9 +116,16 @@
 
 .primaryView
 {
+    float: left;
+    left: 130px;
+    right: 40px;
+    top: 93px;
+    bottom: 90px;
+    position: absolute;
     margin-top:-20px;
     height:100%;
-    > div
+    float:left;
+    div[ui-view]
     {
         height: 100%;
     }
@@ -146,6 +154,12 @@ aside
     padding-right: 20px !important;
     padding-left: 0px !important;
 }
+
+#sidebar-right
+{
+  padding-left: 10px !important;
+}
+
 
 
 footer

@@ -30,30 +30,36 @@
 /*global define, angular */
 
 
-module.exports = angular.module('dashboard.photos.directives', ['angularFileUpload'])
+module.exports = angular.module('dashboard.photos.directives', ['angularFileUpload', 'tags-input'])
 
     .directive('photoMetadata', function ()
     {
         return {
             scope: {
-                'node':"@"
+                'uuid':"@",
+                'keywords':"@"
             },
             replace: true,
             transclude: false,
             templateUrl: "modules/photos/directives/metadata/metadata.tpl.html",
-            link:function(scope, element, attrs, controller) {}
+            link:function(scope, element, attrs, controller) {
+
+                var _uuid = "";
+                var _keywords = "";
+
+
+                scope.$watch('uuid', function(value, oldValue, scope)
+                {
+                    _uuid = value;
+                });
+
+                scope.$watch('keywords', function(value, oldValue, scope)
+                {
+                    _keywords = value;
+                    scope.keywords = value;
+                });
+            }
         };
-    })
-
-
-    .controller('FileUploadController', function ($scope, $fileUploader) {
-        'use strict';
-
-
-        uploader.bind('node', function (event, node) {
-            console.log('All files are transferred' +node);
-        });
-
     });
 
 

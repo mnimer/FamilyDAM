@@ -12,4 +12,5 @@ require('angular-dragdrop');
 require('angular-file-upload');
 require('ui.bootstrap');
 require('ui.bootstrap.tpls');
+require('ng-tags-input');
 

@@ -16,11 +16,16 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var PhotosController = function($scope, $rootScope, $location, $modal, $state, photoService) {
+var PhotosController = function($scope, $rootScope, $location, $modal, $state, photoService, infiniteScroll) {
 
 
     var groupByProperty = "fc:created";
     $scope.assets = {};
+
+    $scope.pageGrid = function()
+    {
+        console.log("infinite scroll triggered");
+    };
 
 
     var refreshGrid = function()
@@ -90,5 +95,5 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
 
 };
 
-PhotosController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', 'photoService'];
+PhotosController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', 'photoService', 'infinite-scroll'];
 module.exports = PhotosController;

@@ -35,6 +35,7 @@ var PhotoDetailsController = function($scope, $rootScope, $window, $stateParams,
             $scope.scaledImage = $scope.self +".scale.w:" +width +".png";
 
             $scope.$emit("IMAGE_SELECTED", $scope.node);
+            $scope.$broadcast("IMAGE_SELECTED", $scope.node);
 
         });
     };

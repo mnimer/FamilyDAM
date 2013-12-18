@@ -95,6 +95,18 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     };
 
 
+    $scope.sortPrimaryType = function(item, arg2, arg3)
+    {
+        var type = "bFile";
+        if( item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder' )
+        {
+            type = "aFolder";
+        }
+
+        return type +"|" +item['name'];
+    };
+
+
     $scope.$on("MODE_CHANGE", function(event, mode){
 
         if( $scope.mode != mode )
@@ -117,8 +129,16 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
 
 
     $scope.$on("IMAGE_SELECTED", function(event, data){
+        $scope.selectedNode = data;
         $scope.showSidebar = true;
         $scope.showImageDetailsSidebar = true;
+
+        if( data['fc:metadata'] !== undefined )
+        {
+            $scope.uuid = data['jcr:uuid'];
+            $scope.keywords = data['fc:metadata']['Iptc']['Keywords']['value'];
+        }
+
     });
 
 
