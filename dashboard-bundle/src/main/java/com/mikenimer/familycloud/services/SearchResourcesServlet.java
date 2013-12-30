@@ -94,13 +94,13 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
     @Activate
     protected void activate(ComponentContext ctx) {
-        //log.debug("Servlet started");
+       log.debug("Servlet started");
     }
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        //log.debug("Servlet Deactivated");
+        log.debug("Servlet Deactivated");
     }
 
     @Override

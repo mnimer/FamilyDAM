@@ -1,5 +1,6 @@
 module.exports = angular.module('dashboard.user.usermanager', [])
 	.controller('UserManagerController', require('./UserManagerController'))
+    .service('userService', require('./services/UserService'))
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
         $stateProvider.state('user-manager', {

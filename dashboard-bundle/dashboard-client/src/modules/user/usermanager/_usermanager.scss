@@ -1,6 +1,27 @@
 .userManager
 {
 
+  #tabs
+  {
+    height:400px;
+  }
+
+
+  .form-group
+  {
+    height:70px;
+  }
+
+  .btn-group
+  {
+    height:30px;
+    vertical-align: bottom;
+
+    label
+    {
+      margin-top: 10px;
+    }
+  }
 }
 
 .userList

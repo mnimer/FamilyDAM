@@ -15,7 +15,7 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.mikenimer.familycloud.services;
+package com.mikenimer.familycloud.services.photos;
 
 import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -24,6 +24,8 @@ import org.apache.sling.api.SlingServletException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.osgi.service.component.ComponentContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
@@ -47,6 +49,7 @@ import java.util.Locale;
 })
 public class ImageDetailsServlet extends SlingSafeMethodsServlet
 {
+    private final Logger log = LoggerFactory.getLogger(ImageDetailsServlet.class);
 
     /** Used to format date values */
     private static final String ECMA_DATE_FORMAT = "EEE MMM dd yyyy HH:mm:ss 'GMT'Z";
@@ -58,13 +61,13 @@ public class ImageDetailsServlet extends SlingSafeMethodsServlet
 
     @Activate
     protected void activate(ComponentContext ctx) {
-        //log.debug("Servlet started");
+        log.debug("Servlet started");
     }
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        //log.debug("Servlet Deactivated");
+        log.debug("Servlet Deactivated");
     }
 
     @Override

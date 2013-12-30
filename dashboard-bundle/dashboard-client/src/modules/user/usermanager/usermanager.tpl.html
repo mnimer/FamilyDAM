@@ -1,19 +1,20 @@
 <div class="userManager section col-sm-12">
 
     <div class="content row">
-        <div class="col-xs-3">
+        <div class="col-sm-3">
             <select id="userList" class="userList form-control"
-                    ng-model="selectedUser" ng-options="u as u.firstName +' ' +u.lastName for u in users" ng-change="selectUser()" size="20">
+                    ng-model="selectedUser" ng-options="u as u[':name'] +' ( ' +u.firstName +' ' +u.lastName +' )' for u in users" ng-change="selectUser()" size="20">
             </select>
             <div class="userListButtons">
-                <button class="btn btn-default btn-sm" ng-click="createUser()">+</button>
-                <button class="btn btn-default btn-sm" ng-click="removeUser()">-</button>
+                <button class="btn btn-default btn-sm" ng-click="createNewUser()">+</button>
+                <button class="btn btn-default btn-sm" ng-click="removeUserHandler()">-</button>
             </div>
         </div>
 
-        <div class="col-xs-9">
-            <div ng-show="currentUser !== undefined">
-                <form role="form">
+        <div class="col-sm-9">
+            <div ng-show="isNewUser == true">
+                <form id="newUserForm" role="form"  >
+
                     <div class="form-inline"  style="padding-bottom: 70px;">
                         <div class="form-group col-xs-6">
                             <label for="firstName">First Name</label>
@@ -29,19 +30,98 @@
 
                     <div class="form-group col-xs-12">
                         <label for="username">Login Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="" ng-model="currentUser.username">
+                        <input type="text" class="form-control" id=":name" placeholder="" ng-model="currentUser[':name']" >
                     </div>
                     <div class="form-group col-xs-12">
                         <label for="password1">Password</label>
-                        <input type="password" class="form-control" id="password1" placeholder=""  ng-model="currentUser.password">
+                        <input type="password" class="form-control" id="pwd" placeholder=""  ng-model="currentUser.pwd">
                     </div>
                     <div class="form-group col-xs-12">
                         <label for="password2">Confirm Password</label>
-                        <input type="password" class="form-control" id="password2" placeholder=""  ng-model="currentUser.confirmPassword">
+                        <input type="password" class="form-control" id="pwdConfirm" placeholder=""  ng-model="currentUser.pwdConfirm">
                     </div>
 
-                    <button type="submit"
-                            class="btn btn-default btn-primary">Submit</button>
+                    <div class="form-group col-xs-12">
+                        <button type="submit"
+                            class="btn btn-default btn-primary"
+                            ng-click="createNewUserHandler()">Create User</button>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div ng-show="isExistingUser == true">
+                <form id="newUserForm" role="form">
+                    <div id="tabs" >
+                    <tabset style="border-bottom: 1px solid #eeeeee;">
+                        <tab heading="Info">
+                            <div class="form-inline"  style="padding-bottom: 70px;">
+                                <div class="col-xs-12" style="height: 50px;padding-top: 10px;">
+                                    <h4>Username & Workspace: <span class="label label-default">{{currentUser[':name']}}</span></h4>
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" ng-model="currentUser.firstName">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" ng-model="currentUser.lastName">
+                                </div>
+
+                                <!--div class="form-group btn-group col-xs-12">
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" btn-radio="'administrator'">Admin</button>
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" btn-radio="'user'">User</button>
+                                    &nbsp;&nbsp;
+                                    <label for="">Account Type</label>
+                                </div-->
+                            </div>
+                        </tab>
+                        <tab heading="Permission" ng-disabled="true">
+                            <div class="form-inline"  style="padding-bottom: 70px;">
+                                <div class="form-group col-xs-6">
+                                    <label for="">Workspaces:</label>
+                                    <input type="radio" class="form-control" id="workspaces">
+                                    <input type="radio" class="form-control" id="workspaces">
+                                    <input type="radio" class="form-control" id="workspaces">
+                                </div>
+                            </div>
+                        </tab>
+                        <tab heading="Services" ng-disabled="true">
+                            <div class="form-inline"  style="padding-bottom: 70px; padding-top: 10px;">
+                                <div class="form-group btn-group col-xs-12">
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType">Activate</button>
+                                    &nbsp;&nbsp;
+                                    <label for="">Facebook</label>
+                                </div>
+                                <hr/>
+                                <div class="form-group btn-group col-xs-12">
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType">Activate</button>
+                                    &nbsp;&nbsp;
+                                    <label for="">Twitter</label>
+                                </div>
+                                <hr/>
+                                <div class="form-group btn-group col-xs-12">
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType">Activate</button>
+                                    &nbsp;&nbsp;
+                                    <label for="">Flickr</label>
+                                </div>
+                                <hr/>
+                                <div class="form-group btn-group col-xs-12">
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType">Activate</button>
+                                    &nbsp;&nbsp;
+                                    <label for="">TripIT</label>
+                                </div>
+                            </div>
+                        </tab>
+                    </tabset>
+                    </div>
+                    <br/>
+                    <div class="form-group col-xs-12">
+                        <button type="submit"
+                                class="btn btn-default btn-primary"
+                                ng-click="createNewUserHandler()">Update User</button>
+                    </div>
                 </form>
             </div>
         </div>
