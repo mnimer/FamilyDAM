@@ -38,7 +38,7 @@ module.exports = angular.module('FamilyCloud.FileUpload', ['angularFileUpload'])
             scope: $scope,                          // to automatically update the html. Default: $rootScope
             url: '/content/dam/upload/queue',
             alias: './*',
-            formData: [{}],
+            formData: [{'author': $scope.$root.username}],
             filters: []
         });
 

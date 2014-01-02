@@ -70,20 +70,7 @@ var UserManagerController = function($scope, $location, userService) {
         userService.createUser($scope.currentUser).then(
             function(data, status, headers, config)
             {
-
-                // on success, create workspace
-                userService.createUserWorkspace($scope.currentUser).then(
-                    function(data, status, headers, config)
-                    {
-                        refreshUsers();
-                    },function(data, status, headers, config)
-                    {
-                        //todo : show error to client
-                        // error creating the workspace, delete the user an start over
-                        $scope.removeUserHandler();
-                    }
-                );
-
+                refreshUsers();
 
                 $scope.isExistingUser = true;
                 $scope.isNewUser = false;

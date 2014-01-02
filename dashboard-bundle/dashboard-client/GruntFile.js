@@ -257,7 +257,7 @@ module.exports = function (grunt) {
         slingPost: {
             options: {
                 host:"localhost",
-                port:8080,
+                port:8888,
                 user:"admin",
                 pass:"admin",
                 exclude: ["*.git"]

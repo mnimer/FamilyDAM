@@ -30,13 +30,10 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
 
     var refreshGrid = function()
     {
-        if( $scope.currentPath == "/" )
-        {
-            $scope.selectFolder("/photos");
-        }else{
-            $scope.selectFolder($scope.currentPath);
-        }
+        $scope.selectFolder($scope.currentPath);
     };
+
+
 
     /**
      * Callback for search query from JCR Service

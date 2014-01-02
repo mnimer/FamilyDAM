@@ -16,7 +16,23 @@
  */
 
 var PhotoService = function($http) {
-    var basePath = "/content/dam";
+    var basePath = "/content/dam/photos";
+
+
+
+    /**
+     * Using the jcr:uuid get a json packet for the node
+     * @param path
+     * @param successCallback
+     * @param errorCallback
+     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
+     */
+    this.getById = function(uuid, successCallback, errorCallback) {
+
+        // make sure the path starts with /
+        var get =  $http.get("/dashboard-api/photo?uuid=" +uuid,{ cache: false });
+        return get;
+    };
 
 
     /**
@@ -40,35 +56,20 @@ var PhotoService = function($http) {
 
 
     /**
-     * Using the jcr:uuid get a json packet for the node
-     * @param path
-     * @param successCallback
-     * @param errorCallback
-     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
-     */
-    this.getById = function(uuid, successCallback, errorCallback) {
-
-        // make sure the path starts with /
-        var get =  $http.get("/dashboard-api/photo?uuid=" +uuid,{ cache: false });
-        return get;
-    };
-
-
-    /**
      * Load one layer at a time, used by the list view to show the contents of a folder.
      * @param path
      * @param successCallback
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.list = function(path, successCallback, errorCallback) {
+    this.list = function(path) {
 
         // make sure the path starts with /
         if( path.substring(0,1) != "/"){
             path = "/" +path;
         }
 
-        var get =  $http.get(basePath +path +'.1.json',{ cache: false });
+        var get =  $http.get(path +'.1.json',{ cache: false });
 
         return get;
     };
@@ -99,7 +100,7 @@ var PhotoService = function($http) {
      * @param errorCallback
      * @returns {*|HttpPromise}
      */
-    this.createFolder = function(path, title, successCallback, errorCallback) {
+    this.createFolder = function(path, title) {
         // make sure the path starts with /
         if( path.substring(0,1) != "/"){
             path = "/" +path;

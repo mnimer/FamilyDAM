@@ -55,12 +55,7 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
                     return photoService;
                 },
                 currentPath: function(){
-                    if( $scope.currentPath == "/" )
-                    {
-                            return "/photos";
-                    }else{
-                        return $scope.currentPath;
-                    }
+                    return $scope.currentPath;
                 }
             }
         });

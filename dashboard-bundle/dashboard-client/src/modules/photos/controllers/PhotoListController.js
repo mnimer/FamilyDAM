@@ -27,16 +27,11 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     });
 
 
-
     var refreshGrid = function()
     {
-        if( $scope.currentPath == "/" )
-        {
-            $scope.selectFolder("/photos");
-        }else{
-            $scope.selectFolder($scope.currentPath);
-        }
+        $scope.selectFolder($scope.currentPath);
     };
+
 
     /**
      * Callback for file list from JCR Service
@@ -50,7 +45,7 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
         var contents = [];
         var pos = data.config.url.indexOf(".1.json");
         var pos2 = $scope.basePath.length;
-        var basePath = data.config.url.substring(pos2, pos);
+        var basePath = data.config.url.substring(0, pos);
 
         for(var key in data.data)
         {
@@ -80,7 +75,7 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
             // transitionTo() promise will be rejected with
             // a 'transition prevented' error
         }
-        $scope.photos = photoService.list('/photos').then(listCallback);
+        $scope.photos = photoService.list('/').then(listCallback);
     };
     init();
 

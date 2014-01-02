@@ -53,28 +53,6 @@ var UserService = function($http) {
 
 
     /**
-     *
-     * @param path
-     * @param successCallback
-     * @param errorCallback
-     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
-     */
-    this.createUserWorkspace = function(data)
-    {
-        var method =  $http.post('/dashboard-api/user/workspace',
-            $.param(data),
-            {
-                headers:
-                {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                }
-            });
-        return method;
-    };
-
-
-
-    /**
      * Call our API which will invoke the Sling API to create the user then
      * @param path
      * @param successCallback
