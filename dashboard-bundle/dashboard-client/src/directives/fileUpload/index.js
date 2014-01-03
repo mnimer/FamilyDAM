@@ -53,7 +53,7 @@ module.exports = angular.module('FamilyCloud.FileUpload', ['angularFileUpload'])
                 {
                     $scope.uploadPath = val;
                     $scope.uploader.url = val;
-                }
+                };
 
 
                 // REGISTER HANDLERS

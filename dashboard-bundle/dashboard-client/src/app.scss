@@ -51,3 +51,10 @@ button[disabled] {
 {
   height: initial;
 }
+
+.modal-body
+{
+  font-size: 16px; font-size: 1.6rem;
+  max-height: 300px;
+  overflow: scroll;
+}

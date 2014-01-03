@@ -15,7 +15,7 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var FileService = function($http) {
+var FileService = function ($http) {
 
     /**
      * Load one layer at a time, used by the list view to show the contents of a folder.
@@ -24,16 +24,28 @@ var FileService = function($http) {
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.list = function(path) {
+    this.list = function (path) {
 
         // make sure the path starts with /
-        if( path.substring(0,1) != "/"){
-            path = "/" +path;
+        if (path.substring(0, 1) != "/") {
+            path = "/" + path;
         }
 
-        var get =  $http.get(path +'.1.json',{ cache: false });
+        var get = $http.get(path + '.1.json', { cache: false });
 
         return get;
+    };
+
+    /**
+     * Load one layer at a time, used by the list view to show the contents of a folder.
+     * @param path
+     * @param successCallback
+     * @param errorCallback
+     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
+     */
+    this.deletePath = function (path) {
+        var method = $http.delete(path);
+        return method;
     };
 
 
@@ -45,21 +57,18 @@ var FileService = function($http) {
      * @param errorCallback
      * @returns {*|HttpPromise}
      */
-    this.createFolder = function(path, title) {
+    this.createFolder = function (path, title) {
         // make sure the path starts with /
-        if( path.substring(0,1) != "/"){
-            path = "/" +path;
+        if (path.substring(0, 1) != "/") {
+            path = "/" + path;
         }
-        var _url = path +"/*";
-        var _data = ":name=" +title +"&:nameHint=" +title +"&jcr:primaryType=sling:Folder";
-            //_data[":name"] = title;
-            //_data[":nameHint"] = title;
-            //_data["jcr:primaryType"] = "sling:Folder";
+        var _url = path + "/*";
+        var _data = ":name=" + title + "&:nameHint=" + title + "&jcr:primaryType=sling:Folder";
         var _config = {};
-            _config.headers = {};
-            _config.headers['Content-Type'] = "application/x-www-form-urlencoded";
+        _config.headers = {};
+        _config.headers['Content-Type'] = "application/x-www-form-urlencoded";
 
-        var post =  $http.post(_url, _data, _config);
+        var post = $http.post(_url, _data, _config);
 
         return post;
     };

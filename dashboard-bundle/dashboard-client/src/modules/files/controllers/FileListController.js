@@ -16,8 +16,9 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var FileListController = function($scope, $rootScope, $location, $modal, $state, fileService)
+var FileListController = function($scope, $rootScope, $location, $modal, $state, $q, fileService)
 {
+    $scope.selectedPaths = [];
     var rootPath = "/content/dam";
     $scope.currentPath = rootPath;
     $scope.showUploadSidebar = false;
@@ -37,6 +38,21 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     });
 
 
+    $scope.toggleFolder = function(event, path)
+    {
+        var pos = $scope.selectedPaths.indexOf(path);
+
+        if( pos == -1 )
+        {
+            $(event.target).closest("tr").addClass("success");
+            $scope.selectedPaths.push(path);
+        }
+        else
+        {
+            $(event.target).closest("tr").removeClass("success");
+            $scope.selectedPaths.splice(pos, 1);
+        }
+    };
 
 
     $scope.toggleUpload = function()
@@ -65,16 +81,65 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     };
 
 
+    $scope.deletePaths = function()
+    {
+        var dialog = $modal.open({
+            templateUrl: 'DeleteConfirmationDialog',
+            controller: function ($scope, $modalInstance, items) {
+                $scope.items = items;
+
+                $scope.ok = function () {
+                    $modalInstance.close($scope.items);
+                };
+
+                $scope.cancel = function () {
+                    $modalInstance.dismiss('cancel');
+                };
+            },
+            resolve: {
+                items: function () {
+                    return $scope.selectedPaths;
+                }
+            }
+        });
+
+        dialog.result.then(function(paths)
+        {
+            var promises = [];
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+
+            for( var i=0; i < paths.length; i++)
+            {
+                promises.push(fileService.deletePath( paths[i] ));
+            }
+
+            $q.all(promises).then(function()
+            {
+                $scope.selectFolder($scope.currentPath);
+            });
+        });
+    };
+
 
     /**
      * Parse a path into it's tokens for a valid breadcrumb array
      */
+    $scope.selectFile = function(path)
+    {
+      //todo
+    };
+
+
     $scope.selectFolder = function(path)
     {
         if( path == "/")
         {
             path = rootPath;
         }
+
+        // clear out selected paths. We don't save while you are drilling down.
+        $scope.selectedPaths = [];
 
         // this is called from child view, so we'll update the parent/child scopes to get the breadcrumb binding
         $scope. $broadcast("pathChange", path);
@@ -187,5 +252,5 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
 
 };
 
-FileListController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', 'fileService'];
+FileListController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', '$q', 'fileService'];
 module.exports = FileListController;
