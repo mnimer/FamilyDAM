@@ -2,6 +2,7 @@
 // features
 @import "modules/main/main";
 @import "modules/login/login";
+@import "modules/files/files";
 @import "modules/photos/photos";
 @import "modules/user/preferences/preferences";
 @import "modules/user/usermanager/usermanager";
@@ -32,27 +33,21 @@ div
     height:100%;
 }
 
-.med-btn {
-    width: 50px;
-    height: 50px;
-}
-
-.small-btn {
-    width: 30px;
-    height: 30px;
-}
 button[disabled] {
     color: #cccccc !important;
 }
 
 /*override*/
-.modal
+.glyphicon:empty {
+  width: initial;
+}
+
+.modal-dialog
 {
-    display:block !important;
-    width:400px;
-    height:200px;
-    background-color: white;
-    left:400px;
-    top:200px;
-    bottom:400px;
+  height: initial;
+}
+
+.model-content
+{
+  height: initial;
 }

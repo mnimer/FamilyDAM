@@ -1,12 +1,12 @@
-var FolderNameModalCntrl = function ($scope, $rootScope,  $modalInstance, photoService, currentPath) {
+var FolderNameModalCntrl = function ($scope, $rootScope,  $modalInstance, fileService, currentPath) {
 
     $scope.formModel = {};
     $scope.currentPath = currentPath;
-    $scope.photoService = photoService;
+    $scope.fileService = fileService;
 
     $scope.createFolder = function ()
     {
-        $scope.photoService.createFolder($scope.currentPath, $scope.formModel.path, function()
+        $scope.fileService.createFolder($scope.currentPath, $scope.formModel.path).then(function()
         {
             $rootScope.$broadcast('refresh');
             $modalInstance.close();
@@ -21,5 +21,5 @@ var FolderNameModalCntrl = function ($scope, $rootScope,  $modalInstance, photoS
     };
 };
 
-FolderNameModalCntrl.$inject = ['$scope', '$rootScope', '$modalInstance', 'photoService', 'currentPath'];
+FolderNameModalCntrl.$inject = ['$scope', '$rootScope', '$modalInstance', 'fileService', 'currentPath'];
 module.exports = FolderNameModalCntrl;

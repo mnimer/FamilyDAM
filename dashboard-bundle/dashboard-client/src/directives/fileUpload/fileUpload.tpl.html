@@ -16,19 +16,22 @@
       ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
       -->
 
-    <div class="fileUploadForm" ng-controller="FileUploadController" ng-file-drop>
+    <div class="fileUploadForm"  ng-file-drop>
         <div class="col-xs-12">
 
             <!-- 3. ng-file-over | ng-file-over="className" -->
-            <div class="well file-drop-zone" ng-file-over>
-                Drop Photos Here
+
+
+            <div class="well file-drop-zone" ng-file-over ng-scope="this">
+                Drag Files Here to Upload to:<br/>
+                {{uploadPath}}
                 <br/><br/>
                 <div>
-                    <span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}">
+                    <span class="btn btn-success fileinput-button">
                         <i class="glyphicon glyphicon-plus"></i>
                         <span>Add</span>
-                        <input type="file" name="./*" multiple="true" ng-file-select ng-disabled="disabled">
-                        <input type="author" value="{{username}}"/>
+                        <input type="file" name="./*" multiple="true" ng-file-select >
+                        <input type="hidden" name="author" value="{{username}}"/>
                     </span>
 
                     <button type="button" class="btn btn-success btn-s " ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">

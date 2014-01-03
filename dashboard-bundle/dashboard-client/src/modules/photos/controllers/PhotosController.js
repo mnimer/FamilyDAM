@@ -25,7 +25,6 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     $scope.currentPath = "/";
     $scope.breadcrumb = [];
     $scope.showSidebar = false;
-    $scope.showUploadSidebar = false;
     $scope.showImageDetailsSidebar = false;
 
 
@@ -33,72 +32,6 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     {
         //$scope.$emit("refresh");
         $scope.$broadcast("refreshData");
-    };
-
-
-    $scope.toggleUpload = function()
-    {
-        var b = !$scope.showUploadSidebar;
-        //show or hide the sidebar div, based on toggle
-        $scope.showSidebar = b;
-        $scope.showUploadSidebar = b;
-    };
-
-
-    $scope.openCreateFolder = function()
-    {
-        var modalInstance = $modal.open({
-            templateUrl: 'FolderNameModal',
-            controller: 'FolderNameModalCntrl',
-            resolve:{
-                photoService: function(){
-                    return photoService;
-                },
-                currentPath: function(){
-                    return $scope.currentPath;
-                }
-            }
-        });
-    };
-
-
-
-
-    /**
-     * Parse a path into it's tokens for a valid breadcrumb array
-     */
-    $scope.selectFolder = function(path)
-    {
-        // this is called from child view, so we'll update the parent scope to get the breadcrumb binding
-        $scope.$broadcast("pathChange", path);
-
-        $scope.currentPath = path;
-
-        var breadcrumb = [];
-        var nodes = path.split("/");
-        var lastPath = "";
-        for (var indx in nodes)
-        {
-            var obj = nodes[indx];
-            if( obj.length > 1 )
-            {
-                lastPath = lastPath +"/" +obj;
-                breadcrumb.push({name:obj, path:lastPath});
-            }
-        }
-        $scope.breadcrumb = breadcrumb;
-    };
-
-
-    $scope.sortPrimaryType = function(item, arg2, arg3)
-    {
-        var type = "bFile";
-        if( item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder' )
-        {
-            type = "aFolder";
-        }
-
-        return type +"|" +item['name'];
     };
 
 
@@ -110,7 +43,6 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
             if( mode == "COLLECTION")
             {
                 $scope.showSidebar = false;
-                $scope.showUploadSidebar = false;
                 $scope.showImageDetailsSidebar = false;
             }
         }

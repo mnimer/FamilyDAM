@@ -31,6 +31,7 @@ var App = angular.module('dashboard', [
     'dashboard.templates',
     require('./modules/main').name,
     require('./modules/login').name,
+    require('./modules/files').name,
     require('./modules/photos').name,
     require('./modules/photos/directives/metadata').name,
     require('./directives/fileUpload').name,

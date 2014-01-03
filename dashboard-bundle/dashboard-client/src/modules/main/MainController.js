@@ -29,7 +29,7 @@ var MainController = function ($scope, $rootScope, $window, $location, $state, $
 
     // logged in user
     $rootScope.user = null;
-    $rootScope.defaultView = "photos.grid";
+    $rootScope.defaultView = "files";
 
     $scope.$state = $state;
     $scope.$stateParams = $stateParams;
@@ -62,8 +62,6 @@ var MainController = function ($scope, $rootScope, $window, $location, $state, $
      * Invoked on startup, like a constructor.
      */
     var init = function () {
-
-        //customersService.getCustomer(cloverConfig.customerID, getCustomerCallback, errorCallback);
 
     };
     init();

@@ -16,9 +16,7 @@
  */
 
 module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
-    .controller('FolderNameModalCntrl', require('./controllers/FolderNameModalCntrl'))
     .controller('PhotosController', require('./controllers/PhotosController'))
-    .controller('PhotoListController', require('./controllers/PhotoListController'))
     .controller('PhotoGridController', require('./controllers/PhotoGridController'))
     .controller('PhotoDetailsController', require('./controllers/PhotoDetailsController'))
 	.service('photoService', require('./services/PhotoService'))
@@ -33,16 +31,9 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
                     url:'',
                     templateUrl: "modules/photos/photos.grid.tpl.html",
                     controller: "PhotoGridController"
-                }).state('photos.list', {
-                    url:'/list',
-                    templateUrl: function (stateParams){
-                        return 'modules/photos/photos.list.tpl.html';
-                    },
-                    controller: "PhotoListController"
                 }).state('photos.details', {
                     url:'/:id/details',
                     templateUrl: "modules/photos/photos.details.tpl.html",
                     controller: "PhotoDetailsController"
                 });
-
         }]);

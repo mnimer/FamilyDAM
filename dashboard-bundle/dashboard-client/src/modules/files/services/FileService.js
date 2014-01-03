@@ -15,66 +15,56 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var PhotoService = function($http) {
-    var basePath = "/content/dam/photos";
-
-
+var FileService = function($http) {
 
     /**
-     * Using the jcr:uuid get a json packet for the node
+     * Load one layer at a time, used by the list view to show the contents of a folder.
      * @param path
      * @param successCallback
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.getById = function(uuid, successCallback, errorCallback) {
-
-        // make sure the path starts with /
-        var get =  $http.get("/dashboard-api/photo?uuid=" +uuid,{ cache: false });
-        return get;
-    };
-
-
-    /**
-     * This method is used to invoke hateoas links returned from the other services
-     * @param path
-     * @param successCallback
-     * @param errorCallback
-     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
-     */
-    this.invokeLink = function(path, successCallback, errorCallback) {
+    this.list = function(path) {
 
         // make sure the path starts with /
         if( path.substring(0,1) != "/"){
             path = "/" +path;
         }
 
-        var get =  $http.get(basePath +path +'.1.json',{ cache: false });
+        var get =  $http.get(path +'.1.json',{ cache: false });
 
         return get;
     };
-
 
 
     /**
-     * Search all photos with limit/offset paging support, used by the grid view.
+     * Create new folder (name=title) under the path
      * @param path
+     * @param title
      * @param successCallback
      * @param errorCallback
-     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
+     * @returns {*|HttpPromise}
      */
-    this.search = function( limit, offset, successCallback, errorCallback )
-    {
-        var searchPath = "/dashboard-api/photos/search?limit=" +limit +"&offset=" +offset;
+    this.createFolder = function(path, title) {
+        // make sure the path starts with /
+        if( path.substring(0,1) != "/"){
+            path = "/" +path;
+        }
+        var _url = path +"/*";
+        var _data = ":name=" +title +"&:nameHint=" +title +"&jcr:primaryType=sling:Folder";
+            //_data[":name"] = title;
+            //_data[":nameHint"] = title;
+            //_data["jcr:primaryType"] = "sling:Folder";
+        var _config = {};
+            _config.headers = {};
+            _config.headers['Content-Type'] = "application/x-www-form-urlencoded";
 
-        var get =  $http.get(searchPath);
+        var post =  $http.post(_url, _data, _config);
 
-        return get;
+        return post;
     };
-
-
 };
 
 
-PhotoService.$inject = ['$http'];
-module.exports = PhotoService;
+FileService.$inject = ['$http'];
+module.exports = FileService;
