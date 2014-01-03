@@ -1,4 +1,3 @@
-
 /*
  * This file is part of FamilyCloud Project.
  *
@@ -16,7 +15,7 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var FileListController = function($scope, $rootScope, $location, $modal, $state, $q, fileService)
+var FileListController = function ($scope, $rootScope, $location, $modal, $state, $q, fileService)
 {
     $scope.assetCountLabel = "loading...";
     $scope.selectedPaths = [];
@@ -25,7 +24,7 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     $scope.showUploadSidebar = false;
 
 
-    $scope.$on("pathChange", function(event, path)
+    $scope.$on("pathChange", function (event, path)
     {
         $scope.currentPath = path;
         // update list of photos
@@ -33,17 +32,17 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
         $scope.photos = fileService.list(path).then(listCallback);
     });
 
-    $scope.$on("refresh", function(event, path)
+    $scope.$on("refresh", function (event, path)
     {
         $scope.selectFolder($scope.currentPath);
     });
 
 
-    $scope.toggleFolder = function(event, path)
+    $scope.toggleFolder = function (event, path)
     {
         var pos = $scope.selectedPaths.indexOf(path);
 
-        if( pos == -1 )
+        if (pos == -1)
         {
             $(event.target).closest("tr").addClass("success");
             $scope.selectedPaths.push(path);
@@ -56,7 +55,7 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     };
 
 
-    $scope.toggleUpload = function()
+    $scope.toggleUpload = function ()
     {
         var b = !$scope.showUploadSidebar;
         //show or hide the sidebar div, based on toggle
@@ -65,16 +64,18 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     };
 
 
-    $scope.openCreateFolder = function()
+    $scope.openCreateFolder = function ()
     {
         var modalInstance = $modal.open({
             templateUrl: 'FolderNameModal',
             controller: 'FolderNameModalCntrl',
-            resolve:{
-                fileService: function(){
+            resolve: {
+                fileService: function ()
+                {
                     return fileService;
                 },
-                currentPath: function(){
+                currentPath: function ()
+                {
                     return $scope.currentPath;
                 }
             }
@@ -82,40 +83,44 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     };
 
 
-    $scope.deletePaths = function()
+    $scope.deletePaths = function ()
     {
         var dialog = $modal.open({
             templateUrl: 'DeleteConfirmationDialog',
-            controller: function ($scope, $modalInstance, items) {
+            controller: function ($scope, $modalInstance, items)
+            {
                 $scope.items = items;
 
-                $scope.ok = function () {
+                $scope.ok = function ()
+                {
                     $modalInstance.close($scope.items);
                 };
 
-                $scope.cancel = function () {
+                $scope.cancel = function ()
+                {
                     $modalInstance.dismiss('cancel');
                 };
             },
             resolve: {
-                items: function () {
+                items: function ()
+                {
                     return $scope.selectedPaths;
                 }
             }
         });
 
-        dialog.result.then(function(paths)
+        dialog.result.then(function (paths)
         {
             var promises = [];
             var deferred = $q.defer();
             var promise = deferred.promise;
 
-            for( var i=0; i < paths.length; i++)
+            for (var i = 0; i < paths.length; i++)
             {
-                promises.push(fileService.deletePath( paths[i] ));
+                promises.push(fileService.deletePath(paths[i]));
             }
 
-            $q.all(promises).then(function()
+            $q.all(promises).then(function ()
             {
                 $scope.selectFolder($scope.currentPath);
             });
@@ -126,15 +131,15 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     /**
      * Parse a path into it's tokens for a valid breadcrumb array
      */
-    $scope.selectFile = function(path)
+    $scope.selectFile = function (path)
     {
-      //todo
+        //todo
     };
 
 
-    $scope.selectFolder = function(path)
+    $scope.selectFolder = function (path)
     {
-        if( path == "/")
+        if (path == "/")
         {
             path = rootPath;
         }
@@ -146,7 +151,7 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
         $scope.selectedPaths = [];
 
         // this is called from child view, so we'll update the parent/child scopes to get the breadcrumb binding
-        $scope. $broadcast("pathChange", path);
+        $scope.$broadcast("pathChange", path);
         //$scope. $emit("pathChange", path);
 
         $scope.currentPath = path;
@@ -154,20 +159,19 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     };
 
 
-    $scope.sortPrimaryType = function(item, arg2, arg3)
+    $scope.sortPrimaryType = function (item, arg2, arg3)
     {
         var type = "bFile";
-        if( item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder' )
+        if (item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder')
         {
             type = "aFolder";
         }
 
-        return type +"|" +item['name'];
+        return type + "|" + item['name'];
     };
 
 
-
-    var updateBreadcrumb = function(path)
+    var updateBreadcrumb = function (path)
     {
         var hiddenNodes = rootPath.split("/");
 
@@ -179,9 +183,10 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
         {
 
             var obj = nodes[indx];
-            if (obj.length > 1) {
+            if (obj.length > 1)
+            {
                 lastPath = lastPath + "/" + obj;
-                if( indx >= hiddenNodes.length-1 )
+                if (indx >= hiddenNodes.length - 1)
                 {
                     breadcrumb.push({name: obj, path: lastPath});
                 }
@@ -192,7 +197,6 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
     };
 
 
-
     /**
      * Callback for file list from JCR Service
      * @param data
@@ -200,7 +204,7 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
      * @param headers
      * @param config
      */
-    var listCallback = function(data)
+    var listCallback = function (data)
     {
         var contents = [];
         var pos = data.config.url.indexOf(".1.json");
@@ -208,22 +212,22 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
         var basePath = data.config.url.substring(0, pos);
 
 
-        for(var key in data.data)
+        for (var key in data.data)
         {
             var item = data.data[key];
-            if( item instanceof Object && isSupportedType(item))
+            if (item instanceof Object && isSupportedType(item))
             {
                 item.name = key;
-                item.path = basePath +"/" +key;
+                item.path = basePath + "/" + key;
 
-                if( item.name.substring(0,1) != ".") // hide hidden files and only support folders/files (not jcr properties)
+                if (item.name.substring(0, 1) != ".") // hide hidden files and only support folders/files (not jcr properties)
                 {
                     contents.push(item);
                 }
             }
         }
 
-        $scope.assetCountLabel = contents.length +" items";//todo localize
+        $scope.assetCountLabel = contents.length + " items";//todo localize
         $scope.assets = contents;
     };
 
@@ -233,16 +237,16 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
      * @param item
      * @returns {boolean}
      */
-    var isSupportedType = function(item)
+    var isSupportedType = function (item)
     {
-        var isOk = item['jcr:primaryType'] == "sling:Folder" || item['jcr:primaryType'] == "nt:Folder"  || item['jcr:primaryType'] == "nt:file";
+        var isOk = item['jcr:primaryType'] == "sling:Folder" || item['jcr:primaryType'] == "nt:Folder" || item['jcr:primaryType'] == "nt:file";
         return isOk;
     };
 
 
-    var init = function()
+    var init = function ()
     {
-        if( $rootScope.user == null )
+        if ($rootScope.user == null)
         {
             $state.go("login");
             return;

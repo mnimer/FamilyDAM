@@ -19,12 +19,12 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
     .controller('FolderNameModalCntrl', require('./controllers/FolderNameModalCntrl'))
     .controller('FileListController', require('./controllers/FileListController'))
     .service('fileService', require('./services/FileService'))
-    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
-        {
-            $stateProvider.state('files', {
-                    url:'/files',
-                    templateUrl: "modules/files/files.list.tpl.html",
-                    controller: "FileListController"
-                });
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
+    {
+        $stateProvider.state('files', {
+            url: '/files',
+            templateUrl: "modules/files/files.list.tpl.html",
+            controller: "FileListController"
+        });
 
-        }]);
+    }]);
