@@ -33,10 +33,9 @@ var LoginController = function($scope, $rootScope, $location, $state, loginServi
                     function(data)
                     {
                         $rootScope.user = data;
-                        $rootScope.ModeFullScreen = true;
-                        $state.go($rootScope.defaultView);
+                        $state.go("home");
                         // after login, turn off full screen
-                        $scope.$broadcast("FullScreenToggle", false);
+
 
                     }, function(reason) {
                         $scope.message = reason;

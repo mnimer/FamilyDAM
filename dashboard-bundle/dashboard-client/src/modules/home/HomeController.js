@@ -16,7 +16,7 @@
  */
 
 /**
- * Controller for the main application screen that controls the header and menu.
+ * Controller for the home screen
  * @param $scope
  * @param $window
  * @param $route
@@ -25,36 +25,25 @@
  * @param $dialog
  * @constructor
  */
-var MainController = function ($scope, $rootScope, $window, $location, $state, $stateParams) {
-
-    // logged in user
-    $rootScope.user = null;
-    $rootScope.defaultView = "files";
-
-    $scope.$state = $state;
-    $scope.$stateParams = $stateParams;
-    $scope.activePath = "/";
-    $scope.showNavigation = false;
-
-    $scope.toggleFullScreenMode = function()
-    {
-    };
-
-
-    $scope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error)
-    {
-        $rootScope.user = null;
-        //$state.go("login");
-    });
+var HomeController = function ($scope, $rootScope, $state)
+{
 
     /**
      * Invoked on startup, like a constructor.
      */
-    var init = function () {
-
+    var init = function ()
+    {
+        if ($rootScope.user == null)
+        {
+            $state.go("login");
+            return;
+            // transitionTo() promise will be rejected with
+            // a 'transition prevented' error
+        }
     };
     init();
 };
 
-MainController.$inject = ['$scope', '$rootScope', '$window', '$location', '$state', '$stateParams'];
-module.exports = MainController;
+
+HomeController.$inject = ['$scope', '$rootScope', '$state'];
+module.exports = HomeController;

@@ -46,7 +46,8 @@ module.exports = angular.module('FamilyCloud.FileUpload', ['angularFileUpload'])
                     url: $scope.uploadPath,
                     alias: './*',
                     formData: [{'author': $scope.$root.username}],
-                    filters: []
+                    filters: [],
+                    removeAfterUpload:true
                 });
 
                 this.setUploadPath = function(val)
@@ -63,6 +64,7 @@ module.exports = angular.module('FamilyCloud.FileUpload', ['angularFileUpload'])
 
                 $scope.uploader.bind('afteraddingall', function (event, items) {
                     console.log('After adding all files', items);
+
                 });
 
                 $scope.uploader.bind('changedqueue', function (event, items) {
@@ -91,6 +93,9 @@ module.exports = angular.module('FamilyCloud.FileUpload', ['angularFileUpload'])
 
                 $scope.uploader.bind('completeall', function (event, items) {
                     console.log('All files are transferred', items);
+
+                    // send refresh folder event
+                    $scope.$emit("refresh");
                 });
 
             }

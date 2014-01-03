@@ -1,6 +1,7 @@
 
 // features
 @import "modules/main/main";
+@import "modules/home/home";
 @import "modules/login/login";
 @import "modules/files/files";
 @import "modules/photos/photos";
@@ -25,7 +26,7 @@ html, body {
 
 div
 {
-    height:100%;
+
 }
 
 .section

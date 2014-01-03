@@ -19,7 +19,7 @@
 <div class="navbar">
     <div class="navbar-inner">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><span>FamilyCloud</span></a>
+            <a class="navbar-brand" ui-sref="home"><span>FamilyDAM</span></a>
             <!-- start: Header Menu -->
             <div class="nav-no-collapse header-nav">
                 <ul class="nav pull-right" ng-hide="( user == undefined )">
@@ -85,8 +85,11 @@
 
         <!-- start: Content -->
         <div class="row primaryView">
-            <div ng-class="{'col-xs-12':!showNavigation, 'col-xs-12':showNavigation}" >
-                <div ui-view ng-animate="'view'"></div>
+            <div ng-class="{'col-xs-12':!showNavigation, 'col-xs-12':showNavigation}"  class="section">
+                <div ui-view ng-animate="'view'">
+
+                    Welcome to your Family D.igital A.sset M.anager
+                </div>
             </div>
         </div>
         <!-- end: Content -->

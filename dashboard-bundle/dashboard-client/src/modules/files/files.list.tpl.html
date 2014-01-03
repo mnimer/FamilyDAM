@@ -37,14 +37,17 @@
 
                     <button
                             class="glyphicon glyphicon-trash btn btn-default btn-md"
+                            tooltip="Delete selected item(s)" tooltip-placement="bottom"
                             ng-click="deletePaths()" ng-disabled="selectedPaths.length == 0"></button>
 
                     <button
                             class="glyphicon glyphicon-folder-close btn btn-default btn-md"
+                            tooltip="Add new folder" tooltip-placement="bottom"
                             ng-click="openCreateFolder()"></button>
 
                     <button
-                            class="glyphicon glyphicon-upload btn btn-default btn-md"
+                            class="glyphicon glyphicon-cloud-upload btn btn-default btn-md"
+                            tooltip="Upload files" tooltip-placement="bottom"
                             ng-click="toggleUpload()"></button>
                 </span>
             </div>
