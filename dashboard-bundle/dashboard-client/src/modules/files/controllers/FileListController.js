@@ -18,6 +18,7 @@
 
 var FileListController = function($scope, $rootScope, $location, $modal, $state, $q, fileService)
 {
+    $scope.assetCountLabel = "loading...";
     $scope.selectedPaths = [];
     var rootPath = "/content/dam";
     $scope.currentPath = rootPath;
@@ -138,6 +139,9 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
             path = rootPath;
         }
 
+        //reset loading label
+        $scope.assetCountLabel = "loading...";//todo localize
+
         // clear out selected paths. We don't save while you are drilling down.
         $scope.selectedPaths = [];
 
@@ -219,6 +223,7 @@ var FileListController = function($scope, $rootScope, $location, $modal, $state,
             }
         }
 
+        $scope.assetCountLabel = contents.length +" items";//todo localize
         $scope.assets = contents;
     };
 
