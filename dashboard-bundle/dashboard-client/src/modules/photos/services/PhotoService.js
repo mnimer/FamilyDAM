@@ -42,16 +42,15 @@ var PhotoService = function($http) {
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.invokeLink = function(path, successCallback, errorCallback) {
+    this.invokeLink = function(path) {
 
         // make sure the path starts with /
         if( path.substring(0,1) != "/"){
             path = "/" +path;
         }
 
-        var get =  $http.get(basePath +path +'.1.json',{ cache: false });
-
-        return get;
+        var method =  $http.get(path);
+        return method;
     };
 
 
@@ -63,13 +62,13 @@ var PhotoService = function($http) {
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.search = function( limit, offset, successCallback, errorCallback )
+    this.search = function( limit, offset )
     {
         var searchPath = "/dashboard-api/photos/search?limit=" +limit +"&offset=" +offset;
 
-        var get =  $http.get(searchPath);
+        var method =  $http.get(searchPath);
 
-        return get;
+        return method;
     };
 
 

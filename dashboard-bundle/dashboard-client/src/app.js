@@ -22,26 +22,27 @@ require('dashboard-templates');
 
 // Define the required modules
 var App = angular.module('dashboard', [
-    'ngCookies',
-    'ngResource',
-	'ngDragDrop',
-	'ui.router',
-	'ui.bootstrap',
-	'ui.bootstrap.tpls',
-    'dashboard.templates',
-    require('./modules/main').name,
-    require('./modules/login').name,
-    require('./modules/home').name,
-    require('./modules/files').name,
-    require('./modules/photos').name,
-    require('./modules/photos/directives/metadata').name,
-    require('./directives/fileUpload').name,
-    require('./modules/user/preferences').name,
-    require('./modules/user/usermanager').name])
+        'ngCookies',
+        'ngResource',
+        'ngDragDrop',
+        'ui.router',
+        'ui.bootstrap',
+        'ui.bootstrap.tpls',
+        'infinite-scroll',
+        'dashboard.templates',
+        require('./modules/main').name,
+        require('./modules/login').name,
+        require('./modules/home').name,
+        require('./modules/files').name,
+        require('./modules/photos').name,
+        require('./modules/photos/directives/metadata').name,
+        require('./modules/photos/directives/slider').name,
+        require('./directives/fileUpload').name,
+        require('./modules/user/preferences').name,
+        require('./modules/user/usermanager').name])
 
 
-
-    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {
         // For any unmatched url, redirect to /state1
         $urlRouterProvider.when('', '/login');

@@ -58,6 +58,7 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryResult;
+import javax.jcr.query.RowIterator;
 import javax.servlet.Servlet;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -136,15 +137,15 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
         try
         {
-            String stmt = "SELECT * FROM [fc:image] AS file INNER JOIN [nt:resource] as resource on ISCHILDNODE(resource, file)" +
+            String stmt = "SELECT file.* FROM [fc:image] AS file INNER JOIN [nt:resource] as resource on ISCHILDNODE(resource, file)" +
                     " WHERE resource.[jcr:mimeType] like 'image/%'" +
                     " AND ISDESCENDANTNODE(file, '" +path +"')" +
                     " ORDER BY file.[fc:created] DESC";
 
             Session session = request.getResourceResolver().adaptTo(Session.class);
             Query query = session.getWorkspace().getQueryManager().createQuery(stmt, Query.JCR_SQL2);
-            query.setLimit(limit);
-            query.setOffset(offset);
+            //query.setLimit(limit);
+            //query.setOffset(offset);
             QueryResult results = query.execute();
 
 
@@ -180,10 +181,10 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
                     w.endObject();
                 w.key("data");
                     w.array();
-                    NodeIterator nodeItr = results.getNodes();
+                    RowIterator nodeItr = results.getRows();
                     while( nodeItr.hasNext() )
                     {
-                        Node n = nodeItr.nextNode();
+                        Node n = nodeItr.nextRow().getNode("file");
                         Resource resource = request.getResourceResolver().resolve(n.getPath());
 
                         //todo standardize this for all services that return an Image

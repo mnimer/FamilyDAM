@@ -1,4 +1,3 @@
-
 /*
  * This file is part of FamilyCloud Project.
  *
@@ -16,33 +15,67 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var PhotosController = function($scope, $rootScope, $location, $modal, $state, photoService, infiniteScroll) {
-
-
+var PhotosController = function ($scope, $rootScope, $location, $modal, $state, photoService)
+{
     var groupByProperty = "fc:created";
     $scope.assets = {};
+    // bootstrap columns for thumbnails
+    $scope.responsiveColumns = 3;
+    $scope.responsiveColumnLabel = "col-xs-12 col-sm-3";
 
-    $scope.pageGrid = function()
+    $scope.$on("photo:grid:columns", function(data, args){
+        $scope.responsiveColumns = args;
+        $scope.responsiveColumnLabel = "col-xs-12 col-sm-" +args;
+        $scope.$apply();
+    });
+
+
+    $scope.getColumnLabel = function(columns)
     {
-        console.log("infinite scroll triggered");
+        return "col-sm-" +$scope.responsiveColumns;
     };
 
 
-    var refreshGrid = function()
+    $scope.pageGrid = function ()
+    {
+        photoService.invokeLink($scope.next).then(searchCallback);
+    };
+
+
+    var refreshGrid = function ()
     {
         $scope.selectFolder($scope.currentPath);
     };
 
 
+    var groupData = function (assets, results)
+    {
+        for (var item in results)
+        {
+            var dt = results[item][groupByProperty];
+            dt = new Date(Date.parse(dt));
+            var dtTitle = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
+            if (assets[dtTitle] === undefined)
+            {
+                assets[dtTitle] = {};
+                assets[dtTitle].title = dtTitle;
+                assets[dtTitle].data = [];
+            }
 
-    /**
-     * Callback for search query from JCR Service
-     * @param data
-     * @param status
-     * @param headers
-     * @param config
-     */
-    var searchCallback = function(data)
+            var heights = [150,250,300,350,425];
+            results[item].height = heights[getRandomInt(1,4)];
+            assets[dtTitle].data.push(results[item]);
+        }
+    };
+
+
+    var getRandomInt = function (min, max)
+    {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+
+    var searchCallback = function (data)
     {
         groupData($scope.assets, data.data.data);
         // hateoas links
@@ -52,45 +85,25 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     };
 
 
-
-    var groupData = function(assets, results)
+    var init = function ()
     {
-        for( var item in results)
-        {
-            var dt = results[item][groupByProperty];
-            dt = new Date(Date.parse(dt));
-            var dtTitle = dt.toLocaleDateString();
-            if( assets[dtTitle] === undefined )
-            {
-                assets[dtTitle] = {};
-                assets[dtTitle].title = dtTitle;
-                assets[dtTitle].data = [];
-            }
-
-            assets[dtTitle].data.push( results[item] );
-        }
-    };
-
-
-
-    var init = function(){
 
         $scope.$emit("MODE_CHANGE", "COLLECTION");
         $scope.$on('refreshData', refreshGrid);
 
-        if( $rootScope.user == null )
+        if ($rootScope.user == null)
         {
             $state.go("login");
             return;
             // transitionTo() promise will be rejected with
             // a 'transition prevented' error
         }
-        var request = photoService.search(100, 1).then( searchCallback );
+        var request = photoService.search(50, 1).then(searchCallback);
 
     };
     init();
 
 };
 
-PhotosController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', 'photoService', 'infinite-scroll'];
+PhotosController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', 'photoService'];
 module.exports = PhotosController;

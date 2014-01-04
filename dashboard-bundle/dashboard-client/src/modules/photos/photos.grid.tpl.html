@@ -15,19 +15,40 @@
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<div class="content gridView">
-    <div ng-repeat="item in assets | orderBy:sortPrimaryType"
-         infinite-scroll-distance="3" infinite-scroll="pageGrid()" >
+<div class="content">
+    <div class="buttonBar">
+
+
+        <button ui-sref="photos.grid"
+                class="glyphicon glyphicon-th btn btn-default btn-md"
+                ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
+
+        <button ui-sref="photos.list"
+                class="glyphicon glyphicon-list btn btn-default btn-md"
+                ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></button>
+
+        <span class="pull-right">
+            <div id="slider" data-column-slider columns="{{responsiveColumns}}"></div>
+
+            <button
+                    class="glyphicon glyphicon-edit btn btn-default btn-md"
+                    ng-click="" ng-disabled="true"
+                    ng-show="mode=='DETAILS'"></button>
+        </span>
+</div>
+
+
+    <div class="" ng-repeat="item in assets | orderBy:sortPrimaryType" >
         <div>{{item.title}}</div>
-        <ul>
-            <li class="fileRenderer" ng-repeat="data in item.data" style="float:left; overflow:hidden; display: inline-block;">
-                <div >
-                    <div>
-                        <a href="#/photos/{{data['jcr:uuid']}}/details"><img ng-src="{{data.links.image}}.scale.h:150.png" /></a><br/>
-                        <a class="glyphicon" href="#/photos/{{data['jcr:uuid']}}/details"> {{data.name}}</a>
-                    </div>
+        <ul class="row ">
+            <li ng-class="responsiveColumnLabel" ng-repeat="data in item.data">
+                <div class="thumbnail">
+                    <a href="#/photos/{{data['jcr:uuid']}}/details"><img ng-src="{{data.links.image}}.scale.w:500.png" style="width: 100%;" /></a><br/>
+                    <a class="glyphicon" href="#/photos/{{data['jcr:uuid']}}/details"> {{data.name}}</a>
                 </div>
             </li>
         </ul>
+
+        <button ng-click="pageGrid()">Load More</button>
     </div>
 </div>

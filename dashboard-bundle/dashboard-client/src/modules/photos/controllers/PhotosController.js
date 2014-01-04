@@ -20,11 +20,12 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
     $scope.layout = "grid";
     $scope.assets = [];
     // part of the path we hide in the breadrum
-    $scope.basePath = "/content/dam";
-    // path to show in breadcrumb
-    $scope.currentPath = "/";
+    var rootPath = "/content/dam/photos";
+    $scope.currentPath = rootPath;
+
     $scope.breadcrumb = [];
-    $scope.showSidebar = false;
+    $scope.showSidebar = true;
+    $scope.showFilterSidebar = true;
     $scope.showImageDetailsSidebar = false;
 
 
@@ -42,22 +43,18 @@ var PhotosController = function($scope, $rootScope, $location, $modal, $state, p
             $scope.mode = mode;
             if( mode == "COLLECTION")
             {
-                $scope.showSidebar = false;
+                $scope.showSidebar = true;
+                $scope.showFilterSidebar = true;
                 $scope.showImageDetailsSidebar = false;
             }
         }
-    });
-
-    $scope.$on("FullScreenToggle", function(event, boolean)
-    {
-        $scope.showSidebar = boolean;
-        $scope.showUploadSidebar = false;
     });
 
 
     $scope.$on("IMAGE_SELECTED", function(event, data){
         $scope.selectedNode = data;
         $scope.showSidebar = true;
+        $scope.showFilterSidebar = false;
         $scope.showImageDetailsSidebar = true;
 
         if( data['fc:metadata'] !== undefined )

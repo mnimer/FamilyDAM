@@ -38,6 +38,31 @@ button[disabled] {
     color: #cccccc !important;
 }
 
+
+
+.buttonBar
+{
+  padding-bottom: 10px;
+  border-bottom:  1px solid;
+}
+
+#toolbar
+{
+  display:        inline-block;
+  width:          100%;
+  height:         30px;
+  text-transform: capitalize;
+
+  button
+  {
+    width:            30px;
+    background-color: inherit;
+    background-image: none;
+  }
+
+}
+
+
 /*override*/
 .glyphicon:empty {
   width: initial;

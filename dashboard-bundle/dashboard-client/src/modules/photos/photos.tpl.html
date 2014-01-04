@@ -21,52 +21,10 @@
         <ol class="breadcrumb" style="display: inline;">
             <li ng-repeat="item in breadcrumb" ng-class="{'active':$last}"><a ng-click="selectFolder(item.path)">{{item.name}}</a></li>
         </ol>
-
-        <span class="pull-right">
-
-            <button
-               class="glyphicon glyphicon-refresh btn btn-default btn-md"
-               ng-click="refresh()"></button>
-
-            <button ui-sref="photos.grid"
-                    class="glyphicon glyphicon-th btn btn-default btn-md"
-                    ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
-
-            <button ui-sref="photos.list"
-                    class="glyphicon glyphicon-list btn btn-default btn-md"
-                    ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></button>
-
-            <span class="divider">&nbsp;|&nbsp;</span>
-
-            <button
-               class="glyphicon glyphicon-folder-close btn btn-default btn-md"
-                ng-click="openCreateFolder()"
-                ng-show="mode=='COLLECTION'"></button>
-
-            <button
-               class="glyphicon glyphicon-upload btn btn-default btn-md"
-                ng-click="toggleUpload()"
-                ng-show="mode=='COLLECTION'"></button>
-
-
-
-            <button
-               class="glyphicon glyphicon-edit btn btn-default btn-md"
-                ng-click="" ng-disabled="true"
-                ng-show="mode=='DETAILS'"></button>
-
-            <button
-               class="glyphicon glyphicon-trash btn btn-default btn-md"
-                ng-click="" ng-disabled="true"
-                ng-show="mode=='DETAILS'"></button>
-
-
-        </span>
     </div>
 
-    <div class="content">
-        <div ui-view style="height: 100%;padding: 0px;border: 0px;"></div>
-    </div>
+
+    <div ui-view></div>
 
 </div>
 
