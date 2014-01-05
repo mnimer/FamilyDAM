@@ -23,6 +23,9 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
     $scope.currentPath = rootPath;
     $scope.showUploadSidebar = false;
 
+    //Toolbar button visible flags
+    $scope.showPhotoGrid = false;
+
 
     $scope.$on("pathChange", function (event, path)
     {
@@ -253,9 +256,24 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
             // transitionTo() promise will be rejected with
             // a 'transition prevented' error
         }
+
+
+        /**
+         * Copy state properties to the scope, if it's defined
+         * This is used by some of the other modules who are reusing this view.
+         * **/
+        if( $state.current.data !== undefined )
+        {
+            for(var prop in $state.current.data )
+            {
+                $scope[prop] = $state.current.data[prop];
+            }
+        }
+
+
         $scope.showSidebar = true;
         $scope.showUploadSidebar = true;
-        $scope.photos = fileService.list(rootPath).then(listCallback);
+        $scope.photos = fileService.list($scope.currentPath).then(listCallback);
     };
     init();
 

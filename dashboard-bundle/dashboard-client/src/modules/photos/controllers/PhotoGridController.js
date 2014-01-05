@@ -17,6 +17,18 @@
 
 var PhotosController = function ($scope, $rootScope, $location, $modal, $state, photoService)
 {
+    $scope.layout = "grid";
+
+    // part of the path we hide in the breadrumb
+    var rootPath = "/content/dam/photos";
+    $scope.currentPath = rootPath;
+
+    $scope.breadcrumb = [];
+    $scope.showSidebar = true;
+    $scope.showFilterSidebar = true;
+    $scope.showImageDetailsSidebar = false;
+
+
     var groupByProperty = "fc:created";
     $scope.assets = {};
     // bootstrap columns for thumbnails
@@ -46,6 +58,49 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     {
         $scope.selectFolder($scope.currentPath);
     };
+
+
+
+    $scope.$on("MODE_CHANGE", function(event, mode){
+
+        if( $scope.mode != mode )
+        {
+            $scope.mode = mode;
+            if( mode == "COLLECTION")
+            {
+                $scope.showSidebar = true;
+                $scope.showFilterSidebar = true;
+                $scope.showImageDetailsSidebar = false;
+            }
+        }
+    });
+
+
+    $scope.$on("IMAGE_SELECTED", function(event, data){
+        $scope.selectedNode = data;
+        $scope.showSidebar = true;
+        $scope.showFilterSidebar = false;
+        $scope.showImageDetailsSidebar = true;
+
+        if( data['fc:metadata'] !== undefined )
+        {
+            $scope.uuid = data['jcr:uuid'];
+            $scope.keywords = data['fc:metadata']['Iptc']['Keywords']['value'];
+        }
+
+    });
+
+
+    $scope.$on('$viewContentLoaded', function(event, toState, toParams, fromState, fromParams)
+    {
+        if( $rootScope.user == null )
+        {
+            event.preventDefault();
+            // transitionTo() promise will be rejected with
+            // a 'transition prevented' error
+        }
+    });
+
 
 
     var groupData = function (assets, results)
@@ -102,6 +157,22 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
 
     };
     init();
+
+
+
+    /**
+     * Utility functions
+     */
+    $scope.safeApply = function(fn) {
+        var phase = this.$root.$$phase;
+        if(phase == '$apply' || phase == '$digest') {
+            if(fn && (typeof(fn) === 'function')) {
+                fn();
+            }
+        } else {
+            this.$apply(fn);
+        }
+    };
 
 };
 

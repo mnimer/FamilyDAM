@@ -16,24 +16,38 @@
  */
 
 module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
-    .controller('PhotosController', require('./controllers/PhotosController'))
     .controller('PhotoGridController', require('./controllers/PhotoGridController'))
     .controller('PhotoDetailsController', require('./controllers/PhotoDetailsController'))
+    .controller('FileListController', require('../files/controllers/FileListController'))
 	.service('photoService', require('./services/PhotoService'))
 	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
         {
             $stateProvider.state('photos', {
                     url:'/photos',
-                    abstract:true,
-                    templateUrl: "modules/photos/photos.tpl.html",
-                    controller: "PhotosController"
-                }).state('photos.grid', {
-                    url:'',
                     templateUrl: "modules/photos/photos.grid.tpl.html",
                     controller: "PhotoGridController"
                 }).state('photos.details', {
                     url:'/:id/details',
                     templateUrl: "modules/photos/photos.details.tpl.html",
                     controller: "PhotoDetailsController"
+                }).state('photo-files', {
+                    url: '/photos/files',
+                    templateUrl: "modules/files/files.list.tpl.html",
+                    controller: "FileListController",
+                    data:{
+                        currentPath: "/content/dam/photos",
+                        showPhotoGrid: true
+                    },
+                    resolve:{
+                        currentPath: function(){
+                            return {value:"/content/dam/photos"};
+                        },
+                        showPhotoGrid: function(){ return {value:true}; }
+                    }
                 });
         }]);
+
+
+/**
+ *
+ */

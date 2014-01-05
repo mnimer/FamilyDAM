@@ -31,6 +31,13 @@
                 <button class="glyphicon glyphicon-list btn btn-default btn-md"
                         ng-class="{active: layout == 'list'}" ng-click="selectFolder('/');"></button>
 
+
+                <button ui-sref="photos.grid"
+                        ng-show="showPhotoGrid"
+                        class="glyphicon glyphicon-th btn btn-default btn-md"
+                        ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
+
+
                 <span class="assetCount">{{assetCountLabel}} </span>
 
                 <span class="pull-right">

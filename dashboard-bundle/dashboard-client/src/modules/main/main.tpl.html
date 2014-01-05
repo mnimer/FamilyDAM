@@ -55,8 +55,8 @@
                     <li ng-class="{ active: $state.includes('files') }">
                         <a ui-sref="files"><i class="icon-bar-chart"></i><span class="hidden-sm">Files</span></a>
                     </li>
-                    <li ng-class="{ active: $state.includes('photos') }">
-                        <a ui-sref="photos.grid"><i class="icon-bar-chart"></i><span class="hidden-sm">Photos</span></a>
+                    <li ng-class="{ active: $state.includes('photos') || $state.includes('photo-files') }">
+                        <a ui-sref="photos"><i class="icon-bar-chart"></i><span class="hidden-sm">Photos</span></a>
                     </li>
                     <li ng-class="{ active: activePath=='/music' }">
                         <a class="dropmenu" href="#/music"><i class="icon-eye-open"></i><span class="hidden-sm"> Music</span></a>

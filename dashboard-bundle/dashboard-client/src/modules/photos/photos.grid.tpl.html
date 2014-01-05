@@ -14,18 +14,24 @@
   ~     You should have received a copy of the GNU General Public License
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
+<div class="photos section" ng-class="{'col-xs-12':!showSidebar, 'col-sm-9': showSidebar}">
+    <div id="toolbar">
+        <ol class="breadcrumb" style="display: inline;">
+            <li ng-repeat="item in breadcrumb" ng-class="{'active':$last}"><a ng-click="selectFolder(item.path)">{{item.name}}</a>
+            </li>
+        </ol>
+    </div>
 
-<div class="content">
-    <div class="buttonBar">
+    <div class="content">
+        <div class="buttonBar">
 
+            <button ui-sref="photo-files"
+                    class="glyphicon glyphicon-list btn btn-default btn-md"
+                    ng-class="{active: layout == 'files'}" ng-click="layout = 'files'"></button>
 
-        <button ui-sref="photos.grid"
-                class="glyphicon glyphicon-th btn btn-default btn-md"
-                ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
-
-        <button ui-sref="photos.list"
-                class="glyphicon glyphicon-list btn btn-default btn-md"
-                ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></button>
+            <button ui-sref="photos.grid"
+                    class="glyphicon glyphicon-th btn btn-default btn-md"
+                    ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
 
         <span class="pull-right">
             <div id="slider" data-column-slider columns="{{responsiveColumns}}"></div>
@@ -35,20 +41,35 @@
                     ng-click="" ng-disabled="true"
                     ng-show="mode=='DETAILS'"></button>
         </span>
-</div>
+        </div>
 
 
-    <div class="" ng-repeat="item in assets | orderBy:sortPrimaryType" >
-        <div>{{item.title}}</div>
-        <ul class="row ">
-            <li ng-class="responsiveColumnLabel" ng-repeat="data in item.data">
-                <div class="thumbnail">
-                    <a href="#/photos/{{data['jcr:uuid']}}/details"><img ng-src="{{data.links.image}}.scale.w:500.png" style="width: 100%;" /></a><br/>
-                    <a class="glyphicon" href="#/photos/{{data['jcr:uuid']}}/details"> {{data.name}}</a>
-                </div>
-            </li>
-        </ul>
+        <div class="" ng-repeat="item in assets | orderBy:sortPrimaryType">
+            <div>{{item.title}}</div>
+            <ul class="row ">
+                <li ng-class="responsiveColumnLabel" ng-repeat="data in item.data">
+                    <div class="thumbnail">
+                        <a href="#/photos/{{data['jcr:uuid']}}/details"><img
+                                ng-src="{{data.links.image}}.scale.w:500.png" style="width: 100%;"/></a><br/>
+                        <a class="glyphicon" href="#/photos/{{data['jcr:uuid']}}/details"> {{data.name}}</a>
+                    </div>
+                </li>
+            </ul>
 
-        <button ng-click="pageGrid()">Load More</button>
+            <button ng-click="pageGrid()">Load More</button>
+        </div>
     </div>
 </div>
+
+
+<!-- start: Widgets Area -->
+<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-show="showSidebar">
+
+    <div id="sidebar-details" class="sidebar-nav" ng-show="showImageDetailsSidebar">
+        <div x-photo-metadata
+             uuid="{{uuid}}"
+             keywords="{{keywords}}"/>
+    </div>
+
+</aside>
+<!-- end: Widgets Area -->
