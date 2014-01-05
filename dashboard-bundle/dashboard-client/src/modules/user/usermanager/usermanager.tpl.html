@@ -58,7 +58,7 @@
                         <tab heading="Info">
                             <div class="form-inline"  style="padding-bottom: 70px;">
                                 <div class="col-xs-12" style="height: 50px;padding-top: 10px;">
-                                    <h4>Username & Workspace: <span class="label label-default">{{currentUser[':name']}}</span></h4>
+                                    <h4>Username: <span class="label label-default">{{currentUser[':name']}}</span></h4>
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label for="firstName">First Name</label>
@@ -80,35 +80,32 @@
                         <tab heading="Permission" ng-disabled="true">
                             <div class="form-inline"  style="padding-bottom: 70px;">
                                 <div class="form-group col-xs-6">
-                                    <label for="">Workspaces:</label>
-                                    <input type="radio" class="form-control" id="workspaces">
-                                    <input type="radio" class="form-control" id="workspaces">
-                                    <input type="radio" class="form-control" id="workspaces">
+
                                 </div>
                             </div>
                         </tab>
                         <tab heading="Services" ng-disabled="true">
                             <div class="form-inline"  style="padding-bottom: 70px; padding-top: 10px;">
                                 <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType">Activate</button>
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="true">Activate</button>
                                     &nbsp;&nbsp;
                                     <label for="">Facebook</label>
                                 </div>
                                 <hr/>
                                 <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType">Activate</button>
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="true">Activate</button>
                                     &nbsp;&nbsp;
                                     <label for="">Twitter</label>
                                 </div>
                                 <hr/>
                                 <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType">Activate</button>
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="true">Activate</button>
                                     &nbsp;&nbsp;
                                     <label for="">Flickr</label>
                                 </div>
                                 <hr/>
                                 <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType">Activate</button>
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="true">Activate</button>
                                     &nbsp;&nbsp;
                                     <label for="">TripIT</label>
                                 </div>
@@ -120,7 +117,7 @@
                     <div class="form-group col-xs-12">
                         <button type="submit"
                                 class="btn btn-default btn-primary"
-                                ng-click="createNewUserHandler()">Update User</button>
+                                ng-click="updateUserHandler()">Update User</button>
                     </div>
                 </form>
             </div>

@@ -4,7 +4,7 @@
  * @param $location
  * @constructor
  */
-var UserManagerController = function($scope, $location, userService) {
+var UserManagerController = function($scope, $rootScope, $state, userService) {
 
     $scope.isNewUser = false;
     $scope.isExistingUser = false;
@@ -92,10 +92,24 @@ var UserManagerController = function($scope, $location, userService) {
 
     $scope.updateUserHandler = function()
     {
-        userService.updateUser($scope.currentUser).then(
+        var username = $scope.currentUser[':name'];
+
+        //Copy the updateable properties. If we pass all back we'll get a 500 error.
+        var userProps = {};
+        for( var prop in $scope.currentUser )
+        {
+            if( prop != "memberOf" && prop != "declaredMemberOf" && prop != "pwd" && prop != "pwdConfirm" )
+            {
+                userProps[prop] = $scope.currentUser[prop];
+            }
+        }
+
+
+        userService.updateUser(username, userProps).then(
             function(data, status, headers, config)
             {
-                $scope.isExistingUser = false;
+                $scope.isExistingUser = true;
+                $scope.isNewUser = false;
             }, function(data, status, headers, config)
             {
                 console.log(data);
@@ -133,11 +147,20 @@ var UserManagerController = function($scope, $location, userService) {
      * Invoked on startup, like a constructor.
      */
     var init = function(){
+
+        if ($rootScope.user == null)
+        {
+            $state.go("login");
+            return;
+            // transitionTo() promise will be rejected with
+            // a 'transition prevented' error
+        }
+
         //call sling to get users
         refreshUsers();
     };
     init();
 };
 
-UserManagerController.$inject = ['$scope',  '$location', 'userService'];
+UserManagerController.$inject = ['$scope', '$rootScope',  '$state', 'userService'];
 module.exports = UserManagerController;

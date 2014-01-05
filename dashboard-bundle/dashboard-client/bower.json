@@ -13,7 +13,6 @@
     "angular-dragdrop": "~1.0.4",
     "angular-bootstrap": "~0.9.0",
     "angular-file-upload": "~0.2.7",
-    "ng-tags-input": "~0.1.5",
     "ngInfiniteScroll": "1.0.0"
   },
   "devDependencies": {

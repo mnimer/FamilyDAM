@@ -37,12 +37,6 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
                     data:{
                         currentPath: "/content/dam/photos",
                         showPhotoGrid: true
-                    },
-                    resolve:{
-                        currentPath: function(){
-                            return {value:"/content/dam/photos"};
-                        },
-                        showPhotoGrid: function(){ return {value:true}; }
                     }
                 });
         }]);

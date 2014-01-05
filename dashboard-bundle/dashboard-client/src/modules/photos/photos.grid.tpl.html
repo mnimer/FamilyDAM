@@ -29,7 +29,7 @@
                     class="glyphicon glyphicon-list btn btn-default btn-md"
                     ng-class="{active: layout == 'files'}" ng-click="layout = 'files'"></button>
 
-            <button ui-sref="photos.grid"
+            <button ui-sref="photos"
                     class="glyphicon glyphicon-th btn btn-default btn-md"
                     ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
 
@@ -55,9 +55,9 @@
                     </div>
                 </li>
             </ul>
-
-            <button ng-click="pageGrid()">Load More</button>
         </div>
+
+        <button ng-click="pageGrid()">Load More</button>
     </div>
 </div>
 

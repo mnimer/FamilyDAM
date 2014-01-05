@@ -15,7 +15,16 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var UserService = function($http) {
+var UserService = function($http, $q, fileService)
+{
+    var systemPaths = [
+        '/content/dam/photos',
+        '/content/dam/music',
+        '/content/dam/movies',
+        '/content/dam/social',
+        '/content/dam/email',
+        '/content/dam/documents'
+    ];
 
     /**
      * Call the Sling API to list users.
@@ -39,6 +48,7 @@ var UserService = function($http) {
      */
     this.createUser = function(data)
     {
+        var username = data[':name'];
         var method =  $http.post('/system/userManager/user.create.json',
             $.param(data),
             {
@@ -47,7 +57,20 @@ var UserService = function($http) {
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                 }
             });
-        return method;
+
+        return method.then(function()
+        {
+            var promises = [];
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+
+            for(var i=0; i < systemPaths.length; i++)
+            {
+                promises.push(fileService.createFolder(systemPaths[i], username));
+            }
+
+            $q.all(promises);
+        });
     };
 
 
@@ -89,5 +112,5 @@ var UserService = function($http) {
 };
 
 
-UserService.$inject = ['$http'];
+UserService.$inject = ['$http', '$q', 'fileService'];
 module.exports = UserService;

@@ -247,6 +247,7 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
     };
 
 
+
     var init = function ()
     {
         if ($rootScope.user == null)
@@ -267,13 +268,20 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
             for(var prop in $state.current.data )
             {
                 $scope[prop] = $state.current.data[prop];
+
+                // If we are reusing this in a section (photos, music, etc) we want to reset the rootPath, so users can't browse higher
+                // then the section allows.
+                if( prop == "currentPath" )
+                {
+                    rootPath = $state.current.data[prop];
+                }
             }
         }
 
 
         $scope.showSidebar = true;
         $scope.showUploadSidebar = true;
-        $scope.photos = fileService.list($scope.currentPath).then(listCallback);
+        $scope.selectFolder($scope.currentPath);
     };
     init();
 
