@@ -15,13 +15,50 @@
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<div id="photoDetails" class="content ">
+<div id="photoDetails" class="photos section" ng-class="{'col-xs-12':!showSidebar, 'col-sm-8': showSidebar}">
 
-   <img ng-src="{{scaledImage}}" style="width: 100%;"/><br/>
-   {{node['jcr:uuid']}}<br/>
-   {{node['fc:width']}}x{{node['fc:height']}}<br/>
+    <div id="toolbar">
+        <ol class="breadcrumb" style="display: inline;">
+            <li ng-repeat="item in breadcrumb" ng-class="{'active':$last}"><a ng-click="selectFolder(item.path)">{{item.name}}</a>
+            </li>
+        </ol>
+    </div>
+
+    <div class="content">
+        <div class="buttonBar">
+
+            <button ui-sref="photo:files.upload"
+                    class="glyphicon glyphicon-list btn btn-default btn-md"></button>
+
+            <button ui-sref="photos:grid.filter"
+                    class="glyphicon glyphicon-th btn btn-default btn-md"></button>
+
+        </div>
+
+
+        <img ng-src="{{scaledImageUrl}}" style="width: 100%;"/><br/>
+        {{node['jcr:uuid']}}<br/>
+        {{node['fc:width']}}x{{node['fc:height']}}<br/>
+
+    </div>
+
 
 </div>
+
+
+<!-- start: Widgets Area -->
+<aside id="sidebar-right" class="col-sm-4 hidden-xs" ng-show="showSidebar">
+
+    <ul class="nav nav-tabs">
+        <li ng-class="{ active: $state.includes('photos:details.metadata') }"><a ui-sref="photos:details.metadata">Metadata</a></li>
+        <li ng-class="{ active: $state.includes('photos:details.edit') }"><a ui-sref="photos:details.edit">Edit</a></li>
+        <li ng-class="{ active: $state.includes('photos:details.versions') }"><a ui-sref="photos:details.versions">Versions</a></li>
+    </ul>
+
+    <div ui-view ></div>
+
+</aside>
+<!-- end: Widgets Area -->
 
 
 

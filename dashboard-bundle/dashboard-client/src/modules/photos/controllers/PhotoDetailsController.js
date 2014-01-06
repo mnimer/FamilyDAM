@@ -15,33 +15,46 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var PhotoDetailsController = function($scope, $rootScope, $window, $stateParams, photoService) {
+var PhotoDetailsController = function($scope, $rootScope, $state, $window, $stateParams, photoService) {
 
     $scope.self = "";
     $scope.scaledImage = undefined;
     $scope.node = {};
 
+    $scope.showSidebar = true;
+
     var init = function()
     {
+        if ($rootScope.user == null)
+        {
+            $state.go("login");
+            return;
+            // transitionTo() promise will be rejected with
+            // a 'transition prevented' error
+        }
+
         $scope.$emit("MODE_CHANGE", "DETAILS");
 
-        var id = $stateParams.id;
-        photoService.getById(id).then(function(data, status, headers, config){
+        var id = $state.params.id;
+        if( id !== undefined )
+        {
+            photoService.getById(id).then(function(data, status, headers, config){
 
-            $scope.node = data.data;
-            $scope.self = data.headers.apply()['location'];
+                $scope.node = data.data;
+                $scope.self = data.headers.apply()['location'];
 
-            var width  = $("body").width();
-            $scope.scaledImage = $scope.self +".scale.w:" +width +".png";
+                var width  = $("body").width();
+                $scope.scaledImageUrl = $scope.self +".scale.w:" +width +".png";
 
-            $scope.$emit("IMAGE_SELECTED", $scope.node);
-            $scope.$broadcast("IMAGE_SELECTED", $scope.node);
+                $scope.$emit("IMAGE_SELECTED", $scope.node);
+                $scope.$broadcast("IMAGE_SELECTED", $scope.node);
 
-        });
+            });
+        }
     };
     init();
 
 };
 
-PhotoDetailsController.$inject = ['$scope', '$rootScope', '$window', '$stateParams', 'photoService'];
+PhotoDetailsController.$inject = ['$scope', '$rootScope', '$state', '$window', '$stateParams', 'photoService'];
 module.exports = PhotoDetailsController;

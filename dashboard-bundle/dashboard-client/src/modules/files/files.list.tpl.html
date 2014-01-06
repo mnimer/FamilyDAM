@@ -32,7 +32,7 @@
                         ng-click="selectFolder('/');"></button>
 
 
-                <button ui-sref="photos"
+                <button ui-sref="photos:grid.filter"
                         ng-show="showPhotoGrid"
                         class="glyphicon glyphicon-th btn btn-default btn-md"></button>
 
@@ -130,9 +130,13 @@
 
 <!-- start: Widgets Area -->
 <aside id="sidebar-right" class="col-sm-4 hidden-xs" ng-show="showSidebar">
-    <div id="sidebar-upload" class="sidebar-nav" ng-show="showUploadSidebar">
-        <div x-file-upload-form title="" path="{{currentPath}}"/>
-    </div>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a ui-sref="files.upload">Upload</a></li>
+    </ul>
+
+    <div ui-view ></div>
+
 </aside>
 <!-- end: Widgets Area -->
 
