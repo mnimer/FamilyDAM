@@ -14,7 +14,7 @@
   ~     You should have received a copy of the GNU General Public License
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
-<div class="photos section" ng-class="{'col-xs-12':!showSidebar, 'col-sm-9': showSidebar}">
+<div class="photos section" ng-class="{'col-xs-12':!showSidebar, 'col-sm-8': showSidebar}">
     <div id="toolbar">
         <ol class="breadcrumb" style="display: inline;">
             <li ng-repeat="item in breadcrumb" ng-class="{'active':$last}"><a ng-click="selectFolder(item.path)">{{item.name}}</a>
@@ -25,7 +25,7 @@
     <div class="content">
         <div class="buttonBar">
 
-            <button ui-sref="photo-files"
+            <button ui-sref="photo:files.upload"
                     class="glyphicon glyphicon-list btn btn-default btn-md"
                     ng-class="{active: layout == 'files'}" ng-click="layout = 'files'"></button>
 
@@ -45,13 +45,13 @@
 
 
         <div class="" ng-repeat="item in assets | orderBy:sortPrimaryType">
-            <div>{{item.title}}</div>
+            <div><h3>{{item.title}}</h3></div>
             <ul class="row ">
                 <li ng-class="responsiveColumnLabel" ng-repeat="data in item.data">
                     <div class="thumbnail">
-                        <a href="#/photos/{{data['jcr:uuid']}}/details"><img
+                        <a ui-sref="photos:details.metadata({id:'{{data['jcr:uuid']}}'})"><img
                                 ng-src="{{data.links.image}}.scale.w:500.png" style="width: 100%;"/></a><br/>
-                        <a class="glyphicon" href="#/photos/{{data['jcr:uuid']}}/details"> {{data.name}}</a>
+                        <a class="glyphicon" ui-sref="photos:details.metadata({id:'{{data['jcr:uuid']}}'})"> {{data.name}}</a>
                     </div>
                 </li>
             </ul>
@@ -63,13 +63,13 @@
 
 
 <!-- start: Widgets Area -->
-<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-show="showSidebar">
+<aside id="sidebar-right" class="col-sm-4 hidden-xs" ng-show="showSidebar">
 
-    <div id="sidebar-details" class="sidebar-nav" ng-show="showImageDetailsSidebar">
-        <div x-photo-metadata
-             uuid="{{uuid}}"
-             keywords="{{keywords}}"/>
-    </div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a ui-sref="photos:grid.filter">Filters</a></li>
+    </ul>
+
+    <div ui-view ></div>
 
 </aside>
 <!-- end: Widgets Area -->

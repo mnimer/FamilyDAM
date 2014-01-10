@@ -18,19 +18,42 @@
 module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
     .controller('PhotoGridController', require('./controllers/PhotoGridController'))
     .controller('PhotoDetailsController', require('./controllers/PhotoDetailsController'))
+    .controller('PhotoEditController', require('./controllers/PhotoEditController'))
+    .controller('PhotoMetadataController', require('./controllers/PhotoMetadataController'))
+    .controller('PhotoVersionController', require('./controllers/PhotoVersionController'))
     .controller('FileListController', require('../files/controllers/FileListController'))
 	.service('photoService', require('./services/PhotoService'))
 	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
         {
-            $stateProvider.state('photos', {
-                    url:'/photos',
+            $stateProvider.state('photos:grid', {
                     templateUrl: "modules/photos/photos.grid.tpl.html",
                     controller: "PhotoGridController"
-                }).state('photos.details', {
-                    url:'/:id/details',
+                })
+                    .state('photos:grid.filter', {
+                        url:'/photos/tabs/filter',
+                        templateUrl: "modules/photos/views/filter-tab.tpl.html",
+                        controller: "PhotoGridController"
+                    })
+                .state('photos:details', {
                     templateUrl: "modules/photos/photos.details.tpl.html",
                     controller: "PhotoDetailsController"
-                }).state('photo-files', {
+                })
+                    .state('photos:details.metadata', {
+                        url:'/:id/details',
+                        templateUrl: "modules/photos/views/photos-details.metadata.tpl.html",
+                        controller: "PhotoMetadataController"
+                    })
+                    .state('photos:details.edit', {
+                        url:'/:id/details',
+                        templateUrl: "modules/photos/views/photos-details.edit.tpl.html",
+                        controller: "PhotoEditController"
+                    })
+                    .state('photos:details.versions', {
+                        url:'/:id/details',
+                        templateUrl: "modules/photos/views/photos-details.versions.tpl.html",
+                        controller: "PhotoVersionController"
+                    })
+                .state('photo:files', {
                     url: '/photos/files',
                     templateUrl: "modules/files/files.list.tpl.html",
                     controller: "FileListController",
@@ -38,6 +61,10 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
                         currentPath: "/content/dam/photos",
                         showPhotoGrid: true
                     }
+                })
+                .state('photo:files.upload', {
+                    url: '/photos/files/upload',
+                    templateUrl: "modules/files/views/file-upload.tpl.html"
                 });
         }]);
 

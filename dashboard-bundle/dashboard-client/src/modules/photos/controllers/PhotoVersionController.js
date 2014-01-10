@@ -15,19 +15,10 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
-    .controller('FolderNameModalCntrl', require('./controllers/FolderNameModalCntrl'))
-    .controller('FileListController', require('./controllers/FileListController'))
-    .service('fileService', require('./services/FileService'))
-    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
-    {
-        $stateProvider.state('files', {
-            templateUrl: "modules/files/files.list.tpl.html",
-            controller: "FileListController"
-        })
-            .state('files.upload', {
-                url: '/files',
-                templateUrl: "modules/files/views/file-upload.tpl.html"
-            });
+var PhotoVersionController = function($scope, $rootScope, $state, $window, $stateParams, photoService) {
 
-    }]);
+};
+
+
+PhotoVersionController.$inject = ['$scope', '$rootScope', '$state', '$window', '$stateParams', 'photoService'];
+module.exports = PhotoVersionController;
