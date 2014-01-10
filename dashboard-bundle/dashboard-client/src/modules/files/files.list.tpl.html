@@ -17,7 +17,7 @@
 
 <div class="files section" ng-class="{'col-xs-12':!showSidebar, 'col-sm-8': showSidebar}">
     <div id="toolbar">
-        <ol class="breadcrumb" style="display: inline;">
+        <ol class="breadcrumb page-header" style="display: inline;">
             <li ng-repeat="item in breadcrumb" ng-class="{'active':$last}"><a ng-click="selectFolder(item.path)">{{item.name}}</a></li>
         </ol>
     </div>

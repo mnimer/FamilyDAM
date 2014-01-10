@@ -152,7 +152,8 @@ module.exports = function (grunt) {
                         'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
                         'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js',
                         'ng-tags-input': './bower_components/ng-tags-input/ng-tags-input.js',
-                        'infinite-scroll': './bower_components/ngInfiniteScroll/ng-infinite-scroll.js'
+                        'infinite-scroll': './bower_components/ngInfiniteScroll/ng-infinite-scroll.js',
+                        'treeControl':'./src/assets/js/angular-tree-control-modified.js'
                     }
 
 

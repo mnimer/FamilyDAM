@@ -54,7 +54,7 @@
                         else if (node[$scope.options.nodeChildren].length && $scope.expandedNodes[this.$id])
                             return "tree-expanded";
                         else if ( node[$scope.options.nodeChildren] !== undefined )
-                            return "tree-collapsed";
+                            return "tree-expanded";
                         else
                             return "tree-leaf"
                     };

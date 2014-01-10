@@ -14,8 +14,10 @@
  *     You should have received a copy of the GNU General Public License
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
+/*jshint -W083 */
 
-var FileService = function ($http) {
+var FileService = function ($http)
+{
 
     /**
      * Load one layer at a time, used by the list view to show the contents of a folder.
@@ -24,10 +26,12 @@ var FileService = function ($http) {
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.list = function (path) {
+    this.list = function (path)
+    {
 
         // make sure the path starts with /
-        if (path.substring(0, 1) != "/") {
+        if (path.substring(0, 1) != "/")
+        {
             path = "/" + path;
         }
 
@@ -43,7 +47,26 @@ var FileService = function ($http) {
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.deletePath = function (path) {
+    this.listFolders = function (path)
+    {
+        var _this = this;
+        var _path = "/dashboard-api/files/foldertree?path=" +path;
+
+        var get = $http.get(_path);
+        return get.then(function(data){
+            return data.data;
+        });
+    };
+
+    /**
+     * Load one layer at a time, used by the list view to show the contents of a folder.
+     * @param path
+     * @param successCallback
+     * @param errorCallback
+     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
+     */
+    this.deletePath = function (path)
+    {
         var method = $http.delete(path);
         return method;
     };
@@ -57,9 +80,11 @@ var FileService = function ($http) {
      * @param errorCallback
      * @returns {*|HttpPromise}
      */
-    this.createFolder = function (path, title) {
+    this.createFolder = function (path, title)
+    {
         // make sure the path starts with /
-        if (path.substring(0, 1) != "/") {
+        if (path.substring(0, 1) != "/")
+        {
             path = "/" + path;
         }
         var _url = path + "/*";

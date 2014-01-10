@@ -15,5 +15,14 @@
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 <div class="sidebarTab">
-    Filter TAB
+
+    <h4>Filter by location</h4>
+    <div x-location-filter event="filter:location:path" root="/content/dam"></div>
+    <br/>
+    <h4>Filter by date</h4>
+    <div x-date-filter event="filter:date:from" label="Photos After"></div>
+    <div x-date-filter event="filter:date:to" label="Photos Before"></div>
+    <br/>
+    <h4>Filter by tags</h4>
+    <div x-tag-filter event="filter:tags"></div>
 </div>

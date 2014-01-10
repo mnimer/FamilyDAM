@@ -42,6 +42,21 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     });
 
 
+
+    $scope.$on("filter:location:path", function(event, val){
+        console.log(val);
+    });
+
+    $scope.$on("filter:date:from", function(event, val){
+        console.log(val);
+    });
+
+    $scope.$on("filter:date:to", function(event, val){
+        console.log(val);
+    });
+
+
+
     $scope.getColumnLabel = function(columns)
     {
         return "col-sm-" +$scope.responsiveColumns;
