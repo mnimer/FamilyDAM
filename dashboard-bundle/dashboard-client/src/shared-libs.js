@@ -15,3 +15,4 @@ require('ui.bootstrap.tpls');
 require('ng-tags-input');
 require('infinite-scroll');
 require('treeControl');
+require('vr.directives.wordCloud');

@@ -55,6 +55,10 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
         console.log(val);
     });
 
+    $scope.$on("filter:tags", function(event, val){
+        console.log(val);
+    });
+
 
 
     $scope.getColumnLabel = function(columns)

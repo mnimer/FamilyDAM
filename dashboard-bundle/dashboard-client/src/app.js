@@ -30,6 +30,7 @@ var App = angular.module('dashboard', [
         'ui.bootstrap.tpls',
         'infinite-scroll',
         'treeControl',
+        'vr.directives.wordCloud',
         'dashboard.templates',
         require('./modules/main').name,
         require('./modules/login').name,

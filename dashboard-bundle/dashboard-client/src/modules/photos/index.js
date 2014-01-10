@@ -8,6 +8,7 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
     .service('photoService', require('./services/PhotoService'))
     .directive('dateFilter', require('./directives/dateFilter'))
     .directive('locationFilter', require('./directives/locationFilter'))
+    .directive('tagFilter', require('./directives/tagFilter'))
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
         $stateProvider.state('photos:grid', {
