@@ -24,6 +24,7 @@ import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 import com.drew.metadata.exif.ExifIFD0Directory;
 import com.drew.metadata.exif.ExifSubIFDDirectory;
+import com.drew.metadata.iptc.IptcDirectory;
 import com.mikenimer.familycloud.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -124,6 +125,13 @@ public class DrewMetadataExtractor
                 {
                     Date dt = directory.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL);
                     result.put(Constants.DATETIME, dt);
+                }
+
+                if(directory instanceof IptcDirectory)
+                {
+                    //String keywords = directory.getString(IptcDirectory.TAG_KEYWORDS);
+                    String[] keywordArray = directory.getStringArray(IptcDirectory.TAG_KEYWORDS);
+                    result.put(Constants.KEYWORDS, keywordArray);
                 }
 
 

@@ -118,11 +118,11 @@ public class MetadataJob //implements JobConsumer
                 {
                     dtCal.setTime(datetime);
                 }
-                node.setProperty("fc:created", dtCal);
+                node.setProperty("created", dtCal);
 
                 if( persist )
                 {
-                    saveObjectToNode(node, "fc:metadata", metadata);
+                    saveObjectToNode(node, "metadata", metadata);
                     node.getSession().save();
                 }
             }

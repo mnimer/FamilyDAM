@@ -25,40 +25,40 @@
 //	  -	 http://jackrabbit.apache.org/node-type-notation.html
 //
 
-<fc = 'http://familycloud.mikenimer.com/1.0'>
+<fd = 'http://familycloud.mikenimer.com/1.0'>
 <nt = 'http://www.jcp.org/jcr/nt/1.0'>
 <mix = 'http://www.jcp.org/jcr/mix/1.0 '>
 
 
-[fc:image] > nt:base, mix:versionable, mix:title, mix:etag, mix:created, mix:lastModified, mix:mimeType, mix:referenceable mixin
+[fd:image] > nt:base, mix:versionable, mix:title, mix:etag, mix:created, mix:lastModified, mix:mimeType, mix:referenceable mixin
 - * (undefined) COPY
 - * (undefined) multiple COPY
-- fc:width (DOUBLE)
-- fc:height (DOUBLE)
-- fc:length (DOUBLE)
-- fc:created (DATE)
-+ fc:metadata (nt:unstructured) multiple COPY
+- width (DOUBLE)
+- height (DOUBLE)
+- length (DOUBLE)
+- created (DATE)
++ metadata (nt:unstructured) multiple COPY
 
 
 
-//[fc:music] > nt:base mixin
+//[fd:music] > nt:base mixin
 //+ metadata (nt:unstructured)
 
-//[fc:movie] > nt:base mixin
+//[fd:movie] > nt:base mixin
 //+ metadata (nt:unstructured)
 
-//[fc:document] > nt:base mixin
+//[fd:document] > nt:base mixin
 //+ metadata (nt:unstructured)
 
-//[fc:thumbnail] > nt:base mixin
+//[fd:thumbnail] > nt:base mixin
 //- * renditions (nt:folder)
 
-//[fc:taggable] > nt:base mixin
+//[fd:taggable] > nt:base mixin
 //- tags (STRING) MULTIPLE
 //- collections (STRING) MULTIPLE
 //- event (STRING)
 
-//[fc:geo] > nt:base mixin
+//[fd:geo] > nt:base mixin
 //- latitude (DOUBLE)
 //- longitude (DOUBLE)
 

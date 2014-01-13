@@ -129,7 +129,7 @@ public class NewImageObserver implements EventListener
 
 
                     // check for inner nodes, like metadata that we are adding to this node.
-                    if( node.getPath().contains("fc:metadata") )
+                    if( node.getPath().contains("metadata") )
                     {
                         return;
                     }

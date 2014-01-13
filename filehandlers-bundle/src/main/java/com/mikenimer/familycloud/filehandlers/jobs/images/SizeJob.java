@@ -126,9 +126,9 @@ public class SizeJob //implements JobConsumer
             int w = bi.getWidth();
             int h = bi.getHeight();
 
-            node.setProperty("fc:width", w);
-            node.setProperty("fc:height", h);
-            node.setProperty("fc:length", size);
+            node.setProperty("width", w);
+            node.setProperty("height", h);
+            node.setProperty("length", size);
 
             return true;//JobResult.OK;
         }

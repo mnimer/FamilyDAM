@@ -15,17 +15,26 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-module.exports = function() {
+var tagCloudDirective = function(metadataService) {
     return {
         scope: {
             'event':"@",
-            'label':"@"
+            'label':"@",
+            'root':"@"
         },
         replace: true,
-        templateUrl: "modules/photos/directives/tagFilter/tagFilter.tpl.html",
+        templateUrl: "modules/photos/directives/tagCloudFilter/tagCloud.tpl.html",
+        controller: function($scope)
+        {
+            $scope.selectTag = function(tag)
+            {
+                $scope.$emit($scope.event, tag);
+            };
+        },
         link: function(scope, elem,attrs)
         {
-            var _event = "filter:date";
+            scope.event = "filter:date";
+            scope.keywords = [];
 
             scope.$watch('label', function(value, oldValue, scope)
             {
@@ -33,14 +42,28 @@ module.exports = function() {
             });
             scope.$watch('event', function(value, oldValue, scope)
             {
-                _event = value;
+                scope.event = value;
             });
 
-            scope.selectTag = function(tag)
+            scope.$watch('root', function (value, oldValue, scope)
             {
-                scope.$emit(this.event, tag);
-            };
+                _path = value;
+                if( value !== undefined )
+                {
+                    metadataService.listAllByPath(value).then(function (data)
+                    {
+                        _keywords = data;
+                        scope.keywords = data;
+                    });
+                }
+            });
+
+
 
         }
     };
 };
+
+
+tagCloudDirective.$inject = ['metadataService'];
+module.exports = tagCloudDirective;

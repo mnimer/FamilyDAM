@@ -6,9 +6,10 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
     .controller('PhotoVersionController', require('./controllers/PhotoVersionController'))
     .controller('FileListController', require('../files/controllers/FileListController'))
     .service('photoService', require('./services/PhotoService'))
+    .service('metadataService', require('./services/MetadataService'))
     .directive('dateFilter', require('./directives/dateFilter'))
     .directive('locationFilter', require('./directives/locationFilter'))
-    .directive('tagFilter', require('./directives/tagFilter'))
+    .directive('tagCloudFilter', require('./directives/tagCloudFilter'))
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
         $stateProvider.state('photos:grid', {

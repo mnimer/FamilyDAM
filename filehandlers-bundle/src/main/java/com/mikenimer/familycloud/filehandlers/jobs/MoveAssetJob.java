@@ -161,9 +161,9 @@ public class MoveAssetJob //implements JobConsumer
             String folderPath = "";
 
             //Check jcr created & versionable nodes
-            if( !node.isNodeType("fc:image") )
+            if( !node.isNodeType("fd:image") )
             {
-                node.addMixin("fc:image");
+                node.addMixin("fd:image");
                 if( !node.isLocked() )
                 {
                     session.save();

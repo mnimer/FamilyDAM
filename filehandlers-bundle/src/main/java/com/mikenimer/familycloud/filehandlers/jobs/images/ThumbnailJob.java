@@ -73,7 +73,7 @@ public class ThumbnailJob //implements JobConsumer
         {
             Session session = repository.loginAdministrative(null);
             Node node = session.getRootNode().getNode(path);
-            node.addMixin("fc:thumbnail");
+            node.addMixin("fd:thumbnail");
 
             Node renditionFolder = node.addNode("renditions", "nt:folder");
 

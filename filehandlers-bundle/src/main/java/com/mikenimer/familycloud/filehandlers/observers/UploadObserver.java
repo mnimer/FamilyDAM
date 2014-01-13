@@ -195,7 +195,7 @@ public class UploadObserver implements EventListener
     private void processUploadedFile(Event event) throws RepositoryException
     {
         log.info("new upload: {}", event.getPath());
-        if( !event.getPath().contains("fc:metadata") )
+        if( !event.getPath().contains("metadata") )
         {
             Node node = session.getNode(event.getPath()).getParent();
             if( !node.getName().startsWith(".") )
@@ -250,7 +250,7 @@ public class UploadObserver implements EventListener
     private void processImageFiles(Event event) throws RepositoryException, InterruptedException, IOException
     {
         log.info("new upload: {}", event.getPath());
-        if( !event.getPath().contains("fc:metadata") )
+        if( !event.getPath().contains("metadata") )
         {
             Node node = session.getNode(event.getPath()).getParent();
             // skip hidden, we'll delete them instead
@@ -261,11 +261,11 @@ public class UploadObserver implements EventListener
                 //reload the node reference
                 node = session.getNode(event.getPath()).getParent();
                 //Check jcr created & versionable nodes
-                if( !node.isNodeType("fc:image") )
+                if( !node.isNodeType("fd:image") )
                 {
                     try
                     {
-                        node.addMixin("fc:image");
+                        node.addMixin("fd:image");
                         session.save();
                     }catch (InvalidItemStateException e){
                         e.printStackTrace();

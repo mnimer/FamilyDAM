@@ -127,6 +127,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
+        </dependency>
+
 
 
         <dependency>
@@ -137,6 +143,7 @@
         </dependency>
 
 
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -144,6 +151,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>Sonotype</id>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+    </repositories>
 
 
     <build>
@@ -187,7 +201,7 @@
                 </executions>
                 <configuration>
                     <instructions>
-                        <!--Embed-Dependency>guava;scope=compile|runtime</Embed-Dependency-->
+                        <Embed-Dependency>commons-collections4;scope=compile|runtime</Embed-Dependency>
                         <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
                         <Include-Resoource>
                             {maven-resources}, {maven-dependencies}

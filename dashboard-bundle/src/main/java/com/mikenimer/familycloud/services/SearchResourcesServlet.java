@@ -137,10 +137,10 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
         try
         {
-            String stmt = "SELECT file.* FROM [fc:image] AS file INNER JOIN [nt:resource] as resource on ISCHILDNODE(resource, file)" +
+            String stmt = "SELECT file.* FROM [fd:image] AS file INNER JOIN [nt:resource] as resource on ISCHILDNODE(resource, file)" +
                     " WHERE resource.[jcr:mimeType] like 'image/%'" +
                     " AND ISDESCENDANTNODE(file, '" +path +"')" +
-                    " ORDER BY file.[fc:created] DESC";
+                    " ORDER BY file.[created] DESC";
 
             Session session = request.getResourceResolver().adaptTo(Session.class);
             Query query = session.getWorkspace().getQueryManager().createQuery(stmt, Query.JCR_SQL2);
@@ -190,7 +190,12 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
                         //todo standardize this for all services that return an Image
                         w.object();
                         w.key("name").value(n.getName());
-                        w.key("fc:created").value(n.getProperty("fc:created").getDate().getTime());
+                        if( n.hasProperty("created") )
+                        {
+                            w.key("created").value(n.getProperty("created").getDate().getTime());
+                        }else {
+                            w.key("created").value(n.getProperty("jcr:created").getDate().getTime());
+                        }
                         w.key("jcr:path").value(resource.getResourceMetadata().getResolutionPath());
                         w.key("jcr:uuid").value(n.getIdentifier());
                         w.key("jcr:primaryType").value(n.getPrimaryNodeType().getName());

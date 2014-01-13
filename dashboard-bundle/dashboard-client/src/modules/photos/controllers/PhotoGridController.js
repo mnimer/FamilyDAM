@@ -29,7 +29,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     $scope.showImageDetailsSidebar = false;
 
 
-    var groupByProperty = "fc:created";
+    var groupByProperty = "created";
     $scope.assets = {};
     // bootstrap columns for thumbnails
     $scope.responsiveColumns = 3;
@@ -101,10 +101,10 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
         $scope.showFilterSidebar = false;
         $scope.showImageDetailsSidebar = true;
 
-        if( data['fc:metadata'] !== undefined )
+        if( data['metadata'] !== undefined )
         {
             $scope.uuid = data['jcr:uuid'];
-            $scope.keywords = data['fc:metadata']['Iptc']['Keywords']['value'];
+            $scope.keywords = data['metadata']['Iptc']['Keywords']['value'];
         }
 
     });
@@ -153,9 +153,12 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     {
         groupData($scope.assets, data.data.data);
         // hateoas links
-        $scope.self = data.data.links.self;
-        $scope.next = data.data.links.next;
-        $scope.prev = data.data.links.prev;
+        if( data.data.links !== undefined )
+        {
+            $scope.self = data.data.links.self;
+            $scope.next = data.data.links.next;
+            $scope.prev = data.data.links.prev;
+        }
     };
 
 
