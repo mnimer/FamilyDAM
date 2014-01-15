@@ -38,7 +38,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     $scope.$on("photo:grid:columns", function(data, args){
         $scope.responsiveColumns = args;
         $scope.responsiveColumnLabel = "col-xs-12 col-sm-" +args;
-        $scope.$apply();
+        //$scope.$apply();
     });
 
 
@@ -50,14 +50,15 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     var _filterDateTo = "";
 
     $scope.$on("filter:location:path", function(event, val){
-        if( val === undefined ) val = "";
-
-        _filterPath = val;
-        refreshSearch();
+        if( val !== undefined && val !== "")
+        {
+            _filterPath = val;
+            refreshSearch();
+        }
     });
 
     $scope.$on("filter:date:from", function(event, val){
-        if( val !== undefined && val != "")
+        if( val !== undefined && val !== "")
         {
             _filterDateFrom = val.getTime();
             refreshSearch();
@@ -65,7 +66,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     });
 
     $scope.$on("filter:date:to", function(event, val){
-        if( val !== undefined && val != "")
+        if( val !== undefined && val !== "")
         {
             _filterDateTo = val.getTime();
             refreshSearch();
@@ -73,9 +74,11 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     });
 
     $scope.$on("filter:tags", function(event, val){
-        if( val === undefined ) val = "";
-        _filterTags = val;
-        refreshSearch();
+        if( val !== undefined && val !== "")
+        {
+            _filterTags = val;
+            refreshSearch();
+        }
     });
 
 
@@ -143,7 +146,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     var refreshSearch = function()
     {
         photoService.search(_filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
-    }
+    };
 
     /**
      * Process the search results by grouping them, and checking for the hateoas links.
@@ -152,7 +155,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     var searchCallback = function (_data)
     {
         $scope.assets = groupData(_data);
-        $scope.$apply();
+        //$scope.$apply();
         // hateoas links
         if( _data.links !== undefined )
         {
