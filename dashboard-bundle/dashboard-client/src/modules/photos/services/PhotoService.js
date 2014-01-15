@@ -62,13 +62,14 @@ var PhotoService = function($http) {
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.search = function( limit, offset )
+    this.search = function( limit, offset, filterPath, filterDateFrom, filterDateTo, filterTags )
     {
-        var searchPath = "/dashboard-api/photos/search?limit=" +limit +"&offset=" +offset;
+        var searchPath = "/dashboard-api/photos/search?limit=" +limit +"&offset=" +offset +"&filterPath=" +filterPath +"&dateFrom=" +filterDateFrom +"&dateTo=" +filterDateTo +"&tags=" +filterTags;
 
         var method =  $http.get(searchPath);
-
-        return method;
+        return method.then(function(data){
+            return data.data;
+        });
     };
 
 

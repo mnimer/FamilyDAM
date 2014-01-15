@@ -34,8 +34,8 @@ public class Constants
     public static final String JOB_IMAGE_THUMBNAILS = "familycloud/photos/thumbnails";
 
     // Map keys
-    public static final String DATETIME = "__DATETIME"; //todo change to datetime
-    public static final String ORIENTATION = "__ORIENTATION"; //todo change to orientation
+    public static final String DATETIME = "dateTaken"; //todo change to datetime
+    public static final String ORIENTATION = "orientation"; //todo change to orientation
     public static final String KEYWORDS = "keywords";
 
 

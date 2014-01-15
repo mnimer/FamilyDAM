@@ -42,21 +42,40 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     });
 
 
+    var _filterLimit = 50;
+    var _filterOffset = 1;
+    var _filterPath = "";
+    var _filterTags = "";
+    var _filterDateFrom = "";
+    var _filterDateTo = "";
 
     $scope.$on("filter:location:path", function(event, val){
-        console.log(val);
+        if( val === undefined ) val = "";
+
+        _filterPath = val;
+        refreshSearch();
     });
 
     $scope.$on("filter:date:from", function(event, val){
-        console.log(val);
+        if( val !== undefined && val != "")
+        {
+            _filterDateFrom = val.getTime();
+            refreshSearch();
+        }
     });
 
     $scope.$on("filter:date:to", function(event, val){
-        console.log(val);
+        if( val !== undefined && val != "")
+        {
+            _filterDateTo = val.getTime();
+            refreshSearch();
+        }
     });
 
     $scope.$on("filter:tags", function(event, val){
-        console.log(val);
+        if( val === undefined ) val = "";
+        _filterTags = val;
+        refreshSearch();
     });
 
 
@@ -80,36 +99,6 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
 
 
 
-    $scope.$on("MODE_CHANGE", function(event, mode){
-
-        if( $scope.mode != mode )
-        {
-            $scope.mode = mode;
-            if( mode == "COLLECTION")
-            {
-                $scope.showSidebar = true;
-                $scope.showFilterSidebar = true;
-                $scope.showImageDetailsSidebar = false;
-            }
-        }
-    });
-
-
-    $scope.$on("IMAGE_SELECTED", function(event, data){
-        $scope.selectedNode = data;
-        $scope.showSidebar = true;
-        $scope.showFilterSidebar = false;
-        $scope.showImageDetailsSidebar = true;
-
-        if( data['metadata'] !== undefined )
-        {
-            $scope.uuid = data['jcr:uuid'];
-            $scope.keywords = data['metadata']['Iptc']['Keywords']['value'];
-        }
-
-    });
-
-
     $scope.$on('$viewContentLoaded', function(event, toState, toParams, fromState, fromParams)
     {
         if( $rootScope.user == null )
@@ -122,11 +111,12 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
 
 
 
-    var groupData = function (assets, results)
+    var groupData = function (results)
     {
-        for (var item in results)
+        var assets = {};
+        for (var item in results.data)
         {
-            var dt = results[item][groupByProperty];
+            var dt = results.data[item][groupByProperty];
             dt = new Date(Date.parse(dt));
             var dtTitle = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
             if (assets[dtTitle] === undefined)
@@ -137,9 +127,10 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
             }
 
             var heights = [150,250,300,350,425];
-            results[item].height = heights[getRandomInt(1,4)];
-            assets[dtTitle].data.push(results[item]);
+            results.data[item].height = heights[getRandomInt(1,4)];
+            assets[dtTitle].data.push(results.data[item]);
         }
+        return assets;
     };
 
 
@@ -149,23 +140,40 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     };
 
 
-    var searchCallback = function (data)
+    var refreshSearch = function()
     {
-        groupData($scope.assets, data.data.data);
+        photoService.search(_filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
+    }
+
+    /**
+     * Process the search results by grouping them, and checking for the hateoas links.
+     * @param _data
+     */
+    var searchCallback = function (_data)
+    {
+        $scope.assets = groupData(_data);
+        $scope.$apply();
         // hateoas links
-        if( data.data.links !== undefined )
+        if( _data.links !== undefined )
         {
-            $scope.self = data.data.links.self;
-            $scope.next = data.data.links.next;
-            $scope.prev = data.data.links.prev;
+            if( _data.links.self !== undefined )
+            {
+                $scope.self = _data.links.self;
+            }
+            if( _data.links.next !== undefined )
+            {
+                $scope.next = _data.links.next;
+            }
+            if( _data.links.prev !== undefined )
+            {
+                $scope.prev = _data.links.prev;
+            }
         }
     };
 
 
     var init = function ()
     {
-
-        $scope.$emit("MODE_CHANGE", "COLLECTION");
         $scope.$on('refreshData', refreshGrid);
 
         if ($rootScope.user == null)
@@ -175,7 +183,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
             // transitionTo() promise will be rejected with
             // a 'transition prevented' error
         }
-        var request = photoService.search(50, 1).then(searchCallback);
+        var request = photoService.search(_filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
 
     };
     init();
