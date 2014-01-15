@@ -37,12 +37,15 @@ import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
 /**
+ * Create predefined thumbnails for new images.
+ *
  * User: mikenimer
  * Date: 11/17/13
  */
 //@Component(enabled = true, immediate = true, metatype = true)
 //@Service(value = JobConsumer.class)
 //@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familycloud/photos/thumbnails")
+@Deprecated
 public class ThumbnailJob //implements JobConsumer
 {
     private final Logger log = LoggerFactory.getLogger(ThumbnailJob.class);

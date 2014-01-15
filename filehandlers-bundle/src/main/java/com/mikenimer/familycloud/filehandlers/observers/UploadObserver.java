@@ -52,15 +52,19 @@
 package com.mikenimer.familycloud.filehandlers.observers;
 
 import com.mikenimer.familycloud.Constants;
+import com.mikenimer.familycloud.MimeTypeManager;
 import com.mikenimer.familycloud.filehandlers.jobs.MoveAssetJob;
 import com.mikenimer.familycloud.filehandlers.jobs.images.MetadataJob;
 import com.mikenimer.familycloud.filehandlers.jobs.images.SizeJob;
+import org.apache.felix.http.base.internal.util.MimeTypes;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.sling.event.EventPropertiesMap;
+import org.apache.sling.event.jobs.Job;
+import org.apache.sling.event.jobs.JobBuilder;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
@@ -105,6 +109,9 @@ public class UploadObserver implements EventListener
     private ObservationManager observationManager;
 
     @Reference
+    private JobManager jobManager;
+
+    @Reference
     private SlingRepository repository;
 
     @Reference
@@ -112,12 +119,6 @@ public class UploadObserver implements EventListener
 
     @Property(value = "/content/dam")
     private static final String DAM_ROOT_PATH = "/content/dam/";
-
-    @Property(value = "/content/dam/upload/queue")
-    private static final String UPLOAD_QUEUE_PATH = "/content/dam/upload/queue";
-
-    @Property(value = "/content/dam/upload/errors")
-    private static final String UPLOAD_ERROR_PATH = "/content/dam/upload/errors";
 
 
     @Activate
@@ -131,8 +132,6 @@ public class UploadObserver implements EventListener
             observationManager = session.getWorkspace().getObservationManager();
             String[] types = {"nt:file"};
             observationManager.addEventListener(this, Event.NODE_ADDED | Event.NODE_MOVED, contentPath, true, null, types, false);
-            //observationManager.addEventListener(this, Event.NODE_ADDED, contentPath, true, null, types, false);
-            //observationManager.addEventListener(this, Event.NODE_MOVED, contentPath, true, null, types, false);
         }
     }
 
@@ -164,26 +163,19 @@ public class UploadObserver implements EventListener
             {
                 if (event.getType() == Event.NODE_ADDED || event.getType() == Event.NODE_MOVED)
                 {
-                    if( event.getPath().startsWith(UPLOAD_QUEUE_PATH) )
-                    {
-                        processUploadedFile(event);
-                    }
-                    else if( event.getPath().startsWith( DAM_ROOT_PATH +"photos" ) )
+                    if (MimeTypeManager.isImage(event.getPath()))
                     {
                         processImageFiles(event);
                     }
-                }
-                else
+                } else
                 {
-                    log.debug(event.getType() +":" +event.getPath());
+                    log.debug(event.getType() + ":" + event.getPath());
                 }
 
-            }
-            catch (PathNotFoundException e)
+            } catch (PathNotFoundException e)
             {
                 //swallow. temporary files trigger this.
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
                 e.printStackTrace();
                 log.error(e.getMessage(), e);
@@ -192,107 +184,84 @@ public class UploadObserver implements EventListener
     }
 
 
-    private void processUploadedFile(Event event) throws RepositoryException
-    {
-        log.info("new upload: {}", event.getPath());
-        if( !event.getPath().contains("metadata") )
-        {
-            Node node = session.getNode(event.getPath()).getParent();
-            if( !node.getName().startsWith(".") )
-            {
-                // parse sizing information
-                Map moveJob = new HashMap();
-                moveJob.put(Constants.PATH, node.getPath());
-
-                //until the next version of sling is ready and we can register a proper job to do this
-                // we'll invoke this directly.. Todo: remove after sling upgrade to 3.
-                String newPath = new MoveAssetJob().process(node.getPath(), session, null);
-                //log.debug(node.getPath());
-
-                if( newPath != null )
-                {
-                    Node newNode = session.getNode(newPath);
-                    new MetadataJob().process(newNode, true);
-                    new SizeJob().process(newNode);
-                    session.save();
-                }
-                else
-                {
-                    session.move(node.getParent().getPath(), UPLOAD_ERROR_PATH);
-                }
-
-                // new Sling3.0 jobs
-                //JobBuilder jobBuilder = jobManager.createJob(Constants.JOB_MOVE);
-                //jobBuilder.properties(moveJob);
-                //Job job = jobBuilder.add();
-                //Job job = jobManager.addJob(Constants.JOB_MOVE, moveJob);
-                //log.debug("Create Job {} / {}", job.getTopic(), job.getId());
-
-                // osgi events
-                //http://experiencedelivers.adobe.com/cemblog/en/experiencedelivers/2012/04/event_handling_incq.html
-                //EventPropertiesMap props = new EventPropertiesMap();
-                //props.put("path", node.getPath());
-                //org.osgi.service.event.Event moveEvent = new org.osgi.service.event.Event("dam/move", props);
-                //eventAdmin.postEvent(moveEvent);
-
-            }
-            else{
-                log.debug("skipping hidden file {}", node.getPath());
-            }
-        }
-        else{
-            log.debug("skipping metadata node {}", event.getPath());
-        }
-    }
-
-
-
+    /**
+     * Initialize any jobs that are required for Image Files in the system.
+     * @param event
+     * @throws RepositoryException
+     * @throws InterruptedException
+     * @throws IOException
+     */
     private void processImageFiles(Event event) throws RepositoryException, InterruptedException, IOException
     {
         log.info("new upload: {}", event.getPath());
-        if( !event.getPath().contains("metadata") )
+
+        Node node = session.getNode(event.getPath()).getParent();
+        // skip hidden files, we'll delete them instead
+        if (!node.getName().startsWith("."))
         {
-            Node node = session.getNode(event.getPath()).getParent();
-            // skip hidden, we'll delete them instead
-            if( !node.getName().startsWith(".") )
+            // First we'll spin in a loop to wait for the file upload to complete. This way none
+            // of our Jobs will hit broken files.
+            waitForFileUploadToComplete(node);
+
+            //reload the node reference
+            node = session.getNode(event.getPath()).getParent();
+
+
+            //Check jcr created & versionable nodes
+            if (!node.isNodeType("fd:image"))
             {
-                waitForFileUploadToComplete(node);
-
-                //reload the node reference
-                node = session.getNode(event.getPath()).getParent();
-                //Check jcr created & versionable nodes
-                if( !node.isNodeType("fd:image") )
+                try
                 {
-                    try
-                    {
-                        node.addMixin("fd:image");
-                        session.save();
-                    }catch (InvalidItemStateException e){
-                        e.printStackTrace();
-                    }
-                    //node = session.getNode(node.getPath());
+                    //first assign the right mixin
+                    node.addMixin("fd:image");
+                    session.save();
+                } catch (InvalidItemStateException e)
+                {
+                    e.printStackTrace();
                 }
-
-
-                EventPropertiesMap props = new EventPropertiesMap();
-                props.put("path", node.getPath());
-
-                // extract and save the metadata for this node.
-                new MetadataJob().process(node, true);
-                new SizeJob().process(node);
-                session.save();
+                //node = session.getNode(node.getPath());
             }
-            else{
-                //todo delete hidden files
-                log.debug("skipping hidden file {}", node.getPath());
-            }
+
+            // The trigger the jobs for this type of content
+
+
+            //todo, sling 2.6 way, remove when sling 3 jobs are working.
+            //new MetadataJob().process(node, true);
+            //new SizeJob().process(node);
+
+
+            // Sling 3 jobs.
+
+            // extract and save the metadata for this node.
+            Map props = new HashMap();
+            props.put("path", node.getPath());
+
+            Job metadataJob = jobManager.addJob(Constants.JOB_IMAGE_METADATA, props);
+            log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
+
+
+            Job sizeJob = jobManager.addJob(Constants.JOB_IMAGE_SIZE, props);
+            log.debug("Create Job {} / {}", sizeJob.getTopic(), sizeJob.getId());
+
+            session.save();
+
         }
-        else{
-            log.debug("skipping metadata node {}", event.getPath());
+        else
+        {
+            //todo delete hidden files
+            log.debug("skipping hidden file {}", node.getPath());
         }
+
     }
 
 
+    /**
+     * Spin in a loop to wait for file uploads to complete, so we can hold off post-processing against corrupt files.
+     * @param node
+     * @throws RepositoryException
+     * @throws IOException
+     * @throws InterruptedException
+     */
     private void waitForFileUploadToComplete(Node node) throws RepositoryException, IOException, InterruptedException
     {
         int size = 0;
@@ -300,7 +269,7 @@ public class UploadObserver implements EventListener
 
         Node nodeContent = node.getSession().getNode(node.getPrimaryItem().getPath());
         InputStream stream = nodeContent.getProperty("jcr:data").getBinary().getStream();
-        while ( bIsLocked || stream.available() == 0 || stream.available() > size )
+        while (bIsLocked || stream.available() == 0 || stream.available() > size)
         {
             Thread.sleep(100);
             bIsLocked = node.isLocked();

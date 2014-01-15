@@ -52,15 +52,13 @@
 package com.mikenimer.familycloud.filehandlers.jobs;
 
 import com.mikenimer.familycloud.Constants;
-import com.mikenimer.familycloud.ImageMimeTypes;
+import com.mikenimer.familycloud.MimeTypeManager;
 import com.mikenimer.familycloud.filehandlers.jobs.images.MetadataJob;
 import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.sling.jcr.api.SlingRepository;
-import org.apache.sling.jcr.resource.JcrModifiablePropertyMap;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -79,12 +77,15 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
+ * Move files uploaded to a central location to the right place, based on type.
+ *
  * User: mikenimer
  * Date: 11/17/13
  */
-@Component(enabled = true, immediate = true, metatype = true)
+//@Component(enabled = true, immediate = true, metatype = true)
 //Service(value=JobConsumer.class)
 //Property(name=JobConsumer.PROPERTY_TOPICS, value=Constants.JOB_MOVE)
+@Deprecated
 public class MoveAssetJob //implements JobConsumer
 {
     private final Logger log = LoggerFactory.getLogger(MoveAssetJob.class);
@@ -292,7 +293,7 @@ public class MoveAssetJob //implements JobConsumer
             //final String mimeType = n.getProperty("jcr:mimeType").getString();
             final String mimeType = n.getProperty("jcr:content/jcr:mimeType").getString();
 
-            boolean b = ImageMimeTypes.isSupportedMimeType(mimeType);
+            boolean b = MimeTypeManager.isSupportedMimeType(mimeType);
 
             if (!b)
             {
