@@ -125,7 +125,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
             if (assets[dtTitle] === undefined)
             {
                 assets[dtTitle] = {};
-                assets[dtTitle].title = dtTitle;
+                assets[dtTitle].title = moment(dt).format('MMMM Do, YYYY');
                 assets[dtTitle].data = [];
             }
 

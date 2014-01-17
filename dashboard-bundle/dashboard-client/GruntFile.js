@@ -154,7 +154,8 @@ module.exports = function (grunt) {
                         'ng-tags-input': './bower_components/ng-tags-input/ng-tags-input.js',
                         'infinite-scroll': './bower_components/ngInfiniteScroll/ng-infinite-scroll.js',
                         'treeControl':'./src/assets/js/angular-tree-control-modified.js',
-                        'vr.directives.wordCloud':'./bower_components/angular-word-cloud/build/angular-word-cloud.js'
+                        'vr.directives.wordCloud':'./bower_components/angular-word-cloud/build/angular-word-cloud.js',
+                        'momentjs':'./bower_components/momentjs/moment.js'
                     }
 
 
