@@ -160,7 +160,7 @@ public class ThumbnailService  extends SlingSafeMethodsServlet
                     Node n = parentNode.getNode("metadata");
                     if( n != null )
                     {
-                        String _orientation = n.getProperty("__ORIENTATION").getString();
+                        String _orientation = n.getProperty("orientation").getString();
                         if(StringUtils.isNumeric(_orientation))
                         {
                             orientation = new Integer(_orientation);

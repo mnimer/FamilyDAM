@@ -15,56 +15,18 @@
  *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * This file is part of FamilyCloud Project.
- *
- *     The FamilyCloud Project is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     The FamilyCloud Project is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/*
- * This file is part of FamilyCloud Project.
- *
- *     The FamilyCloud Project is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     The FamilyCloud Project is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package com.mikenimer.familycloud.filehandlers.observers;
 
 import com.mikenimer.familycloud.Constants;
 import com.mikenimer.familycloud.MimeTypeManager;
-import com.mikenimer.familycloud.filehandlers.jobs.MoveAssetJob;
 import com.mikenimer.familycloud.filehandlers.jobs.images.MetadataJob;
 import com.mikenimer.familycloud.filehandlers.jobs.images.SizeJob;
-import org.apache.felix.http.base.internal.util.MimeTypes;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
-import org.apache.sling.event.EventPropertiesMap;
 import org.apache.sling.event.jobs.Job;
-import org.apache.sling.event.jobs.JobBuilder;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
@@ -84,7 +46,6 @@ import javax.jcr.observation.EventListener;
 import javax.jcr.observation.ObservationManager;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -197,7 +158,7 @@ public class UploadObserver implements EventListener
 
         Node node = session.getNode(event.getPath()).getParent();
         // skip hidden files, we'll delete them instead
-        if (!node.getName().startsWith("."))
+        if (!node.getName().startsWith(".")  && event.getPath().endsWith("jcr:content"))
         {
             // First we'll spin in a loop to wait for the file upload to complete. This way none
             // of our Jobs will hit broken files.
@@ -234,14 +195,14 @@ public class UploadObserver implements EventListener
 
             // extract and save the metadata for this node.
             Map props = new HashMap();
-            props.put("path", node.getPath());
+            props.put("nodePath", node.getPath());
 
             Job metadataJob = jobManager.addJob(Constants.JOB_IMAGE_METADATA, props);
             log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
 
 
-            Job sizeJob = jobManager.addJob(Constants.JOB_IMAGE_SIZE, props);
-            log.debug("Create Job {} / {}", sizeJob.getTopic(), sizeJob.getId());
+            //Job sizeJob = jobManager.addJob(Constants.JOB_IMAGE_SIZE, props);
+            ///log.debug("Create Job {} / {}", sizeJob.getTopic(), sizeJob.getId());
 
             session.save();
 

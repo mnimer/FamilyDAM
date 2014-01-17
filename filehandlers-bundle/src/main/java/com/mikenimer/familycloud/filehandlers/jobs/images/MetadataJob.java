@@ -41,9 +41,12 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
+import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.event.jobs.Job;
+import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.apache.sling.jcr.api.SlingRepository;
-import org.apache.sling.jcr.resource.JcrModifiablePropertyMap;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,6 +57,7 @@ import javax.imageio.metadata.IIOMetadata;
 import javax.imageio.stream.ImageInputStream;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
@@ -65,11 +69,12 @@ import java.util.Map;
 /**
  * User: mikenimer
  * Date: 11/17/13
+ * Component(enabled = true, immediate = true)
  */
 @Component(enabled = true, immediate = true)
-//Service(value=JobConsumer.class)
-//Property(name=JobConsumer.PROPERTY_TOPICS, value="familycloud/photos/metadata")
-public class MetadataJob //implements JobConsumer
+@Service(value=JobConsumer.class)
+@Property(name= JobConsumer.PROPERTY_TOPICS, value="familycloud/photos/metadata")
+public class MetadataJob implements JobConsumer
 {
     private final Logger log = LoggerFactory.getLogger(MetadataJob.class);
 
@@ -90,15 +95,26 @@ public class MetadataJob //implements JobConsumer
     }
 
 
-    /**
-    public Boolean process(String path)
+    @Override
+    public JobResult process(Job job)
     {
-        Session session = repository.loginAdministrative(null);
-        Node node = session.getRootNode().getNode(path);
-        Map<String, Object> md = process(node);
-        return (md != null);  //JobConsumer.JobResult.OK;
+        String nodePath = (String)job.getProperty("nodePath");
+        return process(nodePath);
     }
-     **/
+
+
+    public JobResult process(String path)
+    {
+        try
+        {
+            Session session = repository.loginAdministrative(null);
+            Node node = session.getNode(path);
+            Map<String, Object> md = process(node, true);
+            return JobResult.OK;
+        }catch( RepositoryException re ){
+            return JobResult.FAILED;
+        }
+    }
 
 
 

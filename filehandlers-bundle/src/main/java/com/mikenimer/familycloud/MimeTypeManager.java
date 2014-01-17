@@ -83,6 +83,8 @@ public enum MimeTypeManager
 
     public static boolean isImage(String path)
     {
+        return true;
+        /**
         int pos = path.lastIndexOf(".");
         String ext = path.substring(pos+1);
 
@@ -94,6 +96,7 @@ public enum MimeTypeManager
             }
         }
         return false;
+         **/
     }
 
 }
