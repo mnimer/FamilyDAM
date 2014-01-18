@@ -83,10 +83,15 @@ public enum MimeTypeManager
 
     public static boolean isImage(String path)
     {
-        return true;
-        /**
+
         int pos = path.lastIndexOf(".");
         String ext = path.substring(pos+1);
+
+        int slash = ext.indexOf("/");
+        if( slash > -1 )
+        {
+            ext = ext.substring(0, slash);
+        }
 
         for (MimeTypeManager mimeTypeManager : MimeTypeManager.values() )
         {
@@ -96,7 +101,7 @@ public enum MimeTypeManager
             }
         }
         return false;
-         **/
+
     }
 
 }

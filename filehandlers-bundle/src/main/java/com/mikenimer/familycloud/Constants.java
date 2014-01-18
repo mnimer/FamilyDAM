@@ -29,9 +29,9 @@ public class Constants
 
     // JCR Paths
     public static final String JOB_MOVE = "familycloud/move";
-    public static final String JOB_IMAGE_METADATA = "familycloud/photos/metadata";
-    public static final String JOB_IMAGE_SIZE = "familycloud/photos/size";
-    public static final String JOB_IMAGE_THUMBNAILS = "familycloud/photos/thumbnails";
+    public static final String JOB_IMAGE_METADATA = "familydam/photos/metadata";
+    public static final String JOB_IMAGE_SIZE = "familydam/photos/size";
+    public static final String JOB_IMAGE_THUMBNAILS = "familydam/photos/thumbnails";
 
     // Map keys
     public static final String DATETIME = "dateTaken"; //todo change to datetime

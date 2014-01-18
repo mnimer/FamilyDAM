@@ -57,6 +57,8 @@ import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.event.jobs.Job;
+import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -67,7 +69,6 @@ import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.io.InputStream;
 
 /**
@@ -75,9 +76,9 @@ import java.io.InputStream;
  * Date: 11/17/13
  */
 @Component(enabled = true, immediate = true)
-//Service(value=JobConsumer.class)
-//Property(name=JobConsumer.PROPERTY_TOPICS, value="familycloud/photos/size")
-public class SizeJob //implements JobConsumer
+@Service(value = JobConsumer.class)
+@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/photos/size")
+public class SizeJob implements JobConsumer
 {
     private final Logger log = LoggerFactory.getLogger(SizeJob.class);
 
@@ -99,28 +100,37 @@ public class SizeJob //implements JobConsumer
     }
 
 
-    public Boolean process(String path)
+    @Override
+    public JobResult process(Job job)
+    {
+        String nodePath = (String) job.getProperty("nodePath");
+        return process(nodePath);
+    }
+
+
+    public JobResult process(String path)
     {
         try
         {
             Session session = repository.loginAdministrative(null);
             Node node = session.getNode(path);
-            return process(node);
-        }catch(Exception ex){
-            ex.printStackTrace();  //todo
+            return process(session, node);
         }
-        return false;
+        catch (Exception ex)
+        {
+            ex.printStackTrace();  //todo, log with sling logging
+            return JobResult.FAILED;
+        }
     }
 
 
-    public Boolean process(Node node)
+    public JobResult process(Session session, Node node)
     {
-        //String path = (String)job.getProperty("path");
-
         try
         {
             int size = 0;
             InputStream stream = node.getSession().getNode(node.getPrimaryItem().getPath()).getProperty("jcr:data").getBinary().getStream();
+            size = stream.available();
             BufferedImage bi = ImageIO.read(stream);
 
             int w = bi.getWidth();
@@ -129,13 +139,13 @@ public class SizeJob //implements JobConsumer
             node.setProperty("width", w);
             node.setProperty("height", h);
             node.setProperty("length", size);
+            session.save();
 
-            return true;//JobResult.OK;
-        }
-        catch(Exception ex)
+            return JobResult.OK;
+        } catch (Exception ex)
         {
             ex.printStackTrace();
-            return false;//JobResult.FAILED;
+            return JobResult.FAILED;
         }
     }
 

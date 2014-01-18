@@ -200,9 +200,8 @@ public class UploadObserver implements EventListener
             Job metadataJob = jobManager.addJob(Constants.JOB_IMAGE_METADATA, props);
             log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
 
-
-            //Job sizeJob = jobManager.addJob(Constants.JOB_IMAGE_SIZE, props);
-            ///log.debug("Create Job {} / {}", sizeJob.getTopic(), sizeJob.getId());
+            Job sizeJob = jobManager.addJob(Constants.JOB_IMAGE_SIZE, props);
+            log.debug("Create Job {} / {}", sizeJob.getTopic(), sizeJob.getId());
 
             session.save();
 

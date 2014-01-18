@@ -18,6 +18,8 @@
 var UserService = function($http, $q, fileService)
 {
     var systemPaths = [
+        '/content',
+        '/content/dam',
         '/content/dam/photos',
         '/content/dam/music',
         '/content/dam/movies',

@@ -73,7 +73,7 @@ import java.util.Map;
  */
 @Component(enabled = true, immediate = true)
 @Service(value=JobConsumer.class)
-@Property(name= JobConsumer.PROPERTY_TOPICS, value="familycloud/photos/metadata")
+@Property(name= JobConsumer.PROPERTY_TOPICS, value="familydam/photos/metadata")
 public class MetadataJob implements JobConsumer
 {
     private final Logger log = LoggerFactory.getLogger(MetadataJob.class);
@@ -109,8 +109,7 @@ public class MetadataJob implements JobConsumer
         {
             Session session = repository.loginAdministrative(null);
             Node node = session.getNode(path);
-            Map<String, Object> md = process(node, true);
-            return JobResult.OK;
+            return process(node, true);
         }catch( RepositoryException re ){
             return JobResult.FAILED;
         }
@@ -118,7 +117,7 @@ public class MetadataJob implements JobConsumer
 
 
 
-    public Map<String, Object> process(Node node, boolean persist)
+    public JobResult process(Node node, boolean persist)
     {
         Calendar dtCal = Calendar.getInstance();
         try
@@ -143,14 +142,14 @@ public class MetadataJob implements JobConsumer
                 }
             }
             // after saving the metadata with the node, return the result
-            return metadata;
+            return JobResult.OK;
 
 
         }
         catch(Exception ex)
         {
             ex.printStackTrace();
-            return null;
+            return JobResult.FAILED;
         }
 
     }

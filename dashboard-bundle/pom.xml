@@ -207,7 +207,7 @@
                             {maven-resources}, {maven-dependencies}
                         </Include-Resoource>
                         <Sling-Initial-Content>
-                            SLING-INF/content/dashboard;overwrite:=true;uninstall:=false;path:=/content/dashboard
+                            SLING-INF/content/dashboard;overwrite:=true;uninstall:=true;path:=/content/dashboard
                         </Sling-Initial-Content>
                     </instructions>
                 </configuration>
