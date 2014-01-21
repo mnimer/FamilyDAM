@@ -20,6 +20,7 @@ var PhotoDetailsController = function($scope, $rootScope, $state, $window, $stat
     $scope.self = "";
     $scope.scaledImage = undefined;
     $scope.node = {};
+    $scope.keywords = ['foo', 'bar'];
 
     $scope.showSidebar = true;
 

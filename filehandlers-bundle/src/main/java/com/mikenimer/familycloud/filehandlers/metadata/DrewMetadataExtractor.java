@@ -24,6 +24,7 @@ import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 import com.drew.metadata.exif.ExifIFD0Directory;
 import com.drew.metadata.exif.ExifSubIFDDirectory;
+import com.drew.metadata.exif.GpsDirectory;
 import com.drew.metadata.iptc.IptcDirectory;
 import com.mikenimer.familycloud.Constants;
 import org.slf4j.Logger;
@@ -81,6 +82,7 @@ public class DrewMetadataExtractor
                 catch (ImageProcessingException ipe)
                 {
                     //alternative approach
+                    /**
                     ImageInputStream iis = ImageIO.createImageInputStream(file);
                     Iterator<ImageReader> readers = ImageIO.getImageReaders(iis);
                     if (readers.hasNext())
@@ -102,6 +104,7 @@ public class DrewMetadataExtractor
                         }
 
                     }
+                     ***/
 
                 }
             }
@@ -115,23 +118,38 @@ public class DrewMetadataExtractor
             result.put(Constants.ORIENTATION, 1);
             for (Directory directory : md.getDirectories())
             {
+                // Find out what orientation the image is actually stored at.
                 if( directory instanceof ExifIFD0Directory)
                 {
                     Integer orientation = directory.getInteger(ExifIFD0Directory.TAG_ORIENTATION);
                     result.put(Constants.ORIENTATION, orientation);
                 }
 
+                // Get the date images was taken date
                 if(directory instanceof ExifSubIFDDirectory)
                 {
                     Date dt = directory.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL);
                     result.put(Constants.DATETIME, dt);
                 }
 
+                // Find any Keyword tags attached to this image
                 if(directory instanceof IptcDirectory)
                 {
                     //String keywords = directory.getString(IptcDirectory.TAG_KEYWORDS);
                     String[] keywordArray = directory.getStringArray(IptcDirectory.TAG_KEYWORDS);
                     result.put(Constants.KEYWORDS, keywordArray);
+                }
+
+                if(directory instanceof GpsDirectory)
+                {
+                    // GPS
+                    try
+                    {
+                        result.put(Constants.LATITUDE, ((GpsDirectory) directory).getGeoLocation().getLatitude());
+                        result.put(Constants.LONGITUDE, ((GpsDirectory) directory).getGeoLocation().getLongitude());
+                    }catch (Exception ex){
+                        //swallow
+                    }
                 }
 
 
@@ -142,8 +160,21 @@ public class DrewMetadataExtractor
                     Map<String, Object> tagMap = new HashMap();
                     tagMap.put(Constants.NAME, tag.getTagName());
                     tagMap.put(Constants.TYPE, tag.getTagType());
-                    tagMap.put(Constants.VALUE, directory.getObject(tag.getTagType()));
                     tagMap.put(Constants.DESCRIPTION, tag.getDescription());
+
+
+                    if( directory instanceof  GpsDirectory && tag.getTagName() == Constants.GPS_LATITUDE)
+                    {
+                        tagMap.put(Constants.VALUE, ((GpsDirectory) directory).getGeoLocation().getLatitude() );
+                    }
+                    else if( directory instanceof  GpsDirectory && tag.getTagName() == Constants.GPS_LONGITUDE)
+                    {
+                        tagMap.put(Constants.VALUE, ((GpsDirectory) directory).getGeoLocation().getLongitude() );
+                    }
+                    else{
+                        tagMap.put(Constants.VALUE, directory.getObject(tag.getTagType()));
+                    }
+
 
                     tags.put(tag.getTagName(), tagMap);
                 }

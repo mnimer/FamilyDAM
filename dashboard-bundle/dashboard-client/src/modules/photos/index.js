@@ -22,6 +22,7 @@
 
 module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
     .controller('PhotoGridController', require('./controllers/PhotoGridController'))
+    .controller('PhotosGridKeywordsController', require('./controllers/PhotoGridKeywordsController'))
     .controller('PhotoDetailsController', require('./controllers/PhotoDetailsController'))
     .controller('PhotoEditController', require('./controllers/PhotoEditController'))
     .controller('PhotoMetadataController', require('./controllers/PhotoMetadataController'))
@@ -32,7 +33,6 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
     .directive('dateFilter', require('./directives/dateFilter'))
     .directive('locationFilter', require('./directives/locationFilter'))
     .directive('tagCloudFilter', require('./directives/tagCloudFilter'))
-    .directive('columnSlider', require('./directives/columnSlider'))
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
         $stateProvider.state('photos:grid', {
@@ -41,26 +41,32 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
         })
             .state('photos:grid.filter', {
                 url:'/photos/tabs/filter',
-                templateUrl: "modules/photos/views/filter-tab.tpl.html",
+                templateUrl: "modules/photos/views/grid-filter.tpl.html",
                 controller: "PhotoGridController"
             })
+            .state('photos:grid.keywords', {
+                url:'/photos/tabs/keywords',
+                templateUrl: "modules/photos/views/grid-keywords.tpl.html",
+                controller: "PhotosGridKeywordsController"
+            })
+
             .state('photos:details', {
                 templateUrl: "modules/photos/photos.details.tpl.html",
                 controller: "PhotoDetailsController"
             })
             .state('photos:details.metadata', {
                 url:'/:id/details',
-                templateUrl: "modules/photos/views/photos-details.metadata.tpl.html",
+                templateUrl: "modules/photos/views/details-metadata.tpl.html",
                 controller: "PhotoMetadataController"
             })
             .state('photos:details.edit', {
                 url:'/:id/details',
-                templateUrl: "modules/photos/views/photos-details.edit.tpl.html",
+                templateUrl: "modules/photos/views/details-edit.tpl.html",
                 controller: "PhotoEditController"
             })
             .state('photos:details.versions', {
                 url:'/:id/details',
-                templateUrl: "modules/photos/views/photos-details.versions.tpl.html",
+                templateUrl: "modules/photos/views/details-versions.tpl.html",
                 controller: "PhotoVersionController"
             })
             .state('photo:files', {

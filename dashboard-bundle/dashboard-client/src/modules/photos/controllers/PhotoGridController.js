@@ -31,13 +31,14 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
 
     var groupByProperty = "created";
     $scope.assets = {};
+
     // bootstrap columns for thumbnails
     $scope.responsiveColumns = 3;
-    $scope.responsiveColumnLabel = "col-xs-12 col-sm-3";
+    $scope.responsiveColumnLabel = "";//col-xs-12 col-sm-3";
 
     $scope.$on("photo:grid:columns", function(data, args){
         $scope.responsiveColumns = args;
-        $scope.responsiveColumnLabel = "col-xs-12 col-sm-" +args;
+        $scope.responsiveColumnLabel = "";//col-xs-12 col-sm-" +args;
         //$scope.$apply();
     });
 
@@ -48,6 +49,9 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     var _filterTags = "";
     var _filterDateFrom = "";
     var _filterDateTo = "";
+
+    // properties related to the list of selected images
+    var _selectedItems = [];
 
     $scope.$on("filter:location:path", function(event, val){
         if( val !== undefined && val !== "")
@@ -95,11 +99,39 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     };
 
 
-    var refreshGrid = function ()
+    $scope.isSelected = function(node)
     {
-        $scope.selectFolder($scope.currentPath);
+        return _selectedItems.indexOf(node) > -1;
     };
 
+
+    $scope.toggleSelection = function(node, $event)
+    {
+        var pos = _selectedItems.indexOf(node);
+        if( pos == -1 )
+        {
+            _selectedItems.push(node);
+        }else{
+            _selectedItems.remove(pos);
+            //var a = _selectedItems.slice(pos,pos);
+            //_selectedItems = a;
+        }
+
+        $scope.$broadcast("photos:grid:keywords:selectedItems", _selectedItems);
+        updateKeywordsArray();
+    };
+
+
+    $scope.gotoDetails = function(node)
+    {
+        $state.go( "photos:details.metadata", {id:node['jcr:uuid']});
+    };
+
+
+    $scope.searchTags = function(query)
+    {
+        console.log(query);
+    };
 
 
     $scope.$on('$viewContentLoaded', function(event, toState, toParams, fromState, fromParams)
@@ -112,6 +144,51 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
         }
     });
 
+
+
+
+    var refreshGrid = function ()
+    {
+        $scope.selectFolder($scope.currentPath);
+    };
+
+    var refreshSearch = function()
+    {
+        photoService.search(_filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
+    };
+
+
+    /**
+     * loop over all of the selected items and create a new array of tags for all selected items
+     */
+    var updateKeywordsArray = function()
+    {
+        $scope.selectedTags = [];
+        for( var idx in _selectedItems )
+        {
+            var _node = _selectedItems[idx];
+
+            if( _node.metadata !== undefined )
+            {
+                var _keywords = _node.metadata.keywords.split(",");
+                for( var indx=0; indx < _keywords.length; indx++ )
+                {
+                    var word = _keywords[indx];
+                    if( word !== undefined )
+                    {
+                        word = word.toLowerCase();
+                    }
+                    var existingPos = $scope.selectedTags.indexOf(word);
+                    if( existingPos == -1 )
+                    {
+                        $scope.selectedTags.push(word);
+                    }
+                }
+            }
+        }
+
+        $scope.$broadcast("photos:grid:keywords:selectedTags", $scope.selectedTags);
+    };
 
 
     var groupData = function (results)
@@ -137,16 +214,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     };
 
 
-    var getRandomInt = function (min, max)
-    {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
 
-
-    var refreshSearch = function()
-    {
-        photoService.search(_filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
-    };
 
     /**
      * Process the search results by grouping them, and checking for the hateoas links.
@@ -196,6 +264,11 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     /**
      * Utility functions
      */
+    var getRandomInt = function (min, max)
+    {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
     $scope.safeApply = function(fn) {
         var phase = this.$root.$$phase;
         if(phase == '$apply' || phase == '$digest') {

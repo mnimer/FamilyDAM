@@ -126,18 +126,25 @@ public class MetadataJob implements JobConsumer
 
             if( metadata != null )
             {
-                // Pull out the date/time of the original photo from the EXIF data and update system date for the file.
-                Date datetime = (Date) metadata.get(Constants.DATETIME);
-                // if an original date  doesn't exist we'll set fc:Created to now.
-                if( datetime != null )
+                try
                 {
-                    dtCal.setTime(datetime);
+                    // Pull out the date/time of the original photo from the EXIF data and update system date for the file.
+                    Date datetime = (Date) metadata.get(Constants.DATETIME);
+                    // if an original date  doesn't exist we'll set fc:Created to now.
+                    if( datetime != null )
+                    {
+                        dtCal.setTime(datetime);
+                        node.setProperty("created", dtCal);
+                    }
+                }catch (Exception ex){
+                    //swallow
                 }
-                node.setProperty("created", dtCal);
+
+
 
                 if( persist )
                 {
-                    saveObjectToNode(node, "metadata", metadata);
+                    saveObjectToNode(node, Constants.METADATA, metadata);
                     node.getSession().save();
                 }
             }
@@ -172,6 +179,7 @@ public class MetadataJob implements JobConsumer
         catch (ImageProcessingException ipe)
         {
             //alternative approach
+            /***
             ImageInputStream iis = ImageIO.createImageInputStream(stream);
             Iterator<ImageReader> readers = ImageIO.getImageReaders(iis);
             if (readers.hasNext())
@@ -190,8 +198,9 @@ public class MetadataJob implements JobConsumer
                     md.put(names[i], (metadata.getAsTree(names[i])).getNodeValue());
                 }
             }
+             ***/
 
-            //todo, find the "Date/Time Original" property in this metdata
+
         }
 
         return md;
@@ -205,7 +214,15 @@ public class MetadataJob implements JobConsumer
         if( value instanceof Map )
         {
             key = key.replace("/","");
-            Node n = node.addNode(key, "nt:unstructured");
+
+            Node n = null;
+            if( !node.hasNode(key) )
+            {
+                n = node.addNode(key, "nt:unstructured");
+            }else{
+                n = node.getNode(key);
+            }
+
             Map m = (Map)value;
             for (Object mKey : m.keySet())
             {

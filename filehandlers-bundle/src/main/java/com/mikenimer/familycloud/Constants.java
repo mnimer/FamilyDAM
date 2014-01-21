@@ -37,7 +37,13 @@ public class Constants
     public static final String DATETIME = "dateTaken"; //todo change to datetime
     public static final String ORIENTATION = "orientation"; //todo change to orientation
     public static final String KEYWORDS = "keywords";
+    public static final String LATITUDE = "latitude";
+    public static final String LONGITUDE = "longitude";
 
+    //EXIF String
+    public static final String GPS = "GPS";
+    public static final String GPS_LATITUDE = "GPS Latitude";
+    public static final String GPS_LONGITUDE = "GPS Longitude";
 
     // simple strings
     public static final String PATH= "path";
@@ -45,4 +51,5 @@ public class Constants
     public static final String TYPE= "type";
     public static final String VALUE= "value";
     public static final String DESCRIPTION= "description";
+    public static final String METADATA= "metadata";
 }

@@ -1,7 +1,7 @@
 var LoginService = function($http)
 {
 
-    this.login = function(username, password, successCallback, errorCallback)
+    this.login = function(username, password)
     {
         var _config = {};
         _config.headers = {};
@@ -12,37 +12,13 @@ var LoginService = function($http)
 
         var method =  $http.post('/j_security_check', _args, _config);
 
-        if( successCallback !== undefined ){
-            method.success(function(data, status, headers, config){
-                successCallback(data, status, headers, config);
-            });
-        }
-        if( errorCallback !== undefined ){
-            method.error(function(data, status, headers, config){
-                errorCallback(data, status, headers, config);
-            });
-        }
-
         return method;
     };
 
 
-    this.getUser = function(username, successCallback, errorCallback)
+    this.getUser = function(username)
     {
-
         var method =  $http.get('/system/userManager/user/' +username +'.2.json');
-
-        if( successCallback !== undefined ){
-            method.success(function(data, status, headers, config){
-                successCallback(data, status, headers, config);
-            });
-        }
-        if( errorCallback !== undefined ){
-            method.error(function(data, status, headers, config){
-                errorCallback(data, status, headers, config);
-            });
-        }
-
         return method;
     };
 

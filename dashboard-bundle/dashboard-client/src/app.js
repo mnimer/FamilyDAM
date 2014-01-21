@@ -32,6 +32,7 @@ var App = angular.module('dashboard', [
         'treeControl',
         'vr.directives.wordCloud',
         'dashboard.templates',
+        'ui.select2',
         require('./modules/main').name,
         require('./modules/login').name,
         require('./modules/home').name,
@@ -46,12 +47,17 @@ var App = angular.module('dashboard', [
     {
         // For any unmatched url, redirect to /state1
         $urlRouterProvider.when('', '/login');
-
         $urlRouterProvider.otherwise("/login");
     }]);
 
 App.$inject = ['ui.router'];
 
 
+// Array Remove - By John Resig (MIT Licensed)
+Array.prototype.remove = function(from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+};
 
 

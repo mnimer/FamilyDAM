@@ -14,7 +14,14 @@
   ~     You should have received a copy of the GNU General Public License
   ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
-
 <div class="sidebarTab">
-    Photo Metadata
+    <div x-tags-input
+         ng-model="keywords"
+         custom-class="bootstrap"
+         placeholder="Add a tag"
+         replace-spaces-with-dashes="false"
+         add-on-comma="true"
+         add-on-space="false"
+         max-length="20">
+    </div>
 </div>

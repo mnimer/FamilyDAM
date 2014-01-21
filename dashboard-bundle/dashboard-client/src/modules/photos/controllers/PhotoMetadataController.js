@@ -17,6 +17,7 @@
 
 var PhotoMetadataController = function($scope, $rootScope, $state, $window, $stateParams, photoService) {
 
+    $scope.selectedTags = ['foo', 'bar'];
 };
 
 

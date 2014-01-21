@@ -48,7 +48,7 @@ import java.util.Set;
 @Service(Servlet.class)
 @Properties({@Property(name = "service.description", value = "Get metadata for node"),
         @Property(name = "service.vendor", value = "The FamilyCloud Project"),
-        @Property(name = "sling.servlet.paths", value = "/dashboard-api/metadata")
+        @Property(name = "sling.servlet.paths", value = "/dashboard-api/metadata/keywords")
 })
 public class MetadataKeywordsListServlet extends SlingAllMethodsServlet
 {
@@ -130,7 +130,7 @@ public class MetadataKeywordsListServlet extends SlingAllMethodsServlet
                 w.object();
                 w.key("word").value(word.toString().toLowerCase());
                 w.key("count").value(bag.getCount(word));
-                w.key("size").value(Math.max(1.5, bag.getCount(word) * .05) +"rem");
+                w.key("size").value(Math.max(1.5, Math.min(5, bag.getCount(word) * .05)) +"rem");
 
                 // todo try this.
                 // $size = min(max(round(( $size_max*($count-$count_min))/($count_max-$count_min),2), $size_min),$size_max);

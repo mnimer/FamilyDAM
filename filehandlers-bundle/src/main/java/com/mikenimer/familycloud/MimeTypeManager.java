@@ -29,11 +29,11 @@ public enum MimeTypeManager
     JPEG("jpeg", "image/jpeg"),
     PNG("png", "image/png"),
     GIF("gif", "image/gif"),
-    NEF("nef", "image/nef"),
     TIF("tif", "image/tiff"),
     TIFF("tiff", "image/tiff"),
     PSD("psd", "image/vnd.adobe.photoshop"),
     SVG("svg", "image/svg+xml"),
+    NEF("nef", "image/x-nikon-nef"),
 
     // Music, todo: find more
     MP3("mp3", "music/"), //todo get the right mime type

@@ -146,19 +146,18 @@ module.exports = function (grunt) {
                         'angular-dragdrop': './bower_components/angular-dragdrop/src/angular-dragdrop.js',
                         'angular-cookies': './bower_components/angular-cookies/angular-cookies.js',
                         'angular-resource': './bower_components/angular-resource/angular-resource.js',
+                        'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js',
+                        'angular-ui-select2':'./bower_components/angular-ui-select2/src/select2.js',
                         'jquery': './bower_components/jquery/jquery.js',
                         'jquery-ui': './bower_components/jquery-ui/ui/jquery-ui.js',
                         'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',
                         'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-                        'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js',
-                        'ng-tags-input': './bower_components/ng-tags-input/ng-tags-input.js',
                         'infinite-scroll': './bower_components/ngInfiniteScroll/ng-infinite-scroll.js',
                         'treeControl':'./src/assets/js/angular-tree-control-modified.js',
                         'vr.directives.wordCloud':'./bower_components/angular-word-cloud/build/angular-word-cloud.js',
-                        'momentjs':'./bower_components/momentjs/moment.js'
+                        'momentjs':'./bower_components/momentjs/moment.js',
+                        'select2':'./bower_components/select2/select2.js'
                     }
-
-
 				}
 			},
 			'dashboard': {

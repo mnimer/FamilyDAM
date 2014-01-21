@@ -26,6 +26,7 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
+import org.apache.jackrabbit.commons.webdav.NodeTypeConstants;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.jcr.api.SlingRepository;
@@ -40,6 +41,8 @@ import javax.jcr.PathNotFoundException;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.Value;
+import javax.jcr.nodetype.NodeType;
 import javax.jcr.observation.Event;
 import javax.jcr.observation.EventIterator;
 import javax.jcr.observation.EventListener;
@@ -175,6 +178,14 @@ public class UploadObserver implements EventListener
                 {
                     //first assign the right mixin
                     node.addMixin("fd:image");
+                    Node md = node.addNode(Constants.METADATA, "nt:unstructured");
+                    session.save();
+
+                    //Set some default properties
+                    md = node.getNode(Constants.METADATA);
+                    md.setProperty(Constants.KEYWORDS, "");
+                    md.setProperty(Constants.LATITUDE, 0.0);
+                    md.setProperty(Constants.LONGITUDE, 0.0);
                     session.save();
                 } catch (InvalidItemStateException e)
                 {

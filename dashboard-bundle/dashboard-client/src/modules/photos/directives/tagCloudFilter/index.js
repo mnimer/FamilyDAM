@@ -50,7 +50,7 @@ var tagCloudDirective = function(metadataService) {
                 _path = value;
                 if( value !== undefined )
                 {
-                    metadataService.listAllByPath(value).then(function (data)
+                    metadataService.keywordsByPath(value).then(function (data)
                     {
                         _keywords = data;
                         scope.keywords = data;

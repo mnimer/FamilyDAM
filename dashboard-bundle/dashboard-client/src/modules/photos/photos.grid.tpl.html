@@ -34,12 +34,18 @@
                     ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
 
         <span class="pull-right">
-            <div id="slider" data-column-slider columns="{{responsiveColumns}}"></div>
+            <!--div id="slider" data-column-slider columns="{{responsiveColumns}}"></div-->
 
             <button
                     class="glyphicon glyphicon-edit btn btn-default btn-md"
                     ng-click="" ng-disabled="true"
                     ng-show="mode=='DETAILS'"></button>
+
+            <button
+                    class="glyphicon glyphicon-trash btn btn-default btn-md"
+                    tooltip="Delete selected item(s)" tooltip-placement="bottom"
+                    ng-click="deletePaths()" ng-disabled="selectedTags.length == 0"></button>
+
         </span>
         </div>
 
@@ -47,11 +53,12 @@
         <div class="" ng-repeat="item in assets | orderBy:sortPrimaryType">
             <div><h3>{{item.title}}</h3></div>
             <ul class="row ">
-                <li ng-class="responsiveColumnLabel" ng-repeat="data in item.data">
-                    <div class="thumbnail">
-                        <a ui-sref="photos:details.metadata({id:'{{data['jcr:uuid']}}'})"><img
-                                ng-src="{{data.links.image}}.scale.w:500.png" style="width: 100%;"/></a><br/>
-                        <a class="glyphicon" ui-sref="photos:details.metadata({id:'{{data['jcr:uuid']}}'})"> {{data.name}}</a>
+                <li ng-click="toggleSelection(data, $event)" ng-dblClick="gotoDetails(data)"
+                    ng-repeat="data in item.data" >
+                    <div class="thumbnail" ng-class="{ 'selectedImage': isSelected(data) }">
+                        <img ng-src="{{data.links.image}}.scale.w:500.png" class="" /><br/>
+                        <!--a class="glyphicon title"
+                           ng-dblClick="gotoDetails('{{data['jcr:uuid']}}')"> {{data.name}}</a-->
                     </div>
                 </li>
             </ul>
@@ -66,7 +73,8 @@
 <aside id="sidebar-right" class="col-sm-4 hidden-xs" ng-show="showSidebar">
 
     <ul class="nav nav-tabs">
-        <li class="active"><a ui-sref="photos:grid.filter">Filters</a></li>
+        <li ng-class="{ active: $state.includes('photos:grid.filter') }"><a ui-sref="photos:grid.filter">Filters</a></li>
+        <li ng-class="{ active: $state.includes('photos:grid.keywords') }"><a ui-sref="photos:grid.keywords">Keywords</a></li>
     </ul>
 
     <div ui-view ></div>
