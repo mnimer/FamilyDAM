@@ -1,8 +1,8 @@
 {
-  "name": "FamilyCloud-Dashbaord",
+  "name": "FamilyDAM-Dashbaord",
   "version": "0.0.1",
   "private": true,
-  "description": "FamilyCloud Dashboard client application",
+  "description": "FamilyDAM Dashboard client application",
   "scripts": {
     "start": "node src/server/app"
   },

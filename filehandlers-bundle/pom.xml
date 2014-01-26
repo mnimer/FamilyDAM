@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-  ~ This file is part of FamilyCloud Project.
+  ~ This file is part of FamilyDAM Project.
   ~
-  ~     The FamilyCloud Project is free software: you can redistribute it and/or modify
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
   ~     it under the terms of the GNU General Public License as published by
   ~     the Free Software Foundation, either version 3 of the License, or
   ~     (at your option) any later version.
   ~
-  ~     The FamilyCloud Project is distributed in the hope that it will be useful,
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
   ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
   ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   ~     GNU General Public License for more details.
   ~
   ~     You should have received a copy of the GNU General Public License
-  ~     along with the FamilyCloud Project.  If not, see <http://www.gnu.org/licenses/>.
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mikenimer.familycloud</groupId>
+    <groupId>com.mikenimer.familydam</groupId>
     <artifactId>filehandlers-bundle</artifactId>
     <packaging>bundle</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>filehandlers-bundle</name>
-    <description>com.mikenimer.familycloud - filehandlers-bundle</description>
+    <description>com.mikenimer.familydam - filehandlers-bundle</description>
 
     <!-- dummy urls for the maven-build-number plugin to work, this can be replaced with real values -->
     <scm>

@@ -25,7 +25,7 @@
 //	  -	 http://jackrabbit.apache.org/node-type-notation.html
 //
 
-<fd = 'http://familycloud.mikenimer.com/1.0'>
+<fd = 'http://familydam.mikenimer.com/1.0'>
 <nt = 'http://www.jcp.org/jcr/nt/1.0'>
 <mix = 'http://www.jcp.org/jcr/mix/1.0 '>
 
