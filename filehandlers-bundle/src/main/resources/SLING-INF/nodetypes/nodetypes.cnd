@@ -41,11 +41,17 @@
 
 
 
-//[fd:music] > nt:base mixin
-//+ metadata (nt:unstructured)
+[fd:music] > nt:base, mix:title, mix:etag, mix:mimeType, mix:referenceable mixin
+- * (undefined) COPY
+- * (undefined) multiple COPY
++ metadata (nt:unstructured) multiple COPY
 
-//[fd:movie] > nt:base mixin
-//+ metadata (nt:unstructured)
+
+[fd:movie] > nt:base, mix:title, mix:etag, mix:mimeType, mix:referenceable mixin
+- * (undefined) COPY
+- * (undefined) multiple COPY
++ metadata (nt:unstructured) multiple COPY
+
 
 //[fd:document] > nt:base mixin
 //+ metadata (nt:unstructured)

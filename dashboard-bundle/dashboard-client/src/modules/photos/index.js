@@ -33,6 +33,7 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
     .directive('dateFilter', require('./directives/dateFilter'))
     .directive('locationFilter', require('./directives/locationFilter'))
     .directive('tagCloudFilter', require('./directives/tagCloudFilter'))
+    .directive('keywords', require('./directives/keywords'))
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
         $stateProvider.state('photos:grid', {
@@ -46,8 +47,7 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
             })
             .state('photos:grid.keywords', {
                 url:'/photos/tabs/keywords',
-                templateUrl: "modules/photos/views/grid-keywords.tpl.html",
-                controller: "PhotosGridKeywordsController"
+                templateUrl: "modules/photos/views/grid-keywords.tpl.html"
             })
 
             .state('photos:details', {

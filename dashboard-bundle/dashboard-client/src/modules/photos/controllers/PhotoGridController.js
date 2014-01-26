@@ -28,6 +28,8 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     $scope.showFilterSidebar = true;
     $scope.showImageDetailsSidebar = false;
 
+    // properties related to the list of selected images
+    $scope.selectedItems = [];
 
     var groupByProperty = "created";
     $scope.assets = {};
@@ -50,8 +52,6 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     var _filterDateFrom = "";
     var _filterDateTo = "";
 
-    // properties related to the list of selected images
-    var _selectedItems = [];
 
     $scope.$on("filter:location:path", function(event, val){
         if( val !== undefined && val !== "")
@@ -101,24 +101,21 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
 
     $scope.isSelected = function(node)
     {
-        return _selectedItems.indexOf(node) > -1;
+        return $scope.selectedItems.indexOf(node) > -1;
     };
 
 
     $scope.toggleSelection = function(node, $event)
     {
-        var pos = _selectedItems.indexOf(node);
+        var pos = $scope.selectedItems.indexOf(node);
         if( pos == -1 )
         {
-            _selectedItems.push(node);
+            $scope.selectedItems.push(node);
         }else{
-            _selectedItems.remove(pos);
-            //var a = _selectedItems.slice(pos,pos);
-            //_selectedItems = a;
+            $scope.selectedItems.remove(pos);
         }
 
-        $scope.$broadcast("photos:grid:keywords:selectedItems", _selectedItems);
-        updateKeywordsArray();
+        //$scope.$broadcast("photos:grid:keywords:selectedItems", $scope.selectedItems);
     };
 
 
@@ -156,40 +153,6 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     {
         photoService.search(_filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
     };
-
-
-    /**
-     * loop over all of the selected items and create a new array of tags for all selected items
-     */
-    var updateKeywordsArray = function()
-    {
-        $scope.selectedTags = [];
-        for( var idx in _selectedItems )
-        {
-            var _node = _selectedItems[idx];
-
-            if( _node.metadata !== undefined )
-            {
-                var _keywords = _node.metadata.keywords.split(",");
-                for( var indx=0; indx < _keywords.length; indx++ )
-                {
-                    var word = _keywords[indx];
-                    if( word !== undefined )
-                    {
-                        word = word.toLowerCase();
-                    }
-                    var existingPos = $scope.selectedTags.indexOf(word);
-                    if( existingPos == -1 )
-                    {
-                        $scope.selectedTags.push(word);
-                    }
-                }
-            }
-        }
-
-        $scope.$broadcast("photos:grid:keywords:selectedTags", $scope.selectedTags);
-    };
-
 
     var groupData = function (results)
     {

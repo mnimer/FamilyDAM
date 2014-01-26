@@ -17,9 +17,8 @@
 
 var UserService = function($http, $q, fileService)
 {
+
     var systemPaths = [
-        '/content',
-        '/content/dam',
         '/content/dam/photos',
         '/content/dam/music',
         '/content/dam/movies',
@@ -116,3 +115,6 @@ var UserService = function($http, $q, fileService)
 
 UserService.$inject = ['$http', '$q', 'fileService'];
 module.exports = UserService;
+
+
+

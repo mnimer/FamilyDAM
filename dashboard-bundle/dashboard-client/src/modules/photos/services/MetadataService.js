@@ -45,30 +45,6 @@ var MetadataService = function($http, $q)
 
 
 
-    this.addTag = function( items, word )
-    {
-        for(var i=0; i<items.length; i++)
-        {
-            var item = items[i];
-            var keywords = item.metadata.keywords.split(",");
-            if( keywords.indexOf(word) == -1 )
-            {
-                keywords.push(word);
-
-                var invokePath = item['jcr:path'];
-                var method =  $http.post(invokePath, {"metadata/keywords":keywords.join(",")});
-                return method;
-            }
-        }
-    };
-
-
-    this.removeTag = function( items, word )
-    {
-
-    };
-
-
     /**
      * Return distinct list off all /metadata/keywords attached to the nodes under a specific path.
      * @param path

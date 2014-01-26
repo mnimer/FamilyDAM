@@ -104,4 +104,26 @@ public enum MimeTypeManager
 
     }
 
+
+    public static boolean isMusic(String path)
+    {
+        int pos = path.lastIndexOf(".");
+        String ext = path.substring(pos+1);
+
+        int slash = ext.indexOf("/");
+        if( slash > -1 )
+        {
+            ext = ext.substring(0, slash);
+        }
+
+        for (MimeTypeManager mimeTypeManager : MimeTypeManager.values() )
+        {
+            if( mimeTypeManager.extension.equalsIgnoreCase(ext) && mimeTypeManager.mimeType.startsWith("music") )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

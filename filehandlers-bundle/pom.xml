@@ -41,11 +41,19 @@
         </dependency>
 
 
-
+        <!-- Images -->
         <dependency>
             <groupId>com.drewnoakes</groupId>
             <artifactId>metadata-extractor-osgi</artifactId>
             <version>2.6.4</version>
+        </dependency>
+
+
+        <!-- MP3's -->
+        <dependency>
+            <groupId>com.mpatric</groupId>
+            <artifactId>mp3agic</artifactId>
+            <version>0.8.2</version>
         </dependency>
 
 
@@ -239,7 +247,7 @@
                 <configuration>
                     <instructions>
                         <!-- embed any dependencies with artifactId junit and scope runtime -->
-                        <Embed-Dependency>metadata-extractor-osgi,xmpcore;scope=compile|runtime</Embed-Dependency>
+                        <Embed-Dependency>metadata-extractor-osgi,xmpcore,mp3agic;scope=compile|runtime</Embed-Dependency>
                         <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
                         <Include-Resoource>
                             {maven-resources}, {maven-dependencies}
@@ -247,6 +255,10 @@
                         <Sling-Nodetypes>
                             SLING-INF/nodetypes/nodetypes.cnd
                         </Sling-Nodetypes>
+                        <Sling-Initial-Content>
+                            SLING-INF/properties;overwrite:=false;overwriteProperties=true;uninstall:=true;path:=/apps/familydam,
+                            SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content
+                        </Sling-Initial-Content>
                     </instructions>
                 </configuration>
             </plugin>

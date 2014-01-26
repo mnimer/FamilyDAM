@@ -19,14 +19,11 @@ package com.mikenimer.familycloud.filehandlers.observers;
 
 import com.mikenimer.familycloud.Constants;
 import com.mikenimer.familycloud.MimeTypeManager;
-import com.mikenimer.familycloud.filehandlers.jobs.images.MetadataJob;
-import com.mikenimer.familycloud.filehandlers.jobs.images.SizeJob;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
-import org.apache.jackrabbit.commons.webdav.NodeTypeConstants;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.jcr.api.SlingRepository;
@@ -41,8 +38,6 @@ import javax.jcr.PathNotFoundException;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.Value;
-import javax.jcr.nodetype.NodeType;
 import javax.jcr.observation.Event;
 import javax.jcr.observation.EventIterator;
 import javax.jcr.observation.EventListener;
@@ -129,7 +124,11 @@ public class UploadObserver implements EventListener
                 {
                     if (MimeTypeManager.isImage(event.getPath()))
                     {
-                        processImageFiles(event);
+                        processImageFile(event);
+                    }
+                    else if (MimeTypeManager.isMusic(event.getPath()))
+                    {
+                        processMusicFile(event);
                     }
                 } else
                 {
@@ -155,7 +154,7 @@ public class UploadObserver implements EventListener
      * @throws InterruptedException
      * @throws IOException
      */
-    private void processImageFiles(Event event) throws RepositoryException, InterruptedException, IOException
+    private void processImageFile(Event event) throws RepositoryException, InterruptedException, IOException
     {
         log.info("new upload: {}", event.getPath());
 
@@ -165,7 +164,7 @@ public class UploadObserver implements EventListener
         {
             // First we'll spin in a loop to wait for the file upload to complete. This way none
             // of our Jobs will hit broken files.
-            waitForFileUploadToComplete(node);
+            waitForFileUploadToComplete(node); //todo, does sling3 support this
 
             //reload the node reference
             node = session.getNode(event.getPath()).getParent();
@@ -222,7 +221,76 @@ public class UploadObserver implements EventListener
             //todo delete hidden files
             log.debug("skipping hidden file {}", node.getPath());
         }
+    }
 
+
+
+    /**
+     * Initialize any jobs that are required for Music Files in the system.
+     * @param event
+     * @throws RepositoryException
+     * @throws InterruptedException
+     * @throws IOException
+     */
+    private void processMusicFile(Event event) throws RepositoryException, InterruptedException, IOException
+    {
+        log.info("new upload: {}", event.getPath());
+
+        Node node = session.getNode(event.getPath()).getParent();
+        // skip hidden files, we'll delete them instead
+        if (!node.getName().startsWith(".")  && event.getPath().endsWith("jcr:content"))
+        {
+            // First we'll spin in a loop to wait for the file upload to complete. This way none
+            // of our Jobs will hit broken files.
+            waitForFileUploadToComplete(node); //todo, does sling3 support this
+
+            //reload the node reference
+            node = session.getNode(event.getPath()).getParent();
+
+
+            //Check jcr created & versionable nodes
+            if (!node.isNodeType("fd:music"))
+            {
+                try
+                {
+                    //first assign the right mixin
+                    node.addMixin("fd:music");
+                    Node md = node.addNode(Constants.METADATA, "nt:unstructured");
+                    session.save();
+
+                    //Set some default properties
+                    md = node.getNode(Constants.METADATA);
+                    //SET default metadata properties
+                    //md.setProperty(Constants.KEYWORDS, "");
+
+
+                    session.save();
+                } catch (InvalidItemStateException e)
+                {
+                    e.printStackTrace();
+                }
+                //node = session.getNode(node.getPath());
+            }
+
+            // The trigger the jobs for this type of content
+
+            // Sling 3 jobs.
+
+            // extract and save the metadata for this node.
+            Map props = new HashMap();
+            props.put("nodePath", node.getPath());
+
+            Job metadataJob = jobManager.addJob(Constants.JOB_MUSIC_METADATA, props);
+            log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
+
+            session.save();
+
+        }
+        else
+        {
+            //todo delete hidden files
+            log.debug("skipping hidden file {}", node.getPath());
+        }
     }
 
 
