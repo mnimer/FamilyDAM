@@ -249,12 +249,12 @@ public class UploadObserver implements EventListener
 
 
             //Check jcr created & versionable nodes
-            if (!node.isNodeType("fd:music"))
+            if (!node.isNodeType("fd:song"))
             {
                 try
                 {
                     //first assign the right mixin
-                    node.addMixin("fd:music");
+                    node.addMixin("fd:song");
                     Node md = node.addNode(Constants.METADATA, "nt:unstructured");
                     session.save();
 

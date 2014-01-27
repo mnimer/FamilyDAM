@@ -60,35 +60,20 @@
 
             <div class="content listView">
 
-                <table class="table table-striped table-hover table-condensed" style="cursor: pointer;" >
+                <div class="table table-striped table-hover table-condensed" style="cursor: pointer;display: table;" >
                     <thead>
                     </thead>
-                    <tbody >
-                    <tr ng-repeat="item in assets | orderBy:sortPrimaryType" >
-                        <td style="width: 55px;">
-                            <input type="checkbox" id="folder" name="folder" value="{{item.path}}" ng-click="toggleFolder($event, item.path)">
 
-                            <a class="glyphicon glyphicon-folder-close"
-                               ng-click="selectFolder(item.path)"
-                               ng-if="item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder'">
+                    <div
+                            ng-repeat="item in assets | orderBy:sortPrimaryType"
+                            x-renderer data="item"
+                            class="fileListRow"
+                            style="display: table-row;"></div>
 
-                            <a class="glyphicon glyphicon-file"
-                               ng-click="selectFolder(item.path)"
-                               ng-if="item['jcr:primaryType'] == 'nt:file'">
-                        </td>
-                        <td class="name" >
-                            <a ng-click="selectFolder(item.path)"
-                               ng-if="item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder'"> {{item.name}}</a>
-
-                            <a ng-click="selectFile(item.path)"
-                               ng-if="item['jcr:primaryType'] == 'nt:file'"> {{item.name}}</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                </div>
 
 
-<!--
+                <!--
                 <ul style="list-style: none;">
                     <li ng-repeat="item in assets | orderBy:sortPrimaryType">
                         <div class="folderRenderer"

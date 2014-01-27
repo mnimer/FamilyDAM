@@ -38,6 +38,8 @@ var App = angular.module('dashboard', [
         require('./modules/home').name,
         require('./modules/files').name,
         require('./modules/photos').name,
+        require('./modules/music').name,
+        require('./modules/movies').name,
         require('./directives/fileUpload').name,
         require('./modules/user/preferences').name,
         require('./modules/user/usermanager').name])

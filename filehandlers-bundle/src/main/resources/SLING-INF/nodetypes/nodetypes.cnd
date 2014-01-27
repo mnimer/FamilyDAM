@@ -29,7 +29,6 @@
 <nt = 'http://www.jcp.org/jcr/nt/1.0'>
 <mix = 'http://www.jcp.org/jcr/mix/1.0 '>
 
-
 [fd:image] > nt:base, mix:versionable, mix:title, mix:etag, mix:created, mix:lastModified, mix:mimeType, mix:referenceable mixin
 - * (undefined) COPY
 - * (undefined) multiple COPY
@@ -40,8 +39,12 @@
 + metadata (nt:unstructured) multiple COPY
 
 
+[fd:album] > nt:base mixin
+- * (undefined) COPY
+- * (undefined) multiple COPY
 
-[fd:music] > nt:base, mix:title, mix:etag, mix:mimeType, mix:referenceable mixin
+
+[fd:song] > nt:base, mix:title, mix:etag, mix:mimeType, mix:referenceable mixin
 - * (undefined) COPY
 - * (undefined) multiple COPY
 + metadata (nt:unstructured) multiple COPY

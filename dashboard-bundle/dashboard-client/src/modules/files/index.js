@@ -18,6 +18,11 @@
 module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
     .controller('FolderNameModalCntrl', require('./controllers/FolderNameModalCntrl'))
     .controller('FileListController', require('./controllers/FileListController'))
+    .directive('renderer', require('./directives/renderer'))
+    .directive('folderRow', require('./directives/folderRow'))
+    .directive('fileRow', require('./directives/fileRow'))
+    .directive('imageRow', require('./directives/imageRow'))
+    .directive('musicRow', require('./directives/musicRow'))
     .service('fileService', require('./services/FileService'))
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {

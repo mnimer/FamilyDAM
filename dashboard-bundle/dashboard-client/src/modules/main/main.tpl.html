@@ -56,12 +56,13 @@
                     <li ng-class="{ active: $state.includes('photos:grid') || $state.includes('photos-details') || $state.includes('photo-files') }">
                         <a ui-sref="photos:grid.filter"><i class="icon-bar-chart"></i><span class="hidden-sm">Photos</span></a>
                     </li>
-                    <li ng-class="{ active: activePath=='/music' }">
-                        <a class="dropmenu" href="#/music"><i class="icon-eye-open"></i><span class="hidden-sm"> Music</span></a>
+                    <li ng-class="{ active: $state.includes('music:files') }">
+                        <a ui-sref="music:files.upload"><i class="icon-bar-chart"></i><span class="hidden-sm">Music</span></a>
                     </li>
-                    <li ng-class="{ active: activePath=='/movies' }">
-                        <a href="#/movies"><i class="icon-dashboard"></i><span class="hidden-sm"> Movies</span></a>
+                    <li ng-class="{ active: $state.includes('movies:files') }">
+                        <a ui-sref="movies:files.upload"><i class="icon-bar-chart"></i><span class="hidden-sm">Movies</span></a>
                     </li>
+
                     <li>
                         <a class="dropmenu" href=""><i class="icon-edit"></i><span class="hidden-sm"> Email</span></a>
                     </li>
