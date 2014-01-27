@@ -18,7 +18,7 @@
 var ImagePreviewDirective = function($compile) {
     return {
         scope: true,
-        template: "<img src='{{imagePath}}' style='margin: 0 auto; display: block;'>",
+        template: "<img src='{{imagePath}}' style='margin: 0 auto; margin-top: 20px; display: block;'>",
         link: function(scope, element, attrs)
         {
             scope.imagePath = attrs.path +".scale.w:" +element.parent().width() +".png";

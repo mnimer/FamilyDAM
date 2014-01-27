@@ -71,43 +71,7 @@
                             style="display: table-row;"></div>
 
                 </div>
-
-
-                <!--
-                <ul style="list-style: none;">
-                    <li ng-repeat="item in assets | orderBy:sortPrimaryType">
-                        <div class="folderRenderer"
-                             ng-if="item['jcr:primaryType'] == 'nt:folder' || item['jcr:primaryType'] == 'sling:Folder'">
-                            <a class="glyphicon glyphicon-folder-close" ng-click="selectFolder(item.path)"> {{item.name}}</a>
-                        </div>
-
-                        <div class="fileRenderer well" ng-if="item['jcr:primaryType'] == 'nt:file'">
-
-                            <div class="display:inline-block" style="float: left;">
-                                <a href="#/photos/{{item['jcr:uuid']}}/details"><img
-                                        ng-src="/content/dam{{item.path}}.scale.h:150.png"
-                                        ng-src="/content/dam{{item.path}}.scale.h:150.png"
-                                        class="list-thumbnail-sm"/></a>
-                            </div>
-
-                            <div style="display:inline-block;float: left; margin-left:20px;">
-                                <span>
-                                    <!-  input type="checkbox"  -> &nbsp;
-                                    <a href="#/photos/{{item['jcr:uuid']}}/details"> {{item.name}}</a><br/>
-                                </span>
-
-                                <span class="date">{{item['jcr:content']['jcr:lastModified']}}</span>
-                                <span> --  by: {{item['jcr:content']['jcr:lastModifiedBy']}}</span><br/>
-                                <span>File Size:{{item['jcr:content'][':jcr:data']}} </span>
-                            </div>
-
-                        </div>
-                    </li>
-                </ul>
-                -->
             </div>
-
-
         </div>
     </div>
 
@@ -119,7 +83,8 @@
 
     <ul class="nav nav-tabs">
         <li ng-class="{ active: $state.includes('files.upload') }"><a ui-sref="files.upload">Upload</a></li>
-        <li ng-class="{ active: $state.includes('files.preview') }"><a>Preview</a></li>
+        <li ng-class="{ active: $state.includes('files.image:preview') }" ng-show="$state.includes('files.image:preview')"><a>Preview</a></li>
+        <li ng-class="{ active: $state.includes('files.music:preview') }" ng-show="$state.includes('files.music:preview')"><a>Play</a></li>
     </ul>
 
     <div ui-view ></div>
