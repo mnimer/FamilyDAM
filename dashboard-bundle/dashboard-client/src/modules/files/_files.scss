@@ -40,6 +40,25 @@
     overflow: scroll;
   }
 
+
+  .fileListRow:hover
+  {
+    background-color: #cccccc;
+  }
+
+  .fileListRow:nth-child(even)
+  {
+    background-color: #eeeeee;
+
+    :hover
+    {
+      background-color: #cccccc;
+    }
+
+  }
+
+
+
   .folderRenderer
   {
     padding-top:    1px;

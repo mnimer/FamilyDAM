@@ -118,7 +118,8 @@
 <aside id="sidebar-right" class="col-sm-4 hidden-xs" ng-show="showSidebar">
 
     <ul class="nav nav-tabs">
-        <li class="active"><a ui-sref="files.upload">Upload</a></li>
+        <li ng-class="{ active: $state.includes('files.upload') }"><a ui-sref="files.upload">Upload</a></li>
+        <li ng-class="{ active: $state.includes('files.preview') }"><a>Preview</a></li>
     </ul>
 
     <div ui-view ></div>

@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var imageRowDirective = function ($compile, $parse)
+var imageRowDirective = function ($compile, $parse, $state)
 {
     return {
         scope: true,
@@ -27,7 +27,8 @@ var imageRowDirective = function ($compile, $parse)
 
             var _previewFile = function (path_)
             {
-                scope.$emit("photo:preview", path_);
+                //scope.$emit("photo:preview", path_);
+                $state.go("files.image:preview", {'path':path_} );
             };
 
             var _selectFile = function (path_)
@@ -62,5 +63,5 @@ var imageRowDirective = function ($compile, $parse)
 };
 
 
-imageRowDirective.$inject = ['$compile', '$parse'];
+imageRowDirective.$inject = ['$compile', '$parse', '$state'];
 module.exports = imageRowDirective;

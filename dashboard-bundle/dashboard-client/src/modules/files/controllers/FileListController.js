@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var FileListController = function ($scope, $rootScope, $location, $modal, $state, $q, fileService)
+var FileListController = function ($scope, $rootScope, $location, $modal, $state, $stateParams, $q, fileService)
 {
     $scope.assetCountLabel = "loading...";
     $scope.selectedPaths = [];
@@ -60,10 +60,7 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
 
     $scope.toggleUpload = function ()
     {
-        var b = !$scope.showUploadSidebar;
-        //show or hide the sidebar div, based on toggle
-        $scope.showSidebar = b;
-        $scope.showUploadSidebar = b;
+        $state.go("files.upload");
     };
 
 
@@ -287,5 +284,5 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
 
 };
 
-FileListController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', '$q', 'fileService'];
+FileListController.$inject = ['$scope', '$rootScope', '$location', '$modal', '$state', '$stateParams', '$q', 'fileService'];
 module.exports = FileListController;
