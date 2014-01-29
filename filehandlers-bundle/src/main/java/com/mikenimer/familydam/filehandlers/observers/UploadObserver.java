@@ -181,14 +181,14 @@ public class UploadObserver implements EventListener
                 {
                     //first assign the right mixin
                     node.addMixin("fd:image");
-                    Node md = node.addNode(Constants.METADATA, "nt:unstructured");
+                    node.addNode(Constants.METADATA, "nt:unstructured");
                     session.save();
 
                     //Set some default properties
-                    md = node.getNode(Constants.METADATA);
+                    Node md = node.getNode(Constants.METADATA);
                     md.setProperty(Constants.KEYWORDS, "");
-                    md.setProperty(Constants.LATITUDE, 0.0);
-                    md.setProperty(Constants.LONGITUDE, 0.0);
+                    //md.setProperty(Constants.LATITUDE, 0.0);
+                    //md.setProperty(Constants.LONGITUDE, 0.0);
                     session.save();
                 } catch (InvalidItemStateException e)
                 {
@@ -259,11 +259,12 @@ public class UploadObserver implements EventListener
                 {
                     //first assign the right mixin
                     node.addMixin("fd:song");
-                    Node md = node.addNode(Constants.METADATA, "nt:unstructured");
+                    node.addNode(Constants.METADATA, "nt:unstructured");
                     session.save();
 
                     //Set some default properties
-                    md = node.getNode(Constants.METADATA);
+                    Node md = node.getNode(Constants.METADATA);
+                    md.setProperty(Constants.KEYWORDS, "");
                     //SET default metadata properties
                     //md.setProperty(Constants.KEYWORDS, "");
 
@@ -333,11 +334,12 @@ public class UploadObserver implements EventListener
                 {
                     //first assign the right mixin
                     node.addMixin("fd:movie");
-                    Node md = node.addNode(Constants.METADATA, "nt:unstructured");
+                    node.addNode(Constants.METADATA, "nt:unstructured");
                     session.save();
 
                     //Set some default properties
-                    md = node.getNode(Constants.METADATA);
+                    Node md = node.getNode(Constants.METADATA);
+                    md.setProperty(Constants.KEYWORDS, "");
                     //SET default metadata properties
                     //md.setProperty(Constants.KEYWORDS, "");
 
@@ -376,7 +378,7 @@ public class UploadObserver implements EventListener
 
         Node nodeContent = node.getSession().getNode(node.getPrimaryItem().getPath());
         InputStream stream = nodeContent.getProperty("jcr:data").getBinary().getStream();
-        while (bIsLocked || stream.available() == 0 || stream.available() > size)
+        while (bIsLocked)// || stream.available() == 0 || stream.available() > size )
         {
             Thread.sleep(100);
             bIsLocked = node.isLocked();

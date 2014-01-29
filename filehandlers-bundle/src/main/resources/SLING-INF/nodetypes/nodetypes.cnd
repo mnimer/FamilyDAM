@@ -25,7 +25,7 @@
 //	  -	 http://jackrabbit.apache.org/node-type-notation.html
 //
 
-<fd = 'http://familydam.mikenimer.com/1.0'>
+<fd = 'http://familydam.com/1.0'>
 <nt = 'http://www.jcp.org/jcr/nt/1.0'>
 <mix = 'http://www.jcp.org/jcr/mix/1.0 '>
 
@@ -33,6 +33,8 @@
 [fd:geostamp] > nt:base mixin
 - latitude (DOUBLE)
 - longitude (DOUBLE)
+
+
 
 
 [fd:image] > nt:base, mix:versionable, mix:title, mix:etag, mix:created, mix:lastModified, mix:mimeType, mix:referenceable mixin
@@ -60,12 +62,6 @@
 - * (undefined) COPY
 - * (undefined) multiple COPY
 + metadata (nt:unstructured) multiple COPY
-
-
-[fd:metadata] > nt:base mixin
-- * (undefined) COPY
-- * (undefined) multiple COPY
-- metadata (STRING)
 
 
 //[fd:document] > nt:base mixin
