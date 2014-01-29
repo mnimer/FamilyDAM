@@ -25,7 +25,7 @@ var musicRowDirective = function($compile, $state) {
 
             scope.play = function(item_, event)
             {
-                $state.go("files.music:preview", {'path':item_.path, 'item':item_});
+                $state.go("files.music:preview", {'path':item_.path});
                 event.stopPropagation();
             };
 

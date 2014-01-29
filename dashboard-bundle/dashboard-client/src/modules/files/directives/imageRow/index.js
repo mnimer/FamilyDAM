@@ -25,10 +25,10 @@ var imageRowDirective = function ($compile, $parse, $state)
             //console.log('row data: ', scope.data);
             var delay = 300, clicks = 0, timer = null;
 
-            var _previewFile = function (path_)
+            var _previewFile = function (item_)
             {
                 //scope.$emit("photo:preview", path_);
-                $state.go("files.image:preview", path_);
+                $state.go("files.image:preview", {'path':item_.path});
             };
 
             var _selectFile = function (path_)
