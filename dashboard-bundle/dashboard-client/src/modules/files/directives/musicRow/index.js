@@ -22,12 +22,48 @@ var musicRowDirective = function($compile, $state) {
         templateUrl: 'modules/files/directives/musicRow/row-music.tpl.html',
         link: function(scope, element, attrs) {
             //console.log('row data: ', scope.data);
+            var delay = 300, clicks = 0, timer = null;
 
+            var _previewFile = function (item_)
+            {
+                //scope.$emit("photo:preview", path_);
+                $state.go("files.music:preview", {'path':item_.path, 'item':item_});
+            };
+
+            var _selectFile = function (item_)
+            {
+                scope.$emit("music:select",  {'path':item_.path, 'item':item_});
+            };
+
+            scope.handleClick = function (item_)
+            {
+                clicks++;  //count clicks
+                if (clicks === 1)
+                {
+                    timer = setTimeout(function ()
+                    {
+                        scope.$apply(function ()
+                        {
+                            _previewFile(item_);
+                        });
+                        clicks = 0;             //after action performed, reset counter
+                    }, delay);
+                }
+                else
+                {
+                    clearTimeout(timer);    //prevent single-click action
+                    _selectFile(item_);
+                    clicks = 0;             //after action performed, reset counter
+                }
+            };
+
+            /**
             scope.play = function(item_, event)
             {
                 $state.go("files.music:preview", {'path':item_.path});
                 event.stopPropagation();
             };
+             **/
 
         }
     };

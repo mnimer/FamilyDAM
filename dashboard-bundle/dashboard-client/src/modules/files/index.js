@@ -26,7 +26,7 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
     .directive('imageRow', require('./directives/imageRow'))
     .directive('musicRow', require('./directives/musicRow'))
     .directive('imagePreview', require('./directives/imagePreview'))
-    .directive('musicPreview', require('./directives/musicPreview'))
+    .directive('musicPlayer', require('./directives/musicPlayer'))
     .service('fileService', require('./services/FileService'))
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {

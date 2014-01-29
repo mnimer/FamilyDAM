@@ -19,18 +19,19 @@ var MusicPreviewDirective = function($compile, $parse, $stateParams) {
     return {
         scope: true,
         replace:true,
-        link: function(scope, element, attrs)
+        templateUrl:'modules/files/directives/musicPlayer/music-player.tpl.html',
+        compile: function compile(element, attributes)
         {
-            var _path = $stateParams["path"];
-            scope.songPath = _path;
-            //attrs.src = attrs.path +".scale.w:200.png";
+            return {
+                pre: function preLink(scope, element, attributes) {
+                    var _path = $stateParams["path"];
+                    scope.songPath = _path;
+                },
+                post: function postLink(scope, element, attributes) {
 
-            var htmlText = '<audio controls><source src="{{songPath}}" type="audio/mpeg"></audio>';
+                }
+            };
 
-            //template = angular.element(htmlText);
-            //htmlText = ;
-            template = angular.element($compile(htmlText)(scope));
-            element.replaceWith(template);
         }
     };
 };

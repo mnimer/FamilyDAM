@@ -42,6 +42,7 @@ public enum MimeTypeManager
     // videos, todo: find more
     MPG("mpg", "video/"), //todo get the right mime type
     MPEG("mpeg", "video/"), //todo get the right mime type
+    M4V("m4v", "video/"), //todo get the right mime type
 
     //todo, find more
     PDF("pdf", "document/"), //todo get the right mime type
@@ -84,28 +85,27 @@ public enum MimeTypeManager
     public static boolean isImage(String path)
     {
 
-        int pos = path.lastIndexOf(".");
-        String ext = path.substring(pos+1);
-
-        int slash = ext.indexOf("/");
-        if( slash > -1 )
-        {
-            ext = ext.substring(0, slash);
-        }
-
-        for (MimeTypeManager mimeTypeManager : MimeTypeManager.values() )
-        {
-            if( mimeTypeManager.extension.equalsIgnoreCase(ext) && mimeTypeManager.mimeType.startsWith("image") )
-            {
-                return true;
-            }
-        }
-        return false;
+        String prefix = "image";
+        return checkType(path, prefix);
 
     }
 
 
     public static boolean isMusic(String path)
+    {
+        String prefix = "music";
+        return checkType(path, prefix);
+    }
+
+
+    public static boolean isMovie(String path)
+    {
+        String prefix = "video";
+        return checkType(path, prefix);
+    }
+
+
+    private static boolean checkType(String path, String prefix)
     {
         int pos = path.lastIndexOf(".");
         String ext = path.substring(pos+1);
@@ -118,7 +118,7 @@ public enum MimeTypeManager
 
         for (MimeTypeManager mimeTypeManager : MimeTypeManager.values() )
         {
-            if( mimeTypeManager.extension.equalsIgnoreCase(ext) && mimeTypeManager.mimeType.startsWith("music") )
+            if( mimeTypeManager.extension.equalsIgnoreCase(ext) && mimeTypeManager.mimeType.startsWith(prefix) )
             {
                 return true;
             }

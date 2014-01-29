@@ -29,6 +29,12 @@
 <nt = 'http://www.jcp.org/jcr/nt/1.0'>
 <mix = 'http://www.jcp.org/jcr/mix/1.0 '>
 
+
+[fd:geostamp] > nt:base mixin
+- latitude (DOUBLE)
+- longitude (DOUBLE)
+
+
 [fd:image] > nt:base, mix:versionable, mix:title, mix:etag, mix:created, mix:lastModified, mix:mimeType, mix:referenceable mixin
 - * (undefined) COPY
 - * (undefined) multiple COPY
@@ -56,6 +62,12 @@
 + metadata (nt:unstructured) multiple COPY
 
 
+[fd:metadata] > nt:base mixin
+- * (undefined) COPY
+- * (undefined) multiple COPY
+- metadata (STRING)
+
+
 //[fd:document] > nt:base mixin
 //+ metadata (nt:unstructured)
 
@@ -67,9 +79,6 @@
 //- collections (STRING) MULTIPLE
 //- event (STRING)
 
-//[fd:geo] > nt:base mixin
-//- latitude (DOUBLE)
-//- longitude (DOUBLE)
 
 
 //<dc = 'http://purl.org/dc/elements/1.1/'>

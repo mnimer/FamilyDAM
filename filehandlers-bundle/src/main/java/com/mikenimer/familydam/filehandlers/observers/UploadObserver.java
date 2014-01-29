@@ -130,6 +130,10 @@ public class UploadObserver implements EventListener
                     {
                         processMusicFile(event);
                     }
+                    else if (MimeTypeManager.isMovie(event.getPath()))
+                    {
+                        processMovieFile(event);
+                    }
                 } else
                 {
                     log.debug(event.getType() + ":" + event.getPath());
@@ -156,7 +160,7 @@ public class UploadObserver implements EventListener
      */
     private void processImageFile(Event event) throws RepositoryException, InterruptedException, IOException
     {
-        log.info("new upload: {}", event.getPath());
+        log.info("new image upload: {}", event.getPath());
 
         Node node = session.getNode(event.getPath()).getParent();
         // skip hidden files, we'll delete them instead
@@ -234,7 +238,7 @@ public class UploadObserver implements EventListener
      */
     private void processMusicFile(Event event) throws RepositoryException, InterruptedException, IOException
     {
-        log.info("new upload: {}", event.getPath());
+        log.info("new music upload: {}", event.getPath());
 
         Node node = session.getNode(event.getPath()).getParent();
         // skip hidden files, we'll delete them instead
@@ -292,6 +296,70 @@ public class UploadObserver implements EventListener
             log.debug("skipping hidden file {}", node.getPath());
         }
     }
+
+
+
+
+
+
+
+    /**
+     * Initialize any jobs that are required for Music Files in the system.
+     * @param event
+     * @throws RepositoryException
+     * @throws InterruptedException
+     * @throws IOException
+     */
+    private void processMovieFile(Event event) throws RepositoryException, InterruptedException, IOException
+    {
+        log.info("new movie upload: {}", event.getPath());
+
+        Node node = session.getNode(event.getPath()).getParent();
+        // skip hidden files, we'll delete them instead
+        if (!node.getName().startsWith(".")  && event.getPath().endsWith("jcr:content"))
+        {
+            // First we'll spin in a loop to wait for the file upload to complete. This way none
+            // of our Jobs will hit broken files.
+            waitForFileUploadToComplete(node); //todo, does sling3 support this
+
+            //reload the node reference
+            node = session.getNode(event.getPath()).getParent();
+
+
+            //Check jcr created & versionable nodes
+            if (!node.isNodeType("fd:movie"))
+            {
+                try
+                {
+                    //first assign the right mixin
+                    node.addMixin("fd:movie");
+                    Node md = node.addNode(Constants.METADATA, "nt:unstructured");
+                    session.save();
+
+                    //Set some default properties
+                    md = node.getNode(Constants.METADATA);
+                    //SET default metadata properties
+                    //md.setProperty(Constants.KEYWORDS, "");
+
+
+                    session.save();
+                } catch (InvalidItemStateException e)
+                {
+                    e.printStackTrace();
+                }
+                //node = session.getNode(node.getPath());
+            }
+        }
+        else
+        {
+            //todo delete hidden files
+            log.debug("skipping hidden file {}", node.getPath());
+        }
+    }
+
+
+
+
 
 
     /**

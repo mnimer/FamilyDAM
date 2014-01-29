@@ -50,7 +50,13 @@ var App = angular.module('dashboard', [
         // For any unmatched url, redirect to /state1
         $urlRouterProvider.when('', '/login');
         $urlRouterProvider.otherwise("/login");
-    }]);
+    }])
+    .factory('constants', function () {
+        return {
+            title: 'FamilyDAM'
+        };
+    });
+
 
 App.$inject = ['ui.router'];
 
