@@ -15,52 +15,17 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var musicRowDirective = function($compile) {
+var musicRowDirective = function($compile, $state) {
     return {
         scope: true,
         replace: true,
         templateUrl: 'modules/files/directives/musicRow/row-music.tpl.html',
         link: function(scope, element, attrs) {
             //console.log('row data: ', scope.data);
-            var delay = 300, clicks = 0, timer = null;
 
-            var _previewFile = function (path_)
+            scope.play = function(item_, event)
             {
-                scope.$emit("music:preview", path_);
-            };
-
-            var _selectFile = function (path_)
-            {
-                scope.$emit("music:select", path_);
-            };
-
-
-
-            scope.handleClick = function (path_)
-            {
-                clicks++;  //count clicks
-                if (clicks === 1)
-                {
-                    timer = setTimeout(function ()
-                    {
-                        scope.$apply(function ()
-                        {
-                            _previewFile(path_);
-                        });
-                        clicks = 0;             //after action performed, reset counter
-                    }, delay);
-                }
-                else
-                {
-                    clearTimeout(timer);    //prevent single-click action
-                    _selectFile(path_);
-                    clicks = 0;             //after action performed, reset counter
-                }
-            };
-
-            scope.play = function(path_, event)
-            {
-                scope.$emit("music:play", path_);
+                $state.go("files.music:preview", {'path':item_.path, 'item':item_});
                 event.stopPropagation();
             };
 
@@ -69,5 +34,5 @@ var musicRowDirective = function($compile) {
 };
 
 
-musicRowDirective.$inject = ['$compile'];
+musicRowDirective.$inject = ['$compile', '$state'];
 module.exports = musicRowDirective;

@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ This file is part of FamilyDAM Project.
   ~
@@ -16,7 +16,17 @@
   ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<div id="sidebar-upload" class="sidebar-nav" >
-    Image Preview
-    <div x-image-preview />
-</div>
+<node>
+	<!-- 
+	  You can find out more documentation on this topic 
+	  by following these links:
+
+	    -  http://sling.apache.org/site/content-loading.html
+	    -  http://jackrabbit.apache.org/node-type-notation.html
+	 -->
+    <name>twitter</name>
+    <primaryNodeType>sling:Folder</primaryNodeType>
+
+
+
+</node>

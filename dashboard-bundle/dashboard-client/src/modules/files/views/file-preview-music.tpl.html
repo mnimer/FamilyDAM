@@ -1,4 +1,3 @@
-
 <!--
   ~ This file is part of FamilyDAM Project.
   ~
@@ -16,7 +15,13 @@
   ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<div id="sidebar-upload" class="sidebar-nav" >
-    Image Preview
-    <div x-image-preview />
+<div id="sidebar-upload" class="sidebar-nav">
+
+    <!--div class='speaker'
+         data-audio="{{path}}"
+         data-autoplay="true"
+         data-pauseothers="true" jplayer></div-->
+Music Player:
+    <div x-music-preview item="{{item}}" path="{{item.path}}"></div>
+
 </div>

@@ -19,7 +19,6 @@ var ImagePreviewController = function ($scope, $rootScope, $state, $stateParams)
 {
     var init = function ()
     {
-        $scope.path = $stateParams.path;
         console.log("state params:" +$stateParams.path);
     };
     init();

@@ -28,7 +28,7 @@ var imageRowDirective = function ($compile, $parse, $state)
             var _previewFile = function (path_)
             {
                 //scope.$emit("photo:preview", path_);
-                $state.go("files.image:preview", {'path':path_} );
+                $state.go("files.image:preview", path_);
             };
 
             var _selectFile = function (path_)

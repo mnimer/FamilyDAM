@@ -23,9 +23,11 @@ var UserService = function($http, $q, fileService)
         '/content/dam/photos',
         '/content/dam/music',
         '/content/dam/movies',
-        '/content/dam/social',
         '/content/dam/email',
-        '/content/dam/documents'
+        '/content/dam/documents',
+        '/content/dam/web/facebook',
+        '/content/dam/web/twitter',
+        '/content/dam/web/dropbox',
     ];
 
     /**

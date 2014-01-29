@@ -19,12 +19,14 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
     .controller('FolderNameModalCntrl', require('./controllers/FolderNameModalCntrl'))
     .controller('FileListController', require('./controllers/FileListController'))
     .controller('ImagePreviewController', require('./controllers/ImagePreviewController'))
+    .controller('MusicPreviewController', require('./controllers/MusicPreviewController'))
     .directive('renderer', require('./directives/renderer'))
     .directive('folderRow', require('./directives/folderRow'))
     .directive('fileRow', require('./directives/fileRow'))
     .directive('imageRow', require('./directives/imageRow'))
     .directive('musicRow', require('./directives/musicRow'))
     .directive('imagePreview', require('./directives/imagePreview'))
+    .directive('musicPreview', require('./directives/musicPreview'))
     .service('fileService', require('./services/FileService'))
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {
@@ -38,8 +40,11 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
             })
             .state('files.image:preview', {
                 url: '/files/preview/image?path',
-                templateUrl: "modules/files/views/file-preview-image.tpl.html",
-                controller:"ImagePreviewController"
+                templateUrl: "modules/files/views/file-preview-image.tpl.html"
+            })
+            .state('files.music:preview', {
+                url: '/files/preview/music?path',
+                templateUrl: "modules/files/views/file-preview-music.tpl.html"
             });
 
     }]);

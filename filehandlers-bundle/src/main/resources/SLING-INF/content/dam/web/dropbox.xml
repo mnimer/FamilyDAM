@@ -24,7 +24,7 @@
 	    -  http://sling.apache.org/site/content-loading.html
 	    -  http://jackrabbit.apache.org/node-type-notation.html
 	 -->
-    <name>social</name>
+    <name>dropbox</name>
     <primaryNodeType>sling:Folder</primaryNodeType>
 
 
