@@ -15,17 +15,29 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var MusicPreviewDirective = function($compile, $parse, $stateParams) {
+var MusicPreviewDirective = function($rootScope, $compile, $parse, $stateParams) {
     return {
-        scope: true,
+        scope: {
+            'node':'@'
+        },
         replace:true,
         templateUrl:'modules/files/directives/musicPlayer/music-player.tpl.html',
         compile: function compile(element, attributes)
         {
             return {
                 pre: function preLink(scope, element, attributes) {
-                    var _path = $stateParams["path"];
-                    scope.songPath = _path;
+
+
+                    scope.$watch("node", function(nv, ov){
+                        if( nv != "" && nv != undefined )
+                        {
+                            var _item = angular.fromJson(nv);
+                            scope.songPath = _item.path;
+
+                            //$(element).find("audio").pause().attr('src', _item.path);
+                        }
+                    });
+
                 },
                 post: function postLink(scope, element, attributes) {
 
@@ -37,5 +49,5 @@ var MusicPreviewDirective = function($compile, $parse, $stateParams) {
 };
 
 
-MusicPreviewDirective.$inject = ['$compile','$parse', '$stateParams'];
+MusicPreviewDirective.$inject = ['$rootScope', '$compile','$parse', '$stateParams'];
 module.exports = MusicPreviewDirective;

@@ -11,7 +11,7 @@
     "angular-ui-router": "~0.2.0",
     "angular-cookies": "~1.0.8",
     "angular-dragdrop": "~1.0.4",
-    "angular-bootstrap": "~0.9.0",
+    "angular-bootstrap": "~0.10.0",
     "angular-file-upload": "~0.2.7",
     "angular.treeview": "https://github.com/eu81273/angular.treeview.git",
     "angular-bootstrap-nav-tree": "https://github.com/nickperkinslondon/angular-bootstrap-nav-tree.git",

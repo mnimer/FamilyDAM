@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var musicRowDirective = function($compile, $state) {
+var musicRowDirective = function($rootScope, $compile, $state) {
     return {
         scope: true,
         replace: true,
@@ -27,7 +27,8 @@ var musicRowDirective = function($compile, $state) {
             var _previewFile = function (item_)
             {
                 //scope.$emit("photo:preview", path_);
-                $state.go("files.music:preview", {'path':item_.path, 'item':item_});
+                $rootScope.selectedNode = item_;
+                //$state.go("files.music:preview", {'node':item_});
             };
 
             var _selectFile = function (item_)
@@ -70,5 +71,5 @@ var musicRowDirective = function($compile, $state) {
 };
 
 
-musicRowDirective.$inject = ['$compile', '$state'];
+musicRowDirective.$inject = ['$rootScope', '$compile', '$state'];
 module.exports = musicRowDirective;

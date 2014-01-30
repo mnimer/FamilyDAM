@@ -50,7 +50,7 @@
             <div class="nav-collapse sidebar-nav collapse navbar-collapse bs-navbar-collapse">
                 <ul class="nav nav-tabs nav-stacked main-menu">
                     <li ng-class="{ active: $state.includes('files') }">
-                        <a ui-sref="files.upload"><i class="icon-bar-chart"></i><span class="hidden-sm">Files</span></a>
+                        <a ui-sref="files"><i class="icon-bar-chart"></i><span class="hidden-sm">Files</span></a>
                     </li>
                     <li ng-class="{ active: $state.includes('photos:grid') || $state.includes('photos-details') || $state.includes('photo-files') }">
                         <a ui-sref="photos:grid.filter"><i class="icon-bar-chart"></i><span class="hidden-sm">Photos</span></a>
@@ -80,7 +80,7 @@
 
         <!-- start: Content -->
         <div class="row primaryView">
-            <div ng-class="{'col-xs-12':!showNavigation, 'col-xs-12':showNavigation}"  class="section">
+            <div class="col-xs-12 section">
                 <div ui-view ng-animate="'view'">
 
                     Welcome to your Family Digital Asset Manager (DAM)

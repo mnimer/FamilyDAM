@@ -33,24 +33,25 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {
         $stateProvider.state('files', {
-            templateUrl: "modules/files/files.list.tpl.html",
-            controller: "FileListController"
+            url:"/files",
+            views:{
+                "":{
+                    templateUrl: "modules/files/files.list.tpl.html",
+                    controller: "FileListController"
+                },
+                'upload@files':{
+                    templateUrl: "modules/files/views/file-upload.tpl.html"
+                },
+                'image:preview@files': {
+                    templateUrl: "modules/files/views/file-preview-image.tpl.html"
+                },
+                'music:preview@files': {
+                    templateUrl: "modules/files/views/file-preview-music.tpl.html"
+                },
+                'video:preview@files': {
+                    templateUrl: "modules/files/views/file-preview-video.tpl.html"
+                }
+            }
         })
-            .state('files.upload', {
-                url: '/files/upload',
-                templateUrl: "modules/files/views/file-upload.tpl.html"
-            })
-            .state('files.image:preview', {
-                url: '/files/preview/image?path',
-                templateUrl: "modules/files/views/file-preview-image.tpl.html"
-            })
-            .state('files.music:preview', {
-                url: '/files/preview/music?path',
-                templateUrl: "modules/files/views/file-preview-music.tpl.html"
-            })
-            .state('files.video:preview', {
-                url: '/files/preview/video?path',
-                templateUrl: "modules/files/views/file-preview-video.tpl.html"
-            });
 
     }]);

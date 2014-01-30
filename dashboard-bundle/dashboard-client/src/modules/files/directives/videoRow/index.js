@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var videoRowDirective = function($compile, $state) {
+var videoRowDirective = function($rootScope, $compile, $state) {
     return {
         scope: true,
         replace: true,
@@ -26,8 +26,8 @@ var videoRowDirective = function($compile, $state) {
 
             var _previewFile = function (item_)
             {
-                //scope.$emit("photo:preview", path_);
-                $state.go("files.video:preview", {'path':item_.path, 'item':item_});
+                $rootScope.selectedNode = item_;
+                //$state.go("files.video:preview", {'node':item_});
             };
 
             var _selectFile = function (item_)
@@ -70,5 +70,5 @@ var videoRowDirective = function($compile, $state) {
 };
 
 
-videoRowDirective.$inject = ['$compile', '$state'];
+videoRowDirective.$inject = ['$rootScope', '$compile', '$state'];
 module.exports = videoRowDirective;

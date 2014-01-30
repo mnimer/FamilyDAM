@@ -21,7 +21,7 @@ var folderRowDirective = function($compile) {
         replace: true,
         templateUrl: 'modules/files/directives/folderRow/row-folder.tpl.html',
         link: function(scope, element, attrs) {
-            console.log('row data: ', scope.data);
+            //console.log('row data: ', scope.data);
         }
     };
 };
