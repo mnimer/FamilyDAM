@@ -42,6 +42,10 @@ var rendererDirective = function ($compile)
             {
                 compiled = "<div x-music-row />";
             }
+            else if (mixins !== undefined && mixins.indexOf("fd:movie") != -1)
+            {
+                compiled = "<div x-video-row />";
+            }
 
             //console.log('compiled: ', $compile(compiled)(scope));
             element.append(  $compile(compiled)(scope) );

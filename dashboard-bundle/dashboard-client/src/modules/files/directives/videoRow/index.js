@@ -15,29 +15,27 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var imageRowDirective = function ($compile, $parse, $state)
-{
+var videoRowDirective = function($compile, $state) {
     return {
         scope: true,
-        templateUrl: 'modules/files/directives/imageRow/row-image.tpl.html',
-        link: function (scope, element, attrs)
-        {
+        replace: true,
+        templateUrl: 'modules/files/directives/videoRow/row-video.tpl.html',
+        link: function(scope, element, attrs) {
             //console.log('row data: ', scope.data);
             var delay = 300, clicks = 0, timer = null;
 
             var _previewFile = function (item_)
             {
                 //scope.$emit("photo:preview", path_);
-                $state.go("files.image:preview", item_);
+                $state.go("files.video:preview", {'path':item_.path, 'item':item_});
             };
 
-            var _selectFile = function (path_)
+            var _selectFile = function (item_)
             {
-                scope.$emit("photo:select", path_);
+                scope.$emit("video:select",  {'path':item_.path, 'item':item_});
             };
 
-
-            scope.handleClick = function (path_)
+            scope.handleClick = function (item_)
             {
                 clicks++;  //count clicks
                 if (clicks === 1)
@@ -46,7 +44,7 @@ var imageRowDirective = function ($compile, $parse, $state)
                     {
                         scope.$apply(function ()
                         {
-                            _previewFile(path_);
+                            _previewFile(item_);
                         });
                         clicks = 0;             //after action performed, reset counter
                     }, delay);
@@ -54,14 +52,23 @@ var imageRowDirective = function ($compile, $parse, $state)
                 else
                 {
                     clearTimeout(timer);    //prevent single-click action
-                    _selectFile(path_);
+                    _selectFile(item_);
                     clicks = 0;             //after action performed, reset counter
                 }
             };
+
+            /**
+            scope.play = function(item_, event)
+            {
+                $state.go("files.music:preview", {'path':item_.path});
+                event.stopPropagation();
+            };
+             **/
+
         }
     };
 };
 
 
-imageRowDirective.$inject = ['$compile', '$parse', '$state'];
-module.exports = imageRowDirective;
+videoRowDirective.$inject = ['$compile', '$state'];
+module.exports = videoRowDirective;

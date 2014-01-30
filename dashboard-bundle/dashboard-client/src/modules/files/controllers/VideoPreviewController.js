@@ -15,21 +15,15 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var ImagePreviewDirective = function($compile, $stateParams) {
-    return {
-        scope: {
-            'path': '@path'
-        },
-        template: "<img src='{{imagePath}}' style='margin: 0 auto; margin-top: 10px; display: block;'/>",
-        link: function(scope, element, attrs)
-        {
-            var _path = $stateParams["path"];
-            scope.imagePath = _path +".scale.w:" +element.parent().width() +".png";
-            //attrs.src = attrs.path +".scale.w:200.png";
-        }
+var MusicPreviewController = function ($scope, $rootScope, $state, $stateParams)
+{
+    var init = function ()
+    {
+        console.log("state params:" +$stateParams.path);
     };
+    init();
+
 };
 
-
-ImagePreviewDirective.$inject = ['$compile', '$stateParams'];
-module.exports = ImagePreviewDirective;
+MusicPreviewController.$inject = ['$scope', '$rootScope', '$state', '$stateParams'];
+module.exports = MusicPreviewController;

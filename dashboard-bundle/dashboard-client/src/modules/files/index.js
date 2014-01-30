@@ -25,8 +25,10 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
     .directive('fileRow', require('./directives/fileRow'))
     .directive('imageRow', require('./directives/imageRow'))
     .directive('musicRow', require('./directives/musicRow'))
+    .directive('videoRow', require('./directives/videoRow'))
     .directive('imagePreview', require('./directives/imagePreview'))
     .directive('musicPlayer', require('./directives/musicPlayer'))
+    .directive('videoPlayer', require('./directives/videoPlayer'))
     .service('fileService', require('./services/FileService'))
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {
@@ -45,6 +47,10 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
             .state('files.music:preview', {
                 url: '/files/preview/music?path',
                 templateUrl: "modules/files/views/file-preview-music.tpl.html"
+            })
+            .state('files.video:preview', {
+                url: '/files/preview/video?path',
+                templateUrl: "modules/files/views/file-preview-video.tpl.html"
             });
 
     }]);

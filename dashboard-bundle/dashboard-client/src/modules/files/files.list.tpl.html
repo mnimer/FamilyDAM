@@ -85,6 +85,7 @@
         <li ng-class="{ active: $state.includes('files.upload') }"><a ui-sref="files.upload">Upload</a></li>
         <li ng-class="{ active: $state.includes('files.image:preview') }" ng-show="$state.includes('files.image:preview')"><a>Preview</a></li>
         <li ng-class="{ active: $state.includes('files.music:preview') }" ng-show="$state.includes('files.music:preview')"><a>Play</a></li>
+        <li ng-class="{ active: $state.includes('files.video:preview') }" ng-show="$state.includes('files.video:preview')"><a>Play</a></li>
     </ul>
 
     <div ui-view ></div>
