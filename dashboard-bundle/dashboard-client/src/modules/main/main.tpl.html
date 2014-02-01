@@ -53,7 +53,7 @@
                         <a ui-sref="files"><i class="icon-bar-chart"></i><span class="hidden-sm">Files</span></a>
                     </li>
                     <li ng-class="{ active: $state.includes('photos:grid') || $state.includes('photos-details') || $state.includes('photo-files') }">
-                        <a ui-sref="photos:grid.filter"><i class="icon-bar-chart"></i><span class="hidden-sm">Photos</span></a>
+                        <a ui-sref="photos:grid"><i class="icon-bar-chart"></i><span class="hidden-sm">Photos</span></a>
                     </li>
                     <li ng-class="{ active: $state.includes('music:files') }">
                         <a ui-sref="music:files"><i class="icon-bar-chart"></i><span class="hidden-sm">Music</span></a>
@@ -82,10 +82,7 @@
         <!-- start: Content -->
         <div class="row primaryView">
             <div class="col-xs-12 section">
-                <div ui-view ng-animate="'view'">
-
-                    Welcome to your Family Digital Asset Manager (DAM)
-                </div>
+                <div ui-view ng-animate="'view'"></div>
             </div>
         </div>
         <!-- end: Content -->

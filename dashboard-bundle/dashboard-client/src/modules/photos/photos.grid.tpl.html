@@ -72,13 +72,25 @@
 
 <!-- start: Widgets Area -->
 <aside id="sidebar-right" class="col-sm-4 hidden-xs" ng-show="showSidebar">
-
+<!--
     <ul class="nav nav-tabs">
         <li ng-class="{ active: $state.includes('photos:grid.filter') }"><a ui-sref="photos:grid.filter">Filters</a></li>
         <li ng-class="{ active: $state.includes('photos:grid.keywords') }"><a ui-sref="photos:grid.keywords">Keywords</a></li>
     </ul>
 
     <div ui-view ></div>
+-->
+
+
+    <tabset>
+        <tab heading="Filters">
+            <div ui-view="filters"/>
+        </tab>
+        <tab heading="Keywords">
+            <div ui-view="keywords"></div>
+        </tab>
+    </tabset>
+
 
 </aside>
 <!-- end: Widgets Area -->

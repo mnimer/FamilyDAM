@@ -38,18 +38,22 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
     .config(['$stateProvider', function($stateProvider)
     {
         $stateProvider
-            .state('photos:grid', {
-                templateUrl: "modules/photos/photos.grid.tpl.html",
-                controller: "PhotoGridController"
-            })
-            .state('photos:grid.filter', {
-                url:'/photos/tabs/filter',
-                templateUrl: "modules/photos/views/grid-filter.tpl.html",
-                controller: "PhotoGridController"
-            })
-            .state('photos:grid.keywords', {
-                url:'/photos/tabs/keywords',
-                templateUrl: "modules/photos/views/grid-keywords.tpl.html"
+            .state('photos:grid',
+            {
+                url:'/photos/grid',
+                views:{
+                    "":{
+                        templateUrl: "modules/photos/photos.grid.tpl.html",
+                        controller: "PhotoGridController"
+                    },
+                    "filters@photos:grid":{
+                        templateUrl: "modules/photos/views/grid-filter.tpl.html"
+                    },
+                    "keywords@photos:grid":{
+                        templateUrl: "modules/photos/views/grid-keywords.tpl.html"
+                    }
+                }
+
             })
 
             .state('photos:details', {

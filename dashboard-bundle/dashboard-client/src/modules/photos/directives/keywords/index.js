@@ -55,7 +55,7 @@ var keywordsDirective = function (metadataService)
         link: function (scope, elem, attrs)
         {
             //console.debug(scope);
-            var _selectedItems = [];
+            scope.selectedItems = [];
             var _path = "/content/dam/photos";
 
             metadataService.keywordsByPath(_path).then(function (data)
@@ -74,7 +74,7 @@ var keywordsDirective = function (metadataService)
                     newVal = newVal.split(",");
                 }
 
-                metadataService.updateTags(_selectedItems, newVal);
+                metadataService.updateTags(scope.selectedItems, newVal);
 
             }, true);
 
@@ -88,7 +88,7 @@ var keywordsDirective = function (metadataService)
                     newVal = angular.fromJson(newVal);
                 }
 
-                _selectedItems = newVal;
+                scope.selectedItems = newVal;
                 scope.updateKeywordsArray();
             });
 
@@ -113,9 +113,9 @@ var keywordsDirective = function (metadataService)
             scope.updateKeywordsArray = function ()
             {
                 scope.selectedTags = [];
-                for (var idx in _selectedItems)
+                for (var idx in scope.selectedItems)
                 {
-                    var _node = _selectedItems[idx];
+                    var _node = scope.selectedItems[idx];
 
                     if (_node.metadata !== undefined)
                     {
