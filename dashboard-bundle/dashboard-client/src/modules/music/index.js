@@ -24,17 +24,5 @@ module.exports = angular.module('dashboard.music', ['ui.bootstrap'])
     .controller('FileListController', require('../files/controllers/FileListController'))
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
-        $stateProvider.state('music:files', {
-                url: '/music/files',
-                templateUrl: "modules/files/files.list.tpl.html",
-                controller: "FileListController",
-                data:{
-                    currentPath: "/content/dam/music",
-                    showPhotoGrid: true
-                }
-            })
-            .state('music:files.upload', {
-                url: '/music/files/upload',
-                templateUrl: "modules/files/views/file-upload.tpl.html"
-            });
+
     }]);

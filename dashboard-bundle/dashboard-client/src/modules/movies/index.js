@@ -24,17 +24,5 @@ module.exports = angular.module('dashboard.movies', ['ui.bootstrap'])
     .controller('FileListController', require('../files/controllers/FileListController'))
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
     {
-        $stateProvider.state('movies:files', {
-                url: '/movies/files',
-                templateUrl: "modules/files/files.list.tpl.html",
-                controller: "FileListController",
-                data:{
-                    currentPath: "/content/dam/movies",
-                    showPhotoGrid: true
-                }
-            })
-            .state('movies:files.upload', {
-                url: '/movies/files/upload',
-                templateUrl: "modules/files/views/file-upload.tpl.html"
-            });
+
     }]);

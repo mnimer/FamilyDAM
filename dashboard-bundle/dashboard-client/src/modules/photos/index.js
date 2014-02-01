@@ -21,25 +21,27 @@
 
 
 module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
+
+
     .controller('PhotoGridController', require('./controllers/PhotoGridController'))
     .controller('PhotosGridKeywordsController', require('./controllers/PhotoGridKeywordsController'))
     .controller('PhotoDetailsController', require('./controllers/PhotoDetailsController'))
     .controller('PhotoEditController', require('./controllers/PhotoEditController'))
     .controller('PhotoMetadataController', require('./controllers/PhotoMetadataController'))
     .controller('PhotoVersionController', require('./controllers/PhotoVersionController'))
-    .controller('FileListController', require('../files/controllers/FileListController'))
-    .service('photoService', require('./services/PhotoService'))
-    .service('metadataService', require('./services/MetadataService'))
+
     .directive('dateFilter', require('./directives/dateFilter'))
     .directive('locationFilter', require('./directives/locationFilter'))
     .directive('tagCloudFilter', require('./directives/tagCloudFilter'))
     .directive('keywords', require('./directives/keywords'))
-    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)
+
+    .config(['$stateProvider', function($stateProvider)
     {
-        $stateProvider.state('photos:grid', {
-            templateUrl: "modules/photos/photos.grid.tpl.html",
-            controller: "PhotoGridController"
-        })
+        $stateProvider
+            .state('photos:grid', {
+                templateUrl: "modules/photos/photos.grid.tpl.html",
+                controller: "PhotoGridController"
+            })
             .state('photos:grid.filter', {
                 url:'/photos/tabs/filter',
                 templateUrl: "modules/photos/views/grid-filter.tpl.html",
@@ -68,8 +70,12 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
                 url:'/:id/details',
                 templateUrl: "modules/photos/views/details-versions.tpl.html",
                 controller: "PhotoVersionController"
-            })
-            .state('photo:files', {
+            });
+    }]);
+
+/**
+
+ .state('photo:files:old', {
                 url: '/photos/files',
                 templateUrl: "modules/files/files.list.tpl.html",
                 controller: "FileListController",
@@ -78,8 +84,4 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
                     showPhotoGrid: true
                 }
             })
-            .state('photo:files.upload', {
-                url: '/photos/files/upload',
-                templateUrl: "modules/files/views/file-upload.tpl.html"
-            });
-    }]);
+ **/

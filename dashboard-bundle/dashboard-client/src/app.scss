@@ -76,6 +76,10 @@ button[disabled] {
     background-image: none;
   }
 
+
+  li:first-child {
+    text-transform: uppercase;
+  }
 }
 
 

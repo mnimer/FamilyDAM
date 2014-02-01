@@ -1,12 +1,12 @@
-<div ng-click="handleClick(item.path)">
+<div >
     <div class="listIcon" style="padding:5px; display: table-cell;">
-        <input type="checkbox" id="folder" name="folder" value="{{item.path}}" ng-click="toggleFolder($event, item.path)"/>
+        <input type="checkbox" id="folder" name="folder" value="{{item.path}}" ng-click="toggleFile($event, item.path)"/>
     </div>
-    <div class="listIcon" style="padding:5px; display: table-cell;">
+    <div class="listIcon" style="padding:5px; display: table-cell;" ng-click="handleClick(item.path)">
         <a class="glyphicon glyphicon-folder"
            ng-click="selectFolder(item.path)"></a>
     </div>
-    <div class="name" style="display: table-cell;">
+    <div class="name" style="display: table-cell;" ng-click="handleClick(item.path)">
         <a> {{item.name}}</a>
     </div>
 </div>

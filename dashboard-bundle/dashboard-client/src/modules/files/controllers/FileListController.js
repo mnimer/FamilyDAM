@@ -24,6 +24,7 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
     $scope.showUploadSidebar = false;
 
     //Toolbar button visible flags
+    $scope.filterByTypes = undefined;//show all
     $scope.showPhotoGrid = false;
 
 
@@ -75,6 +76,22 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
 
 
     $scope.toggleFolder = function (event, path)
+    {
+        var pos = $scope.selectedPaths.indexOf(path);
+
+        if (pos == -1)
+        {
+            $(event.target).closest("tr").addClass("success");
+            $scope.selectedPaths.push(path);
+        }
+        else
+        {
+            $(event.target).closest("tr").removeClass("success");
+            $scope.selectedPaths.splice(pos, 1);
+        }
+    };
+
+    $scope.toggleFile = function (event, path)
     {
         var pos = $scope.selectedPaths.indexOf(path);
 
@@ -215,15 +232,16 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
         for (var indx in nodes)
         {
 
-            var obj = nodes[indx];
-            if (obj.length > 1)
-            {
-                lastPath = lastPath + "/" + obj;
-                if (indx >= hiddenNodes.length - 1)
+                var obj = nodes[indx];
+                if (obj.length > 1)
                 {
-                    breadcrumb.push({name: obj, path: lastPath});
+                    lastPath = lastPath + "/" + obj;
+                    var damPos = hiddenNodes.indexOf("dam");
+                    if (indx >= damPos)
+                    {
+                        breadcrumb.push({name: obj, path: lastPath});
+                    }
                 }
-            }
 
         }
         $scope.breadcrumb = breadcrumb;

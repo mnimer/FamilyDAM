@@ -1,12 +1,12 @@
 
-<div ng-click="handleClick(item)" >
+<div  >
     <div class="listIcon" style="padding:5px; display: table-cell;">
-        <input type="checkbox" id="folder" name="folder" value="{{item.path}}" ng-click="selectFile($event, item.path)">
+        <input type="checkbox" id="folder" name="folder" value="{{item.path}}" ng-click="toggleFile($event, item.path)">
     </div>
-    <div class="listIcon" style="padding:5px; display: table-cell;">
+    <div class="listIcon" style="padding:5px; display: table-cell;" ng-click="handleClick(item)">
         <img ng-src="{{data.path}}.scale.h:75.png" style="height: 75px; min-width: 30px"/>
     </div>
-    <div class="name" style="display: table-cell;">
+    <div class="name" style="display: table-cell;" ng-click="handleClick(item)">
         <a ng-if="item['jcr:primaryType'] == 'nt:file'"> {{item.name}}</a>
     </div>
 </div>

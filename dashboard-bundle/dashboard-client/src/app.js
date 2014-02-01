@@ -44,6 +44,11 @@ var App = angular.module('dashboard', [
         require('./modules/user/preferences').name,
         require('./modules/user/usermanager').name])
 
+    .service('fileService', require('./services/FileService'))
+    .service('loginService', require('./services/LoginService'))
+    .service('photoService', require('./services/PhotoService'))
+    .service('metadataService', require('./services/MetadataService'))
+    .service('userService', require('./services/UserService'))
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {
