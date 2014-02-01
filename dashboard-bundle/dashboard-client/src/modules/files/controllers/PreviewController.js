@@ -17,9 +17,30 @@
 
 var ImagePreviewController = function ($scope, $rootScope, $state, $stateParams)
 {
+    $scope.$on("image:preview", function(event, data){
+        $scope.node = data.node;
+    });
+
+
+    $scope.$on("music:preview", function(event, data){
+        $scope.node = data.node;
+    });
+
+
+    $scope.$on("video:preview", function(event, data){
+        $scope.node = data.node;
+    });
+
+
+    var isMixinType = function(node, type)
+    {
+        if( node === undefined ) return false;
+        var mixins = node['jcr:mixinTypes'];
+        return mixins.indexOf(type) > -1;
+    };
+
     var init = function ()
     {
-        console.log("state params:" +$stateParams.path);
     };
     init();
 

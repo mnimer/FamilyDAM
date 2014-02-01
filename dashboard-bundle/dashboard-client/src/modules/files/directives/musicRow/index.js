@@ -26,9 +26,7 @@ var musicRowDirective = function($rootScope, $compile, $state) {
 
             var _previewFile = function (item_)
             {
-                //scope.$emit("photo:preview", path_);
-                $rootScope.selectedNode = item_;
-                //$state.go("files.music:preview", {'node':item_});
+                $rootScope.$broadcast("music:preview", {"node":item_});
             };
 
             var _selectFile = function (item_)

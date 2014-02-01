@@ -41,6 +41,39 @@ var FileListController = function ($scope, $rootScope, $location, $modal, $state
     });
 
 
+    /**
+     * SIDEBAR Event Listeners
+     */
+    $scope.isUploadTabActive = true;
+    $scope.isPreviewTabActive = false;
+    $scope.activeTab = "upload";
+    $scope.$on("image:preview", function(event, data){
+        $scope.isUploadTabActive = false;
+        $scope.isPreviewTabActive = true;
+    });
+    $scope.$on("music:preview", function(event, data){
+        $scope.isUploadTabActive = false;
+        $scope.isPreviewTabActive = true;
+    });
+    $scope.$on("video:preview", function(event, data){
+        $scope.isUploadTabActive = false;
+        $scope.isPreviewTabActive = true;
+    });
+
+    $scope.onTabSelect = function(tab)
+    {
+        if( tab == "upload" )
+        {
+            $scope.isUploadTabActive = true;
+            $scope.isPreviewTabActive = false;
+        }else{
+            $scope.isUploadTabActive = false;
+            $scope.isPreviewTabActive = true;
+        }
+    };
+
+
+
     $scope.toggleFolder = function (event, path)
     {
         var pos = $scope.selectedPaths.indexOf(path);

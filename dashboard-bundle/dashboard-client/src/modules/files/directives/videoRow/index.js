@@ -26,8 +26,7 @@ var videoRowDirective = function($rootScope, $compile, $state) {
 
             var _previewFile = function (item_)
             {
-                $rootScope.selectedNode = item_;
-                //$state.go("files.video:preview", {'node':item_});
+                $rootScope.$broadcast("video:preview", {"node":item_});
             };
 
             var _selectFile = function (item_)

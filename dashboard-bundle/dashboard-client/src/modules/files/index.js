@@ -18,17 +18,14 @@
 module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
     .controller('FolderNameModalCntrl', require('./controllers/FolderNameModalCntrl'))
     .controller('FileListController', require('./controllers/FileListController'))
-    .controller('ImagePreviewController', require('./controllers/ImagePreviewController'))
-    .controller('MusicPreviewController', require('./controllers/MusicPreviewController'))
+    .controller('PreviewController', require('./controllers/PreviewController'))
     .directive('renderer', require('./directives/renderer'))
     .directive('folderRow', require('./directives/folderRow'))
     .directive('fileRow', require('./directives/fileRow'))
     .directive('imageRow', require('./directives/imageRow'))
     .directive('musicRow', require('./directives/musicRow'))
     .directive('videoRow', require('./directives/videoRow'))
-    .directive('imagePreview', require('./directives/imagePreview'))
-    .directive('musicPlayer', require('./directives/musicPlayer'))
-    .directive('videoPlayer', require('./directives/videoPlayer'))
+    .directive('preview', require('./directives/preview'))
     .service('fileService', require('./services/FileService'))
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {
@@ -42,16 +39,11 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
                 'upload@files':{
                     templateUrl: "modules/files/views/file-upload.tpl.html"
                 },
-                'image:preview@files': {
-                    templateUrl: "modules/files/views/file-preview-image.tpl.html"
-                },
-                'music:preview@files': {
-                    templateUrl: "modules/files/views/file-preview-music.tpl.html"
-                },
-                'video:preview@files': {
-                    templateUrl: "modules/files/views/file-preview-video.tpl.html"
+                'preview@files': {
+                    templateUrl: "modules/files/views/file-preview.tpl.html",
+                    controller: "PreviewController"
                 }
             }
-        })
+        });
 
     }]);

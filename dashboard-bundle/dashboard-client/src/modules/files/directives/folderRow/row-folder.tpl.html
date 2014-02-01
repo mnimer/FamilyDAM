@@ -1,4 +1,4 @@
-<div class="display:table-row;">
+<div  class="display:table-row;" ng-click="selectFolder(item.path)">
     <div class="listIcon" style="padding:5px; display: table-cell;">
         <input type="checkbox" id="folder" name="folder" value="{{item.path}}" ng-click="toggleFolder($event, item.path)">
     </div>
@@ -7,6 +7,6 @@
            ng-click="selectFolder(item.path)"></a>
     </div>
     <div class="name" style="display: table-cell;">
-        <a ng-click="selectFolder(item.path)"> {{item.name}}</a>
+        {{item.name}}
     </div>
 </div>

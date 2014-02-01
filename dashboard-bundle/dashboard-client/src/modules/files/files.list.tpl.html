@@ -79,17 +79,15 @@
 <aside id="sidebar-right" class="col-xs-4">
 
     <tabset>
-        <tab heading="Upload">
+        <tab heading="Upload"
+             select="$parent.onTabSelect('upload')"
+             active="$parent.isUploadTabActive">
             <div ui-view="upload"/>
         </tab>
-        <tab heading="Preview" >
-            <div ui-view="image:preview"></div>
-        </tab>
-        <tab heading="Audio" >
-            <div ui-view="music:preview"></div>
-        </tab>
-        <tab heading="Video" >
-            <div ui-view="video:preview"></div>
+        <tab heading="Preview"
+             select="$parent.onTabSelect('preview')"
+             active="$parent.isPreviewTabActive">
+            <div ui-view="preview"></div>
         </tab>
     </tabset>
 

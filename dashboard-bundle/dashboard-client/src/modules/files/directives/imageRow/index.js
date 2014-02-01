@@ -27,10 +27,7 @@ var imageRowDirective = function ($rootScope, $compile, $parse, $state)
 
             var _previewFile = function (item_)
             {
-                //scope.$emit("photo:preview", path_);
-                //scope.selectedNode = item_;
-                $rootScope.selectedNode = item_;
-                //$state.transitionTo("image:preview", {'node':item_});
+                $rootScope.$broadcast("image:preview", {"node":item_});
             };
 
             var _selectFile = function (path_)
