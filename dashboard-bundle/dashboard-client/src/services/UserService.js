@@ -100,6 +100,15 @@ var UserService = function($http, $q, fileService)
     };
 
 
+    /**
+     * Update the users authentication (OAUTH) data for users.
+     * @param username
+     * @param accessToken
+     * @param expiresIn
+     * @param signedRequest
+     * @param userId
+     * @returns {Promise|*}
+     */
     this.updateUserFacebook = function(username, accessToken, expiresIn, signedRequest, userId)
     {
         var data = {};
@@ -117,6 +126,7 @@ var UserService = function($http, $q, fileService)
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                 }
             });
+
         return method.then(function()
         {
             // Now that we've updated the users facebook oauth values, we'll call a 2nd service to start
