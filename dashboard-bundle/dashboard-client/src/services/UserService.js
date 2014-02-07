@@ -100,6 +100,37 @@ var UserService = function($http, $q, fileService)
     };
 
 
+    this.updateUserFacebook = function(username, accessToken, expiresIn, signedRequest, userId)
+    {
+        var data = {};
+        //data.username = username;
+        data.accessToken = accessToken;
+        data.expiresIn = expiresIn;
+        data.signedRequest = signedRequest;
+        data.userId = userId;
+
+        var method =  $http.post("/apps/familydam/users/" +username +"/web/facebook",
+            $.param(data),
+            {
+                headers:
+                {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                }
+            });
+        return method.then(function()
+        {
+            // Now that we've updated the users facebook oauth values, we'll call a 2nd service to start
+            // up the Facebook jobs
+                var method2 =  $http.post("/dashboard-api/jobs/facebook",$.param({"username":username}));
+                method2.then(function(){
+                    //todo
+                });
+        });
+
+    };
+
+
+
     /**
      * Call our API which will invoke the Sling API to create the user then
      * @param path

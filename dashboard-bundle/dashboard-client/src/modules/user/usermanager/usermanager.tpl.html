@@ -104,7 +104,8 @@
                         <tab heading="Services" ng-disabled="true">
                             <div class="form-inline"  style="padding-bottom: 70px; padding-top: 10px;">
                                 <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="true">Activate</button>
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="!facebookAuthorized" ng-click="deactivateFacebook()">Deactivate</button>
+                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="facebookAuthorized" ng-click="activateFacebook()">Activate</button>
                                     &nbsp;&nbsp;
                                     <label for="">Facebook</label>
                                 </div>
