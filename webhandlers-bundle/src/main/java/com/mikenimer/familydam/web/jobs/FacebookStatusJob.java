@@ -173,69 +173,6 @@ public class FacebookStatusJob implements JobConsumer
                 // add some FamilyDam specific properties
                 post.put("type", "status");
 
-                /***
-                if( contentImporter != null )
-                {
-                    Node node = JcrUtils.getOrCreateByPath(FACEBOOKPATH.replace("{1}", username).replace("{2}", year).replace("{3}", id), NodeType.NT_UNSTRUCTURED, session);
-
-                    InputStream jsonStream = new ByteArrayInputStream(post.toString().getBytes());
-                    ImportOptions options = new ImportOptions(){
-
-                        @Override
-                        public boolean isCheckin() {
-                            return false;
-                        }
-
-                        @Override
-                        public boolean isAutoCheckout() {
-                            return true;
-                        }
-
-                        @Override
-                        public boolean isIgnoredImportProvider(String extension) {
-                            return false;
-                        }
-
-                        @Override
-                        public boolean isOverwrite() {
-                            return false;
-                        }
-
-                        @Override
-                        public boolean isPropertyOverwrite() {
-                            return false;
-                        }
-                    };
-
-
-                    contentImporter.importContent(node, ".json", jsonStream, options, null);
-                }
-                //ContentImporter importer = new DefaultContentImporter();
-                ***/
-
-
-                /**
-                String statusUrl = "http://localhost:8888" +FACEBOOKPATH.replace("{1}", username).replace("{2}", year).replace("{3}", id);
-
-                Credentials credentials = new UsernamePasswordCredentials("admin", "admin");
-                HttpClient statusClient = new HttpClient();
-                statusClient.getState().setCredentials(AuthScope.ANY, credentials);
-
-                PostMethod statusMethod = new PostMethod(statusUrl);
-                statusMethod.addParameter(":operation", "import");
-                statusMethod.addParameter(":contentType", "json");
-                statusMethod.addParameter(":content", post.toString());
-                statusMethod.addParameter(":checkin", "true");
-                statusMethod.addParameter(":replace", "true");
-                statusMethod.addParameter(":replaceProperties", "true");
-                int saveNodeStatusCode = client.executeMethod(statusMethod);
-
-                if( saveNodeStatusCode != 200 )
-                {
-                    log.warn("Unable to save node:" +jsonStr);
-                }
-                 **/
-                //Node node = getFBPostNode(username, id, year);
                 Node node = JcrUtils.getOrCreateByPath(FACEBOOKPATH.replace("{1}", username).replace("{2}", year).replace("{3}", id), NodeType.NT_UNSTRUCTURED, session);
                 node = new JsonToNode().convert(node, post);
                 session.save();
@@ -263,39 +200,4 @@ public class FacebookStatusJob implements JobConsumer
     }
 
 
-    /**
-     * Create the path and return the new node
-     * @param username
-     * @param id
-     * @param year
-     * @return
-     * @throws RepositoryException
-     */
-    private Node getFBPostNode(String username, String id, String year) throws RepositoryException
-    {
-        String fbPath = FACEBOOKPATH.replace("{}", username);
-        Node node = session.getNode(fbPath);
-        if( !node.hasNode("status") )
-        {
-            node = node.addNode("status");
-        }else{
-            node = node.getNode("status");
-        }
-
-
-        if( !node.hasNode(year) )
-        {
-            node = node.addNode(year);
-        }else{
-            node = node.getNode(year);
-        }
-
-        if( !node.hasNode(id) )
-        {
-            node = node.addNode(id);
-        }else{
-            node = node.getNode(id);
-        }
-        return node;
-    }
 }
