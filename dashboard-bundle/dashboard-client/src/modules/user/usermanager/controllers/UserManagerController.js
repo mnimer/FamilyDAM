@@ -76,14 +76,24 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
         //todo: make this dynamic
         var _redirectUrl = "http://localhost.familydam.com:8888/dashboard-api/facebook/callback?";
         //window.open("https://www.facebook.com/dialog/oauth?state=mnimer&response_type=token&client_id=1459016164310867&redirect_uri=" +_redirectUrl);
-        FB.login();
+        FB.login(function(data){
+            console.log(data);
+        }, {scope: 'user_status,user_photos,user_videos,user_checkins,user_likes,user_notes'});
         //var response = FB.getAuthResponse();
         //console.log(response);
     };
 
+
     $scope.deactivateFacebook = function ()
     {
+        deleteUserFacebook.deleteUserFacebook( $scope.currentUser.username );
         FB.logout();
+    };
+
+
+    $scope.refreshFacebook = function ()
+    {
+        userService.refreshUserFacebook( $scope.currentUser[':name'] );
     };
 
 

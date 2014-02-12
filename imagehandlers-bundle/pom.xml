@@ -101,10 +101,9 @@
         </dependency>
 
 
-
         <!-- ***********************
-          ** SLING
-           *********************** -->
+              ** SLING
+               *********************** -->
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.event</artifactId>

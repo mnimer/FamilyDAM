@@ -27,21 +27,18 @@ import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
-import org.apache.sling.commons.json.JSONException;
-import org.apache.sling.commons.json.jcr.JsonJcrNode;
+import org.apache.sling.event.jobs.Job;
+import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jcr.Credentials;
-import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.SimpleCredentials;
-import javax.security.auth.login.LoginContext;
 import javax.servlet.Servlet;
-import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by mnimer on 2/5/14.
@@ -49,18 +46,21 @@ import java.io.IOException;
 
 @Component(immediate=true, metatype=false)
 @Service(Servlet.class)
-@Properties({ @Property(name="service.description", value="Save Facebook authentication data"),
+@Properties({ @Property(name="service.description", value="Start Facebook job to pull data"),
         @Property(name="service.vendor", value="The FamilyDAM Project"),
         @Property(name="sling.servlet.paths", value="/dashboard-api/jobs/facebook")
 })
-public class FacebookUpdateUser extends SlingAllMethodsServlet
+public class FacebookArchiveService extends SlingAllMethodsServlet
 {
-    private final Logger log = LoggerFactory.getLogger(FacebookUpdateUser.class);
+    private final Logger log = LoggerFactory.getLogger(FacebookArchiveService.class);
     private Session session;
-    private String _userPathRoot = "/apps/familydam/users/";
+
 
     @Reference
     private SlingRepository repository;
+
+    @Reference
+    private JobManager jobManager;
 
     @Activate
     protected void activate(ComponentContext ctx)  throws Exception
@@ -74,68 +74,50 @@ public class FacebookUpdateUser extends SlingAllMethodsServlet
         log.debug("Facebook Update User Servlet Deactivated");
     }
 
-
+    @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
     {
         String username = request.getParameter("username");
-        String _userPath = _userPathRoot +username ;
+
+        Map props = new HashMap();
+        props.put("username", username);
+        props.put("nodePath", "/apps/familydam/users/" +username);
+
+        Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
+        log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
     }
 
 
-
+    @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
     {
+        String username = request.getParameter("username");
 
-        try
-        {
-            String username = request.getParameter("username");
-            String accessToken = request.getParameter("accessToken");
-            String expiresIn = request.getParameter("expiresIn");
-            String signedRequest = request.getParameter("signedRequest");
-            String userId = request.getParameter("userId");
-            String _userPath = _userPathRoot +username ;
-
-
-            Credentials credentials = new SimpleCredentials("admin", "admin".toCharArray());
-            Session session = repository.loginAdministrative(null);
-
-            Node userNode = null;
-            if( !session.nodeExists(_userPath) )
-            {
-                userNode = session.getNode(_userPathRoot).addNode(username);
-                //session.save();
-            }else{
-                userNode = session.getNode(_userPath);
-            }
-
-
-            Node webNode = null;
-            if( !session.nodeExists(_userPath +"/web") )
-            {
-                webNode = userNode.addNode("web");
-                //session.save();
-            }else{
-                webNode = userNode.getNode("web");
-            }
-
-
-            Node FBNode = null;
-            if( !webNode.hasNode("facebook") )
-            {
-                FBNode = webNode.addNode("facebook");
-            }else{
-                FBNode = webNode.getNode("facebook");
-            }
-            FBNode.setProperty("accessToken", accessToken);
-            FBNode.setProperty("expiresIn", expiresIn);
-            FBNode.setProperty("signedRequest", signedRequest);
-            FBNode.setProperty("userId", userId);
-            session.save();
+        if( username == null ){
+            throw new RuntimeException("Invalid Username"); //todo use customer exception
         }
-        catch( Exception re ){  //IOException,JSONException,RepositoryException
-            re.printStackTrace();
-            throw new RuntimeException(re);//TODO Throw a custom exception
+
+        // extract and save the metadata for this node.
+        Map props = new HashMap();
+        props.put("username", username);
+        props.put("nodePath", "/apps/familydam/users/" + username);
+
+
+        Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
+        log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
+
+    }
+
+
+    @Override
+    protected void doDelete(SlingHttpServletRequest request, SlingHttpServletResponse response)
+    {
+        String username = request.getParameter("username");
+
+        if( username == null ){
+            throw new RuntimeException("Invalid Username"); //todo use customer exception
         }
+ 
     }
 
 }

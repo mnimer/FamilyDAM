@@ -26,7 +26,7 @@
 	 -->
     <name>twitter</name>
     <primaryNodeType>sling:Folder</primaryNodeType>
-
+    <system>true</system>
 
 
 </node>

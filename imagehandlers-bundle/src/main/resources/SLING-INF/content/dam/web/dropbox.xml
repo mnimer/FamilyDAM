@@ -26,7 +26,7 @@
 	 -->
     <name>dropbox</name>
     <primaryNodeType>sling:Folder</primaryNodeType>
-
+    <system>true</system>
 
 
 </node>

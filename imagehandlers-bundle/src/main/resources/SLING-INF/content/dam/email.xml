@@ -26,7 +26,7 @@
 	 -->
     <name>email</name>
     <primaryNodeType>sling:Folder</primaryNodeType>
-
+    <system>true</system>
 
 
 </node>

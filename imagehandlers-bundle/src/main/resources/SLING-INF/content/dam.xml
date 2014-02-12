@@ -25,6 +25,6 @@
 	 -->
     <name>dam</name>
     <primaryNodeType>sling:Folder</primaryNodeType>
-
+    <system>true</system>
 
 </node>

@@ -101,6 +101,18 @@ var UserService = function($http, $q, fileService)
 
 
     /**
+     * Simple call to refresh the users data from facebook
+     * @param username
+     * @returns {*}
+     */
+    this.refreshUserFacebook = function(username)
+    {
+        var method =  $http.get("/dashboard-api/jobs/facebook?username=" +username);
+        return method;
+    }
+
+
+    /**
      * Update the users authentication (OAUTH) data for users.
      * @param username
      * @param accessToken
@@ -112,7 +124,7 @@ var UserService = function($http, $q, fileService)
     this.updateUserFacebook = function(username, accessToken, expiresIn, signedRequest, userId)
     {
         var data = {};
-        //data.username = username;
+        data.username = username;
         data.accessToken = accessToken;
         data.expiresIn = expiresIn;
         data.signedRequest = signedRequest;
@@ -131,13 +143,41 @@ var UserService = function($http, $q, fileService)
         {
             // Now that we've updated the users facebook oauth values, we'll call a 2nd service to start
             // up the Facebook jobs
-                var method2 =  $http.post("/dashboard-api/jobs/facebook",$.param({"username":username}));
+                var method2 =  $http.post("/dashboard-api/jobs/facebook",$.param({"username":username}),
+                    {
+                        headers:
+                        {
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                        }
+                    });
                 method2.then(function(){
                     //todo
                 });
         });
 
     };
+
+
+    /**
+     * delete the users data from facebook
+     * @param username
+     * @returns {*}
+     */
+    this.deleteUserFacebook = function(username)
+    {
+        var method =  $http.delete("/dashboard-api/jobs/facebook",
+            $.param( {'username': username} ),
+            {
+                headers:
+                {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                }
+            });
+        return method.then(function(arg1,arg2)
+        {
+            return arg1;
+        });
+    }
 
 
 
