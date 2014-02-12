@@ -101,7 +101,7 @@ public class FacebookJob implements JobConsumer
      * @param jsonStr
      * @return
      */
-    protected JobResult saveData(String username, String nodePath, String jsonStr, String type)
+    protected JobResult saveData(String username, String nodePath, String jsonStr, String facebookPath, String type)
     {
         String nextUrl = null;
         try
@@ -124,8 +124,16 @@ public class FacebookJob implements JobConsumer
 
                 // pull out keys
                 String id = post.getString("id");
-                String updated_time = post.getString("updated_time");
-                Date date = facebookDateFormat.parse(updated_time);
+                String timestamp = null;
+                if( post.has("created_time") )
+                {
+                    timestamp = post.getString("created_time");
+                }
+                else if( post.has("updated_time") )
+                {
+                    timestamp = post.getString("updated_time");
+                }
+                Date date = facebookDateFormat.parse(timestamp);
 
                 //pull out the year so we can group posts by year
                 Calendar calendar = Calendar.getInstance();
@@ -135,7 +143,7 @@ public class FacebookJob implements JobConsumer
 
 
 
-                Node node = JcrUtils.getOrCreateByPath(FacebookStatusJob.FACEBOOKPATH.replace("{1}", username).replace("{2}", year).replace("{3}", id), NodeType.NT_UNSTRUCTURED, session);
+                Node node = JcrUtils.getOrCreateByPath(facebookPath.replace("{1}", username).replace("{2}", year).replace("{3}", id), NodeType.NT_UNSTRUCTURED, session);
 
                 // add some FamilyDam specific properties
                 post.put("type", type);

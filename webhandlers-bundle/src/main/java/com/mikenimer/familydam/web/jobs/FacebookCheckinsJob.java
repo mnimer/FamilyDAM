@@ -17,7 +17,6 @@
 
 package com.mikenimer.familydam.web.jobs;
 
-import com.mikenimer.familydam.mappers.JsonToNode;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -25,29 +24,18 @@ import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.jackrabbit.commons.JcrUtils;
-import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
-import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.event.jobs.Job;
-import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
-import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-import javax.jcr.nodetype.NodeType;
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,27 +44,27 @@ import java.util.Map;
  */
 @Component(enabled = true, immediate = true)
 @Service(value = JobConsumer.class)
-@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/statuses")
-public class FacebookStatusJob extends FacebookJob
+@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/checkins")
+public class FacebookCheckinsJob extends FacebookJob
 {
-    public static String TOPIC = "familydam/web/facebook/statuses";
-    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/statuses/{2}/{3}";
-    public static String FACEBOOKPATHByUser = "/content/dam/web/facebook/{1}/statuses/{2}/{3}";
+    public static String TOPIC = "familydam/web/facebook/checkins";
+    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/checkins/{2}/{3}";
+    public static String FACEBOOKPATHByUser = "/content/dam/web/facebook/{1}/checkins/{2}/{3}";
 
-    private final Logger log = LoggerFactory.getLogger(FacebookStatusJob.class);
+    private final Logger log = LoggerFactory.getLogger(FacebookCheckinsJob.class);
 
 
     @Activate
     protected void activate(ComponentContext context) throws Exception
     {
-        log.debug("Activate FacebookStatusJob Job");
+        log.debug("Activate FacebookCheckinsJob Job");
     }
 
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        log.debug("Deactivate FacebookStatusJob Job");
+        log.debug("Deactivate FacebookCheckinsJob Job");
     }
 
 
@@ -96,7 +84,7 @@ public class FacebookStatusJob extends FacebookJob
         String _url = nextUrl;
         if (nextUrl == null)
         {
-            _url = "https://graph.facebook.com/" + userId + "/statuses?access_token=" + accessToken;
+            _url = "https://graph.facebook.com/" + userId + "/checkins?access_token=" + accessToken;
         }
         URL url = new URL(_url);
 
@@ -111,7 +99,7 @@ public class FacebookStatusJob extends FacebookJob
 
         // Read the response body.
         String jsonStr = method.getResponseBodyAsString();
-        return saveData(username, nodePath, jsonStr, FACEBOOKPATH, "status");
+        return saveData(username, nodePath, jsonStr, FACEBOOKPATH, "checkins");
     }
 
 
@@ -123,6 +111,6 @@ public class FacebookStatusJob extends FacebookJob
         props.put("nodePath", nodePath);
         props.put("url", nextUrl);
         props.put("username", username);
-        Job metadataJob = jobManager.addJob(FacebookStatusJob.TOPIC, props);
+        Job metadataJob = jobManager.addJob(FacebookCheckinsJob.TOPIC, props);
     }
 }

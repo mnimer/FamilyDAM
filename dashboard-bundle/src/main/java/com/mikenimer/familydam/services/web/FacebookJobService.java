@@ -50,9 +50,9 @@ import java.util.Map;
         @Property(name="service.vendor", value="The FamilyDAM Project"),
         @Property(name="sling.servlet.paths", value="/dashboard-api/jobs/facebook")
 })
-public class FacebookArchiveService extends SlingAllMethodsServlet
+public class FacebookJobService extends SlingAllMethodsServlet
 {
-    private final Logger log = LoggerFactory.getLogger(FacebookArchiveService.class);
+    private final Logger log = LoggerFactory.getLogger(FacebookJobService.class);
     private Session session;
 
 
@@ -79,13 +79,9 @@ public class FacebookArchiveService extends SlingAllMethodsServlet
     {
         String username = request.getParameter("username");
 
-        Map props = new HashMap();
-        props.put("username", username);
-        props.put("nodePath", "/apps/familydam/users/" +username);
-
-        Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
-        log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
+        triggerFacebookJobs(username);
     }
+
 
 
     @Override
@@ -98,13 +94,7 @@ public class FacebookArchiveService extends SlingAllMethodsServlet
         }
 
         // extract and save the metadata for this node.
-        Map props = new HashMap();
-        props.put("username", username);
-        props.put("nodePath", "/apps/familydam/users/" + username);
-
-
-        Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
-        log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
+        triggerFacebookJobs(username);
 
     }
 
@@ -117,7 +107,27 @@ public class FacebookArchiveService extends SlingAllMethodsServlet
         if( username == null ){
             throw new RuntimeException("Invalid Username"); //todo use customer exception
         }
- 
+
+        // todo
+    }
+
+
+
+
+    private void triggerFacebookJobs(String username)
+    {
+        Map props = new HashMap();
+        props.put("username", username);
+        props.put("nodePath", "/apps/familydam/users/" +username);
+
+        Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
+        log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
+
+        Job checkInJob = jobManager.addJob("familydam/web/facebook/checkins", props);
+        log.debug("Create Job {} / {}", checkInJob.getTopic(), checkInJob.getId());
+
+        Job likesJob = jobManager.addJob("familydam/web/facebook/likes", props);
+        log.debug("Create Job {} / {}", likesJob.getTopic(), likesJob.getId());
     }
 
 }
