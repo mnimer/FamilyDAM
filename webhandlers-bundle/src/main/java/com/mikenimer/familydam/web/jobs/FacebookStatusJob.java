@@ -17,7 +17,6 @@
 
 package com.mikenimer.familydam.web.jobs;
 
-import com.mikenimer.familydam.importers.NestedContentImporter;
 import com.mikenimer.familydam.mappers.JsonToNode;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -36,7 +35,6 @@ import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.apache.sling.jcr.api.SlingRepository;
-import org.apache.sling.jcr.contentloader.ContentImporter;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,6 +46,8 @@ import javax.jcr.nodetype.NodeType;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,7 +57,7 @@ import java.util.Map;
 @Component(enabled = true, immediate = true)
 @Service(value = JobConsumer.class)
 @Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/statuses")
-public class FacebookStatusJob implements JobConsumer
+public class FacebookStatusJob extends FacebookJob
 {
     public static String TOPIC = "familydam/web/facebook/statuses";
     public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/statuses/{2}/{3}";
@@ -65,66 +65,23 @@ public class FacebookStatusJob implements JobConsumer
 
     private final Logger log = LoggerFactory.getLogger(FacebookStatusJob.class);
 
-    private Session session;
-    private ContentImporter contentImporter;
-    private final SimpleDateFormat jsonDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-
-
-
-    @Reference
-    private JobManager jobManager;
-
-    @Reference
-    private SlingRepository repository;
-
 
     @Activate
     protected void activate(ComponentContext context) throws Exception
     {
-        log.debug("Activate ID3 Job");
-
-        this.contentImporter = new NestedContentImporter();
+        log.debug("Activate FacebookStatusJob Job");
     }
 
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        log.debug("Deactivate ID3 Job");
+        log.debug("Deactivate FacebookStatusJob Job");
     }
 
 
     @Override
-    public JobResult process(Job job)
-    {
-        String nodePath = (String) job.getProperty("nodePath");
-        String url = (String) job.getProperty("url");
-        String username = (String) job.getProperty("username");
-        return process(username, nodePath, url);
-    }
-
-
-    public JobResult process(String username, String path, String url)
-    {
-        try
-        {
-            session = repository.loginAdministrative(null);
-            Node node = session.getNode(path);
-
-            Node facebookData = node.getNode("web/facebook");
-            if (facebookData != null)
-            {
-                return pullFacebookData(facebookData, username, path, url);
-            }
-            return JobResult.OK;
-        } catch (Exception re)
-        {
-            return JobResult.CANCEL;
-        }
-    }
-
-
-    private JobResult pullFacebookData(Node facebookData, String username, String nodePath, String nextUrl) throws RepositoryException, IOException, JSONException
+    protected JobResult queryFacebook(Node facebookData, String username, String nodePath, String nextUrl) throws RepositoryException, IOException, JSONException
     {
         String accessToken = facebookData.getProperty("accessToken").getString();
         String expiresIn = facebookData.getProperty("expiresIn").getString();
@@ -139,7 +96,7 @@ public class FacebookStatusJob implements JobConsumer
         String _url = nextUrl;
         if (nextUrl == null)
         {
-            _url = "https://graph.facebook.com/" + userId + "/statuses?limit=5&access_token=" + accessToken;
+            _url = "https://graph.facebook.com/" + userId + "/statuses?access_token=" + accessToken;
         }
         URL url = new URL(_url);
 
@@ -154,50 +111,18 @@ public class FacebookStatusJob implements JobConsumer
 
         // Read the response body.
         String jsonStr = method.getResponseBodyAsString();
-        try
-        {
-            JSONObject jsonObj = new JSONObject(jsonStr);
-            JSONArray statusList = jsonObj.getJSONArray("data");
-            nextUrl = jsonObj.getJSONObject("paging").getString("next");
-
-            for (int i = 0; i < statusList.length(); i++)
-            {
-                JSONObject post = (JSONObject) statusList.get(i);
-
-                // pull out keys
-                String id = post.getString("id");
-                String updated_time = post.getString("updated_time");
-                //todo: parse updated_time and pull out the year
-                String year = "2014";
-
-                // add some FamilyDam specific properties
-                post.put("type", "status");
-
-                Node node = JcrUtils.getOrCreateByPath(FACEBOOKPATH.replace("{1}", username).replace("{2}", year).replace("{3}", id), NodeType.NT_UNSTRUCTURED, session);
-                node = new JsonToNode().convert(node, post);
-                session.save();
-
-            }
-
-
-            // Follow the NEXT link with another job
-            Map props = new HashMap();
-            props.put("nodePath", nodePath);
-            props.put("url", nextUrl);
-            //Job metadataJob = jobManager.addJob(TOPIC, props);
-
-
-            return JobResult.OK;
-        } catch (JSONException je)
-        {
-            je.printStackTrace();
-            return JobResult.FAILED;
-        } catch (Exception ex)
-        {
-            ex.printStackTrace();
-            return JobResult.FAILED;
-        }
+        return saveData(username, nodePath, jsonStr, "status");
     }
 
 
+
+    @Override
+    protected void invokeNextJob(String username, String nodePath, String nextUrl)
+    {
+        Map props = new HashMap();
+        props.put("nodePath", nodePath);
+        props.put("url", nextUrl);
+        props.put("username", username);
+        Job metadataJob = jobManager.addJob(FacebookStatusJob.TOPIC, props);
+    }
 }

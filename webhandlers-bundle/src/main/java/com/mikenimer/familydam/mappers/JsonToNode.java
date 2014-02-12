@@ -17,11 +17,13 @@
 
 package com.mikenimer.familydam.mappers;
 
+import org.apache.jackrabbit.commons.JcrUtils;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 
 import javax.jcr.Node;
+import javax.jcr.PropertyType;
 import javax.jcr.Value;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,19 +46,20 @@ public class JsonToNode
             {
                 if (value instanceof JSONObject)
                 {
-                    Node n = null;
-                    if( node.hasNode(key) )
-                    {
-                        n = node.getNode(key);
-                    }else{
-                        n = node.addNode(key);
-                    }
-
-                    convert(n, (JSONObject)value);
+                    Node n = JcrUtils.getOrAddNode(node, key);
+                    /**
+                     if( node.hasNode(key) )
+                     {
+                     n = node.getNode(key);
+                     }else{
+                     n = node.addNode(key);
+                     }
+                     **/
+                    convert(n, (JSONObject) value);
                 }
                 else if (value instanceof JSONArray)
                 {
-                    convert(node, key, (JSONArray)value);
+                    convert(node, key, (JSONArray) value);
                 }
                 else if (value instanceof Integer)
                 {
@@ -78,7 +81,9 @@ public class JsonToNode
                     String v = value.toString();
                     node.setProperty(key, v);
                 }
-            }catch(Exception ex){
+            }
+            catch (Exception ex)
+            {
                 ex.printStackTrace();
             }
 
@@ -87,7 +92,6 @@ public class JsonToNode
 
         return node;
     }
-
 
 
     public Object[] convert(Node node, String key, JSONArray json) throws JSONException
@@ -106,53 +110,30 @@ public class JsonToNode
                     Node n = null;
                     n = node.addNode(key);
 
-                    convert(n, (JSONObject)value);
+                    convert(n, (JSONObject) value);
                 }
                 else if (value instanceof JSONArray)
                 {
-                    //node = convert(node, key, (JSONArray)value);
-                }
-                /***
-                else if (value instanceof Integer)
-                {
-                    if( list == null )
-                    {
-                        list = new Integer[json.length()];
-                    }
-                    int v = ((Integer) value).intValue();
-                    //node.setProperty(key, v);
-                }
-                else if (value instanceof Float)
-                {
-                    if( list == null )
-                    {
-                        list = new Float[json.length()];
-                    }
-                    float v = ((Float) value).floatValue();
-                    //node.setProperty(key, v);
-                }
-                else if (value instanceof Double)
-                {
-                    if( list == null )
-                    {
-                        list = new Double[json.length()];
-                    }
-                    double v = ((Double) value).doubleValue();
-                    list[i] = value;
-                }
-                else if (value instanceof String)
-                {
-                    if( list == null )
-                    {
-                        list = new String[json.length()];
-                    }
-                    String v = value.toString();
-                    list[i] = value;
-                    //node.setProperty(key, (String[])list);
-                }
-                ***/
+                    // multivalue
+                    final JSONArray array = (JSONArray) value;
 
-            }catch(Exception ex){
+                    final String values[] = new String[array.length()];
+                    for (int j = 0; j < array.length(); j++)
+                    {
+                        values[j] = array.get(j).toString();
+                    }
+
+                    node.setProperty(key, values);
+                }
+                else
+                {
+                    node.setProperty(key, value.toString());
+                }
+
+
+            }
+            catch (Exception ex)
+            {
                 ex.printStackTrace();
             }
 
