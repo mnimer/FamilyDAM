@@ -34,9 +34,21 @@
     </property>
 
     <property>
-        <name>content</name>
+        <name>facebook-api-key</name>
         <type>String</type>
-        <value>/content/dam</value>
+        <value>1459016164310867</value>
+    </property>
+
+    <property>
+        <name>twitter-api-key</name>
+        <type>String</type>
+        <value>PtNN5DSLfHn6HVIGfIzQ</value>
+    </property>
+
+    <property>
+        <name>dropbox-api-key</name>
+        <type>String</type>
+        <value>3sreo3n7fx1o882</value>
     </property>
 
 

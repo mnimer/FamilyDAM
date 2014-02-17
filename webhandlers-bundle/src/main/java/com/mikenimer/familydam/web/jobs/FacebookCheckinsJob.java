@@ -69,7 +69,7 @@ public class FacebookCheckinsJob extends FacebookJob
 
 
     @Override
-    protected JobResult queryFacebook(Node facebookData, String username, String nodePath, String nextUrl) throws RepositoryException, IOException, JSONException
+    protected JobResult queryFacebook(Node facebookData, String username, String userPath, String nextUrl) throws RepositoryException, IOException, JSONException
     {
         String accessToken = facebookData.getProperty("accessToken").getString();
         String expiresIn = facebookData.getProperty("expiresIn").getString();
@@ -99,7 +99,7 @@ public class FacebookCheckinsJob extends FacebookJob
 
         // Read the response body.
         String jsonStr = method.getResponseBodyAsString();
-        return saveData(username, nodePath, jsonStr, FACEBOOKPATH, "checkins");
+        return saveData(username, jsonStr, FACEBOOKPATH, "checkin");
     }
 
 

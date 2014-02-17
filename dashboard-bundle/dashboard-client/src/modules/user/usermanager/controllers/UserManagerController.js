@@ -28,8 +28,6 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
     $scope.isExistingUser = false;
     $scope.selectedUser = {};
     $scope.users = [];
-    $scope.currentUser = undefined;
-    $scope.facebookAuthorized = false;
 
 
     var refreshUsers = function ()
@@ -40,15 +38,12 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
 
             for (var user in data.data)
             {
-                var u = {};
-                u[':name'] = user; //special key defined by Sling
-                // copy properties to
-                for (var prop in data.data[user])
+                var u = data.data[user];
+                if( typeof(u) == "object" && user != "anonymous" )
                 {
-                    u[prop] = data.data[user][prop];
+                    u[':name'] = user; //special key defined by Sling
+                    list.push(u);
                 }
-
-                list.push(u);
             }
 
             $scope.users = list;
@@ -63,46 +58,26 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
     {
         $scope.isNewUser = false;
         $scope.isExistingUser = true;
-        //todo call api to get user based on selectedUser id
 
-        $scope.currentUser = $scope.selectedUser;
+        var results = userService.getUserProperties($scope.selectedUser);
+        results.then( function(user){
 
-        initFacebookSdk();
+            //loop over user and add properties to $scope.selectedUser
+            for(var prop in user.data)
+            {
+                $scope.selectedUser[prop] = user.data[prop];
+            }
+
+            initFacebookSdk(user);
+        });
     };
-
-
-    $scope.activateFacebook = function ()
-    {
-        //todo: make this dynamic
-        var _redirectUrl = "http://localhost.familydam.com:8888/dashboard-api/facebook/callback?";
-        //window.open("https://www.facebook.com/dialog/oauth?state=mnimer&response_type=token&client_id=1459016164310867&redirect_uri=" +_redirectUrl);
-        FB.login(function(data){
-            console.log(data);
-        }, {scope: 'user_status,user_photos,user_videos,user_checkins,user_likes,user_notes'});
-        //var response = FB.getAuthResponse();
-        //console.log(response);
-    };
-
-
-    $scope.deactivateFacebook = function ()
-    {
-        deleteUserFacebook.deleteUserFacebook( $scope.currentUser.username );
-        FB.logout();
-    };
-
-
-    $scope.refreshFacebook = function ()
-    {
-        userService.refreshUserFacebook( $scope.currentUser[':name'] );
-    };
-
 
     /***
      * NEW USER
      */
     $scope.createNewUser = function ()
     {
-        $scope.currentUser = {};
+        $scope.selectedUser = {};
         $scope.isNewUser = true;
         $scope.isExistingUser = false;
 
@@ -110,7 +85,7 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
 
     $scope.createNewUserHandler = function ()
     {
-        userService.createUser($scope.currentUser).then(
+        userService.createUser($scope.selectedUser).then(
             function (data, status, headers, config)
             {
                 refreshUsers();
@@ -135,15 +110,15 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
 
     $scope.updateUserHandler = function ()
     {
-        var username = $scope.currentUser[':name'];
+        var username = $scope.selectedUser[':name'];
 
         //Copy the updateable properties. If we pass all back we'll get a 500 error.
         var userProps = {};
-        for (var prop in $scope.currentUser)
+        for (var prop in $scope.selectedUser)
         {
             if (prop != "memberOf" && prop != "declaredMemberOf" && prop != "pwd" && prop != "pwdConfirm")
             {
-                userProps[prop] = $scope.currentUser[prop];
+                userProps[prop] = $scope.selectedUser[prop];
             }
         }
 
@@ -171,7 +146,7 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
             {
                 refreshUsers();
 
-                $scope.currentUser = undefined;
+                $scope.selectedUser = undefined;
                 $scope.isNewUser = false;
                 $scope.isExistingUser = false;
             },
@@ -183,13 +158,78 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
     };
 
 
+    /*****************************************************
+    *** Facebook Services
+     ****************************************************/
+
+
+    $scope.activateFacebook = function ()
+    {
+        // Logout first to force a reauthentication since it's possible that this could be
+        // on a families shared computer.
+        //FB.logout();
+
+        //todo: make this dynamic
+        var _redirectUrl = "http://localhost.familydam.com:8888/dashboard-api/facebook/callback?";
+        //window.open("https://www.facebook.com/dialog/oauth?state=mnimer&response_type=token&client_id=1459016164310867&redirect_uri=" +_redirectUrl);
+        FB.login(function(response){
+            if (response.authResponse)
+            {
+                if( $scope.selectedUser.web === undefined )
+                {
+                    $scope.selectedUser.web = {};
+                }
+                if( $scope.selectedUser.web.facebook === undefined )
+                {
+                    $scope.selectedUser.web.facebook = {};
+                }
+
+                $scope.selectedUser.web.facebook.accessToken = response.authResponse.accessToken;
+                $scope.selectedUser.web.facebook.expiresIn = response.authResponse.expiresIn;
+                $scope.selectedUser.web.facebook.signedRequest = response.authResponse.signedRequest;
+                $scope.selectedUser.web.facebook.userID = response.authResponse.userID;
+                $scope.selectedUser.web.facebook.isAuthorized = "true";
+
+                var updateResults = userService.updateUser($scope.selectedUser);
+                $scope.$apply();
+            }else{
+                $scope.deactivateFacebook($scope.selectedUser);
+            }
+
+        }, {scope: 'user_status,user_photos,user_videos,user_checkins,user_likes,user_notes', enable_profile_selector:true });
+        //var response = FB.getAuthResponse();
+        //console.log(response);
+    };
+
+
+    $scope.deactivateFacebook = function (user)
+    {
+        if( user === undefined)
+        {
+            user = $scope.selectedUser;
+        }
+        if( user.web !== undefined && user.web.facebook !== undefined ){
+            user.web.facebook.isAuthorized = "false";
+        }
+
+        userService.deleteUserFacebook( user[':name'] );
+        FB.logout();
+    };
+
+
+    $scope.refreshFacebook = function ()
+    {
+        userService.refreshUserFacebook( $scope.selectedUser[':name'] );
+    };
+
+
     var initFacebookSdk = function ()
     {
 
         FB.init({
             appId: '1459016164310867',
-            status: true, // check login status
-            cookie: true, // enable cookies to allow the server to access the session
+            status: false, // check login status
+            cookie: false, // enable cookies to allow the server to access the session
             xfbml: true  // parse XFBML
         });
 
@@ -202,17 +242,7 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
             // Here we specify what we do with the response anytime this event occurs.
             if (response.status === 'connected')
             {
-                var username = $scope.currentUser[':name'];
-                var updateResults = userService.updateUserFacebook(
-                    username,
-                    response.authResponse.accessToken,
-                    response.authResponse.expiresIn,
-                    response.authResponse.signedRequest,
-                    response.authResponse.userId
-                );
 
-                $scope.facebookAuthorized = true;
-                $scope.$apply();
             }
             else if (response.status === 'not_authorized')
             {
@@ -223,7 +253,7 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
                 // (1) JavaScript created popup windows are blocked by most browsers unless they
                 // result from direct interaction from people using the app (such as a mouse click)
                 // (2) it is a bad experience to be continually prompted to login upon page load.
-                $scope.facebookAuthorized = false;
+                user.web.facebook.isAuthorized = false;
                 $scope.$apply();
             }
             else
@@ -233,7 +263,7 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
                 // of whether they are logged into the app. If they aren't then they'll see the Login
                 // dialog right after they log in to Facebook.
                 // The same caveats as above apply to the FB.login() call here.
-                $scope.facebookAuthorized = false;
+                user.web.facebook.isAuthorized = false;
                 $scope.$apply();
             }
         });
@@ -258,7 +288,6 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
 
         //call sling to get users
         refreshUsers();
-
 
     };
     init();

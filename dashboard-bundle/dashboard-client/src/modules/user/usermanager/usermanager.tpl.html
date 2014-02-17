@@ -20,7 +20,10 @@
     <div class="content row">
         <div class="col-sm-3">
             <select id="userList" class="userList form-control"
-                    ng-model="selectedUser" ng-options="u as u[':name'] +' ( ' +u.firstName +' ' +u.lastName +' )' for u in users" ng-change="selectUser()" size="20">
+                    ng-model="selectedUser"
+                    ng-options="u as u[':name'] +' ( ' +u.firstName +' ' +u.lastName +' )' for u in users"
+                    ng-change="selectUser()"
+                    size="20">
             </select>
             <div class="userListButtons">
                 <button class="btn btn-default btn-sm" ng-click="createNewUser()">+</button>
@@ -35,11 +38,11 @@
                     <div class="form-inline"  style="padding-bottom: 70px;">
                         <div class="form-group col-xs-6">
                             <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" ng-model="currentUser.firstName">
+                            <input type="text" class="form-control" id="firstName" placeholder="" ng-model="selectedUser.firstName">
                         </div>
                         <div class="form-group col-xs-6">
                             <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" ng-model="currentUser.lastName">
+                            <input type="text" class="form-control" id="lastName" placeholder="" ng-model="selectedUser.lastName">
                         </div>
                     </div>
 
@@ -47,15 +50,15 @@
 
                     <div class="form-group col-xs-12">
                         <label for="username">Login Username</label>
-                        <input type="text" class="form-control" id=":name" placeholder="" ng-model="currentUser[':name']" >
+                        <input type="text" class="form-control" id=":name" placeholder="" ng-model="selectedUser[':name']" >
                     </div>
                     <div class="form-group col-xs-12">
                         <label for="password1">Password</label>
-                        <input type="password" class="form-control" id="pwd" placeholder=""  ng-model="currentUser.pwd">
+                        <input type="password" class="form-control" id="pwd" placeholder=""  ng-model="selectedUser.pwd">
                     </div>
                     <div class="form-group col-xs-12">
                         <label for="password2">Confirm Password</label>
-                        <input type="password" class="form-control" id="pwdConfirm" placeholder=""  ng-model="currentUser.pwdConfirm">
+                        <input type="password" class="form-control" id="pwdConfirm" placeholder=""  ng-model="selectedUser.pwdConfirm">
                     </div>
 
                     <div class="form-group col-xs-12">
@@ -68,6 +71,8 @@
 
 
 
+
+
             <div ng-show="isExistingUser == true">
                 <form id="newUserForm" role="form">
                     <div id="tabs" >
@@ -75,20 +80,20 @@
                         <tab heading="Info">
                             <div class="form-inline"  style="padding-bottom: 70px;">
                                 <div class="col-xs-12" style="height: 50px;padding-top: 10px;">
-                                    <h4>Username: <span class="label label-default">{{currentUser[':name']}}</span></h4>
+                                    <h4>Username: <span class="label label-default">{{selectedUser[':name']}}</span></h4>
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label for="firstName">First Name</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="" ng-model="currentUser.firstName">
+                                    <input type="text" class="form-control" id="firstName" placeholder="" ng-model="selectedUser.firstName">
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label for="lastName">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="" ng-model="currentUser.lastName">
+                                    <input type="text" class="form-control" id="lastName" placeholder="" ng-model="selectedUser.lastName">
                                 </div>
 
                                 <!--div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" btn-radio="'administrator'">Admin</button>
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" btn-radio="'user'">User</button>
+                                    <button type="button" class="btn btn-default" ng-model="selectedUser.accountType" btn-radio="'administrator'">Admin</button>
+                                    <button type="button" class="btn btn-default" ng-model="selectedUser.accountType" btn-radio="'user'">User</button>
                                     &nbsp;&nbsp;
                                     <label for="">Account Type</label>
                                 </div-->
@@ -102,33 +107,68 @@
                             </div>
                         </tab>
                         <tab heading="Services" ng-disabled="true">
-                            <div class="form-inline"  style="padding-bottom: 70px; padding-top: 10px;">
-                                <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="!facebookAuthorized" ng-click="deactivateFacebook()">Deactivate</button>
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="facebookAuthorized" ng-click="activateFacebook()">Activate</button>
-                                    &nbsp;&nbsp;
-                                    <label for="">Facebook</label>
-                                    &nbsp;&nbsp;
-                                    <button type="button" class="btn btn-default" ng-disabled="!facebookAuthorized" ng-click="refreshFacebook()">Refresh</button>
+                            <div class="col-xs-12"  style="padding-bottom: 70px; padding-top: 10px;">
+
+                                <div class="row serviceListRow" >
+                                    <div class="col-xs-1">
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="!selectedUser.web.facebook.isAuthorized"
+                                                ng-click="refreshFacebook()"><i class="glyphicon glyphicon-refresh"></i></button>
+                                    </div>
+                                    <div class="col-xs-7" style="margin-top: 1rem; margin-bottom: 1rem;">
+                                        <label for="">Facebook</label>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="!selectedUser.web.facebook.isAuthorized"
+                                                ng-click="deactivateFacebook()">Deactivate</button>
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="selectedUser.web.facebook.isAuthorized"
+                                                ng-click="activateFacebook()">Activate</button>
+                                    </div>
                                 </div>
-                                <hr/>
-                                <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="true">Activate</button>
-                                    &nbsp;&nbsp;
-                                    <label for="">Twitter</label>
+
+
+                                <div class="row serviceListRow" >
+                                    <div class="col-xs-1">
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="!selectedUser.web.twitter.isAuthorized"
+                                                ><i class="glyphicon glyphicon-refresh"></i></button>
+                                    </div>
+                                    <div class="col-xs-7" style="margin-top: 1rem; margin-bottom: 1rem;">
+                                        <label for="">Twitter</label>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="!selectedUser.web.twitter.isAuthorized"
+                                                ng-click="">Deactivate</button>
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="selectedUser.web.twitter.isAuthorized"
+                                                ng-click="">Activate</button>
+                                    </div>
                                 </div>
-                                <hr/>
-                                <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="true">Activate</button>
-                                    &nbsp;&nbsp;
-                                    <label for="">Flickr</label>
+
+
+
+                                <div class="row serviceListRow" >
+                                    <div class="col-xs-1">
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="!selectedUser.web.dropbox.isAuthorized"
+                                                ><i class="glyphicon glyphicon-refresh"></i></button>
+                                    </div>
+                                    <div class="col-xs-7" style="margin-top: 1rem; margin-bottom: 1rem;">
+                                        <label for="">Dropbox</label>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="!selectedUser.web.dropbox.isAuthorized"
+                                                ng-click="">Deactivate</button>
+                                        <button type="button" class="btn btn-default"
+                                                ng-disabled="selectedUser.web.dropbox.isAuthorized"
+                                                ng-click="">Activate</button>
+                                    </div>
                                 </div>
-                                <hr/>
-                                <div class="form-group btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default" ng-model="currentUser.accountType" ng-disabled="true">Activate</button>
-                                    &nbsp;&nbsp;
-                                    <label for="">TripIT</label>
-                                </div>
+
                             </div>
                         </tab>
                     </tabset>

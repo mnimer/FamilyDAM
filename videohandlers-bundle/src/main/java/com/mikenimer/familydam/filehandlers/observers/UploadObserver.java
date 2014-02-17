@@ -38,6 +38,7 @@ import javax.jcr.PathNotFoundException;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.nodetype.NodeType;
 import javax.jcr.observation.Event;
 import javax.jcr.observation.EventIterator;
 import javax.jcr.observation.EventListener;
@@ -122,7 +123,9 @@ public class UploadObserver implements EventListener
             {
                 if (event.getType() == Event.NODE_ADDED || event.getType() == Event.NODE_MOVED)
                 {
-                    if (MimeTypeManager.isImage(event.getPath()))
+                    Node parentNode = session.getNode(event.getPath()).getParent();
+
+                    if (MimeTypeManager.isImage(event.getPath()) || parentNode.isNodeType("fd:image") )
                     {
                         processImageFile(event);
                     }
@@ -149,6 +152,15 @@ public class UploadObserver implements EventListener
             }
         }
     }
+
+
+    private boolean isMixin(Node node, String mixin)
+    {
+        boolean isType = false;
+
+        return isType;
+    }
+
 
 
     /**

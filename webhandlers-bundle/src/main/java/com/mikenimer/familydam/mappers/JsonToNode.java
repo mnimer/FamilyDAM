@@ -17,10 +17,13 @@
 
 package com.mikenimer.familydam.mappers;
 
+import org.apache.felix.scr.annotations.Component;
 import org.apache.jackrabbit.commons.JcrUtils;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.PropertyType;
@@ -31,8 +34,22 @@ import java.util.List;
 /**
  * Created by mnimer on 2/6/14.
  */
+@Component(enabled = true, immediate = true)
 public class JsonToNode
 {
+    private final Logger log = LoggerFactory.getLogger(JsonToNode.class);
+
+    private List ignorableFields = new ArrayList();
+
+
+    public JsonToNode()
+    {
+        ignorableFields.add("jcr:primaryType");
+        ignorableFields.add("jcr:mixinTypes");
+        ignorableFields.add("jcr:created");
+        ignorableFields.add("jcr:createdBy");
+        ignorableFields.add(":name");
+    }
 
 
     public Node convert(Node node, JSONObject json) throws JSONException
@@ -44,47 +61,43 @@ public class JsonToNode
             Object value = json.get(key);
             try
             {
-                if (value instanceof JSONObject)
+                if( ignorableFields.indexOf(key) == -1 )
                 {
-                    Node n = JcrUtils.getOrAddNode(node, key);
-                    /**
-                     if( node.hasNode(key) )
-                     {
-                     n = node.getNode(key);
-                     }else{
-                     n = node.addNode(key);
-                     }
-                     **/
-                    convert(n, (JSONObject) value);
-                }
-                else if (value instanceof JSONArray)
-                {
-                    convert(node, key, (JSONArray) value);
-                }
-                else if (value instanceof Integer)
-                {
-                    int v = ((Integer) value).intValue();
-                    node.setProperty(key, v);
-                }
-                else if (value instanceof Float)
-                {
-                    float v = ((Float) value).floatValue();
-                    node.setProperty(key, v);
-                }
-                else if (value instanceof Double)
-                {
-                    double v = ((Double) value).doubleValue();
-                    node.setProperty(key, v);
-                }
-                else if (value instanceof String)
-                {
-                    String v = value.toString();
-                    node.setProperty(key, v);
+                    if (value instanceof JSONObject)
+                    {
+                        Node n = JcrUtils.getOrAddNode(node, key);
+                        convert(n, (JSONObject) value);
+                    }
+                    else if (value instanceof JSONArray)
+                    {
+                        convert(node, key, (JSONArray) value);
+                    }
+                    else if (value instanceof Integer)
+                    {
+                        int v = ((Integer) value).intValue();
+                        node.setProperty(key, v);
+                    }
+                    else if (value instanceof Float)
+                    {
+                        float v = ((Float) value).floatValue();
+                        node.setProperty(key, v);
+                    }
+                    else if (value instanceof Double)
+                    {
+                        double v = ((Double) value).doubleValue();
+                        node.setProperty(key, v);
+                    }
+                    else if (value instanceof String)
+                    {
+                        String v = value.toString();
+                        node.setProperty(key, v);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 ex.printStackTrace();
+                log.error("unable to update node: " +key +"with value=" +value, ex);
             }
 
         }

@@ -15,8 +15,9 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.mikenimer.familydam.services.web;
+package com.mikenimer.familydam.services.users;
 
+import com.mikenimer.familydam.mappers.JsonToNode;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
@@ -24,113 +25,97 @@ import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
+import org.apache.jackrabbit.commons.JcrUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
-import org.apache.sling.event.jobs.Job;
+import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.servlet.Servlet;
-import java.util.HashMap;
-import java.util.Map;
+import javax.servlet.ServletException;
+import java.io.IOException;
 
 /**
- * Created by mnimer on 2/5/14.
+ * Created by mnimer on 2/15/14.
  */
 
 @Component(immediate=true, metatype=false)
 @Service(Servlet.class)
-@Properties({ @Property(name="service.description", value="Start Facebook job to pull data"),
+@Properties({ @Property(name="service.description", value=""),
         @Property(name="service.vendor", value="The FamilyDAM Project"),
-        @Property(name="sling.servlet.paths", value="/dashboard-api/jobs/facebook")
+        @Property(name="sling.servlet.paths", value="/dashboard-api/users")
 })
-public class FacebookJobService extends SlingAllMethodsServlet
+public class UserServlet extends SlingAllMethodsServlet
 {
-    private final Logger log = LoggerFactory.getLogger(FacebookJobService.class);
-    private Session session;
 
+    private final Logger log = LoggerFactory.getLogger(UserServlet.class);
+    private String USERPATH = "/apps/familydam/users/";
+    private Session session;
 
     @Reference
     private SlingRepository repository;
 
-    @Reference
-    private JobManager jobManager;
-
     @Activate
     protected void activate(ComponentContext ctx)  throws Exception
     {
-        log.debug("Facebook Update User Servlet started");
+        log.debug("User Servlet started");
     }
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        log.debug("Facebook Update User Servlet Deactivated");
+        log.debug("User Servlet Deactivated");
     }
+
 
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
     {
-        String username = request.getParameter("username");
+        String username = request.getParameter(":name");
 
-        triggerFacebookJobs(username);
+        try
+        {
+            String nodePath = USERPATH +username;
+            session = request.getResourceResolver().adaptTo(Session.class);
+
+            Node node = node = session.getNode(nodePath);
+            request.getRequestDispatcher(node.getPath() +".infinity.json").include(request, response);
+        }
+        catch(Exception ex){
+            throw new RuntimeException(ex);
+        }
     }
-
 
 
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
     {
-        String username = request.getParameter("username");
+        String jsonStr = request.getParameter(":content");
+        String username = request.getParameter(":name");
+        String nodePath = USERPATH +username;
 
-        if( username == null ){
-            throw new RuntimeException("Invalid Username"); //todo use customer exception
+        try
+        {
+            if( username!=null && username.length() > 0)
+            {
+                session = request.getResourceResolver().adaptTo(Session.class);
+                Node node = session.getNode(nodePath);
+
+                JSONObject jsonObj = new JSONObject(jsonStr);
+                new JsonToNode().convert(node, jsonObj);
+                session.save();
+            }
         }
-
-        // extract and save the metadata for this node.
-        triggerFacebookJobs(username);
-
-    }
-
-
-    @Override
-    protected void doDelete(SlingHttpServletRequest request, SlingHttpServletResponse response)
-    {
-        String username = request.getParameter("username");
-
-        if( username == null ){
-            throw new RuntimeException("Invalid Username"); //todo use customer exception
+        catch(Exception ex){
+            throw new RuntimeException(ex);
         }
-
-        // todo
     }
-
-
-
-
-    private void triggerFacebookJobs(String username)
-    {
-        Map props = new HashMap();
-        props.put("username", username);
-        props.put("nodePath", "/apps/familydam/users/" +username);
-
-        Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
-        log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
-
-        Job checkInJob = jobManager.addJob("familydam/web/facebook/checkins", props);
-        log.debug("Create Job {} / {}", checkInJob.getTopic(), checkInJob.getId());
-
-        Job likesJob = jobManager.addJob("familydam/web/facebook/likes", props);
-        log.debug("Create Job {} / {}", likesJob.getTopic(), likesJob.getId());
-
-        Job photosJob = jobManager.addJob("familydam/web/facebook/photos", props);
-        log.debug("Create Job {} / {}", photosJob.getTopic(), photosJob.getId());
-    }
-
 }

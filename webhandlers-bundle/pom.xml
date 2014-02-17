@@ -243,7 +243,7 @@
                     <instructions>
                         <!-- embed any dependencies with artifactId junit and scope runtime -->
                         <Embed-Dependency>org.apache.sling.jcr.contentloader;scope=compile|runtime</Embed-Dependency>
-                        <Export-Package>com.mikenimer.familydam.services.web.jobs</Export-Package>
+                        <Export-Package>com.mikenimer.familydam.*</Export-Package>
                         <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
                         <Include-Resoource>
                             {maven-resources}, {maven-dependencies}

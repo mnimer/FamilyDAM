@@ -20,6 +20,7 @@ var UserService = function($http, $q, fileService)
 {
 
     var systemPaths = [
+        '/apps/familydam/users',
         '/content/dam/photos',
         '/content/dam/music',
         '/content/dam/movies',
@@ -41,6 +42,27 @@ var UserService = function($http, $q, fileService)
     {
         var method =  $http.get('/system/userManager/user.tidy.1.json',{ cache: false });
         return method;
+    };
+
+
+    /**
+     * return the users properties
+     * @returns {*}
+     */
+    this.getUserProperties = function(user)
+    {
+        var data = {};
+        data[':name'] = user[':name'];
+
+        var method =  $http.get("/dashboard-api/users?:name=" +user[':name'], { cache: false });
+        return method.then( function(user)
+        {
+            for( var prop in user.data )
+            {
+                user[prop] = user.data[prop];
+            }
+            return user;
+        });
     };
 
     /**
@@ -86,7 +108,32 @@ var UserService = function($http, $q, fileService)
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.updateUser = function(username, data)
+    this.updateUser = function(user)
+    {
+        var data = {};
+        data[':name'] = user[':name'];
+        data[':content'] = angular.toJson(user);
+
+        var method =  $http.post("/dashboard-api/users",
+            $.param(data),
+            {
+                headers:
+                {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                }
+            });
+        return method;
+    };
+
+
+    /**
+     * Call our API which will invoke the Sling API to create the user then
+     * @param path
+     * @param successCallback
+     * @param errorCallback
+     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
+     */
+    this.updateUserAuth = function(username, data)
     {
         var method =  $http.post("/system/userManager/user/" +username +".update.json",
             $.param(data),
@@ -109,7 +156,7 @@ var UserService = function($http, $q, fileService)
     {
         var method =  $http.get("/dashboard-api/jobs/facebook?username=" +username);
         return method;
-    }
+    };
 
 
     /**
@@ -130,30 +177,33 @@ var UserService = function($http, $q, fileService)
         data.signedRequest = signedRequest;
         data.userId = userId;
 
-        var method =  $http.post("/apps/familydam/users/" +username +"/web/facebook",
-            $.param(data),
-            {
-                headers:
-                {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                }
-            });
-
-        return method.then(function()
+        if( username !== undefined )
         {
-            // Now that we've updated the users facebook oauth values, we'll call a 2nd service to start
-            // up the Facebook jobs
-                var method2 =  $http.post("/dashboard-api/jobs/facebook",$.param({"username":username}),
+            var method =  $http.post("/apps/familydam/users/" +username +"/web/facebook",
+                $.param(data),
+                {
+                    headers:
                     {
-                        headers:
-                        {
-                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                        }
-                    });
-                method2.then(function(){
-                    //todo
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    }
                 });
-        });
+
+            return method.then(function()
+            {
+                // Now that we've updated the users facebook oauth values, we'll call a 2nd service to start
+                // up the Facebook jobs
+                    var method2 =  $http.post("/dashboard-api/jobs/facebook",$.param({"username":username}),
+                        {
+                            headers:
+                            {
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                            }
+                        });
+                    method2.then(function(){
+                        //todo
+                    });
+            });
+        }
 
     };
 
@@ -165,19 +215,12 @@ var UserService = function($http, $q, fileService)
      */
     this.deleteUserFacebook = function(username)
     {
-        var method =  $http.delete("/dashboard-api/jobs/facebook",
-            $.param( {'username': username} ),
-            {
-                headers:
-                {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                }
-            });
+        var method =  $http.delete("/apps/familydam/users/" +username +"/web/facebook");
         return method.then(function(arg1,arg2)
         {
             return arg1;
         });
-    }
+    };
 
 
 

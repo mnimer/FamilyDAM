@@ -35,6 +35,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.mikenimer.familydam</groupId>
+            <artifactId>webhandlers-bundle</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
         <!--
          ** FamilyDAM Bundles
         -->

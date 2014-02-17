@@ -122,15 +122,17 @@ public class UploadObserver implements EventListener
             {
                 if (event.getType() == Event.NODE_ADDED || event.getType() == Event.NODE_MOVED)
                 {
-                    if (MimeTypeManager.isImage(event.getPath()))
+                    Node parentNode = session.getNode(event.getPath()).getParent();
+
+                    if (MimeTypeManager.isImage(event.getPath()) || parentNode.isNodeType("fd:image") )
                     {
                         processImageFile(event);
                     }
-                    else if (MimeTypeManager.isMusic(event.getPath()))
+                    else if (MimeTypeManager.isMusic(event.getPath()) )
                     {
                         processMusicFile(event);
                     }
-                    else if (MimeTypeManager.isMovie(event.getPath()))
+                    else if (MimeTypeManager.isMovie(event.getPath())  || parentNode.isNodeType("fd:movie"))
                     {
                         processMovieFile(event);
                     }

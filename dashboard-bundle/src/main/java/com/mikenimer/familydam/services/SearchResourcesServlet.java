@@ -100,7 +100,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
     protected void doGet(SlingHttpServletRequest request,
                          SlingHttpServletResponse response) throws SlingServletException, IOException
     {
-        int limit = 100;
+        int limit = 20;
         if (request.getRequestParameter("limit") != null && request.getRequestParameter("limit").getSize() > 0)
         {
             limit = new Integer(request.getRequestParameter("limit").getString());
@@ -112,7 +112,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
             offset = new Integer(request.getRequestParameter("offset").getString());
         }
 
-        String filterPath = "/content/dam/photos";
+        String filterPath = "/content/dam";
         if (request.getRequestParameter("filterPath") != null && request.getRequestParameter("filterPath").getSize() > 0)
         {
             filterPath = request.getRequestParameter("filterPath").getString();
@@ -193,7 +193,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
             Session session = request.getResourceResolver().adaptTo(Session.class);
             Query query = session.getWorkspace().getQueryManager().createQuery(stmt, Query.JCR_SQL2);
-            //query.setLimit(limit);
+            query.setLimit(limit);
             //query.setOffset(offset);
             QueryResult results = query.execute();
 
