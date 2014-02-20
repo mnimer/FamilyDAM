@@ -1,71 +1,364 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Familydam by mnimer</title>
+<!DOCTYPE html>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Familydam</h1>
-        <p>A Digital Asset Manager (DAM) for the family. </p>
+<html lang="en">
 
-        <p class="view"><a href="https://github.com/mnimer/FamilyDAM">View the Project on GitHub <small>mnimer/FamilyDAM</small></a></p>
+    <head>
+    	
+        <!-- Html Page Specific -->        
+        <meta charset="utf-8">
+        <title>FamilyDAM Project</title>
+        <meta name="description" content="A Digital Asset Manager (DAM) for your family.">
+        <meta name="author" content="mike nimer">
+        
+        <!-- Mobile Specific -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="css/font-awesome.css" type="text/css"/>
+        <link rel="stylesheet" href="./css/jquery.fancybox.css" type="text/css"/>
+        <link rel="stylesheet" href="./css/jquery.ketchup.css" type="text/css"/>
+        
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <!-- JavaScript -->
+        <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fancybox-1.2.1.pack.js"></script>
+        <script type="text/javascript" src="./js/jquery.carouFredSel-6.2.0.js"></script>
+        <script src="./js/custom.js"></script>
+        <script src="./js/sliders_setup.js"></script>
+        <script src="./js/jquery.ketchup.all.min.js"></script>
+        
+        <!-- Placeholder script for non-supported browsers by Mathias -->
+        <script src="./js/jquery.placeholder.js"></script>
+        
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        
+    </head>
+    <body>
+        
+        <div id="wrap">
+        
+ <!-- HEADER SOCIAL BEGIN -->           
+            
+            <header id="header_with_social" class="header">
+                <div class="center">
+                    <a href="#" class="logo" title="FamilyDAM"></a>
+                    <p class="slogan">A Digital Asset Manager<br/> for YOUR family</p>
+                    <!-- Social icons -->
+                    <div class="socials">
+                        <ul>
+                            <!--
+                            <li><a href="https://plus.google.com/" target="_blank" title="Google+" class="fa fa-google-plus"></a></li>
+                            <li><a href="https://www.facebook.com/" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+                            -->
+                            <li><a href="https://twitter.com/familydam" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            
+<!-- HEADER SOCIAL END --> 
+<!-- SLIDER DOWNLOAD BEGIN -->
+
+            <section id="download_slider_box">
+                <div class="center">
+                    <div class="download">
+                        <h2>A <b>Digital Asset Manager (DAM)</b><br/>for the family.<br/>* In Development </h2>
+                        <p ><a href="https://github.com/mnimer/FamilyDAM">View the Project on GitHub <small>mnimer/FamilyDAM</small></a></p>
+                        <a href="https://github.com/mnimer/FamilyDAM/zipball/master" class="btn_big">Download Code</a>
+
+                    </div>
+                    <div class="download_slider_box">
+                        <div id="download_slider">
+                            <div class="slide" id="download1">
+                            	<!-- 1st download slider image change here -->
+                                <!--img src="" width="387" height="239" alt="" /-->
+
+                                <span><b>Private Family Cloud</b><br/>Running on your family computer</span>
+                            </div>
+                            <div class="slide" id="download2">
+                            	<!-- 2nd download slider image change here -->
+                                <span class="fa fa-camera"></span>
+                                <span class="fa fa-music"></span>
+                                <span class="fa fa-film"></span>
+                                <span><b>Photos</b>, <b>Music</b>, & <b>Movies</b></span>
+                            </div>
+                            <div class="slide" id="download3">
+                            	<!-- 3rd download slider image change here -->
+                                <span class="fa fa-facebook-square"></span>
+                                <span class="fa fa-twitter"></span>
+                                <span class="fa fa-dropbox"></span>
+                                <span class="fa fa-instagram"></span>
+                                <span><b>Archive</b> & <b>Backup</b> what your family posts online</span>
+                            </div>
+                        </div>
+                        <div id="pager3" class="pager"></div>
+                    </div>
+                </div>
+            </section>
+
+<!-- SLIDER DOWNLOAD END -->
+<!-- BENEFITS BLOCK BEGIN -->
+
+            <section id="benefits" class="box">
+                <div class="center">
+                    <h2>Features</h2>
+                    <div class="benefits_box">
+                    
+                    	<!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-code"></span>
+                            <h3>Open Source / Free</h3>
+                            <p>Completely free (GPL License) for personal use, customizable, and hosted on GitHub. </p>
+                        </div>
+                        
+                        <!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-camera"></span>
+                            <h3>Manage Photos</h3>
+                            <p>Find, Search, and Organize all of your family photos</p>
+                        </div>
+                        
+                        <!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-cloud"></span>
+                            <h3>Archive Social Media</h3>
+                            <p>
+                                Our system will keep a copy of everything your family posts on a variety of different social media website.
+                                <ul>
+                                    <li class="fa fa-facebook-square"> Facebook</li>
+                                    <li class="fa fa-twitter"> Twitter *</li>
+                                    <li class="fa fa-dropbox"> Dropbox *</li>
+                                    <li class="fa fa-instagram"> Instagram *</li>
+                                </ul>
+                            </p>
+                        </div>
+                        
+                        <!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-music"></span>
+                            <h3>Manage Music</h3>
+                            <p>Search, Organize, and play your music</p>
+                        </div>
+
+                        <!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-film"></span>
+                            <h3>Manage Movies</h3>
+                            <p>Search, Organize, and Watch your movies. Chromecast streaming coming soon</p>
+                        </div>
+
+                        <!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-hdd-o"></span>
+                            <h3>WebDav</h3>
+                            <p>Along with the web interface you can browse all of your content through a mapped WebDav drive.</p>
+                        </div>
+
+                        <!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-group"></span>
+                            <h3>Enterprise Foundation</h3>
+                            <p>This application is built on the same Open Source projects that power the Adobe Digital Asset Manager - <a href="https://jackrabbit.apache.org/">Apache Jackrabbit</a>, <a href="https://felix.apache.org/">Felix</a> (OSGI), and <a href="https://sling.apache.org/">Sling</a> project</p>
+                        </div>
+
+                        <!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-lock"></span>
+                            <h3>Secure</h3>
+                            <p>Every piece of content can be secured and hidden from other family members.</p>
+                        </div>
+
+                        <!-- Benefit-->
+                        <div class="benefit">
+                            <span class="fa fa-desktop"></span>
+                            <h3>Local</h3>
+                            <p>Keep your data local, everything is stored locally on your home computer or off a USB drive. Nothing in the cloud</p>
+                        </div>
+
+                    </div>
+
+                    * Planned Feature
+                </div>
+            </section>
+
+<!-- BENEFITS BLOCK END -->
 
 
-        <ul>
-          <li><a href="https://github.com/mnimer/FamilyDAM/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/mnimer/FamilyDAM/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/mnimer/FamilyDAM">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<!-- VIDEO BLOCK BEGIN -->
+<!--
+            <section id="video" class="box">
+                <div class="center">
+                    <div class="video_info">
+                        <h2>Motivational video</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum auctor interdum. Aenean egestas vehicula purus in euismod. Quisque gravida commodo velit, eget porta leo sagittis vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum auctor interdum. Aenean egestas vehicula purus in euismod. Quisque gravida commodo velit, eget porta leo sagittis vel.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                    </div>
+                    <div class="video_box">
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+                    </div>
+                </div>
+            </section>
+-->
+<!-- VIDEO BLOCK END -->
+<!-- SCREENSHOTS BLOCK BEGIN -->
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+            <section id="screenshots" class="box">
+                <div class="center">
+                    <h2>Screenshots</h2>
+                    <div class="screenshots_box">
+                    
+                    	<!-- Fancybox slider -->
+                        <div id="screenshots_slider">
+                            <div class="slide">
+                                <a href="./images/screens/files.png" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/files_sm.png" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/photos.png" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/photos_sm.png" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/music.png" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/music_sm.png" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/movies.png" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/movies_sm.png" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/usermanager.png" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/usermanager_sm.png" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/01.jpg" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/01_s.jpg" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/01.jpg" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/01_s.jpg" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/01.jpg" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/01_s.jpg" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/01.jpg" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/01_s.jpg" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                            <div class="slide">
+                                <a href="./images/screens/01.jpg" data-fancybox-gallery="group" class="gallery_pic"><img src="./images/screens/01_s.jpg" class="image_shadow" width="130" height="130" alt="" /></a>
+                            </div>
+                        </div>
+                        <a href="#" id="prev2" class="fa fa-caret-left"></a>
+                        <a href="#" id="next2" class="fa fa-caret-right"></a>
+                    </div>
+                </div>
+            </section>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<!-- SCREENSHOTS BLOCK END -->
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+ <!-- HELP BLOCK BEGIN -->
+ <section id="help" class="box">
+     <div class="center">
+         <h2>How To Help</h2>
+         <div class="benefits_box">
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+             <!-- Benefit-->
+             <div class="benefit">
+                 <span class="fa fa-code"></span>
+                 <h3>Github</h3>
+                 <p></p>
+             </div>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+             <!-- Benefit-->
+             <div class="benefit">
+                 <span class="fa fa-code"></span>
+                 <h3>TBD</h3>
+                 <p></p>
+             </div>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+             <!-- Benefit-->
+             <div class="benefit">
+                 <span class="fa fa-code"></span>
+                 <h3>TBD</h3>
+                 <p></p>
+             </div>
+         </div>
+     </div>
+ </section>
+ <!-- HELP BLOCK END -->
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/mnimer">mnimer</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+
+<!-- SUBSCRIBE BLOCK BEGIN -->            
+<!--
+            <section id="subscribe" class="box">
+                <div class="center">
+                    <h2>Subscribe</h2>
+                    <div class="subscribe_box">
+                    	<form action="js/subscribe.php" method="post" id="subscribe_form">
+                            <div>
+                                <input type="text" placeholder="Your email address" id="subscribe_email" data-validate="validate(email)" />
+                                <input type="submit" value="Subscribe" class="btn_grey" id="subscribe_submit" />
+                            </div> 
+                        </form>
+                        <h3>Join our newsletter subscription</h3>
+                        <p>Join our newsletter subscription, be always informed</p>
+                    </div>
+                    <div class="success_message" id="subscribe_success"></div>
+                	<div class="error_message" id="subscribe_error"></div> 
+                </div>
+            </section>
+-->
+<!-- SUBSCRIBE BLOCK END -->
+<!-- CONTACT US BLOCK BEGIN -->
+<!--
+            <section id="contact_us" class="box">
+                <div class="center">
+                    <h2>Contact us</h2>
+                    <div class="contact_info" itemscope itemtype="http://schema.org/Organization">
+                        <ul>
+                            <li itemprop="email"><span class="fa fa-envelope"></span> Your@email.com</li>
+                            <li itemprop="telephone"><span class="fa fa-phone"></span> (234) 789-4356</li>
+                            <li><span class="fa fa-skype"></span> Your_skype</li>
+                        </ul>
+                    </div>
+                    
+                                      	
+                    <div class="map" id="map-canvas">
+
+                    </div>
+                </div>
+            </section>
+-->
+<!-- CONTACT US BLOCK END -->
+
+            <div class="footerHeight"></div>
+        </div><!--id="wrap"--> 
+     
+
+<!-- FOOTER BLOCK BEGIN -->
+        
+        <footer id="footer">
+            <div class="center">
+            	<!-- Social icons -->
+                <div class="socials">
+                    <ul>
+                        <!--
+                    	<li><a href="https://plus.google.com/" target="_blank" title="Google+" class="fa fa-google-plus"></a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+                        -->
+                        <li><a href="https://twitter.com/familydam" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+                    </ul>
+                </div>
+                <div >
+                    <p>This project is maintained by <a href="https://github.com/mnimer">mnimer</a></p>
+                </div>
+            </div>
+        </footer>
+        
+<!-- FOOTER BLOCK BEGIN --> 
+      
+    </body>
 </html>
