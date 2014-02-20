@@ -22,14 +22,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="dashboard-bundle" />
         <module name="filehandlers-bundle" />
-        <module name="imagehandlers-bundle" />
-        <module name="musichandlers-bundle" />
         <module name="test-bundle" />
         <module name="test2-bundle" />
-        <module name="videohandlers-bundle" />
-        <module name="webhandlers-bundle" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -258,12 +253,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$//gh-pages.iml" filepath="$PROJECT_DIR$//gh-pages.iml" />
-      <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gh-pages.iml" filepath="$PROJECT_DIR$/gh-pages.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
@@ -274,39 +264,6 @@
     <mapping directory="$PROJECT_DIR$/../sling" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="Maven: javax.servlet:servlet-api:2.5">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.2">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr.annotations/1.9.2/org.apache.felix.scr.annotations-1.9.2.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr.annotations/1.9.2/org.apache.felix.scr.annotations-1.9.2-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr.annotations/1.9.2/org.apache.felix.scr.annotations-1.9.2-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.sling:org.apache.sling.commons.osgi:2.0.6">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.0.6/org.apache.sling.commons.osgi-2.0.6.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.0.6/org.apache.sling.commons.osgi-2.0.6-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.0.6/org.apache.sling.commons.osgi-2.0.6-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.apache.sling:org.apache.sling.event:3.3.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.0/org.apache.sling.event-3.3.0.jar!/" />
@@ -317,28 +274,6 @@
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.0/org.apache.sling.event-3.3.0-sources.jar!/" />
         <root url="file://$PROJECT_DIR$/../sling/bundles/extensions/event/src/main/java" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.osgi:org.osgi.compendium:4.2.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.osgi:org.osgi.core:4.2.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.2.0/org.osgi.core-4.2.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.2.0/org.osgi.core-4.2.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.2.0/org.osgi.core-4.2.0-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
