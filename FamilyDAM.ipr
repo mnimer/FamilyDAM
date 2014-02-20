@@ -266,17 +266,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../temp/sling-test/content-test/content-test.iml" filepath="$PROJECT_DIR$/../../temp/sling-test/content-test/content-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/../sling/samples/workspacepicker/org.apache.sling.jcr.workspacepicker.iml" filepath="$PROJECT_DIR$/../sling/samples/workspacepicker/org.apache.sling.jcr.workspacepicker.iml" group="Sling Samples" />
       <module fileurl="file://$PROJECT_DIR$/../sling/samples/accessmanager-ui/org.apache.sling.samples.accessmanager.ui.iml" filepath="$PROJECT_DIR$/../sling/samples/accessmanager-ui/org.apache.sling.samples.accessmanager.ui.iml" group="Sling Samples" />
       <module fileurl="file://$PROJECT_DIR$/../sling/samples/usermanager-ui/org.apache.sling.samples.usermanager.ui.iml" filepath="$PROJECT_DIR$/../sling/samples/usermanager-ui/org.apache.sling.samples.usermanager.ui.iml" group="Sling Samples" />
       <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" />
     </modules>
   </component>
