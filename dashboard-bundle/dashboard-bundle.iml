@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Osmorc" name="OSGi">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="dashboard-bundle-1.0.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.mikenimer.familydam.dashboard-bundle" bundleVersion="1.0.${buildNumber}.SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+        <additionalProperties>
+          <property key="Bundle-Description" value="com.mikenimer.familydam - dashboard-bundle" />
+          <property key="Embed-Dependency" value="commons-collections4;scope=compile|runtime" />
+          <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
+          <property key="Sling-Initial-Content" value="SLING-INF/content/dashboard;overwrite:=true;uninstall:=true;path:=/content/dashboard" />
+          <property key="Bundle-Name" value="dashboard-bundle" />
+          <property key="Bundle-ClassPath" value=".,commons-collections4-4.0.jar" />
+          <property key="Include-Resource" value="commons-collections4-4.0.jar=$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar" />
+          <property key="Embedded-Artifacts" value="commons-collections4-4.0.jar;g=&quot;org.apache.commons&quot;;a=&quot;commons-collections4&quot;;v=&quot;4.0&quot;" />
+        </additionalProperties>
+        <additionalJARContents />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dashboard-client/dist" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sass-stdlib" level="application" />
+    <orderEntry type="module" module-name="webhandlers-bundle" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.2.9-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.1.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.contentloader:2.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: biz.aQute:bndlib:1.50.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.apache.felix.http.jetty:2.0.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mortbay.jetty:jetty:6.1.21" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mortbay.jetty:jetty-util:6.1.21" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mortbay.jetty:jetty-sslengine:6.1.21" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.apache.felix.http.api:2.0.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.apache.felix.http.base:2.0.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.jcr:jcr:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.api:2.4.3-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.servlets.post:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.jackrabbit:jackrabbit-api:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.base:2.0.4-incubator" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.jackrabbit:jackrabbit-jcr-commons:2.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.event:3.3.3-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.commons.json:2.0.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.scr:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.osgi.core:1.4.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:org.osgi.compendium:4.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:1.6.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+  </component>
+</module>
+

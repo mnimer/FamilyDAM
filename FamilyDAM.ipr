@@ -266,12 +266,17 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../temp/sling-test/content-test/content-test.iml" filepath="$PROJECT_DIR$/../../temp/sling-test/content-test/content-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/../sling/samples/workspacepicker/org.apache.sling.jcr.workspacepicker.iml" filepath="$PROJECT_DIR$/../sling/samples/workspacepicker/org.apache.sling.jcr.workspacepicker.iml" group="Sling Samples" />
       <module fileurl="file://$PROJECT_DIR$/../sling/samples/accessmanager-ui/org.apache.sling.samples.accessmanager.ui.iml" filepath="$PROJECT_DIR$/../sling/samples/accessmanager-ui/org.apache.sling.samples.accessmanager.ui.iml" group="Sling Samples" />
       <module fileurl="file://$PROJECT_DIR$/../sling/samples/usermanager-ui/org.apache.sling.samples.usermanager.ui.iml" filepath="$PROJECT_DIR$/../sling/samples/usermanager-ui/org.apache.sling.samples.usermanager.ui.iml" group="Sling Samples" />
       <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" />
     </modules>
   </component>
@@ -336,6 +341,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.4/commons-lang-2.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.jcr:jcr:1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.jcr:jcr:2.0">
@@ -523,6 +539,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.0.0/jackrabbit-api-2.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-api:2.2.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.2.5/jackrabbit-api-2.2.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.2.5/jackrabbit-api-2.2.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.2.5/jackrabbit-api-2.2.5-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.jackrabbit:jackrabbit-jcr-commons:2.1.1">
