@@ -26,7 +26,7 @@ import com.drew.metadata.exif.ExifIFD0Directory;
 import com.drew.metadata.exif.ExifSubIFDDirectory;
 import com.drew.metadata.exif.GpsDirectory;
 import com.drew.metadata.iptc.IptcDirectory;
-import com.mikenimer.familydam.filehandlers.images.Constants;
+import com.mikenimer.familydam.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

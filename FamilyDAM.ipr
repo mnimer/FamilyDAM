@@ -116,6 +116,7 @@
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
         <option value="$PROJECT_DIR$/core-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

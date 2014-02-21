@@ -18,7 +18,7 @@
 package com.mikenimer.familydam.filehandlers.images.jobs;
 
 import com.drew.imaging.ImageProcessingException;
-import com.mikenimer.familydam.filehandlers.images.Constants;
+import com.mikenimer.familydam.Constants;
 import com.mikenimer.familydam.filehandlers.images.decorators.metadata.DrewMetadataExtractor;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Activate;

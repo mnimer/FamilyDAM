@@ -17,7 +17,7 @@
 
 package com.mikenimer.familydam.filehandlers.music.jobs;
 
-import com.mikenimer.familydam.filehandlers.music.Constants;
+import com.mikenimer.familydam.Constants;
 import com.mpatric.mp3agic.ID3v1;
 import com.mpatric.mp3agic.ID3v2;
 import com.mpatric.mp3agic.InvalidDataException;

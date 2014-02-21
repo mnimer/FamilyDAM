@@ -17,8 +17,8 @@
 
 package com.mikenimer.familydam.filehandlers.images.decorators.observers;
 
-import com.mikenimer.familydam.filehandlers.images.Constants;
-import com.mikenimer.familydam.filehandlers.images.MimeTypeManager;
+import com.mikenimer.familydam.Constants;
+import com.mikenimer.familydam.MimeTypeManager;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;

@@ -64,6 +64,12 @@
 + metadata (nt:unstructured) multiple COPY
 
 
+
+//[fd:facebook-status] > nt:base mixin
+//- * (undefined) COPY
+//- * (undefined) multiple COPY
+
+
 //[fd:document] > nt:base mixin
 //+ metadata (nt:unstructured)
 

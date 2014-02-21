@@ -21,7 +21,7 @@
     <artifactId>webhandlers-bundle</artifactId>
     <packaging>bundle</packaging>
     <version>1.0.1-SNAPSHOT</version>
-    <name>webhandlers-bundle</name>
+    <name>FamilyDAM Website Handlers</name>
     <description>com.mikenimer.familydam - webhandlers-bundle</description>
 
     <!-- dummy urls for the maven-build-number plugin to work, this can be replaced with real values -->

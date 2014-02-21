@@ -8,7 +8,7 @@
           <property key="Embed-Dependency" value="org.apache.sling.jcr.contentloader;scope=compile|runtime" />
           <property key="Export-Package" value="com.mikenimer.familydam.*" />
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
-          <property key="Bundle-Name" value="webhandlers-bundle" />
+          <property key="Bundle-Name" value="FamilyDAM Website Handlers" />
           <property key="Bundle-ClassPath" value=".,org.apache.sling.jcr.contentloader-2.1.6.jar" />
           <property key="Include-Resource" value="org.apache.sling.jcr.contentloader-2.1.6.jar=$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.contentloader/2.1.6/org.apache.sling.jcr.contentloader-2.1.6.jar" />
           <property key="Embedded-Artifacts" value="org.apache.sling.jcr.contentloader-2.1.6.jar;g=&quot;org.apache.sling&quot;;a=&quot;org.apache.sling.jcr.contentloader&quot;;v=&quot;2.1.6&quot;" />
