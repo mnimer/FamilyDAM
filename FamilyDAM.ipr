@@ -69,11 +69,11 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/core-bundle" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/dashboard-bundle" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/imagehandlers-bundle" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/musichandlers-bundle" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/videohandlers-bundle" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/webhandlers-bundle" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/dashboard-bundle" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/imagehandlers-bundle" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/musichandlers-bundle" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/videohandlers-bundle" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/webhandlers-bundle" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/../sling/samples/accessmanager-ui" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/../sling/samples/custom-login-form" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/../sling/samples/slingbucks" />
@@ -263,13 +263,13 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" group="Bundles" />
       <module fileurl="file://$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" filepath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" group="Bundles" />
       <module fileurl="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" filepath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
-      <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" group="Bundles" />
-      <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" group="Bundles" />
-      <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" group="Bundles" />
-      <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" group="Bundles" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">

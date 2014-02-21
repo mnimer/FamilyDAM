@@ -2,20 +2,219 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/ByPathServlet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/test/java/com/mikenimer/familydam/ByPathServletTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/ByResourceTypeServlet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/MimeTypeManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/TestDecorators.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/documents.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web/dropbox.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/email.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web/facebook.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/properties/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/properties/localization.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/movies.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/music.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/photos.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/properties/preferences.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web/twitter.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/properties/users.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/.bowerrc" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/.bowerrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/.editorconfig" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/.editorconfig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/.gitattributes" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/.gitattributes" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/.gitignore" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/.jshintrc" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/.jshintrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/GruntFile.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/bower.json" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/karma-e2e.conf.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/karma-e2e.conf.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/karma.conf.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/karma.conf.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/package.json" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/app.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/app.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/css/ng-tags-input.css" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css/ng-tags-input.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/css/select2/select2-bootstrap.css" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css/select2/select2-bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/css/select2/select2-spinner.gif" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css/select2/select2-spinner.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/css/select2/select2.css" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css/select2/select2.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/css/select2/select2.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css/select2/select2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/css/select2/select2x2.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css/select2/select2x2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/css/tree-control.css" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css/tree-control.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/file.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/file.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/folder-closed.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/folder-closed.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/folder.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/folder.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/node-closed-2.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/node-closed-2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/node-closed-light.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/node-closed-light.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/node-closed.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/node-closed.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/node-opened-2.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/node-opened-2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/node-opened-light.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/node-opened-light.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/node-opened.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/node-opened.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/images/sample.png" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/images/sample.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/assets/js/angular-tree-control-modified.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/js/angular-tree-control-modified.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/directives/angular-dragdrop/angular-dragdrop.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/directives/angular-dragdrop/angular-dragdrop.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/directives/fileUpload/_fileUpload.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/directives/fileUpload/_fileUpload.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/directives/fileUpload/fileUpload.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/directives/fileUpload/fileUpload.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/directives/fileUpload/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/directives/fileUpload/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/index.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modals/FolderName/modal.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modals/FolderName/modal.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modals/fileUploadModal/fileUploadModal.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modals/fileUploadModal/fileUploadModal.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modals/fileUploadModal/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modals/fileUploadModal/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/_files.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/_files.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/controllers/FileListController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/controllers/FileListController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/controllers/FolderNameModalCntrl.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/controllers/FolderNameModalCntrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/controllers/PreviewController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/controllers/PreviewController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/fileRow/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/fileRow/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/fileRow/row-file.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/fileRow/row-file.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/folderRow/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/folderRow/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/folderRow/row-folder.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/folderRow/row-folder.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/imageRow/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/imageRow/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/imageRow/row-image.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/imageRow/row-image.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/musicRow/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/musicRow/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/musicRow/row-music.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/musicRow/row-music.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/preview/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/preview/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/renderer/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/renderer/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/videoRow/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/videoRow/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/videoRow/row-video.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/videoRow/row-video.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/views/file-preview.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/views/file-preview.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/views/file-upload.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/views/file-upload.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/home/HomeController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/home/HomeController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/home/_home.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/home/_home.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/home/home.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/home/home.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/home/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/home/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/login/_login.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/login/_login.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/login/controllers/LoginController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/login/controllers/LoginController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/login/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/login/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/login/login.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/login/login.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/MainController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/MainController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/_main.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/_main.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/movies/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/movies/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/music/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/music/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/_photos.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/_photos.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoEditController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoEditController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridKeywordsController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridKeywordsController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoMetadataController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoMetadataController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoVersionController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoVersionController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/columnSlider/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/columnSlider/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/dateFilter/dateFilter.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/dateFilter/dateFilter.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/dateFilter/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/dateFilter/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/locationFilter/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/locationFilter/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/locationFilter/locationFilter.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/locationFilter/locationFilter.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/tagCloudFilter/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/tagCloudFilter/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/directives/tagCloudFilter/tagCloud.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/tagCloudFilter/tagCloud.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/photos-info.aside.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos-info.aside.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/views/details-edit.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/details-edit.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/views/details-metadata.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/details-metadata.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/views/details-versions.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/details-versions.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/views/grid-filter.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/grid-filter.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/views/grid-keywords.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/grid-keywords.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/photos/views/test-tab.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/test-tab.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/preferences/PreferencesController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/preferences/PreferencesController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/preferences/_preferences.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/preferences/_preferences.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/preferences/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/preferences/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/preferences/preferences.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/preferences/preferences.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/usermanager/_usermanager.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/_usermanager.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/usermanager/controllers/UserManagerController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/controllers/UserManagerController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/usermanager/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/usermanager/usermanager.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/usermanager.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/CacheService.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/CacheService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/FileService.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/FileService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/LoginService.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/LoginService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/MetadataService.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/MetadataService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/PhotoService.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/PhotoService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/UserService.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/UserService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/shared-libs.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/shared-libs.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/temp.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/temp.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/adapters/PhotoAdapterFactory.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/adapters/PhotoAdapterFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/model/Photo.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/model/Photo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/files/FolderTreeServlet.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/files/FolderTreeServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/ImageDetailsServlet.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/ImageDetailsServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/MetadataKeywordsListServlet.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/MetadataKeywordsListServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/ThumbnailService.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/ThumbnailService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/users/UserServlet.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/users/UserServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookCallback.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookCallback.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dashboard-bundle/src/main/resources/SLING-INF/content/dashboard.xml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/resources/SLING-INF/content/dashboard.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/ByPathServlet.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/ByPathServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/ByResourceTypeServlet.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/ByResourceTypeServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/Constants.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/Constants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/CustomNodeRegister.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/CustomNodeRegister.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/MimeTypeManager.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/MimeTypeManager.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/TestDecorators.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/TestDecorators.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/SizeJob.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/SizeJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/documents.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/documents.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/email.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/email.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/movies.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/movies.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/music.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/music.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/photos.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/photos.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/web.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web/dropbox.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/web/dropbox.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web/facebook.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/web/facebook.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web/twitter.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam/web/twitter.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/properties/index.html" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/properties/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/properties/localization.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/properties/localization.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/properties/preferences.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/properties/preferences.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/properties/users.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/properties/users.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/imagehandlers-bundle/src/test/java/com/mikenimer/familydam/ByPathServletTest.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/test/java/com/mikenimer/familydam/ByPathServletTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/musichandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/musichandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/Constants.java" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/Constants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/MimeTypeManager.java" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/MimeTypeManager.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/videohandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/videohandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/Constants.java" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/Constants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/CustomNodeRegister.java" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/CustomNodeRegister.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/MimeTypeManager.java" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/MimeTypeManager.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/videohandlers-bundle/src/test/java/com/mikenimer/familydam/ByPathServletTest.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/test/java/com/mikenimer/familydam/ByPathServletTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/src/main/java/com/mikenimer/familydam/Constants.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/Constants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/src/test/java/com/mikenimer/familydam/ByPathServletTest.java" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/src/test/java/com/mikenimer/familydam/ByPathServletTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.ipr" afterPath="$PROJECT_DIR$/FamilyDAM.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/_main.scss" afterPath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/_main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/app.scss" afterPath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/dashboard-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webhandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/webhandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/package.json" afterPath="$PROJECT_DIR$/dashboard-bundle/dashboard-client/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-bundle/pom.xml" afterPath="$PROJECT_DIR$/dashboard-bundle/pom.xml" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,7 +285,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="main.tpl.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0" vertical-offset="750" max-vertical-offset="1710">
               <caret line="50" column="35" selection-start="2297" selection-end="2303" />
@@ -96,7 +295,7 @@
         </entry>
       </file>
       <file leaf-file-name="_main.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.3333335" vertical-offset="1648" max-vertical-offset="2835">
               <caret line="120" column="12" selection-start="2239" selection-end="2239" />
@@ -106,7 +305,7 @@
         </entry>
       </file>
       <file leaf-file-name="app.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/app.scss">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.75" vertical-offset="720" max-vertical-offset="1755">
               <caret line="54" column="22" selection-start="1461" selection-end="1461" />
@@ -116,7 +315,7 @@
         </entry>
       </file>
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard-bundle/pom.xml">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="5520">
               <caret line="21" column="0" selection-start="1079" selection-end="1079" />
@@ -176,7 +375,7 @@
         </entry>
       </file>
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/package.json">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0" vertical-offset="30" max-vertical-offset="705">
               <caret line="2" column="0" selection-start="35" selection-end="35" />
@@ -381,20 +580,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -416,7 +601,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/core-bundle/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bundles" />
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="70" />
@@ -852,7 +1037,7 @@
       <workItem from="1392880657431" duration="13000" />
       <workItem from="1392880673496" duration="266000" />
       <workItem from="1392881123380" duration="119000" />
-      <workItem from="1392881265863" duration="3173000" />
+      <workItem from="1392881265863" duration="3426000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1118,11 +1303,15 @@
       <created>1392652220898</created>
       <updated>1392652220898</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="commit before moving files around">
+      <created>1392941837131</created>
+      <updated>1392941837131</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="859809000" />
+    <option name="totallyTimeSpent" value="860062000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1149,7 +1338,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270073" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270073" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1160,7 +1349,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20757021" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20757021" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.459854" sideWeight="0.8406593" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.7936508" order="16" side_tool="false" content_ui="tabs" />
@@ -1168,6 +1357,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3673966" sideWeight="0.8046398" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18864469" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1182,7 +1372,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1240,7 +1429,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="add metadata tagging for the photos grid, for multiple images.&#10;&#10;pull and save the GEO location properties in metadata" />
     <MESSAGE value="add support for MP3 Metadata (ID3) parsing&#10;&#10;add default content folders&#10;&#10;add /app/familydam nodes for preferences and settings" />
     <MESSAGE value="rename the project to FamilyDAM&#10;&#10;refactor packages and paths from FamilyCloud to FamilyDAM" />
     <MESSAGE value="Add support for different &quot;item renderers&quot; for the different items in the file list module. including play button for music and thumbnails for images." />
@@ -1265,18 +1453,19 @@
     <MESSAGE value="move a lot of the facebook code into a super class for future support of other graph api jobs" />
     <MESSAGE value="Add facebook jobs for likes and checkins" />
     <MESSAGE value="some refactoring around the facebook account management" />
-    <option name="LAST_COMMIT_MESSAGE" value="some refactoring around the facebook account management" />
+    <MESSAGE value="commit before moving files around" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit before moving files around" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/UserService.js</url>
+          <url>file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/UserService.js</url>
           <line>218</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/UserService.js</url>
+          <url>file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/UserService.js</url>
           <line>116</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -1300,7 +1489,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1710">
           <caret line="50" column="35" selection-start="2297" selection-end="2303" />
@@ -1308,7 +1497,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="2985">
           <caret line="30" column="20" selection-start="961" selection-end="961" />
@@ -1324,7 +1513,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1710">
           <caret line="50" column="35" selection-start="2297" selection-end="2303" />
@@ -1332,7 +1521,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="2985">
           <caret line="30" column="20" selection-start="961" selection-end="961" />
@@ -1458,7 +1647,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/package.json">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="30" max-vertical-offset="705">
           <caret line="2" column="0" selection-start="35" selection-end="35" />
@@ -1469,7 +1658,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1710">
           <caret line="50" column="35" selection-start="2297" selection-end="2303" />
@@ -1477,7 +1666,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.3333335" vertical-offset="1648" max-vertical-offset="2835">
           <caret line="120" column="12" selection-start="2239" selection-end="2239" />
@@ -1485,7 +1674,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/app.scss">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.75" vertical-offset="720" max-vertical-offset="1755">
           <caret line="54" column="22" selection-start="1461" selection-end="1461" />
@@ -1525,7 +1714,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-bundle/pom.xml">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="5520">
           <caret line="21" column="0" selection-start="1079" selection-end="1079" />
