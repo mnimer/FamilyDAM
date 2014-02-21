@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.ipr" afterPath="$PROJECT_DIR$/FamilyDAM.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -791,7 +783,7 @@
       <workItem from="1393002511878" duration="1424000" />
       <workItem from="1393021332005" duration="1327000" />
       <workItem from="1393023172073" duration="65000" />
-      <workItem from="1393023238384" duration="1668000" />
+      <workItem from="1393023238384" duration="1777000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1077,11 +1069,19 @@
       <created>1392959465642</created>
       <updated>1392959465642</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed.">
+      <created>1393024943549</created>
+      <updated>1393024943549</updated>
+    </task>
+    <task id="LOCAL-00073" summary="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed.&#10;">
+      <created>1393024959269</created>
+      <updated>1393024959269</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="877578000" />
+    <option name="totallyTimeSpent" value="877687000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1128,6 +1128,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3673966" sideWeight="0.8046398" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1143,7 +1144,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1201,8 +1201,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="center preview image" />
-    <MESSAGE value="add default sub path for /web (facebook, twitter, etc.)&#10;&#10;initial preview support for images and music" />
     <MESSAGE value="tweak the code" />
     <MESSAGE value="add observer for movie files" />
     <MESSAGE value="rework the namespace.cnd mixins" />
@@ -1226,7 +1224,9 @@
     <MESSAGE value="setup a parent POM for all of the &quot;bundle&quot; projects" />
     <MESSAGE value="clean up files in the different projects" />
     <MESSAGE value="add pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pom" />
+    <MESSAGE value="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed." />
+    <MESSAGE value="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed.&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
