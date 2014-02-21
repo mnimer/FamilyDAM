@@ -224,7 +224,6 @@
                 <configuration>
                     <instructions>
                         <!-- embed any dependencies with artifactId junit and scope runtime -->
-                        <Embed-Dependency>metadata-extractor-osgi,xmpcore,mp3agic;scope=compile|runtime</Embed-Dependency>
                         <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
                         <Include-Resoource>
                             {maven-resources}, {maven-dependencies}
@@ -234,7 +233,8 @@
                         </Sling-Nodetypes>
                         <Sling-Initial-Content>
                             SLING-INF/properties;overwrite:=false;overwriteProperties=true;uninstall:=true;path:=/apps/familydam,
-                            SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content
+                            SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content,
+                            SLING-INF/ROOT;overwrite:=true;overwriteProperties=true;uninstall:=true;path:=/
                         </Sling-Initial-Content>
                     </instructions>
                 </configuration>
