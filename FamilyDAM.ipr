@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactManager">
+    <artifact type="war" name="familydam-standalone:war">
+      <output-path>$PROJECT_DIR$/familydam-standalone/familydam-standalone/target</output-path>
+      <root id="archive" name="FamilyDam-Application-1.0.0.war">
+        <element id="artifact" artifact-name="familydam-standalone:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="familydam-standalone:war exploded">
+      <output-path>$PROJECT_DIR$/familydam-standalone/familydam-standalone/target/FamilyDam-Application-1.0.0</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="familydam-standalone/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="familydam-standalone" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
@@ -35,6 +54,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="familydam-standalone" target="1.5" />
       <module name="org.apache.sling.jcr.workspacepicker" target="1.5" />
       <module name="org.apache.sling.samples.accessmanager.ui" target="1.5" />
       <module name="org.apache.sling.samples.usermanager.ui" target="1.5" />
@@ -56,6 +76,9 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../metadata-extractor-osgi" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../sling/samples/accessmanager-ui" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../sling/samples/custom-login-form" charset="UTF-8" />
@@ -68,6 +91,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/core-bundle" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/dashboard-bundle" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/imagehandlers-bundle" />
@@ -81,6 +105,7 @@
     <file type="Osmorc" url="file://$PROJECT_DIR$/../sling/samples/usermanager-ui" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/../sling/samples/workspacepicker" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/../../temp/sling-test/content-test" />
+    <file type="web" url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone" />
   </component>
   <component name="IdProvider" IDEtalkID="2A1B7F4FA8488BEE6E0DA84751A6BBF0" />
   <component name="InspectionProjectProfileManager">
@@ -283,6 +308,17 @@
     <mapping directory="$PROJECT_DIR$/../sling" vcs="Git" />
   </component>
   <component name="libraryTable">
+    <library name="Maven: asm:asm:1.5.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/1.5.3/asm-1.5.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/1.5.3/asm-1.5.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/1.5.3/asm-1.5.3-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: biz.aQute:bndlib:1.50.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/biz/aQute/bndlib/1.50.0/bndlib-1.50.0.jar!/" />
@@ -292,6 +328,50 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/biz/aQute/bndlib/1.50.0/bndlib-1.50.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: c3p0:c3p0:0.9.1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: cglib:cglib:2.1_3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib/2.1_3/cglib-2.1_3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib/2.1_3/cglib-2.1_3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib/2.1_3/cglib-2.1_3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: ch.qos.logback:logback-classic:1.0.13">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: ch.qos.logback:logback-core:1.0.13">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.0.13/logback-core-1.0.13.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.0.13/logback-core-1.0.13-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.0.13/logback-core-1.0.13-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.adobe.xmp:xmpcore:5.1.2">
@@ -316,6 +396,61 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/drewnoakes/metadata-extractor-osgi/2.6.4/metadata-extractor-osgi-2.6.4-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: com.dyuproject:dyuproject-json:1.1.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-json/1.1.7/dyuproject-json-1.1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-json/1.1.7/dyuproject-json-1.1.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-json/1.1.7/dyuproject-json-1.1.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.dyuproject:dyuproject-openid:1.1.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-openid/1.1.7/dyuproject-openid-1.1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-openid/1.1.7/dyuproject-openid-1.1.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-openid/1.1.7/dyuproject-openid-1.1.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.dyuproject:dyuproject-util:1.1.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-util/1.1.7/dyuproject-util-1.1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-util/1.1.7/dyuproject-util-1.1.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/dyuproject/dyuproject-util/1.1.7/dyuproject-util-1.1.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.google.code.findbugs:jsr305:2.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/2.0.0/jsr305-2.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/2.0.0/jsr305-2.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/2.0.0/jsr305-2.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.google.guava:guava:14.0.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/14.0.1/guava-14.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/14.0.1/guava-14.0.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/14.0.1/guava-14.0.1-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: com.mpatric:mp3agic:0.8.2">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/mpatric/mp3agic/0.8.2/mp3agic-0.8.2.jar!/" />
@@ -325,6 +460,94 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/com/mpatric/mp3agic/0.8.2/mp3agic-0.8.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-beanutils:commons-beanutils:1.7.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-codec:commons-codec:1.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.6/commons-codec-1.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.6/commons-codec-1.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.6/commons-codec-1.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-collections:commons-collections:3.2.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-dbcp:commons-dbcp:1.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-dbcp/commons-dbcp/1.3/commons-dbcp-1.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-dbcp/commons-dbcp/1.3/commons-dbcp-1.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-dbcp/commons-dbcp/1.3/commons-dbcp-1.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-digester:commons-digester:1.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-digester/commons-digester/1.7/commons-digester-1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-digester/commons-digester/1.7/commons-digester-1.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-digester/commons-digester/1.7/commons-digester-1.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-fileupload:commons-fileupload:1.2.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-httpclient:commons-httpclient:3.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-io:commons-io:1.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/1.4/commons-io-1.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/1.4/commons-io-1.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/1.4/commons-io-1.4-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: commons-lang:commons-lang:2.4">
@@ -338,6 +561,72 @@
         <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.4/commons-lang-2.4-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: commons-lang:commons-lang:2.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-logging:commons-logging:1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.0/commons-logging-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.0/commons-logging-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.0/commons-logging-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-pool:commons-pool:1.5.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: concurrent:concurrent:1.3.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/concurrent/concurrent/1.3.4/concurrent-1.3.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/concurrent/concurrent/1.3.4/concurrent-1.3.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/concurrent/concurrent/1.3.4/concurrent-1.3.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.activation:activation:1.1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1.1/activation-1.1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1.1/activation-1.1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1.1/activation-1.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.jcr:jcr:1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: javax.jcr:jcr:2.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0.jar!/" />
@@ -347,6 +636,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:jsp-api:2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/jsp-api/2.0/jsp-api-2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/jsp-api/2.0/jsp-api-2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/jsp-api/2.0/jsp-api-2.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.servlet:servlet-api:2.4">
@@ -382,6 +682,61 @@
         <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: net.sf.kxml:kxml2:2.2.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/kxml/kxml2/2.2.2/kxml2-2.2.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/kxml/kxml2/2.2.2/kxml2-2.2.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/kxml/kxml2/2.2.2/kxml2-2.2.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.aries.jmx:org.apache.aries.jmx.api:0.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.api/0.3/org.apache.aries.jmx.api-0.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.api/0.3/org.apache.aries.jmx.api-0.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.api/0.3/org.apache.aries.jmx.api-0.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.aries.jmx:org.apache.aries.jmx.core:0.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.core/0.3/org.apache.aries.jmx.core-0.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.core/0.3/org.apache.aries.jmx.core-0.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.core/0.3/org.apache.aries.jmx.core-0.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.aries.jmx:org.apache.aries.jmx.whiteboard:0.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.whiteboard/0.3/org.apache.aries.jmx.whiteboard-0.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.whiteboard/0.3/org.apache.aries.jmx.whiteboard-0.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/jmx/org.apache.aries.jmx.whiteboard/0.3/org.apache.aries.jmx.whiteboard-0.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.aries:org.apache.aries.util:0.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/org.apache.aries.util/0.3/org.apache.aries.util-0.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/org.apache.aries.util/0.3/org.apache.aries.util-0.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/aries/org.apache.aries.util/0.3/org.apache.aries.util-0.3-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.commons:commons-collections4:4.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar!/" />
@@ -393,6 +748,61 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.commons:commons-math:2.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math/2.2/commons-math-2.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math/2.2/commons-math-2.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math/2.2/commons-math-2.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.derby:derby:10.5.3.0_1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/derby/derby/10.5.3.0_1/derby-10.5.3.0_1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/derby/derby/10.5.3.0_1/derby-10.5.3.0_1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/derby/derby/10.5.3.0_1/derby-10.5.3.0_1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.bundlerepository:1.6.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.bundlerepository/1.6.4/org.apache.felix.bundlerepository-1.6.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.bundlerepository/1.6.4/org.apache.felix.bundlerepository-1.6.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.bundlerepository/1.6.4/org.apache.felix.bundlerepository-1.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.configadmin:1.6.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.configadmin/1.6.0/org.apache.felix.configadmin-1.6.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.configadmin/1.6.0/org.apache.felix.configadmin-1.6.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.configadmin/1.6.0/org.apache.felix.configadmin-1.6.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.eventadmin:1.3.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.eventadmin/1.3.2/org.apache.felix.eventadmin-1.3.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.eventadmin/1.3.2/org.apache.felix.eventadmin-1.3.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.eventadmin/1.3.2/org.apache.felix.eventadmin-1.3.2-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.felix:org.apache.felix.http.api:2.0.4">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.api/2.0.4/org.apache.felix.http.api-2.0.4.jar!/" />
@@ -402,6 +812,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.api/2.0.4/org.apache.felix.http.api-2.0.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.http.api:2.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.api/2.2.0/org.apache.felix.http.api-2.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.api/2.2.0/org.apache.felix.http.api-2.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.api/2.2.0/org.apache.felix.http.api-2.2.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.felix:org.apache.felix.http.api:2.2.2">
@@ -424,6 +845,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.base/2.0.4/org.apache.felix.http.base-2.0.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.http.base:2.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.base/2.2.0/org.apache.felix.http.base-2.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.base/2.2.0/org.apache.felix.http.base-2.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.base/2.2.0/org.apache.felix.http.base-2.2.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.felix:org.apache.felix.http.base:2.2.2">
@@ -459,6 +891,39 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.jetty/2.2.2/org.apache.felix.http.jetty-2.2.2-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.http.whiteboard:2.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.whiteboard/2.2.0/org.apache.felix.http.whiteboard-2.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.whiteboard/2.2.0/org.apache.felix.http.whiteboard-2.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.whiteboard/2.2.0/org.apache.felix.http.whiteboard-2.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.inventory:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.inventory/1.0.0/org.apache.felix.inventory-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.inventory/1.0.0/org.apache.felix.inventory-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.inventory/1.0.0/org.apache.felix.inventory-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.metatype:1.0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.metatype/1.0.10/org.apache.felix.metatype-1.0.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.metatype/1.0.10/org.apache.felix.metatype-1.0.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.metatype/1.0.10/org.apache.felix.metatype-1.0.10-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr.annotations/1.9.6/org.apache.felix.scr.annotations-1.9.6.jar!/" />
@@ -479,6 +944,83 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr/1.6.0/org.apache.felix.scr-1.6.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.scr:1.8.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr/1.8.2/org.apache.felix.scr-1.8.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr/1.8.2/org.apache.felix.scr-1.8.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr/1.8.2/org.apache.felix.scr-1.8.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.shell:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.shell/1.0.0/org.apache.felix.shell-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.shell/1.0.0/org.apache.felix.shell-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.shell/1.0.0/org.apache.felix.shell-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.webconsole.plugins.ds:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.ds/1.0.0/org.apache.felix.webconsole.plugins.ds-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.ds/1.0.0/org.apache.felix.webconsole.plugins.ds-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.ds/1.0.0/org.apache.felix.webconsole.plugins.ds-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.webconsole.plugins.event:1.0.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.event/1.0.2/org.apache.felix.webconsole.plugins.event-1.0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.event/1.0.2/org.apache.felix.webconsole.plugins.event-1.0.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.event/1.0.2/org.apache.felix.webconsole.plugins.event-1.0.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.webconsole.plugins.memoryusage:1.0.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.memoryusage/1.0.4/org.apache.felix.webconsole.plugins.memoryusage-1.0.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.memoryusage/1.0.4/org.apache.felix.webconsole.plugins.memoryusage-1.0.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.memoryusage/1.0.4/org.apache.felix.webconsole.plugins.memoryusage-1.0.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.webconsole.plugins.packageadmin:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.packageadmin/1.0.0/org.apache.felix.webconsole.plugins.packageadmin-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.packageadmin/1.0.0/org.apache.felix.webconsole.plugins.packageadmin-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole.plugins.packageadmin/1.0.0/org.apache.felix.webconsole.plugins.packageadmin-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.felix:org.apache.felix.webconsole:4.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole/4.2.0/org.apache.felix.webconsole-4.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole/4.2.0/org.apache.felix.webconsole-4.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.webconsole/4.2.0/org.apache.felix.webconsole-4.2.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.felix:org.osgi.core:1.4.0">
@@ -503,6 +1045,28 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/bundles/commons-httpclient/3.1_1/commons-httpclient-3.1_1-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.geronimo.bundles:json:20090211_1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/bundles/json/20090211_1/json-20090211_1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/bundles/json/20090211_1/json-20090211_1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/bundles/json/20090211_1/json-20090211_1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.geronimo.bundles:jstl:1.2_1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/bundles/jstl/1.2_1/jstl-1.2_1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/bundles/jstl/1.2_1/jstl-1.2_1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/bundles/jstl/1.2_1/jstl-1.2_1-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.jackrabbit:jackrabbit-api:2.0.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.0.0/jackrabbit-api-2.0.0.jar!/" />
@@ -512,6 +1076,28 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.0.0/jackrabbit-api-2.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-api:2.7.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.7.1/jackrabbit-api-2.7.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.7.1/jackrabbit-api-2.7.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.7.1/jackrabbit-api-2.7.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-core:2.4.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-core/2.4.2/jackrabbit-core-2.4.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-core/2.4.2/jackrabbit-core-2.4.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-core/2.4.2/jackrabbit-core-2.4.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.jackrabbit:jackrabbit-jcr-commons:2.1.1">
@@ -536,6 +1122,171 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-commons/2.7.1/jackrabbit-jcr-commons-2.7.1-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-jcr-rmi:2.7.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-rmi/2.7.1/jackrabbit-jcr-rmi-2.7.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-rmi/2.7.1/jackrabbit-jcr-rmi-2.7.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-rmi/2.7.1/jackrabbit-jcr-rmi-2.7.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-jcr-server:2.6.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-server/2.6.4/jackrabbit-jcr-server-2.6.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-server/2.6.4/jackrabbit-jcr-server-2.6.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-server/2.6.4/jackrabbit-jcr-server-2.6.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-ocm:1.5.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-ocm/1.5.0/jackrabbit-ocm-1.5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-ocm/1.5.0/jackrabbit-ocm-1.5.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-ocm/1.5.0/jackrabbit-ocm-1.5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-spi-commons:2.7.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-spi-commons/2.7.1/jackrabbit-spi-commons-2.7.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-spi-commons/2.7.1/jackrabbit-spi-commons-2.7.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-spi-commons/2.7.1/jackrabbit-spi-commons-2.7.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-spi:2.7.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-spi/2.7.1/jackrabbit-spi-2.7.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-spi/2.7.1/jackrabbit-spi-2.7.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-spi/2.7.1/jackrabbit-spi-2.7.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:jackrabbit-webdav:2.7.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-webdav/2.7.1/jackrabbit-webdav-2.7.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-webdav/2.7.1/jackrabbit-webdav-2.7.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-webdav/2.7.1/jackrabbit-webdav-2.7.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:oak-commons:0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-commons/0.10/oak-commons-0.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-commons/0.10/oak-commons-0.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-commons/0.10/oak-commons-0.10-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:oak-core:0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-core/0.10/oak-core-0.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-core/0.10/oak-core-0.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-core/0.10/oak-core-0.10-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:oak-core:tests:0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-core/0.10/oak-core-0.10-tests.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-core/0.10/oak-core-0.10-test-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-core/0.10/oak-core-0.10-test-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:oak-lucene:0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-lucene/0.10/oak-lucene-0.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-lucene/0.10/oak-lucene-0.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-lucene/0.10/oak-lucene-0.10-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:oak-mk-api:0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk-api/0.10/oak-mk-api-0.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk-api/0.10/oak-mk-api-0.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk-api/0.10/oak-mk-api-0.10-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:oak-mk-remote:0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk-remote/0.10/oak-mk-remote-0.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk-remote/0.10/oak-mk-remote-0.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk-remote/0.10/oak-mk-remote-0.10-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.jackrabbit:oak-mk:0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk/0.10/oak-mk-0.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk/0.10/oak-mk-0.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/oak-mk/0.10/oak-mk-0.10-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.lucene:lucene-core:3.0.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/3.0.3/lucene-core-3.0.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/3.0.3/lucene-core-3.0.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/3.0.3/lucene-core-3.0.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.adapter:2.1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.adapter/2.1.0/org.apache.sling.adapter-2.1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.adapter/2.1.0/org.apache.sling.adapter-2.1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.adapter/2.1.0/org.apache.sling.adapter-2.1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.sling:org.apache.sling.api:2.4.3-SNAPSHOT">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.api/2.4.3-SNAPSHOT/org.apache.sling.api-2.4.3-SNAPSHOT.jar!/" />
@@ -547,6 +1298,83 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.api/2.4.3-SNAPSHOT/org.apache.sling.api-2.4.3-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.api:2.5.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.api/2.5.0/org.apache.sling.api-2.5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.api/2.5.0/org.apache.sling.api-2.5.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.api/2.5.0/org.apache.sling.api-2.5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.auth.core:1.1.7-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.core/1.1.7-SNAPSHOT/org.apache.sling.auth.core-1.1.7-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.core/1.1.7-SNAPSHOT/org.apache.sling.auth.core-1.1.7-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.core/1.1.7-SNAPSHOT/org.apache.sling.auth.core-1.1.7-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.auth.form:1.0.5-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.form/1.0.5-SNAPSHOT/org.apache.sling.auth.form-1.0.5-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.form/1.0.5-SNAPSHOT/org.apache.sling.auth.form-1.0.5-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.form/1.0.5-SNAPSHOT/org.apache.sling.auth.form-1.0.5-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.auth.openid:1.0.3-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.openid/1.0.3-SNAPSHOT/org.apache.sling.auth.openid-1.0.3-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.openid/1.0.3-SNAPSHOT/org.apache.sling.auth.openid-1.0.3-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.openid/1.0.3-SNAPSHOT/org.apache.sling.auth.openid-1.0.3-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.auth.selector:1.0.5-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.selector/1.0.5-SNAPSHOT/org.apache.sling.auth.selector-1.0.5-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.selector/1.0.5-SNAPSHOT/org.apache.sling.auth.selector-1.0.5-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.auth.selector/1.0.5-SNAPSHOT/org.apache.sling.auth.selector-1.0.5-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.bundleresource.impl:2.1.3-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.bundleresource.impl/2.1.3-SNAPSHOT/org.apache.sling.bundleresource.impl-2.1.3-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.bundleresource.impl/2.1.3-SNAPSHOT/org.apache.sling.bundleresource.impl-2.1.3-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.bundleresource.impl/2.1.3-SNAPSHOT/org.apache.sling.bundleresource.impl-2.1.3-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.commons.classloader:1.3.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.classloader/1.3.0/org.apache.sling.commons.classloader-1.3.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.classloader/1.3.0/org.apache.sling.commons.classloader-1.3.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.classloader/1.3.0/org.apache.sling.commons.classloader-1.3.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.sling:org.apache.sling.commons.json:2.0.6">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.json/2.0.6/org.apache.sling.commons.json-2.0.6.jar!/" />
@@ -556,6 +1384,28 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.json/2.0.6/org.apache.sling.commons.json-2.0.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.commons.log:4.0.0-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.log/4.0.0-SNAPSHOT/org.apache.sling.commons.log-4.0.0-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.log/4.0.0-SNAPSHOT/org.apache.sling.commons.log-4.0.0-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.log/4.0.0-SNAPSHOT/org.apache.sling.commons.log-4.0.0-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.commons.logservice:1.0.3-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.logservice/1.0.3-SNAPSHOT/org.apache.sling.commons.logservice-1.0.3-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.logservice/1.0.3-SNAPSHOT/org.apache.sling.commons.logservice-1.0.3-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.logservice/1.0.3-SNAPSHOT/org.apache.sling.commons.logservice-1.0.3-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.sling:org.apache.sling.commons.mime:2.1.4">
@@ -578,6 +1428,83 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.0.2-incubator/org.apache.sling.commons.osgi-2.0.2-incubator-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.commons.osgi:2.2.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.2.1-SNAPSHOT/org.apache.sling.commons.osgi-2.2.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.2.1-SNAPSHOT/org.apache.sling.commons.osgi-2.2.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.2.1-SNAPSHOT/org.apache.sling.commons.osgi-2.2.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.commons.scheduler:2.4.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.scheduler/2.4.2/org.apache.sling.commons.scheduler-2.4.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.scheduler/2.4.2/org.apache.sling.commons.scheduler-2.4.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.scheduler/2.4.2/org.apache.sling.commons.scheduler-2.4.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.commons.threads:3.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.threads/3.2.0/org.apache.sling.commons.threads-3.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.threads/3.2.0/org.apache.sling.commons.threads-3.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.threads/3.2.0/org.apache.sling.commons.threads-3.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.discovery.api:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.api/1.0.0/org.apache.sling.discovery.api-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.api/1.0.0/org.apache.sling.discovery.api-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.api/1.0.0/org.apache.sling.discovery.api-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.discovery.impl:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.impl/1.0.0/org.apache.sling.discovery.impl-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.impl/1.0.0/org.apache.sling.discovery.impl-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.impl/1.0.0/org.apache.sling.discovery.impl-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.discovery.support:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.support/1.0.0/org.apache.sling.discovery.support-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.support/1.0.0/org.apache.sling.discovery.support-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.discovery.support/1.0.0/org.apache.sling.discovery.support-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.engine:2.2.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.engine/2.2.10/org.apache.sling.engine-2.2.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.engine/2.2.10/org.apache.sling.engine-2.2.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.engine/2.2.10/org.apache.sling.engine-2.2.10-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.sling:org.apache.sling.event:3.3.0">
@@ -603,6 +1530,182 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.3-SNAPSHOT/org.apache.sling.event-3.3.3-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.event:3.3.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.4/org.apache.sling.event-3.3.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.4/org.apache.sling.event-3.3.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.4/org.apache.sling.event-3.3.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.extensions.explorer:1.0.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.explorer/1.0.2/org.apache.sling.extensions.explorer-1.0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.explorer/1.0.2/org.apache.sling.extensions.explorer-1.0.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.explorer/1.0.2/org.apache.sling.extensions.explorer-1.0.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.extensions.groovy:1.0.0-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.groovy/1.0.0-SNAPSHOT/org.apache.sling.extensions.groovy-1.0.0-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.groovy/1.0.0-SNAPSHOT/org.apache.sling.extensions.groovy-1.0.0-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.groovy/1.0.0-SNAPSHOT/org.apache.sling.extensions.groovy-1.0.0-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.extensions.threaddump:0.2.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.threaddump/0.2.2/org.apache.sling.extensions.threaddump-0.2.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.threaddump/0.2.2/org.apache.sling.extensions.threaddump-0.2.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.threaddump/0.2.2/org.apache.sling.extensions.threaddump-0.2.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.extensions.webconsolebranding:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.webconsolebranding/1.0.0/org.apache.sling.extensions.webconsolebranding-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.webconsolebranding/1.0.0/org.apache.sling.extensions.webconsolebranding-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.webconsolebranding/1.0.0/org.apache.sling.extensions.webconsolebranding-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.extensions.webconsolesecurityprovider:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.webconsolesecurityprovider/1.0.0/org.apache.sling.extensions.webconsolesecurityprovider-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.webconsolesecurityprovider/1.0.0/org.apache.sling.extensions.webconsolesecurityprovider-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.webconsolesecurityprovider/1.0.0/org.apache.sling.extensions.webconsolesecurityprovider-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.fragment.transaction:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.transaction/1.0.0/org.apache.sling.fragment.transaction-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.transaction/1.0.0/org.apache.sling.fragment.transaction-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.transaction/1.0.0/org.apache.sling.fragment.transaction-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.fragment.ws:1.0.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.ws/1.0.2/org.apache.sling.fragment.ws-1.0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.ws/1.0.2/org.apache.sling.fragment.ws-1.0.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.ws/1.0.2/org.apache.sling.fragment.ws-1.0.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.fragment.xml:1.0.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.xml/1.0.2/org.apache.sling.fragment.xml-1.0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.xml/1.0.2/org.apache.sling.fragment.xml-1.0.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.xml/1.0.2/org.apache.sling.fragment.xml-1.0.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.fsresource:1.1.3-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fsresource/1.1.3-SNAPSHOT/org.apache.sling.fsresource-1.1.3-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fsresource/1.1.3-SNAPSHOT/org.apache.sling.fsresource-1.1.3-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fsresource/1.1.3-SNAPSHOT/org.apache.sling.fsresource-1.1.3-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.installer.console:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.console/1.0.0/org.apache.sling.installer.console-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.console/1.0.0/org.apache.sling.installer.console-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.console/1.0.0/org.apache.sling.installer.console-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.installer.core:3.5.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.core/3.5.0/org.apache.sling.installer.core-3.5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.core/3.5.0/org.apache.sling.installer.core-3.5.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.core/3.5.0/org.apache.sling.installer.core-3.5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.installer.factory.configuration:1.0.10">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.factory.configuration/1.0.10/org.apache.sling.installer.factory.configuration-1.0.10.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.factory.configuration/1.0.10/org.apache.sling.installer.factory.configuration-1.0.10-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.factory.configuration/1.0.10/org.apache.sling.installer.factory.configuration-1.0.10-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.installer.provider.file:1.0.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.provider.file/1.0.2/org.apache.sling.installer.provider.file-1.0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.provider.file/1.0.2/org.apache.sling.installer.provider.file-1.0.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.provider.file/1.0.2/org.apache.sling.installer.provider.file-1.0.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.installer.provider.jcr:3.1.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.provider.jcr/3.1.6/org.apache.sling.installer.provider.jcr-3.1.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.provider.jcr/3.1.6/org.apache.sling.installer.provider.jcr-3.1.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.installer.provider.jcr/3.1.6/org.apache.sling.installer.provider.jcr-3.1.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.javax.activation:0.1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.javax.activation/0.1.0/org.apache.sling.javax.activation-0.1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.javax.activation/0.1.0/org.apache.sling.javax.activation-0.1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.javax.activation/0.1.0/org.apache.sling.javax.activation-0.1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.1.1-SNAPSHOT">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.api/2.1.1-SNAPSHOT/org.apache.sling.jcr.api-2.1.1-SNAPSHOT.jar!/" />
@@ -612,6 +1715,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.api/2.1.1-SNAPSHOT/org.apache.sling.jcr.api-2.1.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.2.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.api/2.2.1-SNAPSHOT/org.apache.sling.jcr.api-2.2.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.api/2.2.1-SNAPSHOT/org.apache.sling.jcr.api-2.2.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.api/2.2.1-SNAPSHOT/org.apache.sling.jcr.api-2.2.1-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.sling:org.apache.sling.jcr.base:2.0.4-incubator">
@@ -625,6 +1739,28 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.base/2.0.4-incubator/org.apache.sling.jcr.base-2.0.4-incubator-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.base:2.2.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.base/2.2.1-SNAPSHOT/org.apache.sling.jcr.base-2.2.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.base/2.2.1-SNAPSHOT/org.apache.sling.jcr.base-2.2.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.base/2.2.1-SNAPSHOT/org.apache.sling.jcr.base-2.2.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.classloader:3.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.classloader/3.2.0/org.apache.sling.jcr.classloader-3.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.classloader/3.2.0/org.apache.sling.jcr.classloader-3.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.classloader/3.2.0/org.apache.sling.jcr.classloader-3.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.sling:org.apache.sling.jcr.contentloader:2.1.6">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.contentloader/2.1.6/org.apache.sling.jcr.contentloader-2.1.6.jar!/" />
@@ -634,6 +1770,39 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.contentloader/2.1.6/org.apache.sling.jcr.contentloader-2.1.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.davex:1.2.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.davex/1.2.1-SNAPSHOT/org.apache.sling.jcr.davex-1.2.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.davex/1.2.1-SNAPSHOT/org.apache.sling.jcr.davex-1.2.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.davex/1.2.1-SNAPSHOT/org.apache.sling.jcr.davex-1.2.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.jackrabbit.accessmanager:2.1.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.accessmanager/2.1.1-SNAPSHOT/org.apache.sling.jcr.jackrabbit.accessmanager-2.1.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.accessmanager/2.1.1-SNAPSHOT/org.apache.sling.jcr.jackrabbit.accessmanager-2.1.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.accessmanager/2.1.1-SNAPSHOT/org.apache.sling.jcr.jackrabbit.accessmanager-2.1.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.jackrabbit.server:2.1.3-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.server/2.1.3-SNAPSHOT/org.apache.sling.jcr.jackrabbit.server-2.1.3-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.server/2.1.3-SNAPSHOT/org.apache.sling.jcr.jackrabbit.server-2.1.3-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.server/2.1.3-SNAPSHOT/org.apache.sling.jcr.jackrabbit.server-2.1.3-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.1.0">
@@ -647,6 +1816,61 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.usermanager/2.1.0/org.apache.sling.jcr.jackrabbit.usermanager-2.1.0-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.2.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.usermanager/2.2.1-SNAPSHOT/org.apache.sling.jcr.jackrabbit.usermanager-2.2.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.usermanager/2.2.1-SNAPSHOT/org.apache.sling.jcr.jackrabbit.usermanager-2.2.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jackrabbit.usermanager/2.2.1-SNAPSHOT/org.apache.sling.jcr.jackrabbit.usermanager-2.2.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.jcr-wrapper:2.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jcr-wrapper/2.0.0/org.apache.sling.jcr.jcr-wrapper-2.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jcr-wrapper/2.0.0/org.apache.sling.jcr.jcr-wrapper-2.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.jcr-wrapper/2.0.0/org.apache.sling.jcr.jcr-wrapper-2.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.oak.server:0.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.oak.server/0.0.1-SNAPSHOT/org.apache.sling.jcr.oak.server-0.0.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.oak.server/0.0.1-SNAPSHOT/org.apache.sling.jcr.oak.server-0.0.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.oak.server/0.0.1-SNAPSHOT/org.apache.sling.jcr.oak.server-0.0.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.ocm:2.0.4-incubator">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.ocm/2.0.4-incubator/org.apache.sling.jcr.ocm-2.0.4-incubator.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.ocm/2.0.4-incubator/org.apache.sling.jcr.ocm-2.0.4-incubator-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.ocm/2.0.4-incubator/org.apache.sling.jcr.ocm-2.0.4-incubator-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.registration:0.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.registration/0.0.1-SNAPSHOT/org.apache.sling.jcr.registration-0.0.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.registration/0.0.1-SNAPSHOT/org.apache.sling.jcr.registration-0.0.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.registration/0.0.1-SNAPSHOT/org.apache.sling.jcr.registration-0.0.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.2.9-SNAPSHOT">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.resource/2.2.9-SNAPSHOT/org.apache.sling.jcr.resource-2.2.9-SNAPSHOT.jar!/" />
@@ -658,15 +1882,169 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.resource/2.2.9-SNAPSHOT/org.apache.sling.jcr.resource-2.2.9-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.sling:org.apache.sling.launchpad.base:app:2.4.0">
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.3.1-SNAPSHOT">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.4.0/org.apache.sling.launchpad.base-2.4.0-app.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.resource/2.3.1-SNAPSHOT/org.apache.sling.jcr.resource-2.3.1-SNAPSHOT.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.4.0/org.apache.sling.launchpad.base-2.4.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.resource/2.3.1-SNAPSHOT/org.apache.sling.jcr.resource-2.3.1-SNAPSHOT-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.4.0/org.apache.sling.launchpad.base-2.4.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.resource/2.3.1-SNAPSHOT/org.apache.sling.jcr.resource-2.3.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.webconsole:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.webconsole/1.0.0/org.apache.sling.jcr.webconsole-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.webconsole/1.0.0/org.apache.sling.jcr.webconsole-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.webconsole/1.0.0/org.apache.sling.jcr.webconsole-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.jcr.webdav:2.2.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.webdav/2.2.1-SNAPSHOT/org.apache.sling.jcr.webdav-2.2.1-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.webdav/2.2.1-SNAPSHOT/org.apache.sling.jcr.webdav-2.2.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.webdav/2.2.1-SNAPSHOT/org.apache.sling.jcr.webdav-2.2.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.launchpad.base:app:2.5.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.5.1-SNAPSHOT/org.apache.sling.launchpad.base-2.5.1-SNAPSHOT-app.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.5.1-SNAPSHOT/org.apache.sling.launchpad.base-2.5.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.5.1-SNAPSHOT/org.apache.sling.launchpad.base-2.5.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.launchpad.base:war:webapp:2.5.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.5.1-SNAPSHOT/org.apache.sling.launchpad.base-2.5.1-SNAPSHOT-webapp.war!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.5.1-SNAPSHOT/org.apache.sling.launchpad.base-2.5.1-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.5.1-SNAPSHOT/org.apache.sling.launchpad.base-2.5.1-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.launchpad.content:2.0.7-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.content/2.0.7-SNAPSHOT/org.apache.sling.launchpad.content-2.0.7-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.content/2.0.7-SNAPSHOT/org.apache.sling.launchpad.content-2.0.7-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.content/2.0.7-SNAPSHOT/org.apache.sling.launchpad.content-2.0.7-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.launchpad.installer:1.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.installer/1.2.0/org.apache.sling.launchpad.installer-1.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.installer/1.2.0/org.apache.sling.launchpad.installer-1.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.installer/1.2.0/org.apache.sling.launchpad.installer-1.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.resourceresolver:1.0.7-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.resourceresolver/1.0.7-SNAPSHOT/org.apache.sling.resourceresolver-1.0.7-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.resourceresolver/1.0.7-SNAPSHOT/org.apache.sling.resourceresolver-1.0.7-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.resourceresolver/1.0.7-SNAPSHOT/org.apache.sling.resourceresolver-1.0.7-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.scripting.api:2.1.5-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.api/2.1.5-SNAPSHOT/org.apache.sling.scripting.api-2.1.5-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.api/2.1.5-SNAPSHOT/org.apache.sling.scripting.api-2.1.5-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.api/2.1.5-SNAPSHOT/org.apache.sling.scripting.api-2.1.5-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.scripting.core:2.0.25-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.core/2.0.25-SNAPSHOT/org.apache.sling.scripting.core-2.0.25-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.core/2.0.25-SNAPSHOT/org.apache.sling.scripting.core-2.0.25-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.core/2.0.25-SNAPSHOT/org.apache.sling.scripting.core-2.0.25-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.scripting.javascript:2.0.12">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.javascript/2.0.12/org.apache.sling.scripting.javascript-2.0.12.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.javascript/2.0.12/org.apache.sling.scripting.javascript-2.0.12-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.javascript/2.0.12/org.apache.sling.scripting.javascript-2.0.12-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.scripting.jsp.taglib:2.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.jsp.taglib/2.2.0/org.apache.sling.scripting.jsp.taglib-2.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.jsp.taglib/2.2.0/org.apache.sling.scripting.jsp.taglib-2.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.jsp.taglib/2.2.0/org.apache.sling.scripting.jsp.taglib-2.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.scripting.jsp:2.0.29-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.jsp/2.0.29-SNAPSHOT/org.apache.sling.scripting.jsp-2.0.29-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.jsp/2.0.29-SNAPSHOT/org.apache.sling.scripting.jsp-2.0.29-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.scripting.jsp/2.0.29-SNAPSHOT/org.apache.sling.scripting.jsp-2.0.29-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.serviceusermapper:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.serviceusermapper/1.0.0/org.apache.sling.serviceusermapper-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.serviceusermapper/1.0.0/org.apache.sling.serviceusermapper-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.serviceusermapper/1.0.0/org.apache.sling.serviceusermapper-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.servlets.get:2.1.5-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.get/2.1.5-SNAPSHOT/org.apache.sling.servlets.get-2.1.5-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.get/2.1.5-SNAPSHOT/org.apache.sling.servlets.get-2.1.5-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.get/2.1.5-SNAPSHOT/org.apache.sling.servlets.get-2.1.5-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.sling:org.apache.sling.servlets.post:2.1.0">
@@ -678,6 +2056,149 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.post/2.1.0/org.apache.sling.servlets.post-2.1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.servlets.post:2.3.3-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.post/2.3.3-SNAPSHOT/org.apache.sling.servlets.post-2.3.3-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.post/2.3.3-SNAPSHOT/org.apache.sling.servlets.post-2.3.3-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.post/2.3.3-SNAPSHOT/org.apache.sling.servlets.post-2.3.3-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.servlets.resolver:2.2.5-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.resolver/2.2.5-SNAPSHOT/org.apache.sling.servlets.resolver-2.2.5-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.resolver/2.2.5-SNAPSHOT/org.apache.sling.servlets.resolver-2.2.5-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.servlets.resolver/2.2.5-SNAPSHOT/org.apache.sling.servlets.resolver-2.2.5-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.settings:1.3.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.settings/1.3.0/org.apache.sling.settings-1.3.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.settings/1.3.0/org.apache.sling.settings-1.3.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.settings/1.3.0/org.apache.sling.settings-1.3.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tika:tika-bundle:1.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-bundle/1.2/tika-bundle-1.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-bundle/1.2/tika-bundle-1.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-bundle/1.2/tika-bundle-1.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tika:tika-core:1.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-core/1.2/tika-core-1.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-core/1.2/tika-core-1.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-core/1.2/tika-core-1.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tomcat:el-api:6.0.14">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/el-api/6.0.14/el-api-6.0.14.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/el-api/6.0.14/el-api-6.0.14-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/el-api/6.0.14/el-api-6.0.14-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tomcat:jasper-el:6.0.14">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-el/6.0.14/jasper-el-6.0.14.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-el/6.0.14/jasper-el-6.0.14-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-el/6.0.14/jasper-el-6.0.14-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tomcat:jasper-jdt:6.0.14">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-jdt/6.0.14/jasper-jdt-6.0.14.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-jdt/6.0.14/jasper-jdt-6.0.14-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-jdt/6.0.14/jasper-jdt-6.0.14-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tomcat:jsp-api:6.0.14">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jsp-api/6.0.14/jsp-api-6.0.14.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jsp-api/6.0.14/jsp-api-6.0.14-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jsp-api/6.0.14/jsp-api-6.0.14-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.tomcat:servlet-api:6.0.14">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/servlet-api/6.0.14/servlet-api-6.0.14.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/servlet-api/6.0.14/servlet-api-6.0.14-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/servlet-api/6.0.14/servlet-api-6.0.14-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.groovy:groovy-all:1.8.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy-all/1.8.2/groovy-all-1.8.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy-all/1.8.2/groovy-all-1.8.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy-all/1.8.2/groovy-all-1.8.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.9">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/mojo/animal-sniffer-annotations/1.9/animal-sniffer-annotations-1.9.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/mojo/animal-sniffer-annotations/1.9/animal-sniffer-annotations-1.9-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/mojo/animal-sniffer-annotations/1.9/animal-sniffer-annotations-1.9-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.easymock:easymock:2.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/easymock/easymock/2.4/easymock-2.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/easymock/easymock/2.4/easymock-2.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/easymock/easymock/2.4/easymock-2.4-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.eclipse.jetty.orbit:javax.servlet:2.5.0.v201103041518">
@@ -823,6 +2344,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty-sslengine/6.1.21/jetty-sslengine-6.1.21-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.mortbay.jetty:jetty-util:6.1.19">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty-util/6.1.19/jetty-util-6.1.19.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty-util/6.1.19/jetty-util-6.1.19-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty-util/6.1.19/jetty-util-6.1.19-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.mortbay.jetty:jetty-util:6.1.21">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty-util/6.1.21/jetty-util-6.1.21.jar!/" />
@@ -867,6 +2399,50 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.1.0/org.osgi.compendium-4.1.0-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.osgi:org.osgi.core:4.1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.quartz-scheduler:quartz:2.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.2.0/quartz-2.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.2.0/quartz-2.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.2.0/quartz-2.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.slf4j:jcl-over-slf4j:1.7.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.slf4j:log4j-over-slf4j:1.7.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/log4j-over-slf4j/1.7.5/log4j-over-slf4j-1.7.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/log4j-over-slf4j/1.7.5/log4j-over-slf4j-1.7.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/log4j-over-slf4j/1.7.5/log4j-over-slf4j-1.7.5-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.slf4j:slf4j-api:1.6.1">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar!/" />
@@ -887,6 +2463,28 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: rhino:js:1.6R6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/rhino/js/1.6R6/js-1.6R6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/rhino/js/1.6R6/js-1.6R6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/rhino/js/1.6R6/js-1.6R6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: xml-apis:xml-apis:1.0.b2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
