@@ -37,8 +37,11 @@ html, body {
     color: #3b3b41;
     border: 0;
     font-family: 'Open Sans',sans-serif;
-    font-weight: 400;
+    /*font-weight: 400;*/
     font-size:62.5%;
+    font-weight: lighter;
+    color: #333333;
+
 }
 
 div
@@ -49,6 +52,7 @@ div
 .section
 {
     height:100%;
+    padding-left: 0px;
 }
 
 button[disabled] {

@@ -22,14 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="content-test" />
         <module name="dashboard-bundle" />
+        <module name="familydam-core-bundle" />
+        <module name="familydam-standalone" />
         <module name="filehandlers-bundle" />
         <module name="imagehandlers-bundle" />
         <module name="musichandlers-bundle" />
-        <module name="org.apache.sling.jcr.workspacepicker" />
-        <module name="org.apache.sling.samples.accessmanager.ui" />
-        <module name="org.apache.sling.samples.usermanager.ui" />
         <module name="test-bundle" />
         <module name="test2-bundle" />
         <module name="videohandlers-bundle" />
@@ -70,6 +68,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/core-bundle" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/dashboard-bundle" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/imagehandlers-bundle" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/musichandlers-bundle" />
@@ -110,12 +109,12 @@
       <list>
         <option value="$PROJECT_DIR$/dashboard-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/filehandlers-bundle/pom.xml" />
-        <option value="$PROJECT_DIR$/../sling/samples/accessmanager-ui/pom.xml" />
-        <option value="$PROJECT_DIR$/../sling/samples/usermanager-ui/pom.xml" />
         <option value="$PROJECT_DIR$/imagehandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/webhandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/musichandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/videohandlers-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
+        <option value="$PROJECT_DIR$/core-bundle/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -264,20 +263,13 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../temp/sling-test/content-test/content-test.iml" filepath="$PROJECT_DIR$/../../temp/sling-test/content-test/content-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../sling/samples/workspacepicker/org.apache.sling.jcr.workspacepicker.iml" filepath="$PROJECT_DIR$/../sling/samples/workspacepicker/org.apache.sling.jcr.workspacepicker.iml" group="Sling Samples" />
-      <module fileurl="file://$PROJECT_DIR$/../sling/samples/accessmanager-ui/org.apache.sling.samples.accessmanager.ui.iml" filepath="$PROJECT_DIR$/../sling/samples/accessmanager-ui/org.apache.sling.samples.accessmanager.ui.iml" group="Sling Samples" />
-      <module fileurl="file://$PROJECT_DIR$/../sling/samples/usermanager-ui/org.apache.sling.samples.usermanager.ui.iml" filepath="$PROJECT_DIR$/../sling/samples/usermanager-ui/org.apache.sling.samples.usermanager.ui.iml" group="Sling Samples" />
-      <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/dashboard-bundle/dashboard-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" filepath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" filepath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/imagehandlers-bundle/imagehandlers-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/musichandlers-bundle/musichandlers-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" filepath="$PROJECT_DIR$/videohandlers-bundle/videohandlers-bundle.iml" group="Bundles" />
+      <module fileurl="file://$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" filepath="$PROJECT_DIR$/webhandlers-bundle/webhandlers-bundle.iml" group="Bundles" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
@@ -341,17 +333,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.4/commons-lang-2.4-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: javax.jcr:jcr:1.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/1.0/jcr-1.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.jcr:jcr:2.0">
@@ -475,17 +456,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.http.jetty/2.2.2/org.apache.felix.http.jetty-2.2.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.2">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr.annotations/1.9.2/org.apache.felix.scr.annotations-1.9.2.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr.annotations/1.9.2/org.apache.felix.scr.annotations-1.9.2-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr.annotations/1.9.2/org.apache.felix.scr.annotations-1.9.2-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.scr.annotations/1.9.6/org.apache.felix.scr.annotations-1.9.6.jar!/" />
@@ -539,17 +509,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.0.0/jackrabbit-api-2.0.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.jackrabbit:jackrabbit-api:2.2.5">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.2.5/jackrabbit-api-2.2.5.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.2.5/jackrabbit-api-2.2.5-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-api/2.2.5/jackrabbit-api-2.2.5-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.jackrabbit:jackrabbit-jcr-commons:2.1.1">
@@ -616,17 +575,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.0.2-incubator/org.apache.sling.commons.osgi-2.0.2-incubator-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.sling:org.apache.sling.commons.osgi:2.0.6">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.0.6/org.apache.sling.commons.osgi-2.0.6.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.0.6/org.apache.sling.commons.osgi-2.0.6-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.osgi/2.0.6/org.apache.sling.commons.osgi-2.0.6-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.sling:org.apache.sling.event:3.3.0">
@@ -705,6 +653,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.resource/2.2.9-SNAPSHOT/org.apache.sling.jcr.resource-2.2.9-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.sling:org.apache.sling.launchpad.base:app:2.4.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.4.0/org.apache.sling.launchpad.base-2.4.0-app.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.4.0/org.apache.sling.launchpad.base-2.4.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.launchpad.base/2.4.0/org.apache.sling.launchpad.base-2.4.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.sling:org.apache.sling.servlets.post:2.1.0">
@@ -903,28 +862,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.1.0/org.osgi.compendium-4.1.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.osgi:org.osgi.compendium:4.2.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.osgi:org.osgi.core:4.2.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.2.0/org.osgi.core-4.2.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.2.0/org.osgi.core-4.2.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/4.2.0/org.osgi.core-4.2.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.slf4j:slf4j-api:1.6.1">

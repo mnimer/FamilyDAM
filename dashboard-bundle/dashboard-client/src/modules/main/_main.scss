@@ -1,21 +1,3 @@
-
-/*
- * This file is part of FamilyDAM Project.
- *
- *     The FamilyDAM Project is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     The FamilyDAM Project is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 /*
  * This file is part of FamilyDAM Project.
  *
@@ -101,17 +83,18 @@
     padding-bottom: 1px;
     text-align: center !important;
     font-size: 12px; font-size: 1.2rem;
-
+    font-weight: lighter;
+    color: #999999;
+    cursor: pointer;
 }
 
 
 .nav-stacked > li {
     float: none;
-    min-height:6rem;
 
     +.active
     {
-        color: #555;
+        color: #333;
         cursor: default;
         background-color: #fff;
         border: 1px solid #ddd;
@@ -135,7 +118,7 @@
 {
     float: left;
     left: 130px;
-    right: 40px;
+    right: 10px;
     top: 93px;
     bottom: 90px;
     position: absolute;
