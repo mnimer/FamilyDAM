@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA-bin.tar.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA-bin.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" afterPath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -204,8 +195,8 @@
       <file leaf-file-name="beta-release.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44626594" vertical-offset="70" max-vertical-offset="675">
-              <caret line="21" column="37" selection-start="583" selection-end="583" />
+            <state vertical-scroll-proportion="0.6921676" vertical-offset="70" max-vertical-offset="675">
+              <caret line="30" column="18" selection-start="851" selection-end="851" />
               <folding />
             </state>
           </provider>
@@ -415,20 +406,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="familydam-standalone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-standalone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="overlays" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -909,7 +886,7 @@
       <workItem from="1393023172073" duration="65000" />
       <workItem from="1393023238384" duration="1777000" />
       <workItem from="1393025135066" duration="6036000" />
-      <workItem from="1393129123051" duration="3519000" />
+      <workItem from="1393129123051" duration="3875000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1215,11 +1192,15 @@
       <created>1393130621821</created>
       <updated>1393130621821</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="fix PhotoGrid bug when no photos are returned, and add a message.">
+      <created>1393132806299</created>
+      <updated>1393132806299</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="887242000" />
+    <option name="totallyTimeSpent" value="887598000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1339,7 +1320,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="add video preview" />
     <MESSAGE value="rework the files sidebars to use named views" />
     <MESSAGE value="move the preview code into a single directive" />
     <MESSAGE value="refactor the different versions of the file lists" />
@@ -1364,7 +1344,8 @@
     <MESSAGE value="add simple html redirect for /index.html page" />
     <MESSAGE value="add maven plugin to create zip bundle of standalone application and the necessary start scripts" />
     <MESSAGE value="tweak the startup script" />
-    <option name="LAST_COMMIT_MESSAGE" value="tweak the startup script" />
+    <MESSAGE value="fix PhotoGrid bug when no photos are returned, and add a message." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix PhotoGrid bug when no photos are returned, and add a message." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1778,8 +1759,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44626594" vertical-offset="70" max-vertical-offset="675">
-          <caret line="21" column="37" selection-start="583" selection-end="583" />
+        <state vertical-scroll-proportion="0.6921676" vertical-offset="70" max-vertical-offset="675">
+          <caret line="30" column="18" selection-start="851" selection-end="851" />
           <folding />
         </state>
       </provider>
