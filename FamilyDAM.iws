@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,14 +90,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33452594" vertical-offset="6473" max-vertical-offset="7245">
-              <caret line="457" column="39" selection-start="17748" selection-end="17748" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6473" max-vertical-offset="7245">
+              <caret line="468" column="70" selection-start="18215" selection-end="18215" />
               <folding>
                 <element signature="tag#reporting#0;tag#project#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start.sh" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.026223777" vertical-offset="0" max-vertical-offset="572">
+              <caret line="1" column="29" selection-start="35" selection-end="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,7 +127,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
               <caret line="21" column="32" selection-start="566" selection-end="566" />
-              <folding />
+              <folding>
+                <marker date="1393129418000" expanded="true" signature="421:618" placeholder="..." />
+                <marker date="1393129418000" expanded="true" signature="532:599" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,10 +195,10 @@
         <option value="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/ROOT/index.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/assembly/bin.xml" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
       </list>
     </option>
   </component>
@@ -329,60 +339,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="familydam-standalone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-standalone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-standalone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-standalone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assembly" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -859,7 +815,7 @@
       <workItem from="1393023172073" duration="65000" />
       <workItem from="1393023238384" duration="1777000" />
       <workItem from="1393025135066" duration="6036000" />
-      <workItem from="1393129123051" duration="724000" />
+      <workItem from="1393129123051" duration="1347000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1157,11 +1113,15 @@
       <created>1393025897582</created>
       <updated>1393025897582</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="add maven plugin to create zip bundle of standalone application and the necessary start scripts">
+      <created>1393130024242</created>
+      <updated>1393130024242</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="884447000" />
+    <option name="totallyTimeSpent" value="885070000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1208,6 +1168,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3673966" sideWeight="0.8046398" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1223,7 +1184,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1281,7 +1241,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="add observer for movie files" />
     <MESSAGE value="rework the namespace.cnd mixins" />
     <MESSAGE value="add video preview" />
     <MESSAGE value="rework the files sidebars to use named views" />
@@ -1306,7 +1265,8 @@
     <MESSAGE value="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed." />
     <MESSAGE value="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed.&#10;" />
     <MESSAGE value="add simple html redirect for /index.html page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add simple html redirect for /index.html page" />
+    <MESSAGE value="add maven plugin to create zip bundle of standalone application and the necessary start scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add maven plugin to create zip bundle of standalone application and the necessary start scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1680,14 +1640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
-          <caret line="0" column="51" selection-start="51" selection-end="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
@@ -1700,17 +1652,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="21" column="32" selection-start="566" selection-end="566" />
-          <folding />
+          <folding>
+            <marker date="1393129418000" expanded="true" signature="421:618" placeholder="..." />
+            <marker date="1393129418000" expanded="true" signature="532:599" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33452594" vertical-offset="6473" max-vertical-offset="7245">
-          <caret line="457" column="39" selection-start="17748" selection-end="17748" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6473" max-vertical-offset="7245">
+          <caret line="468" column="70" selection-start="18215" selection-end="18215" />
           <folding>
             <element signature="tag#reporting#0;tag#project#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.026223777" vertical-offset="0" max-vertical-offset="572">
+          <caret line="1" column="29" selection-start="35" selection-end="35" />
+          <folding />
         </state>
       </provider>
     </entry>
