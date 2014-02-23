@@ -31,6 +31,7 @@
     </scm>
 
 
+
     <properties>
         <!--
             Jetty default port (override with -D)
@@ -436,5 +437,54 @@
             </snapshots>
         </repository>
     </repositories>
+
+
+    <profiles>
+        <profile>
+            <id>beta-release</id>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>dist</directory>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <descriptor>src/main/assembly/beta-release.xml</descriptor>
+                            <finalName>FamilyDam-1.0-BETA</finalName>
+                            <outputDirectory>${basedir}/dist</outputDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
 

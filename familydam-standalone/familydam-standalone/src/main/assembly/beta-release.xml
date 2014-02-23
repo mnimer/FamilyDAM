@@ -1,0 +1,33 @@
+<assembly>
+    <formats>
+        <!--
+        <format>tar.gz</format>
+        <format>tar.bz2</format>
+        -->
+        <format>zip</format>
+    </formats>
+
+    <fileSets>
+        <fileSet>
+            <directory>src/main/scripts/</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>start.sh</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>../</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>README*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>FamilyDam-BETA-1.0.*-standalone.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
