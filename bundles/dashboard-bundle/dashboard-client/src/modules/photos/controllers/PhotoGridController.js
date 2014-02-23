@@ -156,22 +156,30 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
 
     var groupData = function (results)
     {
-        var assets = {};
-        for (var item in results.data)
+        var assets = null;
+        if( results.data.length > 0 )
         {
-            var dt = results.data[item][groupByProperty];
-            dt = new Date(Date.parse(dt));
-            var dtTitle = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
-            if (assets[dtTitle] === undefined)
+            for (var item in results.data)
             {
-                assets[dtTitle] = {};
-                assets[dtTitle].title = moment(dt).format('MMMM Do, YYYY');
-                assets[dtTitle].data = [];
-            }
+                if( assets == null )
+                {
+                    assets = {};
+                }
 
-            var heights = [150,250,300,350,425];
-            results.data[item].height = heights[getRandomInt(1,4)];
-            assets[dtTitle].data.push(results.data[item]);
+                var dt = results.data[item][groupByProperty];
+                dt = new Date(Date.parse(dt));
+                var dtTitle = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
+                if (assets[dtTitle] === undefined)
+                {
+                    assets[dtTitle] = {};
+                    assets[dtTitle].title = moment(dt).format('MMMM Do, YYYY');
+                    assets[dtTitle].data = [];
+                }
+
+                var heights = [150,250,300,350,425];
+                results.data[item].height = heights[getRandomInt(1,4)];
+                assets[dtTitle].data.push(results.data[item]);
+            }
         }
         return assets;
     };

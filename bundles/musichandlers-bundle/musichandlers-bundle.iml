@@ -9,7 +9,7 @@
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
           <property key="Sling-Nodetypes" value="SLING-INF/nodetypes/nodetypes.cnd" />
           <property key="Sling-Initial-Content" value="SLING-INF/properties;overwrite:=false;overwriteProperties=true;uninstall:=true;path:=/apps/familydam,SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content" />
-          <property key="Bundle-Name" value="FamilyDAM Music Handlers" />
+          <property key="Bundle-Name" value="FamilyDAM Music Handlers Bundle" />
           <property key="Bundle-ClassPath" value=".,mp3agic-0.8.2.jar" />
           <property key="Include-Resource" value="mp3agic-0.8.2.jar=$MAVEN_REPOSITORY$/com/mpatric/mp3agic/0.8.2/mp3agic-0.8.2.jar" />
           <property key="Embedded-Artifacts" value="mp3agic-0.8.2.jar;g=&quot;com.mpatric&quot;;a=&quot;mp3agic&quot;;v=&quot;0.8.2&quot;" />

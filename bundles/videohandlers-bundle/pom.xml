@@ -21,7 +21,7 @@
     <artifactId>videohandlers-bundle</artifactId>
     <packaging>bundle</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>FamilyDAM Video Handlers</name>
+    <name>FamilyDAM Video Handlers Bundle</name>
     <description>com.mikenimer.familydam - videohandlers-bundle</description>
 
     <!-- dummy urls for the maven-build-number plugin to work, this can be replaced with real values -->

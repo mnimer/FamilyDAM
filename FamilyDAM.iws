@@ -3,8 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" afterPath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,8 +110,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6473" max-vertical-offset="7245">
-              <caret line="468" column="70" selection-start="18215" selection-end="18215" />
+            <state vertical-scroll-proportion="15.153846" vertical-offset="1939" max-vertical-offset="7230">
+              <caret line="103" column="41" selection-start="4204" selection-end="4209" />
               <folding>
                 <element signature="tag#reporting#0;tag#project#0" expanded="false" />
               </folding>
@@ -102,12 +119,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start.sh" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh">
+      <file leaf-file-name="list.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.026223777" vertical-offset="0" max-vertical-offset="572">
-              <caret line="1" column="29" selection-start="35" selection-end="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9420">
+              <caret line="588" column="0" selection-start="21503" selection-end="21503" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sling.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+              <caret line="6" column="0" selection-start="234" selection-end="234" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="familydam-standalone.iml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3105">
+              <caret line="0" column="0" selection-start="0" selection-end="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhotoGridController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="3930">
+              <caret line="34" column="17" selection-start="1290" selection-end="1303" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,15 +171,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beta-release.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="common.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="510">
+              <caret line="25" column="0" selection-start="1006" selection-end="1006" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photos.grid.tpl.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.75" vertical-offset="675" max-vertical-offset="1545">
+              <caret line="67" column="42" selection-start="3024" selection-end="3024" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.125" vertical-offset="720" max-vertical-offset="1755">
+              <caret line="53" column="16" selection-start="1438" selection-end="1438" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beta-release.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-              <caret line="21" column="32" selection-start="566" selection-end="566" />
-              <folding>
-                <marker date="1393129418000" expanded="true" signature="421:618" placeholder="..." />
-                <marker date="1393129418000" expanded="true" signature="532:599" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.44626594" vertical-offset="70" max-vertical-offset="675">
+              <caret line="21" column="37" selection-start="583" selection-end="583" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,10 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/usermanager/usermanager.tpl.html" />
-        <option value="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/users/UserServlet.java" />
-        <option value="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services/UserService.js" />
-        <option value="$PROJECT_DIR$/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java" />
         <option value="$PROJECT_DIR$/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" />
         <option value="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/user/usermanager/controllers/UserManagerController.js" />
         <option value="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/properties/preferences.xml" />
@@ -179,11 +251,6 @@
         <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" />
-        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
-        <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" />
-        <option value="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" />
-        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/.bowerrc" />
@@ -192,13 +259,22 @@
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" />
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/index.html" />
-        <option value="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/ROOT/index.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/assembly/bin.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" />
       </list>
     </option>
   </component>
@@ -270,7 +346,7 @@
     <scope name="FamilyDAM" pattern="" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+    <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="940" />
   </component>
@@ -348,7 +424,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
+              <option name="myItemId" value="familydam-standalone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overlays" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="familydam-standalone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -815,7 +909,7 @@
       <workItem from="1393023172073" duration="65000" />
       <workItem from="1393023238384" duration="1777000" />
       <workItem from="1393025135066" duration="6036000" />
-      <workItem from="1393129123051" duration="1347000" />
+      <workItem from="1393129123051" duration="3519000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1117,11 +1211,15 @@
       <created>1393130024242</created>
       <updated>1393130024242</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="tweak the startup script">
+      <created>1393130621821</created>
+      <updated>1393130621821</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="885070000" />
+    <option name="totallyTimeSpent" value="887242000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1144,7 +1242,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="940" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="940" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1241,7 +1339,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="rework the namespace.cnd mixins" />
     <MESSAGE value="add video preview" />
     <MESSAGE value="rework the files sidebars to use named views" />
     <MESSAGE value="move the preview code into a single directive" />
@@ -1266,7 +1363,8 @@
     <MESSAGE value="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed.&#10;" />
     <MESSAGE value="add simple html redirect for /index.html page" />
     <MESSAGE value="add maven plugin to create zip bundle of standalone application and the necessary start scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="add maven plugin to create zip bundle of standalone application and the necessary start scripts" />
+    <MESSAGE value="tweak the startup script" />
+    <option name="LAST_COMMIT_MESSAGE" value="tweak the startup script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1293,33 +1391,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="4755">
-          <caret line="17" column="16" selection-start="1142" selection-end="1142" />
-          <folding>
-            <element signature="tag#reporting#0;tag#project#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="8925">
-          <caret line="4" column="6" selection-start="140" selection-end="140" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4515" max-vertical-offset="4830">
-          <caret line="337" column="0" selection-start="13616" selection-end="13616" />
-          <folding>
-            <element signature="tag#reporting#0;tag#project#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Stack.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29013538" vertical-offset="0" max-vertical-offset="517">
@@ -1412,13 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.3333335" vertical-offset="1648" max-vertical-offset="2835">
           <caret line="120" column="12" selection-start="2239" selection-end="2239" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="720" max-vertical-offset="1755">
-          <caret line="54" column="22" selection-start="1461" selection-end="1461" />
         </state>
       </provider>
     </entry>
@@ -1523,55 +1587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="5025">
-          <caret line="26" column="3" selection-start="1243" selection-end="1406" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="4800">
-          <caret line="29" column="35" selection-start="1244" selection-end="1406" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="4935">
-          <caret line="22" column="35" selection-start="1073" selection-end="1235" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="4650">
-          <caret line="22" column="37" selection-start="1073" selection-end="1235" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="6" column="0" selection-start="234" selection-end="234" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="500">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2925">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -1596,31 +1611,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79" vertical-offset="8425" max-vertical-offset="9420">
-          <caret line="588" column="0" selection-start="21503" selection-end="21503" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
           <caret line="3" column="0" selection-start="87" selection-end="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3807" max-vertical-offset="5715">
-          <caret line="264" column="58" selection-start="8557" selection-end="8571" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3240" max-vertical-offset="4455">
-          <caret line="236" column="107" selection-start="8014" selection-end="8014" />
         </state>
       </provider>
     </entry>
@@ -1632,10 +1626,110 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="1" column="29" selection-start="35" selection-end="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="4455">
+          <caret line="23" column="24" selection-start="1261" selection-end="1268" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5715">
+          <caret line="32" column="48" selection-start="1463" selection-end="1463" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="5025">
+          <caret line="30" column="41" selection-start="1448" selection-end="1448" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="4800">
+          <caret line="30" column="41" selection-start="1448" selection-end="1448" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="4935">
+          <caret line="23" column="41" selection-start="1277" selection-end="1277" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="3705">
-          <caret line="23" column="24" selection-start="1254" selection-end="1254" />
+          <caret line="33" column="1" selection-start="1638" selection-end="1939" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+          <caret line="0" column="0" selection-start="0" selection-end="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="4650">
+          <caret line="23" column="37" selection-start="1273" selection-end="1273" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="3930">
+          <caret line="34" column="17" selection-start="1290" selection-end="1303" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75" vertical-offset="675" max-vertical-offset="1545">
+          <caret line="67" column="42" selection-start="3024" selection-end="3024" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125" vertical-offset="720" max-vertical-offset="1755">
+          <caret line="53" column="16" selection-start="1438" selection-end="1438" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="510">
+          <caret line="25" column="0" selection-start="1006" selection-end="1006" />
           <folding />
         </state>
       </provider>
@@ -1648,31 +1742,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml">
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="21" column="32" selection-start="566" selection-end="566" />
-          <folding>
-            <marker date="1393129418000" expanded="true" signature="421:618" placeholder="..." />
-            <marker date="1393129418000" expanded="true" signature="532:599" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="8920" max-vertical-offset="9420">
+          <caret line="588" column="0" selection-start="21503" selection-end="21503" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="6" column="0" selection-start="234" selection-end="234" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3105">
+          <caret line="0" column="0" selection-start="0" selection-end="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6473" max-vertical-offset="7245">
-          <caret line="468" column="70" selection-start="18215" selection-end="18215" />
+        <state vertical-scroll-proportion="15.153846" vertical-offset="1939" max-vertical-offset="7230">
+          <caret line="103" column="41" selection-start="4204" selection-end="4209" />
           <folding>
             <element signature="tag#reporting#0;tag#project#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh">
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026223777" vertical-offset="0" max-vertical-offset="572">
-          <caret line="1" column="29" selection-start="35" selection-end="35" />
+        <state vertical-scroll-proportion="0.44626594" vertical-offset="70" max-vertical-offset="675">
+          <caret line="21" column="37" selection-start="583" selection-end="583" />
           <folding />
         </state>
       </provider>

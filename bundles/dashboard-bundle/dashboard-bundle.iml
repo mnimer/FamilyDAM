@@ -8,7 +8,7 @@
           <property key="Embed-Dependency" value="commons-collections4;scope=compile|runtime" />
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
           <property key="Sling-Initial-Content" value="SLING-INF/content/dashboard;overwrite:=true;uninstall:=true;path:=/content/dashboard" />
-          <property key="Bundle-Name" value="FamilyDAM Dashboard Application" />
+          <property key="Bundle-Name" value="FamilyDAM Dashboard Application Bundle" />
           <property key="Bundle-ClassPath" value=".,commons-collections4-4.0.jar" />
           <property key="Include-Resource" value="commons-collections4-4.0.jar=$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar" />
           <property key="Embedded-Artifacts" value="commons-collections4-4.0.jar;g=&quot;org.apache.commons&quot;;a=&quot;commons-collections4&quot;;v=&quot;4.0&quot;" />

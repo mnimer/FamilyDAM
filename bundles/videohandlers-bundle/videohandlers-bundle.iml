@@ -9,7 +9,7 @@
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
           <property key="Sling-Nodetypes" value="SLING-INF/nodetypes/nodetypes.cnd" />
           <property key="Sling-Initial-Content" value="SLING-INF/properties;overwrite:=false;overwriteProperties=true;uninstall:=true;path:=/apps/familydam,SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content" />
-          <property key="Bundle-Name" value="FamilyDAM Video Handlers" />
+          <property key="Bundle-Name" value="FamilyDAM Video Handlers Bundle" />
           <property key="Bundle-ClassPath" value=".,metadata-extractor-osgi-2.6.4.jar,xmpcore-5.1.2.jar,mp3agic-0.8.2.jar" />
           <property key="Include-Resource" value="metadata-extractor-osgi-2.6.4.jar=$MAVEN_REPOSITORY$/com/drewnoakes/metadata-extractor-osgi/2.6.4/metadata-extractor-osgi-2.6.4.jar,xmpcore-5.1.2.jar=$MAVEN_REPOSITORY$/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.jar,mp3agic-0.8.2.jar=$MAVEN_REPOSITORY$/com/mpatric/mp3agic/0.8.2/mp3agic-0.8.2.jar" />
           <property key="Embedded-Artifacts" value="metadata-extractor-osgi-2.6.4.jar;g=&quot;com.drewnoakes&quot;;a=&quot;metadata-extractor-osgi&quot;;v=&quot;2.6.4&quot;,xmpcore-5.1.2.jar;g=&quot;com.adobe.xmp&quot;;a=&quot;xmpcore&quot;;v=&quot;5.1.2&quot;,mp3agic-0.8.2.jar;g=&quot;com.mpatric&quot;;a=&quot;mp3agic&quot;;v=&quot;0.8.2&quot;" />

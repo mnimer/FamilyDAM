@@ -21,7 +21,7 @@
     <artifactId>familydam-core-bundle</artifactId>
     <packaging>bundle</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>FamilyDAM Core</name>
+    <name>FamilyDAM Core Bundle</name>
     <description>com.mikenimer.familydam - familydam-core-bundle</description>
 
     <!-- dummy urls for the maven-build-number plugin to work, this can be replaced with real values -->
