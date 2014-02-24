@@ -41,21 +41,9 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
             .state('photos:grid',
             {
                 url:'/photos/grid',
-                views:{
-                    "":{
-                        templateUrl: "modules/photos/photos.grid.tpl.html",
-                        controller: "PhotoGridController"
-                    },
-                    "filters@photos:grid":{
-                        templateUrl: "modules/photos/views/grid-filter.tpl.html"
-                    },
-                    "keywords@photos:grid":{
-                        templateUrl: "modules/photos/views/grid-keywords.tpl.html"
-                    }
-                }
-
+                templateUrl: "modules/photos/photos.grid.tpl.html",
+                controller: "PhotoGridController"
             })
-
             .state('photos:details', {
                 templateUrl: "modules/photos/photos.details.tpl.html",
                 controller: "PhotoDetailsController"

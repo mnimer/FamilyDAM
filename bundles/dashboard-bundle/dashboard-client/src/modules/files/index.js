@@ -30,79 +30,36 @@ module.exports = angular.module('dashboard.files', ['ui.bootstrap'])
     {
         $stateProvider.state('files', {
             url:"/files",
-            views:{
-                "":{
-                    templateUrl: "modules/files/files.list.tpl.html",
-                    controller: "FileListController"
-                },
-                'upload@files':{
-                    templateUrl: "modules/files/views/file-upload.tpl.html"
-                },
-                'preview@files': {
-                    templateUrl: "modules/files/views/file-preview.tpl.html",
-                    controller: "PreviewController"
-                }
-            }
+            templateUrl: "modules/files/files.list.tpl.html",
+            controller: "FileListController"
         })
         .state('photos:files', {
             url:"/photos/files",
+            templateUrl: "modules/files/files.list.tpl.html",
+            controller: "FileListController",
             data:{
                 currentPath: "/content/dam/photos",
                 filterByTypes:["fd:image"],
                 showPhotoGrid: true
-            },
-            views:{
-                "":{
-                    templateUrl: "modules/files/files.list.tpl.html",
-                    controller: "FileListController"
-                },
-                'upload@photos:files':{
-                    templateUrl: "modules/files/views/file-upload.tpl.html"
-                },
-                'preview@photos:files': {
-                    templateUrl: "modules/files/views/file-preview.tpl.html",
-                    controller: "PreviewController"
-                }
             }
+
         })
         .state('music:files', {
             url:"/music/files",
+            templateUrl: "modules/files/files.list.tpl.html",
+            controller: "FileListController",
             data:{
                 currentPath: "/content/dam/music",
                 filterByTypes:["fd:music"]
-            },
-            views:{
-                "":{
-                    templateUrl: "modules/files/files.list.tpl.html",
-                    controller: "FileListController"
-                },
-                'upload@music:files':{
-                    templateUrl: "modules/files/views/file-upload.tpl.html"
-                },
-                'preview@music:files': {
-                    templateUrl: "modules/files/views/file-preview.tpl.html",
-                    controller: "PreviewController"
-                }
             }
         })
         .state('movies:files', {
             url:"/movies/files",
+            templateUrl: "modules/files/files.list.tpl.html",
+            controller: "FileListController",
             data:{
                 currentPath: "/content/dam/movies",
                 filterByTypes:["fd:music"]
-            },
-            views:{
-                "":{
-                    templateUrl: "modules/files/files.list.tpl.html",
-                    controller: "FileListController"
-                },
-                'upload@movies:files':{
-                    templateUrl: "modules/files/views/file-upload.tpl.html"
-                },
-                'preview@movies:files': {
-                    templateUrl: "modules/files/views/file-preview.tpl.html",
-                    controller: "PreviewController"
-                }
             }
         });
 

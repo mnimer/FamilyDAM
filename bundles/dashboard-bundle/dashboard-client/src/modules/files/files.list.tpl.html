@@ -82,12 +82,20 @@
         <tab heading="Upload"
              select="$parent.onTabSelect('upload')"
              active="$parent.isUploadTabActive">
-            <div ui-view="upload"/>
+            <div id="sidebar-upload" class="sidebar-nav" >
+                <div x-file-upload-form title="" path="{{currentPath}}"/>
+            </div>
         </tab>
         <tab heading="Preview"
              select="$parent.onTabSelect('preview')"
              active="$parent.isPreviewTabActive">
-            <div ui-view="preview"></div>
+            <div id="sidebar-preview" class="sidebar-nav" >
+                <br/>
+                <div x-preview
+                     ng-controller="PreviewController"
+                     path="{{node.path}}" node="{{node}}"></div>
+
+            </div>
         </tab>
     </tabset>
 

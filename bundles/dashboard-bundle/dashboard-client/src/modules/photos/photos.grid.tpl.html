@@ -85,10 +85,24 @@
 
     <tabset>
         <tab heading="Filters">
-            <div ui-view="filters"/>
+            <div class="sidebarTab">
+                <h4>Filter by location</h4>
+                <div x-location-filter event="filter:location:path" root="/content/dam"></div>
+                <br/>
+                <h4>Filter by date</h4>
+                <div x-date-filter event="filter:date:from" label="Photos After"></div>
+                <div x-date-filter event="filter:date:to" label="Photos Before"></div>
+                <br/>
+                <h4>Filter by tags</h4>
+                <div x-tag-cloud-filter event="filter:tags" root="/content/dam/photos"></div>
+            </div>
         </tab>
         <tab heading="Keywords">
-            <div ui-view="keywords"></div>
+            <div>
+                <div x-keywords
+                     path="{{currentPath}}"
+                     items="{{selectedItems}}"></div>
+            </div>
         </tab>
     </tabset>
 

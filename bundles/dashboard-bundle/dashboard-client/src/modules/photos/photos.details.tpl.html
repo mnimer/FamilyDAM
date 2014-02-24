@@ -49,13 +49,32 @@
 <!-- start: Widgets Area -->
 <aside id="sidebar-right" class="col-sm-4 hidden-xs" ng-show="showSidebar">
 
-    <ul class="nav nav-tabs">
-        <li ng-class="{ active: $state.includes('photos:details.metadata') }"><a ui-sref="photos:details.metadata">Metadata</a></li>
-        <li ng-class="{ active: $state.includes('photos:details.edit') }"><a ui-sref="photos:details.edit">Edit</a></li>
-        <li ng-class="{ active: $state.includes('photos:details.versions') }"><a ui-sref="photos:details.versions">Versions</a></li>
-    </ul>
+    <tabset>
+        <tab heading="Metadata">
+            <div class="sidebarTab">
+                <div x-tags-input
+                     ng-model="keywords"
+                     custom-class="bootstrap"
+                     placeholder="Add a tag"
+                     replace-spaces-with-dashes="false"
+                     add-on-comma="true"
+                     add-on-space="false"
+                     max-length="20">
+                </div>
+            </div>
+        </tab>
+        <tab heading="Edit">
+            <div class="sidebarTab">
+                Photo Edit
+            </div>
+        </tab>
+        <tab heading="Versions">
+            <div class="sidebarTab">
+                Photo Versions
+            </div>
+        </tab>
+    </tabset>
 
-    <div ui-view ></div>
 
 </aside>
 <!-- end: Widgets Area -->
