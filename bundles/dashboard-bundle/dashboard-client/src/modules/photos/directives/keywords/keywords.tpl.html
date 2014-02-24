@@ -1,10 +1,12 @@
 <div>
     Keywords:
-    <input ui-select2="select2Options"
+    <textarea ui-select2="select2Options"
            ng-model="selectedTags"
            ng-change="addTagHandler($event)"
            data-placeholder="Add a tag"
            ng-disabled="selectedItems.length==0"
-           style="width:100%;" />
-    * All tags will be applied to all of the selected images
+           style="width:100%;"></textarea>
+    * All tags will be applied to all of the selected images<br/>
+
+    <button class="btn btn-primary center-block" ng-click="saveTags()">Save Tags</button>
 </div>

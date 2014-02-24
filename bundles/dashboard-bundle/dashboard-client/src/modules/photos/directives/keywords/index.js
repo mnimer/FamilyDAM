@@ -29,9 +29,18 @@ var keywordsDirective = function (metadataService)
         templateUrl: "modules/photos/directives/keywords/keywords.tpl.html",
         controller: function ($scope, $element, $attrs, $transclude)
         {
+            var _path = "/content/dam/photos";
+
+            metadataService.keywordsByPath(_path).then(function (data)
+            {
+                scope.tags = data;
+                this.tags = data;
+            });
+
             $scope.query = function (query)
             {
                 var words = {results: []};
+                var bFound = false;
 
                 for (var indx in $scope.tags)
                 {
@@ -41,8 +50,59 @@ var keywordsDirective = function (metadataService)
                         words.results.push({'id': item.word, 'text': item.word});
                     }
                 }
+
+                if( !bFound && query.term.length > 0 )
+                {
+                    words.results.push({'id': query.term, 'text': query.term});
+                }
+
                 query.callback(words);
             };
+
+
+
+            /**
+             * loop over all of the selected items and create a new array of tags for all selected items
+             */
+            $scope.updateKeywordsArray = function ()
+            {
+                $scope.selectedTags = [];
+                for (var idx in $scope.selectedItems)
+                {
+                    var _node = $scope.selectedItems[idx];
+
+                    if (_node.metadata !== undefined && _node.metadata.keywords !== undefined )
+                    {
+                        var _keywords = _node.metadata.keywords.split(",");
+                        for (var indx = 0; indx < _keywords.length; indx++)
+                        {
+                            var word = _keywords[indx];
+                            if (word !== undefined)
+                            {
+                                word = word.toLowerCase();
+                            }
+                            var existingPos = $scope.selectedTags.indexOf(word);
+                            if (existingPos == -1)
+                            {
+                                $scope.selectedTags.push(word);
+                            }
+                        }
+                    }
+                }
+            };
+
+
+            $scope.saveTags = function()
+            {
+                metadataService.updateTags($scope.selectedItems, $scope.selectedTags)
+                .then(function(results){
+                    console.log(results);
+                },function(results){
+                    console.log(results);
+                });
+            };
+
+
 
             $scope.selectedTags = [];
             $scope.select2Options = {
@@ -56,27 +116,6 @@ var keywordsDirective = function (metadataService)
         {
             //console.debug(scope);
             scope.selectedItems = [];
-            var _path = "/content/dam/photos";
-
-            metadataService.keywordsByPath(_path).then(function (data)
-            {
-                scope.tags = data;
-                this.tags = data;
-            });
-
-
-            scope.$watch('selectedTags', function (newVal, oldVal)
-            {
-                if (oldVal == newVal) return;
-
-                if (typeof(newVal) == "string")
-                {
-                    newVal = newVal.split(",");
-                }
-
-                metadataService.updateTags(scope.selectedItems, newVal);
-
-            }, true);
 
 
             scope.$watch('items', function (newVal, oldVal)
@@ -88,56 +127,13 @@ var keywordsDirective = function (metadataService)
                     newVal = angular.fromJson(newVal);
                 }
 
+
+                // put single objects (details mode) into an array
+                newVal = [].concat( newVal );
+
                 scope.selectedItems = newVal;
                 scope.updateKeywordsArray();
             });
-
-
-            scope.$watch('path', function (value, oldValue, scope)
-            {
-                if (value !== undefined)
-                {
-                    _path = value;
-
-
-                    metadataService.keywordsByPath(_path).then(function (data)
-                    {
-                        scope.tags = data;
-                    });
-                }
-            });
-
-            /**
-             * loop over all of the selected items and create a new array of tags for all selected items
-             */
-            scope.updateKeywordsArray = function ()
-            {
-                scope.selectedTags = [];
-                for (var idx in scope.selectedItems)
-                {
-                    var _node = scope.selectedItems[idx];
-
-                    if (_node.metadata !== undefined)
-                    {
-                        var _keywords = _node.metadata.keywords.split(",");
-                        for (var indx = 0; indx < _keywords.length; indx++)
-                        {
-                            var word = _keywords[indx];
-                            if (word !== undefined)
-                            {
-                                word = word.toLowerCase();
-                            }
-                            var existingPos = scope.selectedTags.indexOf(word);
-                            if (existingPos == -1)
-                            {
-                                scope.selectedTags.push(word);
-                            }
-                        }
-                    }
-                }
-
-                //$scope.$broadcast("photos:grid:keywords:selectedTags", $scope.selectedTags);
-            };
 
         }
 

@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/views/file-preview.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/views/file-upload.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos-info.aside.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/details-edit.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/details-metadata.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/details-versions.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/grid-filter.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/grid-keywords.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/views/test-tab.tpl.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower.json" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" afterPath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,48 +93,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="photos.grid.tpl.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6666667" vertical-offset="1202" max-vertical-offset="1755">
-              <caret line="86" column="31" selection-start="3568" selection-end="3608" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="photos.details.tpl.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.083334" vertical-offset="685" max-vertical-offset="1335">
-              <caret line="73" column="18" selection-start="2508" selection-end="2508" />
+            <state vertical-scroll-proportion="-0.083333336" vertical-offset="718" max-vertical-offset="1275">
+              <caret line="48" column="28" selection-start="1701" selection-end="1701" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="files.list.tpl.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html">
+      <file leaf-file-name="PhotoDetailsController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7324219" vertical-offset="1005" max-vertical-offset="2115">
-              <caret line="92" column="21" selection-start="3532" selection-end="3532" />
-              <folding>
-                <marker date="1393208189000" expanded="true" signature="3854:4051" placeholder="..." />
-                <marker date="1393208189000" expanded="true" signature="3887:4040" placeholder="..." />
-                <marker date="1393208189000" expanded="true" signature="4082:4251" placeholder="..." />
-                <marker date="1393208189000" expanded="true" signature="4355:4515" placeholder="..." />
-                <marker date="1393208189000" expanded="true" signature="4434:4504" placeholder="..." />
-                <marker date="1393208189000" expanded="true" signature="4546:4701" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1080">
-              <caret line="20" column="34" selection-start="1023" selection-end="1040" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="505" max-vertical-offset="1005">
+              <caret line="44" column="16" selection-start="1498" selection-end="1509" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -158,11 +115,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreviewController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/controllers/PreviewController.js">
+      <file leaf-file-name="keywords.tpl.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="825">
-              <caret line="0" column="0" selection-start="0" selection-end="0" />
+            <state vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="255">
+              <caret line="10" column="69" selection-start="410" selection-end="410" />
+              <folding>
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6309751" vertical-offset="1665" max-vertical-offset="2250">
+              <caret line="133" column="21" selection-start="4413" selection-end="4418" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -170,21 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js">
+      <file leaf-file-name="MetadataService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/MetadataService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1035">
-              <caret line="45" column="14" selection-start="1974" selection-end="1974" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="600">
-              <caret line="10" column="32" selection-start="258" selection-end="258" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="885">
+              <caret line="20" column="9" selection-start="821" selection-end="821" />
               <folding />
             </state>
           </provider>
@@ -193,8 +152,18 @@
       <file leaf-file-name="PhotoGridController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4080">
-              <caret line="40" column="7" selection-start="2198" selection-end="2198" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1395" max-vertical-offset="3810">
+              <caret line="118" column="0" selection-start="3212" selection-end="3212" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photos.grid.tpl.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.291667" vertical-offset="1202" max-vertical-offset="1755">
+              <caret line="103" column="53" selection-start="4392" selection-end="4392" />
               <folding />
             </state>
           </provider>
@@ -213,8 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/jobs/music/ID3Job.java" />
-        <option value="$PROJECT_DIR$/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/images/filehandlers/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/videohandlers-bundle/buildNumber.properties" />
@@ -258,12 +225,14 @@
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower.json" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" />
       </list>
     </option>
   </component>
@@ -473,12 +442,34 @@
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="usermanager" />
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -508,7 +499,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -535,6 +530,52 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="keywords" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1127,7 +1168,7 @@
       <workItem from="1393023238384" duration="1777000" />
       <workItem from="1393025135066" duration="6036000" />
       <workItem from="1393129123051" duration="3875000" />
-      <workItem from="1393134210147" duration="5581000" />
+      <workItem from="1393134210147" duration="14094000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1437,11 +1478,15 @@
       <created>1393132806299</created>
       <updated>1393132806299</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="remove the ui-router views and just use simple directives">
+      <created>1393208706206</created>
+      <updated>1393208706206</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="893179000" />
+    <option name="totallyTimeSpent" value="901692000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1488,6 +1533,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3673966" sideWeight="0.8046398" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1503,7 +1549,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1561,7 +1606,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="rework the files sidebars to use named views" />
     <MESSAGE value="move the preview code into a single directive" />
     <MESSAGE value="refactor the different versions of the file lists" />
     <MESSAGE value="tweaks" />
@@ -1586,7 +1630,8 @@
     <MESSAGE value="add maven plugin to create zip bundle of standalone application and the necessary start scripts" />
     <MESSAGE value="tweak the startup script" />
     <MESSAGE value="fix PhotoGrid bug when no photos are returned, and add a message." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix PhotoGrid bug when no photos are returned, and add a message." />
+    <MESSAGE value="remove the ui-router views and just use simple directives" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove the ui-router views and just use simple directives" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1605,7 +1650,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="35" />
+      <option name="time" value="36" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1613,52 +1658,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="510">
-          <caret line="25" column="0" selection-start="1006" selection-end="1006" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1545">
-          <caret line="67" column="42" selection-start="3024" selection-end="3024" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1755">
-          <caret line="53" column="16" selection-start="1438" selection-end="1438" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="675">
-          <caret line="30" column="18" selection-start="851" selection-end="851" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Stack.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29013538" vertical-offset="0" max-vertical-offset="517">
-          <caret line="11" column="13" selection-start="321" selection-end="321" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.contentloader/2.1.6/org.apache.sling.jcr.contentloader-2.1.6-sources.jar!/org/apache/sling/jcr/contentloader/internal/DefaultContentCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1497006" vertical-offset="0" max-vertical-offset="14415">
-          <caret line="22" column="0" selection-start="993" selection-end="1046" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.contentloader/2.1.6/org.apache.sling.jcr.contentloader-2.1.6-sources.jar!/org/apache/sling/jcr/contentloader/internal/readers/JsonReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2440" max-vertical-offset="6105">
@@ -1931,44 +1930,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4080">
-          <caret line="40" column="7" selection-start="2198" selection-end="2198" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1035">
-          <caret line="45" column="14" selection-start="1974" selection-end="1974" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6666667" vertical-offset="1202" max-vertical-offset="1755">
-          <caret line="86" column="31" selection-start="3568" selection-end="3608" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.083334" vertical-offset="685" max-vertical-offset="1335">
-          <caret line="73" column="18" selection-start="2508" selection-end="2508" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/controllers/PreviewController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
           <caret line="0" column="0" selection-start="0" selection-end="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1978,22 +1945,132 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1080">
           <caret line="20" column="34" selection-start="1023" selection-end="1040" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7324219" vertical-offset="1005" max-vertical-offset="2115">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="1005" max-vertical-offset="2115">
           <caret line="92" column="21" selection-start="3532" selection-end="3532" />
           <folding>
-            <marker date="1393208189000" expanded="true" signature="3854:4051" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="3887:4040" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="4082:4251" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="4355:4515" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="4434:4504" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="4546:4701" placeholder="..." />
+            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
+          <caret line="0" column="0" selection-start="0" selection-end="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoMetadataController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536">
+          <caret line="0" column="0" selection-start="0" selection-end="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoVersionController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
+          <caret line="0" column="0" selection-start="0" selection-end="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridKeywordsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
+          <caret line="0" column="0" selection-start="0" selection-end="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="840">
+          <caret line="51" column="14" selection-start="2200" selection-end="2200" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.291667" vertical-offset="1202" max-vertical-offset="1755">
+          <caret line="103" column="53" selection-start="4392" selection-end="4392" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.083333336" vertical-offset="718" max-vertical-offset="1275">
+          <caret line="48" column="28" selection-start="1701" selection-end="1701" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="505" max-vertical-offset="1005">
+          <caret line="44" column="16" selection-start="1498" selection-end="1509" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="255">
+          <caret line="10" column="69" selection-start="410" selection-end="410" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1395" max-vertical-offset="3810">
+          <caret line="118" column="0" selection-start="3212" selection-end="3212" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/MetadataService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="885">
+          <caret line="20" column="9" selection-start="821" selection-end="821" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6309751" vertical-offset="1665" max-vertical-offset="2250">
+          <caret line="133" column="21" selection-start="4413" selection-end="4418" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

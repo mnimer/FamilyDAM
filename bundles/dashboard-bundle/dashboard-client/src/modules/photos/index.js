@@ -44,24 +44,11 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
                 templateUrl: "modules/photos/photos.grid.tpl.html",
                 controller: "PhotoGridController"
             })
-            .state('photos:details', {
+            .state('photos:details',
+            {
+                url:'/:id/details',
                 templateUrl: "modules/photos/photos.details.tpl.html",
                 controller: "PhotoDetailsController"
-            })
-            .state('photos:details.metadata', {
-                url:'/:id/details',
-                templateUrl: "modules/photos/views/details-metadata.tpl.html",
-                controller: "PhotoMetadataController"
-            })
-            .state('photos:details.edit', {
-                url:'/:id/details',
-                templateUrl: "modules/photos/views/details-edit.tpl.html",
-                controller: "PhotoEditController"
-            })
-            .state('photos:details.versions', {
-                url:'/:id/details',
-                templateUrl: "modules/photos/views/details-versions.tpl.html",
-                controller: "PhotoVersionController"
             });
     }]);
 

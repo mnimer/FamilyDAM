@@ -52,15 +52,11 @@
     <tabset>
         <tab heading="Metadata">
             <div class="sidebarTab">
-                <div x-tags-input
-                     ng-model="keywords"
-                     custom-class="bootstrap"
-                     placeholder="Add a tag"
-                     replace-spaces-with-dashes="false"
-                     add-on-comma="true"
-                     add-on-space="false"
-                     max-length="20">
-                </div>
+                <h4>Tags</h4>
+                <div x-keywords
+                     path="{{currentPath}}"
+                     items="{{node}}"></div>
+
             </div>
         </tab>
         <tab heading="Edit">
