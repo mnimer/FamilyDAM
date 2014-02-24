@@ -33,7 +33,7 @@ var keywordsDirective = function (metadataService)
 
             metadataService.keywordsByPath(_path).then(function (data)
             {
-                scope.tags = data;
+                $scope.tags = data;
                 this.tags = data;
             });
 
@@ -101,8 +101,6 @@ var keywordsDirective = function (metadataService)
                     console.log(results);
                 });
             };
-
-
 
             $scope.selectedTags = [];
             $scope.select2Options = {

@@ -45,6 +45,11 @@ var PhotoDetailsController = function($scope, $rootScope, $state, $window, $stat
                 $scope.node = data.data;
                 $scope.self = data.headers.apply()['location'];
 
+                if( data.data['jcr:path'] === undefined )
+                {
+                    data.data['jcr:path'] = $scope.self;
+                }
+
                 var width  = $("body").width();
                 $scope.scaledImageUrl = $scope.self +".scale.w:" +width +".png";
 
