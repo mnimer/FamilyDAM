@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" />
     </list>
     <ignored path="FamilyCloud.iws" />
@@ -89,7 +88,20 @@
     <favorites_list name="FamilyCloud" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3041958" vertical-offset="1086" max-vertical-offset="2220">
+              <caret line="84" column="68" selection-start="3149" selection-end="3149" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -322,82 +334,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -462,6 +398,108 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="keywords" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,70 +560,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="movies" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1054,7 +1028,7 @@
       <workItem from="1393023238384" duration="1777000" />
       <workItem from="1393025135066" duration="6036000" />
       <workItem from="1393129123051" duration="3875000" />
-      <workItem from="1393134210147" duration="15898000" />
+      <workItem from="1393134210147" duration="16133000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1372,11 +1346,15 @@
       <created>1393221202315</created>
       <updated>1393221202315</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="add save tags logic and add resetting on jcr:path in detail view">
+      <created>1393223002341</created>
+      <updated>1393223002341</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="903496000" />
+    <option name="totallyTimeSpent" value="903731000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1403,7 +1381,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270073" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270073" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1415,7 +1393,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2808303" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2808303" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35766423" sideWeight="0.8406593" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1496,7 +1474,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="refactor the different versions of the file lists" />
     <MESSAGE value="tweaks" />
     <MESSAGE value="add FB OAuth logic and save the token in a new &#10;/apps/faminlydam/user/&lt;username&gt; path for settings." />
     <MESSAGE value="add comment" />
@@ -1521,7 +1498,8 @@
     <MESSAGE value="fix PhotoGrid bug when no photos are returned, and add a message." />
     <MESSAGE value="remove the ui-router views and just use simple directives" />
     <MESSAGE value="refactor the keyword tagging directive" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor the keyword tagging directive" />
+    <MESSAGE value="add save tags logic and add resetting on jcr:path in detail view" />
+    <option name="LAST_COMMIT_MESSAGE" value="add save tags logic and add resetting on jcr:path in detail view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1909,16 +1887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.108742006" vertical-offset="576" max-vertical-offset="2220">
-          <caret line="35" column="17" selection-start="1295" selection-end="1295" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6801706" vertical-offset="416" max-vertical-offset="1080">
@@ -1942,176 +1910,176 @@
         <state vertical-scroll-proportion="0.24425887" vertical-offset="19788" max-vertical-offset="66645">
           <caret line="1327" column="14" selection-start="65582" selection-end="65582" />
           <folding>
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/'...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/login'...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/files&quot;...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/photos/files&quot;...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/photos&quot;...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/music/files&quot;...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/music&quot;...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/movies/files&quot;...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/movies&quot;...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/photos/grid'...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/:id/details'...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** Controller for the home screen ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** SIDEBAR Event Listeners ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** Parse a path into it's tokens for a valid breadcrumb array ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** Callback for file list from JCR Service ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** We only want to let folders or files show up in the tree. Not JCR properties ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** Copy state properties to the scope, if it's defined ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** Process the search results by grouping them, and checking for the hateoas links. ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/** Utility functions ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{&quot;multiple&quot;: true...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/**var words = []; ...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393222889000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/'...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/login'...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/files&quot;...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/photos/files&quot;...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/photos&quot;...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/music/files&quot;...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/music&quot;...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/movies/files&quot;...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/movies&quot;...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/photos/grid'...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/:id/details'...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Controller for the home screen ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** SIDEBAR Event Listeners ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Parse a path into it's tokens for a valid breadcrumb array ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Callback for file list from JCR Service ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** We only want to let folders or files show up in the tree. Not JCR properties ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Copy state properties to the scope, if it's defined ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Process the search results by grouping them, and checking for the hateoas links. ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Utility functions ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;multiple&quot;: true...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/**var words = []; ...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -2137,6 +2105,16 @@
         <state vertical-scroll-proportion="0.3131524" vertical-offset="1395" max-vertical-offset="3810">
           <caret line="118" column="0" selection-start="3212" selection-end="3212" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3041958" vertical-offset="1086" max-vertical-offset="2220">
+          <caret line="84" column="68" selection-start="3149" selection-end="3149" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

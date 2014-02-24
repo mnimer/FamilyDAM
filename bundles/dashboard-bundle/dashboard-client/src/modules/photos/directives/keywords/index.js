@@ -82,7 +82,7 @@ var keywordsDirective = function (metadataService)
                                 word = word.toLowerCase();
                             }
                             var existingPos = $scope.selectedTags.indexOf(word);
-                            if (existingPos == -1)
+                            if (existingPos == -1 && word.length > 0)
                             {
                                 $scope.selectedTags.push(word);
                             }
