@@ -44,6 +44,8 @@ button {
 
 a {
 	color: #444;
+
+    text-decoration: none;
 }
 
 a:hover {
@@ -60,6 +62,7 @@ h2 {
 	border-bottom: 1px solid #ddd; 
 	margin-bottom: 15px;
 }
+
 
 h3 {
 	font-size: 20px;
@@ -174,7 +177,7 @@ input.btn_grey:active {
     background-image: -o-linear-gradient(bottom, #7ebf00, #84d400);
     background-image: linear-gradient(to top, #7ebf00, #84d400);
     width: 200px; 
-	height: 60px; 
+	height: 0px;
 	line-height: 60px; 
 	padding: 0 30px; 
 	font-family: 'Open Sans', sans-serif; 
@@ -376,10 +379,13 @@ input[type=submit] {
  
 .header .logo {
 	/*background: url(../images/logo.png) no-repeat 0 0;*/
-	width: 97px; 
+
 	height: 60px; 
 	float: left; 
 	margin: 0 13px 0 0;
+    font-size:32px;
+    text-decoration: none;
+    font-weight: 300;
 }
 
 .header .slogan {
@@ -777,6 +783,11 @@ input[type=submit] {
 	text-shadow: 0 1px rgba(0,0,0,.2);
 	color: #fff;
 	margin-bottom: 23px;
+}
+
+.download h3 {
+    text-shadow: 0 1px rgba(0,0,0,.2);
+    color: #fff;
 }
 
 .download p {
