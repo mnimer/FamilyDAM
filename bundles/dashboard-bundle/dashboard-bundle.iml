@@ -21,8 +21,8 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/dashboard-client/dist" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dashboard-client/dist" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -30,6 +30,7 @@
     <orderEntry type="module" module-name="familydam-core-bundle" scope="PROVIDED" />
     <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.2.9-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.1.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.fragment.activation:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6" level="project" />
     <orderEntry type="library" name="Maven: biz.aQute:bndlib:1.50.0" level="project" />
     <orderEntry type="module" module-name="webhandlers-bundle" />

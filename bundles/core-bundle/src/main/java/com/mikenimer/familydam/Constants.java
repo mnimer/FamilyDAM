@@ -73,4 +73,8 @@ public class Constants
     public static final String ITUNES_COMMENT = "itunes_comment";
     public static final String ORIGINAL_ARTIST = "original_artist";
     public static final String PUBLISHER = "publisher";
+
+
+
+    public static final String NODE_FACEBOOK = "fd:facebook";
 }

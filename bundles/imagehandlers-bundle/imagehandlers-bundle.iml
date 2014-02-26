@@ -7,8 +7,6 @@
           <property key="Bundle-Description" value="com.mikenimer.familydam - imagehandlers-bundle" />
           <property key="Embed-Dependency" value="metadata-extractor-osgi,xmpcore,mp3agic;scope=compile|runtime" />
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
-          <property key="Sling-Nodetypes" value="SLING-INF/nodetypes/nodetypes.cnd" />
-          <property key="Sling-Initial-Content" value="SLING-INF/properties;overwrite:=false;overwriteProperties=true;uninstall:=true;path:=/apps/familydam,SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content" />
           <property key="Bundle-Name" value="FamilyDAM Image Handlers Bundle" />
           <property key="Bundle-ClassPath" value=".,metadata-extractor-osgi-2.6.4.jar,xmpcore-5.1.2.jar,mp3agic-0.8.2.jar" />
           <property key="Include-Resource" value="metadata-extractor-osgi-2.6.4.jar=$MAVEN_REPOSITORY$/com/drewnoakes/metadata-extractor-osgi/2.6.4/metadata-extractor-osgi-2.6.4.jar,xmpcore-5.1.2.jar=$MAVEN_REPOSITORY$/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.jar,mp3agic-0.8.2.jar=$MAVEN_REPOSITORY$/com/mpatric/mp3agic/0.8.2/mp3agic-0.8.2.jar" />
@@ -23,8 +21,8 @@
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -32,6 +30,7 @@
     <orderEntry type="module" module-name="familydam-core-bundle" scope="PROVIDED" />
     <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.2.9-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.1.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.fragment.activation:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6" level="project" />
     <orderEntry type="library" name="Maven: biz.aQute:bndlib:1.50.0" level="project" />
     <orderEntry type="library" name="Maven: com.adobe.xmp:xmpcore:5.1.2" level="project" />

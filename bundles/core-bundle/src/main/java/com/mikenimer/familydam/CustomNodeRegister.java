@@ -18,56 +18,97 @@
 
 package com.mikenimer.familydam;
 
-import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Reference;
-import org.osgi.service.component.ComponentContext;
+import org.apache.sling.jcr.api.SlingRepository;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleEvent;
+import org.osgi.framework.BundleListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.nodetype.NodeTypeDefinition;
+import javax.jcr.nodetype.NodeTypeManager;
+import javax.jcr.nodetype.NodeTypeTemplate;
+import javax.jcr.nodetype.PropertyDefinitionTemplate;
 
 /**
  * User: mikenimer
  * Date: 11/25/13
  */
-@Component(immediate = true)
-public class CustomNodeRegister
+public class CustomNodeRegister implements BundleListener, BundleActivator
 {
     private final Logger log = LoggerFactory.getLogger(CustomNodeRegister.class);
 
     @Reference
     private Session session;
 
+    @Reference
+    private SlingRepository repository;
 
-    @Activate
-    protected void activate(ComponentContext context) throws Exception
+
+    @Override
+    public void start(BundleContext bundleContext) throws Exception
     {
-
+        bundleContext.addBundleListener(this);
+        repository = ((SlingRepository) bundleContext.getService(bundleContext.getServiceReference("org.apache.sling.jcr.api.SlingRepository")));
     }
 
 
-    @Deactivate
-    protected void deactivate(ComponentContext componentContext) throws RepositoryException
+    @Override
+    public void stop(BundleContext bundleContext) throws Exception
     {
-        if (session != null)
+        bundleContext.removeBundleListener(this);
+    }
+
+
+    @Override
+    public void bundleChanged(BundleEvent bundleEvent)
+    {
+        log.trace(bundleEvent.getBundle().toString());
+
+        if (bundleEvent.getType() == BundleEvent.STARTED)
         {
-            session.logout();
-            session = null;
+            //log.trace("started");
+            this.checkNodeTypes();
         }
     }
 
-    public static void RegisterCustomNodeTypes(Session session, String cndFileName)
-            throws Exception
+
+    protected void checkNodeTypes()
     {
-        // Get the JackrabbitNodeTypeManager from the Workspace.
-        // Note that it must be cast from the generic JCR NodeTypeManager to the
-        // Jackrabbit-specific implementation.
-        //NodeTypeManager manager = (NodeTypeManager) session.getWorkspace().getNodeTypeManager();
-        // Register the custom node types defined in the CND file
-        //manager.registerNodeTypes(new FileInputStream(cndFileName), NodeTypeManager.TEXT_X_JCR_CND);
+        try
+        {
+            session = repository.loginAdministrative(null);
+            if (repository.getDescriptor(Repository.OPTION_OBSERVATION_SUPPORTED).equals("true"))
+            {
+                NodeTypeManager manager = session.getWorkspace().getNodeTypeManager();
+
+                /**
+                 @see http://jackrabbit.510166.n4.nabble.com/How-to-add-ChildNodeDefinition-to-NodeTypeTemplate-while-creating-a-custom-NodeType-using-NodeTypeMa-td4657488.html
+                 **/
+                checkFacebookNode(manager);
+
+            }
+        }
+        catch (Exception ex)
+        {
+            log.error("Unable to create node types", ex);
+        }
     }
 
+
+    private void checkFacebookNode(NodeTypeManager manager) throws RepositoryException
+    {
+        if (!manager.hasNodeType(Constants.NODE_FACEBOOK))
+        {
+            NodeTypeTemplate fbNode = manager.createNodeTypeTemplate();
+            fbNode.setName(Constants.NODE_FACEBOOK);
+            fbNode.setMixin(true);
+            manager.registerNodeType(fbNode, true);
+        }
+    }
 }

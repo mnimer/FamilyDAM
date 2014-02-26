@@ -2,8 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/WebNodeRegistry.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/ByPathServlet.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/examples/ByPathServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/ByResourceTypeServlet.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/examples/ByResourceTypeServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/TestDecorators.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/examples/TestDecorators.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA-bin.tar.gz" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA-bin.tar.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA-bin.zip" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA-bin.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA.zip" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.ipr" afterPath="$PROJECT_DIR$/FamilyDAM.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/designs-assets/Mockups.gtemplate" afterPath="$PROJECT_DIR$/designs-assets/Mockups.gtemplate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" afterPath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,6 +105,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/WebNodeRegistry.java" line="50" class="com.mikenimer.familydam.web.WebNodeRegistry" package="com.mikenimer.familydam.web">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -88,20 +129,7 @@
     <favorites_list name="FamilyCloud" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3041958" vertical-offset="1086" max-vertical-offset="2220">
-              <caret line="84" column="68" selection-start="3149" selection-end="3149" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -114,27 +142,17 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/observers/UploadObserver.java" />
-        <option value="$PROJECT_DIR$/videohandlers-bundle/buildNumber.properties" />
-        <option value="$PROJECT_DIR$/musichandlers-bundle/buildNumber.properties" />
-        <option value="$PROJECT_DIR$/imagehandlers-bundle/buildNumber.properties" />
-        <option value="$PROJECT_DIR$/webhandlers-bundle/buildNumber.properties" />
-        <option value="$PROJECT_DIR$/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/dashboard-bundle/dashboard-client/package.json" />
         <option value="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/main/_main.scss" />
         <option value="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/app.scss" />
         <option value="$PROJECT_DIR$/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" />
         <option value="$PROJECT_DIR$/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
         <option value="$PROJECT_DIR$/dashboard-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/core-bundle/pom.xml" />
-        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
         <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java" />
         <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
-        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/.bowerrc" />
         <option value="$PROJECT_DIR$/bundles/pom.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties" />
@@ -144,10 +162,7 @@
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/ROOT/index.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/assembly/bin.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
-        <option value="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" />
-        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
@@ -165,6 +180,19 @@
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
+        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/resources/SLING-INF/nodetypes/foo.txt" />
+        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/WebNodeRegistry.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/WebNodeRegistry.java" />
+        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/INodeRegistor.java" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/examples/TestDecorators.java" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
       </list>
     </option>
   </component>
@@ -181,7 +209,7 @@
     </option>
     <option name="enabledProfiles">
       <list>
-        <option value="beta-release" />
+        <option value="deploy-bundles" />
       </list>
     </option>
   </component>
@@ -193,6 +221,40 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
       </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FamilyDAM Core Bundle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FamilyDAM Core Bundle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Profiles" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProfilesNode" />
+        </PATH_ELEMENT>
+      </PATH>
     </treeState>
   </component>
   <component name="MavenRunner">
@@ -202,7 +264,7 @@
     <scope name="FamilyDAM" pattern="" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="y" value="22" />
     <option name="width" value="1680" />
     <option name="height" value="940" />
   </component>
@@ -254,7 +316,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -283,7 +344,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemId" value="core-bundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -297,7 +358,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemId" value="core-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core-bundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -308,6 +387,14 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SLING-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -319,7 +406,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemId" value="core-bundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -334,237 +421,14 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="keywords" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="movies" />
+              <option name="myItemId" value="familydam" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -575,7 +439,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="reference.settings.project.maven.runner" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -623,13 +487,18 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images" />
+      <recent name="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main" />
       <recent name="$PROJECT_DIR$/familydam-standalone/familydam-standalone" />
       <recent name="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main" />
       <recent name="$PROJECT_DIR$/imagehandlers-bundle/src/main/resources/SLING-INF/content/dam/web/facebook" />
-      <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/preview" />
-      <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.mikenimer.familydam.web.jobs" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.mikenimer.familydam.web" />
+      <recent name="com.mikenimer.familydam" />
       <recent name="com.mikenimer.familydam.web.jobs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -638,10 +507,6 @@
       <recent name="$PROJECT_DIR$/bundles" />
       <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services" />
       <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/musicRow" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.mikenimer.familydam" />
-      <recent name="com.mikenimer.familydam.web.jobs" />
     </key>
   </component>
   <component name="RunManager" selected="Remote.remote ">
@@ -687,26 +552,6 @@
       <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -738,20 +583,6 @@
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -795,21 +626,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -831,6 +647,109 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -848,41 +767,6 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
       <method />
     </configuration>
     <configuration default="false" name="Unnamed" type="Application" factoryName="Application" editBeforeRun="true">
@@ -937,8 +821,11 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
     <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
     <option name="MERGE_DRY_RUN" value="false" />
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
@@ -1028,7 +915,10 @@
       <workItem from="1393023238384" duration="1777000" />
       <workItem from="1393025135066" duration="6036000" />
       <workItem from="1393129123051" duration="3875000" />
-      <workItem from="1393134210147" duration="16133000" />
+      <workItem from="1393134210147" duration="16317000" />
+      <workItem from="1393224490125" duration="39000" />
+      <workItem from="1393224540318" duration="87000" />
+      <workItem from="1393301990351" duration="14042000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1350,11 +1240,15 @@
       <created>1393223002341</created>
       <updated>1393223002341</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="add extra check for empty metadata tags">
+      <created>1393223228432</created>
+      <updated>1393223228432</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="903731000" />
+    <option name="totallyTimeSpent" value="918083000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1377,38 +1271,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="940" extended-state="6" />
+    <frame x="0" y="22" width="1680" height="940" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270073" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270073" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270073" sideWeight="0.15445666" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35766423" sideWeight="0.15934066" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.44200245" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2808303" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2808303" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35766423" sideWeight="0.8406593" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.7936508" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3673966" sideWeight="0.8046398" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
-      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2008547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -1416,20 +1307,23 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2725061" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2652068" sideWeight="0.15934066" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1448,20 +1342,20 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35523114" sideWeight="0.9096459" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26129428" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26129428" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
+      <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
+    <option name="RECENTLY_FILTERED_USERS">
       <collection />
     </option>
   </component>
@@ -1474,7 +1368,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="tweaks" />
     <MESSAGE value="add FB OAuth logic and save the token in a new &#10;/apps/faminlydam/user/&lt;username&gt; path for settings." />
     <MESSAGE value="add comment" />
     <MESSAGE value="rename the filehandlers to imagehandlers&#10;&#10;copy the imagehandlers into 3 new bundles, one for music, video, and web handler bundles" />
@@ -1499,7 +1392,8 @@
     <MESSAGE value="remove the ui-router views and just use simple directives" />
     <MESSAGE value="refactor the keyword tagging directive" />
     <MESSAGE value="add save tags logic and add resetting on jcr:path in detail view" />
-    <option name="LAST_COMMIT_MESSAGE" value="add save tags logic and add resetting on jcr:path in detail view" />
+    <MESSAGE value="add extra check for empty metadata tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="add extra check for empty metadata tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1526,114 +1420,162 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/javax/imageio/stream/ImageOutputStream.class">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-          <caret line="6" column="17" selection-start="167" selection-end="167" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower_components/angular-ui-router/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower_components/angular-ui-router/.bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/controllers/PreviewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoMetadataController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoVersionController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridKeywordsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/MetadataService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/ImageDetailsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/dist/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/node_modules/minifyify/test/fixtures/libraries/Jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/PhotoService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="40" selection-start="58" selection-end="58" vertical-scroll-proportion="0.06" vertical-offset="0" max-vertical-offset="500">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-commons/2.7.1/jackrabbit-jcr-commons-2.7.1.jar!/org/apache/jackrabbit/commons/JcrUtils.class">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="1183" max-vertical-offset="2070">
-          <caret line="90" column="33" selection-start="6344" selection-end="6344" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0-sources.jar!/javax/jcr/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33170733" vertical-offset="17414" max-vertical-offset="31620">
-          <caret line="1185" column="22" selection-start="68391" selection-end="68391" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="10" column="33" selection-start="647" selection-end="647" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/_main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3333335" vertical-offset="1648" max-vertical-offset="2835">
-          <caret line="120" column="12" selection-start="2239" selection-end="2239" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="990">
-          <caret line="26" column="13" selection-start="917" selection-end="917" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="4065">
-          <caret line="19" column="41" selection-start="866" selection-end="866" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="3600">
-          <caret line="20" column="30" selection-start="902" selection-end="902" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="49" max-vertical-offset="825">
-          <caret line="36" column="13" selection-start="1268" selection-end="1268" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="2655">
-          <caret line="28" column="30" selection-start="1256" selection-end="1256" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="549" max-vertical-offset="3465">
-          <caret line="59" column="13" selection-start="2423" selection-end="2423" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="2205">
-          <caret line="30" column="0" selection-start="1188" selection-end="1188" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23355263" vertical-offset="4" max-vertical-offset="3585">
-          <caret line="20" column="30" selection-start="906" selection-end="906" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5164473" vertical-offset="840" max-vertical-offset="3660">
-          <caret line="20" column="30" selection-start="914" selection-end="914" />
+        <state line="16" column="0" selection-start="766" selection-end="766" vertical-scroll-proportion="-0.45" vertical-offset="240" max-vertical-offset="1995">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1642,478 +1584,156 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1956522" vertical-offset="40" max-vertical-offset="1605">
-          <caret line="70" column="0" selection-start="2049" selection-end="2049" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/content/dam.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/properties/users.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
-          <caret line="3" column="0" selection-start="87" selection-end="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/ROOT/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="53" selection-start="53" selection-end="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-          <caret line="1" column="29" selection-start="35" selection-end="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1755">
-          <caret line="53" column="16" selection-start="1438" selection-end="1438" />
+        <state line="65" column="0" selection-start="1953" selection-end="1953" vertical-scroll-proportion="-5.703704" vertical-offset="951" max-vertical-offset="2074">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties">
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/examples/ByPathServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="510">
-          <caret line="25" column="0" selection-start="1006" selection-end="1006" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <caret line="1" column="0" selection-start="44" selection-end="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8920" max-vertical-offset="9420">
-          <caret line="588" column="0" selection-start="21503" selection-end="21503" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="6" column="0" selection-start="234" selection-end="234" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3105">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5507956" vertical-offset="0" max-vertical-offset="817">
-          <caret line="30" column="18" selection-start="851" selection-end="851" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125" vertical-offset="675" max-vertical-offset="1710">
-          <caret line="50" column="35" selection-start="2297" selection-end="2303" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower_components/angular-ui-router/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="524">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower_components/angular-ui-router/.bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="600">
-          <caret line="10" column="32" selection-start="258" selection-end="258" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/controllers/PreviewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
+        <state line="46" column="13" selection-start="1732" selection-end="1732" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="690">
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#0#2496#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js">
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0-sources.jar!/javax/jcr/nodetype/NodeTypeDefinition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1080">
-          <caret line="20" column="34" selection-start="1023" selection-end="1040" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="1005" max-vertical-offset="2115">
-          <caret line="92" column="21" selection-start="3532" selection-end="3532" />
-          <folding>
-            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1393208189000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoMetadataController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoVersionController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridKeywordsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
-          <caret line="0" column="0" selection-start="0" selection-end="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="840">
-          <caret line="51" column="14" selection-start="2200" selection-end="2200" />
+        <state line="19" column="17" selection-start="916" selection-end="916" vertical-scroll-proportion="0.3326226" vertical-offset="99" max-vertical-offset="2505">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.base/2.0.4-incubator/org.apache.sling.jcr.base-2.0.4-incubator.jar!/org/apache/jackrabbit/rmi/client/ClientNodeType.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.291667" vertical-offset="1202" max-vertical-offset="1755">
-          <caret line="103" column="53" selection-start="4392" selection-end="4392" />
+        <state line="6" column="27" selection-start="175" selection-end="189" vertical-scroll-proportion="0.10440835" vertical-offset="30" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/MetadataService.js">
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0-sources.jar!/javax/jcr/nodetype/NodeType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4878049" vertical-offset="315" max-vertical-offset="885">
-          <caret line="20" column="9" selection-start="821" selection-end="821" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/keywords.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33707866" vertical-offset="0" max-vertical-offset="445">
-          <caret line="10" column="69" selection-start="410" selection-end="410" />
+        <state line="11" column="17" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7290">
           <folding>
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#19741#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/ImageDetailsServlet.java">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="868" max-vertical-offset="1350">
-          <caret line="101" column="0" selection-start="3698" selection-end="3698" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6801706" vertical-offset="416" max-vertical-offset="1080">
-          <caret line="49" column="56" selection-start="1720" selection-end="1720" />
+        <state line="53" column="13" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="4350">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#10317#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.3-SNAPSHOT/org.apache.sling.event-3.3.3-SNAPSHOT-sources.jar!/org/apache/sling/event/jobs/consumer/JobConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0043956046" vertical-offset="718" max-vertical-offset="1275">
-          <caret line="48" column="28" selection-start="1701" selection-end="1701" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/dist/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24425887" vertical-offset="19788" max-vertical-offset="66645">
-          <caret line="1327" column="14" selection-start="65582" selection-end="65582" />
+        <state line="59" column="17" selection-start="2718" selection-end="2718" vertical-scroll-proportion="0.0" vertical-offset="1022" max-vertical-offset="1485">
           <folding>
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/'...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/login'...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/files&quot;...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/photos/files&quot;...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/photos&quot;...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/music/files&quot;...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/music&quot;...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/movies/files&quot;...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/movies&quot;...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/photos/grid'...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/:id/details'...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Controller for the home screen ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** SIDEBAR Event Listeners ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Parse a path into it's tokens for a valid breadcrumb array ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Callback for file list from JCR Service ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** We only want to let folders or files show up in the tree. Not JCR properties ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Copy state properties to the scope, if it's defined ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Process the search results by grouping them, and checking for the hateoas links. ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/** Utility functions ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{&quot;multiple&quot;: true...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/**var words = []; ...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1393223153000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <element signature="e#0#4531#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/node_modules/minifyify/test/fixtures/libraries/Jquery.js">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3382046" vertical-offset="19488" max-vertical-offset="131895">
-          <caret line="1310" column="17" selection-start="34833" selection-end="34833" />
+        <state line="57" column="0" selection-start="2273" selection-end="2350" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1305">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/PhotoService.js">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3382046" vertical-offset="63" max-vertical-offset="1080">
-          <caret line="30" column="9" selection-start="1068" selection-end="1068" />
+        <state line="59" column="0" selection-start="2330" selection-end="2330" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1305">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/WebNodeRegistry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3131524" vertical-offset="1395" max-vertical-offset="3810">
-          <caret line="118" column="0" selection-start="3212" selection-end="3212" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3041958" vertical-offset="1086" max-vertical-offset="2220">
-          <caret line="84" column="68" selection-start="3149" selection-end="3149" />
+        <state line="46" column="0" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0" vertical-offset="311" max-vertical-offset="945">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="0" selection-start="3867" selection-end="3867" vertical-scroll-proportion="0.8367347" vertical-offset="426" max-vertical-offset="3255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="268" column="44" selection-start="8585" selection-end="8585" vertical-scroll-proportion="0.6722338" vertical-offset="3698" max-vertical-offset="4920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/MimeTypeManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="12" selection-start="858" selection-end="858" vertical-scroll-proportion="-0.65789473" vertical-offset="420" max-vertical-offset="1800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/examples/TestDecorators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="351" selection-end="351" vertical-scroll-proportion="0.1684435" vertical-offset="71" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/examples/ByResourceTypeServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1486" selection-end="1520" vertical-scroll-proportion="0.08315565" vertical-offset="81" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.core/1.4.0/org.osgi.core-1.4.0.jar!/org/osgi/framework/BundleListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="148" selection-end="214" vertical-scroll-proportion="0.16059957" vertical-offset="0" max-vertical-offset="467">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="44" selection-start="3334" selection-end="3347" vertical-scroll-proportion="0.8313008" vertical-offset="521" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="2028" selection-end="2107" vertical-scroll-proportion="0.30688936" vertical-offset="48" max-vertical-offset="3210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="84" selection-start="7511" selection-end="7615" vertical-scroll-proportion="0.21920668" vertical-offset="3360" max-vertical-offset="4545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="20" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.7104723" vertical-offset="1019" max-vertical-offset="1800">
+          <folding>
+            <element signature="e#0#3553#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2185,12 +1805,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>familydam-standalone</last-edited>
+          <last-edited>OSGi|imagehandlers-bundle|Bundles</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

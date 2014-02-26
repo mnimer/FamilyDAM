@@ -267,13 +267,6 @@
                         <Include-Resoource>
                             {maven-resources}, {maven-dependencies}
                         </Include-Resoource>
-                        <Sling-Nodetypes>
-                            SLING-INF/nodetypes/nodetypes.cnd
-                        </Sling-Nodetypes>
-                        <Sling-Initial-Content>
-                            SLING-INF/properties;overwrite:=false;overwriteProperties=true;uninstall:=true;path:=/apps/familydam,
-                            SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content
-                        </Sling-Initial-Content>
                     </instructions>
                 </configuration>
             </plugin>

@@ -110,6 +110,11 @@
             <version>2.0.6</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.fragment.activation</artifactId>
+            <version>1.0.2</version>
+        </dependency>
 
 
 
@@ -225,6 +230,7 @@
                     <instructions>
                         <!-- embed any dependencies with artifactId junit and scope runtime -->
                         <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
+                        <Bundle-Activator>com.mikenimer.familydam.CustomNodeRegister</Bundle-Activator>
                         <Include-Resoource>
                             {maven-resources}, {maven-dependencies}
                         </Include-Resoource>

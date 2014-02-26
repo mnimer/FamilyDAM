@@ -27,6 +27,7 @@ import org.apache.felix.scr.annotations.Reference;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.jcr.api.SlingRepository;
+import org.apache.sling.jcr.base.NodeTypeLoader;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.event.EventAdmin;
 import org.slf4j.Logger;
@@ -38,12 +39,18 @@ import javax.jcr.PathNotFoundException;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.nodetype.NodeType;
+import javax.jcr.nodetype.NodeTypeDefinition;
+import javax.jcr.nodetype.NodeTypeIterator;
+import javax.jcr.nodetype.NodeTypeManager;
+import javax.jcr.nodetype.NodeTypeTemplate;
 import javax.jcr.observation.Event;
 import javax.jcr.observation.EventIterator;
 import javax.jcr.observation.EventListener;
 import javax.jcr.observation.ObservationManager;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -92,6 +99,7 @@ public class UploadObserver implements EventListener
             String[] types = {"nt:file"};
             observationManager.addEventListener(this, Event.NODE_ADDED | Event.NODE_MOVED, contentPath, true, null, types, false);
         }
+
     }
 
 

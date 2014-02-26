@@ -64,6 +64,21 @@
 + metadata (nt:unstructured) multiple COPY
 
 
+[fd:facebook] > nt:base mixin
+- * (undefined) COPY
+- * (undefined) multiple COPY
+
+[fd:twitter] > nt:base mixin
+- * (undefined) COPY
+- * (undefined) multiple COPY
+
+[fd:dropbox] > nt:base mixin
+- * (undefined) COPY
+- * (undefined) multiple COPY
+
+[fd:instagram] > nt:base mixin
+- * (undefined) COPY
+- * (undefined) multiple COPY
 
 //[fd:facebook-status] > nt:base mixin
 //- * (undefined) COPY
