@@ -100,10 +100,18 @@ public class MetadataJob implements JobConsumer
         Calendar dtCal = Calendar.getInstance();
         try
         {
+            // First set the date to NOW, we'll override it later if we have valid metadata
+            dtCal.setTime(new Date());
+            node.setProperty(Constants.DATETIME, dtCal);
+            node.getSession().save();
+
+
+            // Try to parse the metadata
             Map<String, Object> metadata = extractMetadata(node);
 
             if( metadata != null )
             {
+
                 try
                 {
                     // Pull out the date/time of the original photo from the EXIF data and update system date for the file.
@@ -113,15 +121,11 @@ public class MetadataJob implements JobConsumer
                     {
                         dtCal.setTime(datetime);
                         node.setProperty(Constants.DATETIME, dtCal);
-                    } else {
-                        dtCal.setTime(new Date());
-                        node.setProperty(Constants.DATETIME, dtCal);
                     }
                     node.getSession().save();
                 }catch (Exception ex){
                     //swallow
                 }
-
 
 
                 if( persist )

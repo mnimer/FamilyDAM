@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/SizeJob.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/SizeJob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchResourcesServlet.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SearchResourcesServlet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39179105" vertical-offset="2325" max-vertical-offset="5595">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="5595">
               <caret line="227" column="47" selection-start-line="227" selection-start-column="47" selection-end-line="227" selection-end-column="47" />
               <folding />
             </state>
@@ -138,11 +124,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MetadataJob.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MetadataJob.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="938" max-vertical-offset="3180">
+            <state vertical-scroll-proportion="0.3097015" vertical-offset="929" max-vertical-offset="3240">
               <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+              <folding>
+                <element signature="e#5055#5071#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DrewMetadataExtractor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="2280">
+              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -218,10 +216,10 @@
         <option value="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
-        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/SizeJob.java" />
         <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" />
+        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
       </list>
     </option>
   </component>
@@ -256,7 +254,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM Dashboard Application Bundle" />
+          <option name="myItemId" value="FamilyDAM Image Handlers Bundle" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -266,7 +264,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM Dashboard Application Bundle" />
+          <option name="myItemId" value="FamilyDAM Image Handlers Bundle" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -385,6 +383,106 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="imagehandlers-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imagehandlers-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imagehandlers-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imagehandlers-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dashboard-bundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -442,6 +540,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="familydam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -948,7 +1084,7 @@
       <workItem from="1393992306585" duration="3921000" />
       <workItem from="1394330158880" duration="329000" />
       <workItem from="1394331728369" duration="10642000" />
-      <workItem from="1357051952505" duration="3939000" />
+      <workItem from="1357051952505" duration="4775000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1282,11 +1418,19 @@
       <created>1394342656057</created>
       <updated>1394342656057</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="add new fd:date property to all fd:content types and add ORDERING based on this date, in the timeline.&#10;&#10;get the timeline to alternate FB 'types'&#10;&#10;">
+      <created>1394404223308</created>
+      <updated>1394404223309</updated>
+    </task>
+    <task id="LOCAL-00085" summary="add svg webicons">
+      <created>1394404256859</created>
+      <updated>1394404256859</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="990518000" />
+    <option name="totallyTimeSpent" value="991354000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1334,6 +1478,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37712896" sideWeight="0.8046398" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1349,7 +1494,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1407,8 +1551,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="rename the filehandlers to imagehandlers&#10;&#10;copy the imagehandlers into 3 new bundles, one for music, video, and web handler bundles" />
-    <MESSAGE value="add the new copies of the filehandler-bundle (now imagehandler-bundle). &#10;&#10;Right now there is a lot of duplicate code. don't use as is." />
     <MESSAGE value="delete the old files that were copied over and stub in the facebook archive job." />
     <MESSAGE value="After trying a few approaches I've settled on a custom JSON to node mapper to save the facebook API json to a nest node tree with same-child siblings." />
     <MESSAGE value="remove unused code" />
@@ -1432,7 +1574,9 @@
     <MESSAGE value="add extra check for empty metadata tags" />
     <MESSAGE value="Add a new bundle activator to the core project to register the required NodeTypes &amp; Mixins" />
     <MESSAGE value="format the facebook timeline css with the inverted flag" />
-    <option name="LAST_COMMIT_MESSAGE" value="format the facebook timeline css with the inverted flag" />
+    <MESSAGE value="add new fd:date property to all fd:content types and add ORDERING based on this date, in the timeline.&#10;&#10;get the timeline to alternate FB 'types'&#10;&#10;" />
+    <MESSAGE value="add svg webicons" />
+    <option name="LAST_COMMIT_MESSAGE" value="add svg webicons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1465,11 +1609,17 @@
           <properties />
           <option name="timeStamp" value="78" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java</url>
+          <line>106</line>
+          <properties />
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="80" />
+      <option name="time" value="82" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1477,13 +1627,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="645" max-vertical-offset="2115">
-          <caret line="65" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/SearchService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
@@ -1792,14 +1935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="938" max-vertical-offset="3180">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1365">
@@ -1845,9 +1980,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39179105" vertical-offset="2325" max-vertical-offset="5595">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="5595">
           <caret line="227" column="47" selection-start-line="227" selection-start-column="47" selection-end-line="227" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="2280">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3097015" vertical-offset="929" max-vertical-offset="3240">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <element signature="e#5055#5071#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
