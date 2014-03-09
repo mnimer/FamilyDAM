@@ -36,7 +36,7 @@ public class Constants
     public static final String JOB_IMAGE_THUMBNAILS = "familydam/photos/thumbnails";
 
     // Map keys
-    public static final String DATETIME = "date_created"; //todo change to datetime
+    public static final String DATETIME = "fd:date"; //todo change to datetime
     public static final String ORIENTATION = "orientation"; //todo change to orientation
     public static final String KEYWORDS = "keywords";
     public static final String LATITUDE = "latitude";

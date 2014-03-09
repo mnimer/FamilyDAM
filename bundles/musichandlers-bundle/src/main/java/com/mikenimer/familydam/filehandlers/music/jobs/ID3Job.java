@@ -94,6 +94,7 @@ public class ID3Job implements JobConsumer
         {
             Session session = repository.loginAdministrative(null);
             Node node = session.getNode(path);
+
             return process(node, true);
         }catch( RepositoryException re ){
             return JobResult.FAILED;

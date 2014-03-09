@@ -80,6 +80,13 @@ public class SizeJob implements JobConsumer
         {
             Session session = repository.loginAdministrative(null);
             Node node = session.getNode(path);
+
+            if( !node.isNodeType("fd:image") )
+            {
+                node.addMixin("fd:image");
+                session.save();
+            }
+
             return process(session, node);
         }
         catch (Exception ex)

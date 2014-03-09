@@ -143,27 +143,30 @@ public class FacebookJob implements JobConsumer
                     timestamp = post.getString("updated_time");
                 }
 
-                Date date = new Date();
+                Date dateCreated = new Date();
                 if( timestamp!=null && timestamp.length()>0)
                 {
-                    date = facebookDateFormat.parse(timestamp);
+                    dateCreated = facebookDateFormat.parse(timestamp);
                 }
 
                 //pull out the year so we can group posts by year
                 Calendar calendar = Calendar.getInstance();
-                calendar.setTime(date);
+                calendar.setTime(dateCreated);
                 String year = new Integer(calendar.get(Calendar.YEAR)).toString();
 
 
                 String path = facebookPath.replace("{1}", username).replace("{2}", year).replace("{3}", id);
-                if( !session.nodeExists(path) )
+                if( true );// !session.nodeExists(path) )
                 {
                     Node node = JcrUtils.getOrCreateByPath(path, NodeType.NT_UNSTRUCTURED, session);
 
                     // add some FamilyDam specific properties
-                    post.put("type", type);
                     node.addMixin(Constants.NODE_CONTENT);
                     node.addMixin(Constants.NODE_FACEBOOK);
+
+                    node.setProperty("type", type);
+                    node.setProperty(Constants.DATETIME, calendar);
+
                     Map location = checkForLocation(post);
                     if( location != null )
                     {

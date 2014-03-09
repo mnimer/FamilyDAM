@@ -44,6 +44,8 @@ import javax.jcr.observation.EventListener;
 import javax.jcr.observation.ObservationManager;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Watch files put in the generic upload folder. If it's an Image files (based on supported images) we
@@ -183,6 +185,12 @@ public class UploadObserver implements EventListener
                     //first assign the right mixin
                     node.addMixin(Constants.NODE_VIDEO);
                     node.addNode(Constants.METADATA, NodeType.NT_UNSTRUCTURED);
+
+                    // set date for node, to now
+                    Calendar dtCal = Calendar.getInstance();
+                    dtCal.setTime(new Date());
+                    node.setProperty(Constants.DATETIME, dtCal);
+
                     session.save();
 
                     //Set some default properties
@@ -191,9 +199,9 @@ public class UploadObserver implements EventListener
                     //SET default metadata properties
                     //md.setProperty(Constants.KEYWORDS, "");
 
-
                     session.save();
-                } catch (InvalidItemStateException e)
+                }
+                catch (InvalidItemStateException e)
                 {
                     e.printStackTrace();
                 }

@@ -27,6 +27,7 @@ import org.osgi.framework.BundleListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.LoginException;
 import javax.jcr.PropertyType;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
@@ -91,7 +92,6 @@ public class CustomNodeRegister implements BundleListener, BundleActivator
                 NodeTypeManager manager = session.getWorkspace().getNodeTypeManager();
 
 
-
                 /**
                  @see http://jackrabbit.510166.n4.nabble.com/How-to-add-ChildNodeDefinition-to-NodeTypeTemplate-while-creating-a-custom-NodeType-using-NodeTypeMa-td4657488.html
                  **/
@@ -100,55 +100,75 @@ public class CustomNodeRegister implements BundleListener, BundleActivator
                 checkFacebookNode(manager);
 
             }
+        }catch(LoginException le){
+            log.error(le.getMessage(), le);
+        }catch(RepositoryException re){
+            log.error(re.getMessage(), re);
         }
-        catch (Exception ex)
+
+
+    }
+
+
+    private void checkContentNode(NodeTypeManager manager)
+    {
+        try
         {
-            log.error("Unable to create node types", ex);
+            NodeTypeTemplate node = manager.createNodeTypeTemplate();
+            node.setName(Constants.NODE_CONTENT);
+            node.setMixin(true);
+            node.setQueryable(true);
+
+            /* Create a new property */
+            PropertyDefinitionTemplate customProperty = manager.createPropertyDefinitionTemplate();
+            customProperty.setName(Constants.DATETIME);
+            customProperty.setRequiredType(PropertyType.DATE);
+            /* Add property to node type */
+            node.getPropertyDefinitionTemplates().add(customProperty);
+
+            manager.registerNodeType(node, true);
+            NodeTypeIterator nti = manager.getMixinNodeTypes();
+        }
+        catch (RepositoryException re){
+            log.error("Unable to create node types", re);
         }
     }
 
 
-    private void checkContentNode(NodeTypeManager manager) throws RepositoryException
+    private void checkFacebookNode(NodeTypeManager manager)
     {
-        NodeTypeTemplate node = manager.createNodeTypeTemplate();
-        node.setName(Constants.NODE_CONTENT);
-        node.setMixin(true);
-        node.setQueryable(true);
-
-        /* Create a new property */
-        PropertyDefinitionTemplate customProperty = manager.createPropertyDefinitionTemplate();
-        customProperty.setName(Constants.DATETIME);
-        customProperty.setRequiredType(PropertyType.DATE);
-        /* Add property to node type */
-        node.getPropertyDefinitionTemplates().add(customProperty);
-
-        manager.registerNodeType(node, true);
-        NodeTypeIterator nti = manager.getMixinNodeTypes();
+        try
+        {
+            NodeTypeTemplate node = manager.createNodeTypeTemplate();
+            node.setName(Constants.NODE_FACEBOOK);
+            node.setMixin(true);
+            //node.setPrimaryItemName(NodeType.NT_UNSTRUCTURED);
+            //fbNode.setQueryable(true);
+            //node.setDeclaredSuperTypeNames(new String[]{"nt:base"});
+            manager.registerNodeType(node, true);
+            NodeTypeIterator nti = manager.getMixinNodeTypes();
+        }
+        catch (RepositoryException re){
+            log.error("Unable to create node types", re);
+        }
     }
 
 
-    private void checkFacebookNode(NodeTypeManager manager) throws RepositoryException
+    private void checkTwitterNode(NodeTypeManager manager)
     {
-        NodeTypeTemplate node = manager.createNodeTypeTemplate();
-        node.setName(Constants.NODE_FACEBOOK);
-        node.setMixin(true);
-        //node.setPrimaryItemName(NodeType.NT_UNSTRUCTURED);
-        //fbNode.setQueryable(true);
-        //node.setDeclaredSuperTypeNames(new String[]{"nt:base"});
-        manager.registerNodeType(node, true);
-        NodeTypeIterator nti = manager.getMixinNodeTypes();
-    }
-
-
-    private void checkTwitterNode(NodeTypeManager manager) throws RepositoryException
-    {
-        NodeTypeTemplate node = manager.createNodeTypeTemplate();
-        node.setName(Constants.NODE_TWITTER);
-        node.setMixin(true);
-        //node.setPrimaryItemName(NodeType.NT_UNSTRUCTURED);
-        //fbNode.setQueryable(true);
-        //node.setDeclaredSuperTypeNames(new String[]{"nt:base"});
-        manager.registerNodeType(node, true);
-        NodeTypeIterator nti = manager.getMixinNodeTypes();
+        try
+        {
+            NodeTypeTemplate node = manager.createNodeTypeTemplate();
+            node.setName(Constants.NODE_TWITTER);
+            node.setMixin(true);
+            //node.setPrimaryItemName(NodeType.NT_UNSTRUCTURED);
+            //fbNode.setQueryable(true);
+            //node.setDeclaredSuperTypeNames(new String[]{"nt:base"});
+            manager.registerNodeType(node, true);
+            NodeTypeIterator nti = manager.getMixinNodeTypes();
+        }
+        catch (RepositoryException re){
+            log.error("Unable to create node types", re);
+        }
     }
 }

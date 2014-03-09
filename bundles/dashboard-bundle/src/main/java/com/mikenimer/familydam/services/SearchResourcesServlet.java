@@ -225,7 +225,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
                 stmt += " AND content.[created_time] <= CAST('" + JCR_DATE_FORMATTER.format(cal.getTime()) + "' AS DATE)";
             }
 
-            stmt += " ORDER BY content.[created_time] DESC";
+            stmt += " ORDER BY content.[fd:date] DESC";
 
 
             Query query = session.getWorkspace().getQueryManager().createQuery(stmt, Query.JCR_SQL2);

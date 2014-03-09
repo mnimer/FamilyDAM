@@ -44,6 +44,8 @@ import javax.jcr.observation.EventListener;
 import javax.jcr.observation.ObservationManager;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -176,6 +178,12 @@ public class UploadObserver implements EventListener
                     //first assign the right mixin
                     node.addMixin(Constants.NODE_SONG);
                     node.addNode(Constants.METADATA, "nt:unstructured");
+                    // then set a date
+                    // set date for node, to now
+                    Calendar dtCal = Calendar.getInstance();
+                    dtCal.setTime(new Date());
+                    node.setProperty(Constants.DATETIME, dtCal);
+
                     session.save();
 
                     //Set some default properties

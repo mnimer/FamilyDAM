@@ -30,6 +30,10 @@
 <mix = 'http://www.jcp.org/jcr/mix/1.0 '>
 
 
+
+[fd:content] > nt:base mixin
+- fd:date (DOUBLE)
+
 [fd:geostamp] > nt:base mixin
 - latitude (DOUBLE)
 - longitude (DOUBLE)
@@ -79,23 +83,3 @@
 //- tags (STRING) MULTIPLE
 //- collections (STRING) MULTIPLE
 //- event (STRING)
-
-
-
-//<dc = 'http://purl.org/dc/elements/1.1/'>
-//[dc:metadata] mixin
-//- dc:contributor (STRING)
-//- dc:coverage (STRING)
-//- dc:creator (STRING)
-//- dc:date (DATE)
-//- dc:description (STRING)
-//- dc:format (STRING)
-//- dc:identifier (STRING)
-//- dc:language (STRING)
-//- dc:publisher (STRING)
-//- dc:relation (STRING)
-//- dc:right (STRING)
-//- dc:source (STRING)
-//- dc:subject (STRING)
-//- dc:title (STRING)
-//- dc:type (STRING)

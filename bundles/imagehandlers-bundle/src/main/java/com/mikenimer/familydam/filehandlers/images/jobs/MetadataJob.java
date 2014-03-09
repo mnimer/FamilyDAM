@@ -112,8 +112,12 @@ public class MetadataJob implements JobConsumer
                     if( datetime != null )
                     {
                         dtCal.setTime(datetime);
-                        node.setProperty("created", dtCal);
+                        node.setProperty(Constants.DATETIME, dtCal);
+                    } else {
+                        dtCal.setTime(new Date());
+                        node.setProperty(Constants.DATETIME, dtCal);
                     }
+                    node.getSession().save();
                 }catch (Exception ex){
                     //swallow
                 }
