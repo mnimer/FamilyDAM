@@ -17,6 +17,7 @@
 
 package com.mikenimer.familydam;
 
+import org.apache.felix.scr.annotations.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,7 +36,7 @@ public class Constants
     public static final String JOB_IMAGE_THUMBNAILS = "familydam/photos/thumbnails";
 
     // Map keys
-    public static final String DATETIME = "dateTaken"; //todo change to datetime
+    public static final String DATETIME = "date_created"; //todo change to datetime
     public static final String ORIENTATION = "orientation"; //todo change to orientation
     public static final String KEYWORDS = "keywords";
     public static final String LATITUDE = "latitude";
@@ -76,5 +77,11 @@ public class Constants
 
 
 
+    public static final String NODE_CONTENT = "fd:content";
+    public static final String NODE_GEOSTAMP = "fd:geostamp";
+    public static final String NODE_IMAGE = "fd:image";
+    public static final String NODE_SONG = "fd:song";
+    public static final String NODE_VIDEO = "fd:video";
     public static final String NODE_FACEBOOK = "fd:facebook";
+    public static final String NODE_TWITTER = "fd:twittter";
 }

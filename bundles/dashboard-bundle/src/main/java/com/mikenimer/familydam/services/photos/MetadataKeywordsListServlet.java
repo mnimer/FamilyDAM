@@ -18,6 +18,7 @@
 
 package com.mikenimer.familydam.services.photos;
 
+import com.mikenimer.familydam.Constants;
 import org.apache.commons.collections4.Bag;
 import org.apache.commons.collections4.bag.HashBag;
 import org.apache.felix.scr.annotations.Activate;
@@ -87,7 +88,7 @@ public class MetadataKeywordsListServlet extends SlingAllMethodsServlet
             Bag bag = new HashBag();
 
 
-            String stmt = "select * from [fd:image] WHERE ISDESCENDANTNODE([" +path +"])";
+            String stmt = "select * from [" + Constants.NODE_CONTENT +"] WHERE ISDESCENDANTNODE([" +path +"])";
 
             Session session = request.getResourceResolver().adaptTo(Session.class);
             Query query = session.getWorkspace().getQueryManager().createQuery(stmt, Query.JCR_SQL2);

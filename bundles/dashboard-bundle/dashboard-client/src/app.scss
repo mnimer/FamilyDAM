@@ -22,9 +22,15 @@
 @import "modules/login/login";
 @import "modules/files/files";
 @import "modules/photos/photos";
+@import "modules/web/web";
+@import "modules/web/directives/timeline/timeline";
 @import "modules/user/preferences/preferences";
 @import "modules/user/usermanager/usermanager";
 @import "directives/fileUpload/fileUpload";
+
+
+// Web Icons
+@import "assets/css/webicons-master/webicons";
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;

@@ -27,10 +27,13 @@ import org.osgi.framework.BundleListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.PropertyType;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.nodetype.NodeType;
 import javax.jcr.nodetype.NodeTypeDefinition;
+import javax.jcr.nodetype.NodeTypeIterator;
 import javax.jcr.nodetype.NodeTypeManager;
 import javax.jcr.nodetype.NodeTypeTemplate;
 import javax.jcr.nodetype.PropertyDefinitionTemplate;
@@ -87,9 +90,13 @@ public class CustomNodeRegister implements BundleListener, BundleActivator
             {
                 NodeTypeManager manager = session.getWorkspace().getNodeTypeManager();
 
+
+
                 /**
                  @see http://jackrabbit.510166.n4.nabble.com/How-to-add-ChildNodeDefinition-to-NodeTypeTemplate-while-creating-a-custom-NodeType-using-NodeTypeMa-td4657488.html
                  **/
+                checkContentNode(manager);
+                checkTwitterNode(manager);
                 checkFacebookNode(manager);
 
             }
@@ -101,14 +108,47 @@ public class CustomNodeRegister implements BundleListener, BundleActivator
     }
 
 
+    private void checkContentNode(NodeTypeManager manager) throws RepositoryException
+    {
+        NodeTypeTemplate node = manager.createNodeTypeTemplate();
+        node.setName(Constants.NODE_CONTENT);
+        node.setMixin(true);
+        node.setQueryable(true);
+
+        /* Create a new property */
+        PropertyDefinitionTemplate customProperty = manager.createPropertyDefinitionTemplate();
+        customProperty.setName(Constants.DATETIME);
+        customProperty.setRequiredType(PropertyType.DATE);
+        /* Add property to node type */
+        node.getPropertyDefinitionTemplates().add(customProperty);
+
+        manager.registerNodeType(node, true);
+        NodeTypeIterator nti = manager.getMixinNodeTypes();
+    }
+
+
     private void checkFacebookNode(NodeTypeManager manager) throws RepositoryException
     {
-        if (!manager.hasNodeType(Constants.NODE_FACEBOOK))
-        {
-            NodeTypeTemplate fbNode = manager.createNodeTypeTemplate();
-            fbNode.setName(Constants.NODE_FACEBOOK);
-            fbNode.setMixin(true);
-            manager.registerNodeType(fbNode, true);
-        }
+        NodeTypeTemplate node = manager.createNodeTypeTemplate();
+        node.setName(Constants.NODE_FACEBOOK);
+        node.setMixin(true);
+        //node.setPrimaryItemName(NodeType.NT_UNSTRUCTURED);
+        //fbNode.setQueryable(true);
+        //node.setDeclaredSuperTypeNames(new String[]{"nt:base"});
+        manager.registerNodeType(node, true);
+        NodeTypeIterator nti = manager.getMixinNodeTypes();
+    }
+
+
+    private void checkTwitterNode(NodeTypeManager manager) throws RepositoryException
+    {
+        NodeTypeTemplate node = manager.createNodeTypeTemplate();
+        node.setName(Constants.NODE_TWITTER);
+        node.setMixin(true);
+        //node.setPrimaryItemName(NodeType.NT_UNSTRUCTURED);
+        //fbNode.setQueryable(true);
+        //node.setDeclaredSuperTypeNames(new String[]{"nt:base"});
+        manager.registerNodeType(node, true);
+        NodeTypeIterator nti = manager.getMixinNodeTypes();
     }
 }

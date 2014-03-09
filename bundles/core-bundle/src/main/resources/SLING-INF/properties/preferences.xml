@@ -46,6 +46,30 @@
     </property>
 
     <property>
+        <name>instagram-api-key</name>
+        <type>String</type>
+        <value></value>
+    </property>
+
+    <property>
+        <name>tripit-api-key</name>
+        <type>String</type>
+        <value></value>
+    </property>
+
+    <property>
+        <name>googleplus-api-key</name>
+        <type>String</type>
+        <value></value>
+    </property>
+
+    <property>
+        <name>googledrive-api-key</name>
+        <type>String</type>
+        <value>3sreo3n7fx1o882</value>
+    </property>
+
+    <property>
         <name>dropbox-api-key</name>
         <type>String</type>
         <value>3sreo3n7fx1o882</value>

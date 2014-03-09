@@ -17,6 +17,7 @@
 
 package com.mikenimer.familydam.web.jobs;
 
+import com.mikenimer.familydam.Constants;
 import com.mikenimer.familydam.mappers.JsonToNode;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.felix.scr.annotations.Component;
@@ -161,10 +162,12 @@ public class FacebookJob implements JobConsumer
 
                     // add some FamilyDam specific properties
                     post.put("type", type);
+                    node.addMixin(Constants.NODE_CONTENT);
+                    node.addMixin(Constants.NODE_FACEBOOK);
                     Map location = checkForLocation(post);
                     if( location != null )
                     {
-                        node.addMixin("fd:geostamp");
+                        node.addMixin(Constants.NODE_GEOSTAMP);
                         node.setProperty("latitude", (Double) location.get("latitude"));
                         node.setProperty("longitude", (Double)location.get("longitude"));
                     }
@@ -252,10 +255,10 @@ public class FacebookJob implements JobConsumer
                 Binary imageBinary = new BinaryImpl(os.toByteArray());
 
                 // create file node
-                Node sourceNode = node.addNode("photo", "nt:file");
-                sourceNode.addMixin("fd:image");
+                Node sourceNode = node.addNode("file", "nt:file");
+                sourceNode.addMixin(Constants.NODE_IMAGE);
 
-                Node contentNode = sourceNode.addNode("jcr:content", "nt:resource");
+                Node contentNode = sourceNode.addNode("jcr:content", NodeType.NT_RESOURCE);
                 contentNode.setProperty("jcr:data", imageBinary);
                 contentNode.setProperty("jcr:lastModified", Calendar.getInstance());
                 contentNode.setProperty("jcr:mimeType", "image/jpeg");

@@ -158,7 +158,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
 
     var refreshSearch = function()
     {
-        photoService.search(_filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
+        photoService.search("fd:image", _filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
     };
 
     var groupData = function (results)
@@ -232,7 +232,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
             // transitionTo() promise will be rejected with
             // a 'transition prevented' error
         }
-        var request = photoService.search(_filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
+        var request = photoService.search("fd:image", _filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
 
     };
     init();

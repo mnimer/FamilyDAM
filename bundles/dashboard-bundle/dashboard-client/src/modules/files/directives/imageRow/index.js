@@ -33,6 +33,7 @@ var imageRowDirective = function ($rootScope, $compile, $parse, $state)
             var _selectFile = function (path_)
             {
                 //scope.$emit("photo:select", path_);
+                $state.go("photos:details", {id: path_['jcr:uuid']});
             };
 
 

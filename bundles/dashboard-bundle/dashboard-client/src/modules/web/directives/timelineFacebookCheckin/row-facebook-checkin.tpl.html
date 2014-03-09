@@ -1,0 +1,32 @@
+<li ng-class="inverted ? 'timeline-inverted' : ''">
+<div>
+    <div class="timeline-badge"><i class="webicon facebook medium"></i></div>
+    <div class="timeline-panel">
+        <div class="timeline-heading">
+            <h4 class="timeline-title">{{item.place.name}}</h4>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{item.created_time | fromNow}}</small></p>
+        </div>
+
+        <div class="timeline-body">
+            <div>
+                <img
+                        ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{item.latitude}},{{item.longitude}}&zoom=13&size={{width}}x200&markers=label:{{item.place.name}}%7C{{item.latitude}},{{item.longitude}}&sensor=false"
+                        style="width: 100%;">
+
+            </div>
+<!--
+            <p>
+            <div>uuid:{{item.uuid}}</div>
+            <div>path:{{item.path}}</div>
+            <div>type:{{item.type}}</div>
+            <div>message:{{item.message}}</div>
+            <div>place:{{item.place}}</div>
+            <div>latitude:{{item.latitude}}</div>
+            <div>longitude:{{item.longitude}}</div>
+            </p>
+-->
+        </div>
+    </div>
+</div>
+</li>
+

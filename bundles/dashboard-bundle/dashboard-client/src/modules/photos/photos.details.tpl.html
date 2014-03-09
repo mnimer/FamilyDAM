@@ -15,7 +15,7 @@
   ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<div id="photoDetails" class="photos section" ng-class="{'col-xs-12':!showSidebar, 'col-sm-8': showSidebar}">
+<div id="photoDetails" class="photos section" ng-class="{'col-xs-12':!showSidebar, 'col-sm-9': showSidebar}">
 
     <div id="toolbar">
         <ol class="breadcrumb" style="display: inline;">
@@ -35,11 +35,9 @@
 
         </div>
 
-
         <img ng-src="{{scaledImageUrl}}" style="width: 100%;"/><br/>
         {{node['jcr:uuid']}}<br/>
         {{node['width']}}x{{node['height']}}<br/>
-
     </div>
 
 
@@ -47,7 +45,7 @@
 
 
 <!-- start: Widgets Area -->
-<aside id="sidebar-right" class="col-sm-4 hidden-xs" ng-show="showSidebar">
+<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-show="showSidebar">
 
     <tabset>
         <tab heading="Metadata">
@@ -70,7 +68,6 @@
             </div>
         </tab>
     </tabset>
-
 
 </aside>
 <!-- end: Widgets Area -->

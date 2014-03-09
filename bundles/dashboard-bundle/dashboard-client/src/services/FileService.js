@@ -26,7 +26,7 @@ var FileService = function ($http)
      * @param errorCallback
      * @returns {*|Array|Object|Mixed|promise|HTMLElement}
      */
-    this.list = function (path)
+    this.list = function (path, type)
     {
 
         // make sure the path starts with /
@@ -35,6 +35,7 @@ var FileService = function ($http)
             path = "/" + path;
         }
 
+        // todo call new service with path & type filter
         var get = $http.get(path + '.1.json', { cache: false });
 
         return get;

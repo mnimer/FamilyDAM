@@ -132,7 +132,7 @@ public class UploadObserver implements EventListener
                 {
                     Node parentNode = session.getNode(event.getPath()).getParent();
 
-                    if (MimeTypeManager.isImage(event.getPath()) || parentNode.isNodeType("fd:image") )
+                    if (MimeTypeManager.isImage(event.getPath()) || parentNode.isNodeType(Constants.NODE_IMAGE) )
                     {
                         processImageFile(event);
                     }
@@ -175,16 +175,16 @@ public class UploadObserver implements EventListener
 
             //reload the node reference
             node = session.getNode(event.getPath()).getParent();
-
+            node.addMixin(Constants.NODE_CONTENT);
 
             //Check jcr created & versionable nodes
-            if (!node.isNodeType("fd:image"))
+            if (!node.isNodeType(Constants.NODE_IMAGE))
             {
                 try
                 {
                     //first assign the right mixin
-                    node.addMixin("fd:image");
-                    node.addNode(Constants.METADATA, "nt:unstructured");
+                    node.addMixin(Constants.NODE_IMAGE);
+                    node.addNode(Constants.METADATA, NodeType.NT_UNSTRUCTURED);
                     session.save();
 
                     //Set some default properties

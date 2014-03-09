@@ -37,6 +37,7 @@ import javax.jcr.PathNotFoundException;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.nodetype.NodeType;
 import javax.jcr.observation.Event;
 import javax.jcr.observation.EventIterator;
 import javax.jcr.observation.EventListener;
@@ -172,16 +173,16 @@ public class UploadObserver implements EventListener
 
             //reload the node reference
             node = session.getNode(event.getPath()).getParent();
-
+            node.addMixin(Constants.NODE_CONTENT);
 
             //Check jcr created & versionable nodes
-            if (!node.isNodeType("fd:movie"))
+            if (!node.isNodeType(Constants.NODE_VIDEO))
             {
                 try
                 {
                     //first assign the right mixin
-                    node.addMixin("fd:movie");
-                    node.addNode(Constants.METADATA, "nt:unstructured");
+                    node.addMixin(Constants.NODE_VIDEO);
+                    node.addNode(Constants.METADATA, NodeType.NT_UNSTRUCTURED);
                     session.save();
 
                     //Set some default properties

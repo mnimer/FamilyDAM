@@ -172,8 +172,8 @@ module.exports = function (grunt) {
                         'infinite-scroll': './bower_components/ngInfiniteScroll/ng-infinite-scroll.js',
                         'treeControl':'./src/assets/js/angular-tree-control-modified.js',
                         'vr.directives.wordCloud':'./bower_components/angular-word-cloud/build/angular-word-cloud.js',
-                        'momentjs':'./bower_components/momentjs/moment.js',
-                        'select2':'./bower_components/select2/select2.js'
+                        'select2':'./bower_components/select2/select2.js',
+                        'momentjs':'./bower_components/momentjs/min/moment-with-langs.js'
                     }
 				}
 			},

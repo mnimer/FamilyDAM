@@ -166,15 +166,15 @@ public class UploadObserver implements EventListener
 
             //reload the node reference
             node = session.getNode(event.getPath()).getParent();
-
+            node.addMixin(Constants.NODE_CONTENT);
 
             //Check jcr created & versionable nodes
-            if (!node.isNodeType("fd:song"))
+            if (!node.isNodeType(Constants.NODE_SONG))
             {
                 try
                 {
                     //first assign the right mixin
-                    node.addMixin("fd:song");
+                    node.addMixin(Constants.NODE_SONG);
                     node.addNode(Constants.METADATA, "nt:unstructured");
                     session.save();
 

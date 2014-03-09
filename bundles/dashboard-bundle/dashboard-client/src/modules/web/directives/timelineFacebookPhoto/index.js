@@ -15,22 +15,21 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Define the required js libraries needed for this application. The compiler will merge them all into a single download
- */
-require('jquery');
-require('jquery-ui');
-require('angular');
-require('angular-ui-router');
-require('angular-cookies');
-require('angular-resource');
-require('angular-dragdrop');
-require('angular-file-upload');
-require('angular-ui-select2');
-require('ui.bootstrap');
-require('ui.bootstrap.tpls');
-require('select2');
-require('infinite-scroll');
-require('treeControl');
-require('vr.directives.wordCloud');
-require('momentjs');
+var timelineFacebookPhoto = function($compile) {
+    return {
+        scope: {
+            inverted: '='
+        },
+        replace: true,
+        templateUrl: 'modules/web/directives/timelineFacebookPhoto/row-facebook-photo.tpl.html',
+        link: function(scope, element, attrs) {
+            scope.item = scope.$parent.data;
+            //console.log(scope.data);
+            //scope.inverted = true;
+        }
+    };
+};
+
+
+timelineFacebookPhoto.$inject = ['$compile'];
+module.exports = timelineFacebookPhoto;

@@ -40,6 +40,7 @@ var App = angular.module('dashboard', [
         require('./modules/photos').name,
         require('./modules/music').name,
         require('./modules/movies').name,
+        require('./modules/web').name,
         require('./directives/fileUpload').name,
         require('./modules/user/preferences').name,
         require('./modules/user/usermanager').name])
@@ -49,6 +50,7 @@ var App = angular.module('dashboard', [
     .service('photoService', require('./services/PhotoService'))
     .service('metadataService', require('./services/MetadataService'))
     .service('userService', require('./services/UserService'))
+    .service('searchService', require('./services/SearchService'))
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {

@@ -18,11 +18,13 @@
 
 package com.mikenimer.familydam.services;
 
+import com.mikenimer.familydam.Constants;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.PropertyUnbounded;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -36,10 +38,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
+import javax.jcr.NodeIterator;
+import javax.jcr.PropertyIterator;
+import javax.jcr.PropertyType;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.Value;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryResult;
+import javax.jcr.query.Row;
 import javax.jcr.query.RowIterator;
 import javax.servlet.Servlet;
 import java.io.IOException;
@@ -62,7 +69,7 @@ import java.util.Locale;
 @Service(Servlet.class)
 @Properties({@Property(name = "service.description", value = "Search Resource"),
         @Property(name = "service.vendor", value = "The FamilyDAM Project"),
-        @Property(name = "sling.servlet.paths", value = "/dashboard-api/photos/search")
+        @Property(name = "sling.servlet.paths", value = "/dashboard-api/search")
 })
 public class SearchResourcesServlet extends SlingSafeMethodsServlet
 {
@@ -100,6 +107,8 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
     protected void doGet(SlingHttpServletRequest request,
                          SlingHttpServletResponse response) throws SlingServletException, IOException
     {
+        Session session = request.getResourceResolver().adaptTo(Session.class);
+
         int limit = 20;
         if (request.getRequestParameter("limit") != null && request.getRequestParameter("limit").getSize() > 0)
         {
@@ -118,19 +127,30 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
             filterPath = request.getRequestParameter("filterPath").getString();
         }
 
+        String filterType = Constants.NODE_CONTENT;
+        if (request.getRequestParameter("type") != null)
+        {
+            filterType = request.getRequestParameter("type").getString();
+        }
+
+
         Date filterDateFrom = null;
         if (request.getRequestParameter("dateFrom") != null && request.getRequestParameter("dateFrom").getSize() > 0)
         {
             try
             {
-                filterDateFrom = new Date(  new Long(request.getRequestParameter("dateFrom").getString()).longValue()  );
-            }catch(Exception ex){
+                filterDateFrom = new Date(new Long(request.getRequestParameter("dateFrom").getString()).longValue());
+            }
+            catch (Exception ex)
+            {
                 try
                 {
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
-                    filterDateFrom = formatter.parse( request.getRequestParameter("dateFrom").getString() );
+                    filterDateFrom = formatter.parse(request.getRequestParameter("dateFrom").getString());
                 }
-                catch(ParseException pe){}
+                catch (ParseException pe)
+                {
+                }
             }
 
         }
@@ -140,14 +160,18 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
         {
             try
             {
-                filterDateTo = new Date(  new Long(request.getRequestParameter("dateTo").getString()).longValue()  );
-            }catch(Exception ex){
+                filterDateTo = new Date(new Long(request.getRequestParameter("dateTo").getString()).longValue());
+            }
+            catch (Exception ex)
+            {
                 try
                 {
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
-                    filterDateTo = formatter.parse( request.getRequestParameter("dateTo").getString() );
+                    filterDateTo = formatter.parse(request.getRequestParameter("dateTo").getString());
                 }
-                catch(ParseException pe){}
+                catch (ParseException pe)
+                {
+                }
             }
         }
 
@@ -163,35 +187,47 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
             prettyJson = new Boolean(request.getRequestParameter("prettyJson").getString());
         }
 
+
+
+
         try
         {
-            String stmt = "SELECT file.* FROM [fd:image] AS file" +
-                    " INNER JOIN [nt:resource] as resource on ISCHILDNODE(resource, file)" +
-                    " INNER JOIN [nt:unstructured] as metadata on ISCHILDNODE(metadata, file)";
-            stmt += " WHERE ISDESCENDANTNODE(file, '" + filterPath + "')";
+            /******************************
+             * Build up JCR SQL
+            ******************************/
 
-            if (filterTags != null)
+            String stmt = "SELECT content.* FROM [" + filterType + "] AS content";
+
+            if (filterType.equals(Constants.NODE_IMAGE) && filterTags != null && !filterTags.equals("undefined"))
             {
-                stmt += " AND metadata.[keywords] like '%" + filterTags + "%'"; //todo support array of tags. with a "AND ( word or word )" statement
+                stmt += " LeftOuter JOIN [nt:unstructured] as metadata on ISCHILDNODE(metadata, content)";
+                if (filterTags != null)
+                {
+                    stmt += " AND metadata.[keywords] like '%" + filterTags + "%'"; //todo support array of tags. with a "AND ( word or word )" statement
+                }
             }
+
+            stmt += " WHERE ISDESCENDANTNODE(content, '" + filterPath + "')";
+            //stmt += " AND content.[type] = 'status'";
+
             if (filterDateFrom != null)
             {
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(filterDateFrom);
 
-                stmt += " AND file.[created] >= CAST('" + JCR_DATE_FORMATTER.format(cal.getTime()) + "' AS DATE)";
+                stmt += " AND content.[created_time] >= CAST('" + JCR_DATE_FORMATTER.format(cal.getTime()) + "' AS DATE)";
             }
             if (filterDateTo != null)
             {
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(filterDateTo);
 
-                stmt += " AND file.[created] <= CAST('" + JCR_DATE_FORMATTER.format(cal.getTime()) + "' AS DATE)";
+                stmt += " AND content.[created_time] <= CAST('" + JCR_DATE_FORMATTER.format(cal.getTime()) + "' AS DATE)";
             }
 
-            stmt += " ORDER BY file.[created] DESC";
+            stmt += " ORDER BY content.[created_time] DESC";
 
-            Session session = request.getResourceResolver().adaptTo(Session.class);
+
             Query query = session.getWorkspace().getQueryManager().createQuery(stmt, Query.JCR_SQL2);
             query.setLimit(limit);
             //query.setOffset(offset);
@@ -206,107 +242,184 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
             {
                 prev = request.getPathInfo() + "?limit=" + limit + "&offset=" + (offset - 1) + "&filterPath=" + filterPath + "&dateFrom=" + filterDateFrom + "&dateTo=" + filterDateTo + "&tags=" + filterTags;
             }
+
+
             // set location header
             response.setHeader("location", self);
             response.setContentType(request.getResponseContentType());
             response.setCharacterEncoding("UTF-8");
 
-
-            try
-            {
-                final JSONWriter w = new JSONWriter(response.getWriter());
-
-                w.setTidy(prettyJson);
-
-                w.object();
-                w.key("links");
-                w.object();
-                w.key("self").value(self);
-                w.key("next").value(next);
-                if (prev != null)
-                {
-                    w.key("prev").value(prev);
-                }
-                w.endObject();
-                w.key("data");
-                w.array();
-                RowIterator nodeItr = results.getRows();
-                while (nodeItr.hasNext())
-                {
-                    Node n = nodeItr.nextRow().getNode("file");
-                    Resource resource = request.getResourceResolver().resolve(n.getPath());
-
-                    //todo standardize this for all services that return an Image
-                    w.object();
-                    w.key("name").value(n.getName());
-                    if (n.hasProperty("created"))
-                    {
-                        w.key("created").value(n.getProperty("created").getDate().getTime());
-                    } else
-                    {
-                        w.key("created").value(n.getProperty("jcr:created").getDate().getTime());
-                    }
-                    w.key("jcr:path").value(resource.getResourceMetadata().getResolutionPath());
-                    w.key("jcr:uuid").value(n.getIdentifier());
-                    w.key("jcr:primaryType").value(n.getPrimaryNodeType().getName());
-                    w.key("jcr:contentType").value(resource.getResourceMetadata().getContentType());
-                    w.key("jcr:contentLength").value(resource.getResourceMetadata().getContentLength());
-                    w.key("jcr:created").value(CALENDAR_FORMATTER.format(n.getProperty("jcr:created").getDate().getTime()));
-                    w.key("jcr:createdBy").value(n.getProperty("jcr:createdBy").getString());
-                    w.key("metadata");
-                    w.object();
-                            try
-                            {
-                                //todo remove
-                                String dt = n.getNode("metadata").getProperty("__DATETIME").getString();
-                                if( dt != null )
-                                {
-                                    w.key("datetime").value(dt);
-                                }
-                            } catch (Exception e1) {}
-                    /**
-                            try
-                            {
-                                //w.key("created").value(n.getNode("metadata").getProperty("dateTaken").getString());
-                            } catch (Exception e1) {}
-                     **/
-                            try
-                            {
-                                String tags = n.getNode("metadata").getProperty("keywords").getString();
-                                if( tags != null )
-                                {
-                                    w.key("keywords").value(tags);
-                                }
-                            } catch (Exception e1) {}
-                    w.endObject();
-                    w.key("links");
-                    w.object();
-                    w.key("self").value(n.getPath() + ".1.json");
-                    w.key("image").value(n.getPath());
-                    w.key("thumbnail").value(resource.getResourceMetadata().getResolutionPath() + ".scale.w:200.png");
-                    w.endObject();
-                    w.endObject();
-                    //w.value(n);
-                }
-                w.endArray();
-                w.endObject();
-            } catch (JSONException je)
-            {
-                je.printStackTrace();
-                throw (IOException) new IOException("JSONException in doGet").initCause(je);
-            } catch (Exception e)
-            {
-                e.printStackTrace();
-                throw (IOException) new IOException("General Exception in doGet").initCause(e);
-            }
+            // Convert the results to JSON and write it into the request output
+            serializeJson(request, response, prettyJson, results, self, next, prev);
 
 
-        } catch (RepositoryException re)
+        }
+        catch (RepositoryException re)
         {
             re.printStackTrace();
             throw new SlingServletException(new javax.servlet.ServletException(re));
         }
 
         //request.getRequestDispatcher(request.getResource()).forward(request, response);
+    }
+
+
+    private void serializeJson(SlingHttpServletRequest request, SlingHttpServletResponse response, boolean prettyJson, QueryResult results, String self, String next, String prev) throws IOException
+    {
+        try
+        {
+            final JSONWriter w = new JSONWriter(response.getWriter());
+
+            w.setTidy(prettyJson);
+
+            w.object();
+            w.key("links");
+            w.object();
+            w.key("self").value(self);
+            w.key("next").value(next);
+            if (prev != null)
+            {
+                w.key("prev").value(prev);
+            }
+            w.endObject();
+
+
+            w.key("data");
+            w.array();
+            RowIterator nodeItr = results.getRows();
+            while (nodeItr.hasNext())
+            {
+                Row row = nodeItr.nextRow();
+                Node n = row.getNode();
+
+
+                w.object();
+                w.key("jcr:path").value(n.getPath());
+                w.key("jcr:uuid").value(n.getIdentifier());
+
+                try
+                {
+                    if (n.hasProperty(Constants.DATETIME))
+                    {
+                        w.key("jcr:created").value(CALENDAR_FORMATTER.format(n.getProperty(Constants.DATETIME).getDate().getTime()));
+                    }
+                    else if (n.hasProperty("jcr:created"))
+                    {
+                        w.key("jcr:created").value(CALENDAR_FORMATTER.format(n.getProperty("jcr:created").getDate().getTime()));
+                    }
+                    if (n.hasProperty("jcr:createdBy"))
+                    {
+                        w.key("jcr:createdBy").value(n.getProperty("jcr:createdBy").getString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.printStackTrace();
+                }
+
+                // Walk the NODE and serialize it into json node
+                convertNodeToJson(w, n);
+
+
+                // Add any Hateoas links
+                w.key("links");
+                    w.object();
+                        w.key("self").value(n.getPath() + ".1.json");
+
+                        if (n.isNodeType(Constants.NODE_IMAGE))
+                        {
+                            //n = row.getNode("file");
+                            Resource resource = request.getResourceResolver().resolve(n.getPath());
+
+                            w.key("image").value(resource.getPath());
+                            w.key("thumbnail").value(resource.getResourceMetadata().getResolutionPath() + ".scale.w:200.png");
+                        }
+                        // for files with a nested image (like facebook photo)
+                        else if( n.hasNode("file") && n.getNode("file").isNodeType(Constants.NODE_IMAGE))
+                        {
+                            Resource fileResource = request.getResourceResolver().resolve(n.getNode("file").getPath());
+                            w.key("image").value(fileResource.getPath());
+                            w.key("thumbnail").value(fileResource.getResourceMetadata().getResolutionPath() + ".scale.w:200.png");
+                        }
+
+                    w.endObject();
+                w.endObject();
+                //w.value(n);
+            }
+            w.endArray();
+            w.endObject();
+        }
+        catch (JSONException je)
+        {
+            je.printStackTrace();
+            throw (IOException) new IOException("JSONException in doGet").initCause(je);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw (IOException) new IOException("General Exception in doGet").initCause(e);
+        }
+    }
+
+
+    /**
+     * TODO move this into it's own class in Code
+     * Recursively walk a node tree and convert it to a JSON object
+     * @param w
+     * @param n
+     * @throws RepositoryException
+     * @throws JSONException
+     */
+    private void convertNodeToJson(JSONWriter w, Node n) throws RepositoryException, JSONException
+    {
+        PropertyIterator propItr = n.getProperties();
+        while (propItr.hasNext())
+        {
+            javax.jcr.Property prop = propItr.nextProperty();
+
+            if (prop.getType() == PropertyType.DATE)
+            {
+                String dt = CALENDAR_FORMATTER.format(prop.getDate().getTime());
+                w.key(prop.getName()).value(dt);
+            }
+            else if (prop.getType() == PropertyType.BOOLEAN)
+            {
+                w.key(prop.getName()).value(prop.getBoolean());
+            }
+            else if (prop.getType() == PropertyType.BINARY)
+            {
+                log.trace("binary data for {}", prop.getName());
+                // todo: add flag to conditionally base64 encode this
+                //w.key(prop.getName()).value(prop.getBoolean());
+            }
+            else if (prop.isMultiple())
+            {
+                w.key(prop.getName());
+                w.array();
+                Value[] values = prop.getValues();
+                for (int i = 0; i < values.length; i++)
+                {
+                    Value _v = values[i];
+                    w.value(_v.getString());
+                }
+                w.endArray();
+            }
+            else
+            {
+                w.key(prop.getName()).value(prop.getString());
+            }
+        }
+
+
+        // follow child nodes
+        NodeIterator nodeItr = n.getNodes();
+        while (nodeItr.hasNext())
+        {
+            Node _node = nodeItr.nextNode();
+            w.key(_node.getName());
+            w.object();
+            convertNodeToJson(w, _node);
+            w.endObject();
+        }
     }
 }

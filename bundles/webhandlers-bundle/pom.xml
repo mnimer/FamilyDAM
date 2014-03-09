@@ -33,7 +33,12 @@
 
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.mikenimer.familydam</groupId>
+            <artifactId>familydam-core-bundle</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!--
         **  System Resources
@@ -242,7 +247,7 @@
                 <configuration>
                     <instructions>
                         <!-- embed any dependencies with artifactId junit and scope runtime -->
-                        <Embed-Dependency>org.apache.sling.jcr.contentloader;scope=compile|runtime</Embed-Dependency>
+                        <Embed-Dependency>org.apache.sling.jcr.contentloader;com.mikenimer.familydam.Constants;scope=compile|runtime</Embed-Dependency>
                         <Export-Package>com.mikenimer.familydam.*</Export-Package>
                         <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
                         <Include-Resoource>

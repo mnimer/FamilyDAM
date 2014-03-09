@@ -1,3 +1,4 @@
+
 /*
  * This file is part of FamilyDAM Project.
  *
@@ -15,22 +16,31 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Define the required js libraries needed for this application. The compiler will merge them all into a single download
- */
-require('jquery');
-require('jquery-ui');
-require('angular');
-require('angular-ui-router');
-require('angular-cookies');
-require('angular-resource');
-require('angular-dragdrop');
-require('angular-file-upload');
-require('angular-ui-select2');
-require('ui.bootstrap');
-require('ui.bootstrap.tpls');
-require('select2');
-require('infinite-scroll');
-require('treeControl');
-require('vr.directives.wordCloud');
-require('momentjs');
+.web
+{
+
+
+  .content
+  {
+    height:   auto;
+    border:   0px;
+    overflow: scroll;
+  }
+
+}
+
+aside{
+
+}
+
+
+.app-list
+{
+  list-style: none;
+  padding-left:0px;
+
+  li{
+    float:left;
+    padding: 20px;
+  }
+}

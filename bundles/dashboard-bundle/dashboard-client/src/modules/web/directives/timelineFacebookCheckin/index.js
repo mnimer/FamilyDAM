@@ -15,22 +15,23 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Define the required js libraries needed for this application. The compiler will merge them all into a single download
- */
-require('jquery');
-require('jquery-ui');
-require('angular');
-require('angular-ui-router');
-require('angular-cookies');
-require('angular-resource');
-require('angular-dragdrop');
-require('angular-file-upload');
-require('angular-ui-select2');
-require('ui.bootstrap');
-require('ui.bootstrap.tpls');
-require('select2');
-require('infinite-scroll');
-require('treeControl');
-require('vr.directives.wordCloud');
-require('momentjs');
+module.exports = function($compile) {
+    return {
+        scope: {
+            inverted: '='
+        },
+        replace: true,
+        templateUrl: 'modules/web/directives/timelineFacebookCheckin/row-facebook-checkin.tpl.html',
+        controller: function ($scope, $element, $attrs, $transclude)
+        {
+            $scope.width = 300;//default
+        },
+        link: function(scope, element, attrs)
+        {
+            scope.item = scope.$parent.data;
+            //scope.displayDate = moment("2011-01-01").fromNow();
+            scope.width = element.width();
+            //console.log("isInverted:" +inverted);
+        }
+    };
+};

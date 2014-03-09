@@ -5,7 +5,7 @@
       <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="webhandlers-bundle-1.0.1-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.mikenimer.familydam.webhandlers-bundle" bundleVersion="1.0.${buildNumber}.SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
           <property key="Bundle-Description" value="com.mikenimer.familydam - webhandlers-bundle" />
-          <property key="Embed-Dependency" value="org.apache.sling.jcr.contentloader;scope=compile|runtime" />
+          <property key="Embed-Dependency" value="org.apache.sling.jcr.contentloader;com.mikenimer.familydam.Constants;scope=compile|runtime" />
           <property key="Export-Package" value="com.mikenimer.familydam.*" />
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
           <property key="Bundle-Name" value="FamilyDAM Website Handlers Bundle" />
@@ -27,6 +27,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="familydam-core-bundle" scope="PROVIDED" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.2.9-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.1.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.fragment.activation:1.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: biz.aQute:bndlib:1.50.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.apache.felix.http.jetty:2.2.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.jetty:jetty-servlet:7.6.13.v20130916" level="project" />
@@ -46,16 +52,12 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.jackrabbit:jackrabbit-jcr-commons:2.7.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.event:3.3.3-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.api:2.4.3-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.2.9-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.1.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.commons.json:2.0.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.commons.mime:2.1.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.commons.osgi:2.0.2-incubator" level="project" />
     <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.contentloader:2.1.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.geronimo.bundles:commons-httpclient:3.1_1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6" level="project" />
-    <orderEntry type="library" name="Maven: biz.aQute:bndlib:1.50.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.osgi.core:1.4.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:org.osgi.compendium:4.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:1.7.5" level="project" />

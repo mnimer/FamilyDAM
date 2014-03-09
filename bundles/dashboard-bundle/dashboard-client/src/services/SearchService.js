@@ -16,48 +16,11 @@
  */
 
 
-var PhotoService = function($http) {
-    var basePath = "/content/dam/photos";
-
-
+var SearchService = function($http) {
+    var basePath = "/content/dam";
 
     /**
-     * Using the jcr:uuid get a json packet for the node
-     * @param path
-     * @param successCallback
-     * @param errorCallback
-     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
-     */
-    this.getById = function(uuid, successCallback, errorCallback) {
-
-        // make sure the path starts with /
-        var get =  $http.get("/dashboard-api/photo?uuid=" +uuid,{ cache: false });
-        return get;
-    };
-
-
-    /**
-     * This method is used to invoke hateoas links returned from the other services
-     * @param path
-     * @param successCallback
-     * @param errorCallback
-     * @returns {*|Array|Object|Mixed|promise|HTMLElement}
-     */
-    this.invokeLink = function(path) {
-
-        // make sure the path starts with /
-        if( path.substring(0,1) != "/"){
-            path = "/" +path;
-        }
-
-        var method =  $http.get(path);
-        return method;
-    };
-
-
-
-    /**
-     * Search all photos with limit/offset paging support, used by the grid view.
+     * Search all content with limit/offset paging support, used by the grid view.
      * @param path
      * @param successCallback
      * @param errorCallback
@@ -68,8 +31,8 @@ var PhotoService = function($http) {
         var searchPath = "/dashboard-api/search?type=" +type +"&limit=" +limit +"&offset=" +offset +"&filterPath=" +filterPath +"&dateFrom=" +filterDateFrom +"&dateTo=" +filterDateTo +"&tags=" +filterTags;
 
         var method =  $http.get(searchPath);
-        return method.then(function(data){
-            return data.data;
+        return method.then(function(result){
+            return result.data.data;
         });
     };
 
@@ -77,5 +40,5 @@ var PhotoService = function($http) {
 };
 
 
-PhotoService.$inject = ['$http'];
-module.exports = PhotoService;
+SearchService.$inject = ['$http'];
+module.exports = SearchService;

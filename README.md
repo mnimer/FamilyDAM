@@ -1,6 +1,4 @@
-FamilyCloud
-===========
-
+# FamilyCloud
 A Digital Asset Manager (DAM) for families to run locally with everything stored on a local USB or NAS drive.
 Based on the same technologies as other enterprise digital asset manager (Apache Sling, Jackrabbit, and Felix)
 
@@ -9,3 +7,21 @@ Based on the same technologies as other enterprise digital asset manager (Apache
 "If it’s easier/faster to find something in 8 billion pages of the web than in your own 100 thousand files (including documents, emails, pictures, etc..), there’s a problem."<br/>
 - <a href="http://www.betaversion.org/~stefano/linotype/news/93/">Stefano Mazzocchi</a>
 - We are going to solve this problem!
+
+
+
+## Background
+
+
+## Getting Started
+
+### Customizing
+
+### Deploying
+
+
+## Contributing
+
+### Future Plans
+
+### Tests

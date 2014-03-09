@@ -126,9 +126,6 @@ public class FacebookJobService extends SlingAllMethodsServlet
         Job checkInJob = jobManager.addJob("familydam/web/facebook/checkins", props);
         log.debug("Create Job {} / {}", checkInJob.getTopic(), checkInJob.getId());
 
-        Job likesJob = jobManager.addJob("familydam/web/facebook/likes", props);
-        log.debug("Create Job {} / {}", likesJob.getTopic(), likesJob.getId());
-
         Job photosJob = jobManager.addJob("familydam/web/facebook/photos", props);
         log.debug("Create Job {} / {}", photosJob.getTopic(), photosJob.getId());
     }
