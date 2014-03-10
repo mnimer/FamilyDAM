@@ -44,27 +44,26 @@ import java.util.Map;
  */
 @Component(enabled = true, immediate = true)
 @Service(value = JobConsumer.class)
-@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/photos")
-public class FacebookPhotosJob extends FacebookJob
+@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/albums")
+public class FacebookAlbumsJob extends FacebookJob
 {
-    public static String TOPIC = "familydam/web/facebook/photos";
-    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/photos/{2}/{3}";
-    public static String FACEBOOKPATHByUser = "/content/dam/web/facebook/{1}/photos/{2}/{3}";
+    public static String TOPIC = "familydam/web/facebook/albums";
+    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/albums/{2}/{3}";
 
-    private final Logger log = LoggerFactory.getLogger(FacebookPhotosJob.class);
+    private final Logger log = LoggerFactory.getLogger(FacebookAlbumsJob.class);
 
 
     @Activate
     protected void activate(ComponentContext context) throws Exception
     {
-        log.debug("Activate FacebookPhotosJob Job");
+        log.debug("Activate FacebookAlbumsJob Job");
     }
 
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        log.debug("Deactivate FacebookPhotosJob Job");
+        log.debug("Deactivate FacebookAlbumsJob Job");
     }
 
 
@@ -84,7 +83,7 @@ public class FacebookPhotosJob extends FacebookJob
         String _url = nextUrl;
         if (nextUrl == null)
         {
-            _url = "https://graph.facebook.com/" + userId + "/photos?access_token=" + accessToken;
+            _url = "https://graph.facebook.com/" + userId + "/albums?access_token=" + accessToken;
         }
         URL url = new URL(_url);
 
@@ -99,7 +98,7 @@ public class FacebookPhotosJob extends FacebookJob
 
         // Read the response body.
         String jsonStr = method.getResponseBodyAsString();
-        return saveData(username, jsonStr, FACEBOOKPATH, "photo");
+        return saveData(username, jsonStr, FACEBOOKPATH, "album");
     }
 
 
@@ -111,6 +110,6 @@ public class FacebookPhotosJob extends FacebookJob
         props.put("nodePath", nodePath);
         props.put("url", nextUrl);
         props.put("username", username);
-        Job metadataJob = jobManager.addJob(FacebookPhotosJob.TOPIC, props);
+        Job metadataJob = jobManager.addJob(FacebookAlbumsJob.TOPIC, props);
     }
 }

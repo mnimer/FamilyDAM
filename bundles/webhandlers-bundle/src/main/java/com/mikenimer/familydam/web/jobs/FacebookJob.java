@@ -33,14 +33,18 @@ import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.apache.sling.jcr.api.SlingRepository;
 
 import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
 import javax.jcr.Binary;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.ValueFactory;
 import javax.jcr.nodetype.NodeType;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -156,7 +160,7 @@ public class FacebookJob implements JobConsumer
 
 
                 String path = facebookPath.replace("{1}", username).replace("{2}", year).replace("{3}", id);
-                if( true );// !session.nodeExists(path) )
+                if( !session.nodeExists(path) )
                 {
                     Node node = JcrUtils.getOrCreateByPath(path, NodeType.NT_UNSTRUCTURED, session);
 
@@ -188,7 +192,7 @@ public class FacebookJob implements JobConsumer
             // Follow the NEXT link with another job
             if( nextUrl != null )
             {
-                //invokeNextJob(username, nodePath, nextUrl);
+                invokeNextJob(username, facebookPath, nextUrl);
             }
 
 
@@ -255,17 +259,25 @@ public class FacebookJob implements JobConsumer
 
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
                 ImageIO.write(bufferedImage, "jpg", os);
-                Binary imageBinary = new BinaryImpl(os.toByteArray());
+                InputStream is = new ByteArrayInputStream(os.toByteArray());
+                //Binary imageBinary = new BinaryImpl(os.toByteArray());
+                ValueFactory valueFactory = session.getValueFactory();
+                Binary contentValue = valueFactory.createBinary(is);
+
 
                 // create file node
                 Node sourceNode = node.addNode("file", "nt:file");
+                sourceNode.addMixin("mix:referenceable");
                 sourceNode.addMixin(Constants.NODE_IMAGE);
 
                 Node contentNode = sourceNode.addNode("jcr:content", NodeType.NT_RESOURCE);
-                contentNode.setProperty("jcr:data", imageBinary);
-                contentNode.setProperty("jcr:lastModified", Calendar.getInstance());
-                contentNode.setProperty("jcr:mimeType", "image/jpeg");
-                //contentNode.setProperty("jcr:uuid", UUID.randomUUID().toString() );
+                 contentNode.setProperty("jcr:mimeType", "image/jpeg");
+                 contentNode.setProperty("jcr:data", contentValue);
+                 Calendar lastModified = Calendar.getInstance();
+                 lastModified.setTimeInMillis(lastModified.getTimeInMillis());
+                        contentNode.setProperty("jcr:lastModified", lastModified);
+                 //contentNode.setProperty("jcr:lastModified", Calendar.getInstance());
+                 //contentNode.setProperty("jcr:uuid", UUID.randomUUID().toString() );
 
                 //
                 Date created = facebookDateFormat.parse(created_time);

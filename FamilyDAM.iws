@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPostsJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,31 +80,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FacebookJob.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FacebookJob.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3083" max-vertical-offset="4425">
-              <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+            <state vertical-scroll-proportion="4.529851" vertical-offset="2102" max-vertical-offset="5265">
+              <caret line="302" column="17" selection-start-line="302" selection-start-column="17" selection-end-line="302" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#11259#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookCheckinsJob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="767" max-vertical-offset="1215">
+              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FacebookPhotosJob.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java">
+      <file leaf-file-name="CustomNodeRegister.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1215">
-              <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="640" max-vertical-offset="2145">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SizeJob.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/SizeJob.java">
+      <file leaf-file-name="FacebookAlbumsJob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="872" max-vertical-offset="1395">
-              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="1200">
+              <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookJobService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="991" max-vertical-offset="1500">
+              <caret line="126" column="10" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookStatusJob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="377" max-vertical-offset="1215">
+              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookPostsJob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPostsJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="676" max-vertical-offset="1215">
+              <caret line="86" column="67" selection-start-line="86" selection-start-column="67" selection-end-line="86" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookLikesJob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="715" max-vertical-offset="1215">
+              <caret line="116" column="8" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -107,51 +166,21 @@
       <file leaf-file-name="SearchResourcesServlet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="5595">
-              <caret line="227" column="47" selection-start-line="227" selection-start-column="47" selection-end-line="227" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4934" max-vertical-offset="5595">
+              <caret line="398" column="0" selection-start-line="398" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadObserver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1103" max-vertical-offset="3255">
-              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MetadataJob.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MetadataJob.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3097015" vertical-offset="929" max-vertical-offset="3240">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1471" max-vertical-offset="3240">
+              <caret line="187" column="44" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
               <folding>
                 <element signature="e#5055#5071#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DrewMetadataExtractor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="2280">
-              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nodetypes.cnd" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1365">
-              <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="9" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -169,11 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css/webicons-master/webicons.less" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/foo.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/index.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/test.txt" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/_web.scss" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/FileService.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/files/FileListService.java" />
@@ -199,7 +223,6 @@
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/shared-libs.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/index.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/index.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/timeline.tpl.html" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html" />
@@ -214,12 +237,18 @@
         <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java" />
         <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java" />
         <option value="$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java" />
-        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/SizeJob.java" />
-        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPostsJob.java" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java" />
       </list>
     </option>
   </component>
@@ -247,14 +276,8 @@
           <option name="myItemId" value="" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
-      </PATH>
-      <PATH>
         <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM Image Handlers Bundle" />
+          <option name="myItemId" value="FamilyDAM Website Handlers Bundle" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -264,7 +287,37 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM Image Handlers Bundle" />
+          <option name="myItemId" value="FamilyDAM Website Handlers Bundle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FamilyDAM Dashboard Application Bundle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FamilyDAM Dashboard Application Bundle" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -301,7 +354,7 @@
     <scope name="FamilyDAM" pattern="" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+    <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="940" />
   </component>
@@ -383,7 +436,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="imagehandlers-bundle" />
+              <option name="myItemId" value="webhandlers-bundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -397,29 +450,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="imagehandlers-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imagehandlers-bundle" />
+              <option name="myItemId" value="webhandlers-bundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -435,7 +466,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="familydam" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -453,7 +484,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="imagehandlers-bundle" />
+              <option name="myItemId" value="webhandlers-bundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -469,7 +500,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="familydam" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -577,7 +608,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="photos" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -680,17 +711,17 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.mikenimer.familydam.web.jobs" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.mikenimer.familydam.web" />
+      <recent name="com.mikenimer.familydam" />
+      <recent name="com.mikenimer.familydam.web.jobs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly" />
       <recent name="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/ROOT" />
       <recent name="$PROJECT_DIR$/bundles" />
       <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services" />
       <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/musicRow" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.mikenimer.familydam.web" />
-      <recent name="com.mikenimer.familydam" />
-      <recent name="com.mikenimer.familydam.web.jobs" />
     </key>
   </component>
   <component name="RunManager" selected="Remote.remote ">
@@ -1084,7 +1115,7 @@
       <workItem from="1393992306585" duration="3921000" />
       <workItem from="1394330158880" duration="329000" />
       <workItem from="1394331728369" duration="10642000" />
-      <workItem from="1357051952505" duration="4775000" />
+      <workItem from="1357051952505" duration="10705000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1426,11 +1457,15 @@
       <created>1394404256859</created>
       <updated>1394404256859</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="add fd:date default for images, with bad metadata">
+      <created>1394404956755</created>
+      <updated>1394404956755</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="991354000" />
+    <option name="totallyTimeSpent" value="997284000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1453,7 +1488,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="940" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="940" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1471,10 +1506,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2875458" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3138686" sideWeight="0.8406593" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3187348" sideWeight="0.8406593" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.7936508" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37712896" sideWeight="0.8046398" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
@@ -1492,7 +1528,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1551,7 +1586,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="delete the old files that were copied over and stub in the facebook archive job." />
     <MESSAGE value="After trying a few approaches I've settled on a custom JSON to node mapper to save the facebook API json to a nest node tree with same-child siblings." />
     <MESSAGE value="remove unused code" />
     <MESSAGE value="move a lot of the facebook code into a super class for future support of other graph api jobs" />
@@ -1576,7 +1610,8 @@
     <MESSAGE value="format the facebook timeline css with the inverted flag" />
     <MESSAGE value="add new fd:date property to all fd:content types and add ORDERING based on this date, in the timeline.&#10;&#10;get the timeline to alternate FB 'types'&#10;&#10;" />
     <MESSAGE value="add svg webicons" />
-    <option name="LAST_COMMIT_MESSAGE" value="add svg webicons" />
+    <MESSAGE value="add fd:date default for images, with bad metadata" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fd:date default for images, with bad metadata" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1593,21 +1628,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java</url>
-          <line>197</line>
+          <line>201</line>
           <properties />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java</url>
-          <line>201</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java</url>
-          <line>158</line>
-          <properties />
-          <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java</url>
@@ -1615,11 +1644,29 @@
           <properties />
           <option name="timeStamp" value="81" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java</url>
+          <line>112</line>
+          <properties />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java</url>
+          <line>187</line>
+          <properties />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="82" />
+      <option name="time" value="95" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1627,34 +1674,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/SearchService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <caret line="34" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/dateFilter/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/locationFilter/locationFilter.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/keywords/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2220">
-          <caret line="30" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/locationFilter/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
@@ -1781,25 +1800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1830">
-          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="2430">
           <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="1500">
-          <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1911,26 +1915,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.56050956" vertical-offset="1674" max-vertical-offset="2145">
-          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="3525">
           <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="1215">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1946,18 +1934,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java">
+    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1215">
-          <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3083" max-vertical-offset="4425">
-          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="2280">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1978,28 +1958,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="5595">
-          <caret line="227" column="47" selection-start-line="227" selection-start-column="47" selection-end-line="227" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="2280">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3097015" vertical-offset="929" max-vertical-offset="3240">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1471" max-vertical-offset="3240">
+          <caret line="187" column="44" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
           <folding>
             <element signature="e#5055#5071#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="715" max-vertical-offset="1215">
+          <caret line="116" column="8" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4934" max-vertical-offset="5595">
+          <caret line="398" column="0" selection-start-line="398" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="640" max-vertical-offset="2145">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/io/DataInput.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11867089" vertical-offset="0" max-vertical-offset="632">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/javax/imageio/stream/ImageInputStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11867089" vertical-offset="0" max-vertical-offset="1515">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="377" max-vertical-offset="1215">
+          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPostsJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="676" max-vertical-offset="1215">
+          <caret line="86" column="67" selection-start-line="86" selection-start-column="67" selection-end-line="86" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="991" max-vertical-offset="1500">
+          <caret line="126" column="10" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="1200">
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="767" max-vertical-offset="1215">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.529851" vertical-offset="2102" max-vertical-offset="5265">
+          <caret line="302" column="17" selection-start-line="302" selection-start-column="17" selection-end-line="302" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#11259#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

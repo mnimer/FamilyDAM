@@ -162,7 +162,7 @@ public class MetadataJob implements JobConsumer
 
             // todo add Apache Commons Image library, as a backup
         }
-        catch (ImageProcessingException ipe)
+        catch (Exception ipe)
         {
             //alternative approach
             /***
@@ -185,7 +185,7 @@ public class MetadataJob implements JobConsumer
                 }
             }
              ***/
-
+            log.error(ipe.getMessage(), ipe);
 
         }
 

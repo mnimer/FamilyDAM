@@ -120,14 +120,14 @@ public class FacebookJobService extends SlingAllMethodsServlet
         props.put("username", username);
         props.put("nodePath", "/apps/familydam/users/" +username);
 
-        Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
-        log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
+        //Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
+        //log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
 
-        Job checkInJob = jobManager.addJob("familydam/web/facebook/checkins", props);
-        log.debug("Create Job {} / {}", checkInJob.getTopic(), checkInJob.getId());
+        //Job checkInJob = jobManager.addJob("familydam/web/facebook/checkins", props);
+        //log.debug("Create Job {} / {}", checkInJob.getTopic(), checkInJob.getId());
 
-        Job photosJob = jobManager.addJob("familydam/web/facebook/photos", props);
-        log.debug("Create Job {} / {}", photosJob.getTopic(), photosJob.getId());
+        Job albumsJob = jobManager.addJob("familydam/web/facebook/albums", props);
+        log.debug("Create Job {} / {}", albumsJob.getTopic(), albumsJob.getId());
     }
 
 }
