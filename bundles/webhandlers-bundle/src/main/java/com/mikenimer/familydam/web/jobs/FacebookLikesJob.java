@@ -24,9 +24,12 @@ import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
+import org.apache.jackrabbit.commons.JcrUtils;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.event.jobs.Job;
+import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -34,6 +37,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 import javax.jcr.nodetype.NodeTypeIterator;
 import javax.jcr.nodetype.NodeTypeManager;
 import javax.jcr.nodetype.NodeTypeTemplate;
@@ -41,6 +45,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by mnimer on 2/6/14.
@@ -51,11 +56,16 @@ import java.util.Map;
 public class FacebookLikesJob extends FacebookJob
 {
     public static String TOPIC = "familydam/web/facebook/likes";
+    public static String FACEBOOKFOLDERPATH = "/content/dam/web/facebook/{1}/likes";
     public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/likes/{2}/{3}";
     public static String FACEBOOKPATHByUser = "/content/dam/web/facebook/{1}/likes/{2}/{3}";
 
     private final Logger log = LoggerFactory.getLogger(FacebookLikesJob.class);
 
+    private Map<String, Object> jobProperties = new HashMap<String, Object>();
+
+    @Reference
+    protected JobManager jobManager;
 
     @Activate
     protected void activate(ComponentContext context) throws Exception
@@ -72,7 +82,18 @@ public class FacebookLikesJob extends FacebookJob
 
 
     @Override
-    protected JobResult queryFacebook(Node facebookData, String username, String userPath, String nextUrl) throws RepositoryException, IOException, JSONException
+    public JobResult process(Job job)
+    {
+        Set<String> names = job.getPropertyNames();
+        for (String name : names)
+        {
+            jobProperties.put(name, job.getProperty(name));
+        }
+        return super.process(job);
+    }
+
+    @Override
+    protected JobResult queryFacebook(Job job, Node facebookData, String username, String userPath, String nextUrl) throws RepositoryException, IOException, JSONException
     {
         String accessToken = facebookData.getProperty("accessToken").getString();
         String expiresIn = facebookData.getProperty("expiresIn").getString();
@@ -100,20 +121,26 @@ public class FacebookLikesJob extends FacebookJob
             return JobResult.FAILED;
         }
 
+
+
+        // Create default Albums Node as Sling:Folder, if it doesn't exist
+        String facebookFolderPath = FACEBOOKFOLDERPATH.replace("{1}", username);
+        Session session = repository.loginAdministrative(null);
+        JcrUtils.getOrCreateByPath(facebookFolderPath, "sling:Folder", session);
+
+
         // Read the response body.
         String jsonStr = method.getResponseBodyAsString();
-        return saveData(username, jsonStr, FACEBOOKPATH, "like");
+        return saveData(job, username, jsonStr, FACEBOOKPATH, "like");
     }
 
 
 
     @Override
-    protected void invokeNextJob(String username, String nodePath, String nextUrl)
+    protected void invokeNextJob(Job job, String username, String nodePath, String nextUrl)
     {
-        Map props = new HashMap();
-        props.put("nodePath", nodePath);
-        props.put("url", nextUrl);
-        props.put("username", username);
-        Job metadataJob = jobManager.addJob(FacebookLikesJob.TOPIC, props);
+        Map jobProperties = extractJobProperties(job);
+        jobProperties.put("url", nextUrl);
+        Job metadataJob = jobManager.addJob(FacebookLikesJob.TOPIC, jobProperties);
     }
 }

@@ -28,7 +28,9 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.event.jobs.Job;
+import org.apache.sling.event.jobs.JobBuilder;
 import org.apache.sling.event.jobs.JobManager;
+import org.apache.sling.event.jobs.ScheduledJobInfo;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -116,18 +118,68 @@ public class FacebookJobService extends SlingAllMethodsServlet
 
     private void triggerFacebookJobs(String username)
     {
+        //todo: make this user configurable (OSGI property maybe)
+        String cronSchedule = "0 0 0/1 * * ?";
+
         Map props = new HashMap();
+        props.put("refreshAll", true);
         props.put("username", username);
         props.put("nodePath", "/apps/familydam/users/" +username);
 
-        //Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
-        //log.debug("Create Job {} / {}", metadataJob.getTopic(), metadataJob.getId());
+        try
+        {
+            // Run immediately
+            //Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
+            Job checkInJob = jobManager.addJob("familydam/web/facebook/checkins", props);
+            //Job albumsJob = jobManager.addJob("familydam/web/facebook/albums", props);
 
-        //Job checkInJob = jobManager.addJob("familydam/web/facebook/checkins", props);
-        //log.debug("Create Job {} / {}", checkInJob.getTopic(), checkInJob.getId());
 
-        Job albumsJob = jobManager.addJob("familydam/web/facebook/albums", props);
-        log.debug("Create Job {} / {}", albumsJob.getTopic(), albumsJob.getId());
+            boolean hasStatusJob = false;
+            boolean hasCheckinJob = false;
+            boolean hasAlbumsJob = false;
+            // add a scheduled job, if not already added.
+            for (ScheduledJobInfo scheduledJobInfo : jobManager.getScheduledJobs())
+            {
+                if (scheduledJobInfo.getJobTopic().equals("familydam/web/facebook/statuses"))
+                {
+                    hasStatusJob = true;
+                }
+
+                if (scheduledJobInfo.getJobTopic().equals("familydam/web/facebook/checkins"))
+                {
+                    hasCheckinJob = true;
+                }
+
+                if (scheduledJobInfo.getJobTopic().equals("familydam/web/facebook/albums"))
+                {
+                    hasAlbumsJob = true;
+                }
+            }
+
+
+            // our scheduled tasks should only try to pull the newest items
+            props.put("refreshAll", false);
+            if (!hasStatusJob)
+            {
+                //JobBuilder.ScheduleBuilder job = jobManager.createJob("familydam/web/facebook/statuses").properties(props).schedule().cron(cronSchedule);
+                //ScheduledJobInfo info = job.add();
+            }
+
+            if (!hasCheckinJob)
+            {
+                //JobBuilder.ScheduleBuilder job2 = jobManager.createJob("familydam/web/facebook/checkins").properties(props).schedule().cron(cronSchedule);
+                //ScheduledJobInfo info2 = job2.add();
+            }
+
+            if (!hasAlbumsJob)
+            {
+                //JobBuilder.ScheduleBuilder job3 = jobManager.createJob("familydam/web/facebook/albums").properties(props).schedule().cron(cronSchedule);
+                //ScheduledJobInfo info3 = job3.add();
+            }
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 
 }

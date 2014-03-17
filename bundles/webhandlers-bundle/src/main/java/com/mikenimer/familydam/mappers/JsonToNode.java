@@ -119,7 +119,7 @@ public class JsonToNode
                 {
 
                     Node n = null;
-                    n = node.addNode(key);
+                    n = JcrUtils.getOrAddNode(node, key);
 
                     convert(n, (JSONObject) value);
                 }

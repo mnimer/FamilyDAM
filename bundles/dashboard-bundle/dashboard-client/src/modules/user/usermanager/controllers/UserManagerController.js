@@ -30,6 +30,10 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
     $scope.users = [];
 
 
+
+    /*****************************************************
+     *** User Manager
+     ****************************************************/
     var refreshUsers = function ()
     {
         userService.listUsers().then(function (data, status, headers, config)
@@ -72,6 +76,8 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
         });
     };
 
+
+
     /***
      * NEW USER
      */
@@ -104,10 +110,10 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
     };
 
 
+
     /**
      * UPDATE USER
      */
-
     $scope.updateUserHandler = function ()
     {
         var username = $scope.selectedUser[':name'];
@@ -161,8 +167,6 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
     /*****************************************************
     *** Facebook Services
      ****************************************************/
-
-
     $scope.activateFacebook = function ()
     {
         // Logout first to force a reauthentication since it's possible that this could be
@@ -191,6 +195,9 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
                 $scope.selectedUser.web.facebook.isAuthorized = "true";
 
                 var updateResults = userService.updateUser($scope.selectedUser);
+
+                refreshFacebook();
+
                 $scope.$apply();
             }else{
                 $scope.deactivateFacebook($scope.selectedUser);

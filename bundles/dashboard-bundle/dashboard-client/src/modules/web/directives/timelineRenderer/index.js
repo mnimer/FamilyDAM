@@ -29,7 +29,7 @@ var timelineRendererDirective = function ($compile)
             {
                 lastType = data.type;
                 inverted = !inverted;
-                return inverted
+                return inverted;
             }
         }
 

@@ -28,17 +28,17 @@ import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.event.jobs.Job;
-import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.apache.sling.jcr.api.SlingRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
 import javax.jcr.Binary;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.ValueFactory;
+import javax.jcr.nodetype.ConstraintViolationException;
 import javax.jcr.nodetype.NodeType;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -46,11 +46,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by mnimer on 2/12/14.
@@ -59,14 +61,12 @@ import java.util.Map;
 public class FacebookJob implements JobConsumer
 {
     private Session session;
-    private final SimpleDateFormat facebookDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+SSSS");
+    private final Logger log = LoggerFactory.getLogger(FacebookJob.class);
 
 
-    @Reference
-    protected JobManager jobManager;
 
     @Reference
-    protected SlingRepository repository;
+    public SlingRepository repository;
 
 
     @Override
@@ -75,11 +75,13 @@ public class FacebookJob implements JobConsumer
         String nodePath = (String) job.getProperty("nodePath");
         String url = (String) job.getProperty("url");
         String username = (String) job.getProperty("username");
-        return process(username, nodePath, url);
+
+
+        return process(job, username, nodePath, url);
     }
 
 
-    public JobResult process(String username, String path, String url)
+    public JobResult process(Job job, String username, String path, String url)
     {
         try
         {
@@ -89,119 +91,56 @@ public class FacebookJob implements JobConsumer
             Node facebookData = node.getNode("web/facebook");
             if (facebookData != null)
             {
-                return queryFacebook(facebookData, username, path, url);
+                return queryFacebook(job, facebookData, username, path, url);
             }
             return JobResult.OK;
-        } catch (Exception re)
+        }
+        catch (Exception re)
         {
             return JobResult.CANCEL;
         }
     }
 
 
-    protected JobResult queryFacebook(Node facebookData, String username, String nodePath, String nextUrl) throws RepositoryException, IOException, JSONException
+    public Map<String, Object> extractJobProperties(Job job)
+    {
+        Map<String, Object> jobProperties = new HashMap<String, Object>();
+        Set<String> names = job.getPropertyNames();
+        for (String name : names)
+        {
+            if (name.indexOf('.') == -1 && name.indexOf(':') == -1) // ignore system names in props
+            {
+                jobProperties.put(name, job.getProperty(name));
+            }
+        }
+        return jobProperties;
+    }
+
+
+    protected JobResult queryFacebook(Job job, Node facebookData, String username, String nodePath, String nextUrl) throws RepositoryException, IOException, JSONException
     {
         return null;
     }
 
 
-
-
     /**
      * Take the JSON results from facebook and save them into the content/dam tree
+     *
+     * @param job
      * @param username
-     * @param nodePath
      * @param jsonStr
+     * @param facebookPath
+     * @param type
      * @return
      */
-    protected JobResult saveData(String username, String jsonStr, String facebookPath, String type)
+    protected JobResult saveData(Job job, String username, String jsonStr, String facebookPath, String type)
     {
-        String nextUrl = null;
         try
         {
             JSONObject jsonObj = new JSONObject(jsonStr);
-            JSONArray statusList = jsonObj.getJSONArray("data");
-
-            // pull out the next url for paging.
-            if( jsonObj.has("paging") && jsonObj.getJSONObject("paging").has("next") )
-            {
-                nextUrl = jsonObj.getJSONObject("paging").getString("next");
-            }
-
-            for (int i = 0; i < statusList.length(); i++)
-            {
-                JSONObject post = (JSONObject) statusList.get(i);
-
-                // Delete nodes we don't need to store
-                cleanPacket(post);
-
-                // pull out keys
-                String id = post.getString("id");
-                String timestamp = null;
-                if( post.has("created_time") )
-                {
-                    timestamp = post.getString("created_time");
-                }
-                else if( post.has("updated_time") )
-                {
-                    timestamp = post.getString("updated_time");
-                }
-
-                Date dateCreated = new Date();
-                if( timestamp!=null && timestamp.length()>0)
-                {
-                    dateCreated = facebookDateFormat.parse(timestamp);
-                }
-
-                //pull out the year so we can group posts by year
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(dateCreated);
-                String year = new Integer(calendar.get(Calendar.YEAR)).toString();
-
-
-                String path = facebookPath.replace("{1}", username).replace("{2}", year).replace("{3}", id);
-                if( !session.nodeExists(path) )
-                {
-                    Node node = JcrUtils.getOrCreateByPath(path, NodeType.NT_UNSTRUCTURED, session);
-
-                    // add some FamilyDam specific properties
-                    node.addMixin(Constants.NODE_CONTENT);
-                    node.addMixin(Constants.NODE_FACEBOOK);
-
-                    node.setProperty("type", type);
-                    node.setProperty(Constants.DATETIME, calendar);
-
-                    Map location = checkForLocation(post);
-                    if( location != null )
-                    {
-                        node.addMixin(Constants.NODE_GEOSTAMP);
-                        node.setProperty("latitude", (Double) location.get("latitude"));
-                        node.setProperty("longitude", (Double)location.get("longitude"));
-                    }
-
-
-                    new JsonToNode().convert(node, post);
-
-                    checkForPhoto(node, post);
-                    session.save();
-                }
-
-            }
-
-
-            // Follow the NEXT link with another job
-            if( nextUrl != null )
-            {
-                invokeNextJob(username, facebookPath, nextUrl);
-            }
-
-
-            return JobResult.OK;
-        } catch (JSONException je)
-        {
-            je.printStackTrace();
-            return JobResult.FAILED;
-        } catch (Exception ex)
+            return saveData(job, username, jsonObj, facebookPath, type);
+        }
+        catch (JSONException ex)
         {
             ex.printStackTrace();
             return JobResult.FAILED;
@@ -209,7 +148,160 @@ public class FacebookJob implements JobConsumer
     }
 
 
-    protected void invokeNextJob(String username, String nodePath, String nextUrl)
+    protected JobResult saveData(Job job, String username, JSONObject jsonObj, String facebookPath, String type)
+    {
+        String nextUrl = null;
+        try
+        {
+
+            // pull out the next url for paging.
+            if (jsonObj.has("paging") && jsonObj.getJSONObject("paging").has("next"))
+            {
+                nextUrl = jsonObj.getJSONObject("paging").getString("next");
+            }
+
+            if (jsonObj.has("data"))
+            {
+                JSONArray statusList = jsonObj.getJSONArray("data");
+
+                for (int i = 0; i < statusList.length(); i++)
+                {
+                    JSONObject post = (JSONObject) statusList.get(i);
+                    persistSingleNode(username, facebookPath, type, post);
+
+                }
+            }
+            else
+            {
+                persistSingleNode(username, facebookPath, type, jsonObj);
+            }
+
+
+            // Follow the NEXT link with another job
+            if (nextUrl != null)
+            {
+                invokeNextJob(job, username, facebookPath, nextUrl);
+            }
+
+
+            return JobResult.OK;
+        }
+        catch (JSONException je)
+        {
+            je.printStackTrace();
+            return JobResult.FAILED;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return JobResult.FAILED;
+        }
+    }
+
+
+    private synchronized void persistSingleNode(String username, String facebookPath, String type, JSONObject post) throws JSONException, ParseException, IOException, RepositoryException
+    {
+        // Not thread safe, so we'll recreate
+        SimpleDateFormat facebookDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+SSSS");
+        SimpleDateFormat facebookDateFormat2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+Z");
+
+
+        // Delete nodes we don't need to store
+        cleanPacket(post);
+
+        // pull out keys
+        String id = post.getString("id");
+        String timestamp = null;
+        if (post.has("created_time"))
+        {
+            timestamp = post.getString("created_time");
+        }
+        else if (post.has("updated_time"))
+        {
+            timestamp = post.getString("updated_time");
+        }
+
+        Date dateCreated = new Date();
+        if (timestamp != null && timestamp.length() > 0)
+        {
+            try
+            {
+                dateCreated = facebookDateFormat.parse(timestamp);
+            }
+            catch (NumberFormatException nfe)
+            {
+                nfe.getMessage();
+            }
+        }
+
+        //pull out the year so we can group posts by year
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(dateCreated);
+        String year = new Integer(calendar.get(Calendar.YEAR)).toString();
+
+
+        // default path
+        String path = facebookPath.replace("{1}", username).replace("{2}", year).replace("{3}", id);
+        if (true)// !session.nodeExists(path) )
+        {
+            Node node = JcrUtils.getOrCreateByPath(path, NodeType.NT_UNSTRUCTURED, session);
+
+            // add some FamilyDam specific properties
+            node.addMixin(Constants.NODE_CONTENT);
+            node.addMixin(Constants.NODE_FACEBOOK);
+
+            node.setProperty("type", type);
+            try
+            {
+                node.setProperty(Constants.DATETIME, calendar);
+            }
+            catch (Exception e)
+            {
+                e.getMessage();
+            }
+
+            Map location = checkForLocation(post);
+            if (location != null)
+            {
+                node.addMixin(Constants.NODE_GEOSTAMP);
+                node.setProperty("latitude", (Double) location.get("latitude"));
+                node.setProperty("longitude", (Double) location.get("longitude"));
+            }
+
+
+            new JsonToNode().convert(node, post);
+
+            // Save the new session, before we check for the photo
+            try
+            {
+                session.save();
+                //versionManager.checkin(node.getPath());
+            }
+            catch (ConstraintViolationException cve)
+            {
+                cve.getMessage();
+                try
+                { // hack to avoid this error: mandatory property {http://www.jcp.org/jcr/1.0}data does not exist
+                    Thread.sleep(1000);
+                    session.save();
+                }catch (ConstraintViolationException cve2){
+                    // still can't save it
+                    cve2.printStackTrace();
+                }catch (Exception ex){
+                    // do nothing
+                    ex.printStackTrace();
+                }
+            }
+
+            checkForPhoto(node, post);
+            //versionManager.checkin(node.getPath());
+
+
+        }
+    }
+
+
+    protected void invokeNextJob(Job job, String username, String nodePath, String nextUrl)
     {
         throw new NotImplementedException();
     }
@@ -222,10 +314,10 @@ public class FacebookJob implements JobConsumer
     {
         Map locationMap = null;
 
-        if( post.has("place") )
+        if (post.has("place"))
         {
             JSONObject place = post.getJSONObject("place");
-            if( place.has("location") )
+            if (place.has("location"))
             {
                 JSONObject location = place.getJSONObject("location");
                 locationMap = new HashMap();
@@ -238,57 +330,124 @@ public class FacebookJob implements JobConsumer
     }
 
 
-
     /**
      * Look for a nest "Place" node with a location
      */
-    private Map checkForPhoto(Node node, JSONObject post) throws JSONException
+    private Map checkForPhoto(Node node, JSONObject post) throws JSONException, IOException, RepositoryException
     {
         Map photo = null;
+        // Not thread safe so we need to create new instances
+        SimpleDateFormat facebookDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+SSSS");
+        SimpleDateFormat facebookDateFormat2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+Z");
 
-        if( post.has("source") )
+
+        if (post.has("source") )
         {
+            //versionManager.checkout(node.getPath());
             String source = post.getString("source");
             String created_time = post.getString("created_time");
 
             // pull URL and save the source image and an embedded URL
             BufferedImage bufferedImage = null;
-            try {
-                URL url = new URL(source);
+            Binary imageBinary = null;
+
+            try
+            {
+                String _originalSource = source.replace("_n.", "_o.");
+
+                URL url = new URL(_originalSource);
                 bufferedImage = ImageIO.read(url);
 
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
                 ImageIO.write(bufferedImage, "jpg", os);
                 InputStream is = new ByteArrayInputStream(os.toByteArray());
-                //Binary imageBinary = new BinaryImpl(os.toByteArray());
-                ValueFactory valueFactory = session.getValueFactory();
-                Binary contentValue = valueFactory.createBinary(is);
-
-
-                // create file node
-                Node sourceNode = node.addNode("file", "nt:file");
-                sourceNode.addMixin("mix:referenceable");
-                sourceNode.addMixin(Constants.NODE_IMAGE);
-
-                Node contentNode = sourceNode.addNode("jcr:content", NodeType.NT_RESOURCE);
-                 contentNode.setProperty("jcr:mimeType", "image/jpeg");
-                 contentNode.setProperty("jcr:data", contentValue);
-                 Calendar lastModified = Calendar.getInstance();
-                 lastModified.setTimeInMillis(lastModified.getTimeInMillis());
-                        contentNode.setProperty("jcr:lastModified", lastModified);
-                 //contentNode.setProperty("jcr:lastModified", Calendar.getInstance());
-                 //contentNode.setProperty("jcr:uuid", UUID.randomUUID().toString() );
-
-                //
-                Date created = facebookDateFormat.parse(created_time);
-                Calendar cal = Calendar.getInstance();
-                cal.setTime(created);
-                //contentNode.setProperty("jcr:created", cal);
-
+                imageBinary = new BinaryImpl(os.toByteArray());
+                //ValueFactory valueFactory = session.getValueFactory();
+                //Binary contentValue = valueFactory.createBinary(is);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 ex.printStackTrace();
             }
+
+            if (imageBinary != null )
+            {
+                // create file node
+                Node sourceNode = JcrUtils.getOrAddNode(node, "file", NodeType.NT_FILE);
+                sourceNode.addMixin("mix:referenceable");
+                sourceNode.addMixin(Constants.NODE_CONTENT);
+                sourceNode.addMixin(Constants.NODE_IMAGE);
+
+                Node contentNode = JcrUtils.getOrAddNode(sourceNode, "jcr:content", NodeType.NT_RESOURCE);
+                contentNode.setProperty("jcr:mimeType", "image/jpeg");
+                contentNode.setProperty("jcr:data", imageBinary);
+                Calendar lastModified = Calendar.getInstance();
+                lastModified.setTimeInMillis(lastModified.getTimeInMillis());
+                contentNode.setProperty("jcr:lastModified", lastModified);
+                //contentNode.setProperty("jcr:lastModified", Calendar.getInstance());
+                //contentNode.setProperty("jcr:uuid", UUID.randomUUID().toString() );
+
+
+                Calendar cal = Calendar.getInstance();
+                try
+                {
+                    if (created_time.length() > 9)
+                    {
+                        Date created = facebookDateFormat.parse(created_time);
+                        cal.setTime(created);
+                    }
+                }
+                catch (ParseException ex)
+                {
+                    // try alterative format before giving up
+                    try
+                    {
+                        Date created = facebookDateFormat2.parse(created_time);
+                        cal.setTime(created);
+                    }
+                    catch (ParseException pe)
+                    {
+                    }
+                }
+                if (sourceNode.isNodeType(Constants.NODE_CONTENT))
+                {
+                    sourceNode.setProperty("fd:date", cal);
+                }
+
+
+                try
+                {
+                    session.save();
+                    //versionManager.checkin(node.getPath());
+                }
+                catch (ConstraintViolationException cve)
+                {
+                    cve.getMessage();
+                    try
+                    { // hack to avoid this error: mandatory property {http://www.jcp.org/jcr/1.0}data does not exist
+                        Thread.sleep(1000);
+                        session.save();
+                    }catch (ConstraintViolationException cve2){
+                        // still can't save it
+                        cve2.printStackTrace();
+                    }catch (Exception ex){
+                        // do nothing
+                        ex.printStackTrace();
+                    }
+                }
+
+            }
+            else
+            {
+                log.warn("unable to load: " + source);
+            }
+
+            //session.save();
+
+        }
+        else
+        {
+            log.trace("Image file node already exists: {}", post.toString());
         }
 
         return photo;
@@ -297,49 +456,46 @@ public class FacebookJob implements JobConsumer
 
     /**
      * Delete nodes we don't need to store
+     *
      * @param post
      * @throws org.apache.sling.commons.json.JSONException
      */
     private void cleanPacket(JSONObject post) throws JSONException
     {
 
-        if( post.has("likes") )
+        if (post.has("likes"))
         {
             JSONObject o = post.getJSONObject("likes");
-            if( o.has("paging") )
+            if (o.has("paging"))
             {
                 o.remove("paging");
             }
         }
 
-        if( post.has("comments") )
+        if (post.has("comments"))
         {
             JSONObject o = post.getJSONObject("comments");
-            if( o.has("paging") )
+            if (o.has("paging"))
             {
                 o.remove("paging");
             }
         }
 
-        if( post.has("tags") )
+        if (post.has("tags"))
         {
             JSONObject o = post.getJSONObject("tags");
-            if( o.has("paging") )
+            if (o.has("paging"))
             {
                 o.remove("paging");
             }
         }
 
-        // remove facebook classification for things, like businesses
-        if( post.has("category_list") )
-        {
-            post.remove("category_list");
-        }
         // when we pull back facebook photos, they return an array of resized images (thumbnails, etc.)
         // that we don't need. So we'll strip these out too.
-        if( post.has("images") )
+        if (post.has("images"))
         {
             post.remove("images");
         }
+
     }
 }
