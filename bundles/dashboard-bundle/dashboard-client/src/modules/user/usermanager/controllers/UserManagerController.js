@@ -203,7 +203,8 @@ var UserManagerController = function ($scope, $rootScope, $state, $window, userS
                 $scope.deactivateFacebook($scope.selectedUser);
             }
 
-        }, {scope: 'user_status,user_photos,user_videos,user_checkins,user_likes,user_notes', enable_profile_selector:true });
+            //user_status,user_photos,user_videos,user_checkins,user_likes,user_notes
+        }, {scope: 'read_stream,read_insights', enable_profile_selector:true });
         //var response = FB.getAuthResponse();
         //console.log(response);
     };

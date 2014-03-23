@@ -106,7 +106,7 @@ public class UserServlet extends SlingAllMethodsServlet
                 Node node = session.getNode(nodePath);
 
                 JSONObject jsonObj = new JSONObject(jsonStr);
-                new JsonToNode().convert(node, jsonObj);
+                new JsonToNode().convert(node, jsonObj, null);
                 session.save();
             }
         }

@@ -2,29 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlCheckinJob.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlJob.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlStreamJob.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookVideo/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookVideo/row-facebook-video.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookAlbumsJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookCheckinsJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookLikesJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookAlbumPhotosJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPostsJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookPostsJob.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookStatusJob.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPostsJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPostsJob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.ipr" afterPath="$PROJECT_DIR$/FamilyDAM.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/MimeTypeManager.java" afterPath="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/MimeTypeManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/controllers/UserManagerController.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/controllers/UserManagerController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/users/UserServlet.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/users/UserServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/row-facebook-checkin.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/row-facebook-checkin.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/row-facebook-photo.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/row-facebook-photo.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" />
     </list>
@@ -96,36 +102,119 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FacebookJob.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java">
+      <file leaf-file-name="FacebookFqlStreamJob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlStreamJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4551" max-vertical-offset="6855">
-              <caret line="373" column="13" selection-start-line="373" selection-start-column="13" selection-end-line="373" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FacebookCheckinsJob.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88729876" vertical-offset="644" max-vertical-offset="1425">
-              <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+            <state vertical-scroll-proportion="-9.730769" vertical-offset="3227" max-vertical-offset="10575">
+              <caret line="232" column="8" selection-start-line="232" selection-start-column="8" selection-end-line="232" selection-end-column="8" />
               <folding>
-                <element signature="e#2962#2963#0" expanded="true" />
-                <element signature="e#3003#3004#0" expanded="true" />
+                <element signature="e#0#23852#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3072#3073#0" expanded="true" />
+                <element signature="e#3134#3135#0" expanded="true" />
+                <element signature="e#3250#3251#0" expanded="true" />
+                <element signature="e#3314#3315#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JcrUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-commons/2.1.1/jackrabbit-jcr-commons-2.1.1-sources.jar!/org/apache/jackrabbit/commons/JcrUtils.java">
+      <file leaf-file-name="FacebookJobService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10140">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="2250">
+              <caret line="131" column="14" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookFqlCheckinJob.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlCheckinJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1583" max-vertical-offset="5460">
+              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+              <folding>
+                <element signature="e#3397#3398#0" expanded="true" />
+                <element signature="e#3460#3461#0" expanded="true" />
+                <element signature="e#3576#3577#0" expanded="true" />
+                <element signature="e#3641#3642#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchResourcesServlet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2340" max-vertical-offset="5595">
+              <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="row-facebook-checkin.tpl.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/row-facebook-checkin.tpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="570">
+              <caret line="6" column="178" selection-start-line="6" selection-start-column="178" selection-end-line="6" selection-end-column="178" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="470" max-vertical-offset="975">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#28843#0" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3169399" vertical-offset="531" max-vertical-offset="1080">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <caret line="23" column="68" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+              <caret line="24" column="37" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="row-facebook-status.tpl.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="465">
+              <caret line="6" column="135" selection-start-line="6" selection-start-column="120" selection-end-line="6" selection-end-column="135" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#video#0;n#div#2;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,33 +233,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoGridController.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/photos/MetadataKeywordsListServlet.java" />
-        <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/imageRow/index.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.grid.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/web.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/SearchService.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/facebookLikeRow/row-facebook-like.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/facebookLikeRow/index.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookLike/index.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/row-facebook-like.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookLike/row-facebook-like.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/row-facebook-like.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-like.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/index.html" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/shared-libs.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/index.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/index.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/timeline.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/index.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/index.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/index.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/row-facebook-photo.tpl.html" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/_timeline.scss" />
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" />
         <option value="$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java" />
@@ -181,10 +251,6 @@
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" />
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java" />
         <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/row-facebook-checkin.tpl.html" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer/index.js" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/controllers/UserManagerController.js" />
-        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java" />
         <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/UserService.js" />
         <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java" />
@@ -194,7 +260,30 @@
         <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java" />
         <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java" />
         <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookAlbumPhotosJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlPhotosJob.java" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/controllers/UserManagerController.js" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookStatusJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookPostsJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookAlbumsJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookLikesJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookCheckinsJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/FacebookJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookVideo/index.js" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookVideo/row-facebook-video.tpl.html" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/row-facebook-photo.tpl.html" />
+        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/MimeTypeManager.java" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/index.js" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookJob.java" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/users/UserServlet.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlStreamJob.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlJob.java" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java" />
+        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlCheckinJob.java" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/row-facebook-checkin.tpl.html" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer/index.js" />
       </list>
     </option>
   </component>
@@ -221,78 +310,6 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM Web Sites Handlers Bundle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM Web Sites Handlers Bundle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM Dashboard Application Bundle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM Dashboard Application Bundle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM All Bundles" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FamilyDAM All Bundles" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -428,7 +445,49 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jobs" />
+              <option name="myItemId" value="facebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webhandlers-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="familydam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="facebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -666,67 +725,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="usermanager" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -756,45 +759,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="usermanager" />
+              <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="timelineRenderer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -824,7 +797,151 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="photos" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timelineFacebookStatus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timelineFacebookCheckin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -890,23 +1007,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mikenimer.familydam.web.jobs.facebook.fql" />
       <recent name="com.mikenimer.familydam" />
       <recent name="com.mikenimer.familycloud.filters" />
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookVideo" />
       <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/js" />
       <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives" />
       <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer" />
       <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web" />
-      <recent name="$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="com.mikenimer.familydam.web.jobs" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.mikenimer.familydam.web" />
-      <recent name="com.mikenimer.familydam" />
       <recent name="com.mikenimer.familydam.web.jobs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -915,6 +1028,11 @@
       <recent name="$PROJECT_DIR$/bundles" />
       <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services" />
       <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/musicRow" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.mikenimer.familydam.web" />
+      <recent name="com.mikenimer.familydam" />
+      <recent name="com.mikenimer.familydam.web.jobs" />
     </key>
   </component>
   <component name="RunManager" selected="Remote.remote ">
@@ -1310,7 +1428,7 @@
       <workItem from="1394331728369" duration="10642000" />
       <workItem from="1357051952505" duration="29680000" />
       <workItem from="1394556187335" duration="28852000" />
-      <workItem from="1356998518164" duration="18415000" />
+      <workItem from="1356998518164" duration="58632000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1660,11 +1778,15 @@
       <created>1394425838405</created>
       <updated>1394425838405</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="fix the thread error with the Facebook Jobs&#10;">
+      <created>1395030704969</created>
+      <updated>1395030704969</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1063526000" />
+    <option name="totallyTimeSpent" value="1103743000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1696,7 +1818,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42335767" sideWeight="0.09035409" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270073" sideWeight="0.15445666" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CQ Node Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1704,32 +1826,32 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15995117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2014652" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39294404" sideWeight="0.9096459" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2032967" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36009732" sideWeight="0.5885226" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.7936508" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42335767" sideWeight="0.9096459" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34914842" sideWeight="0.9096459" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1959707" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14041515" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
@@ -1788,7 +1910,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="remove unused code" />
     <MESSAGE value="move a lot of the facebook code into a super class for future support of other graph api jobs" />
     <MESSAGE value="Add facebook jobs for likes and checkins" />
     <MESSAGE value="some refactoring around the facebook account management" />
@@ -1813,52 +1934,53 @@
     <MESSAGE value="add svg webicons" />
     <MESSAGE value="add fd:date default for images, with bad metadata" />
     <MESSAGE value="remove photos job and replace it with an albums job, we pull photos under albums in new job next.&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove photos job and replace it with an albums job, we pull photos under albums in new job next.&#10;" />
+    <MESSAGE value="fix the thread error with the Facebook Jobs&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix the thread error with the Facebook Jobs&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java</url>
-          <line>154</line>
-          <properties />
-          <option name="timeStamp" value="267" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java</url>
-          <line>156</line>
-          <properties />
-          <option name="timeStamp" value="273" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="277" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java</url>
-          <line>112</line>
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookAlbumsJob.java</url>
+          <line>109</line>
           <properties />
           <option name="timeStamp" value="279" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java</url>
-          <line>170</line>
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookAlbumsJob.java</url>
+          <line>167</line>
           <properties />
           <option name="timeStamp" value="283" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java</url>
-          <line>110</line>
-          <properties />
-          <option name="timeStamp" value="286" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java</url>
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookJob.java</url>
           <line>144</line>
           <properties />
           <option name="timeStamp" value="289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookCheckinsJob.java</url>
+          <line>85</line>
+          <properties />
+          <option name="timeStamp" value="290" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookCheckinsJob.java</url>
+          <line>115</line>
+          <properties />
+          <option name="timeStamp" value="291" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java</url>
+          <line>196</line>
+          <properties />
+          <option name="timeStamp" value="326" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlStreamJob.java</url>
+          <line>195</line>
+          <properties />
+          <option name="timeStamp" value="357" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1870,7 +1992,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="290" />
+      <option name="time" value="361" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1878,395 +2000,897 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/index.js">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookStatusJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="489">
-          <caret line="0" column="50" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/row-facebook-photo.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="300">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="56.5" vertical-offset="1356" max-vertical-offset="1845">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/_timeline.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.833333" vertical-offset="2743" max-vertical-offset="3585">
-          <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="137" max-vertical-offset="1140">
-          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="838" max-vertical-offset="1365">
+          <caret line="114" column="30" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/observers/UploadObserver.java">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookAlbumsJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1866" max-vertical-offset="3270">
-          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1205" max-vertical-offset="1920">
+          <caret line="141" column="38" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/videohandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/videos/observers/UploadObserver.java">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookLikesJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2136" max-vertical-offset="3180">
-          <caret line="201" column="35" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1025" max-vertical-offset="1545">
+          <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/musichandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/music/jobs/ID3Job.java">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookCheckinsJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="3525">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1380">
+          <caret line="115" column="30" selection-start-line="115" selection-start-column="30" selection-end-line="115" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0-sources.jar!/javax/jcr/nodetype/NodeType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1365">
-          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="506" max-vertical-offset="7290">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/metadata/DrewMetadataExtractor.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="2280">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.6390533" vertical-offset="3873" max-vertical-offset="5715">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/.temp/app-templates.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1103" max-vertical-offset="3255">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2970" max-vertical-offset="19455">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395547619000" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/MetadataJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1471" max-vertical-offset="3240">
-          <caret line="187" column="44" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1558" max-vertical-offset="3240">
+          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/io/DataInput.class">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11867089" vertical-offset="0" max-vertical-offset="632">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state vertical-scroll-proportion="19.958334" vertical-offset="479" max-vertical-offset="1065">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/javax/imageio/stream/ImageInputStream.class">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/dist/assets/js/shared-libs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11867089" vertical-offset="0" max-vertical-offset="1515">
-          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1014120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.json/2.0.6/org.apache.sling.commons.json-2.0.6-sources.jar!/org/apache/sling/commons/json/JSONTokener.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/dist/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="6885">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.json/2.0.6/org.apache.sling.commons.json-2.0.6-sources.jar!/org/apache/sling/commons/json/JSONObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3792" max-vertical-offset="18420">
-          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="75525">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10078#10079#0" expanded="false" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Using the jcr:uuid get a json packet for the node ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** This method is used to invoke hateoas links returned from the other services ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Search all photos with limit/offset paging support, used by the grid view. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Load one layer at a time, used by the list view to show the contents of a folder. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Load one layer at a time, used by the list view to show the contents of a folder. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Load one layer at a time, used by the list view to show the contents of a folder. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Create new folder (name=title) under the path ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Return distinct list off all /metadata/keywords attached to the nodes under a specific path. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Search all content with limit/offset paging support, used by the grid view. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Call the Sling API to list users. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** return the users properties ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;Content-Type&quot;: 'application/x-www-form-urlencoded; charset=UTF-8'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/user/manager'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/user/preferences'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/photos/grid'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/:id/details'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/**.state('photo:files:old', { ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/files&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/photos/files&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/photos&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/music/files&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/music&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: &quot;/movies/files&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;currentPath&quot;: &quot;/content/dam/movies&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;url&quot;: '/web'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Controller for the main application screen that controls the header and menu. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/**var words = []; ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** SIDEBAR Event Listeners ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;templateUrl&quot;: 'FolderNameModal'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;templateUrl&quot;: 'DeleteConfirmationDialog'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Parse a path into it's tokens for a valid breadcrumb array ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Callback for file list from JCR Service ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** We only want to let folders or files show up in the tree. Not JCR properties ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Copy state properties to the scope, if it's defined ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** UPDATE USER ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** NEW USER ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** UPDATE USER ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** REMOVE USER ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Facebook Services ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;appId&quot;: '1459016164310867'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Controller for the all customers screen ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** Invoked on startup, like a constructor. ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;replace&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;event&quot;: &quot;@&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;replace&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;event&quot;: &quot;@&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;nodeChildren&quot;: &quot;children&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;ul&quot;: &quot;&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;replace&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;items&quot;: &quot;@&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/** loop over all of the selected items and create a new array of tags for all selected items ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;multiple&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;replace&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;event&quot;: &quot;@&quot;...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;scope&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;scope&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;scope&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;scope&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;scope&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/**scope.play = function(item_, event) ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;scope&quot;: true...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/**scope.play = function(item_, event) ...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;priority&quot;: 1...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{&quot;path&quot;: '@'...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395547620000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/row-facebook-checkin.tpl.html">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/web.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1666667" vertical-offset="14" max-vertical-offset="570">
-          <caret line="6" column="135" selection-start-line="6" selection-start-column="135" selection-end-line="6" selection-end-column="135" />
+        <state vertical-scroll-proportion="-13.166667" vertical-offset="74" max-vertical-offset="855">
+          <caret line="26" column="26" selection-start-line="25" selection-start-column="12" selection-end-line="26" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/pom.xml">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/controllers/PhotoDetailsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3705">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.3-SNAPSHOT/org.apache.sling.event-3.3.3-SNAPSHOT-sources.jar!/org/apache/sling/event/impl/jobs/JobManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10666" max-vertical-offset="21930">
-          <caret line="840" column="0" selection-start-line="840" selection-start-column="0" selection-end-line="840" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/CustomNodeRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="2145">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/_web.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="765">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1125">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35031846" vertical-offset="600" max-vertical-offset="5595">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/users/UserServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="1230">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/usermanager.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375" vertical-offset="1545" max-vertical-offset="2880">
-          <caret line="126" column="66" selection-start-line="126" selection-start-column="66" selection-end-line="126" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.3-SNAPSHOT/org.apache.sling.event-3.3.3-SNAPSHOT-sources.jar!/org/apache/sling/event/jobs/JobBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="443" max-vertical-offset="2025">
-          <caret line="74" column="41" selection-start-line="73" selection-start-column="20" selection-end-line="74" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.engine/2.2.10/org.apache.sling.engine-2.2.10.jar!/org/apache/sling/engine/impl/request/RequestData.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31473213" vertical-offset="894" max-vertical-offset="1590">
-          <caret line="70" column="23" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.engine/2.2.10/org.apache.sling.engine-2.2.10-sources.jar!/org/apache/sling/engine/impl/request/RequestData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6529" max-vertical-offset="8220">
-          <caret line="513" column="0" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.4/org.apache.sling.event-3.3.4.jar!/org/apache/sling/event/impl/jobs/JobManagerImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1950" max-vertical-offset="2685">
-          <caret line="130" column="50" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-core/2.4.2/jackrabbit-core-2.4.2.jar!/org/apache/jackrabbit/core/ItemImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86199576" vertical-offset="809" max-vertical-offset="1305">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/jobs/SizeJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1395">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-commons/2.7.1/jackrabbit-jcr-commons-2.7.1.jar!/org/apache/jackrabbit/commons/JcrUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33199194" vertical-offset="1320" max-vertical-offset="2070">
-          <caret line="100" column="40" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0-sources.jar!/javax/jcr/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33170733" vertical-offset="20729" max-vertical-offset="31620">
-          <caret line="1406" column="19" selection-start-line="1406" selection-start-column="19" selection-end-line="1406" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1291" max-vertical-offset="2055">
-          <caret line="121" column="57" selection-start-line="121" selection-start-column="57" selection-end-line="121" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1110">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.076923" vertical-offset="1829" max-vertical-offset="4725">
-          <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.3-SNAPSHOT/org.apache.sling.event-3.3.3-SNAPSHOT-sources.jar!/org/apache/sling/event/impl/jobs/JobConsumerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6109" max-vertical-offset="6570">
-          <caret line="485" column="0" selection-start-line="485" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/UserService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7324841" vertical-offset="75" max-vertical-offset="3795">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/index.js">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1260">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.708333" vertical-offset="7" max-vertical-offset="1065">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="313" max-vertical-offset="1080">
+          <caret line="42" column="35" selection-start-line="40" selection-start-column="14" selection-end-line="42" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/files.list.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="1500" max-vertical-offset="2115">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/_files.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.625" vertical-offset="255" max-vertical-offset="1560">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPostsJob.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1500">
-          <caret line="55" column="85" selection-start-line="55" selection-start-column="85" selection-end-line="55" selection-end-column="85" />
+        <state vertical-scroll-proportion="-0.625" vertical-offset="255" max-vertical-offset="1845">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookLikesJob.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/videoRow/row-video.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="802" max-vertical-offset="1545">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="300">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.jcr.base/2.2.1-SNAPSHOT/org.apache.sling.jcr.base-2.2.1-SNAPSHOT-sources.jar!/org/apache/sling/jcr/base/SessionProxyHandler.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/imageRow/row-image.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1022" max-vertical-offset="1965">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookStatusJob.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/directives/preview/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1365">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2662722" vertical-offset="360" max-vertical-offset="1290">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/login/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4733728" vertical-offset="0" max-vertical-offset="525">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/photos.details.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1180124" vertical-offset="540" max-vertical-offset="1230">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookAlbumsJob.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1440" max-vertical-offset="1920">
-          <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
+        <state vertical-scroll-proportion="1.183432" vertical-offset="0" max-vertical-offset="4515">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65483236" vertical-offset="478" max-vertical-offset="1065">
+          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookPostsJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="926" max-vertical-offset="1500">
+          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/user/usermanager/controllers/UserManagerController.js">
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="4425">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state vertical-scroll-proportion="-12.483146" vertical-offset="6980" max-vertical-offset="7425">
+          <caret line="95" column="47" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.event/3.3.3-SNAPSHOT/org.apache.sling.event-3.3.3-SNAPSHOT-sources.jar!/org/apache/sling/event/jobs/Job.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2673" max-vertical-offset="5235">
+          <caret line="215" column="11" selection-start-line="215" selection-start-column="11" selection-end-line="215" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookVideo/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookVideo/row-facebook-video.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.416667" vertical-offset="116" max-vertical-offset="555">
+          <caret line="26" column="98" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/row-facebook-photo.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="435">
+          <caret line="18" column="18" selection-start-line="9" selection-start-column="12" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/MimeTypeManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="2070">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/src/main/java/com/mikenimer/familydam/filehandlers/images/decorators/observers/UploadObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2805" max-vertical-offset="3255">
+          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookPhoto/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="137" max-vertical-offset="600">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="17.923077" vertical-offset="3376" max-vertical-offset="4095">
+          <caret line="194" column="17" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#9366#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/users/UserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1230">
+          <caret line="108" column="60" selection-start-line="108" selection-start-column="60" selection-end-line="108" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.commons.json/2.0.6/org.apache.sling.commons.json-2.0.6-sources.jar!/org/apache/sling/commons/json/JSONObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7069" max-vertical-offset="18420">
+          <caret line="498" column="0" selection-start-line="498" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
+          <folding>
+            <element signature="e#17276#17277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/graph/FacebookJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.1153846" vertical-offset="2762" max-vertical-offset="7380">
+          <caret line="208" column="8" selection-start-line="208" selection-start-column="8" selection-end-line="209" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1389" max-vertical-offset="2160">
+          <caret line="114" column="14" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlStreamJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.730769" vertical-offset="3227" max-vertical-offset="10575">
+          <caret line="232" column="8" selection-start-line="232" selection-start-column="8" selection-end-line="232" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#23852#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3072#3073#0" expanded="true" />
+            <element signature="e#3134#3135#0" expanded="true" />
+            <element signature="e#3250#3251#0" expanded="true" />
+            <element signature="e#3314#3315#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/web/FacebookJobService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2250">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="2250">
           <caret line="131" column="14" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookPhotosJob.java">
+    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlCheckinJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.923077" vertical-offset="1192" max-vertical-offset="1860">
-          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1583" max-vertical-offset="5460">
+          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
           <folding>
-            <element signature="e#2746#2747#0" expanded="true" />
-            <element signature="e#2787#2788#0" expanded="true" />
+            <element signature="e#3397#3398#0" expanded="true" />
+            <element signature="e#3460#3461#0" expanded="true" />
+            <element signature="e#3576#3577#0" expanded="true" />
+            <element signature="e#3641#3642#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-commons/2.1.1/jackrabbit-jcr-commons-2.1.1-sources.jar!/org/apache/jackrabbit/commons/JcrUtils.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9915">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28843#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4551" max-vertical-offset="6855">
-          <caret line="373" column="13" selection-start-line="373" selection-start-column="13" selection-end-line="373" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2340" max-vertical-offset="5595">
+          <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/FacebookCheckinsJob.java">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88729876" vertical-offset="644" max-vertical-offset="1425">
-          <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="23" column="68" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="465">
+          <caret line="6" column="135" selection-start-line="6" selection-start-column="120" selection-end-line="6" selection-end-column="135" />
           <folding>
-            <element signature="e#2962#2963#0" expanded="true" />
-            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#video#0;n#div#2;n#div#1;n#div#1;n#div#0;n#li#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookCheckin/row-facebook-checkin.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="570">
+          <caret line="6" column="178" selection-start-line="6" selection-start-column="178" selection-end-line="6" selection-end-column="178" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timeline/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3169399" vertical-offset="531" max-vertical-offset="1080">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

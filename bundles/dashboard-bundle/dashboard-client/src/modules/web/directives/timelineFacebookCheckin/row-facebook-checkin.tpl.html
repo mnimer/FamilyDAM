@@ -4,13 +4,13 @@
     <div class="timeline-panel">
         <div class="timeline-heading">
             <h4 class="timeline-title">{{item.message}}</h4>
-            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{item.created_time | fromNow}} @ {{item.place.name}}</small></p>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <span tooltip="{{item['fd:date']}}">{{item.created_time | fromNow}} @ {{item.place.name}}</span></small></p>
         </div>
 
         <div class="timeline-body">
             <div>
                 <img
-                        ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{item.latitude}},{{item.longitude}}&zoom=13&size={{width}}x200&markers=label:{{item.place.name}}%7C{{item.latitude}},{{item.longitude}}&sensor=false"
+                        ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{item.latitude}},{{item.longitude}}&zoom=13&size={{width}}x200&markers=label:{{item.place.name}}%7C{{item.latitude}},{{item.longitude}}&sensor=false&key=AIzaSyAb_n4O6LPZ0LPyeFgKMceuh6j97hvZzDw"
                         style="width: 100%;">
 
             </div>

@@ -61,17 +61,14 @@ var timelineRendererDirective = function ($compile)
             {
                 inverted = isInverted(mixins, scope.data);
 
-
                 if( scope.data.type == "checkin" )
                 {
                     compiled = "<li x-timeline-facebook-checkin inverted='" +inverted +"'/>";
-                }else if( scope.data.type == "status" )
+                }else if( scope.data.type == "status" || scope.data.type == "photo" || scope.data.type == "video")
                 {
                     compiled = "<li x-timeline-facebook-status inverted='" +inverted +"'/>";
-                }else if( scope.data.type == "photo" )
-                {
-                    compiled = "<li x-timeline-facebook-photo inverted='" +inverted +"' />";
                 }
+
             }
 
             //console.log('compiled: ', $compile(compiled)(scope));

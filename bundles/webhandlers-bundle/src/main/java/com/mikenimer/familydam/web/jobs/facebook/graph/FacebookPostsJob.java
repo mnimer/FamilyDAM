@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.mikenimer.familydam.web.jobs;
+package com.mikenimer.familydam.web.jobs.facebook.graph;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -26,9 +26,8 @@ import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.commons.json.JSONArray;
+import org.apache.jackrabbit.commons.JcrUtils;
 import org.apache.sling.commons.json.JSONException;
-import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
@@ -38,22 +37,28 @@ import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by mnimer on 2/6/14.
  */
 @Component(enabled = true, immediate = true)
 @Service(value = JobConsumer.class)
-@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/photos")
-public class FacebookPhotosJob extends FacebookJob
+@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/statuses")
+public class FacebookPostsJob extends FacebookJob
 {
-    public static String TOPIC = "familydam/web/facebook/photos";
-    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/albums/{2}/photos/{3}";
+    public static String TOPIC = "familydam/web/facebook/statuses";
+    public static String FACEBOOKFOLDERPATH = "/content/dam/web/facebook/{1}/statuses";
+    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/statuses/{2}/{3}";
 
-    private final Logger log = LoggerFactory.getLogger(FacebookPhotosJob.class);
+    private final Logger log = LoggerFactory.getLogger(FacebookPostsJob.class);
+
+    private Map<String, Object> jobProperties = new HashMap<String, Object>();
 
     @Reference
     protected JobManager jobManager;
@@ -61,20 +66,25 @@ public class FacebookPhotosJob extends FacebookJob
     @Activate
     protected void activate(ComponentContext context) throws Exception
     {
-        log.debug("Activate FacebookPhotosJob Job");
+        log.debug("Activate FacebookStatusJob Job");
     }
 
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        log.debug("Deactivate FacebookPhotosJob Job");
+        log.debug("Deactivate FacebookStatusJob Job");
     }
 
 
     @Override
     public JobResult process(Job job)
     {
+        Set<String> names = job.getPropertyNames();
+        for (String name : names)
+        {
+            jobProperties.put(name, job.getProperty(name));
+        }
         return super.process(job);
     }
 
@@ -85,11 +95,6 @@ public class FacebookPhotosJob extends FacebookJob
         String expiresIn = facebookData.getProperty("expiresIn").getString();
         String signedRequest = facebookData.getProperty("signedRequest").getString();
 
-        Map<String, Object> jobProperties = extractJobProperties(job);
-        String _albumId = job.getProperty("albumId").toString();
-        String _albumName = job.getProperty("albumName").toString();
-
-
         String userId = "me";
         if (facebookData.hasProperty("userId"))
         {
@@ -99,9 +104,8 @@ public class FacebookPhotosJob extends FacebookJob
         String _url = nextUrl;
         if (nextUrl == null)
         {
-            _url = "https://graph.facebook.com/" +_albumId +"/photos?access_token=" + accessToken;
+            _url = "https://graph.facebook.com/" + userId + "/posts?access_token=" + accessToken;
         }
-        System.out.println("load photo:" +_url);
         URL url = new URL(_url);
 
         HttpClient client = new HttpClient();
@@ -113,50 +117,24 @@ public class FacebookPhotosJob extends FacebookJob
             return JobResult.FAILED;
         }
 
+        // Create default Albums Node as Sling:Folder, if it doesn't exist
+        String facebookFolderPath = FACEBOOKFOLDERPATH.replace("{1}", username);
+        Session session = repo.loginAdministrative(null);
+        JcrUtils.getOrCreateByPath(facebookFolderPath, "sling:Folder", session);
+
+
         // Read the response body.
-        System.out.println("load photo complete");
-        System.out.println("***");
         String jsonStr = method.getResponseBodyAsString();
-
-        try
-        {
-            JSONObject jsonObj = new JSONObject(jsonStr);
-            JSONArray photoList = jsonObj.getJSONArray("data");
-
-
-            for (int i = 0; i < photoList.length(); i++)
-            {
-                JSONObject post = (JSONObject) photoList.get(i);
-                String id = post.getString("id");
-
-                String facebookPath = FACEBOOKPATH.replace("{1}", username).replace("{2}", _albumName).replace("{3}", id);
-                saveData(job, username, post, facebookPath, "photo");
-            }
-                return JobResult.OK;
-
-        }
-        catch ( Exception ex){
-            ex.printStackTrace();
-            return JobResult.FAILED;
-        }
+        return saveData(job, username, jsonStr, FACEBOOKPATH, "status");
     }
+
 
 
     @Override
     protected void invokeNextJob(Job job, String username, String nodePath, String nextUrl)
     {
-        if( jobManager == null )
-        {
-            log.error("JobManager is null");
-        }
-
-        try
-        {
-            Map jobProperties = extractJobProperties(job);
-            jobProperties.put("url", nextUrl);
-            Job metadataJob = jobManager.addJob(FacebookPhotosJob.TOPIC, jobProperties);
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
+        Map jobProperties = extractJobProperties(job);
+        jobProperties.put("url", nextUrl);
+        Job metadataJob = jobManager.addJob(FacebookPostsJob.TOPIC, jobProperties);
     }
 }

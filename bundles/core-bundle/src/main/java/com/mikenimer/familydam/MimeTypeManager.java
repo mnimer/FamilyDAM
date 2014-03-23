@@ -40,9 +40,10 @@ public enum MimeTypeManager
     MP4("mp4", "music/"), //todo get the right mime type
 
     // videos, todo: find more
-    MPG("mpg", "video/"), //todo get the right mime type
-    MPEG("mpeg", "video/"), //todo get the right mime type
-    M4V("m4v", "video/"), //todo get the right mime type
+    MPG("mpg", "video/mpeg"), //todo get the right mime type
+    MPEG("mpeg", "video/mpeg"), //todo get the right mime type
+    M4V("m4v", "video/m4v"), //todo get the right mime type
+    RAW("raw", "video/mpg"), // Special type returned from Facebook. //todo get the right mime type
 
     //todo, find more
     PDF("pdf", "document/"), //todo get the right mime type
@@ -81,6 +82,26 @@ public enum MimeTypeManager
         }
         return false;
     }
+
+    public static String getMimeType(String pathOrExt)
+    {
+        int fileSep = pathOrExt.lastIndexOf(".");
+        if( fileSep > -1 )
+        {
+            pathOrExt = pathOrExt.substring(fileSep+1);
+        }
+
+        for (MimeTypeManager mimeTypeManager : MimeTypeManager.values() )
+        {
+            if( mimeTypeManager.extension.equalsIgnoreCase(pathOrExt)  )
+            {
+                return mimeTypeManager.mimeType;
+            }
+        }
+
+        return "application/octet-stream";// default unknown
+    }
+
 
     public static boolean isImage(String path)
     {

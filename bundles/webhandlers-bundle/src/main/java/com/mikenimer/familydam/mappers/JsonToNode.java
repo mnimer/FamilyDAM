@@ -17,16 +17,33 @@
 
 package com.mikenimer.familydam.mappers;
 
+import com.mikenimer.familydam.Constants;
+import com.mikenimer.familydam.MimeTypeManager;
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.jackrabbit.commons.JcrUtils;
+import org.apache.jackrabbit.value.BinaryImpl;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.apache.sling.commons.mime.MimeTypeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.imageio.ImageIO;
+import javax.jcr.Binary;
 import javax.jcr.Node;
+import javax.jcr.nodetype.ConstraintViolationException;
+import javax.jcr.nodetype.NodeType;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.URL;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,6 +56,8 @@ public class JsonToNode
 
     private List ignorableFields = new ArrayList();
 
+    @Reference
+    public MimeTypeManager mimeTypeManager;
 
     public JsonToNode()
     {
@@ -50,7 +69,7 @@ public class JsonToNode
     }
 
 
-    public Node convert(Node node, JSONObject json) throws JSONException
+    public Node convert(Node node, JSONObject json, String type) throws JSONException
     {
         JSONArray jsonArray = json.names();
         for (int i = 0; i < jsonArray.length(); i++)
@@ -59,16 +78,34 @@ public class JsonToNode
             Object value = json.get(key);
             try
             {
-                if( ignorableFields.indexOf(key) == -1 )
+                if (ignorableFields.indexOf(key) == -1)
                 {
                     if (value instanceof JSONObject)
                     {
                         Node n = JcrUtils.getOrAddNode(node, key);
-                        convert(n, (JSONObject) value);
+                        convert(n, (JSONObject) value, type);
                     }
                     else if (value instanceof JSONArray)
                     {
-                        convert(node, key, (JSONArray) value);
+                        for (int j = 0; j < ((JSONArray) value).length(); j++)
+                        {
+                            JSONObject object = (JSONObject) ((JSONArray) value).get(j);
+
+                            if (key.equalsIgnoreCase("media"))
+                            {
+                                Node media = node.addNode(key, NodeType.NT_FILE);
+                                media.addMixin(Constants.NODE_CONTENT);
+                                //convert(media, object, type);
+                                String src = object.getString("src");
+                                loadMedia(media, object, src, type);
+                            }
+                            else
+                            {
+                                Node aNode = node.addNode(key);
+                                convert(aNode, object, type);
+                            }
+                        }
+
                     }
                     else if (value instanceof Integer)
                     {
@@ -95,7 +132,7 @@ public class JsonToNode
             catch (Exception ex)
             {
                 ex.printStackTrace();
-                log.error("unable to update node: " +key +"with value=" +value, ex);
+                log.error("unable to update node: " + key + "with value=" + value, ex);
             }
 
         }
@@ -105,7 +142,7 @@ public class JsonToNode
     }
 
 
-    public Object[] convert(Node node, String key, JSONArray json) throws JSONException
+    public Object[] convert(Node node, String key, JSONArray json, String type) throws JSONException
     {
         Object[] list = null;
         for (int i = 0; i < json.length(); i++)
@@ -119,9 +156,9 @@ public class JsonToNode
                 {
 
                     Node n = null;
-                    n = JcrUtils.getOrAddNode(node, key);
+                    n = JcrUtils.getOrAddNode(node, key, NodeType.NT_UNSTRUCTURED);
 
-                    convert(n, (JSONObject) value);
+                    convert(n, (JSONObject) value, type);
                 }
                 else if (value instanceof JSONArray)
                 {
@@ -153,4 +190,78 @@ public class JsonToNode
 
         return list;
     }
+
+
+    private void loadMedia(Node media, JSONObject object, String src, String type)
+    {
+        // pull URL and save the source image and an embedded URL
+        BufferedImage bufferedImage = null;
+        Binary imageBinary = null;
+
+        try
+        {
+            String _originalSource = src.replace("_n.", "_o.").replace("_s.", "_o.");
+
+            URL url = new URL(_originalSource);
+            bufferedImage = ImageIO.read(url);
+
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
+            ImageIO.write(bufferedImage, "jpg", os);
+            InputStream is = new ByteArrayInputStream(os.toByteArray());
+            imageBinary = new BinaryImpl(os.toByteArray());
+            //ValueFactory valueFactory = session.getValueFactory();
+            //Binary contentValue = valueFactory.createBinary(is);
+
+
+            if (imageBinary != null)
+            {
+                // create file node
+                //Node sourceNode = JcrUtils.getOrAddNode(media, "file", NodeType.NT_FILE);
+                media.addMixin("mix:referenceable");
+                media.addMixin(Constants.NODE_CONTENT);
+                media.addMixin(Constants.NODE_IMAGE);
+
+
+                //Try to figure out the mime type
+                String _mimeType = MimeTypeManager.getMimeType("*");// load default
+                if( object.getString("type").equalsIgnoreCase("photo") )
+                {
+                    _mimeType = MimeTypeManager.getMimeType(_originalSource);
+                }
+                else if( object.getString("type").equalsIgnoreCase("video") )
+                {
+                    if( object.has("video") )
+                    {
+                        String source_type = object.getJSONObject("video").getString("source_type");
+                        _mimeType = MimeTypeManager.getMimeType(source_type);
+                    }
+                    else
+                    {
+                        _mimeType = MimeTypeManager.getMimeType("raw"); //get the video/* unknown type
+                    }
+                }
+
+
+                Node contentNode = JcrUtils.getOrAddNode(media, "jcr:content", NodeType.NT_RESOURCE);
+                contentNode.setProperty("jcr:mimeType", _mimeType);
+                contentNode.setProperty("jcr:data", imageBinary);
+                Calendar lastModified = Calendar.getInstance();
+                lastModified.setTimeInMillis(lastModified.getTimeInMillis());
+                contentNode.setProperty("jcr:lastModified", lastModified);
+                //contentNode.setProperty("jcr:lastModified", Calendar.getInstance());
+                //contentNode.setProperty("jcr:uuid", UUID.randomUUID().toString() );
+
+            }
+            else
+            {
+                log.warn("unable to load: " + src);
+            }
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+
+    }
+
 }

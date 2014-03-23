@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.mikenimer.familydam.web.jobs;
+package com.mikenimer.familydam.web.jobs.facebook.graph;
 
 import com.mikenimer.familydam.Constants;
 import com.mikenimer.familydam.mappers.JsonToNode;
@@ -66,18 +66,18 @@ public class FacebookJob implements JobConsumer
 
 
     @Reference
-    public SlingRepository repository;
+    public SlingRepository repo;
 
 
     @Override
     public JobResult process(Job job)
     {
-        String nodePath = (String) job.getProperty("nodePath");
+        String userNode = (String) job.getProperty("userNode");
         String url = (String) job.getProperty("url");
         String username = (String) job.getProperty("username");
 
 
-        return process(job, username, nodePath, url);
+        return process(job, username, userNode, url);
     }
 
 
@@ -85,7 +85,7 @@ public class FacebookJob implements JobConsumer
     {
         try
         {
-            session = repository.loginAdministrative(null);
+            session = repo.loginAdministrative(null);
             Node node = session.getNode(path);
 
             Node facebookData = node.getNode("web/facebook");
@@ -117,7 +117,7 @@ public class FacebookJob implements JobConsumer
     }
 
 
-    protected JobResult queryFacebook(Job job, Node facebookData, String username, String nodePath, String nextUrl) throws RepositoryException, IOException, JSONException
+    protected JobResult queryFacebook(Job job, Node facebookData, String username, String userNode, String nextUrl) throws RepositoryException, IOException, JSONException
     {
         return null;
     }
@@ -199,7 +199,7 @@ public class FacebookJob implements JobConsumer
     }
 
 
-    private synchronized void persistSingleNode(String username, String facebookPath, String type, JSONObject post) throws JSONException, ParseException, IOException, RepositoryException
+    public synchronized void persistSingleNode(String username, String facebookPath, String type, JSONObject post) throws JSONException, ParseException, IOException, RepositoryException
     {
         // Not thread safe, so we'll recreate
         SimpleDateFormat facebookDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+SSSS");
@@ -269,7 +269,7 @@ public class FacebookJob implements JobConsumer
             }
 
 
-            new JsonToNode().convert(node, post);
+            new JsonToNode().convert(node, post, type);
 
             // Save the new session, before we check for the photo
             try

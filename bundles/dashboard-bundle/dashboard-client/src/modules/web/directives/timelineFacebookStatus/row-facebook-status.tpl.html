@@ -4,10 +4,21 @@
     <div class="timeline-panel">
         <div class="timeline-heading">
             <h4 class="timeline-title">{{item.message}}</h4>
-            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{item.updated_time | fromNow}}</small></p>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <span tooltip="{{item['fd:date']}}">{{item['fd:date'] | fromNow}}</span></small></p>
         </div>
         <div class="timeline-body">
-            <p></p>
+            <div ng-if="item.attachment.fb_object_type == 'photo'">
+                <img ng-src="{{item['jcr:path']}}/attachment/media" style="max-width: 100%"/>
+            </div>
+            <div ng-if="item.attachment.fb_object_type == 'album'">
+                <img ng-src="{{item['jcr:path']}}/attachment/media" style="max-width: 100%"/>
+                <!-- todo: show all -->
+            </div>
+            <div ng-if="item.attachment.fb_object_type == 'video'">
+                <video controls style="width: 100%">
+                    <source ng-src="{{item['jcr:path']}}/attachment/media" type="video/mp4">
+                </video>
+            </div>
         </div>
     </div>
 </div>

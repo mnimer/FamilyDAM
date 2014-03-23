@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.mikenimer.familydam.web.jobs;
+package com.mikenimer.familydam.web.jobs.facebook.graph;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -40,23 +40,22 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by mnimer on 2/6/14.
  */
 @Component(enabled = true, immediate = true)
 @Service(value = JobConsumer.class)
-@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/statuses")
-public class FacebookStatusJob extends FacebookJob
+@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/checkins")
+public class FacebookCheckinsJob extends FacebookJob
 {
-    public static String TOPIC = "familydam/web/facebook/statuses";
-    public static String FACEBOOKFOLDERPATH = "/content/dam/web/facebook/{1}/statuses";
-    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/statuses/{2}/{3}";
+    public static String TOPIC = "familydam/web/facebook/checkins";
+    public static String FACEBOOKFOLDERPATH = "/content/dam/web/facebook/{1}/checkins/";
+    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/checkins/{2}/{3}";
+    public static String FACEBOOKPATHByUser = "/content/dam/web/facebook/{1}/checkins/{2}/{3}";
 
-    private final Logger log = LoggerFactory.getLogger(FacebookStatusJob.class);
+    private final Logger log = LoggerFactory.getLogger(FacebookCheckinsJob.class);
 
     @Reference
     protected JobManager jobManager;
@@ -64,13 +63,14 @@ public class FacebookStatusJob extends FacebookJob
     @Activate
     protected void activate(ComponentContext context) throws Exception
     {
-        log.debug("Activate FacebookStatusJob Job");
+        log.debug("Activate FacebookCheckinsJob Job");
     }
+
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        log.debug("Deactivate FacebookStatusJob Job");
+        log.debug("Deactivate FacebookCheckinsJob Job");
     }
 
 
@@ -79,7 +79,6 @@ public class FacebookStatusJob extends FacebookJob
     {
         return super.process(job);
     }
-
 
     @Override
     protected JobResult queryFacebook(Job job, Node facebookData, String username, String userPath, String nextUrl) throws RepositoryException, IOException, JSONException
@@ -97,7 +96,7 @@ public class FacebookStatusJob extends FacebookJob
         String _url = nextUrl;
         if (nextUrl == null)
         {
-            _url = "https://graph.facebook.com/" + userId + "/statuses?access_token=" + accessToken;
+            _url = "https://graph.facebook.com/" + userId + "/checkins?access_token=" + accessToken;
         }
         URL url = new URL(_url);
 
@@ -113,13 +112,13 @@ public class FacebookStatusJob extends FacebookJob
 
         // Create default Albums Node as Sling:Folder, if it doesn't exist
         String facebookFolderPath = FACEBOOKFOLDERPATH.replace("{1}", username);
-        Session session = repository.loginAdministrative(null);
+        Session session = repo.loginAdministrative(null);
         JcrUtils.getOrCreateByPath(facebookFolderPath, "sling:Folder", session);
 
 
         // Read the response body.
         String jsonStr = method.getResponseBodyAsString();
-        return saveData(job, username, jsonStr, FACEBOOKPATH, "status");
+        return saveData(job, username, jsonStr, FACEBOOKPATH, "checkin");
     }
 
 
@@ -129,6 +128,6 @@ public class FacebookStatusJob extends FacebookJob
     {
         Map jobProperties = extractJobProperties(job);
         jobProperties.put("url", nextUrl);
-        Job metadataJob = jobManager.addJob(FacebookStatusJob.TOPIC, jobProperties);
+        Job metadataJob = jobManager.addJob(FacebookCheckinsJob.TOPIC, jobProperties);
     }
 }

@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.mikenimer.familydam.web.jobs;
+package com.mikenimer.familydam.web.jobs.facebook.graph;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -49,14 +49,15 @@ import java.util.Set;
  */
 @Component(enabled = true, immediate = true)
 @Service(value = JobConsumer.class)
-@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/statuses")
-public class FacebookPostsJob extends FacebookJob
+@Property(name = JobConsumer.PROPERTY_TOPICS, value = "familydam/web/facebook/likes")
+public class FacebookLikesJob extends FacebookJob
 {
-    public static String TOPIC = "familydam/web/facebook/statuses";
-    public static String FACEBOOKFOLDERPATH = "/content/dam/web/facebook/{1}/statuses";
-    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/statuses/{2}/{3}";
+    public static String TOPIC = "familydam/web/facebook/likes";
+    public static String FACEBOOKFOLDERPATH = "/content/dam/web/facebook/{1}/likes";
+    public static String FACEBOOKPATH = "/content/dam/web/facebook/{1}/likes/{2}/{3}";
+    public static String FACEBOOKPATHByUser = "/content/dam/web/facebook/{1}/likes/{2}/{3}";
 
-    private final Logger log = LoggerFactory.getLogger(FacebookPostsJob.class);
+    private final Logger log = LoggerFactory.getLogger(FacebookLikesJob.class);
 
     private Map<String, Object> jobProperties = new HashMap<String, Object>();
 
@@ -66,14 +67,14 @@ public class FacebookPostsJob extends FacebookJob
     @Activate
     protected void activate(ComponentContext context) throws Exception
     {
-        log.debug("Activate FacebookStatusJob Job");
+        log.debug("Activate FacebookLikesJob Job");
     }
 
 
     @Deactivate
     protected void deactivate(ComponentContext componentContext) throws RepositoryException
     {
-        log.debug("Deactivate FacebookStatusJob Job");
+        log.debug("Deactivate FacebookLikesJob Job");
     }
 
 
@@ -104,7 +105,7 @@ public class FacebookPostsJob extends FacebookJob
         String _url = nextUrl;
         if (nextUrl == null)
         {
-            _url = "https://graph.facebook.com/" + userId + "/posts?access_token=" + accessToken;
+            _url = "https://graph.facebook.com/" + userId + "/likes?access_token=" + accessToken;
         }
         URL url = new URL(_url);
 
@@ -117,15 +118,17 @@ public class FacebookPostsJob extends FacebookJob
             return JobResult.FAILED;
         }
 
+
+
         // Create default Albums Node as Sling:Folder, if it doesn't exist
         String facebookFolderPath = FACEBOOKFOLDERPATH.replace("{1}", username);
-        Session session = repository.loginAdministrative(null);
+        Session session = repo.loginAdministrative(null);
         JcrUtils.getOrCreateByPath(facebookFolderPath, "sling:Folder", session);
 
 
         // Read the response body.
         String jsonStr = method.getResponseBodyAsString();
-        return saveData(job, username, jsonStr, FACEBOOKPATH, "status");
+        return saveData(job, username, jsonStr, FACEBOOKPATH, "like");
     }
 
 
@@ -135,6 +138,6 @@ public class FacebookPostsJob extends FacebookJob
     {
         Map jobProperties = extractJobProperties(job);
         jobProperties.put("url", nextUrl);
-        Job metadataJob = jobManager.addJob(FacebookPostsJob.TOPIC, jobProperties);
+        Job metadataJob = jobManager.addJob(FacebookLikesJob.TOPIC, jobProperties);
     }
 }

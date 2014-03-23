@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.mikenimer.familydam.web.jobs;
+package com.mikenimer.familydam.web.jobs.facebook.graph;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -40,12 +40,9 @@ import org.slf4j.LoggerFactory;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.nodetype.NodeType;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by mnimer on 2/6/14.
@@ -135,13 +132,13 @@ public class FacebookAlbumsJob extends FacebookJob
                 jobProperties.put("albumId", id);
                 jobProperties.put("albumName", name);
 
-                Job photosJob = jobManager.addJob("familydam/web/facebook/photos", jobProperties);
+                Job photosJob = jobManager.addJob("familydam/web/facebook/albums/photos", jobProperties);
                 //log.debug("Create Job {} / {}", albumsJob.getTopic(), albumsJob.getId());
 
 
                 // Create default Albums Node as Sling:Folder, if it doesn't exist
                 String facebookFolderPath = FACEBOOKFOLDERPATH.replace("{1}", username);
-                Session session = repository.loginAdministrative(null);
+                Session session = repo.loginAdministrative(null);
                 JcrUtils.getOrCreateByPath(facebookFolderPath, "sling:Folder", session);
 
 

@@ -124,14 +124,14 @@ public class FacebookJobService extends SlingAllMethodsServlet
         Map props = new HashMap();
         props.put("refreshAll", true);
         props.put("username", username);
-        props.put("nodePath", "/apps/familydam/users/" +username);
+        props.put("userNode", "/apps/familydam/users/" +username);
 
         try
         {
             // Run immediately
-            //Job metadataJob = jobManager.addJob("familydam/web/facebook/statuses", props);
-            Job checkInJob = jobManager.addJob("familydam/web/facebook/checkins", props);
-            //Job albumsJob = jobManager.addJob("familydam/web/facebook/albums", props);
+            //Job streamJob = jobManager.addJob("familydam/web/facebook/fql/stream", props);
+            Job checkInJob = jobManager.addJob("familydam/web/facebook/fql/checkin", props);
+
 
 
             boolean hasStatusJob = false;
