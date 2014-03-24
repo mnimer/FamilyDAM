@@ -165,6 +165,7 @@ module.exports = function (grunt) {
                         'angular-resource': './bower_components/angular-resource/angular-resource.js',
                         'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js',
                         'angular-ui-select2':'./bower_components/angular-ui-select2/src/select2.js',
+                        'angular-sanitize':'./bower_components/angular-sanitize/angular-sanitize.js',
                         'jquery': './bower_components/jquery/jquery.js',
                         'jquery-ui': './bower_components/jquery-ui/ui/jquery-ui.js',
                         'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',
@@ -173,7 +174,11 @@ module.exports = function (grunt) {
                         'treeControl':'./src/assets/js/angular-tree-control-modified.js',
                         'vr.directives.wordCloud':'./bower_components/angular-word-cloud/build/angular-word-cloud.js',
                         'select2':'./bower_components/select2/select2.js',
-                        'momentjs':'./bower_components/momentjs/min/moment-with-langs.js'
+                        'momentjs':'./bower_components/momentjs/min/moment-with-langs.js',
+                        'com.2fdevs.videogular':'./bower_components/videogular/videogular.js',
+                        'com.2fdevs.videogular.plugins.controls':'./bower_components/videogular-controls/controls.js',
+                        'com.2fdevs.videogular.plugins.buffering':'./bower_components/videogular-buffering/buffering.js',
+                        'com.2fdevs.videogular.plugins.overlayplay':'./bower_components/videogular-overlay-play/overlay-play.js'
                     }
 				}
 			},

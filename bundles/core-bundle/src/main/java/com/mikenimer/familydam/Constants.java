@@ -81,7 +81,7 @@ public class Constants
     public static final String NODE_GEOSTAMP = "fd:geostamp";
     public static final String NODE_IMAGE = "fd:image";
     public static final String NODE_SONG = "fd:song";
-    public static final String NODE_VIDEO = "fd:video";
+    public static final String NODE_MOVIE = "fd:movie";
     public static final String NODE_FACEBOOK = "fd:facebook";
     public static final String NODE_TWITTER = "fd:twittter";
 }

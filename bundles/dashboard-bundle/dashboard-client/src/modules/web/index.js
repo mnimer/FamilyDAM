@@ -25,7 +25,6 @@ module.exports = angular.module('dashboard.web', ['ui.bootstrap'])
     .directive('timeline', require('./directives/timeline'))
     .directive('timelineRenderer', require('./directives/timelineRenderer'))
     .directive('timelineFacebookCheckin', require('./directives/timelineFacebookCheckin'))
-    .directive('timelineFacebookPhoto', require('./directives/timelineFacebookPhoto'))
     .directive('timelineFacebookStatus', require('./directives/timelineFacebookStatus'))
 
     .filter('fromNow', function() {

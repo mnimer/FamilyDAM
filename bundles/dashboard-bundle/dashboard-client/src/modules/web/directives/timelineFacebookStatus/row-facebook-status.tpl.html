@@ -15,11 +15,15 @@
                 <!-- todo: show all -->
             </div>
             <div ng-if="item.attachment.fb_object_type == 'video'">
-                <video controls style="width: 100%">
-                    <source ng-src="{{item['jcr:path']}}/attachment/media" type="video/mp4">
-                </video>
+                <div>
+                    <video class='videoPlayer' preload='metadata' controls="controls" style="width: 100%;">
+                        <source  ng-src="{{item['jcr:path'] +'/attachment/media' }}" type='video/mp4'>
+                    </video>
+                </div>
             </div>
         </div>
     </div>
 </div>
 </li>
+
+

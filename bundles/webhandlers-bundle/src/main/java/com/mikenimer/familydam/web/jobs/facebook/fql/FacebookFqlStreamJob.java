@@ -208,7 +208,7 @@ public class FacebookFqlStreamJob extends FacebookFqlJob
                     Map props = extractJobProperties(job);
                     props.put("created_time", oldest_created_time);
                     // Run immediately
-                    Job streamJob = jobManager.addJob("familydam/web/facebook/fql/stream", props);
+                    //Job streamJob = jobManager.addJob("familydam/web/facebook/fql/stream", props);
                 }
             }
 

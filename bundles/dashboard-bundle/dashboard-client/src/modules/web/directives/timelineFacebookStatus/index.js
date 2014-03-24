@@ -22,10 +22,44 @@ var timelineFacebookStatus = function($compile) {
         },
         replace: true,
         templateUrl: 'modules/web/directives/timelineFacebookStatus/row-facebook-status.tpl.html',
-        link: function(scope, element, attrs) {
-            scope.item = scope.$parent.data;
-            //console.log(scope.data);
-            //console.log("isInverted:" +inverted);
+        controller: function($scope)
+        {
+            $scope.config = {
+                autoHide: false,
+                autoPlay: false,
+                responsive: true,
+                transclude: true,
+                theme: {
+                    url: "assets/css/videogular.css",
+                    playIcon: "&#xe000;",
+                    pauseIcon: "&#xe001;",
+                    volumeLevel3Icon: "&#xe002;",
+                    volumeLevel2Icon: "&#xe003;",
+                    volumeLevel1Icon: "&#xe004;",
+                    volumeLevel0Icon: "&#xe005;",
+                    muteIcon: "&#xe006;",
+                    enterFullScreenIcon: "&#xe007;",
+                    exitFullScreenIcon: "&#xe008;"
+                },
+                plugins: {
+                    poster: {
+                        url: "assets/images/logo.png"
+                    }
+                }
+            };
+        },
+        compile: function(tElement, tAttrs, transclude)
+        {
+            console.log('Compile()');
+
+            return {
+                pre: function(scope, iElement, iAttrs, controller) {
+                    scope.item = scope.$parent.data;
+                },
+                post: function(scope, iElement, iAttrs, controller) {
+                    //
+                }
+            };
         }
     };
 };

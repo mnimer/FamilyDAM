@@ -37,13 +37,13 @@ public enum MimeTypeManager
 
     // Music, todo: find more
     MP3("mp3", "music/"), //todo get the right mime type
-    MP4("mp4", "music/"), //todo get the right mime type
 
     // videos, todo: find more
     MPG("mpg", "video/mpeg"), //todo get the right mime type
     MPEG("mpeg", "video/mpeg"), //todo get the right mime type
     M4V("m4v", "video/m4v"), //todo get the right mime type
-    RAW("raw", "video/mpg"), // Special type returned from Facebook. //todo get the right mime type
+    MP4("mp4", "video/mp4"), //todo get the right mime type
+    RAW("raw", "video/mp4"), // Special type returned from Facebook. //todo get the right mime type
 
     //todo, find more
     PDF("pdf", "document/"), //todo get the right mime type
@@ -86,7 +86,12 @@ public enum MimeTypeManager
     public static String getMimeType(String pathOrExt)
     {
         int fileSep = pathOrExt.lastIndexOf(".");
-        if( fileSep > -1 )
+        int quoteSep = pathOrExt.lastIndexOf("?");
+        if( fileSep > -1 && quoteSep > -1)
+        {
+            pathOrExt = pathOrExt.substring(fileSep+1, quoteSep);
+        }
+        else if( fileSep > -1 )
         {
             pathOrExt = pathOrExt.substring(fileSep+1);
         }

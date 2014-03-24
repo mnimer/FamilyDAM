@@ -129,7 +129,7 @@ public class FacebookJobService extends SlingAllMethodsServlet
         try
         {
             // Run immediately
-            //Job streamJob = jobManager.addJob("familydam/web/facebook/fql/stream", props);
+            Job streamJob = jobManager.addJob("familydam/web/facebook/fql/stream", props);
             Job checkInJob = jobManager.addJob("familydam/web/facebook/fql/checkin", props);
 
 

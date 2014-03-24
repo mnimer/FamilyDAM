@@ -29,6 +29,7 @@ import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.commons.mime.MimeTypeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.misc.IOUtils;
 
 import javax.imageio.ImageIO;
 import javax.jcr.Binary;
@@ -38,6 +39,7 @@ import javax.jcr.nodetype.NodeType;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.text.ParseException;
@@ -192,7 +194,91 @@ public class JsonToNode
     }
 
 
-    private void loadMedia(Node media, JSONObject object, String src, String type)
+    private void loadMedia(Node media, JSONObject object, String src, String type) throws JSONException
+    {
+        if( object.getString("type").equalsIgnoreCase("photo") )
+        {
+            loadPhotos(media, object, src, type);
+        }
+        else if( object.getString("type").equalsIgnoreCase("video") )
+        {
+            loadVideo(media, object, src, type);
+        }
+    }
+
+
+    private void loadVideo(Node media, JSONObject object, String src, String type)
+    {
+        // pull URL and save the source image and an embedded URL
+        Binary videoBinary = null;
+
+        try
+        {
+            String _originalSource = src.replace("_n.", "_o.").replace("_s.", "_o.");
+            String _videoSource = object.getJSONObject("video").getString("source_url");
+
+            URL url = new URL(_videoSource);
+
+
+            // read video stream
+            ByteArrayOutputStream bais = new ByteArrayOutputStream();
+            InputStream is = null;
+            try {
+                is = url.openStream ();
+                byte[] byteChunk = new byte[4096];
+                int n;
+
+                while ( (n = is.read(byteChunk)) > 0 ) {
+                    bais.write(byteChunk, 0, n);
+                }
+            }
+            catch (IOException e) {
+                //System.err.printf ("Failed while reading bytes from %s: %s", url.toExternalForm(), e.getMessage());
+            }
+            finally {
+                if (is != null) { is.close(); }
+            }
+
+            
+            videoBinary = new BinaryImpl(bais.toByteArray());
+            //ValueFactory valueFactory = session.getValueFactory();
+            //Binary contentValue = valueFactory.createBinary(is);
+
+
+            if (videoBinary != null)
+            {
+                // create file node
+                //Node sourceNode = JcrUtils.getOrAddNode(media, "file", NodeType.NT_FILE);
+                media.addMixin("mix:referenceable");
+                media.addMixin(Constants.NODE_CONTENT);
+                media.addMixin(Constants.NODE_MOVIE);
+
+                //Try to figure out the mime type
+                String _mimeType = MimeTypeManager.getMimeType(_videoSource);
+
+                Node contentNode = JcrUtils.getOrAddNode(media, "jcr:content", NodeType.NT_RESOURCE);
+                contentNode.setProperty("jcr:mimeType", _mimeType);
+                contentNode.setProperty("jcr:data", videoBinary);
+                Calendar lastModified = Calendar.getInstance();
+                lastModified.setTimeInMillis(lastModified.getTimeInMillis());
+                contentNode.setProperty("jcr:lastModified", lastModified);
+                //contentNode.setProperty("jcr:lastModified", Calendar.getInstance());
+                //contentNode.setProperty("jcr:uuid", UUID.randomUUID().toString() );
+
+            }
+            else
+            {
+                log.warn("unable to load: " + src);
+            }
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+
+
+    private void loadPhotos(Node media, JSONObject object, String src, String type)
     {
         // pull URL and save the source image and an embedded URL
         BufferedImage bufferedImage = null;
@@ -221,26 +307,8 @@ public class JsonToNode
                 media.addMixin(Constants.NODE_CONTENT);
                 media.addMixin(Constants.NODE_IMAGE);
 
-
                 //Try to figure out the mime type
-                String _mimeType = MimeTypeManager.getMimeType("*");// load default
-                if( object.getString("type").equalsIgnoreCase("photo") )
-                {
-                    _mimeType = MimeTypeManager.getMimeType(_originalSource);
-                }
-                else if( object.getString("type").equalsIgnoreCase("video") )
-                {
-                    if( object.has("video") )
-                    {
-                        String source_type = object.getJSONObject("video").getString("source_type");
-                        _mimeType = MimeTypeManager.getMimeType(source_type);
-                    }
-                    else
-                    {
-                        _mimeType = MimeTypeManager.getMimeType("raw"); //get the video/* unknown type
-                    }
-                }
-
+                String _mimeType = MimeTypeManager.getMimeType(_originalSource);
 
                 Node contentNode = JcrUtils.getOrAddNode(media, "jcr:content", NodeType.NT_RESOURCE);
                 contentNode.setProperty("jcr:mimeType", _mimeType);
