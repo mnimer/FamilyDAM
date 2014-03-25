@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="Re">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/flickr/FlickrPhotos.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA-bin.tar.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA-bin.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/dist/FamilyDam-1.0-BETA.zip" afterPath="" />
+    <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" afterPath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -774,7 +761,7 @@
       <workItem from="1394556187335" duration="28852000" />
       <workItem from="1356998518164" duration="77870000" />
       <workItem from="1395697120790" duration="2133000" />
-      <workItem from="1395724760934" duration="2930000" />
+      <workItem from="1395724760934" duration="2959000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1136,11 +1123,15 @@
       <created>1395623555046</created>
       <updated>1395623555047</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="start stubbing out the flickr api">
+      <created>1395728113379</created>
+      <updated>1395728113379</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1128044000" />
+    <option name="totallyTimeSpent" value="1128073000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1188,6 +1179,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34914842" sideWeight="0.9096459" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1203,7 +1195,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1264,7 +1255,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="some refactoring around the facebook account management" />
     <MESSAGE value="commit before moving files around" />
     <MESSAGE value="Move all of the bundles to a /bundles sub folder&#10;&#10;create and add a core-bundle project to hold common libraries, components, and services needed by the rest of the bundle&#10;&#10;add initial standalone launcher project too" />
     <MESSAGE value="setup a parent POM for all of the &quot;bundle&quot; projects" />
@@ -1289,7 +1279,8 @@
     <MESSAGE value="fix the thread error with the Facebook Jobs&#10;" />
     <MESSAGE value="Change Facebook jobs to use FQL checkin &amp; stream instead of Graph API" />
     <MESSAGE value="try adding videogular directive as the default video player, and then I removed it - the default browser video control works fine." />
-    <option name="LAST_COMMIT_MESSAGE" value="try adding videogular directive as the default video player, and then I removed it - the default browser video control works fine." />
+    <MESSAGE value="start stubbing out the flickr api" />
+    <option name="LAST_COMMIT_MESSAGE" value="start stubbing out the flickr api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
