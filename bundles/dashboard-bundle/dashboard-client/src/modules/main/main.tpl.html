@@ -1,4 +1,3 @@
-
 <!--
   ~ This file is part of FamilyDAM Project.
   ~
@@ -21,34 +20,9 @@
         <div class="container">
             <a class="navbar-brand" ui-sref="home"><span>FamilyDAM</span></a>
             <!-- start: Header Menu -->
-            <div class="nav-no-collapse header-nav">
-                <ul class="nav pull-right" ng-hide="( user == undefined )">
-                    <!-- start: User Dropdown -->
-                    <li class="dropdown">
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="ui-sliders-progress.html#">
-                            <i class="halflings-icon white user"></i> MIKE NIMER
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#/user/manager"><i class="halflings-icon white user"></i> User Manger</a></li>
-                            <li><a ui-sref="login"><i class="halflings-icon white off"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                    <!-- end: User Dropdown -->
-                </ul>
-            </div>
-            <!-- end: Header Menu -->
-        </div>
-    </div>
-</div>
-<!-- start: Header -->
-
-<div class="container">
-    <div>
-        <!-- start: Main Menu -->
-        <nav id="sidebar-left" ng-hide="showNavigation" style="width:75px;display: inline-block;">
-            <div class="nav-collapse sidebar-nav collapse navbar-collapse bs-navbar-collapse">
-                <ul class="nav nav-tabs nav-stacked main-menu">
+            <!-- start: Main Menu -->
+            <nav class="nav-no-collapse header-nav pull-right" ng-disabled="( user == undefined )">
+                <ul class="nav nav-tabs main-menu">
                     <li ng-class="{ active: $state.includes('files') }">
                         <a ui-sref="files"><i class="icon-bar-chart"></i><span class="hidden-sm">Files</span></a>
                     </li>
@@ -59,7 +33,8 @@
                         <a ui-sref="music:files"><i class="icon-bar-chart"></i><span class="hidden-sm">Music</span></a>
                     </li>
                     <li ng-class="{ active: $state.includes('movies:files') }">
-                        <a ui-sref="movies:files"><i class="icon-bar-chart"></i><span class="hidden-sm">Movies</span></a>
+                        <a ui-sref="movies:files"><i class="icon-bar-chart"></i><span
+                                class="hidden-sm">Movies</span></a>
                     </li>
                     <!--
                     <li>
@@ -67,17 +42,32 @@
                     </li>
                     -->
                     <li>
-                        <a ui-sref="web"><i class="icon-list-alt"></i><span class="hidden-sm">Web</span></a>
+                        <a ui-sref="web"><i class="icon-list-alt"></i><span class="hidden-sm">Social Web</span></a>
                     </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <a ui-sref="web"><i class="icon-list-alt"></i><span class="hidden-sm">Cloud Drives</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="ui-sliders-progress.html#">
+                            <i class="halflings-icon white user"></i> MIKE NIMER
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/user/manager"><i class="halflings-icon white user"></i> User Manger</a></li>
+                            <li><a ui-sref="login"><i class="halflings-icon white off"></i> Logout</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </div>
-        </nav>
-        <!-- end: Main Menu -->
+            </nav>
+            <!-- end: Main Menu -->
+            <!-- end: Header Menu -->
+        </div>
+    </div>
+</div>
+<!-- start: Header -->
+
+<div class="container">
+    <div>
 
         <!-- start: Content -->
         <div class="row primaryView">
@@ -89,9 +79,10 @@
 
 
         <a id="widgets-area-button" class="hidden-sm hidden-xs open"><i class="icon-reorder"></i></a>
-    </div><!--/row-->
-
     </div>
+    <!--/row-->
+
+</div>
 </div>
 
 

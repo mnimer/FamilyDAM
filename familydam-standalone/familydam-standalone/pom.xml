@@ -468,7 +468,7 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <descriptor>src/main/assembly/beta-release.xml</descriptor>
-                            <finalName>FamilyDam-1.0-BETA</finalName>
+                            <finalName>FamilyDam-1.0.${buildNumber}-BETA</finalName>
                             <outputDirectory>${basedir}/dist</outputDirectory>
                         </configuration>
                         <executions>
