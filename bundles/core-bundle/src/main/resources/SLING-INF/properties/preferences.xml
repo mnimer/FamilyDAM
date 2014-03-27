@@ -28,6 +28,11 @@
     <primaryNodeType>nt:unstructured</primaryNodeType>
     
     <property>
+        <name>initialized</name>
+        <type>Boolean</type>
+        <value>false</value>
+    </property>
+    <property>
         <name>content</name>
         <type>String</type>
         <value>/content/dam</value>

@@ -4,6 +4,7 @@
     <facet type="Osmorc" name="OSGi">
       <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="dashboard-bundle-1.0.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.mikenimer.familydam.dashboard-bundle" bundleVersion="1.0.${buildNumber}.SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
+          <property key="Bundle-Description" value="com.mikenimer.familydam - dashboard-bundle" />
           <property key="Embed-Dependency" value="commons-collections4;scope=compile|runtime" />
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
           <property key="Sling-Initial-Content" value="SLING-INF/content/dashboard;overwrite:=true;uninstall:=true;path:=/content/dashboard" />
@@ -24,6 +25,7 @@
       <sourceFolder url="file://$MODULE_DIR$/dashboard-client/dist" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
+    <content url="file://$USER_HOME$/Downloads/test images" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="angular" level="application" />

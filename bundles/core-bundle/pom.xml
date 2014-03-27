@@ -240,7 +240,7 @@
                         <Sling-Initial-Content>
                             SLING-INF/properties/users.xml;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/apps/familydam,
                             SLING-INF/properties/localization.xml;overwrite:=false;overwriteProperties=true;uninstall:=false;path:=/apps/familydam,
-                            SLING-INF/properties/preferences.xml;overwrite:=true;overwriteProperties=true;uninstall:=false;path:=/apps/familydam,
+                            SLING-INF/properties/preferences.xml;overwrite:=true;overwriteProperties=false;uninstall:=false;path:=/apps/familydam,
                             SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content,
                             SLING-INF/ROOT;overwrite:=true;overwriteProperties=true;uninstall:=true;path:=/
                         </Sling-Initial-Content>

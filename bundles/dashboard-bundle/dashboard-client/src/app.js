@@ -40,11 +40,13 @@ var App = angular.module('dashboard', [
         require('./modules/photos').name,
         require('./modules/music').name,
         require('./modules/movies').name,
+        require('./modules/setup-wizard').name,
         require('./modules/web').name,
         require('./directives/fileUpload').name,
         require('./modules/user/preferences').name,
         require('./modules/user/usermanager').name])
 
+    .service('appService', require('./services/AppService'))
     .service('fileService', require('./services/FileService'))
     .service('loginService', require('./services/LoginService'))
     .service('photoService', require('./services/PhotoService'))
@@ -54,6 +56,20 @@ var App = angular.module('dashboard', [
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {
+        $urlRouterProvider.rule(function ($injector, $location) {
+            //what this function returns will be set as the $location.url
+            var path = $location.path(), normalized = path.toLowerCase();
+            if (path != normalized) {
+                //instead of returning a new url string, I'll just change the $location.path directly so I don't have to worry about constructing a new url string and so a new state change is not triggered
+                $location.replace().path(normalized);
+            }
+
+            //todo: do a security check
+
+            // because we've returned nothing, no state change occurs
+            return path;
+        });
+
         // For any unmatched url, redirect to /state1
         $urlRouterProvider.when('', '/login');
         $urlRouterProvider.otherwise("/login");
@@ -64,9 +80,22 @@ var App = angular.module('dashboard', [
         };
     });
 
+App.run(["$rootScope", '$state', 'appService',
+    function ($rootScope, $state, appService) {
+        console.log("add run");
+        appService.loadConfig().then(function(data){
+           $rootScope.preferences = data;
+            if( !data.initialized )
+            {
+                // first time into the app, we'll start on the setup wizard/view
+                $state.go('setup');
+            }
+        });
+    }]);
 
-App.$inject = ['ui.router'];
 
+
+App.$inject = ['ui.router', '$rootScope', '$state', 'appService'];
 
 // Array Remove - By John Resig (MIT Licensed)
 Array.prototype.remove = function(from, to) {
@@ -74,5 +103,6 @@ Array.prototype.remove = function(from, to) {
     this.length = from < 0 ? this.length + from : from;
     return this.push.apply(this, rest);
 };
+
 
 

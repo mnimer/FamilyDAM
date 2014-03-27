@@ -116,8 +116,8 @@
 
 .primaryView
 {
+  /*
     float: left;
-    left: 130px;
     right: 10px;
     top: 93px;
     bottom: 90px;
@@ -125,9 +125,13 @@
     margin-top:-20px;
     height:100%;
     float:left;
+    */
+
+
     div[ui-view]
     {
         height: 100%;
+        min-height: 500px;
     }
 }
 
@@ -140,7 +144,7 @@
     -webkit-border-radius: 0 5px 5px 5px;
     -moz-border-radius: 0 5px 5px 5px;
     border-radius: 0 5px 5px 5px;
-    border: 2px solid #eee;
+    border: 0px solid #eee;
     position: relative;
 }
 
