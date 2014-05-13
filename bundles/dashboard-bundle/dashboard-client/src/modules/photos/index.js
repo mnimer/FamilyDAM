@@ -16,6 +16,19 @@
  */
 
 /**
+
+ .state('photo:files:old', {
+                url: '/photos/files',
+                templateUrl: "modules/files/files.list.tpl.html",
+                controller: "FileListController",
+                data:{
+                    currentPath: "/content/dam/photos",
+                    showPhotoGrid: true
+                }
+            })
+ **/
+
+/**
  *
  */
 
@@ -34,6 +47,9 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
     .directive('locationFilter', require('./directives/locationFilter'))
     .directive('tagCloudFilter', require('./directives/tagCloudFilter'))
     .directive('keywords', require('./directives/keywords'))
+    .directive('locationMap', require('./directives/locationMap'))
+    .directive('exif', require('./directives/exif'))
+    //.directive('columnSlider', require('./directives/columnSlider'))
 
     .config(['$stateProvider', function($stateProvider)
     {
@@ -51,16 +67,3 @@ module.exports = angular.module('dashboard.photos', ['ui.bootstrap'])
                 controller: "PhotoDetailsController"
             });
     }]);
-
-/**
-
- .state('photo:files:old', {
-                url: '/photos/files',
-                templateUrl: "modules/files/files.list.tpl.html",
-                controller: "FileListController",
-                data:{
-                    currentPath: "/content/dam/photos",
-                    showPhotoGrid: true
-                }
-            })
- **/

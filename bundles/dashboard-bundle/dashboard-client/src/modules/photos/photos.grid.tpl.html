@@ -15,7 +15,7 @@
   ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<div class="photos section" ng-class="{'col-xs-12':!showSidebar, 'col-sm-9': showSidebar}">
+<div class="photos section"  ng-class="{'col-xs-12':!showSidebar, 'col-sm-9': showSidebar}">
     <div id="toolbar">
         <ol class="breadcrumb page-header" style="display: inline;">
             <li ng-repeat="item in breadcrumb" ng-class="{'active':$last}"><a ng-click="selectFolder(item.path)">{{item.name}}</a>
@@ -34,40 +34,49 @@
                     class="glyphicon glyphicon-th btn btn-default btn-md"
                     ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
 
-        <span class="pull-right">
-            <!--div id="slider" data-column-slider columns="{{responsiveColumns}}"></div-->
+            <span class="pull-right">
+                <!--div column-slider eventName="photo:grid:columns" min="2" max="12"></div-->
+                <span style="display: inline-block; width: 100px; padding-right: 10px;">
+                    <slider floor="100" ceiling="{{elementWidth}}" step="10" precision="2" ng-model="scale" ></slider>
+                </span>
 
-            <button
-                    class="glyphicon glyphicon-edit btn btn-default btn-md"
-                    ng-click="" ng-disabled="true"
-                    ng-show="mode=='DETAILS'"></button>
+                <button
+                        class="glyphicon glyphicon-edit btn btn-default btn-md"
+                        ng-click="" ng-disabled="true"
+                        ng-show="mode=='DETAILS'"></button>
 
-            <button
-                    class="glyphicon glyphicon-trash btn btn-default btn-md"
-                    tooltip="Delete selected item(s)" tooltip-placement="bottom"
-                    ng-click="deletePaths()" ng-disabled="selectedTags.length == 0"></button>
+                <button
+                        class="glyphicon glyphicon-trash btn btn-default btn-md"
+                        tooltip="Delete selected item(s)" tooltip-placement="bottom"
+                        ng-click="deletePaths()" ng-disabled="selectedTags.length == 0"></button>
 
-        </span>
+            </span>
         </div>
 
 
-        <div class="" ng-repeat="item in assets | orderBy:sortPrimaryType">
-            <div><h3>{{item.title}}</h3></div>
-            <ul class="row ">
-                <li ng-click="toggleSelection(data, $event)" ng-dblClick="gotoDetails(data)"
-                    ng-repeat="data in item.data" >
-                    <div class="thumbnail" ng-class="{ 'selectedImage': isSelected(data) }">
-                        <img ng-src="{{data.links.image}}.scale.w:500.png" class="" /><br/>
-                        <!--a class="glyphicon title"
-                           ng-dblClick="gotoDetails('{{data['jcr:uuid']}}')"> {{data.name}}</a-->
-                    </div>
-                </li>
-            </ul>
+
+        <div >
+            <div class="" ng-repeat="item in assets | orderBy:sortPrimaryType">
+                <div><h3>{{item.title}}</h3></div>
+                <ul class="row ">
+                    <li ng-click="toggleSelection(data, $event)" ng-dblClick="gotoDetails(data)"
+                        ng-repeat="data in item.data" >
+                        <div class="thumbnail" ng-class="{ 'selectedImage': isSelected(data) }" style="width:{{scale}}px; height:{{scale}}px;">
+                            <img ng-src="{{data.links.image}}.scale.w:500.png" class="" /><br/>
+                            <!--a class="glyphicon title"
+                               ng-dblClick="gotoDetails('{{data['jcr:uuid']}}')"> {{data.name}}</a-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div ng-show="assets.length==0">No results found</div>
+            <!-- button ng-click="pageGrid()">Load More</button -->
         </div>
 
-        <div ng-disabled="assets.length==0">No results found</div>
-        <!-- button ng-click="pageGrid()">Load More</button -->
     </div>
+
+
 </div>
 
 

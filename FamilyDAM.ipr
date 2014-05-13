@@ -86,9 +86,6 @@
     <file url="file://$PROJECT_DIR$/../sling/samples/slingshot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../sling/samples/usermanager-ui" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../sling/samples/workspacepicker" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/test images/css-overlay.html" charset="US-ASCII" />
-    <file url="file://$USER_HOME$/Downloads/test images/image-overlay.html" charset="US-ASCII" />
-    <file url="file://$USER_HOME$/Downloads/test images/svg-overlay.html" charset="US-ASCII" />
   </component>
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
@@ -294,6 +291,7 @@
       <module fileurl="file://$PROJECT_DIR$/bundles/familydam-bundles.iml" filepath="$PROJECT_DIR$/bundles/familydam-bundles.iml" />
       <module fileurl="file://$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" filepath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" group="Bundles" />
       <module fileurl="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" filepath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FamilyDAM - gh-pages/gh-pages.iml" filepath="$PROJECT_DIR$/../FamilyDAM - gh-pages/gh-pages.iml" />
       <module fileurl="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" group="Bundles" />
       <module fileurl="file://$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" filepath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" group="Bundles" />
       <module fileurl="file://$USER_HOME$/Downloads/test images/test images.iml" filepath="$USER_HOME$/Downloads/test images/test images.iml" />
@@ -306,6 +304,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../FamilyDAM - gh-pages" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../sling" vcs="Git" />
   </component>
   <component name="libraryTable">

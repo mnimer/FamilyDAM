@@ -166,6 +166,7 @@ module.exports = function (grunt) {
                         'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js',
                         'angular-ui-select2':'./bower_components/angular-ui-select2/src/select2.js',
                         'angular-sanitize':'./bower_components/angular-sanitize/angular-sanitize.js',
+                        'angular-slider':'./bower_components/angular-slider/angular-slider.js',
                         'jquery': './bower_components/jquery/jquery.js',
                         'jquery-ui': './bower_components/jquery-ui/ui/jquery-ui.js',
                         'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',

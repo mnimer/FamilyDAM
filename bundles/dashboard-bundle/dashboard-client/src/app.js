@@ -33,6 +33,7 @@ var App = angular.module('dashboard', [
         'vr.directives.wordCloud',
         'dashboard.templates',
         'ui.select2',
+        'uiSlider',
         require('./modules/main').name,
         require('./modules/login').name,
         require('./modules/home').name,
@@ -53,6 +54,12 @@ var App = angular.module('dashboard', [
     .service('metadataService', require('./services/MetadataService'))
     .service('userService', require('./services/UserService'))
     .service('searchService', require('./services/SearchService'))
+
+    .constant('USER_ROLES', {
+        all: '*',
+        admin: 'admin',
+        managed: 'managed'
+    })
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider)
     {

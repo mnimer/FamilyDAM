@@ -32,18 +32,16 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     // properties related to the list of selected images
     $scope.selectedItems = [];
 
-    var groupByProperty = "created";
+    var groupByProperty = "fd:date";
     $scope.assets = {};
+
+    // slider properties
+    $scope.scale = 300;
+    $scope.elementWidth = 1000;
 
     // bootstrap columns for thumbnails
     $scope.responsiveColumns = 3;
     $scope.responsiveColumnLabel = "";//col-xs-12 col-sm-3";
-
-    $scope.$on("photo:grid:columns", function(data, args){
-        $scope.responsiveColumns = args;
-        $scope.responsiveColumnLabel = "";//col-xs-12 col-sm-" +args;
-        //$scope.$apply();
-    });
 
 
     var _filterLimit = 50;
@@ -168,24 +166,27 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
         {
             for (var item in results.data)
             {
-                if( assets == null )
+                if( !isNaN(Number(item)) )
                 {
-                    assets = {};
-                }
+                    if (assets == null)
+                    {
+                        assets = {};
+                    }
 
-                var dt = results.data[item][groupByProperty];
-                dt = new Date(Date.parse(dt));
-                var dtTitle = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
-                if (assets[dtTitle] === undefined)
-                {
-                    assets[dtTitle] = {};
-                    assets[dtTitle].title = moment(dt).format('MMMM Do, YYYY');
-                    assets[dtTitle].data = [];
-                }
+                    var dt = results.data[item][groupByProperty];
+                    dt = new Date(Date.parse(dt));
+                    var dtTitle = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
+                    if (assets[dtTitle] === undefined)
+                    {
+                        assets[dtTitle] = {};
+                        assets[dtTitle].title = moment(dt).format('MMMM Do, YYYY');
+                        assets[dtTitle].data = [];
+                    }
 
-                var heights = [150,250,300,350,425];
-                results.data[item].height = heights[getRandomInt(1,4)];
-                assets[dtTitle].data.push(results.data[item]);
+                    var heights = [150, 250, 300, 350, 425];
+                    results.data[item].height = heights[getRandomInt(1, 4)];
+                    assets[dtTitle].data.push(results.data[item]);
+                }
             }
         }
         return assets;
@@ -221,6 +222,11 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
     };
 
 
+    $scope.$on('$viewContentLoaded', function() {
+        //$scope.elementWidth = $('.content').width();
+    });
+
+
     var init = function ()
     {
         $scope.$on('refreshData', refreshGrid);
@@ -232,6 +238,7 @@ var PhotosController = function ($scope, $rootScope, $location, $modal, $state, 
             // transitionTo() promise will be rejected with
             // a 'transition prevented' error
         }
+
         var request = photoService.search("fd:image", _filterLimit, _filterOffset, _filterPath, _filterDateFrom, _filterDateTo, _filterTags).then(searchCallback);
 
     };

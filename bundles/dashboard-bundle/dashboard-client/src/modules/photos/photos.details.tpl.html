@@ -52,8 +52,19 @@
             <div class="sidebarTab">
                 <h4>Tags</h4>
                 <div x-keywords
+                     title="Tags"
                      path="{{currentPath}}"
                      items="{{node}}"></div>
+
+                <hr/>
+                <div x-location-map
+                     title="Location"
+                     node="{{node}}"></div>
+
+                <hr/>
+                <div x-exif
+                     title="EXIF Data"
+                     nodePath="{{currentPath}}"></div>
 
             </div>
         </tab>

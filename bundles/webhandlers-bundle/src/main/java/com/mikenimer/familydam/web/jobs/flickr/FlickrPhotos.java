@@ -64,10 +64,10 @@ public class FlickrPhotos implements JobConsumer
             session = repository.loginAdministrative(null);
             Node node = session.getNode(userNode);
 
-            Node flickrData = node.getNode("web/flickr");
-            if (flickrData != null)
+            Node _flickrData = node.getNode("web/flickr");
+            if (_flickrData != null)
             {
-                return queryFlickr(job, flickrData);
+                //return queryFlickr(job, _flickrData);
             }
             // No Data, but job was still invoked
             return JobResult.FAILED;
@@ -81,7 +81,7 @@ public class FlickrPhotos implements JobConsumer
 
     private JobResult queryFlickr(Job job, Node flickrData, String username)
     {
-        String username = (String) job.getProperty("username");
+        String _username = (String) job.getProperty("username");
 
         return JobResult.OK;
     }

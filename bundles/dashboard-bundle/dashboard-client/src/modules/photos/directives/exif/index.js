@@ -15,33 +15,30 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-module.exports = function ()
+
+var locationMapDirective = function (metadataService)
 {
     return {
         scope: {
-            'eventName': '='
+            'title': "@",
+            'path': "@"
         },
         replace: true,
-        link: function (scope, elem, attrs)
+        templateUrl: "modules/photos/directives/exif/exif.tpl.html",
+        controller: function ($scope, $element, $attrs, $transclude)
         {
 
-            scope.$watch('columns', function (newValue, oldValue)
-            {
-                if (newValue.length > 0)
-                {
-                    //scope.sliderInstance.attr("columns", newValue);
-                    $(elem).slider({
-                        value: newValue,
-                        min: 2,
-                        max: 12,
-                        slide: function (event, ui)
-                        {
-                            //console.log(ui.value);
-                            scope.$emit(eventName, ui.value);
-                        }
-                    });
-                }
-            });
+
+        },
+        compile: function compile(tElement, tAttrs, transclude) {
+            return {
+                pre: function preLink(scope, iElement, iAttrs, controller) { },
+                post: function postLink(scope, iElement, iAttrs, controller) { }
+            };
         }
     };
 };
+
+
+locationMapDirective.$inject = ['metadataService'];
+module.exports = locationMapDirective;
