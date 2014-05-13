@@ -104,7 +104,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:el-api:6.0.14" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:servlet-api:6.0.14" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:jasper-el:6.0.14" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:jasper-jdt:6.0.14" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.scripting.jsp.taglib:2.2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:jsp-api:2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
@@ -175,7 +174,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.jackrabbit:oak-lucene:0.10" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.jackrabbit:oak-core:tests:0.10" level="project" />
     <orderEntry type="module" module-name="familydam-core-bundle" scope="PROVIDED" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sling:org.apache.sling.fragment.activation:1.0.2" level="project" />
     <orderEntry type="module" module-name="dashboard-bundle" scope="PROVIDED" />
     <orderEntry type="module" module-name="webhandlers-bundle" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.commons:commons-collections4:4.0" level="project" />

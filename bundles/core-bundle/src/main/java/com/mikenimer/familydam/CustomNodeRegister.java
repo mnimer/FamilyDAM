@@ -19,7 +19,6 @@
 package com.mikenimer.familydam;
 
 import org.apache.felix.scr.annotations.Reference;
-import org.apache.sling.jcr.api.SlingRepository;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleEvent;
@@ -29,11 +28,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.jcr.LoginException;
 import javax.jcr.PropertyType;
-import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.nodetype.NodeType;
-import javax.jcr.nodetype.NodeTypeDefinition;
 import javax.jcr.nodetype.NodeTypeIterator;
 import javax.jcr.nodetype.NodeTypeManager;
 import javax.jcr.nodetype.NodeTypeTemplate;
@@ -50,15 +46,15 @@ public class CustomNodeRegister implements BundleListener, BundleActivator
     @Reference
     private Session session;
 
-    @Reference
-    private SlingRepository repository;
+    //@Reference
+    //private SlingRepository repository;
 
 
     @Override
     public void start(BundleContext bundleContext) throws Exception
     {
         bundleContext.addBundleListener(this);
-        repository = ((SlingRepository) bundleContext.getService(bundleContext.getServiceReference("org.apache.sling.jcr.api.SlingRepository")));
+        //repository = ((SlingRepository) bundleContext.getService(bundleContext.getServiceReference("org.apache.sling.jcr.api.SlingRepository")));
     }
 
 
@@ -72,7 +68,7 @@ public class CustomNodeRegister implements BundleListener, BundleActivator
     @Override
     public void bundleChanged(BundleEvent bundleEvent)
     {
-        log.trace(bundleEvent.getBundle().toString());
+        //log.trace(bundleEvent.getBundle().toString());
 
         if (bundleEvent.getType() == BundleEvent.STARTED)
         {
@@ -84,28 +80,27 @@ public class CustomNodeRegister implements BundleListener, BundleActivator
 
     protected void checkNodeTypes()
     {
+        /*
         try
         {
+
             session = repository.loginAdministrative(null);
             if (repository.getDescriptor(Repository.OPTION_OBSERVATION_SUPPORTED).equals("true"))
             {
                 NodeTypeManager manager = session.getWorkspace().getNodeTypeManager();
 
-
-                /**
-                 @see http://jackrabbit.510166.n4.nabble.com/How-to-add-ChildNodeDefinition-to-NodeTypeTemplate-while-creating-a-custom-NodeType-using-NodeTypeMa-td4657488.html
-                 **/
+                // @see http://jackrabbit.510166.n4.nabble.com/How-to-add-ChildNodeDefinition-to-NodeTypeTemplate-while-creating-a-custom-NodeType-using-NodeTypeMa-td4657488.html
                 checkContentNode(manager);
                 checkTwitterNode(manager);
                 checkFacebookNode(manager);
-
             }
-        }catch(LoginException le){
+        }
+        catch(LoginException le){
             log.error(le.getMessage(), le);
         }catch(RepositoryException re){
             log.error(re.getMessage(), re);
         }
-
+        */
 
     }
 

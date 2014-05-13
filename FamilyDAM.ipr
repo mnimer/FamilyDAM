@@ -1596,17 +1596,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.extensions.webconsolesecurityprovider/1.0.0/org.apache.sling.extensions.webconsolesecurityprovider-1.0.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.sling:org.apache.sling.fragment.activation:1.0.2">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.activation/1.0.2/org.apache.sling.fragment.activation-1.0.2.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.activation/1.0.2/org.apache.sling.fragment.activation-1.0.2-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.activation/1.0.2/org.apache.sling.fragment.activation-1.0.2-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.apache.sling:org.apache.sling.fragment.transaction:1.0.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/sling/org.apache.sling.fragment.transaction/1.0.0/org.apache.sling.fragment.transaction-1.0.0.jar!/" />
@@ -2144,17 +2133,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-el/6.0.14/jasper-el-6.0.14-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.tomcat:jasper-jdt:6.0.14">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-jdt/6.0.14/jasper-jdt-6.0.14.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-jdt/6.0.14/jasper-jdt-6.0.14-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/jasper-jdt/6.0.14/jasper-jdt-6.0.14-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.tomcat:jsp-api:6.0.14">
