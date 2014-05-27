@@ -200,7 +200,7 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
 
             if (filterType.equals(Constants.NODE_IMAGE) && filterTags != null && !filterTags.equals("undefined"))
             {
-                stmt += " LeftOuter JOIN [nt:unstructured] as metadata on ISCHILDNODE(metadata, content)";
+                stmt += " LeftOuter JOIN [nt:unstructured] as metadata on ISCHILDNODE(metadata, content) ";
                 if (filterTags != null)
                 {
                     stmt += " AND metadata.[keywords] like '%" + filterTags + "%'"; //todo support array of tags. with a "AND ( word or word )" statement

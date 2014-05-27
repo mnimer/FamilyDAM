@@ -8,7 +8,7 @@
           <property key="Embed-Dependency" value="commons-collections4;scope=compile|runtime" />
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
           <property key="Sling-Initial-Content" value="SLING-INF/content/dashboard;overwrite:=true;uninstall:=true;path:=/content/dashboard" />
-          <property key="Bundle-Name" value="FamilyDAM Dashboard Application Bundle" />
+          <property key="Bundle-Name" value="FamilyDAM Dashboard Client Bundle" />
           <property key="Bundle-ClassPath" value=".,commons-collections4-4.0.jar" />
           <property key="Include-Resource" value="commons-collections4-4.0.jar=$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar" />
           <property key="Embedded-Artifacts" value="commons-collections4-4.0.jar;g=&quot;org.apache.commons&quot;;a=&quot;commons-collections4&quot;;v=&quot;4.0&quot;" />
@@ -30,11 +30,11 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="module" module-name="familydam-core-bundle" scope="PROVIDED" />
-    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.3.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.3.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6" level="project" />
     <orderEntry type="library" name="Maven: biz.aQute:bndlib:1.50.0" level="project" />
     <orderEntry type="module" module-name="webhandlers-bundle" />
-    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.2.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.api:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.contentloader:2.1.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.apache.felix.http.jetty:2.0.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
