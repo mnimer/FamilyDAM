@@ -1,30 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
+    <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="rename familydam-standalone to familydam-server&#10;&#10;add a new project that uses the Atom-Shell project to create a desktop application out of the familydam.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/.bowerrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/.gitattributes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/familydam-desktop.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/karma-e2e.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/buildNumber.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/buildNumber.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/familydam-server.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT.info" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT.info" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/commons/osgi/bundleversion/BundleBundleVersionInfo.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/commons/osgi/bundleversion/BundleBundleVersionInfo.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/commons/osgi/bundleversion/BundleVersionInfo.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/commons/osgi/bundleversion/BundleVersionInfo.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/commons/osgi/bundleversion/FileBundleVersionInfo.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/commons/osgi/bundleversion/FileBundleVersionInfo.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/Launcher.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/Launcher.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/LauncherClassLoader.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/LauncherClassLoader.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/Loader$1.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/Loader$1.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/Loader.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/Loader.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/Notifiable.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/Notifiable.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/SharedConstants.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/base/shared/SharedConstants.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingServlet$1.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingServlet$1.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingServlet$2.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingServlet$2.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingServlet$3.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingServlet$3.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingServlet.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingServlet.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingSessionListener.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/apache/sling/launchpad/webapp/SlingSessionListener.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/osgi/framework/Version.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/osgi/framework/Version.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/osgi/framework/VersionRange.class" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/classes/org/osgi/framework/VersionRange.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/resources/bundles/0/org.apache.felix.http.bridge-2.2.0.jar" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/resources/bundles/0/org.apache.felix.http.bridge-2.2.0.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/overlays/org.apache.sling.org.apache.sling.launchpad.base-2.5.1-SNAPSHOT/WEB-INF/web.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/beta-release.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/assembly/beta-release.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly/bin.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/assembly/bin.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/bundles/list.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/bundles/list.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/scripts/start.sh" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/scripts/start.sh" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling/common.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/sling/common.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/test/config/sling.properties" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/src/test/config/sling.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.ipr" afterPath="$PROJECT_DIR$/FamilyDAM.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/src/main/java/com/mikenimer/familydam/services/SearchResourcesServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/core-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/buildNumber.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" afterPath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/musichandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/core-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/musichandlers-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/videohandlers-bundle/videohandlers-bundle.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/webhandlers-bundle/webhandlers-bundle.iml" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,8 +105,8 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -93,12 +114,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml">
+      <file leaf-file-name="GruntFile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67264575" vertical-offset="0" max-vertical-offset="5715">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="4380">
+              <caret line="119" column="10" selection-start-line="79" selection-start-column="8" selection-end-line="119" selection-end-column="10" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GruntFile.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5882353" vertical-offset="195" max-vertical-offset="2055">
+              <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,12 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/web/jobs/facebook/fql/FacebookFqlStreamJob.java" />
-        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/resources/SLING-INF/nodetypes/nodetypes.cnd" />
-        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/Constants.java" />
-        <option value="$PROJECT_DIR$/bundles/core-bundle/src/main/java/com/mikenimer/familydam/MimeTypeManager.java" />
-        <option value="$PROJECT_DIR$/bundles/webhandlers-bundle/src/main/java/com/mikenimer/familydam/mappers/JsonToNode.java" />
-        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/dist/assets/js/shared-libs.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineRenderer/index.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/index.js" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/web/directives/timelineFacebookStatus/index.js" />
@@ -167,6 +194,12 @@
         <option value="$PROJECT_DIR$/bundles/imagehandlers-bundle/pom.xml" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell/bower.json" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell/src/index.html" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell/GruntFile.js" />
+        <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell/src/main.js" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/.gitignore" />
       </list>
     </option>
   </component>
@@ -271,6 +304,75 @@
           </GruntMultiTaskState>
         </multi-tasks>
         <gruntfile-path>$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js</gruntfile-path>
+      </GruntfileState>
+      <GruntfileState>
+        <alias-tasks>
+          <alias-task value="build" />
+          <alias-task value="default" />
+        </alias-tasks>
+        <multi-tasks>
+          <GruntMultiTaskState>
+            <name>bower-install</name>
+            <targets>
+              <target value="target" />
+            </targets>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>browserify2</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>build-atom-shell-app</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>clean</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>compass</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>concat</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>connect</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>copy</name>
+            <targets>
+              <target value="assets" />
+              <target value="html" />
+              <target value="js" />
+              <target value="json" />
+            </targets>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>download-atom-shell</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>html2js</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>jshint</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>karma</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>open</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>slingImport</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>slingPost</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>uglify</name>
+          </GruntMultiTaskState>
+          <GruntMultiTaskState>
+            <name>watch</name>
+          </GruntMultiTaskState>
+        </multi-tasks>
+        <gruntfile-path>$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js</gruntfile-path>
       </GruntfileState>
     </gruntfiles>
     <initial>false</initial>
@@ -395,7 +497,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -404,8 +505,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="familydam-desktop" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -425,7 +561,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../metadata-extractor-osgi/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/familydam-standalone/familydam-desktop" />
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="53" />
@@ -471,13 +607,18 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell/src" />
+      <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell" />
       <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/exif" />
       <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/location" />
       <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/css" />
-      <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/setup-wizard" />
-      <recent name="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/assets/js" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.mikenimer.familydam.web.jobs" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.mikenimer.familydam.web" />
+      <recent name="com.mikenimer.familydam" />
       <recent name="com.mikenimer.familydam.web.jobs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -487,13 +628,8 @@
       <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/services" />
       <recent name="$PROJECT_DIR$/dashboard-bundle/dashboard-client/src/modules/files/directives/musicRow" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.mikenimer.familydam.web" />
-      <recent name="com.mikenimer.familydam" />
-      <recent name="com.mikenimer.familydam.web.jobs" />
-    </key>
   </component>
-  <component name="RunManager" selected="Remote.remote ">
+  <component name="RunManager" selected="Node.js.GruntFile.js">
     <configuration default="false" name="filehandlers-bundle [install]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -524,6 +660,11 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GruntFile.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="GruntFile.js" working-dir="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell">
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
@@ -801,15 +942,17 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Dashboard (sling)" />
       <item index="2" class="java.lang.String" itemvalue="Remote.remote " />
       <item index="3" class="java.lang.String" itemvalue="Maven.filehandlers-bundle [install]" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.GruntFile.js" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Maven.filehandlers-bundle [install]" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.GruntFile.js" />
+        <item index="1" class="java.lang.String" itemvalue="Maven.filehandlers-bundle [install]" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -924,7 +1067,8 @@
       <workItem from="1399433462827" duration="58000" />
       <workItem from="1399955398022" duration="6708000" />
       <workItem from="1400089313218" duration="646000" />
-      <workItem from="1401158639014" duration="3357000" />
+      <workItem from="1401158639014" duration="4926000" />
+      <workItem from="1401166867785" duration="336000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1298,11 +1442,15 @@
       <created>1399957334183</created>
       <updated>1399957334183</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="tweak the build poms to get things building again.">
+      <created>1401164566763</created>
+      <updated>1401164566763</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1164334000" />
+    <option name="totallyTimeSpent" value="1166239000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1329,7 +1477,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26939204" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26939204" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1339,7 +1487,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CQ Node Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.44200245" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32914045" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15995117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1371,18 +1519,18 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.270073" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36009732" sideWeight="0.13003664" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36009732" sideWeight="0.13003664" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="CQ Node Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.44200245" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1394,22 +1542,22 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34306568" sideWeight="0.7936508" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34914842" sideWeight="0.9096459" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14041515" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14041515" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1430,7 +1578,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="setup a parent POM for all of the &quot;bundle&quot; projects" />
     <MESSAGE value="clean up files in the different projects" />
     <MESSAGE value="add pom" />
     <MESSAGE value="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed." />
@@ -1455,7 +1602,8 @@
     <MESSAGE value="start stubbing out the flickr api" />
     <MESSAGE value="stub in a setup wizard module&#10;&#10;change the theme&#10;- move the nav to the top&#10;- merge cloud drives with files drop down&#10;- change the background to a &quot;white&quot; background" />
     <MESSAGE value="stub in a setup wizard module&#10;&#10;change the theme&#10;- move the nav to the top&#10;- merge cloud drives with files drop down&#10;- change the background to a &quot;white&quot; background&#10;&#10;Warning: build is broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="stub in a setup wizard module&#10;&#10;change the theme&#10;- move the nav to the top&#10;- merge cloud drives with files drop down&#10;- change the background to a &quot;white&quot; background&#10;&#10;Warning: build is broken" />
+    <MESSAGE value="tweak the build poms to get things building again." />
+    <option name="LAST_COMMIT_MESSAGE" value="tweak the build poms to get things building again." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1490,66 +1638,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/setup-wizard/SetupWizardController.js">
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="253" max-vertical-offset="720">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/setup-wizard/setup-wizard.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.583333" vertical-offset="67" max-vertical-offset="510">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/home/home.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="443">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/home/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/setup-wizard/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/files/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1080">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/dateFilter/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/main/main.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.9583333" vertical-offset="650" max-vertical-offset="1860">
-          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower_components/angular-slider/angular-slider.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4605">
+          <caret line="119" column="10" selection-start-line="79" selection-start-column="8" selection-end-line="119" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1707,13 +1800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="4380">
-          <caret line="286" column="11" selection-start-line="286" selection-start-column="11" selection-end-line="286" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="635" max-vertical-offset="1095">
@@ -1767,7 +1853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
           <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1775,7 +1860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1004" max-vertical-offset="2400">
           <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1783,7 +1867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2416" max-vertical-offset="5595">
           <caret line="230" column="0" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1791,7 +1874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="4500">
           <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1799,26 +1881,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="4710">
           <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../metadata-extractor-osgi/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/videohandlers-bundle/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44341373" vertical-offset="3211" max-vertical-offset="5130">
           <caret line="230" column="21" selection-start-line="218" selection-start-column="7" selection-end-line="230" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1826,7 +1905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.94434136" vertical-offset="2866" max-vertical-offset="4995">
           <caret line="225" column="21" selection-start-line="213" selection-start-column="8" selection-end-line="225" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1834,7 +1912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74733096" vertical-offset="0" max-vertical-offset="1605">
           <caret line="28" column="81" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1842,11 +1919,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34701493" vertical-offset="759" max-vertical-offset="5310">
           <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/pom.xml">
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-server/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24021353" vertical-offset="6705" max-vertical-offset="7425">
           <caret line="456" column="39" selection-start-line="456" selection-start-column="39" selection-end-line="456" selection-end-column="39" />
@@ -1856,9 +1932,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67264575" vertical-offset="0" max-vertical-offset="5715">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5715">
           <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="4380">
+          <caret line="119" column="10" selection-start-line="79" selection-start-column="8" selection-end-line="119" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09803922" vertical-offset="0" max-vertical-offset="612">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5882353" vertical-offset="195" max-vertical-offset="2055">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

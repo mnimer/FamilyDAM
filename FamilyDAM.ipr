@@ -10,10 +10,10 @@
     <artifact type="exploded-war" name="familydam-standalone:war exploded">
       <output-path>$PROJECT_DIR$/familydam-standalone/familydam-standalone/target/FamilyDam-Application-1.0.0</output-path>
       <root id="root">
-        <element id="javaee-facet-resources" facet="familydam-standalone/web/Web" />
+        <element id="javaee-facet-resources" facet="familydam-server/web/Web" />
         <element id="directory" name="WEB-INF">
           <element id="directory" name="classes">
-            <element id="module-output" name="familydam-standalone" />
+            <element id="module-output" name="familydam-server" />
           </element>
         </element>
       </root>
@@ -78,9 +78,9 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/sling" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/assembly" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/sling" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../metadata-extractor-osgi" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../sling/samples/accessmanager-ui" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../sling/samples/custom-login-form" charset="UTF-8" />
@@ -93,7 +93,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/overlays" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-server/overlays" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/core-bundle" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/dashboard-bundle" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/bundles/imagehandlers-bundle" />
@@ -108,7 +108,7 @@
     <file type="Osmorc" url="file://$PROJECT_DIR$/../sling/samples/workspacepicker" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/../../temp/sling-test/content-test" />
     <file type="Osmorc" url="file://$USER_HOME$/Downloads/test images" />
-    <file type="web" url="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone" />
+    <file type="web" url="file://$PROJECT_DIR$/familydam-standalone/familydam-server" />
   </component>
   <component name="IdProvider" IDEtalkID="2A1B7F4FA8488BEE6E0DA84751A6BBF0" />
   <component name="InspectionProjectProfileManager">
@@ -293,7 +293,8 @@
       <module fileurl="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" group="Bundles" />
       <module fileurl="file://$PROJECT_DIR$/bundles/familydam-bundles.iml" filepath="$PROJECT_DIR$/bundles/familydam-bundles.iml" />
       <module fileurl="file://$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" filepath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" group="Bundles" />
-      <module fileurl="file://$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" filepath="$PROJECT_DIR$/familydam-standalone/familydam-standalone/familydam-standalone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/familydam-desktop.iml" filepath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/familydam-desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/familydam-standalone/familydam-server/familydam-server.iml" filepath="$PROJECT_DIR$/familydam-standalone/familydam-server/familydam-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/../FamilyDAM - gh-pages/gh-pages.iml" filepath="$PROJECT_DIR$/../FamilyDAM - gh-pages/gh-pages.iml" />
       <module fileurl="file://$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" filepath="$PROJECT_DIR$/bundles/imagehandlers-bundle/imagehandlers-bundle.iml" group="Bundles" />
       <module fileurl="file://$PROJECT_DIR$/../metadata-extractor-osgi/metadata-extractor-osgi.iml" filepath="$PROJECT_DIR$/../metadata-extractor-osgi/metadata-extractor-osgi.iml" />
