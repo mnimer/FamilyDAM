@@ -110,6 +110,22 @@ module.exports = function (grunt) {
                         expand: true
                     }
                 ]
+            },
+            resources: {
+                files: [
+                    {
+                        cwd: 'src/resources/',
+                        src: '*',
+                        dest: './dist/resources',
+                        expand: true
+                    },
+                    {
+                        cwd: '../familydam-server/target',
+                        src: 'familydam-*-standalone.jar',
+                        dest: './dist/resources',
+                        expand: true
+                    }
+                ]
             }
         },
 

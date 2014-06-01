@@ -17,30 +17,52 @@
 
 <html>
 <head>
-  <title>FamilyDAM (Digital Asset Manager)</title>
-  <style>
-    html {
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-    }
+    <title>FamilyDAM (Digital Asset Manager)</title>
+    <style>
+        html
+        {
+            height:   100%;
+            width:    100%;
+            overflow: hidden;
+        }
 
-    body {
-      color: #555;
-      font-family: 'Open Sans',Helvetica,Arial,sans-serif;
-      padding: 30px;
-    }
-  </style>
+        body
+        {
+            color:       #555;
+            font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+            padding:     30px;
+        }
+    </style>
 </head>
 <body>
-  <script>
-    document.ondragover = document.ondrop = function(e) {
-      e.preventDefault();
-      return false;
+<script>
+    document.ondragover = document.ondrop = function (e)
+    {
+        e.preventDefault();
+        return false;
     };
-  </script>
+</script>
 
-  <h2>Welcome to Family DAM Shell</h2>
+<h2>Starting Server</h2>
 
+
+<script>
+    var ipc = require('ipc');
+    ipc.on('info', function(message) {
+        console.log('info: ' +message);
+    });
+    ipc.on('error', function(message) {
+        console.log("error: " +message);
+    });
+
+    ipc.on('synchronous-message', function(event, arg) {
+        console.log(message);
+        event.returnValue="synchronous-message', 'msg from shell - message received";
+    });
+    ipc.on('asynchronous-message', function(event, arg) {
+        console.log(message);
+        event.sender.send('asynchronous-message', 'msg from shell - message received');
+    });
+</script>
 </body>
 </html>
