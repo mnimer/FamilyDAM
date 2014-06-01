@@ -17,12 +17,10 @@
  */
 (function() {
     var app = require('app');
-    var os = require('os');
+    //var os = require('os');
     var fs = require('fs');
     var ipc = require('ipc');
     var http = require('http');
-    var out = fs.open(process.resourcesPath +'/familydam-out.log', 'a+');
-    var err = fs.open(process.resourcesPath +'/familydam-err.log', 'a+');
 
 
 
@@ -50,7 +48,7 @@
         {
             console.log(_type +":" +_message);
         }
-        if (mainWindow != undefined) mainWindow.webContents.send(_type, _message);
+        if (mainWindow != undefined && mainWindow.webContents != null) mainWindow.webContents.send(_type, _message);
     };
 
     var checkLoadingStatus = function()
@@ -104,20 +102,57 @@
     };
 
 
+    function processStdOut(_data)
+    {
+        try //todo: extract
+        {
+            if (_data.indexOf("HTTP server port:") != -1)
+            {
+                serverPort = _data.substr(_data.indexOf("port:") + 6).trim();
+                sendClientMessage('error', "port=" + serverPort + " -- " + _data, true);
+            }
+            if (_data.indexOf("Startup completed") != -1)
+            {
+                sendClientMessage('info', "Server started on: http://localhost:" + serverPort + " at " + new Date(), true);
+
+                // Call the server every 1 sec to see if the osgi bundles are loaded and running.
+                // Once it's loaded, we'll load the application from the bundle.
+                checkServerInterval = setInterval(function ()
+                {
+                    console.log("checking server status: " + serverLoaded);
+                    if (serverLoaded)
+                    {
+                        clearInterval(checkServerInterval);
+                        serverStarted = true;
+                        loadApplication(serverPort);
+                    }
+                    else
+                    {
+                        checkLoadingStatus();
+                    }
+                }, 1000);
+            }
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
+    }
+
     module.exports = {
 
         startServer : function(_splashWindow, _mainWindow)
         {
+            var outLogFile = process.resourcesPath +'/familydam-out.log';
+            var outLogErrFile = process.resourcesPath +'/familydam-err.log';
             link(_splashWindow, _mainWindow);
 
-            sendClientMessage('info', "System - TotalMem:" +os.totalmem() +" - FreeMem:" +os.freemem(), true);
-            sendClientMessage('info', "max:" +getMaxMemArg(), true);
+            //sendClientMessage('info', "System - TotalMem:" +os.totalmem() +" - FreeMem:" +os.freemem(), true);
+            //sendClientMessage('info', "max:" +getMaxMemArg(), true);
             sendClientMessage('info', "starting FamilyDam Server: " + process.resourcesPath, true);
 
-
-
-
             var spawn = require('child_process').spawn;
+
 
             var cmd = "java";
             var args = ['-Xmx4096M',  '-jar',  'app/resources/familydam-1.0.0-SNAPSHOT-standalone.jar', '-p', '9000'];
@@ -139,24 +174,23 @@
             }
 
             prc = spawn(cmd,  args, {
-                cwd: process.resourcesPath,
-                stdio: [process.stdin, out, err]
+                cwd: process.resourcesPath
             });
-            prc.unref();
-
-
-            // Watch the error log
-            tailErr = spawn("tail",  ['-f', process.resourcesPath +'/familydam-err.log']);
-            tailErr.unref();
-            tailErr.stdout.on('data', function (data){
-                console.log("err: " +data);
-                sendClientMessage('error', data);
+            //prc.unref();
+            prc.stdout.setEncoding("utf8");
+            prc.stdout.on('data', function (data)
+            {
+                var _data = data.toString();
+                sendClientMessage('info', _data, true);
+                fs.appendFile(outLogFile, _data);
+                processStdOut(_data);
             });
 
 
+            /***
             // Watch the output log
-            tail = spawn("tail",  ['-f', process.resourcesPath +'/familydam-out.log']);
-            tail.unref();
+            tail = spawn("tail", ['-f', process.resourcesPath +'/familydam-out.log']);
+            //tail.unref();
             //process.stdout.setEncoding("utf-8");
             tail.stdout.on('data', function (data) {
                 var _data = data.toString().replace(/(\r\n|\n|\r)/gm,"");
@@ -188,6 +222,18 @@
 
                 }
             });
+
+
+
+            // Watch the error log
+            tailErr = spawn("tail", ['-f', process.resourcesPath +'/familydam-err.log']);
+            //tailErr.unref();
+            tailErr.stdout.on('data', function (data){
+                console.log("err: " +data);
+                sendClientMessage('error', data);
+            });
+             **/
+
         },
 
         kill : function()
