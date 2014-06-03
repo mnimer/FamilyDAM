@@ -17,7 +17,7 @@
  */
 (function() {
     var app = require('app');
-    //var os = require('os');
+    var os = require('os');
     var fs = require('fs');
     var ipc = require('ipc');
     var http = require('http');
@@ -57,14 +57,14 @@
         {
             http.get("http://localhost:" + serverPort + "/dashboard", function (res)
             {
-                //console.log("Got response: " + res.statusCode);
+                console.log("Got response: " + res.statusCode);
                 if (res.statusCode == 200 || res.statusCode == 302)
                 {
                     serverLoaded = true;
                 }
             }).on('error', function (e)
             {
-                //console.log("Got error: " + e.message);
+                console.log("Got error: " + e.message);
                 serverLoaded = false;
             });
         }
@@ -91,11 +91,11 @@
     var getMaxMemArg = function ()
     {
         var totalMB = os.totalmem() / 1024 / 1024 / 1024;
-        var halfMB = totalMB / 4;
+        var partialMB = totalMB / 4;
 
-        if( halfMB > 2 )
+        if( partialMB > 2 )
         {
-            return "-Xmx" +(halfMB*1024) +"M";
+            return "-Xmx" +(partialMB*1024) +"M";
         }else{
             return "-Xmx2048M";
         }
@@ -147,7 +147,7 @@
             var outLogErrFile = process.resourcesPath +'/familydam-err.log';
             link(_splashWindow, _mainWindow);
 
-            //sendClientMessage('info', "System - TotalMem:" +os.totalmem() +" - FreeMem:" +os.freemem(), true);
+            sendClientMessage('info', "System - TotalMem:" +os.totalmem() +" - FreeMem:" +os.freemem(), true);
             //sendClientMessage('info', "max:" +getMaxMemArg(), true);
             sendClientMessage('info', "starting FamilyDam Server: " + process.resourcesPath, true);
 
@@ -155,7 +155,7 @@
 
 
             var cmd = "java";
-            var args = ['-Xmx4096M',  '-jar',  'app/resources/familydam-1.0.0-SNAPSHOT-standalone.jar', '-p', '9000'];
+            var args = ['-jar',  'app/resources/familydam-1.0.0-SNAPSHOT-standalone.jar', '-p', '9000'];
 
             /**** debug command
              var debugPrc = spawn('pwd',  []);
