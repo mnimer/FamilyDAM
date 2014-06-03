@@ -33,11 +33,9 @@
 
     <modules>
         <module>./core-bundle</module>
-        <module>./dashboard-bundle</module>
-        <module>./imagehandlers-bundle</module>
-        <module>./musichandlers-bundle</module>
-        <module>./videohandlers-bundle</module>
+        <module>./mediahandlers-bundle</module>
         <module>./webhandlers-bundle</module>
+        <module>./dashboard-bundle</module>
     </modules>
 
     <dependencies>

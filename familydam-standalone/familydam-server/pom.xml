@@ -178,7 +178,8 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <finalName>FamilyDam-BETA-1.0.${buildNumber}</finalName>
+                            <!--finalName>FamilyDam-BETA-1.0.${buildNumber}</finalName-->
+                            <finalName>familydam-${project.version}</finalName>
                             <classifier>standalone</classifier>
                             <archive>
                                 <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
@@ -323,7 +324,7 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.launchpad.base</artifactId>
-            <version>2.5.1-SNAPSHOT</version>
+            <version>4.4.0-2.5.1-SNAPSHOT</version>
             <classifier>webapp</classifier>
             <type>war</type>
             <scope>runtime</scope>
@@ -331,7 +332,7 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.launchpad.base</artifactId>
-            <version>2.5.1-SNAPSHOT</version>
+            <version>4.4.0-2.5.1-SNAPSHOT</version>
             <classifier>app</classifier>
             <scope>provided</scope>
         </dependency>
@@ -418,10 +419,9 @@
                 <version>1.5.2</version>
                 <scope>test</scope>
             </dependency>
-
-
         </dependencies>
     </dependencyManagement>
+
 
     <repositories>
         <repository>
@@ -468,7 +468,7 @@
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <descriptor>src/main/assembly/beta-release.xml</descriptor>
-                            <finalName>FamilyDam-1.0.${buildNumber}-BETA</finalName>
+                            <finalName>familydam-${project.version}</finalName>
                             <outputDirectory>${basedir}/dist</outputDirectory>
                         </configuration>
                         <executions>
