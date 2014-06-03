@@ -32,7 +32,8 @@ module.exports = function (grunt) {
 	 */
 
 	// default task
-	grunt.registerTask('default', ['clean','copy', 'build','build-shared-libs', 'deploy']);
+	grunt.registerTask('default', ['clean','copy', 'build','build-shared-libs']);
+	grunt.registerTask('default-deploy', ['default', 'deploy']);
 
 	// build tasks
 	grunt.registerTask('build', ['build-css', 'build-js']);

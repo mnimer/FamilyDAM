@@ -2,7 +2,7 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Osmorc" name="OSGi">
-      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="dashboard-bundle-1.0.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.mikenimer.familydam.dashboard-bundle" bundleVersion="1.0.${buildNumber}.SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="dashboard-bundle-1.0.1-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.mikenimer.familydam.dashboard-bundle" bundleVersion="1.0.1-SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
           <property key="Bundle-Description" value="com.mikenimer.familydam - dashboard-bundle" />
           <property key="Embed-Dependency" value="commons-collections4;scope=compile|runtime" />
@@ -28,7 +28,6 @@
     <content url="file://$USER_HOME$/Downloads/test images" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="module" module-name="familydam-core-bundle" scope="PROVIDED" />
     <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.jcr.resource:2.3.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.6" level="project" />

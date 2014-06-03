@@ -29,7 +29,7 @@
     <groupId>com.mikenimer.familydam</groupId>
     <artifactId>dashboard-bundle</artifactId>
     <packaging>bundle</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>FamilyDAM Dashboard Client Bundle</name>
     <description>com.mikenimer.familydam - dashboard-bundle</description>
 
@@ -262,7 +262,8 @@
                 <configuration>
                     <instructions>
                         <Embed-Dependency>commons-collections4;scope=compile|runtime</Embed-Dependency>
-                        <Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+                        <!--Bundle-Version>1.0.${buildNumber}.SNAPSHOT</Bundle-Version-->
                         <Include-Resoource>
                             {maven-resources}, {maven-dependencies}
                         </Include-Resoource>
@@ -312,7 +313,7 @@
                                     <goal>install</goal>
                                 </goals>
                                 <configuration>
-                                    <slingUrl>http://localhost:8888/system/console</slingUrl>
+                                    <slingUrl>http://localhost:8080/system/console</slingUrl>
                                     <user>admin</user>
                                     <password>admin</password>
                                 </configuration>

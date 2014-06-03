@@ -62,7 +62,8 @@ public class UserServlet extends SlingAllMethodsServlet
     @Activate
     protected void activate(ComponentContext ctx)  throws Exception
     {
-        log.debug("User Servlet started");
+        System.out.println("UserServlet Started");
+        log.info("UserServlet started");
     }
 
     @Deactivate

@@ -92,7 +92,8 @@ public class SearchResourcesServlet extends SlingSafeMethodsServlet
     @Activate
     protected void activate(ComponentContext ctx)
     {
-        log.debug("Servlet started");
+        System.out.println("SearchResourcesServlet Started");
+        log.debug("SearchResourcesServlet started");
     }
 
 
