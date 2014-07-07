@@ -38,6 +38,24 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', ['copy', 'build-atom-shell-app']);
 
 
+
+	// default task
+	grunt.registerTask('default', ['clean','copy','build-shared-libs','build']);
+	grunt.registerTask('default-deploy', ['default', 'deploy']);
+
+	// build tasks
+	grunt.registerTask('build', ['build-css', 'build-js', 'build-atom-shell-app']);
+	grunt.registerTask('build-css', ['compass:develop']);
+	grunt.registerTask('build-js', ['jshint','html2js','browserify2:dashboard']);
+	grunt.registerTask('build-shared-libs', ['browserify2:shared-libs']);
+	grunt.registerTask('deploy', ['slingPost']);
+
+	// server task
+	grunt.registerTask('server', ['clean','copy','build', 'build-shared-libs', 'server-start', 'open', 'watch']);
+
+
+
+
 	grunt.initConfig({
 
 		// ========================================
@@ -67,18 +85,64 @@ module.exports = function (grunt) {
 
 
 		// clean
-		clean: ['./dist/*', '<%= tempdir %>/*'],
+		clean: ['./dist/*', '<%= tempdir %>/*', './binary-dist/*',],
 
         // copy
         copy: {
-            assets: {
+            'dashboard-assets': {
                 files: [
                     {
-                        cwd: 'src/assets/',
+                        cwd: 'src/dashboard/assets/',
                         src: '**',
-                        dest: './dist/assets/',
+                        dest: './dist/dashboard/assets/',
                         expand: true
-                    }
+                    },
+                     {
+                         cwd: './bower_components/bootstrap/dist/css/',
+                         src: '*.css',
+                         dest: './dist/dashboard/assets/css/',
+                         expand: true
+                     },
+                     {
+                         cwd: './bower_components/bootstrap/dist/fonts/',
+                         src: '**',
+                         dest: './dist/dashboard/assets/fonts/',
+                         expand: true
+                     },
+                     {
+                         cwd: './bower_components/ng-tags-input',
+                         src: '*.css',
+                         dest: './dist/dashboard/assets/css/',
+                         expand: true
+                     }
+                ]
+            },
+            'config-assets': {
+                files: [
+                     {
+                         cwd: './bower_components/',
+                         src: 'core-*/**',
+                         dest: './dist/config/components/',
+                         expand: true
+                     },
+                     {
+                         cwd: './bower_components/',
+                         src: 'paper-*/**',
+                         dest: './dist/config/components/',
+                         expand: true
+                     },
+                     {
+                         cwd: './bower_components/platform',
+                         src: '*',
+                         dest: './dist/config/components/platform/',
+                         expand: true
+                     },
+                     {
+                         cwd: './bower_components/polymer',
+                         src: '*',
+                         dest: './dist/config/components/polymer/',
+                         expand: true
+                     }
                 ]
             },
             html: {
@@ -126,11 +190,207 @@ module.exports = function (grunt) {
                         expand: true
                     }
                 ]
+            },
+            statichtml: {
+                files: [
+                    {
+                        cwd: 'src/dashboard/',
+                        src: 'index.html',
+                        dest: './dist/dashboard/',
+                        expand: true
+                    },
+                    {
+                        cwd: 'src/config/',
+                        src: 'index.html',
+                        dest: './dist/config/',
+                        expand: true
+                    }
+                ]
+            }
+        },
+
+
+		// ========================================
+		// JavaScript
+		// ========================================
+
+		// js hint
+		jshint: {
+			files: ['gruntFile.js', '<%= src.js %>', '!src/components/**/*.js', '!src/dashboard/assets/js/**/*.js', '!src/config/components/**/*.js'],
+			options: {
+				curly:false,
+				eqeqeq:false,
+				immed:false,
+				latedef:true,
+				newcap:true,
+				noarg:true,
+				sub:true,
+				boss:true,
+				eqnull:true,
+                evil:true,
+				globals: {}
+			}
+		},
+
+		// html2js
+		html2js: {
+			'dashboard': {
+				src: ['src/dashboard/**/*.tpl.html'],
+				dest: '.temp/dashboard/app-templates.js',
+				module: 'dashboard.templates'
+			}
+		},
+
+		// browserify
+		browserify2: {
+			'shared-libs': {
+				entry: './src/dashboard/shared-libs.js',
+				compile: './dist/dashboard/assets/js/shared-libs.js',
+				debug: true,
+				options: {
+					expose: {
+                        angular: './bower_components/angular/angular.js',
+                        'angular-ui-router': './bower_components/angular-ui-router/release/angular-ui-router.js',
+                        'angular-dragdrop': './bower_components/angular-dragdrop/src/angular-dragdrop.js',
+                        'angular-cookies': './bower_components/angular-cookies/angular-cookies.js',
+                        'angular-resource': './bower_components/angular-resource/angular-resource.js',
+                        'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js',
+                        'angular-ui-select2':'./bower_components/angular-ui-select2/src/select2.js',
+                        'angular-sanitize':'./bower_components/angular-sanitize/angular-sanitize.js',
+                        'angular-slider':'./bower_components/angular-slider/angular-slider.js',
+                        'jquery': './bower_components/jquery/jquery.js',
+                        'jquery-ui': './bower_components/jquery-ui/jquery-ui.js',
+                        'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',
+                        'ui.bootstrap.tpls': './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+                        'infinite-scroll': './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
+                        'treeControl':'./src/dashboard/assets/js/angular-tree-control-modified.js',
+                        'vr.directives.wordCloud':'./bower_components/angular-word-cloud/build/angular-word-cloud.js',
+                        'select2':'./bower_components/select2/select2.js',
+                        'momentjs':'./bower_components/momentjs/min/moment-with-langs.js',
+                        'com.2fdevs.videogular':'./bower_components/videogular/videogular.js',
+                        'com.2fdevs.videogular.plugins.controls':'./bower_components/videogular-controls/controls.js',
+                        'com.2fdevs.videogular.plugins.buffering':'./bower_components/videogular-buffering/buffering.js',
+                        'com.2fdevs.videogular.plugins.overlayplay':'./bower_components/videogular-overlay-play/overlay-play.js'
+                    }
+				}
+			},
+			'dashboard': {
+				entry: './src/dashboard/app.js',
+				compile: './dist/dashboard/assets/js/app.js',
+				debug: true,
+				options: {
+                    expose: {
+                        'dashboard-templates': './.temp/dashboard/app-templates.js'
+                    }
+                }
+			}
+		},
+
+
+		// ========================================
+		// COMPASS
+		// ========================================
+
+		compass: {
+			develop: {
+				options: {
+					sassDir: 'src',
+					cssDir: 'dist/dashboard/assets/css'
+				}
+			},
+			release: {
+				options: {
+					sassDir: 'src',
+					cssDir: 'dist/dashboard/assets/css',
+					environment: 'production'
+				}
+			}
+		},
+
+		// ========================================
+		// Server
+		// ========================================
+
+        open : {
+            chrome : {
+                path: 'http://localhost:8080/index.html',
+                app: 'Google Chrome'
+            }
+        },
+
+		watch: {
+			options: {
+				livereload: true
+			},
+			'dashboard-assets': {
+				files: 'src/dashboard/assets/**',
+				tasks: ['copy:dashboard-assets', 'deploy']
+			},
+			'config-assets': {
+				files: 'src/config/assets/**',
+				tasks: ['copy:config-assets', 'deploy']
+			},
+			css: {
+				files: ['src/**/*.scss'],
+				tasks: ['compass:develop', 'deploy']
+			},
+			js: {
+				files: 'src/**/*.js',
+				tasks: ['build-js', 'deploy']
+			},
+			html: {
+				files: ['src/**/*.tpl.html', 'src/**/index.html'],
+				tasks: ['copy:statichtml', 'build-js', 'deploy']
+			},
+			grunt: {
+				files: ['GruntFile.js'],
+				tasks: ['default']
+			}
+		},
+
+		// ========================================
+		// Release
+		// ========================================
+
+		// uglify
+		uglify: {
+			dist: {
+				options: {
+					banner: '<%= banner %>'
+				},
+				files: {
+
+				}
+			}
+		},
+
+		// karma (unit tests)
+		karma: {
+			unit: {
+				configFile: 'test/config/unit.js'
+			},
+			watch: {
+				configFile: 'test/config/unit.js',
+				autoWatch: true
+			}
+		},
+
+        slingPost: {
+            options: {
+                host:"localhost",
+                port:8888,
+                user:"admin",
+                pass:"admin",
+                exclude: ["*.git"]
+            },
+            dist: {
+                src: "dist",
+                dest: "/content/dashboard"
             }
         },
 
         'download-atom-shell': {
-            version: '0.12.3',
+            version: '0.12.7',
             outputDir: 'binaries'
         },
 
@@ -139,7 +399,8 @@ module.exports = function (grunt) {
                 platforms: ["darwin", "win32", "linux"],
                 app_dir:"dist",
                 cache_dir:"binaries",
-                build_dir:"binary-dist"
+                build_dir:"binary-dist",
+                atom_shell_version: 'v0.12.7'
             }
         }
 

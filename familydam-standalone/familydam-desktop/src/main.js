@@ -17,7 +17,8 @@
 
 var app = require('app');  // Module to control application life.
 var ipc = require('ipc');
-var slingServerManager = require('./slingServerManager');
+var serverManager = require('./ServerManager');
+var configurationManager = require('./ConfigurationManager');
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
 
 // Report crashes to our server.
@@ -27,23 +28,23 @@ require('crash-reporter').start();
 // be closed automatically when the javascript object is GCed.
 var mainWindow = null;
 
+process.on('exit', function () {
+    serverManager.kill();
+});
+
+
 // Quit when all windows are closed.
 app.on('will-quit', function() {
-    slingServerManager.kill();
+    serverManager.kill();
 });
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
-    slingServerManager.kill();
+    serverManager.kill();
 
     if (process.platform != 'darwin')
         app.quit();
 });
-
-process.on('exit', function () {
-    slingServerManager.kill();
-});
-
 
 // Called when user tries to open a new url to leave the application
 app.on('open-url', function(event, path) {
@@ -96,7 +97,7 @@ app.on('ready', function() {
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         mainWindow = null;
-        slingServerManager.kill();
+        serverManager.kill();
         if (process.platform != 'darwin')
         {
             app.quit();
@@ -104,7 +105,8 @@ app.on('ready', function() {
     });
 
     // Start the embedded Sling Server
-    slingServerManager.startServer(splashWindow, mainWindow);
+    configurationManager.initializeServer(splashWindow, mainWindow);
+    //serverManager.startServer(splashWindow, mainWindow);
 });
 
 

@@ -31,9 +31,9 @@
     var serverLoaded = false;
     var serverStarted = false;
     var userServletStarted = false;
-    var prc = undefined;
-    var tail = undefined;
-    var tailErr = undefined;
+    var prc;
+    var tail;
+    var tailErr;
     var serverPort = 8080; //default
 
     var link = function (_splashWindow, _mainWindow)
@@ -48,7 +48,7 @@
         {
             console.log(_type +":" +_message);
         }
-        if (mainWindow != undefined && mainWindow.webContents != null) mainWindow.webContents.send(_type, _message);
+        if (mainWindow !== undefined && mainWindow.webContents != null) mainWindow.webContents.send(_type, _message);
     };
 
     var checkLoadingStatus = function()
@@ -68,7 +68,7 @@
                 serverLoaded = false;
             });
         }
-    }
+    };
 
     /**
      * Once the embedded java server is running load the application from the server.
@@ -187,61 +187,14 @@
             });
 
 
-            /***
-            // Watch the output log
-            tail = spawn("tail", ['-f', process.resourcesPath +'/familydam-out.log']);
-            //tail.unref();
-            //process.stdout.setEncoding("utf-8");
-            tail.stdout.on('data', function (data) {
-                var _data = data.toString().replace(/(\r\n|\n|\r)/gm,"");
-
-                sendClientMessage('info', _data, false);
-
-                if( _data.indexOf("HTTP server port:") != -1 )
-                {
-                    serverPort = _data.substr(_data.indexOf("port:")+6).trim();
-                    sendClientMessage('error', "port=" +serverPort +" -- " +_data, true);
-                }
-                if( _data.indexOf("Startup completed") != -1 )
-                {
-                    sendClientMessage('info', "Server started on: http://localhost:" +serverPort +" at " +new Date(), true);
-
-                    // Call the server every 1 sec to see if the osgi bundles are loaded and running.
-                    // Once it's loaded, we'll load the application from the bundle.
-                    checkServerInterval = setInterval(function(){
-                        console.log("checking server status: " +serverLoaded);
-                        if( serverLoaded )
-                        {
-                            clearInterval(checkServerInterval);
-                            serverStarted = true;
-                            loadApplication(serverPort);
-                        }else{
-                            checkLoadingStatus();
-                        }
-                    }, 1000);
-
-                }
-            });
-
-
-
-            // Watch the error log
-            tailErr = spawn("tail", ['-f', process.resourcesPath +'/familydam-err.log']);
-            //tailErr.unref();
-            tailErr.stdout.on('data', function (data){
-                console.log("err: " +data);
-                sendClientMessage('error', data);
-            });
-             **/
-
         },
 
         kill : function()
         {
-            if( prc != undefined ) prc.kill();
-            if( tail != undefined ) tail.kill();
-            if( tailErr != undefined ) tailErr.kill();
-            if( checkServerInterval != undefined ) clearInterval(checkServerInterval);
+            if( prc !== undefined ) prc.kill();
+            if( tail !== undefined ) tail.kill();
+            if( tailErr !== undefined ) tailErr.kill();
+            if( checkServerInterval !== undefined ) clearInterval(checkServerInterval);
         }
     };
 
