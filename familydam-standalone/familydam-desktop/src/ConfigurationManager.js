@@ -14,6 +14,7 @@
  *
  *     You should have received a copy of the GNU General Public License
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+ *--
  */
 
 (function() {
@@ -22,17 +23,18 @@
     var fs = require('fs');
     var ipc = require('ipc');
     var http = require('http');
+    var BrowserWindow = require('browser-window');
 
+    var settings = {};
+    var settingsFile = "resources/systemprops.json";
 
+    var appRoot;
+    var configWindow;
 
-    var splashWindow, mainWindow;
-
-
-
-    var link = function (_splashWindow, _mainWindow)
+    var link = function (_app, _configWindow)
     {
-        splashWindow = _splashWindow;
-        mainWindow = _mainWindow;
+        this.appRoot = _app;
+        configWindow = _configWindow;
     };
 
 
@@ -40,27 +42,93 @@
     /**
      * Once the embedded java server is running load the application from the server.
      */
-    var loadApplication = function(port)
+    var loadConfigApplication = function()
     {
-        console.log("Load internal configuration application (" +new Date() +")");
+        console.log("Load internal configuration window (" +new Date() +")");
 
-        splashWindow.close();
+        var configWindow = new BrowserWindow({width:900, height:600, center:true, frame:true, show:false, title:'FamilyDAM Configuration Wizard'});
 
-        mainWindow.loadUrl('file://' + __dirname + '/config/index.html');
-        mainWindow.show();
-        mainWindow.focus();
+        configWindow.loadUrl('file://' + __dirname + '/config/index.html');
+        configWindow.webContents.on('did-finish-load', function()
+        {
+            configWindow.webContents.send('settingConfig', settings);
+        });
+        configWindow.show();
+        configWindow.focus();
         //app.dock.bounce("informational");
+
+
+        // Call back handler which invoked from the webpage when all of the fields have been filled out.
+        ipc.on('saveConfig', function(event, _settings)
+        {
+            console.log("save settings : " +_settings );
+
+            fs.writeFile( __dirname +'/resources/systemprops.json',  _settings, {'encoding':'utf8'}, function (err, data)
+            {
+                this.app.loadMainApplication(data);
+            });
+        });
     };
 
+
+    var validateSettingsFile = function()
+    {
+        if( !fs.existsSync( __dirname +"/"  +settingsFile) )
+        {
+            //todo: create default file
+            console.warn("settings file does not exists");
+        }
+
+
+        fs.readFile( __dirname +'/resources/systemprops.json',  {'encoding':'utf8'}, function (err, data)
+        {
+            if (err) {
+                console.log(err);
+                throw err;
+            }
+
+            settings = JSON.parse(data);
+
+            if( settings.state == "READY" && storageLocationIsValid() )
+            {
+                this.appRoot.loadMainApplication(data);
+            }else{
+                loadConfigApplication();
+            }
+        });
+    };
+
+
+    function storageLocationIsValid() {
+
+        var target = settings.storageLocation +"/familydam-" +settings.serverVersion +"-SNAPSHOT-standalone.jar";
+        if( fs.existsSync(settings.storageLocation) )
+        {
+            if( !fs.existsSync(  target  ) )
+            {
+                //copy jar to new dir
+                var source = __dirname +"/resources/familydam-" +settings.serverVersion +"-SNAPSHOT-standalone.jar";
+                //copy
+                this.appRoot.sendClientMessage('info', "Copying FamilyDAMServer to "+settings.storageLocation, false);
+                console.log( "copy: dest=" +source);
+                console.log( "copy: target=" +target);
+                fs.writeFileSync(target, fs.readFileSync(source));
+            }
+
+            return true;
+        }
+
+        return false;
+    }
 
 
     module.exports = {
 
-        initializeServer : function(_splashWindow, _mainWindow)
+        initializeServer : function(_app, _configWindow)
         {
-            link(_splashWindow, _mainWindow);
+            link(_app, _configWindow);
 
-            loadApplication();
+            validateSettingsFile();
         }
 
     };

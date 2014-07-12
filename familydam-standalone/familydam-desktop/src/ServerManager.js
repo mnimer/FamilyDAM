@@ -24,7 +24,7 @@
 
 
 
-    var splashWindow, mainWindow;
+    var mainWindow;
 
     // local properties
     var checkServerInterval;
@@ -34,37 +34,33 @@
     var prc;
     var tail;
     var tailErr;
-    var serverPort = 8080; //default
+    var settings;
 
-    var link = function (_splashWindow, _mainWindow)
+    var link = function(_settings, _appRoot, _splashWindow, _mainWindow)
     {
-        splashWindow = _splashWindow;
-        mainWindow = _mainWindow;
+        this.settings = JSON.parse(_settings);
+        this.appRoot = _appRoot;
+        this.splashWindow = _splashWindow;
+        this.mainWindow = _mainWindow;
     };
 
-    var sendClientMessage = function(_type, _message, _logToConsole)
-    {
-        if( _logToConsole )
-        {
-            console.log(_type +":" +_message);
-        }
-        if (mainWindow !== undefined && mainWindow.webContents != null) mainWindow.webContents.send(_type, _message);
-    };
+
 
     var checkLoadingStatus = function()
     {
+        console.log("Check Loading Status");
         if( !serverLoaded )
         {
             http.get("http://localhost:" + serverPort + "/dashboard", function (res)
             {
-                console.log("Got response: " + res.statusCode);
+                console.log("response: " + res.statusCode);
                 if (res.statusCode == 200 || res.statusCode == 302)
                 {
                     serverLoaded = true;
                 }
             }).on('error', function (e)
             {
-                console.log("Got error: " + e.message);
+                console.log("error: " + e.message);
                 serverLoaded = false;
             });
         }
@@ -73,16 +69,18 @@
     /**
      * Once the embedded java server is running load the application from the server.
      */
-    var loadApplication = function(port)
+    var loadApplication = function(_settings)
     {
         console.log("Load embedded application (" +new Date() +")");
-
         splashWindow.close();
 
-        mainWindow.loadUrl('http://localhost:' +port +'/dashboard');
-        mainWindow.show();
+        console.log("splash:" +this.splashWindow );
+        console.log("main:" +this.mainWindow );
+
+        this.mainWindow.loadUrl('http://localhost:' +this.settings.port +'/dashboard');
+        this.mainWindow.show();
         //mainWindow.maximize();
-        mainWindow.focus();
+        this.mainWindow.focus();
         //var shell = require('shell');
         //shell.openExternal('http://localhost:' +port +'/dashboard');
         //app.dock.bounce("informational");
@@ -109,11 +107,11 @@
             if (_data.indexOf("HTTP server port:") != -1)
             {
                 serverPort = _data.substr(_data.indexOf("port:") + 6).trim();
-                sendClientMessage('error', "port=" + serverPort + " -- " + _data, true);
+                this.appRoot.sendClientMessage('error', "port=" + serverPort + " -- " + _data, true);
             }
             if (_data.indexOf("Startup completed") != -1)
             {
-                sendClientMessage('info', "Server started on: http://localhost:" + serverPort + " at " + new Date(), true);
+                this.appRoot.sendClientMessage('info', "Server started on: http://localhost:" + serverPort + " at " + new Date(), true);
 
                 // Call the server every 1 sec to see if the osgi bundles are loaded and running.
                 // Once it's loaded, we'll load the application from the bundle.
@@ -141,21 +139,30 @@
 
     module.exports = {
 
-        startServer : function(_splashWindow, _mainWindow)
+        startServer : function(_settings, _appRoot, _splashWindow, _mainWindow)
         {
-            var outLogFile = process.resourcesPath +'/familydam-out.log';
-            var outLogErrFile = process.resourcesPath +'/familydam-err.log';
-            link(_splashWindow, _mainWindow);
+            link(_settings, _appRoot, _splashWindow, _mainWindow);
 
-            sendClientMessage('info', "System - TotalMem:" +os.totalmem() +" - FreeMem:" +os.freemem(), true);
-            //sendClientMessage('info', "max:" +getMaxMemArg(), true);
-            sendClientMessage('info', "starting FamilyDam Server: " + process.resourcesPath, true);
+            // setup logs
+            _settings = JSON.parse(_settings);
+            var outLogFile = _settings['storageLocation'] +'/familydam-out.log';
+            var outLogErrFile = _settings['storageLocation'] +'/familydam-err.log';
+
+
+            //_appRoot.sendClientMessage('info', "max:" +getMaxMemArg(), true);
+            //_appRoot.sendClientMessage('info', "Starting FamilyDam Server: " + process.resourcesPath, true);
+            _appRoot.sendClientMessage('info', "System - TotalMem:" +os.totalmem() +" - FreeMem:" +os.freemem(), true);
 
             var spawn = require('child_process').spawn;
 
 
+            var jarPath = _settings['storageLocation'] +"/familydam-" +_settings['serverVersion'] +"-SNAPSHOT-standalone.jar";
+            var jarPort = _settings['port'];
+            _appRoot.sendClientMessage('info', "Starting FamilyDAMServer", false);
+            _appRoot.sendClientMessage('debug', "START:" +jarPath +":" +jarPort, true);
+
             var cmd = "java";
-            var args = ['-jar',  'app/resources/familydam-1.0.0-SNAPSHOT-standalone.jar', '-p', '9000'];
+            var args = ['-jar',  jarPath, '-p', jarPort];
 
             /**** debug command
              var debugPrc = spawn('pwd',  []);
@@ -181,7 +188,7 @@
             prc.stdout.on('data', function (data)
             {
                 var _data = data.toString();
-                sendClientMessage('info', _data, true);
+                _appRoot.sendClientMessage('debug', _data, true);
                 fs.appendFile(outLogFile, _data);
                 processStdOut(_data);
             });

@@ -1,3 +1,13 @@
 {
-    'version':'1.0.0'
+    "version": "1.0.0",
+    "serverVersion": "1.0.0",
+    "state":"INSTALLED",
+    "port":"8080",
+    "storageLocation": "/Users/mnimer/Development/temp/familydam",
+    "modules": {
+        "photos": true,
+        "music": true,
+        "videos": true,
+        "email": true
+    }
 }

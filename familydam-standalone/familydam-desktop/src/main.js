@@ -38,6 +38,7 @@ app.on('will-quit', function() {
     serverManager.kill();
 });
 
+
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
     serverManager.kill();
@@ -45,6 +46,7 @@ app.on('window-all-closed', function() {
     if (process.platform != 'darwin')
         app.quit();
 });
+
 
 // Called when user tries to open a new url to leave the application
 app.on('open-url', function(event, path) {
@@ -75,11 +77,13 @@ app.on('open-file', function(event, url) {
 // initialization and ready for creating browser windows.
 app.on('ready', function() {
     // Create the browser window.
-    splashWindow = new BrowserWindow({width:600, height:400, center:true, frame:false});
+    splashWindow = new BrowserWindow({width:600, height:400, center:true, frame:false, show:true});
+    configWindow = new BrowserWindow({width:600, height:400, center:true, frame:false, show:false});
     mainWindow = new BrowserWindow({width:1024, height:800, center:true, frame:true, show:false, title:'FamilyDAM - The Digital Asset Manager for Families'});
 
     // and load the index.html of the app.
-    splashWindow.loadUrl('file://' + __dirname + '/index.html');
+    console.log('open:' +'file://' + __dirname + '/splash.html');
+    splashWindow.loadUrl('file://' + __dirname + '/splash.html');
     splashWindow.focus();
     //splashWindow.loadUrl('http://localhost:8080');
 
@@ -91,11 +95,19 @@ app.on('ready', function() {
         splashWindow = null;
     });
 
+
+    configWindow.on('closed', function() {
+        configWindow = null;
+    });
+
+
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
+        splashWindow = null;
+        configWindow = null;
         mainWindow = null;
         serverManager.kill();
         if (process.platform != 'darwin')
@@ -104,11 +116,35 @@ app.on('ready', function() {
         }
     });
 
+
+    // Check the settings configuration before opening up the main app.
+    var timer = setInterval(function(){
+        clearTimeout(timer);
+        configurationManager.initializeServer(app, configWindow);
+    }, 1000);
+
+
     // Start the embedded Sling Server
-    configurationManager.initializeServer(splashWindow, mainWindow);
     //serverManager.startServer(splashWindow, mainWindow);
 });
 
+
+app.loadMainApplication = function(_settings) {
+    //start jar
+    console.log("{loadMainApplication}" +_settings);
+    serverManager.startServer(_settings, app, splashWindow, mainWindow);
+};
+
+
+app.sendClientMessage = function(_type, _message, _logToConsole)
+{
+    if( _logToConsole )
+    {
+        console.log(_type +":" +_message);
+    }
+    if (splashWindow !== undefined && splashWindow.webContents != null) splashWindow.webContents.send(_type, _message);
+    if (mainWindow !== undefined && mainWindow.webContents != null) mainWindow.webContents.send(_type, _message);
+};
 
 ipc.on('asynchronous-reply', function(arg) {
     console.log("Asyn-Reply:" +arg); // prints "pong"

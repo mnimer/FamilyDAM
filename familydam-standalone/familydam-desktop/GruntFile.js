@@ -89,7 +89,7 @@ module.exports = function (grunt) {
 
         // copy
         copy: {
-            'dashboard-assets': {
+            'dashboardAssets': {
                 files: [
                     {
                         cwd: 'src/dashboard/assets/',
@@ -117,9 +117,33 @@ module.exports = function (grunt) {
                      }
                 ]
             },
-            'config-assets': {
+            'configAssets': {
                 files: [
                      {
+                          cwd: './src/config',
+                          src: '*',
+                          dest: './dist/config',
+                          expand: true
+                      },
+                      {
+                          cwd: './src/config',
+                          src: '*',
+                          dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/config',
+                          expand: true
+                      },
+                      {
+                          cwd: './src/',
+                          src: '*.js',
+                          dest: './dist/config',
+                          expand: true
+                      },
+                      {
+                          cwd: './src/',
+                          src: '*.js',
+                          dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app',
+                          expand: true
+                      },
+                      {
                          cwd: './bower_components/',
                          src: 'core-*/**',
                          dest: './dist/config/components/',
@@ -152,6 +176,12 @@ module.exports = function (grunt) {
                         src: '*.html',
                         dest: './dist/',
                         expand: true
+                    },
+                    {
+                        cwd: 'src/',
+                        src: '*.html',
+                        dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/',
+                        expand: true
                     }
                 ]
             },
@@ -161,6 +191,12 @@ module.exports = function (grunt) {
                         cwd: 'src/',
                         src: '*.js',
                         dest: './dist/',
+                        expand: true
+                    },
+                    {
+                        cwd: 'src/',
+                        src: '*.js',
+                        dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/',
                         expand: true
                     }
                 ]
@@ -203,6 +239,18 @@ module.exports = function (grunt) {
                         cwd: 'src/config/',
                         src: 'index.html',
                         dest: './dist/config/',
+                        expand: true
+                    },
+                    {
+                        cwd: 'src/dashboard/',
+                        src: 'index.html',
+                        dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/dashboard/',
+                        expand: true
+                    },
+                    {
+                        cwd: 'src/config/',
+                        src: 'index.html',
+                        dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/config/',
                         expand: true
                     }
                 ]
@@ -322,25 +370,29 @@ module.exports = function (grunt) {
 			options: {
 				livereload: true
 			},
-			'dashboard-assets': {
-				files: 'src/dashboard/assets/**',
-				tasks: ['copy:dashboard-assets', 'deploy']
+			'dashboardAssets': {
+				files: 'src/dashboard/assets/*.*',
+				tasks: ['copy:dashboardAssets'] /*, 'deploy'*/
 			},
-			'config-assets': {
-				files: 'src/config/assets/**',
-				tasks: ['copy:config-assets', 'deploy']
+			'configAssets': {
+				files: 'src/config/*.*',
+				tasks: ['copy:configAssets']
+			},
+			'configAssets2': {
+				files: 'src/*.js',
+				tasks: ['copy:configAssets']
 			},
 			css: {
 				files: ['src/**/*.scss'],
-				tasks: ['compass:develop', 'deploy']
+				tasks: ['compass:develop'] /*, 'deploy'*/
 			},
 			js: {
 				files: 'src/**/*.js',
-				tasks: ['build-js', 'deploy']
+				tasks: ['build-js', 'copy:configAssets'] /*, 'deploy'*/
 			},
 			html: {
 				files: ['src/**/*.tpl.html', 'src/**/index.html'],
-				tasks: ['copy:statichtml', 'build-js', 'deploy']
+				tasks: ['copy:statichtml', 'build-js']  /*, 'deploy'*/
 			},
 			grunt: {
 				files: ['GruntFile.js'],
