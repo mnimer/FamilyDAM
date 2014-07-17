@@ -63,9 +63,16 @@
         {
             console.log("save settings : " +_settings );
 
-            fs.writeFile( __dirname +'/resources/systemprops.json',  _settings, {'encoding':'utf8'}, function (err, data)
+            settings = JSON.parse(_settings);
+            settings.state = "READY";
+
+            var encodedSettings = JSON.stringify(settings);
+
+            fs.writeFile( __dirname +'/resources/systemprops.json',  encodedSettings, {'encoding':'utf8'}, function (err, data)
             {
-                this.app.loadMainApplication(data);
+                storageLocationInitialize();
+                configWindow.hide();
+                this.appRoot.loadMainApplication(settings);
             });
         });
     };
@@ -87,11 +94,12 @@
                 throw err;
             }
 
+            console.log(data);
             settings = JSON.parse(data);
 
-            if( settings.state == "READY" && storageLocationIsValid() )
+            if( settings.state == "READY" && storageLocationInitialize() )
             {
-                this.appRoot.loadMainApplication(data);
+                this.appRoot.loadMainApplication(settings);
             }else{
                 loadConfigApplication();
             }
@@ -102,6 +110,27 @@
     function storageLocationIsValid() {
 
         var target = settings.storageLocation +"/familydam-" +settings.serverVersion +"-SNAPSHOT-standalone.jar";
+
+        if( fs.existsSync(  target  ) )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    function storageLocationInitialize() {
+
+        var target = settings.storageLocation +"/familydam-" +settings.serverVersion +"-SNAPSHOT-standalone.jar";
+
+        try{
+            fs.mkdirSync(settings.storageLocation);
+        }catch(err){
+            //swallow
+        }
+
+
         if( fs.existsSync(settings.storageLocation) )
         {
             if( !fs.existsSync(  target  ) )
@@ -110,8 +139,8 @@
                 var source = __dirname +"/resources/familydam-" +settings.serverVersion +"-SNAPSHOT-standalone.jar";
                 //copy
                 this.appRoot.sendClientMessage('info', "Copying FamilyDAMServer to "+settings.storageLocation, false);
-                console.log( "copy: dest=" +source);
-                console.log( "copy: target=" +target);
+                console.log( "{ConfigurationManager} copy: dest=" +source);
+                console.log( "{ConfigurationManager} copy: target=" +target);
                 fs.writeFileSync(target, fs.readFileSync(source));
             }
 

@@ -13,19 +13,29 @@
                     <span class="btn btn-success fileinput-button">
                         <i class="glyphicon glyphicon-plus"></i>
                         <span>Add Files</span>
-                        <input type="file" name="./*" multiple="true" ng-file-select>
+                        <input type="button" name="./*" multiple="true" onclick="openFilePicker()" ng-file-select >
                         <input type="hidden" name="author" value="{{username}}"/>
                     </span>
                     <span class="btn btn-success fileinput-button">
                         <i class="glyphicon glyphicon-plus"></i>
                         <span>Add Folders</span>
-                        <input type="file" name="./*" multiple="true" webkitdirectory directory multiple ng-file-select>
+                        <input type="button" name="./*" multiple="true" onclick="openFolderPicker()" webkitdirectory directory multiple ng-file-select>
                         <input type="hidden" name="author" value="{{username}}"/>
                     </span>
 
             </div>
         </div>
     </div>
+
+    <script type="application/javascript">
+        function openFilePicker(){
+            require('ipc').send('dialog', {'type':'pick_file'});
+        }
+
+        function openFolderPicker(){
+            require('ipc').send('dialog', {'type':'pick_folder'});
+        }
+    </script>
 
 
     <div class="col-xs-12" style="margin-bottom: 40px">

@@ -1,0 +1,387 @@
+<!doctype html>
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+<head>
+    <title>core-scroll-header-panel</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="components/platform/platform.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+    <link rel="import" href="components/core-scroll-header-panel/core-scroll-header-panel.html">
+    <link rel="import" href="components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="components/core-list/core-list.html">
+    <link rel="import" href="components/core-overlay/core-overlay.html">
+    <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="components/paper-tabs/paper-tab.html">
+    <link rel="import" href="components/paper-fab/paper-fab.html">
+    <link rel="import" href="assets/components/file-uploader/file-uploader.html">
+    <link rel="import" href="assets/components/dialog-pluploader/dialog-pluploader.html">
+
+    <style>
+        @font-face
+        {
+            font-family: 'Roboto';
+            font-style:  normal;
+            src:         url('assets/fonts/RobotoTTF/Roboto-Regular.ttf');
+        }
+
+        @font-face
+        {
+            font-family: 'Roboto Light';
+            font-style:  normal;
+            src:         url('assets/fonts/RobotoTTF/Roboto-Light.ttf');
+        }
+
+        html, body
+        {
+            height: 100%;
+        }
+
+        body
+        {
+            font-family:       'Roboto Light', 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+            -webkit-transform: translateZ(0);
+            transform:         translateZ(0);
+            font-size:         14px;
+            color:             rgba(0, 0, 0, 0.87);
+            margin:            0;
+        }
+
+        [main]{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+    </style>
+
+
+    <style shim-shadowdom>
+
+
+        core-scroll-header-panel
+        {
+            position: absolute;
+            top:      0;
+            right:    0;
+            bottom:   0;
+            left:     0;
+        }
+
+        /* background for toolbar when it is at its full size */
+        core-scroll-header-panel::shadow #headerBg
+        {
+            background-color: #0000ff;
+        }
+
+        /* background for toolbar when it is condensed */
+        core-scroll-header-panel::shadow #condensedHeaderBg
+        {
+            background-color: #0000ff;
+        }
+
+        core-toolbar
+        {
+            color:            #f1f1f1;
+            fill:             #f1f1f1;
+            background-color: transparent;
+        }
+
+        core-toolbar paper-fab
+        {
+            top:      30px;
+            right:    30px;
+            position: absolute;
+        }
+
+        core-toolbar paper-tabs
+        {
+            width: 300px;
+        }
+
+        .title
+        {
+            -webkit-transform-origin: 0;
+            transform-origin:         0;
+            font-size:                40px;
+        }
+
+        .content
+        {
+            padding: 10px 30px;
+        }
+
+        /******** core-list ***********/
+
+        .stuff
+        {
+            min-height:    60px;
+            background:    red !important;
+            border-bottom: 1px solid black;
+        }
+
+        core-list
+        {
+            display: block;
+            height:  100%;
+            margin:  0 auto;
+        }
+
+        .item
+        {
+            box-sizing:       border-box;
+            border-bottom:    1px solid #ddd;
+            padding:          4px;
+            cursor:           default;
+            background-color: white;
+            overflow:         hidden;
+        }
+
+        .folder{
+            height: 40px;
+        }
+        .folderName{
+            vertical-align: bottom;
+        }
+
+        .file{
+            height: 80px;
+        }
+
+        .selected
+        {
+            background: silver;
+        }
+
+        .message
+        {
+            padding-left:        77px;
+            line-height:         125%;
+            background-repeat:   no-repeat;
+            background-position: 10px 10px;
+            background-size:     60px;
+        }
+
+        .from
+        {
+            display:     inline;
+            font-weight: bold;
+        }
+
+        .timestamp
+        {
+            margin-left: 10px;
+            font-size:   12px;
+            opacity:     0.8;
+        }
+
+
+    </style>
+
+</head>
+<body unresolved onload="onLoadHandler()">
+
+<core-scroll-header-panel condensedHeaderHeight="65">
+
+    <core-toolbar class="medium-tall">
+
+        <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
+        <div flex></div>
+        <paper-tabs selected="0" nobar>
+            <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
+            <paper-tab>Photos</paper-tab>
+            <paper-tab>Music</paper-tab>
+            <paper-tab>Movies</paper-tab>
+        </paper-tabs>
+        <core-icon-button icon="search"></core-icon-button>
+        <core-icon-button icon="more-vert"></core-icon-button>
+        <div class="middle indent title">Files</div>
+        <div class="bottom">
+            <paper-fab icon="add" onclick="toggleUploader();"></paper-fab>
+        </div>
+    </core-toolbar>
+
+    <div class="content">
+
+        <core-drawer-panel class="right-drawer" style="top:125px;">
+
+            <div main>
+                <div class="folder">
+                    <h2>Folders</h2><hr/>
+
+                    <core-list id="folderList" data="{{folders}}" height="80">
+                        <template>
+                            <div class="item folder">
+                                <span>
+                                    <core-icon icon="folder"></core-icon>
+                                </span>
+                                <span class="">
+                                    <span class="folderName">{{name}}</span>
+                                </span>
+                            </div>
+                        </template>
+                    </core-list>
+                </div>
+                <br/><br/><br/><br/>
+                <div files>
+
+
+                    <h2>Files</h2>
+                    <hr/>
+                    <core-list id="fileList" data="{{files}}" height="80">
+                        <template>
+                            <div class="item {{ {selected: selected} | tokenList }}  file">
+                                <div style="display: inline-block">
+                                    <img src="http://placehold.it/70x70"/>
+                                    <!-- <core-icon icon="drive-document"></core-icon> -->
+                                </div>
+                                <div style="vertical-align: top; display: inline-block">
+                                    <span>
+                                        <span class="fileName" style="width: 90%">{{name}}</span>
+                                        <span class="timestamp">{{time}}</span>
+
+                                        <div class="subject">Infinite List. {{index}}</div>
+                                        <div class="body">{{details}}</div>
+                                    </span>
+                                </div>
+                            </div>
+                        </template>
+                    </core-list>
+                </div>
+            </div>
+
+
+            <div drawer>
+                <h2>Folders</h2><hr/>
+                <ul style="margin-left: -20px;list-style: none;">
+                    <li><core-icon icon="folder"></core-icon> Files</li>
+                    <li><core-icon icon="folder"></core-icon> Photos
+                    <ul style="list-style: none;">
+                        <li><core-icon icon="folder"></core-icon> Angela</li>
+                        <li><core-icon icon="folder"></core-icon> Mike</li>
+                        <li><core-icon icon="folder"></core-icon> Kayden</li>
+                        <li><core-icon icon="folder"></core-icon> Hailey</li>
+                    </ul></li>
+                    <li><core-icon icon="folder"></core-icon> Music</li>
+                    <li><core-icon icon="folder"></core-icon> Movies</li>
+                </ul>
+            </div>
+        </core-drawer-panel>
+
+</core-scroll-header-panel>
+
+
+<file-uploader id="uploaderOverlay"></file-uploader>
+
+<script>
+
+    // custom transformation: scale header's title
+    var titleStyle = document.querySelector('.title').style;
+    addEventListener('core-header-transform', function (e) {
+        var d = e.detail;
+        var m = d.height - d.condensedHeight;
+        var scale = Math.max(0.75, (m - d.y) / (m / 0.25) + 0.75);
+        titleStyle.webkitTransform = titleStyle.transform =
+                'scale(' + scale + ') translateZ(0)';
+    });
+
+</script>
+
+
+<script>
+    var folders = [];
+    var files = [];
+
+    var strings = [
+        "PARKOUR!",
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    ];
+    var namegen = {
+        generateString: function (inLength) {
+            var s = '';
+            for (var i = 0; i < inLength; i++)
+            {
+                s += String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+            }
+            return s;
+        },
+        generateName: function (inMin, inMax) {
+            return this.generateString(Math.floor(Math.random() * (inMax - inMin + 1) + inMin));
+        }
+    };
+
+    var generateData = function (listCount) {
+        var names = [], data = [];
+        for (var i = 0; i < listCount; i++)
+        {
+            names.push(namegen.generateName(4, 8));
+        }
+        names.sort();
+        for (var i = 0; i < listCount; i++)
+        {
+            var name = names[i];
+            var divider = name.charAt(0);
+            if (divider === (names[i - 1] || '').charAt(0))
+            {
+                divider = null;
+            }
+            data.push({
+                index: i,
+                name: name,
+                divider: divider,
+                details: strings[i % 3],
+                time: '8:29pm'
+            });
+        }
+        return data;
+    };
+
+
+    var onLoadHandler = function () {
+        folders = [{name:"2011"},{name:"2012"},{name:"2013"},{name:"2014"}];
+        files = generateData(100);
+        document.querySelector("#folderList").data = folders;
+        document.querySelector("#fileList").data = files;
+    }
+
+
+    var toggleUploader = function () {
+        document.querySelector("#uploaderOverlay").toggle();
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -89,7 +89,7 @@ module.exports = function (grunt) {
 
         // copy
         copy: {
-            'dashboardAssets': {
+            'dashboard-assets': {
                 files: [
                     {
                         cwd: 'src/dashboard/assets/',
@@ -113,6 +113,64 @@ module.exports = function (grunt) {
                          cwd: './bower_components/ng-tags-input',
                          src: '*.css',
                          dest: './dist/dashboard/assets/css/',
+                         expand: true
+                     }
+                ]
+            },
+            'dashboard-proto-assets': {
+                files: [
+                    {
+                          cwd: './src/dashboard-prototype',
+                          src: '*',
+                          dest: './dist/dashboard-prototype',
+                          expand: true
+                      },
+                      {
+                          cwd: './src/dashboard-prototype',
+                          src: '*',
+                          dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/dashboard-prototype',
+                          expand: true
+                      },
+                      {
+                          cwd: 'src/dashboard-prototype/assets/',
+                          src: '**',
+                          dest: './dist/dashboard-prototype/assets/',
+                          expand: true
+                      },
+                      {
+                          cwd: './src/dashboard-prototype',
+                          src: '*.js',
+                          dest: './dist/dashboard-prototype',
+                          expand: true
+                      },
+                      {
+                          cwd: './src/dashboard-prototype',
+                          src: '*.js',
+                          dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/dashboard-prototype',
+                          expand: true
+                      },
+                      {
+                         cwd: './bower_components/',
+                         src: 'core-*/**',
+                         dest: './dist/dashboard-prototype/components/',
+                         expand: true
+                     },
+                     {
+                         cwd: './bower_components/',
+                         src: 'paper-*/**',
+                         dest: './dist/dashboard-prototype/components/',
+                         expand: true
+                     },
+                     {
+                         cwd: './bower_components/platform',
+                         src: '*',
+                         dest: './dist/dashboard-prototype/components/platform/',
+                         expand: true
+                     },
+                     {
+                         cwd: './bower_components/polymer',
+                         src: '*',
+                         dest: './dist/dashboard-prototype/components/polymer/',
                          expand: true
                      }
                 ]
@@ -236,6 +294,12 @@ module.exports = function (grunt) {
                         expand: true
                     },
                     {
+                        cwd: 'src/dashboard-prototype/',
+                        src: '*.html',
+                        dest: './dist/dashboard-prototype/',
+                        expand: true
+                    },
+                    {
                         cwd: 'src/config/',
                         src: 'index.html',
                         dest: './dist/config/',
@@ -245,6 +309,12 @@ module.exports = function (grunt) {
                         cwd: 'src/dashboard/',
                         src: 'index.html',
                         dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/dashboard/',
+                        expand: true
+                    },
+                    {
+                        cwd: 'src/dashboard-prototype/',
+                        src: 'index.html',
+                        dest: './binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/dashboard-prototype/',
                         expand: true
                     },
                     {
@@ -264,7 +334,7 @@ module.exports = function (grunt) {
 
 		// js hint
 		jshint: {
-			files: ['gruntFile.js', '<%= src.js %>', '!src/components/**/*.js', '!src/dashboard/assets/js/**/*.js', '!src/config/components/**/*.js'],
+			files: ['gruntFile.js', '<%= src.js %>', '!src/components/**/*.js', '!src/dashboard/assets/js/**/*.js', '!src/dashboard-prototype/assets/**/*.js', '!src/config/components/**/*.js'],
 			options: {
 				curly:false,
 				eqeqeq:false,
@@ -372,7 +442,15 @@ module.exports = function (grunt) {
 			},
 			'dashboardAssets': {
 				files: 'src/dashboard/assets/*.*',
-				tasks: ['copy:dashboardAssets'] /*, 'deploy'*/
+				tasks: ['copy:dashboard-assets'] /*, 'deploy'*/
+			},
+			'dashboardPrototype': {
+				files: 'src/dashboard-prototype/assets/**',
+				tasks: ['copy:dashboard-proto-assets'] /*, 'deploy'*/
+			},
+			'dashboardPrototypeHtml': {
+				files: 'src/dashboard-prototype/*.html',
+				tasks: ['copy:dashboard-proto-assets'] /*, 'deploy'*/
 			},
 			'configAssets': {
 				files: 'src/config/*.*',
@@ -391,7 +469,7 @@ module.exports = function (grunt) {
 				tasks: ['build-js', 'copy:configAssets'] /*, 'deploy'*/
 			},
 			html: {
-				files: ['src/**/*.tpl.html', 'src/**/index.html'],
+				files: ['src/**/*.tpl.html', 'src/**/*.html'],
 				tasks: ['copy:statichtml', 'build-js']  /*, 'deploy'*/
 			},
 			grunt: {

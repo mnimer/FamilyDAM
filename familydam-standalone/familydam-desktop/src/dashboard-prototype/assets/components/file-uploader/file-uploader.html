@@ -1,0 +1,86 @@
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../../plupload-2.1.2/js/plupload.full.min.js"></script>
+<script src="../../plupload-2.1.2/js/plupload.dev.js"></script>
+<script src="../../plupload-2.1.2/js/moxie.js"></script>
+
+
+<polymer-element name="file-uploader" extends="core-overlay">
+
+    <template>
+        <div style="background-color: white; padding:100px;border:1px solid #000;">
+            <h2>Test Dialog</h2>
+            <input type="text" id="file">
+            <button on-click="{{openDialog}}" >Open Dialog Test</button>
+            <button on-click="{{chooseFile}}" >Choose File test</button>
+            <br/><br/>
+            <input  id="fileDialog" type="file" />
+        </div>
+
+
+    </template>
+
+    <script type="text/javascript">
+        // Initialize the widget when the DOM is ready
+        Polymer('file-uploader', {
+
+            openDialog: function(event){
+                console.log("inside OPEN DIALOG");
+
+                // register listener
+                require('ipc').on("openFileAndFolderPickerReply", function(response){
+                    console.log("{openFileAndFolderPickerReply}" +response);
+                    console.dir(response);
+                });
+
+                // ask native shell to open file picker dialog
+                require('ipc').send("openFileAndFolderPickerRequest");
+
+            },
+
+            chooseFile: function(){
+                console.log("{CHOOSE FILE}");
+                var chooser = this.$.fileDialog;
+                console.log("chooser = " +chooser);
+                chooser.addEventListener("change", function(evt) {
+                    console.log(this.value);
+                }, false);
+
+                console.log("click=" +chooser.trigger('click'));
+            },
+
+            toggle: function () {
+                this.super();
+            },
+
+            open: function () {
+                this.super();
+            },
+
+            close: function () {
+                this.super();
+            },
+
+            domReady: function(){
+            }
+
+        });
+    </script>
+
+</polymer-element>

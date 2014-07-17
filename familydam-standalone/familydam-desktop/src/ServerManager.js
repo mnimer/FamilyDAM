@@ -38,7 +38,9 @@
 
     var link = function(_settings, _appRoot, _splashWindow, _mainWindow)
     {
-        this.settings = JSON.parse(_settings);
+        console.log("{serverManager} link");
+        console.dir(_settings);
+        this.settings = _settings;
         this.appRoot = _appRoot;
         this.splashWindow = _splashWindow;
         this.mainWindow = _mainWindow;
@@ -72,10 +74,11 @@
     var loadApplication = function(_settings)
     {
         console.log("Load embedded application (" +new Date() +")");
-        splashWindow.close();
+        splashWindow.hide();
 
         console.log("splash:" +this.splashWindow );
         console.log("main:" +this.mainWindow );
+
 
         this.mainWindow.loadUrl('http://localhost:' +this.settings.port +'/dashboard');
         this.mainWindow.show();
@@ -144,7 +147,6 @@
             link(_settings, _appRoot, _splashWindow, _mainWindow);
 
             // setup logs
-            _settings = JSON.parse(_settings);
             var outLogFile = _settings['storageLocation'] +'/familydam-out.log';
             var outLogErrFile = _settings['storageLocation'] +'/familydam-err.log';
 

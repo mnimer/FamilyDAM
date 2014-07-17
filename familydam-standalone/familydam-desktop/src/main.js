@@ -20,14 +20,22 @@ var ipc = require('ipc');
 var serverManager = require('./ServerManager');
 var configurationManager = require('./ConfigurationManager');
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var fileManager = require('./FileManager');  // Module to create native browser window.
 
 // Report crashes to our server.
 require('crash-reporter').start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the javascript object is GCed.
+var splashWindow = null;
+var configWindow = null;
 var mainWindow = null;
 
+
+
+/******************************
+ * Event Handlers
+ */
 process.on('exit', function () {
     serverManager.kill();
 });
@@ -79,7 +87,15 @@ app.on('ready', function() {
     // Create the browser window.
     splashWindow = new BrowserWindow({width:600, height:400, center:true, frame:false, show:true});
     configWindow = new BrowserWindow({width:600, height:400, center:true, frame:false, show:false});
-    mainWindow = new BrowserWindow({width:1024, height:800, center:true, frame:true, show:false, title:'FamilyDAM - The Digital Asset Manager for Families'});
+    mainWindow = new BrowserWindow({
+        width:1024,
+        height:800,
+        center:true,
+        frame:true,
+        show:false,
+        title:'FamilyDAM - The Digital Asset Manager for Families'});
+
+
 
     // and load the index.html of the app.
     console.log('open:' +'file://' + __dirname + '/splash.html');
@@ -129,10 +145,22 @@ app.on('ready', function() {
 });
 
 
+
+/******************************
+ * App level functions
+ */
+
+/**
+ * Launch the main application
+ * @param _settings
+ */
 app.loadMainApplication = function(_settings) {
     //start jar
-    console.log("{loadMainApplication}" +_settings);
-    serverManager.startServer(_settings, app, splashWindow, mainWindow);
+    //console.log("{loadMainApplication}" +_settings);
+    //serverManager.startServer(_settings, app, splashWindow, mainWindow);
+
+    mainWindow.show();
+    mainWindow.loadUrl('file://' + __dirname  +'/dashboard-prototype/index.html');
 };
 
 
@@ -145,6 +173,9 @@ app.sendClientMessage = function(_type, _message, _logToConsole)
     if (splashWindow !== undefined && splashWindow.webContents != null) splashWindow.webContents.send(_type, _message);
     if (mainWindow !== undefined && mainWindow.webContents != null) mainWindow.webContents.send(_type, _message);
 };
+
+
+
 
 ipc.on('asynchronous-reply', function(arg) {
     console.log("Asyn-Reply:" +arg); // prints "pong"

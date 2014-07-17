@@ -48,6 +48,7 @@ var App = angular.module('dashboard', [
         require('./modules/user/usermanager').name])
 
     .service('appService', require('./services/AppService'))
+    .service('shellService', require('./services/ShellService'))
     .service('fileService', require('./services/FileService'))
     .service('loginService', require('./services/LoginService'))
     .service('photoService', require('./services/PhotoService'))
@@ -80,6 +81,8 @@ var App = angular.module('dashboard', [
         // For any unmatched url, redirect to /state1
         $urlRouterProvider.when('', '/login');
         $urlRouterProvider.otherwise("/login");
+
+        shellService.send('dialog', {type:'pick_file'});
     }])
     .factory('constants', function () {
         return {
