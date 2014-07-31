@@ -1,0 +1,120 @@
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<div class="photos section"  ng-class="{'col-xs-12':!showSidebar, 'col-sm-9': showSidebar}">
+    <div id="toolbar">
+        <ol class="breadcrumb page-header" style="display: inline;">
+            <li ng-repeat="item in breadcrumb" ng-class="{'active':$last}"><a ng-click="selectFolder(item.path)">{{item.name}}</a>
+            </li>
+        </ol>
+    </div>
+
+    <div class="content">
+        <div class="buttonBar">
+
+            <button ui-sref="photos:files"
+                    class="glyphicon glyphicon-list btn btn-default btn-md"
+                    ng-class="{active: layout == 'files'}" ng-click="layout = 'files'"></button>
+
+            <button ui-sref="photos"
+                    class="glyphicon glyphicon-th btn btn-default btn-md"
+                    ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></button>
+
+            <span class="pull-right">
+                <!--div column-slider eventName="photo:grid:columns" min="2" max="12"></div-->
+                <span style="display: inline-block; width: 100px; padding-right: 10px;">
+                    <slider floor="100" ceiling="{{elementWidth}}" step="10" precision="2" ng-model="scale" ></slider>
+                </span>
+
+                <button
+                        class="glyphicon glyphicon-edit btn btn-default btn-md"
+                        ng-click="" ng-disabled="true"
+                        ng-show="mode=='DETAILS'"></button>
+
+                <button
+                        class="glyphicon glyphicon-trash btn btn-default btn-md"
+                        tooltip="Delete selected item(s)" tooltip-placement="bottom"
+                        ng-click="deletePaths()" ng-disabled="selectedTags.length == 0"></button>
+
+            </span>
+        </div>
+
+
+
+        <div >
+            <div class="" ng-repeat="item in assets | orderBy:sortPrimaryType">
+                <div><h3>{{item.title}}</h3></div>
+                <ul class="row ">
+                    <li ng-click="toggleSelection(data, $event)" ng-dblClick="gotoDetails(data)"
+                        ng-repeat="data in item.data" >
+                        <div class="thumbnail" ng-class="{ 'selectedImage': isSelected(data) }" style="width:{{scale}}px; height:{{scale}}px;">
+                            <img ng-src="{{data.links.image}}.scale.w:500.png" class="" /><br/>
+                            <!--a class="glyphicon title"
+                               ng-dblClick="gotoDetails('{{data['jcr:uuid']}}')"> {{data.name}}</a-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div ng-show="assets.length==0">No results found</div>
+            <!-- button ng-click="pageGrid()">Load More</button -->
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- start: Widgets Area -->
+<aside id="sidebar-right" class="col-sm-3 hidden-xs" ng-show="showSidebar">
+<!--
+    <ul class="nav nav-tabs">
+        <li ng-class="{ active: $state.includes('photos:grid.filter') }"><a ui-sref="photos:grid.filter">Filters</a></li>
+        <li ng-class="{ active: $state.includes('photos:grid.keywords') }"><a ui-sref="photos:grid.keywords">Keywords</a></li>
+    </ul>
+
+    <div ui-view ></div>
+-->
+
+
+    <tabset>
+        <tab heading="Filters">
+            <div class="sidebarTab">
+                <h4>Filter by location</h4>
+                <div x-location-filter event="filter:location:path" root="/content/dam"></div>
+                <br/>
+                <h4>Filter by date</h4>
+                <div x-date-filter event="filter:date:from" label="Photos After"></div>
+                <div x-date-filter event="filter:date:to" label="Photos Before"></div>
+                <br/>
+                <h4>Filter by tags</h4>
+                <div x-tag-cloud-filter event="filter:tags" root="/content/dam/photos"></div>
+            </div>
+        </tab>
+        <tab heading="Keywords">
+            <div>
+                <div x-keywords
+                     path="{{currentPath}}"
+                     items="{{selectedItems}}"></div>
+            </div>
+        </tab>
+    </tabset>
+
+
+</aside>
+<!-- end: Widgets Area -->

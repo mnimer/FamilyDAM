@@ -1,0 +1,214 @@
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<link rel="import" href="../../../components/core-selection/core-selection.html">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="application/javascript" src="../../../components/classie/classie.js"></script>
+<script type="application/javascript" src="../../../components/isotope/dist/isotope.pkgd.js"></script>
+
+
+<polymer-element name="dam-photo">
+
+    <template>
+        <link rel="stylesheet" href="dam-photo.css">
+
+        <h2>{{label}}</h2>
+        <div id="container" style="width:100%;">
+            <template repeat="{{item in model}}">
+                <div id="item" class="item photo" on-tap="{{tapHandler}}"
+                     style="width: {{item.width}}px; height: {{item.height}}px;">
+                    <!--core-selection id="selection" multi="{{multi}}" on-core-select="{{selectedHandler}}"></core-selection-->
+                    <img src="{{item.src}}"/>
+                </div>
+            </template>
+        </div>
+    </template>
+
+
+    <script type="text/javascript">
+        // Initialize the widget when the DOM is ready
+        Polymer('dam-photo', {
+
+            selectedItems: [],
+
+            publish: {
+                model: [],
+
+
+                /**
+                 *
+                 * The property set on the list view data to represent selection state.
+                 * This should set so that it does not conflict with other data properties.
+                 * Note, selection data is not stored on the data in given in the data property.
+                 *
+                 * @attribute selectedProperty
+                 * @type string
+                 * @default 'selected'
+                 */
+                selectedProperty: 'selected',
+
+                /**
+                 *
+                 * Set to true to support multiple selection.
+                 *
+                 * @attribute multi
+                 * @type boolean
+                 * @default false
+                 */
+                multi: true
+
+            },
+
+            ready: function (e) {
+                console.log("ready");
+                this.onMutation(this, this.childrenUpdated);
+            },
+
+            childrenUpdated: function (observer, mutations) {
+                // getDistributedNodes() has new stuff.
+                console.log("children updated");
+                console.dir(observer);
+                console.dir(mutations);
+
+                //console.dir( getDistributedNodes() );
+                // Monitor again.
+                this.onMutation(this, this.childrenUpdated);
+            },
+
+            attached: function (e) {
+                console.log("attached");
+                console.log(e);
+                //iso.layout();
+            },
+
+            domReady: function (e) {
+                console.log("domReady");
+                // init
+                var _container = this.$.container;
+                var _initIsotope = this.initIsotope;
+                setTimeout(function () {
+                    _initIsotope(_container);
+                }, 300);
+
+
+                // Observe changes
+                // TODO: Make it cleaner
+                // create an observer instance
+                /***
+                 var that = this;
+                 var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        console.log("observation", mutation.type, arguments, mutations);
+                        if(mutation.addedNodes){
+                            //DRY, performance
+                            console.log("something was added")
+                            //that.createItemsList();
+                            //that.refresh();
+                        }
+                    });
+                });
+                 // pass in the target node, as well as the observer options
+                 observer.observe(this, { childList: true });
+                 ***/
+            },
+
+
+            /**
+             * With a slight delay to let the items finish getting added to the template repeater and then initialize the isotope layout
+             * @param _container
+             */
+            initIsotope: function (_container) {
+                var iso = new Isotope(_container, {
+                    // options
+                    itemSelector: '.item',
+                    layoutMode: 'masonry'
+                });
+
+                //iso.appended( elem );
+                //iso.layout()
+                //iso.on( 'layoutComplete', function( isoInstance, laidOutItems ) {});
+            },
+
+            // list selection
+            tapHandler: function (e) {
+                console.log("{TAP HANDLER}");
+                console.dir(e);
+
+                if (e.target === this)
+                {
+                    return;
+                }
+
+                if (this.sync)
+                {
+                    this.syncData();
+                }
+
+                var n = e.target;
+                var model = n.templateInstance && n.templateInstance.model;
+                if (model)
+                {
+                    var that = this;
+                    var _item = model.item;
+
+                    if( _item.selected)
+                    {
+                        _item.selected = false;
+                        delete this.selectedItems[this.selectedItems.indexOf(_item)];
+                        return;
+                    }else
+                    {
+                        _item.selected = true;
+                        this.selectedItems.push(_item)
+
+
+                        var timerId;
+                        var firstClick = 0;
+                        var now = Number(new Date());
+                        if (firstClick > 0 && (now - firstClick) < 300)
+                        {
+                            now = 0;
+                            window.clearTimeout(timerId);
+                            that.doubleClickHandler(e, _item);
+                        } else
+                        {
+                            firstClick = now;
+                            timerId = window.setTimeout(function () {
+                                that.singleClickHandler(e, _item);
+                            }, 310);
+                        }
+                        //var vi = model._virtualIndex, pi = model._physicalIndex;
+                        //var data = this.data[vi], item = this._physicalItems[pi];
+                        //this.$.selection.select(data);
+                        //this.asyncFire('photo-selected', {data: data, item: item});
+                    }
+                }
+            },
+
+            singleClickHandler:function(_event, _item){
+                console.log("single click");
+                _event.target.style.border="1px solid blue";
+            },
+
+            doubleClickHandler:function(_event, _item){
+                console.log("double click");
+            }
+
+        });
+    </script>
+
+</polymer-element>

@@ -1,0 +1,293 @@
+<!doctype html>
+
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<html>
+<head>
+    <title>FamilyD.A.M. Configuration</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+    <script type="application/javascript" src="components/platform/platform.js"></script>
+    <link rel="import" href="components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="components/core-icons/core-icons.html">
+    <link rel="import" href="components/core-item/core-item.html">
+    <link rel="import" href="components/core-layout/core-layout.html">
+    <link rel="import" href="components/core-menu/core-menu.html">
+    <link rel="import" href="components/core-pages/core-pages.html">
+    <link rel="import" href="components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="components/paper-button/paper-button.html">
+    <link rel="import" href="components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
+    <link rel="import" href="components/paper-fab/paper-fab.html">
+    <link rel="import" href="components/paper-input/paper-input.html">
+    <link rel="import" href="components/paper-toggle-button/paper-toggle-button.html">
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            src: url('assets/fonts/RobotoTTF/Roboto-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'Roboto Light';
+            font-style: normal;
+            src: url('assets/fonts/RobotoTTF/Roboto-Light.ttf');
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+
+        }
+
+        body {
+            font-family: 'Roboto Light', 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        [main] {
+            height: 100%;
+            background-color: #aa1111;
+        }
+
+        .content
+        {
+            margin:50px;
+            background-color: #fff;
+        }
+
+        core-toolbar
+        {
+            background-color: #526E9C; color: #fff;
+            width: 100%;
+        }
+
+        paper-fab {
+            background-color: rgb(252, 252, 252);
+            fill: rgb(102, 100, 100);
+            position: absolute;
+            bottom: -28px;
+            right: 24px;
+        }
+        core-drawer-panel[narrow] {
+            display: none
+        }
+
+
+        /*********
+        body { font-family: sans-serif; } section { overflow: auto; } button { border: 1px solid {{g.theme.colorOne | cycle(-50)}}; border-radius: 4px; background-color: {{g.theme.colorOne}}; color: {{g.theme.colorTwo}}; } button:active { border: 1px solid {{g.theme.colorTwo | cycle(50)}}; border-radius: 4px; background-color: {{g.theme.colorTwo}}; color: {{g.theme.colorOne}}; } :host { border-bottom: 8px solid {{g.theme.colorOne}}; color: {{g.theme.colorOne | cycle(100)}}; background-color: {{g.theme.colorTwo}}; } :host { box-sizing: border-box; background-color: {{g.theme.colorOne}}; border: 8px solid {{g.theme.colorOne | cycle(50)}}; color: {{g.theme.colorOne | cycle(-100)}}; } :host(:nth-of-type(2n + 1)) { background-color: {{g.theme.colorTwo}}; border: 8px solid {{g.theme.colorTwo | cycle(-50)}}; color: {{g.theme.colorTwo | cycle(100)}} }
+        *********/
+    </style>
+</head>
+<body  unresolved touch-action="auto" onload="updatePageTitle(0);">
+
+<core-scaffold>
+
+
+    <core-header-panel navigation flex mode="seamed">
+        <core-toolbar tool>Family D.A.M.</core-toolbar>
+        <core-menu >
+            <core-item >Configuration</core-item>
+            <core-item icon="folder" onclick="menuSelect(0)">Storage Location</core-item>
+            <core-item icon="lock" onclick="menuSelect(1)">Security</core-item>
+        </core-menu>
+    </core-header-panel>
+
+
+
+
+    <core-toolbar tool>
+        <div id="pageTitle"></div>
+        <paper-fab icon="arrow-forward" onclick="handleMenuAction();"></paper-fab>
+    </core-toolbar>
+
+    <core-pages id="configPages" selected="0">
+
+
+        <div class="content">
+            <div vertical layout>
+                <div>
+                    <p>Server Port (local)<br/>
+                        This is the http port that the embedded web server will use. </p>
+                </div>
+                <div>
+                    <paper-input id="portInput"
+                                 floatinglabel
+                                 label="Server Port"
+                                 required="true"
+                                 validate="^[0-9]{2,}$"
+                                 error="Numeric value is required"
+                                 onchange="updatePort(event, this)"></paper-input>
+                </div>
+
+                <div>
+                    <p>
+                        Select the storage location for us to use to store all of your digital assets (photos, music, movies, etc.).<br/>
+                        The location can be either a folder on a <strong>Local Hard Drive</strong>, a <strong>USB Drive</strong>, <strong>Cloud Drive</strong>, or a <strong>Network Mapped Drive</strong>.</p>
+                </div>
+                <div>
+                    <paper-button icon="folder" onchange="openNativeDialog(event, this)" label="Browse"></paper-button>
+                    <paper-input id="storageLocationInput"
+                                 floatinglabel
+                                 required="true"
+                                 error="Location is required"
+                                 label="Storage location"
+                                 onchange="updateLocation(event, this)" style="width:100%;"></paper-input>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div vertical layout>
+                <div>Configure Security</div>
+                <div horizontal layout>
+                    <paper-input floatinglabel label="First Name" ></paper-input>
+                    <paper-input floatinglabel label="Last Name" ></paper-input>
+                </div>
+                <br/>
+                <div>Login:</div>
+                <div><paper-input floatinglabel label="Username" ></paper-input></div>
+                <div><paper-input floatinglabel label="Password" ></paper-input></div>
+            </div>
+        </div>
+
+
+        <!--
+        <div class="content">
+            Core Modules<br/>
+            <core-field>
+                <core-item icon="apps">Pictures</core-item>
+                <div style="left: 45px;position: relative;">OFF&nbsp;&nbsp;<paper-toggle-button checked></paper-toggle-button>&nbsp;&nbsp;&nbsp;ON</div>
+            </core-field>
+            <br/><br/>
+            <core-field>
+                <core-item icon="apps" label="Music"></core-item>
+                <div style="left: 45px;position: relative;">OFF&nbsp;&nbsp;<paper-toggle-button checked></paper-toggle-button>&nbsp;&nbsp;&nbsp;ON</div>
+            </core-field>
+            <br/><br/>
+            <core-field>
+                <core-item icon="apps" label="Movies"></core-item>
+                <div style="left: 45px;position: relative;">OFF&nbsp;&nbsp;<paper-toggle-button checked></paper-toggle-button>&nbsp;&nbsp;&nbsp;ON</div>
+            </core-field>
+        </div>
+        -->
+    </core-pages>
+
+</core-scaffold>
+<script type="application/javascript">
+
+    var ipc = require('ipc');
+
+    var settings;
+    var currentPageIndex = 0;
+
+    var openWizard = function(lang) {
+        document.querySelector('paper-dialog').toggle();
+    }
+
+    var handleMenuAction = function()
+    {
+        var page = document.querySelector('#configPages');
+        if( currentPageIndex < (page.items.length-1) )
+        {
+            menuSelect(++currentPageIndex);
+        }else{
+            var _settingJson = JSON.stringify(settings);
+            ipc.sendSync('saveConfig', _settingJson);
+        }
+    }
+
+    var menuSelect = function(indx)
+    {
+        currentPageIndex = indx;
+
+        var page = document.querySelector('#configPages');
+        page.selected = indx;
+        updatePageTitle(indx);
+    }
+
+    var openNativeDialog = function(event, elem)
+    {
+        event.preventDefault();
+        alert('todo: open dialog');
+    }
+
+    var updatePageTitle = function(indx){
+        var title = document.querySelector("#pageTitle");
+
+        switch(indx)
+        {
+            case 0:
+                title.innerHTML = "Storage: Location";
+                break;
+            case 1:
+                title.innerHTML = "Security: Administrator";
+                break;
+            case 2:
+                title.innerHTML = "Apps: ";
+                break;
+
+        }
+    }
+
+    /******************
+     * Form Handlers
+     ******************/
+    var updatePort = function(event, detail, sender){
+        console.log("update handler:" +event.target.id);
+        console.dir(event.target.value);
+        settings.port = event.target.value;
+    };
+
+    /******************
+     * Form Handlers
+     ******************/
+    var updateLocation = function(event, detail, sender){
+        console.log("update handler:" +event.target.id);
+        console.dir(event.target.value);
+        settings.storageLocation = event.target.value;
+    };
+
+    /********************
+     * Incoming Event Handlers
+     */
+    require('ipc').on('settingConfig', function(message) {
+        settings = message;
+        for(var k in message){
+            console.log(k +":" +message[k]);
+        }
+
+        document.querySelector("#portInput").inputValue = settings.port;
+        document.querySelector("#storageLocationInput").inputValue = settings.storageLocation;
+        //alert( message['storageLocation']);
+    });
+
+</script>
+
+
+
+</body>
+</html>
+

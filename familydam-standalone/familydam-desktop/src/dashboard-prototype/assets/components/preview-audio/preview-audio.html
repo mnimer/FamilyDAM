@@ -1,0 +1,91 @@
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<link rel="import" href="../../../components/paper-progress/paper-progress.html">
+<link rel="import" href="../../../components/core-field/core-field.html">
+<link rel="import" href="../../../components/core-list/core-list.html">
+<link rel="import" href="../../../components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../components/paper-toggle-button/paper-toggle-button.html">
+
+<polymer-element name="preview-audio" extends="core-overlay">
+
+    <style>
+        .sidebar:focus
+        {
+            outline: none;
+        }
+    </style>
+    <template>
+
+        <div id="musicPreview" class="sidebar preview" >
+            <h2>Music Preview</h2>
+
+            <img id="imgPreviewTag" src="http://lorempixel.com/640/1136/abstract/"
+                 style="width: 220px; height:200px;"/>
+            <audio controls id="audioPreviewTag" style="width: 220px;">
+                <source id="audioPreviewTagMp4" src="" type="audio/">
+            </audio>
+
+            <h3>Info</h3>
+
+            <div class="metadata">Artist: Aerosmith</div>
+            <div class="metadata">Album: XXXXXX XXXXX</div>
+            <div class="metadata">Year: 1998</div>
+            <div class="metadata">File Name: XXXXXXXXX.jpg</div>
+            <div class="metadata">Location: /music/mike/2014</div>
+
+            <h3>Album Tracks</h3>
+
+            <div class="metadata">1. XXXXXXXX</div>
+            <div class="metadata">2. XXXXXXX XXX</div>
+            <div class="metadata">3. XXXXXXX XXXXX</div>
+            <div class="metadata">4. XXXX XXXX</div>
+            <div class="metadata">5. XXXXX XXXXX</div>
+            <div class="metadata">6. XXXX XXXX</div>
+            <div class="metadata">7. XX XXXXXX</div>
+            <div class="metadata">8. XXXXXX XX</div>
+        </div>
+
+
+    </template>
+
+    <script type="text/javascript">
+        // Initialize the widget when the DOM is ready
+        Polymer('preview-audio', {
+            publish: {
+                data: {}
+            },
+
+            dataChanged: function (arg1, newVal, arg3) {
+                data = newVal;
+                this.$.audioPreviewTagMp4.type = "audio/ogg";
+                this.$.audioPreviewTagMp4.src = data.src;
+                this.$.audioPreviewTag.load();
+
+                //todo throw event
+            },
+
+            domReady: function () {
+
+            }
+
+        });
+    </script>
+
+
+</polymer-element>

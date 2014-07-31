@@ -1,0 +1,201 @@
+/*
+ * This file is part of FamilyDAM Project.
+ *
+ *     The FamilyDAM Project is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ *
+ *     The FamilyDAM Project is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ *
+ *     You should have received a copy of the GNU General Public License
+ *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@font-face
+{
+    font-family: 'Roboto';
+    font-style:  normal;
+    src:         url('assets/fonts/RobotoTTF/Roboto-Regular.ttf');
+}
+
+@font-face
+{
+    font-family: 'Roboto Light';
+    font-style:  normal;
+    src:         url('assets/fonts/RobotoTTF/Roboto-Light.ttf');
+}
+
+html, body
+{
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body
+{
+    font-family:       'Roboto Light', 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+    -webkit-transform: translateZ(0);
+    transform:         translateZ(0);
+    font-size:         14px;
+    font-size:         1.4rem;
+    color:             rgba(0, 0, 0, 0.87);
+    margin:            0;
+}
+
+
+preview-photo::shadow .metadata
+{
+    font-size: 1.3rem;
+    line-height: 3.0rem;
+}
+preview-audio::shadow .metadata
+{
+    font-size: 1.3rem;
+    line-height: 3.0rem;
+}
+preview-video::shadow .metadata
+{
+    font-size: 1.3rem;
+    line-height: 3.0rem;
+}
+
+[main]{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+}
+
+[folders]{
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+core-scroll-header-panel
+{
+    position: absolute;
+    top:      0;
+    right:    0;
+    bottom:   0;
+    left:     0;
+}
+
+/* background for toolbar when it is at its full size */
+core-scroll-header-panel::shadow #headerBg
+{
+    background-color: #5c6bc0; /* #03a9f4;*/
+}
+
+/* background for toolbar when it is condensed */
+core-scroll-header-panel::shadow #condensedHeaderBg
+{
+    background-color: #5c6bc0; /* #03a9f4;*/
+}
+
+
+/* background for toolbar when it is condensed */
+#mainToolbar::shadow > * {
+    color: #000;
+}
+
+#mainToolbar::shadow #condensedHeaderBg
+{
+    background-color: #fff;/*#738ffe;*/
+}
+
+
+
+
+#rightDrawer::shadow > * {
+    color: #000;
+}
+
+/* background for toolbar when it is at its full size */
+#rightDrawer core-scroll-header-panel::shadow #headerBg
+{
+    background-color: #3949ab /* #0277bd; */
+}
+
+/* background for toolbar when it is condensed */
+#rightDrawer core-scroll-header-panel::shadow #condensedHeaderBg
+{
+    background-color: #3949ab /* #0277bd; */
+}
+
+
+
+core-toolbar
+{
+    color:            #f1f1f1;
+    fill:             #f1f1f1;
+    background-color: transparent;
+}
+
+core-toolbar paper-fab
+{
+    top: 35px;
+    right: 16px;
+    position: absolute;
+}
+
+core-toolbar paper-tabs
+{
+    width: 300px;
+}
+
+.title
+{
+    -webkit-transform-origin: 0;
+    transform-origin:         0;
+    font-size:                40px;
+}
+
+.content
+{
+    padding: 10px 30px;
+}
+
+
+
+/******** core-list ***********/
+
+
+core-list
+{
+    display: block;
+    margin:  0 auto;
+}
+
+.item
+{
+    box-sizing:       border-box;
+    padding:          4px;
+    cursor:           default;
+    background-color: white;
+    overflow:         hidden;
+}
+
+.folder{
+    height: 30px;
+}
+
+.folderName{
+    vertical-align: bottom;
+}
+
+.timestamp
+{
+    margin-left: 10px;
+    font-size:   12px;
+    opacity:     0.8;
+}
+

@@ -1,0 +1,153 @@
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<link rel="import" href="../../../components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../components/paper-tabs/paper-tab.html">
+<link rel="import" href="../../../components/paper-input/paper-input.html">
+
+<polymer-element name="preview-photo" extends="core-overlay">
+
+    <style>
+        .sidebar:focus{
+            outline: none;
+        }
+    </style>
+    <template>
+
+        <div id="photoPreview" class="sidebar preview">
+            <paper-tabs id="photoPreviewTabs" selected="0">
+                <paper-tab>Preview</paper-tab>
+                <paper-tab>EXIF</paper-tab>
+                <paper-tab>Location</paper-tab>
+            </paper-tabs>
+
+            <div id="infoPanel" class="previewPanel">
+
+                <img id="imgPreviewTag" style="width: 240px; height:240px;"/>
+
+
+                <h3>File</h3>
+
+                <div class="metadata">File Name: XXXXXXXXX.jpg</div>
+                <div class="metadata">Caption: XXX XXX XXXXXX XXXX</div>
+                <div class="metadata">Location: /photos/mike/2014</div>
+
+
+                <h2>Keywords</h2>
+                <multi-value-suggestbox id="multi_suggest"
+                                        suggestions=""
+                                        options='{
+                                                                    "allow_space": true,
+                                                                    "allow_nonmatching": true
+                                                                }'>
+                </multi-value-suggestbox>
+
+                <h3>Download</h3>
+
+                <div horizontal layout style="vertical-align: bottom; height:30px;">
+                    <paper-input label="width" floatinglabel
+                                 style="width:50px;"
+                                 value="3000"
+                                 validate="^[0-9]*$" error="Input is not a number!"></paper-input>
+                    <span style="width: 20px;font-size: 25px;"> x </span>
+                    <paper-input label="height" floatinglabel
+                                 style="width:50px;"
+                                 value="2750"
+                                 validate="^[0-9]*$" error="Input is not a number!"></paper-input>
+                    <paper-button label="download" role="button" tabindex="0" aria-label="download"
+                                  class=""></paper-button>
+                </div>
+            </div>
+
+
+            <div id="metadataPanel" class="previewPanel" style="display: none;">
+                <h3>Metadata / EXIF</h3>
+
+                <div class="metadata">Date Created: 12/28/2014 03:33:23pm</div>
+                <div class="metadata">Dimensions: 3000x3000</div>
+                <div class="metadata">Exposure: 1/60 sec @ f4.0</div>
+                <div class="metadata">Focal Length: 10.788mm</div>
+                <div class="metadata">ISO: 400</div>
+            </div>
+
+
+            <div id="locationPanel" class="previewPanel" style="display: none;">
+                <h3>Location</h3>
+                <img src="http://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=240x240&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794"
+                     style="width: 240px; height: 240px"/>
+
+                <div class="metadata">-48.23124 121.21425</div>
+            </div>
+
+
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        // Initialize the widget when the DOM is ready
+        Polymer('preview-photo', {
+
+            publish: {
+                data: {}
+            },
+
+            dataChanged: function (arg1, newVal, arg3) {
+                data = newVal;
+                this.$.imgPreviewTag.src = data.src;
+            },
+
+            multiValueInputChangedHandler: function (e) {
+                var el = document.querySelector('#multi_suggest');
+                el.suggestions = ["Alice", "Ali", "Bob", "Fitzpatrick", "Juan", "Kaya", "Thomas", "Zed"];
+            },
+
+            attributeChanged: function (attrName, oldVal, newVal) {
+                //var newVal = this.getAttribute(attrName);
+                console.log(attrName, 'old: ' + oldVal, 'new:', newVal);
+            },
+
+            domReady: function () {
+
+                var that = this;
+
+                var el = this.$.multi_suggest;
+                el.selectedItems = ['travel', 'film', 'fun'];
+
+
+                var tabs = this.$.photoPreviewTabs;
+                tabs.addEventListener('core-select', function(evnt,a2) {
+                    console.log("Selected: " + evnt.target.selected);
+
+                    that.$.infoPanel.style.display = "none";
+                    that.$.metadataPanel.style.display = "none";
+                    that.$.locationPanel.style.display = "none"
+
+                    if( evnt.target.selected == 0 ) that.$.infoPanel.style.display = "block";
+                    if( evnt.target.selected == 1 ) that.$.metadataPanel.style.display = "block";
+                    if( evnt.target.selected == 2 ) that.$.locationPanel.style.display = "block";
+                });
+
+            }
+
+
+
+        });
+    </script>
+
+
+</polymer-element>

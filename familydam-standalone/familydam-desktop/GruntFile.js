@@ -151,13 +151,7 @@ module.exports = function (grunt) {
                       },
                       {
                          cwd: './bower_components/',
-                         src: 'core-*/**',
-                         dest: './dist/dashboard-prototype/components/',
-                         expand: true
-                     },
-                     {
-                         cwd: './bower_components/',
-                         src: 'paper-*/**',
+                         src: '**',
                          dest: './dist/dashboard-prototype/components/',
                          expand: true
                      },

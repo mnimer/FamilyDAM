@@ -16,21 +16,114 @@
   -->
 
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="../../plupload-2.1.2/js/plupload.full.min.js"></script>
-<script src="../../plupload-2.1.2/js/plupload.dev.js"></script>
-<script src="../../plupload-2.1.2/js/moxie.js"></script>
-
+<link rel="import" href="../../../components/paper-progress/paper-progress.html">
+<link rel="import" href="../../../components/core-field/core-field.html">
+<link rel="import" href="../../../components/core-list/core-list.html">
+<link rel="import" href="../../../components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../components/paper-toggle-button/paper-toggle-button.html">
 
 <polymer-element name="file-uploader" extends="core-overlay">
 
     <template>
-        <div style="background-color: white; padding:100px;border:1px solid #000;">
-            <h2>Test Dialog</h2>
-            <input type="text" id="file">
-            <button on-click="{{openDialog}}" >Open Dialog Test</button>
-            <button on-click="{{chooseFile}}" >Choose File test</button>
-            <br/><br/>
-            <input  id="fileDialog" type="file" />
+        <div style="background-color: white; padding:10px; margin-top: 64px; border:1px solid #000; width:600px; height: 400px">
+
+            <paper-tabs id="primaryTabs" selected="0" style="width:100%; background-color: #03a9f4; color:white;">
+                <paper-tab>Upload</paper-tab>
+                <paper-tab>Link</paper-tab>
+            </paper-tabs>
+
+
+            <div id="copyFilesBody" >
+                <div horizontal layout center-justified style="border: 1px dashed darkgray; background-color: #d3d3d3; height:25%; padding: 10px;">
+                    <div style="text-align: center;">
+                        Drag Files<br/>
+                        [Select files or folders]
+                    </div>
+                </div>
+
+
+                <h2>Folders:</h2>
+                <core-list>
+                    <div layout horizontal style="border-bottom: 1px solid #d3d3d3;">
+                        <div>
+                            <core-icon-button icon="close"></core-icon-button>
+                        </div>
+                        <div>
+                            <core-icon-button icon="backup"></core-icon-button>
+                        </div>
+                        <div flex>
+                            /Users/mnimer/Pictures/2011<br/>
+                            <paper-progress value="23" secondaryProgesss="30"></paper-progress>
+                        </div>
+                        <div>
+                            <core-field>
+                                <paper-toggle-button checked="true"></paper-toggle-button><label style="left:5px;position:relative;">Recusive </label>
+                            </core-field>
+                            <core-field>
+                                <paper-toggle-button checked="true"></paper-toggle-button><label style="left:5px;position:relative;">Maintain Folder Structure </label>
+                            </core-field>
+                        </div>
+
+                    </div>
+                </core-list>
+
+
+                <h2>Files:</h2>
+                <core-list>
+                    <div layout horizontal style="border-bottom: 1px solid #d3d3d3;">
+                        <div>
+                            <core-icon-button icon="close"></core-icon-button>
+                            <core-icon-button icon="backup"></core-icon-button>
+                        </div>
+                        <div flex>
+                            file: XXXX.jpg<br/>
+                            <paper-progress value="23" secondaryProgesss="30"></paper-progress>
+                        </div>
+
+                    </div>
+                    <div layout horizontal style="border-bottom: 1px solid #d3d3d3;">
+                        <div>
+                            <core-icon-button icon="close"></core-icon-button>
+                            <core-icon-button icon="backup"></core-icon-button>
+                        </div>
+                        <div flex>
+                            file: XXXX.jpg<br/>
+                            <paper-progress value="23" secondaryProgesss="30"></paper-progress>
+                        </div>
+
+                    </div>
+                    <div layout horizontal style="border-bottom: 1px solid #d3d3d3;">
+                        <div>
+                            <core-icon-button icon="close"></core-icon-button>
+                            <core-icon-button icon="backup"></core-icon-button>
+                        </div>
+                        <div flex>
+                            file: XXXX.jpg<br/>
+                            <paper-progress value="23" secondaryProgesss="30"></paper-progress>
+                        </div>
+
+                    </div>
+
+                </core-list>
+
+                <div id="testElementsToDelete" style="display: none">
+                    <h2>Test Dialog</h2>
+                    <input type="text" id="file">
+                    <button on-click="{{openDialog}}" >Open Dialog Test</button>
+                    <button on-click="{{chooseFile}}" >Choose File test</button>
+                    <br/><br/>
+                    <input  id="fileDialog" type="file" />
+                </div>
+            </div>
+        </div>
+
+        <div id="linkFilesBody" style="position: absolute; top: 115px; display:none" >
+            <div horizontal layout center-justified style="border: 1px dashed darkgray; background-color: #d3d3d3; height: 320px;padding: 10px;width: 580px;margin: 10px;">
+                <div style="text-align: center;">
+                    Drag Files<br/>
+                    [Select files or folders]
+                </div>
+            </div>
         </div>
 
 
@@ -65,6 +158,8 @@
                 console.log("click=" +chooser.trigger('click'));
             },
 
+
+
             toggle: function () {
                 this.super();
             },
@@ -78,9 +173,30 @@
             },
 
             domReady: function(){
+
+                var linkFiles = this.$.linkFilesBody;
+                var copyFiles = this.$.copyFilesBody;
+                var tabs =  this.$.primaryTabs;//document.querySelector('paper-tabs');
+
+                tabs.addEventListener('core-select', function() {
+                    console.log("Selected: " + tabs.selected);
+
+                    if (tabs.selected == 0)
+                    {
+                        linkFiles.style.display = "none";
+                        copyFiles.style.display = "block";
+                    }
+                    if (tabs.selected == 1)
+                    {
+                        copyFiles.style.display = "none";
+                        linkFiles.style.display = "block";
+                    }
+
+                });
             }
 
         });
     </script>
+
 
 </polymer-element>

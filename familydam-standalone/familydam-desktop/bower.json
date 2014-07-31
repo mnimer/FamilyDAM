@@ -32,10 +32,12 @@
     "videogular-themes-default": "~0.3.1",
     "angular-slider": "~0.1.6",
     "infinite-scroll": "~2.0.2",
-    "polymer": "Polymer/polymer#~0.3.3",
-    "core-elements": "Polymer/core-elements#~0.3.3",
-    "paper-elements": "Polymer/paper-elements#~0.3.3",
-    "plupload-angular-directive": "~0.1.1"
+    "polymer": "Polymer/polymer#~0.3.4",
+    "core-elements": "Polymer/core-elements#~0.3.4",
+    "paper-elements": "Polymer/paper-elements#~0.3.4",
+    "plupload-angular-directive": "~0.1.1",
+    "isotope": "~2.0.0",
+    "classie": "~1.0.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.5",

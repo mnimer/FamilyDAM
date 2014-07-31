@@ -1,0 +1,119 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="navbar-brand" ui-sref="home"><span>Family D.A.M.</span></a>
+            <!-- start: Header Menu -->
+            <!-- start: Main Menu -->
+            <nav class="navbar navbar-default pull-right" ng-disabled="( user == undefined )">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav main-menu">
+
+                            <li class="dropdown" ng-class="{ active: $state.includes('files') }">
+                                <a class="dropdown-toggle" data-toggle="dropdown">Files <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a ui-sref="files">All Files</a></li>
+                                    <li class="divider"></li>
+                                    <li><a ui-sref="photos:files">Photos</a></li>
+                                    <li><a ui-sref="music:files">Music</a></li>
+                                    <li><a ui-sref="movies:files">Movies</a></li>
+                                    <!--
+                                    <li class="divider"></li>
+                                    <li><a ui-sref="web">Google Drive</a></li>
+                                    <li><a href="#">Dropbox</a></li>
+                                    <li><a href="#">box.net</a></li>
+                                    <li><a href="#">Amazon S3</a></li>
+                                    -->
+                                </ul>
+                            </li>
+                            <li ng-class="{ active: $state.includes('photos:files') || $state.includes('photos:grid') || $state.includes('photos:details') }">
+                                <a ui-sref="photos:grid"><i class="icon-bar-chart"></i><span
+                                        class="hidden-sm">Photos</span></a>
+                            </li>
+                            <li ng-class="{ active: $state.includes('music:files') }">
+                                <a ui-sref="music:files"><i class="icon-bar-chart"></i><span
+                                        class="hidden-sm">Music</span></a>
+                            </li>
+                            <li ng-class="{ active: $state.includes('movies:files') }">
+                                <a ui-sref="movies:files"><i class="icon-bar-chart"></i><span
+                                        class="hidden-sm">Movies</span></a>
+                            </li>
+                            <!--
+                            <li>
+                                <a class="dropmenu" href=""><i class="icon-edit"></i><span class="hidden-sm"> Email</span></a>
+                            </li>
+                            -->
+                            <!--
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">Social Web <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a ui-sref="web">Facebook</a></li>
+                                    <li><a href="#">Twitter</a></li>
+                                    <li><a href="#">Instagram</a></li>
+                                </ul>
+                            </li>
+                            -->
+
+                            <li class="dropdown">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="ui-sliders-progress.html#">
+                                    <i class="halflings-icon white user"></i> MIKE NIMER
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/user/manager"><i class="halflings-icon white user"></i> User
+                                        Manger</a></li>
+                                    <li><a ui-sref="login"><i class="halflings-icon white off"></i> Logout</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/.explorer.html" target="_blank">JCR Explorer</a></li>
+                                    <li><a href="/system/console" target="_blank">System Console</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end: Main Menu -->
+            <!-- end: Header Menu -->
+        </div>
+    </div>
+</div>
+<!-- start: Header -->
+
+<div class="container">
+    <div>
+        <div class="row primaryView">
+            <div class="col-xs-12 section">
+                <div ui-view ng-animate="'view'"></div>
+            </div>
+        </div>
+
+        <a id="widgets-area-button" class="hidden-sm hidden-xs open"><i class="icon-reorder"></i></a>
+    </div>
+
+</div>
+
+
+<!--
+<div class="clearfix"></div>
+    <footer>
+    <div class="container">
+        <span id="systemStatus">...</span>
+        <span id="toolbar" class="pull-right">
+            <button type="button" class="glyphicon glyphicon-fullscreen btn btn-default btn-sm" ng-click="toggleFullScreenMode()"></button>
+            <span class="hidden-phone" style="text-align:right;float:right">Powered by: FamilyDAM Project</span>
+        </span>
+    </div>
+</footer>
+-->
