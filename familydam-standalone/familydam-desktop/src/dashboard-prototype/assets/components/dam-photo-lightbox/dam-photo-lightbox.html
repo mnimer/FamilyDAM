@@ -1,0 +1,66 @@
+
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<link rel="import" href="../../../components/core-list/core-list.html">
+
+
+
+<polymer-element name="dam-photo-lightbox">
+
+    <style type="text/css">
+        .lightbox-photo{
+            border-bottom: 1px solid #3949ab;
+        }
+    </style>
+
+    <template>
+        <core-list data="{{selectedItems}}" height="40">
+            <template>
+                <div class="lightbox-photo">
+                    <img src="http://placehold.it/40x40"/>
+                    {{name}}
+                </div>
+            </template>
+        </core-list>
+    </template>
+
+    <script type="text/javascript">
+        Polymer('dam-photo-lightbox', {
+            selectedItems:[],
+
+            publish:{},
+
+            ready: function (e) {},
+
+            domReady: function (e) {},
+
+            addPhoto:function(item_){
+                var pos = this.selectedItems.indexOf(item_);
+                if( pos == -1){
+                    this.selectedItems.push(item_);
+                }
+            },
+
+            removePhoto:function(item){
+                var pos = this.selectedItems.indexOf(item_);
+                if( pos > -1 ){
+                    delete this.selectedItems[pos];
+                }
+            }
+        });
+    </script>
+</polymer-element>

@@ -118,7 +118,7 @@
 
             attributeChanged: function (attrName, oldVal, newVal) {
                 //var newVal = this.getAttribute(attrName);
-                console.log(attrName, 'old: ' + oldVal, 'new:', newVal);
+                //console.log(attrName, 'old: ' + oldVal, 'new:', newVal);
             },
 
             domReady: function () {
@@ -131,7 +131,7 @@
 
                 var tabs = this.$.photoPreviewTabs;
                 tabs.addEventListener('core-select', function(evnt,a2) {
-                    console.log("Selected: " + evnt.target.selected);
+                    //console.log("Selected: " + evnt.target.selected);
 
                     that.$.infoPanel.style.display = "none";
                     that.$.metadataPanel.style.display = "none";

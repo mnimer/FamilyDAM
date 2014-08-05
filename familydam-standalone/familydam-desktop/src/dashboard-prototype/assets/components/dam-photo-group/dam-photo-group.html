@@ -16,24 +16,26 @@
   -->
 
 <link rel="import" href="../../../components/core-selection/core-selection.html">
+<link rel="import" href="dam-photo.html">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="application/javascript" src="../../../components/classie/classie.js"></script>
 <script type="application/javascript" src="../../../components/isotope/dist/isotope.pkgd.js"></script>
 
 
-<polymer-element name="dam-photo">
+
+<polymer-element name="dam-photo-group">
 
     <template>
-        <link rel="stylesheet" href="dam-photo.css">
+        <link rel="stylesheet" href="dam-photo-group.css">
 
         <h2>{{label}}</h2>
-        <div id="container" style="width:100%;">
+        <div id="container" style="width:100%; background-color: gray;">
             <template repeat="{{item in model}}">
-                <div id="item" class="item photo" on-tap="{{tapHandler}}"
-                     style="width: {{item.width}}px; height: {{item.height}}px;">
-                    <!--core-selection id="selection" multi="{{multi}}" on-core-select="{{selectedHandler}}"></core-selection-->
-                    <img src="{{item.src}}"/>
-                </div>
+                <dam-photo class="item"
+                           model="{{item}}"
+                           on-soft-select="{{softSelectPhotoClickHandler}}"
+                           on-soft-deselect="{{softSelectPhotoClickHandler}}"
+                           on-hard-select="{{hardSelectPhotoClickHandler}}"></dam-photo>
             </template>
         </div>
     </template>
@@ -41,12 +43,14 @@
 
     <script type="text/javascript">
         // Initialize the widget when the DOM is ready
-        Polymer('dam-photo', {
+        Polymer('dam-photo-group', {
 
             selectedItems: [],
+            timerId:undefined,
 
             publish: {
                 model: [],
+                layoutMode: 'masonry',
 
 
                 /**
@@ -73,10 +77,17 @@
 
             },
 
+
+            layoutModeChanged:function(arg1, arg2, arg3){
+                var _container = this.$.container;
+                var _initIsotope = this.initIsotope(_container);
+            },
+
             ready: function (e) {
                 console.log("ready");
                 this.onMutation(this, this.childrenUpdated);
             },
+
 
             childrenUpdated: function (observer, mutations) {
                 // getDistributedNodes() has new stuff.
@@ -89,6 +100,7 @@
                 this.onMutation(this, this.childrenUpdated);
             },
 
+
             attached: function (e) {
                 console.log("attached");
                 console.log(e);
@@ -98,10 +110,11 @@
             domReady: function (e) {
                 console.log("domReady");
                 // init
+                var that = this;
                 var _container = this.$.container;
                 var _initIsotope = this.initIsotope;
                 setTimeout(function () {
-                    _initIsotope(_container);
+                    _initIsotope(_container, that.layoutMode);
                 }, 300);
 
 
@@ -131,11 +144,12 @@
              * With a slight delay to let the items finish getting added to the template repeater and then initialize the isotope layout
              * @param _container
              */
-            initIsotope: function (_container) {
+            initIsotope: function (_container, _layoutmode) {
+                var that = this;
                 var iso = new Isotope(_container, {
                     // options
                     itemSelector: '.item',
-                    layoutMode: 'masonry'
+                    layoutMode: _layoutmode
                 });
 
                 //iso.appended( elem );
@@ -143,69 +157,23 @@
                 //iso.on( 'layoutComplete', function( isoInstance, laidOutItems ) {});
             },
 
-            // list selection
-            tapHandler: function (e) {
-                console.log("{TAP HANDLER}");
-                console.dir(e);
-
-                if (e.target === this)
-                {
-                    return;
-                }
-
-                if (this.sync)
-                {
-                    this.syncData();
-                }
-
-                var n = e.target;
-                var model = n.templateInstance && n.templateInstance.model;
-                if (model)
-                {
-                    var that = this;
-                    var _item = model.item;
-
-                    if( _item.selected)
-                    {
-                        _item.selected = false;
-                        delete this.selectedItems[this.selectedItems.indexOf(_item)];
-                        return;
-                    }else
-                    {
-                        _item.selected = true;
-                        this.selectedItems.push(_item)
-
-
-                        var timerId;
-                        var firstClick = 0;
-                        var now = Number(new Date());
-                        if (firstClick > 0 && (now - firstClick) < 300)
-                        {
-                            now = 0;
-                            window.clearTimeout(timerId);
-                            that.doubleClickHandler(e, _item);
-                        } else
-                        {
-                            firstClick = now;
-                            timerId = window.setTimeout(function () {
-                                that.singleClickHandler(e, _item);
-                            }, 310);
-                        }
-                        //var vi = model._virtualIndex, pi = model._physicalIndex;
-                        //var data = this.data[vi], item = this._physicalItems[pi];
-                        //this.$.selection.select(data);
-                        //this.asyncFire('photo-selected', {data: data, item: item});
-                    }
-                }
+            softSelectPhotoClickHandler: function(event,arg1,arg2)
+            {
+                console.log("single click, photo handler");
+                this.fire('photo-select', event.currentTarget.model);
             },
 
-            singleClickHandler:function(_event, _item){
-                console.log("single click");
-                _event.target.style.border="1px solid blue";
+
+            softDeselectPhotoClickHandler: function(event,arg1,arg2)
+            {
+                console.log("single deselect click, photo handler");
+                this.fire('photo-unselect', event.currentTarget.model);
             },
 
-            doubleClickHandler:function(_event, _item){
-                console.log("double click");
+            hardSelectPhotoClickHandler: function(event, arg2, arg3)
+            {
+                console.log("double click, photo handler");
+                this.fire('photo-hard-select', event.currentTarget.model);
             }
 
         });
