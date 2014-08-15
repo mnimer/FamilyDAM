@@ -1,0 +1,315 @@
+<!doctype html>
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+<head>
+    <title>Photos List</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="components/platform/platform.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <link rel="import" href="components/core-scroll-header-panel/core-scroll-header-panel.html">
+    <link rel="import" href="components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="components/core-list/core-list.html">
+    <link rel="import" href="components/core-overlay/core-overlay.html">
+    <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="components/paper-tabs/paper-tab.html">
+    <link rel="import" href="components/paper-fab/paper-fab.html">
+    <link rel="import" href="assets/components/dam-movie-group/dam-movie-group.html">
+    <link rel="import" href="assets/components/file-uploader/file-uploader.html">
+    <link rel="import" href="assets/components/preview-video/preview-video.html">
+
+    <link type="text/css" rel="stylesheet" href="app.css"/>
+
+    <style>
+        .item
+        {
+            box-sizing:    border-box;
+            border-bottom: 1px solid #ddd;
+            cursor:        default;
+            overflow:      hidden;
+        }
+
+    </style>
+
+
+</head>
+<body unresolved onload="onLoadHandler()">
+
+
+<core-drawer-panel id="filePanel" class="right-drawer" selected="main" drawerWidth="350px">
+
+    <div main>
+        <core-scroll-header-panel>
+            <core-toolbar class="medium-tall">
+                <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
+                <div flex>FamilyDAM</div>
+                <paper-tabs selected="3" nobar>
+                    <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
+                    <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
+                    <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
+                    <paper-tab onclick="window.location.href='movies.html';">Movies</paper-tab>
+                    <paper-tab onclick="window.location.href='email.html';">Email</paper-tab>
+                    <paper-tab onclick="window.location.href='social.html';">Social</paper-tab>
+                </paper-tabs>
+                <core-icon-button icon="search"></core-icon-button>
+                <core-icon-button icon="more-vert"></core-icon-button>
+                <div class="middle indent title" style="margin-left: 100px;">/movies/</div>
+                <div class="bottom">
+                    <paper-fab icon="add" onclick="toggleUploader();" style="z-index:10;"></paper-fab>
+                </div>
+            </core-toolbar>
+        </core-scroll-header-panel>
+
+
+        <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
+            <div flex></div>
+            <div style="height:45px; vertical-align: bottom;font-size: 24px;margin-top: 10px; margin-bottom: 10px;">
+                <a href="#A">A</a> <a href="#B">B</a> <a href="#C">C</a> D E F G H I J K L M N O P Q R S T U V W X Y Z
+            </div>
+            <div style="width:80px;"></div>
+        </div>
+
+
+        <core-drawer-panel class="drawer" style="top:180px;">
+            <!-- LEFT DRAWER -->
+            <div drawer>
+                <div id="fileTree" class="sidebar">
+
+                    <ul style="margin-left: -20px;list-style: none;">
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            Files
+                        </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            Photos
+                        </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            Music
+                        </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            <b><i>Movies</i></b>
+                            <ul style="list-style: none;">
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Angela
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Mike
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Kayden
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Hailey
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            Email Archive
+                        </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            Social Web
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="tagCloud">
+                    <div style="width:100%;background-color:#FFFFFF;font-family:Arial; border: 1px solid #FFFFFF; text-align:center;">
+                        <div style="padding:5px;">
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Action</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Adventure</a>
+                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Comedy</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Documentary</a>
+                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">Drama</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Educational</a>
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Disney</a>
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Musical</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Sci-Fi</a>
+                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Sports</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Thriller</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- MAIN -->
+            <div main>
+                <div class="folder">
+                    <dam-movie-group id="videoListA"
+                                     label="A"></dam-movie-group>
+
+                    <dam-movie-group id="videoListB"
+                                     label="B"></dam-movie-group>
+
+                    <dam-movie-group id="videoListC"
+                                     label="C"></dam-movie-group>
+
+                </div>
+            </div>
+        </core-drawer-panel>
+    </div>
+
+
+    <div id="rightDrawer" drawer>
+
+        <core-scroll-header-panel id="rightDrawerHeaderPanel" condensedHeaderHeight="65"
+                                  style="border-bottom: 1px solid #000;">
+            <core-toolbar class="medium-tall">
+                <div flex></div>
+                <core-icon-button icon="close" on-click="$('#rightDrawer').closeDrawer();"></core-icon-button>
+            </core-toolbar>
+        </core-scroll-header-panel>
+
+        <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
+            <div><h2>Preview</h2></div>
+        </div>
+        <!-- RIGHT DRAWER -->
+        <div style="position: relative; top:180px;">
+
+            <preview-video id="videoPreview" style="display: none"></preview-video>
+
+        </div>
+    </div>
+</core-drawer-panel>
+
+
+
+<file-uploader id="uploaderOverlay"></file-uploader>
+
+<core-overlay id="videoDetailOverlay" backdrop="true" layered="true">
+    <div style="width:700px; height:500px; background-color: #fff">
+        Movie Player
+    </div>
+</core-overlay>
+
+
+
+<script>
+
+    // custom transformation: scale header's title
+    var titleStyle = document.querySelector('.title').style;
+    addEventListener('core-header-transform', function (e) {
+        var d = e.detail;
+        var m = d.height - d.condensedHeight;
+        var scale = Math.max(0.75, (m - d.y) / (m / 0.25) + 0.75);
+        titleStyle.webkitTransform = titleStyle.transform =
+                'scale(' + scale + ') translateZ(0)';
+    });
+
+</script>
+
+
+<script>
+    var photos = [];
+
+    var onLoadHandler = function () {
+        AAlbums = [
+            {id: "001", name: "American Pie", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "002", name: "Animal House",  src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "003", name: "Austin Powers",  src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "004", name: "Air Buddies",  src: "http://placehold.it/250x250", width: 250, height: 250},
+        ];
+        BAlbums = [
+            {id: "010", name: "Bambi", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "011", name: "Brave", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "012", name: "Big Daddy", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "013", name: "Braveheart", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "014", name: "Better Off Dead", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "015", name: "Bridesmaid", src: "http://placehold.it/250x250", width: 250, height: 250},
+        ];
+        CAlbums = [
+            {id: "020", name: "Cinderella", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "021", name: "Charlies Angies", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "022", name: "Clerks", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "023", name: "Chasing Amy", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "024", name: "Crazy Stupid Love", src: "http://placehold.it/250x250", width: 250, height: 250},
+        ];
+        document.querySelector("#videoListA").model = AAlbums;
+        document.querySelector("#videoListA").addEventListener('movie-select', videoSelectHandler);
+        document.querySelector("#videoListA").addEventListener('movie-deselect', videoDeselectHandler);
+        document.querySelector("#videoListA").addEventListener('movie-hard-select', videoHardSelectHandler);
+
+
+        document.querySelector("#videoListB").model = BAlbums;
+        document.querySelector("#videoListB").addEventListener('movie-select', videoSelectHandler);
+        document.querySelector("#videoListB").addEventListener('movie-deselect', videoDeselectHandler);
+        document.querySelector("#videoListB").addEventListener('movie-hard-select', videoHardSelectHandler);
+
+
+        document.querySelector("#videoListC").model = CAlbums;
+        document.querySelector("#videoListC").addEventListener('movie-select', videoSelectHandler);
+        document.querySelector("#videoListC").addEventListener('movie-deselect', videoDeselectHandler);
+        document.querySelector("#videoListC").addEventListener('movie-hard-select', videoHardSelectHandler);
+    };
+
+
+    var toggleUploader = function () {
+        document.querySelector("#uploaderOverlay").toggle();
+    };
+
+
+
+    var videoSelectHandler = function(event){
+        console.log("video-select");
+        console.dir(event.detail);
+        document.querySelector("#videoPreview").style.display="block";
+    };
+
+    var videoDeselectHandler = function(event){
+        console.log("video-deselect");
+        console.dir(event.detail);
+        document.querySelector("#videoPreview").style.display="none";
+    };
+
+    var videoHardSelectHandler = function(event){
+        console.log("video-hard-select");
+        console.dir(event.detail);
+
+        document.querySelector("#videoDetailOverlay").toggle();
+    }
+
+</script>
+
+</body>
+</html>
+

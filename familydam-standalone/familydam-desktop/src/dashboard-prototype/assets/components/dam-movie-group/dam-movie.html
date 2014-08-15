@@ -1,0 +1,150 @@
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<link rel="import" href="../../../components/core-selection/core-selection.html">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="application/javascript" src="../../../components/classie/classie.js"></script>
+<script type="application/javascript" src="../../../components/isotope/dist/isotope.pkgd.js"></script>
+
+
+<polymer-element name="dam-album">
+
+    <template>
+        <link rel="stylesheet" href="dam-music-group.css">
+
+        <div id="item" class="album" on-tap="{{tapHandler}}"
+             style="width: 250px; height: 250px;">
+            <!--core-selection id="selection" multi="{{multi}}" on-core-select="{{selectedHandler}}"></core-selection-->
+            <img src="{{model.src}}" class=""/>
+            <div class="label">{{model.name}}</div>
+        </div>
+    </template>
+
+
+
+    <script type="text/javascript">
+        // Initialize the widget when the DOM is ready
+        Polymer('dam-album', {
+
+            selected: false,
+            now : Number(new Date()),
+            firstClick : 0,
+
+            publish: {
+                model: {}
+            },
+
+            ready: function (e) {
+                console.dir(this.model);
+            },
+
+            domReady: function (e) {
+
+            },
+
+
+            // list selection
+            tapHandler: function (e) {
+                //console.log("{TAP HANDLER}");
+
+                if (e.target === this)
+                {
+                    return;
+                }
+
+                var item = e.currentTarget;
+                //var model = item.templateInstance && item.templateInstance.model;
+                if (this.model)
+                {
+                    var that = this;
+                    var timerId;
+                    if (this.model.selected)
+                    {
+                       // change css class to show selected status
+                        item.className = "album";
+                        this.model.selected = false;
+
+
+                        if (this.firstClick > 0 && (this.now - this.firstClick) < 300)
+                        {
+                            this.firstClick = 0;
+                            this.model.selected = true; //keep it selected
+                            window.clearTimeout(timerId);
+                            that.doubleClickHandler(e, that.model);
+                        }
+                        else
+                        {
+                            this.firstClick = this.now;
+                            timerId = window.setTimeout(function () {
+                                that.firstClick = 0;
+                                that.model.selected = false;
+                                //that.singleClickHandler(e, that.model);
+                            }, 310);
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        item.className = "album selected"; //todo set selected with binding
+
+
+                        if (this.firstClick > 0 && (this.now - this.firstClick) < 300)
+                        {
+                            this.firstClick = 0;
+                            this.model.selected = true;
+                            window.clearTimeout(timerId);
+                            that.doubleClickHandler(e, that.model);
+                        }
+                        else
+                        {
+                            this.firstClick = this.now;
+                            timerId = window.setTimeout(function () {
+                                that.firstClick = 0;
+                                that.model.selected = true;
+                                that.singleClickHandler(e, that.model);
+                            }, 310);
+                        }
+                    }
+                }
+
+
+                if (this.sync)
+                {
+                    this.syncData();
+                }
+
+            },
+
+            singleClickHandler: function (_event, _item) {
+                console.log("single click");
+                if( _item.selected == true )
+                {
+                    this.fire('soft-select', _item);
+                }else{
+                    this.fire('soft-deselect', _item);
+                }
+            },
+
+            doubleClickHandler: function (_event, _item) {
+                console.log("double click");
+                this.fire('hard-select', _item);
+            }
+
+        });
+    </script>
+
+</polymer-element>

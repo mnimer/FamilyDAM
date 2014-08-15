@@ -1,0 +1,159 @@
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<link rel="import" href="../../../components/core-selection/core-selection.html">
+<link rel="import" href="dam-album.html">
+
+
+
+<polymer-element name="dam-music-group">
+
+    <template>
+        <link rel="stylesheet" href="dam-music-group.css">
+
+        <a name="{{label}}"><h2>{{label}}</h2></a><br/>
+        <div id="container" horizontal layout wrap style="width:100%;">
+            <template repeat="{{item in model}}">
+                <dam-album class="item"
+                           model="{{item}}"
+                           on-soft-select="{{softSelectAlbumClickHandler}}"
+                           on-soft-deselect="{{softDeselectAlbumClickHandler}}"
+                           on-hard-select="{{hardSelectAlbumClickHandler}}"></dam-album>
+            </template>
+        </div>
+    </template>
+
+
+    <script type="text/javascript">
+        // Initialize the widget when the DOM is ready
+        Polymer('dam-music-group', {
+
+            selectedItems: [],
+            timerId:undefined,
+
+            publish: {
+                model: [],
+                label: "",
+                layoutMode: 'grid',
+
+
+                /**
+                 *
+                 * The property set on the list view data to represent selection state.
+                 * This should set so that it does not conflict with other data properties.
+                 * Note, selection data is not stored on the data in given in the data property.
+                 *
+                 * @attribute selectedProperty
+                 * @type string
+                 * @default 'selected'
+                 */
+                selectedProperty: 'selected',
+
+                /**
+                 *
+                 * Set to true to support multiple selection.
+                 *
+                 * @attribute multi
+                 * @type boolean
+                 * @default false
+                 */
+                multi: true
+
+            },
+
+
+            ready: function (e) {
+                console.log("ready");
+                this.onMutation(this, this.childrenUpdated);
+            },
+
+
+            childrenUpdated: function (observer, mutations) {
+                // getDistributedNodes() has new stuff.
+                //console.dir( getDistributedNodes() );
+                // Monitor again.
+                this.onMutation(this, this.childrenUpdated);
+            },
+
+
+            attached: function (e) {
+                //console.log(e);
+            },
+
+            domReady: function (e) {
+                console.log("domReady");
+                // init
+
+
+                // Observe changes
+                // TODO: Make it cleaner
+                // create an observer instance
+                /***
+                 var that = this;
+                 var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        console.log("observation", mutation.type, arguments, mutations);
+                        if(mutation.addedNodes){
+                            //DRY, performance
+                            console.log("something was added")
+                            //that.createItemsList();
+                            //that.refresh();
+                        }
+                    });
+                });
+                 // pass in the target node, as well as the observer options
+                 observer.observe(this, { childList: true });
+                 ***/
+            },
+
+            unselectOthers: function(hardSelectedItem_) {
+                //todo dam-album needs to change to use binding for the css effect to turn off.
+                for (var i = 0; i < this.model.length; i++)
+                {
+                    var obj = this.model[i];
+                    if( obj != hardSelectedItem_ ){
+                        obj.selected = false;
+                    }
+                }
+            },
+
+
+
+            softSelectAlbumClickHandler: function(event,arg1,arg2)
+            {
+                this.unselectOthers(event.detail);
+                console.log("single click, photo handler");
+                this.fire('album-select', event.currentTarget.model);
+            },
+
+            softDeselectAlbumClickHandler: function(event,arg1,arg2)
+            {
+                console.log("single deselect click, photo handler");
+                this.fire('album-deselect', event.currentTarget.model);
+            },
+
+            hardSelectAlbumClickHandler: function(event, arg2, arg3)
+            {
+                this.unselectOthers(event.detail);
+                console.log("double click, photo handler");
+                this.fire('album-hard-select', event.currentTarget.model);
+            }
+
+        });
+    </script>
+
+</polymer-element>

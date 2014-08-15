@@ -22,7 +22,7 @@
 <link rel="import" href="../../../components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../../components/paper-toggle-button/paper-toggle-button.html">
 
-<polymer-element name="preview-audio" extends="core-overlay">
+<polymer-element name="preview-album" extends="core-overlay">
 
     <style>
         .sidebar:focus
@@ -33,7 +33,7 @@
     <template>
 
         <div id="musicPreview" class="sidebar preview" >
-            <h2>Music Preview</h2>
+            <h2>Album Preview</h2>
 
             <img id="imgPreviewTag" src="http://lorempixel.com/640/1136/abstract/"
                  style="width: 220px; height:200px;"/>
@@ -66,7 +66,7 @@
 
     <script type="text/javascript">
         // Initialize the widget when the DOM is ready
-        Polymer('preview-audio', {
+        Polymer('preview-album', {
             publish: {
                 data: {}
             },

@@ -45,6 +45,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="components/paper-tabs/paper-tab.html">
     <link rel="import" href="components/paper-fab/paper-fab.html">
     <link rel="import" href="assets/components/dam-photo-group/dam-photo-group.html">
+    <link rel="import" href="assets/components/dam-photo-lightbox/dam-photo-lightbox.html">
+    <link rel="import" href="assets/components/dam-photo-details/dam-photo-details.html">
     <link rel="import" href="assets/components/file-uploader/file-uploader.html">
     <link rel="import" href="assets/components/preview-photo/preview-photo.html">
     <link rel="import" href="assets/components/preview-audio/preview-audio.html">
@@ -67,7 +69,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body unresolved onload="onLoadHandler()">
 
-<core-drawer-panel id="filePanel" class="right-drawer" selected="main">
+<core-drawer-panel id="filePanel" class="right-drawer" selected="main" drawerWidth="350px">
     <div main>
         <core-scroll-header-panel>
             <core-toolbar class="medium-tall">
@@ -75,7 +77,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div flex>FamilyDAM</div>
                 <paper-tabs selected="0" nobar>
                     <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
-                    <paper-tab onclick="window.location.href='photos-list.html';">Photos</paper-tab>
+                    <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
                     <paper-tab>Music</paper-tab>
                     <paper-tab>Movies</paper-tab>
                 </paper-tabs>
@@ -138,20 +140,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div main>
                 <div class="folder">
                     <dam-photo-group id="photoList"
-                                     label="January 2014"
-                                     on-photoSelect="{{photoSelectHandler}}"
-                                     photoSelect="{{photoSelectHandler}}"
-                                     photo-hard-select="{{photoHardSelectHandler}}"></dam-photo-group>
+                                     label="January 2014"></dam-photo-group>
 
                     <dam-photo-group id="photoList2"
-                                     label="December 2013"
-                                     on-photo-select="{{photoSelectHandler}}"
-                                     on-photo-hard-select="{{photoHardSelectHandler}}"></dam-photo-group>
+                                     label="December 2013"></dam-photo-group>
 
                     <dam-photo-group id="photoList3"
-                                     label="October 2013"
-                                     on-photo-select="{{photoSelectHandler}}"
-                                     on-photo-hard-select="{{photoHardSelectHandler}}"></dam-photo-group>
+                                     label="October 2013"></dam-photo-group>
 
                 </div>
             </div>
@@ -170,7 +165,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- RIGHT DRAWER -->
         <div style="position: relative; top:135px;">
-            <photo-lightbox id="photoLightbox" style="display: none"></photo-lightbox>
+            <dam-photo-lightbox id="photoLightbox" style="display: none"></dam-photo-lightbox>
             <preview-photo id="photoPreview" style="display: none"></preview-photo>
 
         </div>
@@ -179,6 +174,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 <file-uploader id="uploaderOverlay"></file-uploader>
+
+<core-overlay id="photoDetailOverlay" backdrop="true" layered="true">
+    <div style="background-color: #fff">
+
+        <dam-photo-details id="photoDetails"></dam-photo-details>
+    </div>
+</core-overlay>
+
 
 <script>
 
@@ -219,16 +222,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         ];
         document.querySelector("#photoList").model = photos;
         document.querySelector("#photoList").addEventListener('photo-select', photoSelectHandler);
+        document.querySelector("#photoList").addEventListener('photo-deselect', photoDeselectHandler);
         document.querySelector("#photoList").addEventListener('photo-hard-select', photoHardSelectHandler);
 
 
         document.querySelector("#photoList2").model = photos;
         document.querySelector("#photoList2").addEventListener('photo-select', photoSelectHandler);
+        document.querySelector("#photoList2").addEventListener('photo-deselect', photoDeselectHandler);
         document.querySelector("#photoList2").addEventListener('photo-hard-select', photoHardSelectHandler);
 
 
         document.querySelector("#photoList3").model = photos;
         document.querySelector("#photoList3").addEventListener('photo-select', photoSelectHandler);
+        document.querySelector("#photoList3").addEventListener('photo-deselect', photoDeselectHandler);
         document.querySelector("#photoList3").addEventListener('photo-hard-select', photoHardSelectHandler);
     };
 
@@ -238,17 +244,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     };
 
 
-    var photoSelectHandler = function(event, arg1, arg2){
+
+    var photoSelectHandler = function(event){
         console.dir(event.detail);
-        //this.$.photoLightbox.style.display = "block";
-        //this.$.photoLightbox.addPhoto(event);
+
+        document.querySelector("#photoLightbox").style.display = "block";
+        document.querySelector("#photoLightbox").addPhoto(event.detail);
     };
 
-    var photoHardSelectHandler = function(event, arg1, arg2){
+    var photoDeselectHandler = function(event){
         console.dir(event.detail);
-        //this.$.photoLightbox.style.display = "none";
-        //this.$.photoPreview.style.display = "block";
-        //this.$.photoPreview.data = event;
+
+        document.querySelector("#photoLightbox").removePhoto(event.detail);
+    };
+
+    var photoHardSelectHandler = function(event){
+        console.dir(event.detail);
+
+        document.querySelector("#photoList").unselectOthers(event.detail);
+        document.querySelector("#photoList2").unselectOthers(event.detail);
+        document.querySelector("#photoList3").unselectOthers(event.detail);
+        document.querySelector("#photoLightbox").removeOthers(event.detail);
+
+        document.querySelector("#photoDetails").model = event.detail;
+        document.querySelector("#photoDetailOverlay").toggle();
     }
 
 </script>
