@@ -35,7 +35,6 @@ require('infinite-scroll');
 require('treeControl');
 require('vr.directives.wordCloud');
 require('momentjs');
-require('angular-slider');
 //require('com.2fdevs.videogular');
 //require('com.2fdevs.videogular.plugins.controls');
 //require('com.2fdevs.videogular.plugins.buffering');

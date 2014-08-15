@@ -18,6 +18,7 @@
 
 var ShellService = function($http, $q)
 {
+    /**
     var ipc = require('ipc');
 
     ipc.on('info', function(message) {
@@ -39,6 +40,7 @@ var ShellService = function($http, $q)
     var send = function(type, message){
         ipc.send(type, message);
     };
+     **/
 };
 
 

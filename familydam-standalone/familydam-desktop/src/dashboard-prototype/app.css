@@ -37,7 +37,7 @@ html, body
 
 body
 {
-    font-family:       'Roboto Light', 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family:       'Roboto Light', 'Roboto', Helvetica, Arial, sans-serif;
     -webkit-transform: translateZ(0);
     transform:         translateZ(0);
     font-size:         14px;
@@ -73,7 +73,10 @@ preview-video::shadow .metadata
     height: 200px;
 }
 
-
+.selected{
+    background-color: #d3d3d3;
+    border: 1px solid #3949ab;
+}
 
 
 

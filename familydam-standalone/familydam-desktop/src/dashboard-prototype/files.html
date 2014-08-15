@@ -51,7 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="components/multi-value-suggestbox/dist/multi-value-suggestbox.html">
     <link rel="import" href="assets/components/file-uploader/file-uploader.html">
     <link rel="import" href="assets/components/preview-photo/preview-photo.html">
-    <link rel="import" href="assets/components/preview-audio/preview-audio.html">
+    <link rel="import" href="assets/components/preview-album/preview-album.html">
     <link rel="import" href="assets/components/preview-video/preview-video.html">
 
     <link type="text/css" rel="stylesheet" href="app.css"/>
@@ -65,23 +65,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <core-toolbar  class="medium-tall">
                     <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
                     <div flex>FamilyDAM</div>
-                    <paper-tabs selected="0" nobar>
+                    <paper-tabs selected="0">
                         <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
-                        <paper-tab onclick="window.location.href='photos-list.html';">Photos</paper-tab>
-                        <paper-tab>Music</paper-tab>
-                        <paper-tab>Movies</paper-tab>
+                        <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
+                        <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
+                        <paper-tab onclick="window.location.href='movies.html';">Movies</paper-tab>
+                        <paper-tab onclick="window.location.href='emails.html';">Emails</paper-tab>
+                        <paper-tab onclick="window.location.href='social.html';">Social</paper-tab>
                     </paper-tabs>
                     <core-icon-button icon="search"></core-icon-button>
                     <core-icon-button icon="more-vert"></core-icon-button>
                     <div class="middle indent title" style="margin-left: 100px;">/photos/</div>
                     <div class="bottom">
-                        <paper-fab icon="add" onclick="toggleUploader();"></paper-fab>
+                        <paper-fab icon="add" onclick="toggleUploader();" style="z-index: 10"></paper-fab>
                     </div>
                 </core-toolbar>
-
             </core-scroll-header-panel>
 
-            <core-drawer-panel class="drawer" style="top:135px;">
+
+
+            <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
+                <div flex></div>
+                <div style="height:45px; vertical-align: bottom;font-size: 24px;margin-top: 10px; margin-bottom: 10px;">
+
+                </div>
+                <div style="width:80px;"></div>
+            </div>
+
+            <core-drawer-panel class="drawer" style="top:180px;">
                 <!-- LEFT DRAWER -->
                 <div drawer>
                     <div id="fileTree" class="sidebar">
@@ -89,11 +100,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <ul style="margin-left: -20px;list-style: none;">
                             <li>
                                 <core-icon icon="folder"></core-icon>
-                                Files
-                            </li>
-                            <li>
-                                <core-icon icon="folder"></core-icon>
-                                <b><i>Photos</i></b>
+                                <b><i>Files</i></b>
                                 <ul style="list-style: none;">
                                     <li>
                                         <core-icon icon="folder"></core-icon>
@@ -101,7 +108,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                                     </li>
                                     <li>
                                         <core-icon icon="folder"></core-icon>
-                                        Mike
+                                        <i><b>Mike</b></i>
                                     </li>
                                     <li>
                                         <core-icon icon="folder"></core-icon>
@@ -115,11 +122,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </li>
                             <li>
                                 <core-icon icon="folder"></core-icon>
-                                Music
+                                <a href="photos.html"  style="text-decoration:none;">Photos</a>
                             </li>
                             <li>
                                 <core-icon icon="folder"></core-icon>
-                                Movies
+                                <a href="music.html"  style="text-decoration:none;">Music</a>
+                            </li>
+                            <li>
+                                <core-icon icon="folder"></core-icon>
+                                <a href="movies.html"  style="text-decoration:none;">Movies</a>
+                            </li>
+                            <li>
+                                <core-icon icon="folder"></core-icon>
+                                <a href="emails.html"  style="text-decoration:none;">Email Archive</a>
+                            </li>
+                            <li>
+                                <core-icon icon="folder"></core-icon>
+                                <a href="social.html"  style="text-decoration:none;">Social Web</a>
                             </li>
                         </ul>
                     </div>
@@ -186,13 +205,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </core-toolbar>
             </core-scroll-header-panel>
 
+
+            <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
+                <div><h2>Preview</h2></div>
+            </div>
             <!-- RIGHT DRAWER -->
-            <div style="position: relative; top:135px;">
+            <div style="position: relative; top:180px;">
                 <preview-photo id="photoPreview"
                                class="sidebar preview"></preview-photo>
 
-                <preview-audio id="musicPreview"
-                               class="sidebar preview"></preview-audio>
+                <preview-album id="musicPreview"
+                               class="sidebar preview"></preview-album>
 
                 <preview-video id="videoPreview"
                                class="sidebar preview"></preview-video>
@@ -222,6 +245,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     var timerId;
     var firstClick = 0;
     var fileSelectionHandler = function (event) {
+
+        // update ui //todo, fix this.
+        event.detail.data.selected = true;
+        event.detail.item.selected = true;
+
+        $(".row").css("background-color", "#fff");
+        event.detail.item.style.backgroundColor = "lightgrey";
+
+        //trigger events
         var now = Number(new Date());
         if (firstClick > 0 && (now - firstClick) < 300)
         {

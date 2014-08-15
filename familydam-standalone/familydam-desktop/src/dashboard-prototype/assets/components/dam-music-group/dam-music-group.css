@@ -15,7 +15,7 @@
  *     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-.photo{
+.album{
     background-color: #fff;
     padding: 20px;
     padding-bottom: 40px;
@@ -24,4 +24,8 @@
 
 .selected{
     border: 1px solid #3949ab;
+}
+
+a{
+    text-decoration: none;
 }

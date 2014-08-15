@@ -16,31 +16,30 @@
   -->
 
 <link rel="import" href="../../../components/core-selection/core-selection.html">
-<link rel="import" href="dam-album.html">
+<link rel="import" href="dam-movie.html">
 
 
 
-<polymer-element name="dam-music-group">
+<polymer-element name="dam-movie-group">
 
     <template>
-        <link rel="stylesheet" href="dam-music-group.css">
+        <link rel="stylesheet" href="dam-movie-group.css">
 
         <a name="{{label}}"><h2>{{label}}</h2></a><br/>
         <div id="container" horizontal layout wrap style="width:100%;">
             <template repeat="{{item in model}}">
-                <dam-album class="item"
+                <dam-movie class="item"
                            model="{{item}}"
-                           on-soft-select="{{softSelectAlbumClickHandler}}"
-                           on-soft-deselect="{{softDeselectAlbumClickHandler}}"
-                           on-hard-select="{{hardSelectAlbumClickHandler}}"></dam-album>
+                           on-soft-select="{{softSelectMovieClickHandler}}"
+                           on-soft-deselect="{{softDeselectMovieClickHandler}}"
+                           on-hard-select="{{hardSelectMovieClickHandler}}"></dam-movie>
             </template>
         </div>
     </template>
 
-
     <script type="text/javascript">
         // Initialize the widget when the DOM is ready
-        Polymer('dam-music-group', {
+        Polymer('dam-movie-group', {
 
             selectedItems: [],
             timerId:undefined,
@@ -133,24 +132,24 @@
 
 
 
-            softSelectAlbumClickHandler: function(event,arg1,arg2)
+            softSelectMovieClickHandler: function(event,arg1,arg2)
             {
                 this.unselectOthers(event.detail);
                 console.log("single click, photo handler");
-                this.fire('album-select', event.currentTarget.model);
+                this.fire('movie-select', event.currentTarget.model);
             },
 
-            softDeselectAlbumClickHandler: function(event,arg1,arg2)
+            softDeselectMovieClickHandler: function(event,arg1,arg2)
             {
                 console.log("single deselect click, photo handler");
-                this.fire('album-deselect', event.currentTarget.model);
+                this.fire('movie-deselect', event.currentTarget.model);
             },
 
-            hardSelectAlbumClickHandler: function(event, arg2, arg3)
+            hardSelectMovieClickHandler: function(event, arg2, arg3)
             {
                 this.unselectOthers(event.detail);
                 console.log("double click, photo handler");
-                this.fire('album-hard-select', event.currentTarget.model);
+                this.fire('movie-hard-select', event.currentTarget.model);
             }
 
         });

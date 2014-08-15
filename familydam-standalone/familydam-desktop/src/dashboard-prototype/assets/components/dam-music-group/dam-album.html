@@ -21,24 +21,24 @@
 <script type="application/javascript" src="../../../components/isotope/dist/isotope.pkgd.js"></script>
 
 
-<polymer-element name="dam-photo">
+<polymer-element name="dam-album">
 
     <template>
-        <link rel="stylesheet" href="dam-photo-group.css">
+        <link rel="stylesheet" href="dam-music-group.css">
 
-        <div id="item" class="photo" on-tap="{{tapHandler}}"
-             style="width: {{model.width}}px; height: {{model.height}}px;">
+        <div id="item" class="album" on-tap="{{tapHandler}}"
+             style="width: 250px; height: 250px;">
             <!--core-selection id="selection" multi="{{multi}}" on-core-select="{{selectedHandler}}"></core-selection-->
             <img src="{{model.src}}" class=""/>
             <div class="label">{{model.name}}</div>
         </div>
-
     </template>
+
 
 
     <script type="text/javascript">
         // Initialize the widget when the DOM is ready
-        Polymer('dam-photo', {
+        Polymer('dam-album', {
 
             selected: false,
             now : Number(new Date()),
@@ -75,7 +75,7 @@
                     if (this.model.selected)
                     {
                        // change css class to show selected status
-                        item.className = "photo";
+                        item.className = "album";
                         this.model.selected = false;
 
 
@@ -99,7 +99,7 @@
                     }
                     else
                     {
-                        item.className = "photo selected"; //todo set selected with binding
+                        item.className = "album selected"; //todo set selected with binding
 
 
                         if (this.firstClick > 0 && (this.now - this.firstClick) < 300)

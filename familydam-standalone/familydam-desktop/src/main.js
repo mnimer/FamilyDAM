@@ -158,8 +158,10 @@ app.loadMainApplication = function(_settings) {
     //start jar
     //console.log("{loadMainApplication}" +_settings);
     //serverManager.startServer(_settings, app, splashWindow, mainWindow);
-
+    splashWindow.hide();
     mainWindow.show();
+    mainWindow.maximize();
+
     mainWindow.loadUrl('file://' + __dirname  +'/dashboard-prototype/index.html');
 };
 

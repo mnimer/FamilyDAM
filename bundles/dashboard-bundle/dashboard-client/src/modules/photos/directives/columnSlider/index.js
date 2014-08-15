@@ -30,6 +30,7 @@ module.exports = function ()
                 if (newValue.length > 0)
                 {
                     //scope.sliderInstance.attr("columns", newValue);
+                    /*
                     $(elem).slider({
                         value: newValue,
                         min: 2,
@@ -40,6 +41,7 @@ module.exports = function ()
                             scope.$emit(eventName, ui.value);
                         }
                     });
+                    */
                 }
             });
         }

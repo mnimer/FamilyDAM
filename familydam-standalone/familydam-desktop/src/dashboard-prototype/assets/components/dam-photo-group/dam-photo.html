@@ -70,35 +70,52 @@
                 //var model = item.templateInstance && item.templateInstance.model;
                 if (this.model)
                 {
-
+                    var that = this;
+                    var timerId;
                     if (this.model.selected)
                     {
+                       // change css class to show selected status
+                        item.className = "photo";
                         this.model.selected = false;
 
-                        // change css class to show selected status
-                        item.className = "photo";
-
-                        return;
-                    } else
-                    {
-                        this.model.selected = true;
-
-                        item.className = "photo selected";
-
-                        var timerId;
-                        var that = this;
 
                         if (this.firstClick > 0 && (this.now - this.firstClick) < 300)
                         {
-                            this.now = 0;
+                            this.firstClick = 0;
+                            this.model.selected = true; //keep it selected
                             window.clearTimeout(timerId);
-                            that.doubleClickHandler(e, item);
+                            that.doubleClickHandler(e, that.model);
                         }
                         else
                         {
                             this.firstClick = this.now;
                             timerId = window.setTimeout(function () {
-                                that.singleClickHandler(e, item);
+                                that.firstClick = 0;
+                                that.model.selected = false;
+                                that.singleClickHandler(e, that.model);
+                            }, 310);
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        item.className = "photo selected"; //todo set selected with binding
+
+
+                        if (this.firstClick > 0 && (this.now - this.firstClick) < 300)
+                        {
+                            this.firstClick = 0;
+                            this.model.selected = true;
+                            window.clearTimeout(timerId);
+                            that.doubleClickHandler(e, that.model);
+                        }
+                        else
+                        {
+                            this.firstClick = this.now;
+                            timerId = window.setTimeout(function () {
+                                that.firstClick = 0;
+                                that.model.selected = true;
+                                that.singleClickHandler(e, that.model);
                             }, 310);
                         }
                     }

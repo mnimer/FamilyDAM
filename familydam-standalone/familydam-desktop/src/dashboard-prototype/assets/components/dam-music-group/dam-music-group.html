@@ -16,26 +16,23 @@
   -->
 
 <link rel="import" href="../../../components/core-selection/core-selection.html">
-<link rel="import" href="dam-photo.html">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="application/javascript" src="../../../components/classie/classie.js"></script>
-<script type="application/javascript" src="../../../components/isotope/dist/isotope.pkgd.js"></script>
+<link rel="import" href="dam-album.html">
 
 
 
-<polymer-element name="dam-photo-group">
+<polymer-element name="dam-music-group">
 
     <template>
-        <link rel="stylesheet" href="dam-photo-group.css">
+        <link rel="stylesheet" href="dam-music-group.css">
 
-        <h2>{{label}}</h2>
-        <div id="container" style="width:100%;">
+        <a name="{{label}}"><h2>{{label}}</h2></a><br/>
+        <div id="container" horizontal layout wrap style="width:100%;">
             <template repeat="{{item in model}}">
-                <dam-photo class="item"
+                <dam-album class="item"
                            model="{{item}}"
-                           on-soft-select="{{softSelectPhotoClickHandler}}"
-                           on-soft-deselect="{{softDeselectPhotoClickHandler}}"
-                           on-hard-select="{{hardSelectPhotoClickHandler}}"></dam-photo>
+                           on-soft-select="{{softSelectAlbumClickHandler}}"
+                           on-soft-deselect="{{softDeselectAlbumClickHandler}}"
+                           on-hard-select="{{hardSelectAlbumClickHandler}}"></dam-album>
             </template>
         </div>
     </template>
@@ -43,14 +40,15 @@
 
     <script type="text/javascript">
         // Initialize the widget when the DOM is ready
-        Polymer('dam-photo-group', {
+        Polymer('dam-music-group', {
 
             selectedItems: [],
             timerId:undefined,
 
             publish: {
                 model: [],
-                layoutMode: 'masonry',
+                label: "",
+                layoutMode: 'grid',
 
 
                 /**
@@ -78,11 +76,6 @@
             },
 
 
-            layoutModeChanged:function(arg1, arg2, arg3){
-                var _container = this.$.container;
-                var _initIsotope = this.initIsotope(_container);
-            },
-
             ready: function (e) {
                 console.log("ready");
                 this.onMutation(this, this.childrenUpdated);
@@ -91,10 +84,6 @@
 
             childrenUpdated: function (observer, mutations) {
                 // getDistributedNodes() has new stuff.
-                console.log("children updated");
-                console.dir(observer);
-                console.dir(mutations);
-
                 //console.dir( getDistributedNodes() );
                 // Monitor again.
                 this.onMutation(this, this.childrenUpdated);
@@ -102,20 +91,12 @@
 
 
             attached: function (e) {
-                console.log("attached");
-                console.log(e);
-                //iso.layout();
+                //console.log(e);
             },
 
             domReady: function (e) {
                 console.log("domReady");
                 // init
-                var that = this;
-                var _container = this.$.container;
-                var _initIsotope = this.initIsotope;
-                setTimeout(function () {
-                    _initIsotope(_container, that.layoutMode);
-                }, 300);
 
 
                 // Observe changes
@@ -140,7 +121,7 @@
             },
 
             unselectOthers: function(hardSelectedItem_) {
-                //todo dam-photo needs to change to use binding for the css effect to turn off.
+                //todo dam-album needs to change to use binding for the css effect to turn off.
                 for (var i = 0; i < this.model.length; i++)
                 {
                     var obj = this.model[i];
@@ -152,39 +133,24 @@
 
 
 
-            /**
-             * With a slight delay to let the items finish getting added to the template repeater and then initialize the isotope layout
-             * @param _container
-             */
-            initIsotope: function (_container, _layoutmode) {
-                var that = this;
-                var iso = new Isotope(_container, {
-                    // options
-                    itemSelector: '.item',
-                    layoutMode: _layoutmode
-                });
-
-                //iso.appended( elem );
-                //iso.layout()
-                //iso.on( 'layoutComplete', function( isoInstance, laidOutItems ) {});
-            },
-
-            softSelectPhotoClickHandler: function(event,arg1,arg2)
+            softSelectAlbumClickHandler: function(event,arg1,arg2)
             {
+                this.unselectOthers(event.detail);
                 console.log("single click, photo handler");
-                this.fire('photo-select', event.currentTarget.model);
+                this.fire('album-select', event.currentTarget.model);
             },
 
-            softDeselectPhotoClickHandler: function(event,arg1,arg2)
+            softDeselectAlbumClickHandler: function(event,arg1,arg2)
             {
                 console.log("single deselect click, photo handler");
-                this.fire('photo-deselect', event.currentTarget.model);
+                this.fire('album-deselect', event.currentTarget.model);
             },
 
-            hardSelectPhotoClickHandler: function(event, arg2, arg3)
+            hardSelectAlbumClickHandler: function(event, arg2, arg3)
             {
+                this.unselectOthers(event.detail);
                 console.log("double click, photo handler");
-                this.fire('photo-hard-select', event.currentTarget.model);
+                this.fire('album-hard-select', event.currentTarget.model);
             }
 
         });

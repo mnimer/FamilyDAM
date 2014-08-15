@@ -16,6 +16,7 @@
   ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
   -->
 <link rel="import" href="../../../components/core-list/core-list.html">
+<link rel="import" href="../../../components/paper-button/paper-button.html">
 
 
 
@@ -28,39 +29,68 @@
     </style>
 
     <template>
-        <core-list data="{{selectedItems}}" height="40">
+        <h2>Selected Items</h2>
+        <core-list id="itemList" data="{{selectedItems}}" height="60">
             <template>
                 <div class="lightbox-photo">
                     <img src="http://placehold.it/40x40"/>
-                    {{name}}
+                    {{name}}<br/>
                 </div>
             </template>
         </core-list>
+        <paper-button label="Download All"></paper-button>
     </template>
 
+
     <script type="text/javascript">
-        Polymer('dam-photo-lightbox', {
-            selectedItems:[],
+        (function() {
+            Polymer('dam-photo-lightbox', {
+                selectedItems:[],
 
-            publish:{},
+                publish:{
+                    selectedItems: []
+                },
 
-            ready: function (e) {},
+                ready: function (e) {},
 
-            domReady: function (e) {},
+                domReady: function (e) {},
 
-            addPhoto:function(item_){
-                var pos = this.selectedItems.indexOf(item_);
-                if( pos == -1){
-                    this.selectedItems.push(item_);
+                addPhoto:function(item_){
+                    var pos = this.selectedItems.indexOf(item_);
+                    if( pos == -1){
+                        this.selectedItems.push(item_);
+                    }
+
+                    this.$.itemList.refresh();
+                },
+
+                removePhoto:function(item_){
+                    var pos = this.selectedItems.indexOf(item_);
+                    if( pos > -1 ){
+                        delete this.selectedItems[pos];
+                    }
+
+                    var items = [];
+                    for (var item in this.selectedItems)
+                    {
+                        items.push( this.selectedItems[item] );
+                    }
+                    this.selectedItems = items;
+
+                    //this.$.itemList.refresh();
+                },
+
+                removeOthers: function(item_){
+                    for (var i = 0; i < this.selectedItems.length; i++)
+                    {
+                        var obj = this.selectedItems[i];
+                        if( obj != item_ ){
+                            this.removePhoto(item_);
+                        }
+                    }
                 }
-            },
 
-            removePhoto:function(item){
-                var pos = this.selectedItems.indexOf(item_);
-                if( pos > -1 ){
-                    delete this.selectedItems[pos];
-                }
-            }
-        });
+            });
+        })();
     </script>
 </polymer-element>

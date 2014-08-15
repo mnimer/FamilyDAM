@@ -17,7 +17,7 @@
   -->
 
 <!--
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+Copyright (c) 2012 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
@@ -26,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <html>
 <head>
-    <title>Photos List</title>
+    <title>FamilyDAM Vision Prototype</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
@@ -39,6 +39,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="components/core-toolbar/core-toolbar.html">
     <link rel="import" href="components/core-icon-button/core-icon-button.html">
     <link rel="import" href="components/core-list/core-list.html">
+    <link rel="import" href="components/core-icon/core-icon.html">
     <link rel="import" href="components/core-overlay/core-overlay.html">
     <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
     <link rel="import" href="components/paper-tabs/paper-tabs.html">
@@ -63,155 +64,284 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 </head>
-<body unresolved onload="onLoadHandler()">
+<body unresolved>
 
 
-<core-drawer-panel id="filePanel" class="right-drawer" selected="main" drawerWidth="350px">
-
-    <div main>
-        <core-scroll-header-panel>
-            <core-toolbar class="medium-tall">
-                <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
-                <div flex>FamilyDAM</div>
-                <paper-tabs selected="3" nobar>
-                    <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
-                    <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
-                    <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
-                    <paper-tab onclick="window.location.href='movies.html';">Movies</paper-tab>
-                    <paper-tab onclick="window.location.href='email.html';">Email</paper-tab>
-                    <paper-tab onclick="window.location.href='social.html';">Social</paper-tab>
-                </paper-tabs>
-                <core-icon-button icon="search"></core-icon-button>
-                <core-icon-button icon="more-vert"></core-icon-button>
-                <div class="middle indent title" style="margin-left: 100px;">/movies/</div>
-                <div class="bottom">
-                    <paper-fab icon="add" onclick="toggleUploader();" style="z-index:10;"></paper-fab>
-                </div>
-            </core-toolbar>
-        </core-scroll-header-panel>
-
-
-        <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
-            <div flex></div>
-            <div style="height:45px; vertical-align: bottom;font-size: 24px;margin-top: 10px; margin-bottom: 10px;">
-                <a href="#A">A</a> <a href="#B">B</a> <a href="#C">C</a> D E F G H I J K L M N O P Q R S T U V W X Y Z
+<div>
+    <core-scroll-header-panel>
+        <core-toolbar class="medium-tall">
+            <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
+            <div flex>FamilyDAM</div>
+            <paper-tabs selected="4" >
+                <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
+                <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
+                <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
+                <paper-tab onclick="window.location.href='movies.html';">Movies</paper-tab>
+                <paper-tab onclick="window.location.href='emails.html';">Emails</paper-tab>
+                <paper-tab onclick="window.location.href='social.html';">Social</paper-tab>
+            </paper-tabs>
+            <core-icon-button icon="more-vert"></core-icon-button>
+            <div class="middle indent title" style="margin-left: 100px;">/emails/mike</div>
+            <div class="bottom">
+                <!-- paper-fab icon="add" onclick="toggleUploader();" style="z-index:10;"></paper-fab -->
             </div>
-            <div style="width:80px;"></div>
+        </core-toolbar>
+    </core-scroll-header-panel>
+
+
+    <div horizontal layout
+         style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
+        <div flex></div>
+        <div style="height:45px; vertical-align: bottom;font-size: 24px;margin-top: 5px; margin-bottom: 10px;">
+        </div>
+        <div style="width:100px;"></div>
+    </div>
+
+
+    <core-drawer-panel class="drawer" style="top:173px;">
+        <!-- LEFT DRAWER -->
+        <div drawer style="overflow:scroll">
+            <div id="fileTree" class="sidebar">
+
+                <ul style="margin-left: -20px;list-style: none; min-width: 400px;">
+                    <li>
+                        <core-icon icon="folder"></core-icon>
+                        <a href="files.html" style="text-decoration:none;">Files</a>
+                    </li>
+                    <li>
+                        <core-icon icon="folder"></core-icon>
+                        <a href="photos.html" style="text-decoration:none;">Photos</a>
+                    </li>
+                    <li>
+                        <core-icon icon="folder"></core-icon>
+                        <a href="music.html" style="text-decoration:none;">Music</a>
+                    </li>
+                    <li>
+                        <core-icon icon="folder"></core-icon>
+                        <a href="movies.html" style="text-decoration:none;">Movies</a>
+                    </li>
+                    <li>
+                        <core-icon icon="folder"></core-icon>
+                        <b><i>Email Archive</i></b>
+                        <ul style="list-style: none;">
+                            <li>
+                                <core-icon icon="folder"></core-icon>
+                                Angela
+                            </li>
+                            <li>
+                                <core-icon icon="folder"></core-icon>
+                                <i><b>Mike</b></i>
+                                <ul style="list-style: none;">
+                                    <li>
+                                        <core-icon icon="folder"></core-icon>
+                                        mnimer@gmail.com
+                                    </li>
+                                    <li>
+                                        <core-icon icon="folder"></core-icon>
+                                        mike.nimer@universalmind.com
+                                    </li>
+                                    <li>
+                                        <core-icon icon="folder"></core-icon>
+                                        mikenimer@yahoo.com
+                                    </li>
+                                    <li>
+                                        <core-icon icon="folder"></core-icon>
+                                        mikenimer@spatialkey.com
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <core-icon icon="folder"></core-icon>
+                                Kayden
+                            </li>
+                            <li>
+                                <core-icon icon="folder"></core-icon>
+                                Hailey
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <core-icon icon="folder"></core-icon>
+                        <a href="social.html"  style="text-decoration:none;">Social Web</a>
+                    </li>
+
+                </ul>
+            </div>
+
         </div>
 
 
-        <core-drawer-panel class="drawer" style="top:180px;">
-            <!-- LEFT DRAWER -->
-            <div drawer>
-                <div id="fileTree" class="sidebar">
+        <!-- MAIN -->
+        <div main>
+            <core-drawer-panel class="drawer">
+                <div drawer style="border-left:1px solid #ccc; border-right: 1px solid #ccc;">
+                    <core-list vertical layout style="padding: 10px;">
 
-                    <ul style="margin-left: -20px;list-style: none;">
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            Files
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            Photos
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            Music
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            <b><i>Movies</i></b>
-                            <ul style="list-style: none;">
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Angela
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Mike
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Kayden
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Hailey
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            Email Archive
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            Social Web
-                        </li>
+                        <core-field style="border: 1px solid; border-radius: 5px; background-color:#fff; height:35px;">
+                            <core-icon icon="search"></core-icon>
+                            <input placeholder="Search" flex="" >
+                        </core-field>
 
-                    </ul>
+                        <hr/>
+
+                        <core-field vertical layout>
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+
+
+                        <core-field vertical layout>
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+
+
+                        <core-field vertical layout >
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+
+
+                        <core-field vertical layout >
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+
+
+                        <core-field vertical layout >
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+
+
+                        <core-field vertical layout >
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+
+
+                        <core-field vertical layout >
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+
+
+                        <core-field vertical layout >
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+
+
+                        <core-field vertical layout >
+                            <div horizontal layout style="width:100%;">
+                                <div>John Doe</div>
+                                <div flex></div>
+                                <div>01/24/2012</div>
+                            </div>
+                            <div>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                            </div>
+                            <div><br/></div>
+                        </core-field>
+                    </core-list>
                 </div>
 
-                <div class="tagCloud">
-                    <div style="width:100%;background-color:#FFFFFF;font-family:Arial; border: 1px solid #FFFFFF; text-align:center;">
-                        <div style="padding:5px;">
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Action</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Adventure</a>
-                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Comedy</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Documentary</a>
-                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">Drama</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Educational</a>
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Disney</a>
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Musical</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Sci-Fi</a>
-                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Sports</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Thriller</a>
+
+                <div main style="padding: 25px;">
+
+                    <div vertical layout style="width:100%;">
+
+                        <div horizontal layout >
+                            <div>to:John Doe</div>
+                            <div flex></div>
+                            <div>01/24/2012</div>
+                        </div>
+                        <div horizontal layout >
+                            <div>from:someemail@gmail.com</div>
+                            <div flex></div>
+                        </div>
+                        <div horizontal layout >
+                            <div>cc:</div>
+                            <div flex></div>
+                        </div>
+                        <div>
+                            <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
+                        </div>
+                        <div><hr/></div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dui augue, rhoncus eu feugiat in, auctor in ante. Suspendisse ultrices consequat tempus. Maecenas odio est, imperdiet vel augue ut, luctus euismod ante. Nullam dui sem, fermentum at lobortis vitae, adipiscing eget lorem. Vestibulum in augue varius, pulvinar nibh ut, aliquet nulla. Sed sodales et metus id varius. Duis fermentum orci in sapien scelerisque pharetra. Ut dapibus urna a orci ullamcorper sollicitudin. Donec lobortis, nulla ac scelerisque congue, sem odio mollis ante, lobortis sagittis turpis neque vitae nibh. Cras elementum mattis pulvinar. In ornare eros vitae tellus fermentum suscipit. Fusce vel libero lectus. Donec velit leo, lacinia a eros a, dictum pretium quam. Nulla luctus eros id dapibus rhoncus. Sed imperdiet et sem id placerat. Vestibulum non accumsan diam.</p>
+
+                            <p>Nam lectus augue, tempor vitae luctus nec, posuere a est. Donec aliquam aliquet scelerisque. Mauris vel nisi urna. Pellentesque at turpis vel sapien volutpat mollis vitae quis nunc. Proin fermentum tortor libero, ut ullamcorper sem blandit a. Aenean interdum libero sit amet metus laoreet, a aliquam neque blandit. Duis tempor tempus pretium.</p>
+
+                            <p>Mauris et aliquet velit, feugiat sollicitudin nisl. Integer a pellentesque eros. Fusce at leo libero. Vivamus consectetur mattis velit, pulvinar tincidunt turpis ultrices vel. Morbi sit amet viverra elit, et volutpat tellus. Ut ultricies, tellus eget accumsan ullamcorper, arcu urna laoreet lectus, ac convallis erat nunc lobortis neque. Suspendisse sit amet purus metus. Ut consectetur urna ut tincidunt dignissim. Mauris vitae euismod risus. Curabitur sit amet tristique metus, quis varius nulla. Integer auctor lectus nec sem vestibulum, vel volutpat ligula porttitor. Etiam sollicitudin enim libero, eget cursus orci vulputate in. Proin dictum diam nec pulvinar auctor. Ut id iaculis ipsum, at tempus nunc. In molestie mi vel mi convallis elementum. Nulla facilisi.</p>
+
+                            <p>Praesent pretium, risus vel scelerisque posuere, sapien nisl consectetur justo, eu placerat tortor odio tincidunt metus. Integer ut lorem ac velit ullamcorper adipiscing quis eu nisl. Cras iaculis lobortis odio quis accumsan. Nam consequat rhoncus urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam facilisis ultricies neque eu facilisis. Pellentesque tempus rhoncus mauris luctus rutrum. Proin in lectus facilisis, iaculis tortor id, tempus mi. Etiam vitae fringilla urna. Nunc et leo a tellus faucibus malesuada. Nunc id dui in libero congue ultricies. Nulla sit amet rhoncus enim, eget pulvinar erat. Donec suscipit euismod gravida. Etiam velit ipsum, elementum vel justo malesuada, suscipit elementum magna. Donec scelerisque et purus eget cursus. Sed vitae dui eget quam lobortis condimentum facilisis in odio.</p>
+
+                            <p>Donec facilisis leo volutpat mauris condimentum congue. Etiam semper volutpat lorem id sagittis. Integer viverra est lacinia libero ultricies, et congue nunc convallis. Morbi vulputate ut diam non tincidunt. Integer a metus vel dui convallis pretium nec vitae ipsum. Sed porta et ante in pellentesque. Aenean fringilla lacus sit amet nibh tristique scelerisque. Integer feugiat velit eu erat dapibus convallis. Fusce diam elit, lobortis sit amet purus sit amet, consequat tristique mauris. Integer orci dui, elementum sit amet aliquam non, facilisis id lectus. Fusce blandit sed sapien pellentesque euismod. Pellentesque consequat, turpis quis tristique rutrum, sapien nisi pharetra nunc, a venenatis lacus orci accumsan sem. Curabitur tempor tristique aliquam. Duis condimentum consequat felis et eleifend. Donec sagittis tellus magna, in rhoncus mauris fermentum vitae.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-            <!-- MAIN -->
-            <div main>
-                <div class="folder">
-                    <dam-movie-group id="videoListA"
-                                     label="A"></dam-movie-group>
-
-                    <dam-movie-group id="videoListB"
-                                     label="B"></dam-movie-group>
-
-                    <dam-movie-group id="videoListC"
-                                     label="C"></dam-movie-group>
-
-                </div>
-            </div>
-        </core-drawer-panel>
-    </div>
-
-
-    <div id="rightDrawer" drawer>
-
-        <core-scroll-header-panel id="rightDrawerHeaderPanel" condensedHeaderHeight="65"
-                                  style="border-bottom: 1px solid #000;">
-            <core-toolbar class="medium-tall">
-                <div flex></div>
-                <core-icon-button icon="close" on-click="$('#rightDrawer').closeDrawer();"></core-icon-button>
-            </core-toolbar>
-        </core-scroll-header-panel>
-
-        <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
-            <div><h2>Preview</h2></div>
+            </core-drawer-panel>
         </div>
-        <!-- RIGHT DRAWER -->
-        <div style="position: relative; top:180px;">
-
-            <preview-video id="videoPreview" style="display: none"></preview-video>
-
-        </div>
-    </div>
-</core-drawer-panel>
-
+    </core-drawer-panel>
+</div>
 
 
 <file-uploader id="uploaderOverlay"></file-uploader>
@@ -221,7 +351,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         Movie Player
     </div>
 </core-overlay>
-
 
 
 <script>
@@ -235,78 +364,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         titleStyle.webkitTransform = titleStyle.transform =
                 'scale(' + scale + ') translateZ(0)';
     });
-
-</script>
-
-
-<script>
-    var photos = [];
-
-    var onLoadHandler = function () {
-        AAlbums = [
-            {id: "001", name: "American Pie", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "002", name: "Animal House",  src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "003", name: "Austin Powers",  src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "004", name: "Air Buddies",  src: "http://placehold.it/250x250", width: 250, height: 250},
-        ];
-        BAlbums = [
-            {id: "010", name: "Bambi", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "011", name: "Brave", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "012", name: "Big Daddy", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "013", name: "Braveheart", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "014", name: "Better Off Dead", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "015", name: "Bridesmaid", src: "http://placehold.it/250x250", width: 250, height: 250},
-        ];
-        CAlbums = [
-            {id: "020", name: "Cinderella", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "021", name: "Charlies Angies", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "022", name: "Clerks", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "023", name: "Chasing Amy", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "024", name: "Crazy Stupid Love", src: "http://placehold.it/250x250", width: 250, height: 250},
-        ];
-        document.querySelector("#videoListA").model = AAlbums;
-        document.querySelector("#videoListA").addEventListener('movie-select', videoSelectHandler);
-        document.querySelector("#videoListA").addEventListener('movie-deselect', videoDeselectHandler);
-        document.querySelector("#videoListA").addEventListener('movie-hard-select', videoHardSelectHandler);
-
-
-        document.querySelector("#videoListB").model = BAlbums;
-        document.querySelector("#videoListB").addEventListener('movie-select', videoSelectHandler);
-        document.querySelector("#videoListB").addEventListener('movie-deselect', videoDeselectHandler);
-        document.querySelector("#videoListB").addEventListener('movie-hard-select', videoHardSelectHandler);
-
-
-        document.querySelector("#videoListC").model = CAlbums;
-        document.querySelector("#videoListC").addEventListener('movie-select', videoSelectHandler);
-        document.querySelector("#videoListC").addEventListener('movie-deselect', videoDeselectHandler);
-        document.querySelector("#videoListC").addEventListener('movie-hard-select', videoHardSelectHandler);
-    };
-
-
-    var toggleUploader = function () {
-        document.querySelector("#uploaderOverlay").toggle();
-    };
-
-
-
-    var videoSelectHandler = function(event){
-        console.log("video-select");
-        console.dir(event.detail);
-        document.querySelector("#videoPreview").style.display="block";
-    };
-
-    var videoDeselectHandler = function(event){
-        console.log("video-deselect");
-        console.dir(event.detail);
-        document.querySelector("#videoPreview").style.display="none";
-    };
-
-    var videoHardSelectHandler = function(event){
-        console.log("video-hard-select");
-        console.dir(event.detail);
-
-        document.querySelector("#videoDetailOverlay").toggle();
-    }
 
 </script>
 

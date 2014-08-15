@@ -16,17 +16,13 @@
   -->
 
 <link rel="import" href="../../../components/core-selection/core-selection.html">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="application/javascript" src="../../../components/classie/classie.js"></script>
-<script type="application/javascript" src="../../../components/isotope/dist/isotope.pkgd.js"></script>
 
-
-<polymer-element name="dam-album">
+<polymer-element name="dam-movie">
 
     <template>
-        <link rel="stylesheet" href="dam-music-group.css">
+        <link rel="stylesheet" href="dam-movie-group.css">
 
-        <div id="item" class="album" on-tap="{{tapHandler}}"
+        <div id="item" class="movie" on-tap="{{tapHandler}}"
              style="width: 250px; height: 250px;">
             <!--core-selection id="selection" multi="{{multi}}" on-core-select="{{selectedHandler}}"></core-selection-->
             <img src="{{model.src}}" class=""/>
@@ -38,7 +34,7 @@
 
     <script type="text/javascript">
         // Initialize the widget when the DOM is ready
-        Polymer('dam-album', {
+        Polymer('dam-movie', {
 
             selected: false,
             now : Number(new Date()),
@@ -75,7 +71,7 @@
                     if (this.model.selected)
                     {
                        // change css class to show selected status
-                        item.className = "album";
+                        item.className = "movie";
                         this.model.selected = false;
 
 
@@ -99,7 +95,7 @@
                     }
                     else
                     {
-                        item.className = "album selected"; //todo set selected with binding
+                        item.className = "movie selected"; //todo set selected with binding
 
 
                         if (this.firstClick > 0 && (this.now - this.firstClick) < 300)

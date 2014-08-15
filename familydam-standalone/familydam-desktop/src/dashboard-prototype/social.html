@@ -48,10 +48,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="assets/components/dam-photo-lightbox/dam-photo-lightbox.html">
     <link rel="import" href="assets/components/dam-photo-details/dam-photo-details.html">
     <link rel="import" href="assets/components/file-uploader/file-uploader.html">
-    <link rel="import" href="assets/components/preview-photo/preview-photo.html">
-    <link rel="import" href="assets/components/preview-audio/preview-audio.html">
-    <link rel="import" href="assets/components/preview-video/preview-video.html">
-
     <link type="text/css" rel="stylesheet" href="app.css"/>
 
     <style>
@@ -114,24 +110,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <li>
                             <core-icon icon="folder"></core-icon>
                             <b><i>Photos</i></b>
-                            <ul style="list-style: none;">
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Angela
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Mike
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Kayden
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Hailey
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
@@ -143,49 +121,68 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            <a href="emails.html"  style="text-decoration:none;">Email Archive</a>
+                            <a href="emails.html"  style="text-decoration:none;">Email Archive (2.0)</a>
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            <a href="social.html"  style="text-decoration:none;">Social Web</a>
+                            <a href="social.html"  style="text-decoration:none;">Social Web (2.0)</a>
+                            <ul style="list-style: none;">
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Facebook
+                                    <ul style="list-style: none;">
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            Angela
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            Mike
+                                            <ul style="list-style: none;">
+                                                <li>
+                                                    <core-icon icon="folder"></core-icon>
+                                                    Status
+                                                </li>
+                                                <li>
+                                                    <core-icon icon="folder"></core-icon>
+                                                    Photos
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            Kayden
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            Hailey
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Twitter
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Flickr
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    TripIt
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
 
-
-                <div class="tagCloud">
-                    <div style="width:100%;background-color:#FFFFFF;font-family:Arial; border: 1px solid #FFFFFF; text-align:center;">
-                        <div style="padding:5px;">
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Landscape</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">kids</a>
-                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Hailey</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Kayden</a>
-                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">mike</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Angie</a>
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Vacation</a>
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Work</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Baseball</a>
-                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Birthday</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">School</a>
-                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">B&W</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
             <!-- MAIN -->
             <div main>
                 <div class="folder">
-                    <dam-photo-group id="photoList"
-                                     label="January 2014"></dam-photo-group>
-
-                    <dam-photo-group id="photoList2"
-                                     label="December 2013"></dam-photo-group>
-
-                    <dam-photo-group id="photoList3"
-                                     label="October 2013"></dam-photo-group>
-
+                    TBD
                 </div>
             </div>
         </core-drawer-panel>
@@ -202,15 +199,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </core-scroll-header-panel>
 
         <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
-            <div><h2>Preview</h2></div>
+            <div><h2></h2></div>
         </div>
 
-        <!-- RIGHT DRAWER -->
-        <div style="position: relative; top:180px;">
-            <dam-photo-lightbox id="photoLightbox" style="display: none"></dam-photo-lightbox>
-            <preview-photo id="photoPreview" style="display: none"></preview-photo>
-
-        </div>
     </div>
 </core-drawer-panel>
 
@@ -243,89 +234,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script>
     var photos = [];
 
-    var onLoadHandler = function () {
-        photos = [
-            {id: "001", name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "002", name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "003", name: "dsc0003.jpg", date: '01/21/2014', src: "http://placehold.it/200x300", width: 200, height: 300},
-            {id: "004", name: "dsc0004.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "005", name: "dsc0005.jpg", date: '01/21/2014', src: "http://placehold.it/200x300", width: 200, height: 300},
-            {id: "006", name: "dsc0006.jpg", date: '01/21/2014', src: "http://placehold.it/500x250", width: 500, height: 250},
-            {id: "007", name: "dsc0007.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "008", name: "dsc0008.jpg", date: '01/21/2014', src: "http://placehold.it/500x250", width: 500, height: 250},
-            {id: "009", name: "dsc0009.jpg", date: '01/21/2014', src: "http://placehold.it/500x250", width: 500, height: 250},
-            {id: "010", name: "dsc00010.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "011", name: "dsc00011.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "012", name: "dsc00012.jpg", date: '01/21/2014', src: "http://placehold.it/200x300", width: 200, height: 300},
-            {id: "013", name: "dsc00013.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "014", name: "dsc00014.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "015", name: "dsc00015.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "016", name: "dsc00016.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250}
-        ];
-        document.querySelector("#photoList").model = photos;
-        document.querySelector("#photoList").addEventListener('photo-select', photoSelectHandler);
-        document.querySelector("#photoList").addEventListener('photo-deselect', photoDeselectHandler);
-        document.querySelector("#photoList").addEventListener('photo-hard-select', photoHardSelectHandler);
-
-
-        document.querySelector("#photoList2").model = photos;
-        document.querySelector("#photoList2").addEventListener('photo-select', photoSelectHandler);
-        document.querySelector("#photoList2").addEventListener('photo-deselect', photoDeselectHandler);
-        document.querySelector("#photoList2").addEventListener('photo-hard-select', photoHardSelectHandler);
-
-
-        document.querySelector("#photoList3").model = photos;
-        document.querySelector("#photoList3").addEventListener('photo-select', photoSelectHandler);
-        document.querySelector("#photoList3").addEventListener('photo-deselect', photoDeselectHandler);
-        document.querySelector("#photoList3").addEventListener('photo-hard-select', photoHardSelectHandler);
-    };
+    var onLoadHandler = function () {}
 
 
     var toggleUploader = function () {
         document.querySelector("#uploaderOverlay").toggle();
     };
-
-
-
-    var photoSelectHandler = function(event){
-        console.dir(event.detail);
-
-        document.querySelector("#photoLightbox").addPhoto(event.detail);
-        if( document.querySelector("#photoLightbox").selectedItems.length == 1)
-        {
-            document.querySelector("#photoPreview").style.display = "block";
-            document.querySelector("#photoLightbox").style.display = "none";
-        }else{
-            document.querySelector("#photoLightbox").style.display = "block";
-            document.querySelector("#photoPreview").style.display = "none";
-        }
-    };
-
-    var photoDeselectHandler = function(event){
-        console.dir(event.detail);
-
-        document.querySelector("#photoLightbox").removePhoto(event.detail);
-        if( document.querySelector("#photoLightbox").selectedItems.length == 1)
-        {
-            document.querySelector("#photoPreview").style.display = "block";
-            document.querySelector("#photoLightbox").style.display = "none";
-        }else{
-            document.querySelector("#photoLightbox").style.display = "block";
-            document.querySelector("#photoPreview").style.display = "none";
-        }
-    };
-
-    var photoHardSelectHandler = function(event){
-        console.dir(event.detail);
-
-        document.querySelector("#photoList").unselectOthers(event.detail);
-        document.querySelector("#photoList2").unselectOthers(event.detail);
-        document.querySelector("#photoList3").unselectOthers(event.detail);
-        document.querySelector("#photoLightbox").removeOthers(event.detail);
-
-        document.querySelector("#photoDetails").model = event.detail;
-        document.querySelector("#photoDetailOverlay").toggle();
-    }
 
 </script>
 

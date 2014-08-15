@@ -17,7 +17,7 @@
 
 <link rel="import" href="../../../components/core-selection/core-selection.html">
 <link rel="import" href="dam-photo.html">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="../../jquery.min.js"></script>
 <script type="application/javascript" src="../../../components/classie/classie.js"></script>
 <script type="application/javascript" src="../../../components/isotope/dist/isotope.pkgd.js"></script>
 
@@ -29,12 +29,12 @@
         <link rel="stylesheet" href="dam-photo-group.css">
 
         <h2>{{label}}</h2>
-        <div id="container" style="width:100%; background-color: gray;">
+        <div id="container" layout horizontal wrap style="width:100%;">
             <template repeat="{{item in model}}">
                 <dam-photo class="item"
                            model="{{item}}"
                            on-soft-select="{{softSelectPhotoClickHandler}}"
-                           on-soft-deselect="{{softSelectPhotoClickHandler}}"
+                           on-soft-deselect="{{softDeselectPhotoClickHandler}}"
                            on-hard-select="{{hardSelectPhotoClickHandler}}"></dam-photo>
             </template>
         </div>
@@ -139,6 +139,18 @@
                  ***/
             },
 
+            unselectOthers: function(hardSelectedItem_) {
+                //todo dam-photo needs to change to use binding for the css effect to turn off.
+                for (var i = 0; i < this.model.length; i++)
+                {
+                    var obj = this.model[i];
+                    if( obj != hardSelectedItem_ ){
+                        obj.selected = false;
+                    }
+                }
+            },
+
+
 
             /**
              * With a slight delay to let the items finish getting added to the template repeater and then initialize the isotope layout
@@ -163,11 +175,10 @@
                 this.fire('photo-select', event.currentTarget.model);
             },
 
-
             softDeselectPhotoClickHandler: function(event,arg1,arg2)
             {
                 console.log("single deselect click, photo handler");
-                this.fire('photo-unselect', event.currentTarget.model);
+                this.fire('photo-deselect', event.currentTarget.model);
             },
 
             hardSelectPhotoClickHandler: function(event, arg2, arg3)

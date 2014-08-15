@@ -26,14 +26,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <html>
 <head>
-    <title>Photos List</title>
+    <title>FamilyDAM Vision Prototype</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <script src="components/platform/platform.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="assets/jquery.min.js"></script>
 
     <link rel="import" href="components/core-scroll-header-panel/core-scroll-header-panel.html">
     <link rel="import" href="components/core-toolbar/core-toolbar.html">
@@ -69,29 +69,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body unresolved onload="onLoadHandler()">
 
-<core-drawer-panel id="filePanel" class="right-drawer" selected="main" drawerWidth="350px">
+<core-drawer-panel id="filePanel" class="right-drawer"  >
     <div main>
         <core-scroll-header-panel>
             <core-toolbar class="medium-tall">
                 <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
                 <div flex>FamilyDAM</div>
-                <paper-tabs selected="0" nobar>
+                <paper-tabs selected="1" >
                     <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
                     <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
-                    <paper-tab>Music</paper-tab>
-                    <paper-tab>Movies</paper-tab>
+                    <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
+                    <paper-tab onclick="window.location.href='movies.html';">Movies</paper-tab>
+                    <paper-tab onclick="window.location.href='emails.html';">Emails</paper-tab>
+                    <paper-tab onclick="window.location.href='social.html';">Social</paper-tab>
                 </paper-tabs>
                 <core-icon-button icon="search"></core-icon-button>
                 <core-icon-button icon="more-vert"></core-icon-button>
                 <div class="middle indent title" style="margin-left: 100px;">/photos/</div>
                 <div class="bottom">
-                    <paper-fab icon="add" onclick="toggleUploader();"></paper-fab>
+                    <paper-fab icon="add" onclick="toggleUploader();" style="z-index: 10"></paper-fab>
                 </div>
             </core-toolbar>
-
         </core-scroll-header-panel>
 
-        <core-drawer-panel class="drawer" style="top:135px;">
+
+        <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
+            <div flex></div>
+            <div style="height:45px; vertical-align: bottom;font-size: 24px;margin-top: 10px; margin-bottom: 10px;">
+
+            </div>
+            <div style="width:80px;"></div>
+        </div>
+
+        <core-drawer-panel class="drawer" style="top:180px;">
             <!-- LEFT DRAWER -->
             <div drawer>
                 <div id="fileTree" class="sidebar">
@@ -99,7 +109,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <ul style="margin-left: -20px;list-style: none;">
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            Files
+                            <a href="files.html"  style="text-decoration:none;">Files</a>
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
@@ -125,13 +135,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            Music
+                            <a href="music.html"  style="text-decoration:none;">Music</a>
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            Movies
+                            <a href="movies.html"  style="text-decoration:none;">Movies</a>
+                        </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            <a href="emails.html"  style="text-decoration:none;">Email Archive</a>
+                        </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            <a href="social.html"  style="text-decoration:none;">Social Web</a>
                         </li>
                     </ul>
+                </div>
+
+
+                <div class="tagCloud">
+                    <div style="width:100%;background-color:#FFFFFF;font-family:Arial; border: 1px solid #FFFFFF; text-align:center;">
+                        <div style="padding:5px;">
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Landscape</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">kids</a>
+                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Hailey</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Kayden</a>
+                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">mike</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Angie</a>
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Vacation</a>
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Work</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Baseball</a>
+                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Birthday</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">School</a>
+                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">B&W</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -163,8 +201,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </core-toolbar>
         </core-scroll-header-panel>
 
+        <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
+            <div><h2>Preview</h2></div>
+        </div>
+
         <!-- RIGHT DRAWER -->
-        <div style="position: relative; top:135px;">
+        <div style="position: relative; top:180px;">
             <dam-photo-lightbox id="photoLightbox" style="display: none"></dam-photo-lightbox>
             <preview-photo id="photoPreview" style="display: none"></preview-photo>
 
@@ -248,14 +290,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     var photoSelectHandler = function(event){
         console.dir(event.detail);
 
-        document.querySelector("#photoLightbox").style.display = "block";
         document.querySelector("#photoLightbox").addPhoto(event.detail);
+        if( document.querySelector("#photoLightbox").selectedItems.length == 1)
+        {
+            document.querySelector("#photoPreview").style.display = "block";
+            document.querySelector("#photoLightbox").style.display = "none";
+        }else{
+            document.querySelector("#photoLightbox").style.display = "block";
+            document.querySelector("#photoPreview").style.display = "none";
+        }
     };
 
     var photoDeselectHandler = function(event){
         console.dir(event.detail);
 
         document.querySelector("#photoLightbox").removePhoto(event.detail);
+        if( document.querySelector("#photoLightbox").selectedItems.length == 1)
+        {
+            document.querySelector("#photoPreview").style.display = "block";
+            document.querySelector("#photoLightbox").style.display = "none";
+        }else{
+            document.querySelector("#photoLightbox").style.display = "block";
+            document.querySelector("#photoPreview").style.display = "none";
+        }
     };
 
     var photoHardSelectHandler = function(event){

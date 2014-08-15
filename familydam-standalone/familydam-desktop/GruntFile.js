@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', ['clean', 'build']);
 
 	// build tasks
-	grunt.registerTask('build', ['copy', 'build-atom-shell-app']);
+	//grunt.registerTask('build', ['copy']);
 
 
 
@@ -369,7 +369,6 @@ module.exports = function (grunt) {
                         'angular-file-upload': './bower_components/angular-file-upload/angular-file-upload.js',
                         'angular-ui-select2':'./bower_components/angular-ui-select2/src/select2.js',
                         'angular-sanitize':'./bower_components/angular-sanitize/angular-sanitize.js',
-                        'angular-slider':'./bower_components/angular-slider/angular-slider.js',
                         'jquery': './bower_components/jquery/jquery.js',
                         'jquery-ui': './bower_components/jquery-ui/jquery-ui.js',
                         'ui.bootstrap': './bower_components/angular-bootstrap/ui-bootstrap.js',
@@ -514,7 +513,7 @@ module.exports = function (grunt) {
         },
 
         'download-atom-shell': {
-            version: '0.12.7',
+            version: '0.15.6',
             outputDir: 'binaries'
         },
 
@@ -524,7 +523,7 @@ module.exports = function (grunt) {
                 app_dir:"dist",
                 cache_dir:"binaries",
                 build_dir:"binary-dist",
-                atom_shell_version: 'v0.12.7'
+                atom_shell_version: 'v0.15.6'
             }
         }
 

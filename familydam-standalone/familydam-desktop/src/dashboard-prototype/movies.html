@@ -26,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <html>
 <head>
-    <title>Photos List</title>
+    <title>FamilyDAM Vision Prototype</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
@@ -44,10 +44,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="components/paper-tabs/paper-tabs.html">
     <link rel="import" href="components/paper-tabs/paper-tab.html">
     <link rel="import" href="components/paper-fab/paper-fab.html">
-    <link rel="import" href="assets/components/dam-music-group/dam-music-group.html">
+    <link rel="import" href="assets/components/dam-movie-group/dam-movie-group.html">
     <link rel="import" href="assets/components/file-uploader/file-uploader.html">
-    <link rel="import" href="assets/components/preview-photo/preview-photo.html">
-    <link rel="import" href="assets/components/preview-audio/preview-audio.html">
     <link rel="import" href="assets/components/preview-video/preview-video.html">
 
     <link type="text/css" rel="stylesheet" href="app.css"/>
@@ -75,15 +73,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <core-toolbar class="medium-tall">
                 <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
                 <div flex>FamilyDAM</div>
-                <paper-tabs selected="2" nobar>
+                <paper-tabs selected="3" >
                     <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
                     <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
                     <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
-                    <paper-tab onclick="window.location.href='movie.html';">Movies</paper-tab>
+                    <paper-tab onclick="window.location.href='movies.html';">Movies</paper-tab>
+                    <paper-tab onclick="window.location.href='emails.html';">Email</paper-tab>
+                    <paper-tab onclick="window.location.href='social.html';">Social</paper-tab>
                 </paper-tabs>
                 <core-icon-button icon="search"></core-icon-button>
                 <core-icon-button icon="more-vert"></core-icon-button>
-                <div class="middle indent title" style="margin-left: 100px;">/music/</div>
+                <div class="middle indent title" style="margin-left: 100px;">/movies/</div>
                 <div class="bottom">
                     <paper-fab icon="add" onclick="toggleUploader();" style="z-index:10;"></paper-fab>
                 </div>
@@ -108,15 +108,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <ul style="margin-left: -20px;list-style: none;">
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            Files
+                            <a href="files.html"  style="text-decoration:none;">Files</a>
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            Photos
+                            <a href="photos.html"  style="text-decoration:none;">Photos</a>
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            <b><i>Music</i></b>
+                            <a href="music.html"  style="text-decoration:none;">Music</a>
+                        </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            <b><i>Movies</i></b>
                             <ul style="list-style: none;">
                                 <li>
                                     <core-icon icon="folder"></core-icon>
@@ -138,21 +142,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            Movies
+                            <a href="emails.html"  style="text-decoration:none;">Email Archive</a>
                         </li>
+                        <li>
+                            <core-icon icon="folder"></core-icon>
+                            <a href="social.html"  style="text-decoration:none;">Social Web</a>
+                        </li>
+
                     </ul>
                 </div>
 
                 <div class="tagCloud">
                     <div style="width:100%;background-color:#FFFFFF;font-family:Arial; border: 1px solid #FFFFFF; text-align:center;">
                         <div style="padding:5px;">
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Classical</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Country</a>
-                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Rock</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Soundtrack</a>
-                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">Pop</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Rap</a>
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Hip-Hop</a>
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Action</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Adventure</a>
+                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Comedy</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Documentary</a>
+                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">Drama</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Educational</a>
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Disney</a>
+                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Musical</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Sci-Fi</a>
+                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Sports</a>
+                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Thriller</a>
                         </div>
                     </div>
                 </div>
@@ -162,14 +175,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <!-- MAIN -->
             <div main>
                 <div class="folder">
-                    <dam-music-group id="albumListA"
-                                     label="A"></dam-music-group>
+                    <dam-movie-group id="videoListA"
+                                     label="A"></dam-movie-group>
 
-                    <dam-music-group id="albumListB"
-                                     label="B"></dam-music-group>
+                    <dam-movie-group id="videoListB"
+                                     label="B"></dam-movie-group>
 
-                    <dam-music-group id="albumListC"
-                                     label="C"></dam-music-group>
+                    <dam-movie-group id="videoListC"
+                                     label="C"></dam-movie-group>
 
                 </div>
             </div>
@@ -193,7 +206,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- RIGHT DRAWER -->
         <div style="position: relative; top:180px;">
 
-            <preview-audio id="albumPreview" style="display: none"></preview-audio>
+            <preview-video id="videoPreview" style="display: none"></preview-video>
 
         </div>
     </div>
@@ -203,17 +216,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <file-uploader id="uploaderOverlay"></file-uploader>
 
-<core-overlay id="albumDetailOverlay" backdrop="true" layered="true">
+<core-overlay id="videoDetailOverlay" backdrop="true" layered="true">
     <div style="width:700px; height:500px; background-color: #fff">
-        Album Details
+        Movie Player
     </div>
 </core-overlay>
 
-<core-overlay id="artistDetailOverlay" backdrop="true" layered="true">
-    <div style="width:700px; height:500px; background-color: #fff">
-        Artist Details
-    </div>
-</core-overlay>
 
 
 <script>
@@ -236,42 +244,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     var onLoadHandler = function () {
         AAlbums = [
-            {id: "001", name: "Aerosmit", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "002", name: "ABBA",  src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "003", name: "Alice In Chains",  src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "004", name: "Alicia Keys",  src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "001", name: "American Pie", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "002", name: "Animal House",  src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "003", name: "Austin Powers",  src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "004", name: "Air Buddies",  src: "http://placehold.it/250x250", width: 250, height: 250},
         ];
         BAlbums = [
-            {id: "010", name: "Backstreet Boys", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "011", name: "Beatles", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "012", name: "Beach Boys", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "013", name: "Billy Joel", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "014", name: "Bob Dylan", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "015", name: "Bob Seger", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "010", name: "Bambi", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "011", name: "Brave", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "012", name: "Big Daddy", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "013", name: "Braveheart", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "014", name: "Better Off Dead", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "015", name: "Bridesmaid", src: "http://placehold.it/250x250", width: 250, height: 250},
         ];
         CAlbums = [
-            {id: "020", name: "Cake", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "021", name: "ColdPlay", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "022", name: "Cheap Trick", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "023", name: "Creed", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "024", name: "Cure", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "020", name: "Cinderella", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "021", name: "Charlies Angies", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "022", name: "Clerks", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "023", name: "Chasing Amy", src: "http://placehold.it/250x250", width: 250, height: 250},
+            {id: "024", name: "Crazy Stupid Love", src: "http://placehold.it/250x250", width: 250, height: 250},
         ];
-        document.querySelector("#albumListA").model = AAlbums;
-        document.querySelector("#albumListA").addEventListener('album-select', albumSelectHandler);
-        document.querySelector("#albumListA").addEventListener('album-deselect', albumDeselectHandler);
-        document.querySelector("#albumListA").addEventListener('album-hard-select', albumHardSelectHandler);
+        document.querySelector("#videoListA").model = AAlbums;
+        document.querySelector("#videoListA").addEventListener('movie-select', videoSelectHandler);
+        document.querySelector("#videoListA").addEventListener('movie-deselect', videoDeselectHandler);
+        document.querySelector("#videoListA").addEventListener('movie-hard-select', videoHardSelectHandler);
 
 
-        document.querySelector("#albumListB").model = BAlbums;
-        document.querySelector("#albumListB").addEventListener('album-select', albumSelectHandler);
-        document.querySelector("#albumListB").addEventListener('album-deselect', albumDeselectHandler);
-        document.querySelector("#albumListB").addEventListener('album-hard-select', albumHardSelectHandler);
+        document.querySelector("#videoListB").model = BAlbums;
+        document.querySelector("#videoListB").addEventListener('movie-select', videoSelectHandler);
+        document.querySelector("#videoListB").addEventListener('movie-deselect', videoDeselectHandler);
+        document.querySelector("#videoListB").addEventListener('movie-hard-select', videoHardSelectHandler);
 
 
-        document.querySelector("#albumListC").model = CAlbums;
-        document.querySelector("#albumListC").addEventListener('album-select', albumSelectHandler);
-        document.querySelector("#albumListC").addEventListener('album-deselect', albumDeselectHandler);
-        document.querySelector("#albumListC").addEventListener('album-hard-select', albumHardSelectHandler);
+        document.querySelector("#videoListC").model = CAlbums;
+        document.querySelector("#videoListC").addEventListener('movie-select', videoSelectHandler);
+        document.querySelector("#videoListC").addEventListener('movie-deselect', videoDeselectHandler);
+        document.querySelector("#videoListC").addEventListener('movie-hard-select', videoHardSelectHandler);
     };
 
 
@@ -281,21 +289,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 
-    var albumSelectHandler = function(event){
-        console.log("album-select");
+    var videoSelectHandler = function(event){
+        console.log("video-select");
         console.dir(event.detail);
-        document.querySelector("#albumPreview").style.display="block";
+        document.querySelector("#videoPreview").style.display="block";
     };
 
-    var albumDeselectHandler = function(event){
-        console.log("album-deselect");
+    var videoDeselectHandler = function(event){
+        console.log("video-deselect");
         console.dir(event.detail);
-        document.querySelector("#albumPreview").style.display="none";
+        document.querySelector("#videoPreview").style.display="none";
     };
 
-    var albumHardSelectHandler = function(event){
-        console.log("album-hard-select");
+    var videoHardSelectHandler = function(event){
+        console.log("video-hard-select");
         console.dir(event.detail);
+
+        document.querySelector("#videoDetailOverlay").toggle();
     }
 
 </script>
