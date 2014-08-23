@@ -1,6 +1,23 @@
 
 <!doctype html>
 <!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
@@ -113,7 +130,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
         <div flex></div>
-        <paper-tabs >
+        <paper-tabs style="min-width: 375px;">
+            <paper-tab onclick="window.location.href='familyplanning.html';">Family</paper-tab>
             <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
             <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
             <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>

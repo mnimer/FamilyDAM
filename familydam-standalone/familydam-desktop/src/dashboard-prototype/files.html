@@ -65,7 +65,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <core-toolbar  class="medium-tall">
                     <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
                     <div flex>FamilyDAM</div>
-                    <paper-tabs selected="0">
+                    <paper-tabs selected="1"  style="min-width: 375px;">
+                        <paper-tab onclick="window.location.href='familyplanning.html';">Family</paper-tab>
                         <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
                         <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
                         <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
@@ -92,12 +93,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div style="width:80px;"></div>
             </div>
 
+
             <core-drawer-panel class="drawer" style="top:180px;">
                 <!-- LEFT DRAWER -->
                 <div drawer>
                     <div id="fileTree" class="sidebar">
 
                         <ul style="margin-left: -20px;list-style: none;">
+
+                            <li>
+                                <core-icon icon="folder"></core-icon>
+                                <a href="familyplanning.html" style="text-decoration:none;">Family Planning (3.0)</a>
+                            </li>
                             <li>
                                 <core-icon icon="folder"></core-icon>
                                 <b><i>Files</i></b>
@@ -134,11 +141,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </li>
                             <li>
                                 <core-icon icon="folder"></core-icon>
-                                <a href="emails.html"  style="text-decoration:none;">Email Archive</a>
+                                <a href="emails.html"  style="text-decoration:none;">Email Archive (2.0)</a>
                             </li>
                             <li>
                                 <core-icon icon="folder"></core-icon>
-                                <a href="social.html"  style="text-decoration:none;">Social Web</a>
+                                <a href="social.html"  style="text-decoration:none;">Social Web (2.0)</a>
                             </li>
                         </ul>
                     </div>

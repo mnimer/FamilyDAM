@@ -24,25 +24,38 @@
 <polymer-element name="dam-photo">
 
     <template>
-        <link rel="stylesheet" href="dam-photo-group.css">
+        <style>
 
-        <div id="item" class="photo" on-tap="{{tapHandler}}"
-             style="width: {{model.width}}px; height: {{model.height}}px;">
+            .photo
+            {
+                background-color: #fff;
+                padding:          20px;
+                padding-bottom:   40px;
+                border:           1px solid #eeeeef;
+            }
+
+            .selected
+            {
+                border: 1px solid #3949ab;
+            }
+        </style>
+
+        <div id="item" class="photo" on-tap="{{tapHandler}}">
             <!--core-selection id="selection" multi="{{multi}}" on-core-select="{{selectedHandler}}"></core-selection-->
             <img src="{{model.src}}" class=""/>
-            <div class="label">{{model.name}}</div>
+
+            <div class="label">t1:{{model.name}}</div>
         </div>
 
     </template>
-
 
     <script type="text/javascript">
         // Initialize the widget when the DOM is ready
         Polymer('dam-photo', {
 
             selected: false,
-            now : Number(new Date()),
-            firstClick : 0,
+            now: Number(new Date()),
+            firstClick: 0,
 
             publish: {
                 model: {}
@@ -74,7 +87,7 @@
                     var timerId;
                     if (this.model.selected)
                     {
-                       // change css class to show selected status
+                        // change css class to show selected status
                         item.className = "photo";
                         this.model.selected = false;
 
@@ -130,18 +143,26 @@
             },
 
             singleClickHandler: function (_event, _item) {
+
+
                 console.log("single click");
-                if( _item.selected == true )
+                if (_item.selected == true)
                 {
                     this.fire('soft-select', _item);
-                }else{
+                } else
+                {
                     this.fire('soft-deselect', _item);
                 }
+
             },
 
             doubleClickHandler: function (_event, _item) {
+
                 console.log("double click");
                 this.fire('hard-select', _item);
+
+                this.state = "detail";
+
             }
 
         });

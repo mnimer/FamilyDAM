@@ -16,178 +16,231 @@
   -->
 
 <link rel="import" href="../../../components/core-selection/core-selection.html">
+<link rel="import" href="../../../components/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="dam-photo.html">
 <script src="../../jquery.min.js"></script>
 <script type="application/javascript" src="../../../components/classie/classie.js"></script>
 <script type="application/javascript" src="../../../components/isotope/dist/isotope.pkgd.js"></script>
 
 
-
 <polymer-element name="dam-photo-group">
 
-    <template>
-        <link rel="stylesheet" href="dam-photo-group.css">
+<template>
+    <link rel="stylesheet" href="dam-photo-group.css">
+    <style>
+        body
+        {
+            font-family: sans-serif;
+        }
 
-        <h2>{{label}}</h2>
-        <div id="container" layout horizontal wrap style="width:100%;">
-            <template repeat="{{item in model}}">
-                <dam-photo class="item"
-                           model="{{item}}"
-                           on-soft-select="{{softSelectPhotoClickHandler}}"
-                           on-soft-deselect="{{softDeselectPhotoClickHandler}}"
-                           on-hard-select="{{hardSelectPhotoClickHandler}}"></dam-photo>
-            </template>
-        </div>
-    </template>
+        .toolbar
+        {
+            background-color: steelblue;
+        }
 
+        #container
+        {
+            overflow: auto;
+        }
 
-    <script type="text/javascript">
-        // Initialize the widget when the DOM is ready
-        Polymer('dam-photo-group', {
+        .card
+        {
+            position:         relative;
+            height:           150px;
+            width:            150px;
+            font-size:        50px;
+            margin:           8px;
+            background-color: blue;
+            border-radius:    4px;
+            cursor:           default;
+        }
 
-            selectedItems: [],
-            timerId:undefined,
+        .view
+        {
+            font-size:        250px;
+            background-color: tomato;
+        }
 
-            publish: {
-                model: [],
-                layoutMode: 'masonry',
-
-
-                /**
-                 *
-                 * The property set on the list view data to represent selection state.
-                 * This should set so that it does not conflict with other data properties.
-                 * Note, selection data is not stored on the data in given in the data property.
-                 *
-                 * @attribute selectedProperty
-                 * @type string
-                 * @default 'selected'
-                 */
-                selectedProperty: 'selected',
-
-                /**
-                 *
-                 * Set to true to support multiple selection.
-                 *
-                 * @attribute multi
-                 * @type boolean
-                 * @default false
-                 */
-                multi: true
-
-            },
+    </style>
 
 
-            layoutModeChanged:function(arg1, arg2, arg3){
-                var _container = this.$.container;
-                var _initIsotope = this.initIsotope(_container);
-            },
-
-            ready: function (e) {
-                console.log("ready");
-                this.onMutation(this, this.childrenUpdated);
-            },
-
-
-            childrenUpdated: function (observer, mutations) {
-                // getDistributedNodes() has new stuff.
-                console.log("children updated");
-                console.dir(observer);
-                console.dir(mutations);
-
-                //console.dir( getDistributedNodes() );
-                // Monitor again.
-                this.onMutation(this, this.childrenUpdated);
-            },
-
-
-            attached: function (e) {
-                console.log("attached");
-                console.log(e);
-                //iso.layout();
-            },
-
-            domReady: function (e) {
-                console.log("domReady");
-                // init
-                var that = this;
-                var _container = this.$.container;
-                var _initIsotope = this.initIsotope;
-                setTimeout(function () {
-                    _initIsotope(_container, that.layoutMode);
-                }, 300);
+    <core-animated-pages id="pages" flex selected="0" on-core-animated-pages-transition-end="{{transitionEnd}}"
+                         transitions="cross-fade-all hero-transition" style="width:100%; height:700px;">
+        <section vertical layout>
+            <div id="container" flex horizontal wrap layout >
+                <template repeat="{{item in model}}">
+                    <dam-photo class="item photo"
+                               model="{{item}}"
+                               hero-id="{{item.id}}"
+                               hero?="{{$.pages.selected === item.indx + 1 || lastSelected === item.indx + 1}}"
+                               on-soft-select="{{softSelectPhotoClickHandler}}"
+                               on-soft-deselect="{{softDeselectPhotoClickHandler}}"
+                               on-hard-select="{{selectView}}"></dam-photo>
+                    <!--
+                    <div class="card" vertical center center-justified layout hero-id="item-{{item.indx}}"
+                         hero?="{{$.pages.selected === item.indx + 1 || lastSelected === item.indx + 1}}"
+                        on-tap="{{selectView}}">
+                        <span cross-fade>t1={{item.indx}}</span>
+                    </div>
+                    -->
+                </template>
+            </div>
+        </section>
 
 
-                // Observe changes
-                // TODO: Make it cleaner
-                // create an observer instance
-                /***
-                 var that = this;
-                 var observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        console.log("observation", mutation.type, arguments, mutations);
-                        if(mutation.addedNodes){
-                            //DRY, performance
-                            console.log("something was added")
-                            //that.createItemsList();
-                            //that.refresh();
-                        }
-                    });
-                });
-                 // pass in the target node, as well as the observer options
-                 observer.observe(this, { childList: true });
-                 ***/
-            },
 
-            unselectOthers: function(hardSelectedItem_) {
-                //todo dam-photo needs to change to use binding for the css effect to turn off.
-                for (var i = 0; i < this.model.length; i++)
-                {
-                    var obj = this.model[i];
-                    if( obj != hardSelectedItem_ ){
-                        obj.selected = false;
-                    }
-                }
-            },
+        <template repeat="{{item in model}}">
+            <section vertical layout>
+                <div class="view" flex vertical center center-justified layout hero-id="item-{{item.indx}}"
+                     hero?="{{$.pages.selected === item.indx + 1 || $.pages.selected === 0}}">
+                        <span cross-fade on-tap="{{back}}">t2 = {{item.indx}}</span>
+                </div>
+            </section>
+        </template>
+</core-animated-pages>
 
+
+<!--
+<div style="display:block;position:relative; left:30px; right:30px; min-height:100%;">
+    <h2>{{label}}</h2>
+    <div>
+    <div id="container" layout horizontal wrap style="width:100%;height:100%;">
+        <template repeat="{{item in model}}">
+            <dam-photo class="item"
+                       model="{{item}}"
+                       on-soft-select="{{softSelectPhotoClickHandler}}"
+                       on-soft-deselect="{{softDeselectPhotoClickHandler}}"
+                       on-hard-select="{{hardSelectPhotoClickHandler}}"></dam-photo>
+        </template>
+    </div>
+    </div>
+</div>
+-->
+</template>
+
+
+<script type="text/javascript">
+    // Initialize the widget when the DOM is ready
+    Polymer('dam-photo-group', {
+
+        selectedItems: [],
+        timerId: undefined,
+        iso: undefined,
+
+        publish: {
+            model: [],
+            label: "",
+            wide: true,
+            layoutMode: 'masonry',
 
 
             /**
-             * With a slight delay to let the items finish getting added to the template repeater and then initialize the isotope layout
-             * @param _container
+             *
+             * The property set on the list view data to represent selection state.
+             * This should set so that it does not conflict with other data properties.
+             * Note, selection data is not stored on the data in given in the data property.
+             *
+             * @attribute selectedProperty
+             * @type string
+             * @default 'selected'
              */
-            initIsotope: function (_container, _layoutmode) {
-                var that = this;
-                var iso = new Isotope(_container, {
-                    // options
-                    itemSelector: '.item',
-                    layoutMode: _layoutmode
-                });
+            selectedProperty: 'selected',
 
-                //iso.appended( elem );
-                //iso.layout()
-                //iso.on( 'layoutComplete', function( isoInstance, laidOutItems ) {});
-            },
+            /**
+             *
+             * Set to true to support multiple selection.
+             *
+             * @attribute multi
+             * @type boolean
+             * @default false
+             */
+            multi: true
 
-            softSelectPhotoClickHandler: function(event,arg1,arg2)
-            {
-                console.log("single click, photo handler");
-                this.fire('photo-select', event.currentTarget.model);
-            },
+        },
 
-            softDeselectPhotoClickHandler: function(event,arg1,arg2)
-            {
-                console.log("single deselect click, photo handler");
-                this.fire('photo-deselect', event.currentTarget.model);
-            },
 
-            hardSelectPhotoClickHandler: function(event, arg2, arg3)
-            {
-                console.log("double click, photo handler");
-                this.fire('photo-hard-select', event.currentTarget.model);
+        layoutModeChanged: function (arg1, arg2, arg3) {
+            var _container = this.$.container;
+            var _initIsotope = this.initIsotope(_container);
+        },
+
+        ready: function (e) {
+            console.log("ready");
+            this.onMutation(this, this.childrenUpdated);
+        },
+
+        childrenUpdated: function (observer, mutations) {
+            // getDistributedNodes() has new stuff.
+            //console.log("children updated");
+            //console.dir(observer);
+            //console.dir(mutations);
+
+            //console.dir( getDistributedNodes() );
+            // Monitor again.
+            this.onMutation(this, this.childrenUpdated);
+        },
+
+
+        attached: function (e) {
+            //console.log("attached");
+            //console.log(e);
+        },
+
+        domReady: function (e) {
+            //console.log("domReady");
+        },
+
+
+        selectView: function (e) {
+            var i = e.target.templateInstance.model.item.indx;
+            this.$.pages.selected = i + 1;
+
+            this.fire('photo-hard-select', event.currentTarget.model);
+        },
+
+
+        back: function () {
+            this.lastSelected = this.$.pages.selected;
+            console.log(this.lastSelected);
+            this.$.pages.selected = 0;
+        },
+
+        transitionEnd: function () {
+            if (this.lastSelected){
+                this.lastSelected = null;
             }
+        },
 
-        });
-    </script>
+
+        unselectOthers: function (hardSelectedItem_) {
+            //todo dam-photo needs to change to use binding for the css effect to turn off.
+            for (var i = 0; i < this.model.length; i++)
+            {
+                var obj = this.model[i];
+                if (obj != hardSelectedItem_)
+                {
+                    obj.selected = false;
+                }
+            }
+        },
+
+
+        softSelectPhotoClickHandler: function (event, arg1, arg2) {
+            console.log("single click, photo handler");
+            this.fire('photo-select', event.currentTarget.model);
+        },
+
+        softDeselectPhotoClickHandler: function (event, arg1, arg2) {
+            console.log("single deselect click, photo handler");
+            this.fire('photo-deselect', event.currentTarget.model);
+        },
+
+        hardSelectPhotoClickHandler: function (event, arg2, arg3) {
+            console.log("double click, photo handler");
+            this.fire('photo-hard-select', event.currentTarget.model);
+        }
+
+    });
+</script>
 
 </polymer-element>

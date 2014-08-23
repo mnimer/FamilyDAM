@@ -44,13 +44,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="components/paper-tabs/paper-tabs.html">
     <link rel="import" href="components/paper-tabs/paper-tab.html">
     <link rel="import" href="components/paper-fab/paper-fab.html">
+    <link rel="import" href="components/paper-toggle-button/paper-toggle-button.html">
     <link rel="import" href="assets/components/dam-photo-group/dam-photo-group.html">
     <link rel="import" href="assets/components/dam-photo-lightbox/dam-photo-lightbox.html">
     <link rel="import" href="assets/components/dam-photo-details/dam-photo-details.html">
     <link rel="import" href="assets/components/file-uploader/file-uploader.html">
     <link rel="import" href="assets/components/preview-photo/preview-photo.html">
-    <link rel="import" href="assets/components/preview-audio/preview-audio.html">
-    <link rel="import" href="assets/components/preview-video/preview-video.html">
 
     <link type="text/css" rel="stylesheet" href="app.css"/>
 
@@ -67,152 +66,164 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 </head>
-<body unresolved onload="onLoadHandler()">
+<body unresolved fullbleed onload="onLoadHandler()">
 
-<core-drawer-panel id="filePanel" class="right-drawer"  >
-    <div main>
-        <core-scroll-header-panel>
-            <core-toolbar class="medium-tall">
-                <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
-                <div flex>FamilyDAM</div>
-                <paper-tabs selected="1" >
-                    <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
-                    <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
-                    <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
-                    <paper-tab onclick="window.location.href='movies.html';">Movies</paper-tab>
-                    <paper-tab onclick="window.location.href='emails.html';">Emails</paper-tab>
-                    <paper-tab onclick="window.location.href='social.html';">Social</paper-tab>
-                </paper-tabs>
-                <core-icon-button icon="search"></core-icon-button>
-                <core-icon-button icon="more-vert"></core-icon-button>
-                <div class="middle indent title" style="margin-left: 100px;">/photos/</div>
-                <div class="bottom">
-                    <paper-fab icon="add" onclick="toggleUploader();" style="z-index: 10"></paper-fab>
-                </div>
-            </core-toolbar>
-        </core-scroll-header-panel>
+<div id="filePanel" layout horizontal>
 
-
-        <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
-            <div flex></div>
-            <div style="height:45px; vertical-align: bottom;font-size: 24px;margin-top: 10px; margin-bottom: 10px;">
-
+    <core-scroll-header-panel flex>
+        <core-toolbar class="medium-tall"  style="background-color: #5c6bc0;">
+            <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
+            <div flex>FamilyDAM</div>
+            <paper-tabs selected="2" style="min-width: 375px;">
+                <paper-tab onclick="window.location.href='familyplanning.html';">Family</paper-tab>
+                <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
+                <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
+                <paper-tab onclick="window.location.href='music.html';">Music</paper-tab>
+                <paper-tab onclick="window.location.href='movies.html';">Movies</paper-tab>
+                <paper-tab onclick="window.location.href='emails.html';">Emails</paper-tab>
+                <paper-tab onclick="window.location.href='social.html';">Social</paper-tab>
+            </paper-tabs>
+            <core-icon-button icon="search"></core-icon-button>
+            <core-icon-button icon="more-vert"></core-icon-button>
+            <div class="middle indent title" style="margin-left: 100px;">/photos/</div>
+            <div class="bottom">
+                <paper-fab icon="add" onclick="toggleUploader();" style="z-index: 10"></paper-fab>
             </div>
-            <div style="width:80px;"></div>
-        </div>
+        </core-toolbar>
 
-        <core-drawer-panel class="drawer" style="top:180px;">
-            <!-- LEFT DRAWER -->
-            <div drawer>
-                <div id="fileTree" class="sidebar">
+        <div content>
+            <div layout horizontal style="top:128px;">
+                <!-- LEFT DRAWER -->
+                <aside id="leftDrawer" style="background-color: #eee; width:256px; height:100%;">
+                    <div horizontal layout
+                         style="height: 45px; width: 100%; position:relative; left:0px; right: 0px;">
+                        <div flex>
 
-                    <ul style="margin-left: -20px;list-style: none;">
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            <a href="files.html"  style="text-decoration:none;">Files</a>
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            <b><i>Photos</i></b>
-                            <ul style="list-style: none;">
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Angela
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Mike
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Kayden
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Hailey
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            <a href="music.html"  style="text-decoration:none;">Music</a>
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            <a href="movies.html"  style="text-decoration:none;">Movies</a>
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            <a href="emails.html"  style="text-decoration:none;">Email Archive</a>
-                        </li>
-                        <li>
-                            <core-icon icon="folder"></core-icon>
-                            <a href="social.html"  style="text-decoration:none;">Social Web</a>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div class="tagCloud">
-                    <div style="width:100%;background-color:#FFFFFF;font-family:Arial; border: 1px solid #FFFFFF; text-align:center;">
-                        <div style="padding:5px;">
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Landscape</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">kids</a>
-                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Hailey</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Kayden</a>
-                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">mike</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Angie</a>
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Vacation</a>
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Work</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Baseball</a>
-                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Birthday</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">School</a>
-                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">B&W</a>
+                        </div>
+                        <div>
+                            <paper-icon-button id="navicon" icon="menu" onClick="toggleLeftDrawer('leftDrawer')"></paper-icon-button>
                         </div>
                     </div>
+
+                    <div id="content" style="background-color: #fff; position: absolute; width: 256px;">
+                        <div id="fileTree" class="sidebar">
+
+                            <ul style="margin-left: -20px;list-style: none;">
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    <a href="familyplanning.html" style="text-decoration:none;">Family Planning (3.0)</a>
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    <a href="files.html" style="text-decoration:none;">Files</a>
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    <b><i>Photos</i></b>
+                                    <ul style="list-style: none;">
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            2014
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            2013
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            2012
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            2011
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    <a href="music.html" style="text-decoration:none;">Music</a>
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    <a href="movies.html" style="text-decoration:none;">Movies</a>
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    <a href="emails.html" style="text-decoration:none;">Email Archive (2.0)</a>
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    <a href="social.html" style="text-decoration:none;">Social Web (2.0)</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="tagCloud">
+                            <div style="width:100%;background-color:#FFFFFF;font-family:Arial; border: 1px solid #FFFFFF; text-align:center;">
+                                <div style="padding:5px;">
+                                    <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Landscape</a>
+                                    <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">kids</a>
+                                    <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Hailey</a>
+                                    <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Kayden</a>
+                                    <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">mike</a>
+                                    <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Angie</a>
+                                    <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Vacation</a>
+                                    <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Work</a>
+                                    <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Baseball</a>
+                                    <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Birthday</a>
+                                    <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">School</a>
+                                    <a href=""
+                                       style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">B&W</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- MAIN -->
+                <div flex style="float:left; width: 100%">
+                    <div horizontal layout
+                         style="height: 45px; width: 100%; background-color: #eee; position:relative; left:0px; right: 0px;">
+                        <div flex>
+
+                        </div>
+                        <div layout horizontal center>
+                            <label>Group By:</label>
+                            <paper-button label="Date"></paper-button> |
+                            <paper-button label="Location"></paper-button>
+                        </div>
+                        <div style="width:120px;"></div>
+                    </div>
+
+                    <div class="folder">
+                        <dam-photo-group id="photoList"
+                                         label="January 2014"></dam-photo-group>
+
+                    </div>
                 </div>
+
+
+
+                <aside id="rightDrawer" style="width:350px;display:none">
+                    <div horizontal layout center
+                         style="height: 45px; width: 100%; background-color: #eee; ">
+                        <div><h2>Preview</h2></div>
+                    </div>
+
+                    <div >
+                        <dam-photo-lightbox id="photoLightbox" style="display: none"></dam-photo-lightbox>
+                        <preview-photo id="photoPreview" style="display: none"></preview-photo>
+
+                    </div>
+                </aside>
+
             </div>
-
-
-            <!-- MAIN -->
-            <div main>
-                <div class="folder">
-                    <dam-photo-group id="photoList"
-                                     label="January 2014"></dam-photo-group>
-
-                    <dam-photo-group id="photoList2"
-                                     label="December 2013"></dam-photo-group>
-
-                    <dam-photo-group id="photoList3"
-                                     label="October 2013"></dam-photo-group>
-
-                </div>
-            </div>
-        </core-drawer-panel>
-    </div>
-
-    <div id="rightDrawer" drawer>
-
-        <core-scroll-header-panel id="rightDrawerHeaderPanel" condensedHeaderHeight="65"
-                                  style="border-bottom: 1px solid #000;">
-            <core-toolbar class="medium-tall">
-                <div flex></div>
-                <core-icon-button icon="close" on-click="$('#rightDrawer').closeDrawer();"></core-icon-button>
-            </core-toolbar>
-        </core-scroll-header-panel>
-
-        <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
-            <div><h2>Preview</h2></div>
         </div>
+    </core-scroll-header-panel>
 
-        <!-- RIGHT DRAWER -->
-        <div style="position: relative; top:180px;">
-            <dam-photo-lightbox id="photoLightbox" style="display: none"></dam-photo-lightbox>
-            <preview-photo id="photoPreview" style="display: none"></preview-photo>
 
-        </div>
-    </div>
-</core-drawer-panel>
+</div>
 
 
 <file-uploader id="uploaderOverlay"></file-uploader>
@@ -243,41 +254,84 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script>
     var photos = [];
 
+    var toggleLeftDrawer = function(id)
+    {
+        if( document.querySelector("#" +id).style.width == "45px" )
+        {
+            document.querySelector("#" +id).style.width = "265px";
+            document.querySelector("#content").style.display = "block";
+        }else{
+            closeLeftDrawer(id);
+        }
+    }
+
+    var closeLeftDrawer = function(id){
+        document.querySelector("#" +id).style.width = "45px";
+        document.querySelector("#content").style.display = "none";
+    }
+
+
+    var toggleRightDrawer = function(id)
+    {
+        if( document.querySelector("#" +id).style.display == "none" )
+        {
+            document.querySelector("#" +id).style.display = "block";
+        }else{
+            closeRightDrawer(id);
+        }
+        //document.querySelector("#photoList").layout();
+    }
+
+    var closeRightDrawer = function(id){
+        document.querySelector("#" +id).style.display = "none";
+    }
+
+
+    var shuffle = function (array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex)
+        {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    };
+
     var onLoadHandler = function () {
         photos = [
-            {id: "001", name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "002", name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "003", name: "dsc0003.jpg", date: '01/21/2014', src: "http://placehold.it/200x300", width: 200, height: 300},
-            {id: "004", name: "dsc0004.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "005", name: "dsc0005.jpg", date: '01/21/2014', src: "http://placehold.it/200x300", width: 200, height: 300},
-            {id: "006", name: "dsc0006.jpg", date: '01/21/2014', src: "http://placehold.it/500x250", width: 500, height: 250},
-            {id: "007", name: "dsc0007.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "008", name: "dsc0008.jpg", date: '01/21/2014', src: "http://placehold.it/500x250", width: 500, height: 250},
-            {id: "009", name: "dsc0009.jpg", date: '01/21/2014', src: "http://placehold.it/500x250", width: 500, height: 250},
-            {id: "010", name: "dsc00010.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "011", name: "dsc00011.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "012", name: "dsc00012.jpg", date: '01/21/2014', src: "http://placehold.it/200x300", width: 200, height: 300},
-            {id: "013", name: "dsc00013.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "014", name: "dsc00014.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "015", name: "dsc00015.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "016", name: "dsc00016.jpg", date: '01/21/2014', src: "http://placehold.it/250x250", width: 250, height: 250}
+            {id: "001", indx:1, name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/325x245", width: 325, height: 245},
+            {id: "012", indx:12, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "004", indx:4, name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/325x245", width: 325, height: 245},
+            {id: "014", indx:14, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "013", indx:13, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "005", indx:5, name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/325x245", width: 325, height: 245},
+            {id: "016", indx:16, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "009", indx:9, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "007", indx:7, name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/325x245", width: 325, height: 245},
+            {id: "008", indx:8, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "010", indx:10, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "011", indx:11, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "002", indx:2, name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/325x245", width: 325, height: 245},
+            {id: "015", indx:15, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
+            {id: "003", indx:3, name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/325x245", width: 325, height: 245},
+            {id: "006", indx:6, name: "dsc0001.jpg", date: '01/21/2014', src: "http://placehold.it/325x245", width: 325, height: 245},
+            {id: "017", indx:17, name: "dsc0002.jpg", date: '01/21/2014', src: "http://placehold.it/160x245", width: 160, height: 245},
         ];
-        document.querySelector("#photoList").model = photos;
+        document.querySelector("#photoList").model = photos;//shuffle(photos);
         document.querySelector("#photoList").addEventListener('photo-select', photoSelectHandler);
         document.querySelector("#photoList").addEventListener('photo-deselect', photoDeselectHandler);
         document.querySelector("#photoList").addEventListener('photo-hard-select', photoHardSelectHandler);
 
-
-        document.querySelector("#photoList2").model = photos;
-        document.querySelector("#photoList2").addEventListener('photo-select', photoSelectHandler);
-        document.querySelector("#photoList2").addEventListener('photo-deselect', photoDeselectHandler);
-        document.querySelector("#photoList2").addEventListener('photo-hard-select', photoHardSelectHandler);
-
-
-        document.querySelector("#photoList3").model = photos;
-        document.querySelector("#photoList3").addEventListener('photo-select', photoSelectHandler);
-        document.querySelector("#photoList3").addEventListener('photo-deselect', photoDeselectHandler);
-        document.querySelector("#photoList3").addEventListener('photo-hard-select', photoHardSelectHandler);
     };
 
 
@@ -286,45 +340,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     };
 
 
-
-    var photoSelectHandler = function(event){
+    var photoSelectHandler = function (event) {
         console.dir(event.detail);
 
+        toggleRightDrawer("rightDrawer");
+
         document.querySelector("#photoLightbox").addPhoto(event.detail);
-        if( document.querySelector("#photoLightbox").selectedItems.length == 1)
+        if (document.querySelector("#photoLightbox").selectedItems.length == 1)
         {
             document.querySelector("#photoPreview").style.display = "block";
             document.querySelector("#photoLightbox").style.display = "none";
-        }else{
+        } else
+        {
             document.querySelector("#photoLightbox").style.display = "block";
             document.querySelector("#photoPreview").style.display = "none";
         }
     };
 
-    var photoDeselectHandler = function(event){
+    var photoDeselectHandler = function (event) {
         console.dir(event.detail);
 
         document.querySelector("#photoLightbox").removePhoto(event.detail);
-        if( document.querySelector("#photoLightbox").selectedItems.length == 1)
+        if (document.querySelector("#photoLightbox").selectedItems.length == 1)
         {
             document.querySelector("#photoPreview").style.display = "block";
             document.querySelector("#photoLightbox").style.display = "none";
-        }else{
+        } else
+        {
             document.querySelector("#photoLightbox").style.display = "block";
             document.querySelector("#photoPreview").style.display = "none";
         }
     };
 
-    var photoHardSelectHandler = function(event){
+    var photoHardSelectHandler = function (event) {
         console.dir(event.detail);
 
+        closeRightDrawer("rightDrawer");
+        closeLeftDrawer("leftDrawer");
+
         document.querySelector("#photoList").unselectOthers(event.detail);
-        document.querySelector("#photoList2").unselectOthers(event.detail);
-        document.querySelector("#photoList3").unselectOthers(event.detail);
         document.querySelector("#photoLightbox").removeOthers(event.detail);
 
         document.querySelector("#photoDetails").model = event.detail;
-        document.querySelector("#photoDetailOverlay").toggle();
+        //document.querySelector("#photoDetailOverlay").toggle();
     }
 
 </script>

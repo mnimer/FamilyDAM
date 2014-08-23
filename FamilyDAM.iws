@@ -2,39 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-music-group/dam-album.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie-group.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie-group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-music-group/dam-music-group.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-music-group/dam-music-group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-details/dam-photo-details.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-audio/preview-audio.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-album/preview-album.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos-list.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/familyplanning.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/ShellService.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/services/ShellService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower.json" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-lightbox/dam-photo-lightbox.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-lightbox/dam-photo-lightbox.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/index.html" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/config/index.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/config/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/index.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/columnSlider/index.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/modules/photos/directives/columnSlider/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/package.json" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-video/preview-video.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-video/preview-video.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/shared-libs.js" afterPath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/src/shared-libs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard/shared-libs.js" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard/shared-libs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,8 +74,8 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -104,12 +83,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="files.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.25" vertical-offset="1200" max-vertical-offset="6990">
+              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#core-drawer-panel#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dam-photo.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.54575163" vertical-offset="296" max-vertical-offset="2640">
+              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="3090">
+              <caret line="123" column="29" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="photos.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.4583335" vertical-offset="2554" max-vertical-offset="5085">
-              <caret line="179" column="20" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
-              <folding />
+            <state vertical-scroll-proportion="-3.98" vertical-offset="2996" max-vertical-offset="4935">
+              <caret line="281" column="10" selection-start-line="281" selection-start-column="10" selection-end-line="281" selection-end-column="10" />
+              <folding>
+                <element signature="n#style#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#paper-tabs#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#paper-fab#0;n#div#2;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="tag#div#0;tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#2;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#5;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="tag#div#1;tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#4;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#5;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#6;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#8;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#9;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#10;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#11;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#dam-photo-lightbox#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#preview-photo#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#core-overlay#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,90 +170,20 @@
       <file leaf-file-name="dam-photo-group.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25" vertical-offset="435" max-vertical-offset="2970">
-              <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="music.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.583333" vertical-offset="433" max-vertical-offset="4860">
-              <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.06960557" vertical-offset="615" max-vertical-offset="3150">
-              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="preview-album.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-album/preview-album.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.4583335" vertical-offset="362" max-vertical-offset="1395">
-              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dam-music-group.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-music-group/dam-music-group.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="85.541664" vertical-offset="2053" max-vertical-offset="2460">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GruntFile.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3846154" vertical-offset="7663" max-vertical-offset="8055">
-              <caret line="515" column="26" selection-start-line="515" selection-start-column="26" selection-end-line="515" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.1923075" vertical-offset="1185" max-vertical-offset="2895">
-              <caret line="88" column="16" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="16" />
+            <state vertical-scroll-proportion="2.22" vertical-offset="846" max-vertical-offset="3765">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="17" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#core-animated-pages#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigurationManager.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/ConfigurationManager.js">
+      <file leaf-file-name="dam-photo-group.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0" vertical-offset="590" max-vertical-offset="2565">
-              <caret line="48" column="24" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/config/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.625" vertical-offset="1095" max-vertical-offset="4500">
-              <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -219,10 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-audio/preview-audio.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo/dam-photo.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.css" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/sample.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos-list.html" />
@@ -237,18 +216,8 @@
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie-group.css" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie-group.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/index.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-lightbox/dam-photo-lightbox.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/files.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/emails.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/movies.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/music.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/social.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-details/dam-photo-details.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/package.json" />
         <option value="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/GruntFile.js" />
@@ -259,17 +228,31 @@
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard/shared-libs.js" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/node_modules/grunt-atom-shell-app-builder/tasks/build-atom-shell-app-task.js" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower.json" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/photos.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower_components/core-icon/bower.json" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/GruntFile.js" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/config/index.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-album/preview-album.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/familyplanning.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/movies.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/music.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/social.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/index.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/files.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/photos.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/index.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/familyplanning.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/documents.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" />
       </list>
     </option>
   </component>
@@ -480,7 +463,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -605,7 +588,7 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="preview-album" />
+              <option name="myItemId" value="dam-photo-group" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -619,115 +602,13 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-prototype" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dam-music-group" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="binary-dist" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="binary-dist" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="darwin" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bundles" />
+              <option name="myItemId" value="bower_components" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -792,11 +673,11 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype" />
       <recent name="$PROJECT_DIR$/familydam-standalone/familydam-desktop/binary-dist/darwin/atom-shell/Atom.app/Contents/Resources/app/dashboard-prototype/assets" />
       <recent name="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components" />
       <recent name="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-music-group" />
       <recent name="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/music" />
-      <recent name="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.mikenimer.familydam.web.jobs" />
@@ -1324,7 +1205,8 @@
       <workItem from="1407470076916" duration="3501000" />
       <workItem from="1407551951366" duration="11830000" />
       <workItem from="1407816676242" duration="2799000" />
-      <workItem from="1407971588243" duration="9914000" />
+      <workItem from="1407971588243" duration="14830000" />
+      <workItem from="1408542308750" duration="19248000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
@@ -1742,7 +1624,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1422419000" />
+    <option name="totallyTimeSpent" value="1446583000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1766,19 +1648,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26939204" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4947589" sideWeight="0.20695971" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27672955" sideWeight="0.20695971" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CQ Node Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.44200245" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4947589" sideWeight="0.7930403" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27672955" sideWeight="0.7930403" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32809225" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15995117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1787,23 +1669,23 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490566" sideWeight="0.7936508" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32704404" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490566" sideWeight="0.9096459" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22039072" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22283272" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32704404" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1811,18 +1693,18 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26939204" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36009732" sideWeight="0.13003664" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36009732" sideWeight="0.13003664" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="CQ Node Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.44200245" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38199514" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1835,22 +1717,22 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34914842" sideWeight="0.7936508" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34914842" sideWeight="0.7936508" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490566" sideWeight="0.9096459" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="24" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25457877" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25457877" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1932,104 +1814,20 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie-group.css">
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39110428" vertical-offset="0" max-vertical-offset="652">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-video/preview-video.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.477707" vertical-offset="225" max-vertical-offset="1275">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1307" max-vertical-offset="2265">
-          <caret line="17" column="81" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-movie-group/dam-movie-group.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1817" max-vertical-offset="2445">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1410" max-vertical-offset="2325">
-          <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-lightbox/dam-photo-lightbox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3312102" vertical-offset="887" max-vertical-offset="1515">
-          <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48119122" vertical-offset="2168" max-vertical-offset="5670">
-          <caret line="165" column="77" selection-start-line="165" selection-start-column="24" selection-end-line="165" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4937304" vertical-offset="1905" max-vertical-offset="4815">
-          <caret line="148" column="81" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28213167" vertical-offset="1680" max-vertical-offset="6885">
-          <caret line="124" column="85" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="2370">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.833334" vertical-offset="3007" max-vertical-offset="3795">
-          <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="2895">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html">
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/ServerManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.375" vertical-offset="195" max-vertical-offset="2385">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1781" max-vertical-offset="3240">
+          <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -2038,9 +1836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.0" vertical-offset="545" max-vertical-offset="1185">
           <caret line="43" column="63" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2048,7 +1843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2056,7 +1850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.166666" vertical-offset="92" max-vertical-offset="720">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2064,7 +1857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="923" max-vertical-offset="5385">
           <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2072,7 +1864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="2055">
           <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2088,7 +1879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="225">
           <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2096,7 +1886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="540">
           <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2107,7 +1896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.7777777" vertical-offset="402" max-vertical-offset="1110">
           <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2115,9 +1903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="855">
           <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2125,7 +1910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537" vertical-offset="516" max-vertical-offset="4380">
           <caret line="63" column="25" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2141,7 +1925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.6666665" vertical-offset="371" max-vertical-offset="2745">
           <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2149,7 +1932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
           <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2157,7 +1939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.4166665" vertical-offset="431" max-vertical-offset="1890">
           <caret line="39" column="111" selection-start-line="39" selection-start-column="111" selection-end-line="39" selection-end-column="111" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2165,9 +1946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
           <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2175,7 +1953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="3915">
           <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2185,9 +1962,6 @@
           <caret line="163" column="10" selection-start-line="163" selection-start-column="10" selection-end-line="163" selection-end-column="10" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <marker date="1408081697000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1408081697000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1408081697000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -2204,7 +1978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2212,7 +1985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="15" max-vertical-offset="360">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2220,17 +1992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower_components/core-icon/core-icon.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="465">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1405104769000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2238,7 +1999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2246,7 +2006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2254,7 +2013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2270,41 +2028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.3846154" vertical-offset="7663" max-vertical-offset="8055">
           <caret line="515" column="26" selection-start-line="515" selection-start-column="26" selection-end-line="515" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4583335" vertical-offset="2554" max-vertical-offset="5085">
-          <caret line="179" column="20" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="435" max-vertical-offset="2970">
-          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.1923075" vertical-offset="1185" max-vertical-offset="2895">
-          <caret line="88" column="16" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/ConfigurationManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="590" max-vertical-offset="2565">
-          <caret line="48" column="24" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2320,7 +2043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="85.541664" vertical-offset="2053" max-vertical-offset="2460">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2332,18 +2054,205 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower_components/core-icon/core-icon.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="465">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/ConfigurationManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="590" max-vertical-offset="2565">
+          <caret line="48" column="24" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/ServerManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5839754" vertical-offset="1781" max-vertical-offset="3240">
+          <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39123866" vertical-offset="1946" max-vertical-offset="2895">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/photos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.648" vertical-offset="4155" max-vertical-offset="5475">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower_components/paper-toggle-button/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.083334" vertical-offset="472" max-vertical-offset="1110">
+          <caret line="62" column="10" selection-start-line="59" selection-start-column="4" selection-end-line="62" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower_components/paper-toggle-button/paper-toggle-button.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25" vertical-offset="975" max-vertical-offset="1965">
+          <caret line="75" column="0" selection-start-line="73" selection-start-column="4" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.583333" vertical-offset="433" max-vertical-offset="4860">
-          <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
+        <state vertical-scroll-proportion="-3.125" vertical-offset="1125" max-vertical-offset="4935">
+          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="93" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75" vertical-offset="825" max-vertical-offset="4890">
+          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.3333335" vertical-offset="1858" max-vertical-offset="2640">
+          <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="85" />
+          <folding>
+            <element signature="n#style#0;n#paper-tabs#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/familyplanning.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0" vertical-offset="765" max-vertical-offset="3660">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125" vertical-offset="945" max-vertical-offset="5745">
+          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25" vertical-offset="975" max-vertical-offset="3870">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#paper-tabs#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.06960557" vertical-offset="615" max-vertical-offset="3150">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="3090">
+          <caret line="123" column="29" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25" vertical-offset="1200" max-vertical-offset="6990">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#core-drawer-panel#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.98" vertical-offset="2996" max-vertical-offset="4935">
+          <caret line="281" column="10" selection-start-line="281" selection-start-column="10" selection-end-line="281" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#paper-tabs#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#paper-fab#0;n#div#2;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#div#0;tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#2;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#5;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#div#1;tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#4;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#5;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#6;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#8;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#9;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#10;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#11;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#dam-photo-lightbox#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#preview-photo#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#core-overlay#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.22" vertical-offset="846" max-vertical-offset="3765">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#core-animated-pages#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54575163" vertical-offset="296" max-vertical-offset="2640">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
           <folding />
         </state>
       </provider>

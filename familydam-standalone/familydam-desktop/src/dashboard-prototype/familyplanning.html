@@ -44,14 +44,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="components/paper-tabs/paper-tabs.html">
     <link rel="import" href="components/paper-tabs/paper-tab.html">
     <link rel="import" href="components/paper-fab/paper-fab.html">
-    <link rel="import" href="assets/components/dam-music-group/dam-music-group.html">
+    <link rel="import" href="assets/components/dam-photo-group/dam-photo-group.html">
+    <link rel="import" href="assets/components/dam-photo-lightbox/dam-photo-lightbox.html">
+    <link rel="import" href="assets/components/dam-photo-details/dam-photo-details.html">
     <link rel="import" href="assets/components/file-uploader/file-uploader.html">
-    <link rel="import" href="assets/components/preview-photo/preview-photo.html">
-    <link rel="import" href="assets/components/preview-album/preview-album.html">
-    <link rel="import" href="assets/components/preview-video/preview-video.html">
-
     <link type="text/css" rel="stylesheet" href="app.css"/>
-
 
     <style>
         .item
@@ -68,15 +65,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body unresolved onload="onLoadHandler()">
 
-
 <core-drawer-panel id="filePanel" class="right-drawer" selected="main" drawerWidth="350px">
-
     <div main>
         <core-scroll-header-panel>
             <core-toolbar class="medium-tall">
                 <core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button>
                 <div flex>FamilyDAM</div>
-                <paper-tabs selected="3"  style="min-width: 375px;">
+                <paper-tabs selected="0"  style="min-width: 375px;">
                     <paper-tab onclick="window.location.href='familyplanning.html';">Family</paper-tab>
                     <paper-tab onclick="window.location.href='files.html';">Files</paper-tab>
                     <paper-tab onclick="window.location.href='photos.html';">Photos</paper-tab>
@@ -87,9 +82,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </paper-tabs>
                 <core-icon-button icon="search"></core-icon-button>
                 <core-icon-button icon="more-vert"></core-icon-button>
-                <div class="middle indent title" style="margin-left: 100px;">/music/</div>
+                <div class="middle indent title" style="margin-left: 100px;">/photos/</div>
                 <div class="bottom">
-                    <paper-fab icon="add" onclick="toggleUploader();" style="z-index:10;"></paper-fab>
+                    <paper-fab icon="add" onclick="toggleUploader();" style="z-index: 10"></paper-fab>
                 </div>
             </core-toolbar>
         </core-scroll-header-panel>
@@ -98,11 +93,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
             <div flex></div>
             <div style="height:45px; vertical-align: bottom;font-size: 24px;margin-top: 10px; margin-bottom: 10px;">
-                <a href="#A">A</a> <a href="#B">B</a> <a href="#C">C</a> D E F G H I J K L M N O P Q R S T U V W X Y Z
+
             </div>
             <div style="width:80px;"></div>
         </div>
-
 
         <core-drawer-panel class="drawer" style="top:180px;">
             <!-- LEFT DRAWER -->
@@ -112,7 +106,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <ul style="margin-left: -20px;list-style: none;">
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            <a href="familyplanning.html" style="text-decoration:none;">Family Planning (3.0)</a>
+                            <b><i>Family Planning (2.0)</i></b>
+                            <ul style="list-style: none;">
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Calendar
+                                    <ul style="list-style: none;">
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            Angela
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            Mike
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            Kayden
+                                        </li>
+                                        <li>
+                                            <core-icon icon="folder"></core-icon>
+                                            Hailey
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Shopping List
+                                </li>
+                                <li>
+                                    <core-icon icon="folder"></core-icon>
+                                    Chores
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
@@ -124,25 +150,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
-                            <b><i>Music</i></b>
-                            <ul style="list-style: none;">
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Angela
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Mike
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Kayden
-                                </li>
-                                <li>
-                                    <core-icon icon="folder"></core-icon>
-                                    Hailey
-                                </li>
-                            </ul>
+                            <a href="music.html"  style="text-decoration:none;">Music</a>
                         </li>
                         <li>
                             <core-icon icon="folder"></core-icon>
@@ -159,39 +167,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </ul>
                 </div>
 
-                <div class="tagCloud">
-                    <div style="width:100%;background-color:#FFFFFF;font-family:Arial; border: 1px solid #FFFFFF; text-align:center;">
-                        <div style="padding:5px;">
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #87A800;">Classical</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #FF7600;">Country</a>
-                            <a href="" style="padding:10px;font-size:19px;text-decoration:none; color: #87A800;">Rock</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #039FAF;">Soundtrack</a>
-                            <a href="" style="padding:10px;font-size:14px;text-decoration:none; color: #039FAF;">Pop</a>
-                            <a href="" style="padding:10px;font-size:16px;text-decoration:none; color: #DE2159;">Rap</a>
-                            <a href="" style="padding:10px;font-size:12px;text-decoration:none; color: #DE2159;">Hip-Hop</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
             <!-- MAIN -->
             <div main>
                 <div class="folder">
-                    <dam-music-group id="albumListA"
-                                     label="A"></dam-music-group>
-
-                    <dam-music-group id="albumListB"
-                                     label="B"></dam-music-group>
-
-                    <dam-music-group id="albumListC"
-                                     label="C"></dam-music-group>
-
+                    TBD
                 </div>
             </div>
         </core-drawer-panel>
     </div>
-
 
     <div id="rightDrawer" drawer>
 
@@ -204,30 +190,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </core-scroll-header-panel>
 
         <div horizontal layout style="height: 45px; width: 100%; background-color: #eee; top:128px; position:absolute; left:0px; right: 0px;">
-            <div><h2>Preview</h2></div>
+            <div><h2></h2></div>
         </div>
-        <!-- RIGHT DRAWER -->
-        <div style="position: relative; top:180px;">
 
-            <preview-album id="albumPreview" style="display: none"></preview-album>
-
-        </div>
     </div>
 </core-drawer-panel>
 
 
-
 <file-uploader id="uploaderOverlay"></file-uploader>
 
-<core-overlay id="albumDetailOverlay" backdrop="true" layered="true">
-    <div style="width:700px; height:500px; background-color: #fff">
-        Album Details
-    </div>
-</core-overlay>
+<core-overlay id="photoDetailOverlay" backdrop="true" layered="true">
+    <div style="background-color: #fff">
 
-<core-overlay id="artistDetailOverlay" backdrop="true" layered="true">
-    <div style="width:700px; height:500px; background-color: #fff">
-        Artist Details
+        <dam-photo-details id="photoDetails"></dam-photo-details>
     </div>
 </core-overlay>
 
@@ -250,74 +225,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script>
     var photos = [];
 
-    var onLoadHandler = function () {
-        AAlbums = [
-            {id: "001", name: "Aerosmith", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "002", name: "ABBA",  src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "003", name: "Alice In Chains",  src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "004", name: "Alicia Keys",  src: "http://placehold.it/250x250", width: 250, height: 250},
-        ];
-        BAlbums = [
-            {id: "010", name: "Backstreet Boys", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "011", name: "Beatles", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "012", name: "Beach Boys", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "013", name: "Billy Joel", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "014", name: "Bob Dylan", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "015", name: "Bob Seger", src: "http://placehold.it/250x250", width: 250, height: 250},
-        ];
-        CAlbums = [
-            {id: "020", name: "Cake", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "021", name: "ColdPlay", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "022", name: "Cheap Trick", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "023", name: "Creed", src: "http://placehold.it/250x250", width: 250, height: 250},
-            {id: "024", name: "Cure", src: "http://placehold.it/250x250", width: 250, height: 250},
-        ];
-        document.querySelector("#albumListA").model = AAlbums;
-        document.querySelector("#albumListA").addEventListener('album-select', albumSelectHandler);
-        document.querySelector("#albumListA").addEventListener('album-deselect', albumDeselectHandler);
-        document.querySelector("#albumListA").addEventListener('album-hard-select', albumHardSelectHandler);
-
-
-        document.querySelector("#albumListB").model = BAlbums;
-        document.querySelector("#albumListB").addEventListener('album-select', albumSelectHandler);
-        document.querySelector("#albumListB").addEventListener('album-deselect', albumDeselectHandler);
-        document.querySelector("#albumListB").addEventListener('album-hard-select', albumHardSelectHandler);
-
-
-        document.querySelector("#albumListC").model = CAlbums;
-        document.querySelector("#albumListC").addEventListener('album-select', albumSelectHandler);
-        document.querySelector("#albumListC").addEventListener('album-deselect', albumDeselectHandler);
-        document.querySelector("#albumListC").addEventListener('album-hard-select', albumHardSelectHandler);
-    };
+    var onLoadHandler = function () {}
 
 
     var toggleUploader = function () {
         document.querySelector("#uploaderOverlay").toggle();
     };
 
-
-
-    var albumSelectHandler = function(event){
-        console.log("album-select");
-        console.dir(event.detail);
-        document.querySelector("#albumPreview").style.display="block";
-    };
-
-    var albumDeselectHandler = function(event){
-        console.log("album-deselect");
-        console.dir(event.detail);
-        document.querySelector("#albumPreview").style.display="none";
-    };
-
-    var albumHardSelectHandler = function(event){
-        console.log("album-hard-select");
-        console.dir(event.detail);
-
-        document.querySelector("#albumDetailOverlay").toggle();
-    }
-
 </script>
 
 </body>
 </html>
-
