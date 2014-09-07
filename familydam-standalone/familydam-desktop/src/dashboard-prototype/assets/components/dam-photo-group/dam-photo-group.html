@@ -64,7 +64,9 @@
     </style>
 
 
-    <core-animated-pages id="pages" flex selected="0" on-core-animated-pages-transition-end="{{transitionEnd}}"
+    <core-animated-pages id="pages" flex selected="0"
+                         on-core-animated-pages-transition-prepare="{{transitionStart}}"
+                         on-core-animated-pages-transition-end="{{transitionEnd}}"
                          transitions="cross-fade-all hero-transition" style="width:100%; height:700px;">
         <section vertical layout>
             <div id="container" flex horizontal wrap layout >
@@ -126,6 +128,7 @@
         selectedItems: [],
         timerId: undefined,
         iso: undefined,
+        inMultiMode: false,
 
         publish: {
             model: [],
@@ -205,7 +208,12 @@
             this.$.pages.selected = 0;
         },
 
-        transitionEnd: function () {
+        transitionStart: function () {
+            console.log("prepare");
+        },
+
+
+        transitionEnd: function (event, a1, a2) {
             if (this.lastSelected){
                 this.lastSelected = null;
             }
@@ -213,21 +221,32 @@
 
 
         unselectOthers: function (hardSelectedItem_) {
+
+            var photos = this.$.pages.getElementsByTagName("dam-photo");
+
             //todo dam-photo needs to change to use binding for the css effect to turn off.
-            for (var i = 0; i < this.model.length; i++)
+            for (var i = 0; i < photos.length; i++)
             {
-                var obj = this.model[i];
-                if (obj != hardSelectedItem_)
+                var tag = photos[i];
+                if (tag.model != hardSelectedItem_ && tag.model.selected)
                 {
-                    obj.selected = false;
+                    tag.unselectItem()
                 }
             }
         },
 
 
+
         softSelectPhotoClickHandler: function (event, arg1, arg2) {
             console.log("single click, photo handler");
-            this.fire('photo-select', event.currentTarget.model);
+
+            this.unselectOthers(event.currentTarget.model);
+            if( !this.inMultiMode )
+            {
+                this.fire('photo-select', event.currentTarget.model);
+            }else{
+                this.fire('photo-multiselect', event.currentTarget.model);
+            }
         },
 
         softDeselectPhotoClickHandler: function (event, arg1, arg2) {

@@ -36,7 +36,8 @@
 
             .selected
             {
-                border: 1px solid #3949ab;
+                border: 2px solid #3949ab;
+                z-index: 1;
             }
         </style>
 
@@ -69,6 +70,21 @@
 
             },
 
+            modelChanged: function(oldValue, newValue){
+                this.model = newValue;
+            },
+
+            unselectItem: function(){
+                this.$.item.className = "photo";
+                this.model.selected = false;
+            },
+
+            selectItem: function(){
+                this.$.item.className = "photo selected";
+
+                this.model.selected = true;
+            },
+
 
             // list selection
             tapHandler: function (e) {
@@ -88,8 +104,7 @@
                     if (this.model.selected)
                     {
                         // change css class to show selected status
-                        item.className = "photo";
-                        this.model.selected = false;
+                        this.unselectItem();
 
 
                         if (this.firstClick > 0 && (this.now - this.firstClick) < 300)
@@ -112,7 +127,7 @@
                     }
                     else
                     {
-                        item.className = "photo selected"; //todo set selected with binding
+                        this.selectItem();
 
 
                         if (this.firstClick > 0 && (this.now - this.firstClick) < 300)
@@ -129,7 +144,7 @@
                                 that.firstClick = 0;
                                 that.model.selected = true;
                                 that.singleClickHandler(e, that.model);
-                            }, 310);
+                            }, 300);
                         }
                     }
                 }

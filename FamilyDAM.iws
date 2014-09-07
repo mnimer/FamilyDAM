@@ -2,22 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/familyplanning.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.ipr" afterPath="$PROJECT_DIR$/FamilyDAM.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FamilyDAM.iws" afterPath="$PROJECT_DIR$/FamilyDAM.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-server/FamilyDam-Application.iml" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-server/FamilyDam-Application.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/index.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/familydam-bundles.iml" afterPath="$PROJECT_DIR$/bundles/familydam-bundles.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundles/mediahandlers-bundle/imagehandlers-bundle.iml" afterPath="$PROJECT_DIR$/bundles/mediahandlers-bundle/imagehandlers-bundle.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html" afterPath="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html" />
     </list>
     <ignored path="FamilyCloud.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="$PROJECT_DIR$/familydam-standalone/familydam-server/target/" />
+    <ignored path="$PROJECT_DIR$/bundles/dashboard-bundle/target/" />
+    <ignored path="$PROJECT_DIR$/bundles/target/" />
+    <ignored path="$PROJECT_DIR$/bundles/core-bundle/target/" />
+    <ignored path="$PROJECT_DIR$/core-bundle/target/" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/bundles/mediahandlers-bundle/target/" />
+    <ignored path="$PROJECT_DIR$/../metadata-extractor-osgi/target/" />
+    <ignored path="$PROJECT_DIR$/bundles/webhandlers-bundle/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,44 +90,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="files.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25" vertical-offset="1200" max-vertical-offset="6990">
-              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#core-drawer-panel#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dam-photo.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54575163" vertical-offset="296" max-vertical-offset="2640">
-              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="3090">
-              <caret line="123" column="29" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="photos.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="photos.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.98" vertical-offset="2996" max-vertical-offset="4935">
-              <caret line="281" column="10" selection-start-line="281" selection-start-column="10" selection-end-line="281" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.5699088" vertical-offset="735" max-vertical-offset="7335">
+              <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#paper-tabs#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -130,60 +104,57 @@
                 <element signature="n#style#0;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="tag#div#0;tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#li#2;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#5;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="tag#div#1;tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#4;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#5;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#6;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#8;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#9;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#10;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#11;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#svg#0;n#core-icon#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#svg#0;n#core-icon#1;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#svg#0;n#core-icon#2;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#svg#0;n#core-icon#3;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#4;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#5;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#6;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#8;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#9;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#10;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#11;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#dam-photo-lightbox#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#preview-photo#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#core-overlay#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="tag#svg#0;tag#core-iconset-svg#0;tag#body#0;tag#html#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dam-photo-group.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dam-photo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.791666" vertical-offset="1667" max-vertical-offset="2880">
+              <caret line="146" column="32" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dam-photo-group.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.22" vertical-offset="846" max-vertical-offset="3765">
-              <caret line="49" column="17" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#core-animated-pages#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dam-photo-group.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
+            <state vertical-scroll-proportion="-2.5" vertical-offset="945" max-vertical-offset="4065">
+              <caret line="67" column="85" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -202,12 +173,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.css" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/sample.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos-list.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photo-details.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-details/dam-photo-details.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-music-group/dam-album.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-music-group/dam-music-group.css" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-album/preview-audio.html" />
@@ -237,7 +205,6 @@
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/movies.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/music.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/social.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/index.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/files.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/photos.html" />
@@ -250,9 +217,13 @@
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/documents.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/index.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" />
+        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" />
         <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" />
-        <option value="$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" />
       </list>
     </option>
   </component>
@@ -464,6 +435,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -479,7 +451,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -489,11 +461,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -503,15 +475,15 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dashboard-prototype" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -521,19 +493,19 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dashboard-prototype" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -543,23 +515,23 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dashboard-prototype" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -569,46 +541,33 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard-prototype" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dam-photo-group" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FamilyDAM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="familydam-desktop" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FamilyDAM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="familydam-desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core-animated-pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -695,7 +654,12 @@
       <recent name="$PROJECT_DIR$/familydam-standalone/familydam-standalone/src/main/assembly" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js Remote Debug.Unnamed">
+  <component name="RunManager">
+    <configuration default="false" name="GruntFile.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="GruntFile.js" working-dir="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell">
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
     <configuration default="false" name="filehandlers-bundle [install]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -726,11 +690,6 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
-    <configuration default="false" name="GruntFile.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="GruntFile.js" working-dir="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-shell">
-      <RunnerSettings RunnerId="NodeJS.run" />
-      <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
@@ -827,6 +786,14 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-env-vars>false</pass-parent-env-vars>
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -906,6 +873,7 @@
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
+        <option name="executionName" />
         <option name="externalProjectPath" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
@@ -987,6 +955,12 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
+    <configuration default="false" name="Unnamed" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug">
+      <node-js-remote-debug />
+      <RunnerSettings RunnerId="NodeJS.debug" />
+      <ConfigurationWrapper RunnerId="NodeJS.debug" />
+      <method />
+    </configuration>
     <configuration default="false" name="Unnamed" type="Application" factoryName="Application" editBeforeRun="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -1013,12 +987,6 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unnamed" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug">
-      <node-js-remote-debug />
-      <RunnerSettings RunnerId="NodeJS.debug" />
-      <ConfigurationWrapper RunnerId="NodeJS.debug" />
-      <method />
-    </configuration>
     <configuration default="false" name="remote " type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1034,17 +1002,16 @@
       <method />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Dashboard (sling)" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js Remote Debug.Unnamed" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js Remote Debug.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Unnamed" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Dashboard (sling)" />
       <item index="3" class="java.lang.String" itemvalue="Remote.remote " />
-      <item index="4" class="java.lang.String" itemvalue="Maven.filehandlers-bundle [install]" />
-      <item index="5" class="java.lang.String" itemvalue="Node.js.GruntFile.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.GruntFile.js" />
+      <item index="5" class="java.lang.String" itemvalue="Maven.filehandlers-bundle [install]" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.GruntFile.js" />
-        <item index="1" class="java.lang.String" itemvalue="Maven.filehandlers-bundle [install]" />
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Maven.filehandlers-bundle [install]" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1060,6 +1027,7 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="79ddb68b-57db-44d4-8956-450ae0d5036f" name="Default" comment="" />
       <created>1383631693022</created>
+      <option name="number" value="Default" />
       <updated>1383631693022</updated>
       <workItem from="1383631694535" duration="15511000" />
       <workItem from="1383769866625" duration="18460000" />
@@ -1206,425 +1174,635 @@
       <workItem from="1407551951366" duration="11830000" />
       <workItem from="1407816676242" duration="2799000" />
       <workItem from="1407971588243" duration="14830000" />
-      <workItem from="1408542308750" duration="19248000" />
+      <workItem from="1408542308750" duration="19540000" />
+      <workItem from="1409023702548" duration="64000" />
+      <workItem from="1409023794075" duration="996000" />
+      <workItem from="1410065897109" duration="2864000" />
+      <workItem from="1410106040014" duration="5182000" />
     </task>
     <task id="LOCAL-00001" summary="more edits around blocking out ui flow with ui-router">
       <created>1384042786745</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
       <updated>1384042786745</updated>
     </task>
     <task id="LOCAL-00002" summary="get the angular modal working with bootstap so we can add a new folder modal.&#10;&#10;add a new folder modal popup and call sling to create the new node.">
       <created>1384327601055</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
       <updated>1384327601055</updated>
     </task>
     <task id="LOCAL-00003" summary="integrate Angular-File-Upload library into a new directive to allow multiple file uploads">
       <created>1384493773635</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
       <updated>1384493773635</updated>
     </task>
     <task id="LOCAL-00004" summary="add login form and logic for the application.">
       <created>1384589076167</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
       <updated>1384589076167</updated>
     </task>
     <task id="LOCAL-00005" summary="Break the Event Handler code into different jobs using the new 3.3.1-SNAPSHOT Sling event system. Only one problem, it's broken in Sling. &#10;&#10;Also checkin for initial push to github&#10;">
       <created>1384899474087</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
       <updated>1384899474087</updated>
     </task>
     <task id="LOCAL-00006" summary="add new files">
       <created>1384899511998</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
       <updated>1384899511999</updated>
     </task>
     <task id="LOCAL-00007" summary="add Search servlet for pulling out all assets with support for LIMIT and OFFSET&#10;&#10;Break out the list and grid logic into smaller controllers.">
       <created>1384934973785</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
       <updated>1384934973785</updated>
     </task>
     <task id="LOCAL-00008" summary="create a thumbnail servlet">
       <created>1385016049406</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
       <updated>1385016049406</updated>
     </task>
     <task id="LOCAL-00009" summary="work on the thumbnail servlet for the grid view&#10;&#10;update the JCR SQL2 query statement to only return images.">
       <created>1385104080408</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
       <updated>1385104080408</updated>
     </task>
     <task id="LOCAL-00010" summary="UI logic changes in the photo section">
       <created>1385190927071</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
       <updated>1385190927071</updated>
     </task>
     <task id="LOCAL-00011" summary="rework the jobs to be called directly from the event listeners">
       <created>1385621375516</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
       <updated>1385621375516</updated>
     </task>
     <task id="LOCAL-00012" summary="re-work the listeners for new files">
       <created>1385878394831</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
       <updated>1385878394832</updated>
     </task>
     <task id="LOCAL-00013" summary="more tweaks with webdav file uploads">
       <created>1385960687784</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
       <updated>1385960687784</updated>
     </task>
     <task id="LOCAL-00014" summary="tweak the list renderer and make the thumbnail heights the same for list and grid view (to share the cache)">
       <created>1386224806029</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
       <updated>1386224806029</updated>
     </task>
     <task id="LOCAL-00015" summary="add showUpload toggle in photos for the side bar">
       <created>1386286340854</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
       <updated>1386286340854</updated>
     </task>
     <task id="LOCAL-00016" summary="Stub in image details view&#10; &#10; Add getById servlet that includes the regular get by path servlet to return the full node (including all child levels).">
       <created>1386310219699</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
       <updated>1386310219699</updated>
     </task>
     <task id="LOCAL-00017" summary="check-in before starting the user manager&#10;">
       <created>1387338174362</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
       <updated>1387338174362</updated>
     </task>
     <task id="LOCAL-00018" summary="stub in form for user manager, next step is to call sling api">
       <created>1387346414360</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
       <updated>1387346414360</updated>
     </task>
     <task id="LOCAL-00019" summary="add support for creating users &amp; workspaces, and deleting users.">
       <created>1388446353645</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
       <updated>1388446353645</updated>
     </task>
     <task id="LOCAL-00020" summary="check-in before refactoring out the file browser&#10;">
       <created>1388703166222</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
       <updated>1388703166222</updated>
     </task>
     <task id="LOCAL-00021" summary="add wireframes">
       <created>1388703215343</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
       <updated>1388703215343</updated>
     </task>
     <task id="LOCAL-00022" summary="a good checkpoint with the &quot;files' module functionality">
       <created>1388781891780</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
       <updated>1388781891780</updated>
     </task>
     <task id="LOCAL-00023" summary="Add support for deleting files and folders (with confirmation dialog)&#10;">
       <created>1388785966160</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
       <updated>1388785966160</updated>
     </task>
     <task id="LOCAL-00024" summary="a few more tweaks">
       <created>1388788333132</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
       <updated>1388788333132</updated>
     </task>
     <task id="LOCAL-00025" summary="code formatting">
       <created>1388788512021</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
       <updated>1388788512021</updated>
     </task>
     <task id="LOCAL-00026" summary="add home screen and various formatting changes">
       <created>1388791609033</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
       <updated>1388791609033</updated>
     </task>
     <task id="LOCAL-00027" summary="work on the photos grid">
       <created>1388823685193</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
       <updated>1388823685193</updated>
     </task>
     <task id="LOCAL-00028" summary="add support to reuse the file module in the photos section, turing on the photo view and setting a new root path to be the photos section.">
       <created>1388892726044</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
       <updated>1388892726044</updated>
     </task>
     <task id="LOCAL-00029" summary="some fixes with the usermanager&#10;&#10;rename the photos grid state, removing the abstract photos view">
       <created>1388961833945</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
       <updated>1388961833945</updated>
     </task>
     <task id="LOCAL-00030" summary="move user manager controller to a sub directory for controllers&#10;">
       <created>1388961893394</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
       <updated>1388961893394</updated>
     </task>
     <task id="LOCAL-00031" summary="fix up the sidebars with named views&#10;">
       <created>1388996142913</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
       <updated>1388996142913</updated>
     </task>
     <task id="LOCAL-00032" summary="Add filter by tree in photos section. including new servlet to walk the jcr content and build a tree of all folders.">
       <created>1389332123345</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
       <updated>1389332123345</updated>
     </task>
     <task id="LOCAL-00033" summary="Add filter by tree in photos section. including new servlet to walk the jcr content and build a tree of all folders.">
       <created>1389332134857</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
       <updated>1389332134857</updated>
     </task>
     <task id="LOCAL-00034" summary="stub in tag cloud for photo filters">
       <created>1389335620961</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
       <updated>1389335620961</updated>
     </task>
     <task id="LOCAL-00035" summary="add service for tag cloud&#10;&#10;add/fix JS for tag cloud">
       <created>1389597698433</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
       <updated>1389597698433</updated>
     </task>
     <task id="LOCAL-00036" summary="add query with filters logic">
       <created>1389766538067</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
       <updated>1389766538067</updated>
     </task>
     <task id="LOCAL-00037" summary="tweaks">
       <created>1389768186706</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
       <updated>1389768186706</updated>
     </task>
     <task id="LOCAL-00038" summary="Convert the Observer Job logic back to the Sling 3 jobs (which still don't work on current build of Sling)">
       <created>1389818547400</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
       <updated>1389818547400</updated>
     </task>
     <task id="LOCAL-00039" summary="Get the Sling3 metadata Job working">
       <created>1389987038721</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
       <updated>1389987038721</updated>
     </task>
     <task id="LOCAL-00040" summary="add momentjs library for date formatting">
       <created>1389987578958</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
       <updated>1389987578958</updated>
     </task>
     <task id="LOCAL-00041" summary="more work on the jobs">
       <created>1390086045833</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
       <updated>1390086045833</updated>
     </task>
     <task id="LOCAL-00042" summary="add metadata tagging for the photos grid, for multiple images.&#10;&#10;pull and save the GEO location properties in metadata">
       <created>1390283503064</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
       <updated>1390283503064</updated>
     </task>
     <task id="LOCAL-00043" summary="add support for MP3 Metadata (ID3) parsing&#10;&#10;add default content folders&#10;&#10;add /app/familydam nodes for preferences and settings">
       <created>1390719563129</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
       <updated>1390719563129</updated>
     </task>
     <task id="LOCAL-00044" summary="rename the project to FamilyDAM&#10;&#10;refactor packages and paths from FamilyCloud to FamilyDAM">
       <created>1390722547174</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
       <updated>1390722547174</updated>
     </task>
     <task id="LOCAL-00045" summary="Add support for different &quot;item renderers&quot; for the different items in the file list module. including play button for music and thumbnails for images.">
       <created>1390808000266</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
       <updated>1390808000266</updated>
     </task>
     <task id="LOCAL-00046" summary="add image preview sidebar">
       <created>1390810933500</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
       <updated>1390810933500</updated>
     </task>
     <task id="LOCAL-00047" summary="center preview image">
       <created>1390811156847</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
       <updated>1390811156847</updated>
     </task>
     <task id="LOCAL-00048" summary="add default sub path for /web (facebook, twitter, etc.)&#10;&#10;initial preview support for images and music">
       <created>1390957131120</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
       <updated>1390957131120</updated>
     </task>
     <task id="LOCAL-00049" summary="tweak the code">
       <created>1390957417965</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
       <updated>1390957417965</updated>
     </task>
     <task id="LOCAL-00050" summary="add observer for movie files">
       <created>1391026388156</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
       <updated>1391026388157</updated>
     </task>
     <task id="LOCAL-00051" summary="rework the namespace.cnd mixins">
       <created>1391033777603</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
       <updated>1391033777603</updated>
     </task>
     <task id="LOCAL-00052" summary="add video preview">
       <created>1391060248709</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
       <updated>1391060248709</updated>
     </task>
     <task id="LOCAL-00053" summary="rework the files sidebars to use named views">
       <created>1391069978897</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
       <updated>1391069978897</updated>
     </task>
     <task id="LOCAL-00054" summary="move the preview code into a single directive">
       <created>1391231643629</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
       <updated>1391231643630</updated>
     </task>
     <task id="LOCAL-00055" summary="refactor the different versions of the file lists">
       <created>1391235969734</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
       <updated>1391235969734</updated>
     </task>
     <task id="LOCAL-00056" summary="tweaks">
       <created>1391239450480</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
       <updated>1391239450480</updated>
     </task>
     <task id="LOCAL-00057" summary="add FB OAuth logic and save the token in a new &#10;/apps/faminlydam/user/&lt;username&gt; path for settings.">
       <created>1391737122542</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
       <updated>1391737122542</updated>
     </task>
     <task id="LOCAL-00058" summary="add comment">
       <created>1391737152418</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
       <updated>1391737152419</updated>
     </task>
     <task id="LOCAL-00059" summary="rename the filehandlers to imagehandlers&#10;&#10;copy the imagehandlers into 3 new bundles, one for music, video, and web handler bundles">
       <created>1391737597311</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
       <updated>1391737597311</updated>
     </task>
     <task id="LOCAL-00060" summary="add the new copies of the filehandler-bundle (now imagehandler-bundle). &#10;&#10;Right now there is a lot of duplicate code. don't use as is.">
       <created>1391737709103</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
       <updated>1391737709103</updated>
     </task>
     <task id="LOCAL-00061" summary="delete the old files that were copied over and stub in the facebook archive job.">
       <created>1391738044411</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
       <updated>1391738044411</updated>
     </task>
     <task id="LOCAL-00062" summary="After trying a few approaches I've settled on a custom JSON to node mapper to save the facebook API json to a nest node tree with same-child siblings.">
       <created>1392183122599</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
       <updated>1392183122599</updated>
     </task>
     <task id="LOCAL-00063" summary="remove unused code">
       <created>1392183150773</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
       <updated>1392183150774</updated>
     </task>
     <task id="LOCAL-00064" summary="move a lot of the facebook code into a super class for future support of other graph api jobs">
       <created>1392189194541</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
       <updated>1392189194541</updated>
     </task>
     <task id="LOCAL-00065" summary="Add facebook jobs for likes and checkins">
       <created>1392190351428</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
       <updated>1392190351428</updated>
     </task>
     <task id="LOCAL-00066" summary="some refactoring around the facebook account management">
       <created>1392652220898</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
       <updated>1392652220898</updated>
     </task>
     <task id="LOCAL-00067" summary="commit before moving files around">
       <created>1392941837131</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
       <updated>1392941837131</updated>
     </task>
     <task id="LOCAL-00068" summary="Move all of the bundles to a /bundles sub folder&#10;&#10;create and add a core-bundle project to hold common libraries, components, and services needed by the rest of the bundle&#10;&#10;add initial standalone launcher project too">
       <created>1392942163347</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
       <updated>1392942163347</updated>
     </task>
     <task id="LOCAL-00069" summary="setup a parent POM for all of the &quot;bundle&quot; projects">
       <created>1392957184324</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
       <updated>1392957184324</updated>
     </task>
     <task id="LOCAL-00070" summary="clean up files in the different projects">
       <created>1392959430074</created>
+      <option name="number" value="00070" />
+      <option name="project" value="LOCAL" />
       <updated>1392959430074</updated>
     </task>
     <task id="LOCAL-00071" summary="add pom">
       <created>1392959465642</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
       <updated>1392959465642</updated>
     </task>
     <task id="LOCAL-00072" summary="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed.">
       <created>1393024943549</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
       <updated>1393024943549</updated>
     </task>
     <task id="LOCAL-00073" summary="commit a working version of the standalone launchpad with the project bundles configured and automatically deployed.&#10;">
       <created>1393024959269</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
       <updated>1393024959269</updated>
     </task>
     <task id="LOCAL-00074" summary="add simple html redirect for /index.html page">
       <created>1393025897582</created>
+      <option name="number" value="00074" />
+      <option name="project" value="LOCAL" />
       <updated>1393025897582</updated>
     </task>
     <task id="LOCAL-00075" summary="add maven plugin to create zip bundle of standalone application and the necessary start scripts">
       <created>1393130024242</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
       <updated>1393130024242</updated>
     </task>
     <task id="LOCAL-00076" summary="tweak the startup script">
       <created>1393130621821</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
       <updated>1393130621821</updated>
     </task>
     <task id="LOCAL-00077" summary="fix PhotoGrid bug when no photos are returned, and add a message.">
       <created>1393132806299</created>
+      <option name="number" value="00077" />
+      <option name="project" value="LOCAL" />
       <updated>1393132806299</updated>
     </task>
     <task id="LOCAL-00078" summary="remove the ui-router views and just use simple directives">
       <created>1393208706206</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
       <updated>1393208706206</updated>
     </task>
     <task id="LOCAL-00079" summary="refactor the keyword tagging directive">
       <created>1393221202315</created>
+      <option name="number" value="00079" />
+      <option name="project" value="LOCAL" />
       <updated>1393221202315</updated>
     </task>
     <task id="LOCAL-00080" summary="add save tags logic and add resetting on jcr:path in detail view">
       <created>1393223002341</created>
+      <option name="number" value="00080" />
+      <option name="project" value="LOCAL" />
       <updated>1393223002341</updated>
     </task>
     <task id="LOCAL-00081" summary="add extra check for empty metadata tags">
       <created>1393223228432</created>
+      <option name="number" value="00081" />
+      <option name="project" value="LOCAL" />
       <updated>1393223228432</updated>
     </task>
     <task id="LOCAL-00082" summary="Add a new bundle activator to the core project to register the required NodeTypes &amp; Mixins">
       <created>1393390902712</created>
+      <option name="number" value="00082" />
+      <option name="project" value="LOCAL" />
       <updated>1393390902712</updated>
     </task>
     <task id="LOCAL-00083" summary="format the facebook timeline css with the inverted flag">
       <created>1394342656057</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
       <updated>1394342656057</updated>
     </task>
     <task id="LOCAL-00084" summary="add new fd:date property to all fd:content types and add ORDERING based on this date, in the timeline.&#10;&#10;get the timeline to alternate FB 'types'&#10;&#10;">
       <created>1394404223308</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
       <updated>1394404223309</updated>
     </task>
     <task id="LOCAL-00085" summary="add svg webicons">
       <created>1394404256859</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
       <updated>1394404256859</updated>
     </task>
     <task id="LOCAL-00086" summary="add fd:date default for images, with bad metadata">
       <created>1394404956755</created>
+      <option name="number" value="00086" />
+      <option name="project" value="LOCAL" />
       <updated>1394404956755</updated>
     </task>
     <task id="LOCAL-00087" summary="remove photos job and replace it with an albums job, we pull photos under albums in new job next.&#10;">
       <created>1394425838405</created>
+      <option name="number" value="00087" />
+      <option name="project" value="LOCAL" />
       <updated>1394425838405</updated>
     </task>
     <task id="LOCAL-00088" summary="fix the thread error with the Facebook Jobs&#10;">
       <created>1395030704969</created>
+      <option name="number" value="00088" />
+      <option name="project" value="LOCAL" />
       <updated>1395030704969</updated>
     </task>
     <task id="LOCAL-00089" summary="Change Facebook jobs to use FQL checkin &amp; stream instead of Graph API">
       <created>1395547952513</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
       <updated>1395547952514</updated>
     </task>
     <task id="LOCAL-00090" summary="try adding videogular directive as the default video player, and then I removed it - the default browser video control works fine.">
       <created>1395623555046</created>
+      <option name="number" value="00090" />
+      <option name="project" value="LOCAL" />
       <updated>1395623555047</updated>
     </task>
     <task id="LOCAL-00091" summary="start stubbing out the flickr api">
       <created>1395728113379</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
       <updated>1395728113379</updated>
     </task>
     <task id="LOCAL-00092" summary="stub in a setup wizard module&#10;&#10;change the theme&#10;- move the nav to the top&#10;- merge cloud drives with files drop down&#10;- change the background to a &quot;white&quot; background">
       <created>1395898694942</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
       <updated>1395898694942</updated>
     </task>
     <task id="LOCAL-00093" summary="stub in a setup wizard module&#10;&#10;change the theme&#10;- move the nav to the top&#10;- merge cloud drives with files drop down&#10;- change the background to a &quot;white&quot; background&#10;&#10;Warning: build is broken">
       <created>1399957334183</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
       <updated>1399957334183</updated>
     </task>
     <task id="LOCAL-00094" summary="tweak the build poms to get things building again.">
       <created>1401164566763</created>
+      <option name="number" value="00094" />
+      <option name="project" value="LOCAL" />
       <updated>1401164566763</updated>
     </task>
     <task id="LOCAL-00095" summary="rename familydam-standalone to familydam-server&#10;&#10;add a new project that uses the Atom-Shell project to create a desktop application out of the familydam.">
       <created>1401167215864</created>
+      <option name="number" value="00095" />
+      <option name="project" value="LOCAL" />
       <updated>1401167215865</updated>
     </task>
     <task id="LOCAL-00096" summary="more work on the logic that starts sling in atom-shell">
       <created>1401598030699</created>
+      <option name="number" value="00096" />
+      <option name="project" value="LOCAL" />
       <updated>1401598030699</updated>
     </task>
     <task id="LOCAL-00097" summary="rework the stdout monitoring code">
       <created>1401647671385</created>
+      <option name="number" value="00097" />
+      <option name="project" value="LOCAL" />
       <updated>1401647671385</updated>
     </task>
     <task id="LOCAL-00098" summary="rework the stdout monitoring code">
       <created>1401764667705</created>
+      <option name="number" value="00098" />
+      <option name="project" value="LOCAL" />
       <updated>1401764667705</updated>
     </task>
     <task id="LOCAL-00099" summary="change the html title. commit before branching for the shell">
       <created>1401764723219</created>
+      <option name="number" value="00099" />
+      <option name="project" value="LOCAL" />
       <updated>1401764723219</updated>
     </task>
     <task id="LOCAL-00100" summary="Start creating a post-installation config wizard. Using Polymer Web Components">
       <created>1404711260218</created>
+      <option name="number" value="00100" />
+      <option name="project" value="LOCAL" />
       <updated>1404711260218</updated>
     </task>
     <task id="LOCAL-00101" summary="more work on the flow between splashWindow to configWindow and MainWindow&#10;&#10;start defaulting form fields, from settings file.">
       <created>1405145406537</created>
+      <option name="number" value="00101" />
+      <option name="project" value="LOCAL" />
       <updated>1405145406538</updated>
     </task>
     <task id="LOCAL-00102" summary="work on a vision prototype version of the application using polymer tags.">
       <created>1405568200589</created>
+      <option name="number" value="00102" />
+      <option name="project" value="LOCAL" />
       <updated>1405568200589</updated>
     </task>
     <task id="LOCAL-00103" summary="checkpoint checkin for dashboard-prototype work&#10;">
       <created>1406782337516</created>
+      <option name="number" value="00103" />
+      <option name="project" value="LOCAL" />
       <updated>1406782337517</updated>
     </task>
     <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1446583000" />
+    <option name="totallyTimeSpent" value="1455981000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1652,34 +1830,31 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26939204" sideWeight="0.8455433" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490566" sideWeight="0.7936508" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27672955" sideWeight="0.20695971" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490566" sideWeight="0.9096459" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2557652" sideWeight="0.20695971" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="CQ Node Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.44200245" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27672955" sideWeight="0.7930403" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2557652" sideWeight="0.7930403" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32809225" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23260073" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15995117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20695971" sideWeight="0.7283019" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39413" sideWeight="0.86996335" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490566" sideWeight="0.7936508" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3490566" sideWeight="0.9096459" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.27169812" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22283272" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="122" width="1480" height="740" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296837" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="CQ Node Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1687,8 +1862,11 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32704404" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272506" sideWeight="0.81929183" order="23" side_tool="false" content_ui="tabs" />
+      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1808,19 +1986,33 @@
       </default-breakpoints>
       <option name="time" value="392" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="3765">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="480">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="2895">
           <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1828,14 +2020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1781" max-vertical-offset="3240">
           <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-details/dam-photo-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0" vertical-offset="545" max-vertical-offset="1185">
-          <caret line="43" column="63" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -1871,7 +2055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.208333" vertical-offset="208" max-vertical-offset="1080">
           <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1890,9 +2073,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-client/bower_components/angular-slider/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.7777777" vertical-offset="402" max-vertical-offset="1110">
           <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
@@ -1917,7 +2097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5833335" vertical-offset="208" max-vertical-offset="1065">
           <caret line="26" column="76" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1960,9 +2139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6923077" vertical-offset="2375" max-vertical-offset="4455">
           <caret line="163" column="10" selection-start-line="163" selection-start-column="10" selection-end-line="163" selection-end-column="10" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1970,7 +2146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.333334" vertical-offset="124" max-vertical-offset="750">
           <caret line="36" column="23" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2020,7 +2195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.875" vertical-offset="105" max-vertical-offset="825">
           <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2035,22 +2209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.625" vertical-offset="1095" max-vertical-offset="4500">
           <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-music-group/dam-music-group.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="85.541664" vertical-offset="2053" max-vertical-offset="2460">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-album/preview-album.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.4583335" vertical-offset="362" max-vertical-offset="1395">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2058,7 +2216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="465">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2073,7 +2230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5839754" vertical-offset="1781" max-vertical-offset="3240">
           <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2081,17 +2237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39123866" vertical-offset="1946" max-vertical-offset="2895">
           <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/photos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.648" vertical-offset="4155" max-vertical-offset="5475">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2099,7 +2244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.083334" vertical-offset="472" max-vertical-offset="1110">
           <caret line="62" column="10" selection-start-line="59" selection-start-column="4" selection-end-line="62" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2107,23 +2251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25" vertical-offset="975" max-vertical-offset="1965">
           <caret line="75" column="0" selection-start-line="73" selection-start-column="4" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/music.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125" vertical-offset="1125" max-vertical-offset="4935">
-          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/movies.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="825" max-vertical-offset="4890">
-          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2131,35 +2258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.3333335" vertical-offset="1858" max-vertical-offset="2640">
           <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="85" />
-          <folding>
-            <element signature="n#style#0;n#paper-tabs#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/familyplanning.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0" vertical-offset="765" max-vertical-offset="3660">
-          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/emails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125" vertical-offset="945" max-vertical-offset="5745">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/social.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25" vertical-offset="975" max-vertical-offset="3870">
-          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="93" />
-          <folding>
-            <element signature="n#style#0;n#paper-tabs#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2173,12 +2271,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/files.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25" vertical-offset="1200" max-vertical-offset="6990">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#core-drawer-panel#0;n#div#0;n#core-drawer-panel#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1950" max-vertical-offset="6990">
+          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2190,10 +2285,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2640">
+          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="2400">
+          <caret line="31" column="75" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/photos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7781155" vertical-offset="1170" max-vertical-offset="6270">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.875" vertical-offset="1650" max-vertical-offset="2640">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8860182" vertical-offset="2852" max-vertical-offset="3765">
+          <caret line="229" column="38" selection-start-line="229" selection-start-column="38" selection-end-line="229" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-details/dam-photo-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5273556" vertical-offset="347" max-vertical-offset="1185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.791666" vertical-offset="1667" max-vertical-offset="2880">
+          <caret line="146" column="32" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower_components/core-animated-pages/core-animated-pages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8544304" vertical-offset="4875" max-vertical-offset="6300">
+          <caret line="361" column="15" selection-start-line="361" selection-start-column="10" selection-end-line="361" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="945" max-vertical-offset="4065">
+          <caret line="67" column="85" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.98" vertical-offset="2996" max-vertical-offset="4935">
-          <caret line="281" column="10" selection-start-line="281" selection-start-column="10" selection-end-line="281" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.5699088" vertical-offset="735" max-vertical-offset="7335">
+          <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#paper-tabs#0;n#core-toolbar#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -2203,57 +2370,38 @@
             <element signature="n#style#0;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="tag#div#0;tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#2;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#5;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="tag#div#1;tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#4;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#5;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#6;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#8;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#9;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#10;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#11;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#div#1;tag#aside#0;tag#div#0;tag#div#0;tag#core-scroll-header-panel#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#core-icon#0;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#core-icon#1;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#core-icon#2;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#core-icon#3;n#div#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#4;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#5;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#6;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#7;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#8;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#9;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#10;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#11;n#div#0;n#div#0;n#div#2;n#div#1;n#aside#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#dam-photo-lightbox#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#preview-photo#0;n#div#1;n#aside#1;n#div#0;n#div#0;n#core-scroll-header-panel#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#core-overlay#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#svg#0;tag#core-iconset-svg#0;tag#body#0;tag#html#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.22" vertical-offset="846" max-vertical-offset="3765">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#core-animated-pages#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54575163" vertical-offset="296" max-vertical-offset="2640">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
