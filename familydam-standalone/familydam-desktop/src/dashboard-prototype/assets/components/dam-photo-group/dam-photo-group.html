@@ -208,12 +208,12 @@
             this.$.pages.selected = 0;
         },
 
-        transitionStart: function () {
+        transitionStart: function (a1, a2, a3, a4) {
             console.log("prepare");
         },
 
 
-        transitionEnd: function (event, a1, a2) {
+        transitionEnd: function (event, a1, a2, a3) {
             if (this.lastSelected){
                 this.lastSelected = null;
             }

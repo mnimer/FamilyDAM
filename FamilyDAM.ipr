@@ -77,13 +77,14 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/dist/dashboard-prototype/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/bower.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo-group.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/dam-photo-group/dam-photo.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/assets/components/preview-photo/preview-photo.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/login.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard-prototype/photos.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/dashboard/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop/src/main.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/assembly" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-server/src/main/sling" charset="UTF-8" />
@@ -133,6 +134,7 @@
     <version value="1.0" />
   </component>
   <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/client-desktop" libraries="{client-desktop node_modules}" />
     <file url="file://$PROJECT_DIR$/familydam-standalone/familydam-desktop" libraries="{Node.js v0.10.22 Core Modules, familydam-desktop node_modules}" />
   </component>
   <component name="MavenProjectsManager">
@@ -294,6 +296,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/familydam-standalone/familydam-server/FamilyDam-Application.iml" filepath="$PROJECT_DIR$/familydam-standalone/familydam-server/FamilyDam-Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-desktop/client-desktop.iml" filepath="$PROJECT_DIR$/client-desktop/client-desktop.iml" />
       <module fileurl="file://$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" filepath="$PROJECT_DIR$/bundles/dashboard-bundle/dashboard-bundle.iml" group="Bundles" />
       <module fileurl="file://$PROJECT_DIR$/bundles/familydam-bundles.iml" filepath="$PROJECT_DIR$/bundles/familydam-bundles.iml" />
       <module fileurl="file://$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" filepath="$PROJECT_DIR$/bundles/core-bundle/familydam-core-bundle.iml" group="Bundles" />
@@ -318,6 +321,19 @@
     <mapping directory="$PROJECT_DIR$/../sling" vcs="Git" />
   </component>
   <component name="libraryTable">
+    <library name="client-desktop node_modules" type="javaScript">
+      <properties>
+        <option name="frameworkName" value="node_modules" />
+        <sourceFilesUrls>
+          <item url="file://$PROJECT_DIR$/client-desktop/node_modules" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/client-desktop/node_modules" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="familydam-desktop node_modules" type="javaScript">
       <properties>
         <option name="frameworkName" value="node_modules" />

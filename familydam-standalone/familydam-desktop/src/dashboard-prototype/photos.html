@@ -63,7 +63,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
 
     </style>
-
+    <script>
+        var $j = jQuery.noConflict();
+    </script>
 
 </head>
 <body unresolved fullbleed onload="onLoadHandler()">
@@ -71,9 +73,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <div id="filePanel" layout horizontal>
 
     <core-scroll-header-panel flex>
+
         <core-toolbar class="medium-tall" style="background-color: #5c6bc0;">
-            <core-icon-button icon="home" onclick="window.location.href='index.html';"></core-icon-button>
-            <!--core-icon-button icon="arrow-back" onclick="window.location.href='index.html';"></core-icon-button-->
+            <core-icon-button id="primaryToolbarIcon" icon="home" onclick="toolbarIconHelper()"></core-icon-button>
+
             <div flex>FamilyDAM</div>
             <paper-tabs selected="2" style="min-width: 375px;">
                 <paper-tab onclick="window.location.href='familyplanning.html';">Family</paper-tab>
@@ -580,6 +583,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script>
 
     // custom transformation: scale header's title
+    /**  todo fix the selector since it is now in a template tag
     var titleStyle = document.querySelector('.title').style;
     addEventListener('core-header-transform', function (e) {
         var d = e.detail;
@@ -588,29 +592,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         titleStyle.webkitTransform = titleStyle.transform =
             'scale(' + scale + ') translateZ(0)';
     });
+    **/
 
 </script>
 
 
 <script>
     var photos = [];
+    var inDetailView = false;
 
     var toggleLeftDrawer = function (id) {
         if (document.querySelector("#" + id).style.width == "45px" || document.querySelector("#" + id).style.display == "none")
         {
-            document.querySelector("#" + id).style.width = "265px";
-            document.querySelector("#" + id).style.display == "block"
-            document.querySelector("#leftDrawer #content").style.display = "block";
+            openLeftDrawer(id);
         } else
         {
             closeLeftDrawer(id);
         }
-    }
+    };
+
+    var openLeftDrawer = function () {
+        document.querySelector("#leftDrawer").style.width = "265px";
+        document.querySelector("#leftDrawer").style.display == "block"
+        document.querySelector("#leftDrawer #content").style.display = "block";
+    };
 
     var closeLeftDrawer = function (id) {
-        document.querySelector("#" + id).style.width = "45px";
+        document.querySelector("#leftDrawer").style.width = "45px";
         document.querySelector("#leftDrawer #content").style.display = "none";
-    }
+    };
 
 
     var toggleRightDrawer = function (id) {
@@ -623,16 +633,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
 
         //document.querySelector("#photoList").layout();
-    }
+    };
 
     var openRightDrawer = function (id) {
         document.querySelector("#" + id).style.width = "350px";
         document.querySelector("#" + id).style.display = "block"
         document.querySelector("#rightDrawer #content").style.display = "block";
-    }
+    };
+
     var closeRightDrawer = function (id) {
         document.querySelector("#" + id).style.display = "none";
-    }
+    };
 
 
     var shuffle = function (array) {
@@ -654,6 +665,79 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         return array;
     };
+
+    var toolbarIconHelper = function(){
+        if( !inDetailView ){
+            window.location.href='index.html';
+        }else{
+            openLeftDrawer("leftDrawer");
+            closeRightDrawer("rightDrawer");
+            document.querySelector("#photoList").$.pages.selected = 0;
+
+            inDetailView = false;
+            document.querySelector("#primaryToolbarIcon").icon="home";
+        }
+    }
+
+
+
+
+    var toggleUploader = function () {
+        document.querySelector("#uploaderOverlay").toggle();
+    };
+
+
+    var photoSelectHandler = function (event) {
+        console.dir(event.detail);
+
+        openRightDrawer("rightDrawer");
+
+        document.querySelector("#photoPreview").style.display = "block";
+        document.querySelector("#photoLightbox").style.display = "none";
+    };
+
+
+    var photoMultiSelectHandler = function (event) {
+        console.dir(event.detail);
+
+        openRightDrawer("rightDrawer");
+
+        document.querySelector("#photoLightbox").addPhoto(event.detail);
+        if (document.querySelector("#photoLightbox").selectedItems.length == 1)
+        {
+            document.querySelector("#photoPreview").style.display = "block";
+            document.querySelector("#photoLightbox").style.display = "none";
+        } else
+        {
+            document.querySelector("#photoLightbox").style.display = "block";
+            document.querySelector("#photoPreview").style.display = "none";
+        }
+
+    };
+
+    var photoDeselectHandler = function (event) {
+        console.dir(event.detail);
+
+        closeRightDrawer("rightDrawer");
+        inDetailView = false;
+        document.querySelector("#primaryToolbarIcon").icon="home";
+    };
+
+    var photoHardSelectHandler = function (event) {
+        console.dir(event.detail);
+
+
+        openRightDrawer("rightDrawer");
+        closeLeftDrawer("leftDrawer");
+
+        inDetailView = true;
+        document.querySelector("#primaryToolbarIcon").icon="arrow-back";
+        //document.querySelector("#photoList").unselectOthers(event.detail);
+        //document.querySelector("#photoLightbox").removeOthers(event.detail);
+
+        //document.querySelector("#photoDetails").model = event.detail;
+        //document.querySelector("#photoDetailOverlay").toggle();
+    }
 
     var onLoadHandler = function () {
         photos = [
@@ -824,59 +908,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         document.querySelector("#photoList2").addEventListener('photo-hard-select', photoHardSelectHandler);
 
     };
-
-
-    var toggleUploader = function () {
-        document.querySelector("#uploaderOverlay").toggle();
-    };
-
-
-    var photoSelectHandler = function (event) {
-        console.dir(event.detail);
-
-        openRightDrawer("rightDrawer");
-
-        document.querySelector("#photoPreview").style.display = "block";
-        document.querySelector("#photoLightbox").style.display = "none";
-    };
-
-
-    var photoMultiSelectHandler = function (event) {
-        console.dir(event.detail);
-
-        openRightDrawer("rightDrawer");
-
-        document.querySelector("#photoLightbox").addPhoto(event.detail);
-        if (document.querySelector("#photoLightbox").selectedItems.length == 1)
-        {
-            document.querySelector("#photoPreview").style.display = "block";
-            document.querySelector("#photoLightbox").style.display = "none";
-        } else
-        {
-            document.querySelector("#photoLightbox").style.display = "block";
-            document.querySelector("#photoPreview").style.display = "none";
-        }
-
-    };
-
-    var photoDeselectHandler = function (event) {
-        console.dir(event.detail);
-
-        closeRightDrawer("rightDrawer");
-    };
-
-    var photoHardSelectHandler = function (event) {
-        console.dir(event.detail);
-
-        openRightDrawer("rightDrawer");
-        closeLeftDrawer("leftDrawer");
-
-        //document.querySelector("#photoList").unselectOthers(event.detail);
-        //document.querySelector("#photoLightbox").removeOthers(event.detail);
-
-        //document.querySelector("#photoDetails").model = event.detail;
-        //document.querySelector("#photoDetailOverlay").toggle();
-    }
 
 </script>
 

@@ -1,0 +1,234 @@
+<!--
+  ~ This file is part of FamilyDAM Project.
+  ~
+  ~     The FamilyDAM Project is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     The FamilyDAM Project is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with the FamilyDAM Project.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<!doctype html>
+<html>
+<head>
+    <title>core-animated-pages</title>
+
+<head>
+    <title>FamilyDAM Vision Prototype</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="components/platform/platform.js"></script>
+    <link rel="import" href="components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="components/paper-input/paper-input.html">
+    <link rel="import" href="components/paper-button/paper-button.html">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            font-family: 'Lato', 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+            background-color: #000;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-weight: 300;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+            background: #5c6bc0;
+            background: url('http://lorempixel.com/1900/1000/nature/');
+        }
+
+        .timestamp{
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 48px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+<polymer-element name="login-users">
+    <template>
+
+        <style>
+            .chip-container {
+                position: absolute;
+                top: 275px;
+                right: 0;
+                left: 0;
+                text-align: center;
+                color: #000;
+            }
+
+            .chip {
+                display: inline-block;
+                position: relative;
+                border-radius: 3px;
+                margin: 4px;
+                overflow: hidden;
+                text-align: start;
+                background-color: #fff;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+            }
+
+            .chip-top {
+                width: 200px;
+                height: 200px;
+            }
+
+            .chip-bottom {
+                padding: 8px;
+                line-height: 1.5;
+            }
+
+            .chip-album-title {
+                font-weight: bold;
+            }
+
+            #details {
+                padding: 200px 10% 0;
+            }
+
+            .card {
+                color: #000;
+                height: 400px;
+                border-radius: 3px;
+                text-align: start;
+                overflow: hidden;
+                background: #fff;
+                box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            .card-left {
+                width: 400px;
+            }
+
+            .card-right {
+                padding: 24px;
+            }
+
+            .card-icon {
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                margin-right: 16px;
+            }
+
+            .card-album-title {
+                font-size: 2em;
+            }
+
+
+            /* Style #my-button blue with white text and darker blue ink. */
+            #login-button {
+                background: #4285f4;
+                color: #fff;
+            }
+
+            #login-button:hover {
+                background: #2a56c6;
+            }
+
+            #login-button::shadow #ripple {
+                color: #2a56c6;
+            }
+        </style>
+
+        <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}" >
+
+            <section>
+
+                <div class="chip-container" hero-p on-tap="{{transition}}">
+
+                    <template repeat="{{items as item}}">
+
+                        <div class="chip" hero-id="{{item.id}}" hero?="{{selectedAlbum === item }}">
+                            <div class="chip-top" style="background:{{item.color}};" hero-id="{{item.id}}-art" hero?="{{selectedAlbum === item}}"></div>
+                            <div class="chip-bottom">
+                                <div class="chip-album-title">{{item.name}}</div>
+                            </div>
+                        </div>
+
+                    </template>
+
+                </div>
+            </section>
+
+            <section id="details">
+
+                <div class="card" layout horizontal hero-id="{{selectedAlbum.id}}" hero >
+                    <div class="card-left" style="background:{{selectedAlbum.color}};" hero-id="{{selectedAlbum.id}}-art" hero ></div>
+                    <div class="card-right" flex>
+                        <div layout horizontal center>
+                            <div flex>
+                                <div class="card-album-title">{{selectedAlbum.name}}</div>
+
+                                <br/>
+                                <paper-input type="password " label="Your Password" floating="true" password>admin</paper-input>
+                                <paper-button id="login-button" label="Login" style="width:150px;" raisedButton></paper-button>
+                                <paper-button id="cancel-button" label="cancel" on-tap="{{transition}}"></paper-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </core-animated-pages>
+
+    </template>
+    <script>
+
+        Polymer('login-users', {
+
+            page: 0,
+
+            items: [
+                { id:'0001', name: 'Mike', color: '#3949ab' },
+                { id:'0002', name: 'Angela', color: '#3949ab' },
+                { id:'0003', name: 'Kayden', color: '#3949ab' },
+                { id:'0004', name: 'Hailey', color: '#3949ab' }
+            ],
+
+            selectedAlbum: null,
+
+            transition: function(e) {
+                if (this.page === 0 && e.target.templateInstance.model.item) {
+                    this.selectedAlbum = e.target.templateInstance.model.item;
+                    this.page = 1;
+                } else {
+                    this.page = 0;
+                }
+            }
+        });
+
+    </script>
+</polymer-element>
+
+<div class="header">
+    <div class="timestamp">1:23 am</div>
+</div>
+
+<login-users></login-users>
+</body>
+</html>
