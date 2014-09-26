@@ -4,7 +4,6 @@
     <facet type="Osmorc" name="OSGi">
       <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="mediahandlers-bundle-1.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.mikenimer.familydam.mediahandlers-bundle" bundleVersion="1.0-SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
-          <property key="Bundle-Description" value="com.mikenimer.familydam - familydam-bundles" />
           <property key="Embed-Dependency" value="metadata-extractor-osgi,xmpcore,mp3agic;scope=compile|runtime" />
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
           <property key="Bundle-Name" value="FamilyDAM Media Handlers Bundle" />

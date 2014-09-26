@@ -4,7 +4,6 @@
     <facet type="Osmorc" name="OSGi">
       <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="familydam-core-bundle-1.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="com.mikenimer.familydam.CustomNodeRegister" bundleSymbolicName="com.mikenimer.familydam.core-bundle" bundleVersion="1.0-SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
-          <property key="Bundle-Description" value="com.mikenimer.familydam - familydam-core-bundle" />
           <property key="Include-Resoource" value="{maven-resources}, {maven-dependencies}" />
           <property key="Sling-Nodetypes" value="SLING-INF/nodetypes/nodetypes.cnd" />
           <property key="Sling-Initial-Content" value="SLING-INF/properties/users.xml;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/apps/familydam,SLING-INF/properties/localization.xml;overwrite:=false;overwriteProperties=true;uninstall:=false;path:=/apps/familydam,SLING-INF/properties/preferences.xml;overwrite:=true;overwriteProperties=false;uninstall:=false;path:=/apps/familydam,SLING-INF/content;overwrite:=false;overwriteProperties=false;uninstall:=false;path:=/content,SLING-INF/ROOT;overwrite:=true;overwriteProperties=true;uninstall:=true;path:=/" />

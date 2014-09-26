@@ -105,7 +105,7 @@
                 <artifactId>maven-launchpad-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <includeDefaultBundles>false</includeDefaultBundles>
+                    <includeDefaultBundles>true</includeDefaultBundles>
                     <bundlesDirectory>install</bundlesDirectory>
                     <bootDirectory>bundles</bootDirectory>
                     <configDirectory>${empty.config.directory}</configDirectory>
